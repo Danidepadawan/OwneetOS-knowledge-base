@@ -10,8 +10,9 @@ tags: [decision, process, knowledge-base]
 ---
 # The knowledge base is an Obsidian vault
 
-- All project knowledge lives in the Obsidian vault **`OwneetOS-knowledge-base`**, next to the code
-  repository, instead of the "god files" `PROJECT_RULES.md` and `ROADMAP.md` and the design
+- All project knowledge lives in the Obsidian vault **`OwneetOS-knowledge-base`**
+  ([github.com/Danidepadawan/OwneetOS-knowledge-base](https://github.com/Danidepadawan/OwneetOS-knowledge-base),
+  **public**, like the code), next to the code repository, instead of the "god files" `PROJECT_RULES.md` and `ROADMAP.md` and the design
   documents in `docs/`.
 - Notes are grouped in four categories, one folder each: **guards** (what must never be done),
   **best practices** (project and language), **decisions** (agreed choices, including those already

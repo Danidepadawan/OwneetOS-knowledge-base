@@ -11,4 +11,6 @@ a game console usable with a gamepad only ([[vision]]). The code lives in the si
 
 - **Start here:** [[INDEX]] — every folder has an `INDEX.md` with one line per note.
 - **How this vault works:** [[kb-rules]].
+- **Setting up a computer** (requirements, workspace, hooks): `docs/setup.md` in the code
+  repository.
 - **Never do this:** [[guards/INDEX|guards]].

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "guards/collaboration.md",
+                "file": "best-practices/INDEX.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "collaboration"
+              "title": "INDEX"
             }
           }
         ]
@@ -99,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "guards/collaboration.md",
+                "file": "best-practices/INDEX.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "guards/collaboration.md",
+                "file": "best-practices/INDEX.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "guards/collaboration.md",
+                "file": "best-practices/INDEX.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -190,6 +190,11 @@
   },
   "active": "9818f3db9d0fe726",
   "lastOpenFiles": [
+    "CLAUDE.md",
+    "INDEX.md",
+    "README.md",
+    "Senza nome.canvas",
+    "guards/collaboration.md",
     "tmp-probe.md",
     "workflow/waves/wave-1/phase-7-updates-and-first-release/INDEX.md",
     "workflow/waves/wave-1/phase-6-first-boot-installer-disks/INDEX.md",
@@ -212,13 +217,8 @@
     "decisions/process/INDEX.md",
     "guards/guards-index.md",
     "decisions/legal/INDEX.md",
-    "decisions/hardware/INDEX.md",
-    "decisions/games/INDEX.md",
-    "decisions/distribution/INDEX.md",
-    "decisions/architecture/INDEX.md",
     "scripts/build-indexes.py",
     "scripts",
-    "Senza nome.canvas",
     "workflow/waves/wave-1/phase-7-updates-and-first-release",
     "workflow/waves/wave-1/phase-6-first-boot-installer-disks",
     "workflow/waves/wave-1/phase-5-streaming-apps-and-media",

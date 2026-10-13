@@ -8,7 +8,9 @@ tags: [best-practice, docs]
 
 - **Knowledge** (rules, decisions, plans, designs) lives in this vault ([[kb-rules]]).
 - **The code repository keeps what ships or what outside contributors need:** `README.md`,
-  `CONTRIBUTING.md`, `CREDITS.md` (shipped in the image), `LICENSE`, one `README.md` per top-level
+  `CONTRIBUTING.md`, `docs/setup.md` (requirements and workspace setup, including copies of the
+  workspace's `CLAUDE.md` and `.claude/settings.json`: update it when those change), `CREDITS.md`
+  (shipped in the image), `LICENSE`, one `README.md` per top-level
   folder (purpose, build and test commands, layout), `docs/translating.md` (translators),
   `frontend/sounds/SOURCES.md` (attribution), and later the user guide.
 - Every top-level folder has a short README stating its purpose.
