@@ -4,7 +4,7 @@ description: "The binding meaning of every button on every screen, keyboard fall
 area: ux
 status: active
 decided: 2026-10-03
-updated: 2026-10-12
+updated: 2026-10-13
 legacy: "PROJECT_RULES.md §9.1"
 tags: [decision, ux, input]
 ---
@@ -20,17 +20,18 @@ screen. New bindings are added here (with the owner) before they are implemented
 | B / ○ | Back / close. Where there is nothing to go back to (Home, Library, the list of Settings sections): the **quick menu** (power options, controls and features) |
 | X / □ | Secondary action on the selected item (e.g. Details, Install) |
 | Y / △ | Page-level option (e.g. Sort, Search) |
-| LB / RB (L1 / R1) | Switch top-level section (Home, Library, Settings, …) — **reserved, never used for anything else** |
+| LB / RB (L1 / R1) | Switch top-level section (Home, Library, Settings, …) — **reserved, never used for anything else** (except inside the on-screen keyboard, where no section can be switched: its pages of keys) |
 | LT / RT (L2 / R2) | Switch filter inside the current page (e.g. Library: All / Installed / Favorites — "Installed" was removed on 2026-10-11, [[game-library]]). There are no sub-tabs: tabs are only the sections on LB / RB |
 | Menu / Options | Options menu for the selected item |
 | View / Create | Reserved (screenshot in a later wave) |
 | Guide / PS | **Owned by the system daemon**: home / quick menu from anywhere, including in games. Apps and themes must never bind it. Prompt label: "Home". **Exception, Steam** (2026-10-12): while Steam or a Steam game is on screen, a short press is Steam's (its menu; its overlay in games) and **holding it for 1 second** comes back to the console (Steam and the game keep running). See [[guide-button]]. |
 | Right stick | Scrolls the page: fast scroll in long lists and grids, and the content of windows (e.g. Credits and licences) |
 
-**On-screen keyboard** (demo 3.10, approved 2026-10-11): while it is open, A types the selected
-key, X deletes, Y types a space, LT / RT change the page of keys (letters, symbols, accented
-letters), Menu = Done, B closes the keyboard; the selection wraps around at every edge. These
-meanings hold only inside the keyboard; LB / RB, Guide and the right stick keep theirs.
+**On-screen keyboard** (demo 3.10, approved 2026-10-11; changed 2026-10-13): while it is open, A
+types the selected key, X deletes, Y types a space, **LB / RB change the page of keys** (letters,
+symbols, accented letters), **LT held = capital letters while it is held** (as on Steam's
+keyboard), RT does nothing, Menu = Done, B closes the keyboard; the selection wraps around at
+every edge. These meanings hold only inside the keyboard; Guide and the right stick keep theirs.
 
 While a game or app is running, the system intercepts **only** the Guide button; every other input
 goes to the game.
@@ -43,6 +44,13 @@ The input map is **fixed**: it is not saved in the frontend's settings, so a cha
 system. **Held buttons:** a direction repeats after 360 ms, then every 140 ms; LB / RB and LT / RT
 repeat after 720 ms, then every 360 ms; analog triggers count as pressed above half their travel
 (released below a quarter); every other button acts once per press.
+
+> [!warning] Waiting for the owner's confirmation
+> On 2026-10-13, when `main` was merged into `refactor/ai-harness`, the guard [[product-invariants]]
+> ("never use LB / RB for anything but switching top-level sections") gained the exception for the
+> on-screen keyboard's pages of keys, matching this note. The edit was kept on that branch; guards
+> change only with the owner's agreement, so the owner confirms it (or changes it) when reviewing
+> the merge, and this box is then removed.
 
 Implemented once for every screen in step 3.5 (`Nav`, `NavArea`: [[qml]]). Pending binding: the
 controller pointer of [[step-4.7-controller-pointer]] goes here before it is implemented.
@@ -62,3 +70,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-11 | Demo 3.10 (on-screen keyboard) approved, with the selection wrapping around vertically too. Inside the keyboard: X delete, Y space, LT / RT pages of keys, Menu Done ([[controller-input-map]]). |
 | 2026-10-11 | Step 3.12 (interface sounds) done; the first sound after boot needs the sound output running first (a looped silence). Demo 3.13 approved: animated start-up from the boot splash's wordmark; a **quick menu** (side panel from the right, as on SteamOS) with power options and a read-only "Controls and features" guide, opened by **B where there is nothing to go back to** (an accidental press only opens the menu). View stays reserved for screenshots in a later wave ([[controller-input-map]]). |
 | 2026-10-12 | After the owner's first Steam test (Guide fought over by owneetd and Steam): **while Steam or a Steam game is on screen, a short Guide press is Steam's; holding Guide for 1 second comes back to the console** (option A; [[controller-input-map]]). "Exit Steam" in Steam's menu also comes back. Steam's own screens that matter (login, a game's launch progress) are shown automatically ([[game-library]]). |
+| 2026-10-13 | On-screen keyboard (owner's request): LT held = capital letters while it is held, as on Steam's keyboard; the pages of keys move to LB / RB (no section can be switched while the keyboard is open); RT does nothing there ([[controller-input-map]]). |

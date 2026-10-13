@@ -13,3 +13,4 @@ tags: [index]
 - [[knowledge-base]] — Why and how project knowledge moved to this Obsidian vault; the old files and references were retired.
 - [[repository]] — GitHub repository, main ruleset and owner bypass, the owner pushes, GPL-3.0-or-later, Conventional Commits.
 - [[step-workflow]] — In steps with the owner
+- [[test-pcs]] — Test PCs are installed with a tester installer and updated from the OWNEETLOG USB stick; only they accept unsigned OwneetOS packages.

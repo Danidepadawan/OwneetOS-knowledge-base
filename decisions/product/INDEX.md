@@ -11,4 +11,5 @@ tags: [index]
 
 - [[hard-constraints]] — C1-C9: lightweight, gamepad only, x86_64, minimal Arch, GPLv3, English, name, modular, offline.
 - [[online-and-chat]] — No own server; chat as pluggable modules, Discord web first, official clients only.
+- [[optional-apps]] — Users install only the apps they want (step 5.0); the ISO becomes slim and apps are downloaded when chosen.
 - [[wave-1-scope]] — What Wave 1 contains, what later waves and nice-to-haves are.

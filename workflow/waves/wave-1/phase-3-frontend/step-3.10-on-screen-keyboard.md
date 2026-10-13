@@ -33,3 +33,6 @@ Up: [[phase-3-frontend]] · Status: **done**
   hide, physical keyboard, Done → connected; `settings-network.txt`). Apps (Brave) get their
   keyboard later, through owneetd's virtual keyboard (2.4) and the extension (5.2).
   owneet-frontend 0.11.0.
+- **Change (owner, 2026-10-13):** LT held = capital letters while it is held (as on Steam's
+  keyboard); the pages of keys move to LB / RB; RT does nothing there. owneet-frontend 0.16.3;
+  preview `osk.txt` (the preview tool gained `press` / `release` steps to hold a button).

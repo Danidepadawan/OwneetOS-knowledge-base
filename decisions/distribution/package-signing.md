@@ -4,7 +4,7 @@ description: "Two-level OpenPGP key: offline primary, expiring signing subkey, w
 area: distribution
 status: active
 decided: 2026-10-04
-updated: 2026-10-04
+updated: 2026-10-13
 legacy: "PROJECT_RULES.md §5 (Package signing)"
 tags: [decision, distribution, security]
 ---
@@ -33,6 +33,8 @@ Two-level OpenPGP key:
   consumed inside the same builder VM); `tools/build-iso` prints a warning. A signed repository is
   always verified (`SigLevel = Required DatabaseRequired`). **Anything distributed to users must be
   signed.**
+- **Tester systems** (installed by the tester installer) accept unsigned OwneetOS packages, and only
+  from the OWNEETLOG USB stick; nothing is published online ([[test-pcs]]).
 
 Guard: [[secrets-and-signing]].
 
@@ -44,3 +46,4 @@ Entries of the [[decision-log]] that shaped this note.
 |---|---|
 | 2026-10-04 | Package signing: two-level key (primary offline with the owner, expiring signing subkey for owner + second developer), dedicated project e-mail ([[distribution-and-updates]]). |
 | 2026-10-04 | Signing key created (primary `B3BD F4E3 E477 2D3F 7E86 1A87 8D02 23BC EE51 456E`, `owneet@proton.me`). Key holders sign with their passphrase; development builds may be unsigned; distributed builds must be signed ([[distribution-and-updates]]). |
+| 2026-10-13 | **Test PCs are installed**, not run from a stick: a tester installer (step 4.2a, boot entry "Install OwneetOS (testers)") and updates from a USB stick (step 4.2b: the `owneet-updates` folder on the OWNEETLOG stick, applied automatically at boot and from Settings → System), before step 4.3. Nothing is published online. Only systems installed by the tester installer accept unsigned OwneetOS packages, and only from that stick (option b). Test PC: "FrankenPC" (i7-6700, 16 GB, 96 GB SSD + 2 TB HDD, GTX 1660 Super); the NiPoGi stays a live-stick test PC. |

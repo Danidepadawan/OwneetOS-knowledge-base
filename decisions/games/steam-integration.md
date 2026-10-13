@@ -4,7 +4,7 @@ description: "Steam in the ISO, controller-only Steam, its screens shown automat
 area: games
 status: active
 decided: 2026-10-11
-updated: 2026-10-12
+updated: 2026-10-13
 legacy: "PROJECT_RULES.md §8 (Steam), §13 (2026-10-11, 2026-10-12)"
 tags: [decision, games, steam]
 ---
@@ -26,6 +26,10 @@ tags: [decision, games, steam]
   only when needed (C1 is measured with Steam closed).
 - **Guide over Steam**: a short press is Steam's, holding 1 second comes back ([[guide-button]]).
 - Library: installed games only ([[game-library]]).
+- **A Steam game whose Linux version cannot start** (Steam: "Missing game executable") gets an
+  automatic recovery, offered to the user: try the version for Windows with Proton
+  ([[step-4.5-windows-games-proton]]).
+- Steam stays in the ISO until [[optional-apps]] arrive (step 5.0): then it is downloaded when chosen.
 
 Technical design: [[owneetd-api-apps]], [[frontend-steam-local-files]]. Steps: [[step-4.1-steam-library]],
 [[step-4.2-steam-integration]].
@@ -40,3 +44,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-11 | Demo 4.2 approved (with the generic store icon for Steam and no "Add games" in Favorites). **Distribution:** the ISO goes to SourceForge, the website to a `.org` domain on GitHub Pages, packages stay on GitHub ([[distribution-and-updates]]). **Steam is in the ISO** with 32-bit drivers for every GPU (about +300 MiB, [multilib] from the same snapshot). |
 | 2026-10-11 | Steam in the **live session** (no installed disk: Steam's first download of about 2.4 GB is kept in RAM): only with at least **12 GB of RAM**; otherwise a clear message asks to install OwneetOS to use Steam. The **installed system's requirements do not change** (4 GB minimum, 8 GB recommended); Steam is started only when needed (C1 is measured with Steam closed). |
 | 2026-10-12 | After the owner's first Steam test (Guide fought over by owneetd and Steam): **while Steam or a Steam game is on screen, a short Guide press is Steam's; holding Guide for 1 second comes back to the console** (option A; [[controller-input-map]]). "Exit Steam" in Steam's menu also comes back. Steam's own screens that matter (login, a game's launch progress) are shown automatically ([[game-library]]). |
+| 2026-10-13 | A Steam game whose Linux version cannot start (Steam: "Missing game executable") gets an automatic recovery, offered to the user: try the version for Windows with Proton ([[step-4.5-windows-games-proton]]). |

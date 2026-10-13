@@ -4,7 +4,7 @@ description: "ISO on SourceForge, website on GitHub Pages, [owneet] pacman repo,
 area: distribution
 status: active
 decided: 2026-10-03
-updated: 2026-10-11
+updated: 2026-10-13
 legacy: "PROJECT_RULES.md §5"
 tags: [decision, distribution]
 ---
@@ -17,7 +17,10 @@ tags: [decision, distribution]
   The SourceForge project and the domain are created by the owner at roadmap step 7.2.
   - **Steam is in the ISO** with the 32-bit graphics drivers of every GPU ([multilib]); Steam's
     runtime is downloaded by Steam on first launch, not shipped in the ISO ([[steam-integration]]).
-- ISO built with **archiso**, automated with **GitHub Actions**, with checksums and signatures.
+- ISO built with **archiso**, automated with **GitHub Actions**, with checksums and signatures. Its system
+  image is **squashfs + xz** (erofs + LZMA had silently corrupted six files, 2026-10-13); every ISO
+  build checks every file of the image against its package.
+- With [[optional-apps]] (step 5.0) the ISO becomes slim: apps are downloaded when chosen.
 - Packages built with **PKGBUILD**s; updates served from an **own pacman repository `[owneet]`**
   hosted on GitHub. Updates are triggered from the Settings menu with the gamepad.
 - Arch packages are **pinned to Arch Linux Archive snapshots**; the snapshot date is advanced only
@@ -38,3 +41,5 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-06 | ISO size: if 2 GB is exceeded, consider a free hosting service other than GitHub for the ISO ([[distribution-and-updates]], decided later). |
 | 2026-10-06 | xone packaged without `xone_wired` and without blacklisting `xpad`/`mt76x2u` (wired controllers and USB Wi-Fi adapters keep working); CI builds use the ISO's Arch snapshot for build dependencies too (step 1.7). |
 | 2026-10-11 | Demo 4.2 approved (with the generic store icon for Steam and no "Add games" in Favorites). **Distribution:** the ISO goes to SourceForge, the website to a `.org` domain on GitHub Pages, packages stay on GitHub ([[distribution-and-updates]]). **Steam is in the ISO** with 32-bit drivers for every GPU (about +300 MiB, [multilib] from the same snapshot). |
+| 2026-10-13 | **Optional apps** (new step 5.0): the user installs only the apps they want (at installation and later, from the apps page, installed and missing ones shown differently); the ISO becomes slim when 5.0 arrives (apps downloaded when chosen; option b). |
+| 2026-10-13 | The ISO's system image is squashfs + xz instead of erofs + LZMA, which had silently corrupted six files (kernel modules, an AMD firmware); every ISO build now checks every file against its package. ISO 1822 MiB. |

@@ -13,7 +13,8 @@ tags: [guard, product]
 - **Never bind the Guide button** outside the system daemon `owneetd` (apps and themes never see
   it). ([[guide-button]])
 - **Never give a button two meanings on the same screen**, and never use LB / RB for anything but
-  switching top-level sections. ([[controller-input-map]])
+  switching top-level sections (the one exception: the on-screen keyboard's pages of keys, where no
+  section can be switched). ([[controller-input-map]])
 - **Never intercept any input but Guide** while a game or app is running. ([[controller-input-map]])
 - **Never add bloat**: no desktop environment, no display manager, no dependency that is not
   justified by what it saves; idle target with Steam and Brave closed is under 500 MB RAM.

@@ -4,7 +4,7 @@ description: "In steps with the owner"
 area: process
 status: active
 decided: 2026-10-03
-updated: 2026-10-11
+updated: 2026-10-13
 legacy: "PROJECT_RULES.md §10 (Roadmap), header; ROADMAP.md How we work"
 tags: [decision, process]
 ---
@@ -18,8 +18,9 @@ tags: [decision, process]
   the owner reviews each step before the next one starts. The full procedure is in
   [[how-we-work]].
 - **Small hardware checks are batched** with the next larger test instead of a new USB stick each.
-- **Testers' boot entries** ("diagnostics", "test games") and the OWNEETLOG test log leave the user
-  ISO before the release (roadmap 7.4).
+- **Testers' boot entries** ("diagnostics", "test games", "Install OwneetOS (testers)") and the
+  OWNEETLOG test log leave the user ISO before the release (roadmap 7.4). Test PCs are installed and
+  updated from the stick ([[test-pcs]]).
 
 Guard: [[collaboration]]. Practices: [[testing-and-verification]].
 
@@ -36,3 +37,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-09 | Steps 3.7 (library) and 3.8 (frontend ↔ owneetd: games through owneetd, Guide / Resume) approved after the owner's test on the NiPoGi. Testers' boot entries ("diagnostics", "test games") leave the user ISO before the release (roadmap 7.4). |
 | 2026-10-11 | Step 3.10 (on-screen keyboard) approved. The next USB-stick test on real hardware comes at the end of step 3.12, with everything since step 3.9 (on-screen keyboard, notifications, interface sounds). |
 | 2026-10-13 | The knowledge base moves to the Obsidian vault `OwneetOS-knowledge-base`: guards, best practices, decisions and workflow documents in their own folders; guards loaded in every session and re-injected after compaction; `PROJECT_RULES.md`, `ROADMAP.md` and the design documents migrated with their history. |
+| 2026-10-13 | **Test PCs are installed**, not run from a stick: a tester installer (step 4.2a, boot entry "Install OwneetOS (testers)") and updates from a USB stick (step 4.2b: the `owneet-updates` folder on the OWNEETLOG stick, applied automatically at boot and from Settings → System), before step 4.3. Nothing is published online. Only systems installed by the tester installer accept unsigned OwneetOS packages, and only from that stick (option b). Test PC: "FrankenPC" (i7-6700, 16 GB, 96 GB SSD + 2 TB HDD, GTX 1660 Super); the NiPoGi stays a live-stick test PC. |

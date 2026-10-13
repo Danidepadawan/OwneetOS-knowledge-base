@@ -15,6 +15,7 @@ tags: [index]
 
 Status comes from each step note (`status:`).
 
+- `todo` [[step-5.0-optional-apps|5.0 Optional apps]] — A catalogue of the apps (name, generic icon, size, internet needed, packages): real programs (Steam with its 32-bit drivers, Brave,…
 - `todo` [[step-5.1-brave-in-the-os|5.1 Brave in the OS]] — `brave-bin` built into `[owneet]`, managed policies (forced extension, no first-run, Widevine on, locked settings), dedicated profile,…
 - `todo` [[step-5.2-extension-core|5.2 Extension core]] — Manifest V3 extension: Gamepad API loop, spatial navigation, B = back, exit to home, OSK for web forms.
 - `todo` [[step-5.3-youtube|5.3 YouTube]] — TV interface, playback controls on the gamepad.

@@ -3,13 +3,13 @@ type: step
 description: "Steam login and store in `-gamepadui` mode, game launch via the daemon, return to home on exit, Steam Store tile."
 phase: "[[phase-4-games]]"
 step: "4.2"
-status: todo
+status: done
 legacy: "ROADMAP.md 4.2"
 tags: [step, phase-4]
 ---
-# 4.2 Steam integration
+# 4.2 Steam integration *(approved 2026-10-13)*
 
-Up: [[phase-4-games]] · Status: **todo**
+Up: [[phase-4-games]] · Status: **done**
 
 - **Deliverables:** Steam login and store in `-gamepadui` mode, game launch via the daemon, return
   to home on exit, Steam Store tile.
@@ -65,8 +65,9 @@ Up: [[phase-4-games]] · Status: **todo**
   "Preparing Steam" screen covers the start); Guide was fought over by owneetd and Steam (owner's
   choice, option A: over Steam a short press is Steam's, holding it 1 second comes back to the
   console; owneetd 0.11.6); a game installed in Steam did not start (Steam: missing executable; the test stick now
-  keeps Steam's logs, owneet-base 0.0.21); the other developer saw a green, then yellow, bar at
-  the bottom of the screen (details pending). To check on real hardware with the owner's account:
+  keeps Steam's logs, owneet-base 0.0.21; the logs show a broken Linux version of the game, see
+  4.5); the other developer's green, then yellow, bar at the bottom of the screen came from a
+  firmware setting ("Windows Compatible") on his PC, not from OwneetOS. To check on real hardware with the owner's account:
   login, installing and starting a game, Guide in a game, Steam's own reaction to the Guide
   button, closing a game from the home screen.
 - **Demo (2026-10-11):** `design/demos/4.2-library-add-games.html`, built on the approved demo
@@ -75,3 +76,8 @@ Up: [[phase-4-games]] · Status: **todo**
   its library: a stand-in screen; Home brings back the library on "Add games") and "From a USB
   stick or disk" (a read-only guide to the `Games` folder; B goes back to the choice). B on the
   page: the quick menu (3.13).
+- **Approved (2026-10-13)** after the owner's test on the NiPoGi: login with the controller, no
+  glitches at Steam's start, Guide over Steam (short: Steam; held: the console), Steam shown
+  automatically while a game starts, a game installed in Steam started from the console's
+  library (Dragon's Wake, with Proton forced by hand: its Linux version is broken; automatic
+  recovery planned in 4.5).

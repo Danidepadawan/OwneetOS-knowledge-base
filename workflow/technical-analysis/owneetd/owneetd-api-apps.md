@@ -17,8 +17,10 @@ Up: [[owneetd-design]] · Conventions: [[owneetd-design#4. API v1 (draft)]]
 | POST | `/v1/apps/{id}/close` | Close: SIGTERM to all its processes, SIGKILL after 10 seconds |
 | POST | `/v1/apps/{id}/kill` | Force-close a frozen game at once (SIGKILL to all its processes) |
 
+| GET | `/v1/update` | Testers' updates from a USB stick (4.2b): `tester`, `state` (`none`, `available`, `installing`, `done`, `failed`, `no_stick`, `not_tester`), `message`, `packages` (`name`, `from`, `to`), `running` |
+| POST | `/v1/update/check` · `/v1/update/apply` | Start a check or the installation (202): root units `owneet-update@check` / `@apply.service`, allowed by a polkit rule; the result comes as `update.changed`. Errors `update.not_tester`, `update.busy` (409) |
 | GET | `/v1/steam` | `installed`, `allowed` (false in a live system with less than 12 GB of RAM), `prepared` (Steam has started once: no long first download), `running`, `games` (Steam app ids installed completely: the interface reads its games again when they change) (4.2) |
-| POST | `/v1/steam` | `{"open": "library"}` / `{"open": "store"}`, or `{"run": "480", "name": "…"}` — Steam starts if needed (202); a game is listed in `/v1/apps` as `steam:480` once Steam has started it |
+| POST | `/v1/steam` | `{"open": "library"}` / `{"open": "store"}`, or `{"run": "480", "name": "…"}`, with `"language": "it"` (the console's language tag: Steam starts with `-language italian`) — Steam starts if needed (202); a game is listed in `/v1/apps` as `steam:480` once Steam has started it |
 
 Errors: `apps.unavailable` (503), `apps.invalid` (400), `apps.program_not_found` (400),
 `apps.no_session` (409), `apps.already_running` (409, same id), `apps.game_running` (409, one game
@@ -53,7 +55,12 @@ at a time; apps such as the browser may run next to it), `apps.unknown_app` (404
   controllers only while it is on screen; in cage, which owneetd cannot read, the newest app is
   taken to be on screen).
 - **Steam (4.2):** the app `steam`, started as `env -u GAMESCOPE_WAYLAND_DISPLAY steam -gamepadui
-  URL` (see below); when it already runs, owneetd hands it the `steam://` address. A game Steam
+  URL` (see below), with `-language` from the interface's language and, under the NVIDIA driver,
+  `-cef-disable-gpu` (Steam's pages drawn with the GPU showed garbled, stale pictures inside
+  gamescope; games keep the GPU); when it already runs, owneetd hands it the `steam://` address.
+  Steam is closed cleanly (also at shutdown): its unit's stop asks Steam to exit through
+  `steam-runtime-steam-remote -shutdown` and waits for it, up to 20 s (killed with its processes,
+  Steam checks all its files at the next start). A game Steam
   starts runs inside Steam's unit under Steam's launcher (`reaper SteamLaunch AppId=N -- …`):
   owneetd finds it there (every second, and when one of its windows appears), lists it as the
   game `steam:N` (name from the interface, else from its `appmanifest`), tags its windows with an

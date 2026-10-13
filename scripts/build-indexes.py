@@ -91,7 +91,7 @@ FOLDERS = {
                               "Plan and status legend: [[wave-1]]. Scope: [[wave-1-scope]]."),
 }
 
-STEP = re.compile(r"step-\d+\.\d+-")
+STEP = re.compile(r"step-\d+\.\d+[a-z]?-")
 
 
 def is_step(p):
@@ -132,7 +132,8 @@ def index_link(folder, text):
 
 
 def step_key(p):
-    return tuple(int(x) for x in re.match(r"step-(\d+)\.(\d+)", p.stem).groups())
+    phase, step, suffix = re.match(r"step-(\d+)\.(\d+)([a-z]?)-", p.stem).groups()
+    return int(phase), int(step), suffix   # 4.2, 4.2a, 4.2b, 4.3
 
 
 def step_title(p):

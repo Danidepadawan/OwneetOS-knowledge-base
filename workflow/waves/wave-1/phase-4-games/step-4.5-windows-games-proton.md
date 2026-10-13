@@ -17,6 +17,13 @@ Up: [[phase-4-games]] · Status: **todo**
 - **Decided (owner, 2026-10-11):** Proton and its runtime (about 1 GB) stay out of the ISO:
   downloaded once, in the background, the first time the console is online; until
   then a Windows game says that it needs a one-time download (the only exception to C9).
+- **Broken Linux versions of Steam games (owner, 2026-10-13):** some Steam games ship a Linux
+  version that cannot start (e.g. Dragon's Wake, 399070: its Linux files lack the executable its
+  launch settings name; Steam says "Missing game executable"). owneetd notices the failed launch
+  in Steam's log and the console asks "This game's Linux version does not start. Try the version
+  for Windows?" [Try] [Cancel]; Try sets Proton for that game in Steam (Steam closed and reopened:
+  it saves the setting only while closed) and starts it again. Demo first; checked on real
+  hardware with the owner's account (it reads an undocumented Steam log).
 - **Note:** shader pre-compilation exists only for Steam games (Steam's own "Processing
   Vulkan shaders"); other games compile while they play, so the "preparing" screen covers the
   start only.
