@@ -1,5 +1,6 @@
 ---
 type: guard
+description: "Never act without the owner: approvals, asking, one step at a time, recording decisions, no pushing, English only."
 tags: [guard, process]
 ---
 # Guard: collaboration with the owner

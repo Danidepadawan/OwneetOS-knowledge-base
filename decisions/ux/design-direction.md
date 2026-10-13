@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "Approved look: deep navy and coral, Bricolage Grotesque + Lexend, about twenty palettes, provisional wordmark."
 area: ux
 status: active
 decided: 2026-10-03

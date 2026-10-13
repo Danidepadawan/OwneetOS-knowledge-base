@@ -1,5 +1,6 @@
 ---
 type: guard
+description: "What OwneetOS must never become: mouse required, Guide bound by apps, bloat, own server, hard-coded text or colours."
 tags: [guard, product]
 ---
 # Guard: product invariants

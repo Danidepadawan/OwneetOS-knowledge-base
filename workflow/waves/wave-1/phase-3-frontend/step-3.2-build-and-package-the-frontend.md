@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Reproducible build in the builder VM against Qt 5.15, PKGBUILD in `[owneet]`, frontend replaces the placeholder in the session."
 phase: "[[phase-3-frontend]]"
 step: "3.2"
 status: done

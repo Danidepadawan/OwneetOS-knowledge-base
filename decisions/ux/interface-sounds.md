@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "Eleven interface sounds from the owner, Kenney placeholders until then, outputs never sleep."
 area: ux
 status: active
 decided: 2026-10-08

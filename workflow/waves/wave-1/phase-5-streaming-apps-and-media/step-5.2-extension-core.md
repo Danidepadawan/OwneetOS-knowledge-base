@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Manifest V3 extension: Gamepad API loop, spatial navigation, B = back, exit to home, OSK for web forms."
 phase: "[[phase-5-streaming-apps-and-media]]"
 step: "5.2"
 status: todo

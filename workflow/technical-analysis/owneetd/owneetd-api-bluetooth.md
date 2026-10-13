@@ -1,5 +1,6 @@
 ---
 type: technical-analysis
+description: "API for BlueZ devices and automatic gamepad pairing, the pairing agent."
 component: owneetd
 legacy: "docs/daemon-design.md §4 Bluetooth"
 tags: [technical-analysis, owneetd, api]

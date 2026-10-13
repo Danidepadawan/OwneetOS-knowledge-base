@@ -1,5 +1,6 @@
 ---
 type: best-practice
+description: "Recurring interface rules: pickers, overflow opens the full list, Cancel first, no news for the user's own actions, navigation groups."
 scope: project
 tags: [best-practice, ux]
 ---

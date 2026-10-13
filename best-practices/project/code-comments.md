@@ -1,5 +1,6 @@
 ---
 type: best-practice
+description: "How comments are written: header blocks, why not what, comment size, citing vault notes as wikilinks, no TODOs."
 scope: project
 tags: [best-practice, style]
 ---

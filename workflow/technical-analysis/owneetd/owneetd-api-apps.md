@@ -1,5 +1,6 @@
 ---
 type: technical-analysis
+description: "API for launching, focusing and closing apps and games, gamescope focus, Guide, Steam handling."
 component: owneetd
 legacy: "docs/daemon-design.md §4 Apps and games"
 tags: [technical-analysis, owneetd, api]

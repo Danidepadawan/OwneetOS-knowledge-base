@@ -1,5 +1,6 @@
 ---
 type: step
+description: "JSON message files, loader, **English as the default language** and fallback, `en` + `it` complete, `docs/translating.md` for contributors."
 phase: "[[phase-3-frontend]]"
 step: "3.4"
 status: done

@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "Why and how project knowledge moved to this Obsidian vault; the old files and references were retired."
 area: process
 status: active
 decided: 2026-10-13

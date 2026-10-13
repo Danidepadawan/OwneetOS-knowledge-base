@@ -1,5 +1,6 @@
 ---
 type: best-practice
+description: "tools/lint and what it checks (shellcheck, SPDX, markdownlint, Go, i18n); CI runs the same."
 scope: project
 tags: [best-practice, quality]
 ---

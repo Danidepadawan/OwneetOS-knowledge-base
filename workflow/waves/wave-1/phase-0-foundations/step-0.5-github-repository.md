@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Remote repo, first push, branch protection on `main`, issue labels per phase."
 phase: "[[phase-0-foundations]]"
 step: "0.5"
 status: done

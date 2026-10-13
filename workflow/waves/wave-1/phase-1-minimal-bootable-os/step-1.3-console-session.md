@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Autologin user, session launcher that starts **gamescope** with a placeholder fullscreen app; Vulkan capability check with automatic…"
 phase: "[[phase-1-minimal-bootable-os]]"
 step: "1.3"
 status: done

@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "owneet-frontend is a Pegasus fork inside the repository; trademark terms, what is not used, Qt 5 now."
 area: architecture
 status: active
 decided: 2026-10-08

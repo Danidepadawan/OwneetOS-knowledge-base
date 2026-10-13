@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Install `qemu-system-x86`, `ovmf`, `qemu-utils` (asked at the moment); `vm/` scripts that keep every disk image, firmware variable store…"
 phase: "[[phase-0-foundations]]"
 step: "0.6"
 status: done

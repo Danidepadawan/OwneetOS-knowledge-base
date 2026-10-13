@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Home as in the approved mockup (continue playing, apps, jump back in, notices)."
 phase: "[[phase-3-frontend]]"
 step: "3.6"
 status: done

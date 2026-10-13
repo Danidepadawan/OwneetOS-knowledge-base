@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Udisks2 policy + daemon logic for internal and removable disks (ext4, btrfs, NTFS, exFAT), read-only NTFS when Windows left it…"
 phase: "[[phase-6-first-boot-installer-disks]]"
 step: "6.5"
 status: todo

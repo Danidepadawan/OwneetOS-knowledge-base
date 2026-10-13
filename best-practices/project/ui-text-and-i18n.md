@@ -1,5 +1,6 @@
 ---
 type: best-practice
+description: "No literal UI text: Tr singleton, en.json + it.json in the same change, key naming, placeholders, error codes."
 scope: project
 tags: [best-practice, i18n, ui]
 ---

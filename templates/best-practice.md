@@ -1,5 +1,6 @@
 ---
 type: best-practice
+description: ""
 scope: project
 tags: [best-practice]
 ---

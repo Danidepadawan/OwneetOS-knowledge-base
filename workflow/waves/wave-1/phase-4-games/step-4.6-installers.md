@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Installers found in a game's folder (GOG Linux `.sh`, Windows Inno Setup / NSIS / MSI, e.g. GOG's `setup_*.exe`) run silently in the…"
 phase: "[[phase-4-games]]"
 step: "4.6"
 status: todo

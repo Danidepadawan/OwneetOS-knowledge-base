@@ -1,5 +1,6 @@
 ---
 type: guard
+description: "Never harm the developer's PC: no host installs or builds, everything in the project folder, VMs only."
 tags: [guard, environment]
 ---
 # Guard: the developer's PC

@@ -1,5 +1,6 @@
 ---
 type: technical-analysis
+description: "The event stream (/v1/events) and every event type."
 component: owneetd
 legacy: "docs/daemon-design.md §4 Event stream"
 tags: [technical-analysis, owneetd, api]

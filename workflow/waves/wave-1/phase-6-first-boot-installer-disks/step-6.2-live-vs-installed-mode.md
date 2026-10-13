@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Detection, 'Install OwneetOS' entry shown only in live mode."
 phase: "[[phase-6-first-boot-installer-disks]]"
 step: "6.2"
 status: todo

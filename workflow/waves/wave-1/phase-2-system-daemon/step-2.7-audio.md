@@ -1,5 +1,6 @@
 ---
 type: step
+description: "PipeWire: volume, mute, output selection (speakers, HDMI, headset)."
 phase: "[[phase-2-system-daemon]]"
 step: "2.7"
 status: done

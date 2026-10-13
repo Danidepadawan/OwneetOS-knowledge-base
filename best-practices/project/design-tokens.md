@@ -1,5 +1,6 @@
 ---
 type: best-practice
+description: "Palette tokens, contrast thresholds, 1280x720 grid, text sizes, TV safe area, fonts and wordmark generation."
 scope: project
 tags: [best-practice, ux, design]
 ---

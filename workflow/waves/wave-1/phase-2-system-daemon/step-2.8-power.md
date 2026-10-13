@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Shut down, restart, suspend."
 phase: "[[phase-2-system-daemon]]"
 step: "2.8"
 status: done

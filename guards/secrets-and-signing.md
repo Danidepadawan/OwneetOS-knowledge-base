@@ -1,5 +1,6 @@
 ---
 type: guard
+description: "Never touch private keys or passphrases; never distribute unsigned builds."
 tags: [guard, security]
 ---
 # Guard: keys and signing

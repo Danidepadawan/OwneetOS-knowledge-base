@@ -1,5 +1,6 @@
 ---
 type: step
+description: "`git init`; directory layout (`iso/`, `packages/`, `daemon/`, `frontend/`, `extension/`, `installer/`, `tools/`, `vm/`, `docs/`,…"
 phase: "[[phase-0-foundations]]"
 step: "0.4"
 status: done

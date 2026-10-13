@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "Automatic mounting of every disk, read-only dirty NTFS, moving games and media between disks."
 area: games
 status: active
 decided: 2026-10-03

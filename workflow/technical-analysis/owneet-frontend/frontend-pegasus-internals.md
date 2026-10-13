@@ -1,5 +1,6 @@
 ---
 type: technical-analysis
+description: "How Pegasus works: backend, frontend, theme API, data providers kept or compiled out, game launching."
 component: owneet-frontend
 legacy: "docs/frontend-architecture.md §3"
 tags: [technical-analysis, frontend]

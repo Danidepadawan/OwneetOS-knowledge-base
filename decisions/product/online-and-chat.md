@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "No own server; chat as pluggable modules, Discord web first, official clients only."
 area: product
 status: active
 decided: 2026-10-03

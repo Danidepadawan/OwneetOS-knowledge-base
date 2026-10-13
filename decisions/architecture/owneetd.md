@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "owneetd in Go, HTTP + JSON over a Unix socket, user service not root, vendored modules."
 area: architecture
 status: active
 decided: 2026-10-07

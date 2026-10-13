@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Windows DRM-free games start like any other: umu-launcher + GE-Proton, one prefix per game, never named in the interface; a 'preparing…"
 phase: "[[phase-4-games]]"
 step: "4.5"
 status: todo

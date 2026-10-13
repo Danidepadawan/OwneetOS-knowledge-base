@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Web player navigation, playback continues in the background."
 phase: "[[phase-5-streaming-apps-and-media]]"
 step: "5.5"
 status: todo

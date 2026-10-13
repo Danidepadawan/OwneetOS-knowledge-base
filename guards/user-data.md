@@ -1,5 +1,6 @@
 ---
 type: guard
+description: "Never endanger the user's disks: BitLocker, erasing, dirty NTFS, moving games."
 tags: [guard, data]
 ---
 # Guard: the user's disks and data

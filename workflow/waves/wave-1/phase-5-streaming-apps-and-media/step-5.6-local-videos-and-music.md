@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Mpv with gamepad bindings, Videos and Music browsing in the frontend from mounted disks."
 phase: "[[phase-5-streaming-apps-and-media]]"
 step: "5.6"
 status: todo

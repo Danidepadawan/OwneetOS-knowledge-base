@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "One library for Steam and local games; Steam installed games only; filters and the Add games tile."
 area: games
 status: active
 decided: 2026-10-03

@@ -1,5 +1,6 @@
 ---
 type: best-practice
+description: "Conventional Commits, branch names, scopes, one change per commit."
 scope: project
 tags: [best-practice, git]
 ---

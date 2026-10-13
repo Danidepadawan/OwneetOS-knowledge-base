@@ -1,5 +1,6 @@
 ---
 type: functional-analysis
+description: "Wave 1 from the user's side: each area with the decision that defines it and the step that builds it."
 tags: [functional-analysis, product]
 ---
 # Wave 1: what the user gets

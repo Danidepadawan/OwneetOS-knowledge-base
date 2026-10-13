@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "nvidia-open or nouveau chosen at boot, forced composition on NVIDIA, INTEL_DEBUG=noccs, NVIDIA DDC/CI."
 area: hardware
 status: active
 decided: 2026-10-05

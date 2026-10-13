@@ -1,5 +1,6 @@
 ---
 type: wave
+description: "What comes after Wave 1, to be detailed into steps later."
 status: todo
 legacy: "ROADMAP.md Wave 2"
 tags: [wave]

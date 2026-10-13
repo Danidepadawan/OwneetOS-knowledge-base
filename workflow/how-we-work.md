@@ -1,5 +1,6 @@
 ---
 type: wave
+description: "How a roadmap step is run, reported and approved; Owner input steps; changing the plan openly."
 legacy: "ROADMAP.md How we work; CONTRIBUTING.md Workflow"
 tags: [workflow, process]
 ---

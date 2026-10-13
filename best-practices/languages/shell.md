@@ -1,5 +1,6 @@
 ---
 type: best-practice
+description: "Shell script conventions: header, set -euo pipefail, shellcheck, repository root, never touching the host."
 scope: language
 language: shell
 tags: [best-practice, shell]

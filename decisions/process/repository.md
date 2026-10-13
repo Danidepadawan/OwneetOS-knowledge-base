@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "GitHub repository, main ruleset and owner bypass, the owner pushes, GPL-3.0-or-later, Conventional Commits."
 area: process
 status: active
 decided: 2026-10-03

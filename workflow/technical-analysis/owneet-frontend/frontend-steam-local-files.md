@@ -1,5 +1,6 @@
 ---
 type: technical-analysis
+description: "Which Steam files are read (and which never) to list installed games and play time."
 component: owneet-frontend
 legacy: "docs/frontend-architecture.md §3 Steam"
 tags: [technical-analysis, frontend]

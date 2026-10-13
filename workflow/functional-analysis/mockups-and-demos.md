@@ -1,5 +1,6 @@
 ---
 type: functional-analysis
+description: "The approved mockups and interactive demos (design/ in the code repository), one per screen."
 legacy: "design/README.md"
 tags: [functional-analysis, design]
 ---

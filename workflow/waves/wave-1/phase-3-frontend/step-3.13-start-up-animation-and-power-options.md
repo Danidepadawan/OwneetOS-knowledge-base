@@ -1,5 +1,6 @@
 ---
 type: step
+description: "(A) an animated start-up: the OwneetOS logo moves with the start-up sound when the interface first appears; (B) power options from any…"
 phase: "[[phase-3-frontend]]"
 step: "3.13"
 status: done

@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "Steam in the ISO, controller-only Steam, its screens shown automatically, 12 GB RAM in the live session."
 area: games
 status: active
 decided: 2026-10-11

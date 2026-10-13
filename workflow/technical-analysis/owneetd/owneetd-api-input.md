@@ -1,5 +1,6 @@
 ---
 type: technical-analysis
+description: "API for the virtual keyboard and mouse used by the on-screen keyboard; keyboard layouts."
 component: owneetd
 legacy: "docs/daemon-design.md §4 Virtual input (on-screen keyboard)"
 tags: [technical-analysis, owneetd, api]

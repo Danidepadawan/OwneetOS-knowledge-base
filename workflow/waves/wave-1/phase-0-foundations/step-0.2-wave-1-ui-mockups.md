@@ -1,5 +1,6 @@
 ---
 type: step
+description: "`design/mockups/wave1-mockups.html` (first boot, home, library, settings)."
 phase: "[[phase-0-foundations]]"
 step: "0.2"
 status: done

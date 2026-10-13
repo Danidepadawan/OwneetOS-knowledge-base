@@ -1,11 +1,12 @@
 # OwneetOS — AI harness entry point
 
 This vault is the OwneetOS knowledge base; the code is in the sibling folder `../OwneetOS`.
-Everything imported below is binding in every session. Read other notes when the task needs them:
-start from [[README]] (vault home), [[decision-log]] or the [[wave-1|current wave]].
+Everything imported below is binding in every session. To find anything else, start at
+[[INDEX]] (or the `INDEX.md` of the relevant folder): one line per note, then open only what the
+task needs.
 
 @kb-rules.md
-@guards/guards-index.md
+@guards/INDEX.md
 @guards/collaboration.md
 @guards/host-safety.md
 @guards/secrets-and-signing.md

@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "The Games folder convention, Windows games through hidden Proton, background installers, licence prompt."
 area: games
 status: active
 decided: 2026-10-11

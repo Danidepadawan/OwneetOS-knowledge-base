@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Firmware, Mesa + Vulkan drivers, `nvidia-open` with automatic detection, `xone` (built into `[owneet]`), PipeWire, NetworkManager,…"
 phase: "[[phase-1-minimal-bootable-os]]"
 step: "1.5"
 status: done

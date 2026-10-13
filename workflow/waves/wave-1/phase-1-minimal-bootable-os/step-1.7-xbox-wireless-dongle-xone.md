@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Xone kernel module built for the ISO's kernel (rebuilt with every kernel change), firmware download helper (Microsoft's firmware,…"
 phase: "[[phase-1-minimal-bootable-os]]"
 step: "1.7"
 status: in-progress

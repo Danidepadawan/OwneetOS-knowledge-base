@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Systemd-boot config, Plymouth theme with the OwneetOS mark, quiet kernel parameters, no text on screen in normal boots."
 phase: "[[phase-1-minimal-bootable-os]]"
 step: "1.4"
 status: done

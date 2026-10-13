@@ -1,5 +1,6 @@
 ---
 type: best-practice
+description: "SPDX GPL-3.0-or-later header on every new source file."
 scope: project
 tags: [best-practice, legal]
 ---

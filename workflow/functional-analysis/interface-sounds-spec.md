@@ -1,5 +1,6 @@
 ---
 type: functional-analysis
+description: "The list of interface sounds with file names, events and lengths, and the file requirements."
 legacy: "design/sounds.md"
 tags: [functional-analysis, sounds]
 ---

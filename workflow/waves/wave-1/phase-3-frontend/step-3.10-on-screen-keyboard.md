@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Gamepad OSK for frontend text fields (Wi-Fi passwords, search), layouts per language. Until then the Wi-Fi password is typed with a…"
 phase: "[[phase-3-frontend]]"
 step: "3.10"
 status: done

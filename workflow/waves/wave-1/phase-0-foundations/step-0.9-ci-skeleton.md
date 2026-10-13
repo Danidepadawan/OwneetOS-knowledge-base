@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Workflow for linting (shell, Markdown, later Go/Rust and QML), placeholder ISO job; extend the `main` ruleset to require pull requests…"
 phase: "[[phase-0-foundations]]"
 step: "0.9"
 status: done

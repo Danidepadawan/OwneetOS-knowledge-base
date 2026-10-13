@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Installed Steam games read from local files (`libraryfolders.vdf`, `appmanifest_*.acf`) across all disks; play time from local Steam…"
 phase: "[[phase-4-games]]"
 step: "4.1"
 status: done

@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "xone in the image, Microsoft firmware downloaded with consent, xpad and mt76x2u kept."
 area: hardware
 status: active
 decided: 2026-10-06

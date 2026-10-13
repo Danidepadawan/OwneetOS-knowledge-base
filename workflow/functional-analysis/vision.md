@@ -1,5 +1,6 @@
 ---
 type: functional-analysis
+description: "What OwneetOS is and for whom: a console OS for any x86_64 PC, gamepad only, low-budget hardware."
 legacy: "PROJECT_RULES.md §1"
 tags: [functional-analysis, product]
 ---

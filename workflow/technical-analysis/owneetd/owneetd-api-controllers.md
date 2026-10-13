@@ -1,5 +1,6 @@
 ---
 type: technical-analysis
+description: "API listing controllers; how the Guide button is detected."
 component: owneetd
 legacy: "docs/daemon-design.md §4 Controllers"
 tags: [technical-analysis, owneetd, api]

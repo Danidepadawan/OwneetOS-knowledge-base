@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Folder convention + metadata file, automatic scan of mounted disks, artwork."
 phase: "[[phase-4-games]]"
 step: "4.3"
 status: todo

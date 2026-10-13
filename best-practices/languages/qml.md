@@ -1,5 +1,6 @@
 ---
 type: best-practice
+description: "QML conventions for the OwneetOS theme: foundation components, Nav/NavArea input, Tr, Theme, clock-based timers, file names."
 scope: language
 language: qml
 tags: [best-practice, qml, frontend]

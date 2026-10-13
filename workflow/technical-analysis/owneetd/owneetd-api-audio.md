@@ -1,5 +1,6 @@
 ---
 type: technical-analysis
+description: "API for PipeWire volume, mute and output selection."
 component: owneetd
 legacy: "docs/daemon-design.md §4 Audio"
 tags: [technical-analysis, owneetd, api]

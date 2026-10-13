@@ -1,5 +1,6 @@
 ---
 type: step
+description: "GitHub Actions job building the ISO (privileged container), checksums, build artefact."
 phase: "[[phase-1-minimal-bootable-os]]"
 step: "1.6"
 status: done

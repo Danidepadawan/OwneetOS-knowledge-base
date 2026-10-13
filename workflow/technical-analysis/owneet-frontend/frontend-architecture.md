@@ -1,5 +1,6 @@
 ---
 type: technical-analysis
+description: "owneet-frontend: where the code lives, build, Qt 6 status, links to internals and changes."
 component: owneet-frontend
 legacy: "docs/frontend-architecture.md"
 tags: [technical-analysis, frontend]

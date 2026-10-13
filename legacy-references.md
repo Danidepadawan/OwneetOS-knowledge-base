@@ -1,5 +1,6 @@
 ---
 type: meta
+description: "Where old references (PROJECT_RULES.md sections, ROADMAP.md steps, docs/*.md) point now."
 tags: [meta]
 ---
 # Legacy references

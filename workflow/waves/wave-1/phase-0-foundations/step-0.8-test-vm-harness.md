@@ -1,5 +1,6 @@
 ---
 type: step
+description: "UEFI test VM script with blank virtual disks (single disk, multi-disk, 'Windows-like' NTFS disk for later), controller passthrough (USB…"
 phase: "[[phase-0-foundations]]"
 step: "0.8"
 status: done

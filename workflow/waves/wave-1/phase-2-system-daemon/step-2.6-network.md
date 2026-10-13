@@ -1,5 +1,6 @@
 ---
 type: step
+description: "NetworkManager over D-Bus: scan, connect (with password from the OSK), forget, status."
 phase: "[[phase-2-system-daemon]]"
 step: "2.6"
 status: done

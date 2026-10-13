@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Launch / track / close games and apps, return to home on Guide, force-close a frozen game, focus handling inside gamescope."
 phase: "[[phase-2-system-daemon]]"
 step: "2.9"
 status: done

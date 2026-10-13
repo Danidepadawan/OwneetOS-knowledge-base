@@ -1,5 +1,6 @@
 ---
 type: step
+description: "QML installer in the OwneetOS style, gamepad-only, clear warnings and a final confirmation before erasing anything."
 phase: "[[phase-6-first-boot-installer-disks]]"
 step: "6.4"
 status: todo

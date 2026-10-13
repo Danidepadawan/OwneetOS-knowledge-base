@@ -1,5 +1,6 @@
 ---
 type: step
+description: "`PROJECT_RULES.md`, `CLAUDE.md`."
 phase: "[[phase-0-foundations]]"
 step: "0.1"
 status: done

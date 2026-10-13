@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Sounds for navigation and feedback, as listed in interface-sounds-spec, played from **placeholders** (`frontend/sounds/`, Kenney CC0,…"
 phase: "[[phase-3-frontend]]"
 step: "3.12"
 status: done

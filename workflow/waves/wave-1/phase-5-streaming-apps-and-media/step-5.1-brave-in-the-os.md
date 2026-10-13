@@ -1,5 +1,6 @@
 ---
 type: step
+description: "`brave-bin` built into `[owneet]`, managed policies (forced extension, no first-run, Widevine on, locked settings), dedicated profile,…"
 phase: "[[phase-5-streaming-apps-and-media]]"
 step: "5.1"
 status: todo

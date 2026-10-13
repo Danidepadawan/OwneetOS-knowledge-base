@@ -10,6 +10,29 @@
             "statusMessage": "Re-loading OwneetOS guards"
           }
         ]
+      },
+      {
+        "matcher": "startup|resume|clear",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR\"/scripts/build-indexes.py --hook",
+            "timeout": 30,
+            "statusMessage": "Rebuilding OwneetOS vault indexes"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR\"/scripts/build-indexes.py --hook",
+            "timeout": 30
+          }
+        ]
       }
     ]
   }

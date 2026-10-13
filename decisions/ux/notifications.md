@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "Banners, bell and list on Y; attention vs info sounds; nothing drawn over a game."
 area: ux
 status: active
 decided: 2026-10-11

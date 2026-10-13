@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Builder VM from the official Arch cloud image, provisioned by script (cloud-init), project folder shared into the VM (virtiofs or 9p),…"
 phase: "[[phase-0-foundations]]"
 step: "0.7"
 status: done

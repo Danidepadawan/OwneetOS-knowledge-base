@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "Mockups and an interactive HTML demo approved by the owner before any screen's code."
 area: ux
 status: active
 decided: 2026-10-03

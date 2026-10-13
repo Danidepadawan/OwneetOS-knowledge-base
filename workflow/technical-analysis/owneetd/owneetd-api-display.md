@@ -1,5 +1,6 @@
 ---
 type: technical-analysis
+description: "API for the screen in use, modes, Keep this?, other cards turned off, brightness, keyboard layout."
 component: owneetd
 legacy: "docs/daemon-design.md §4 Display"
 tags: [technical-analysis, owneetd, api]

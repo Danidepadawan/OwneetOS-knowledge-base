@@ -1,20 +1,28 @@
 ---
 type: meta
+description: "How the vault is organised and kept up to date: categories, note format, recording decisions. Read before adding or changing notes."
 tags: [meta]
 ---
 # Knowledge base rules
 
 How this vault is organised and kept up to date. It is loaded in every AI session together with
-the [[guards-index|guards]]. Paths in backticks (`daemon/`, `tools/lint`) are relative to the code
+the [[guards/INDEX|guards]]. Paths in backticks (`daemon/`, `tools/lint`) are relative to the code
 repository `OwneetOS/`; links in double brackets are notes of this vault.
 
 ## Precedence
 
 1. The **owner's edits always win**, in any note.
-2. [[guards-index|Guards]] (never break them) → [[decision-log|decisions]] → best practices →
+2. [[guards/INDEX|Guards]] (never break them) → [[decision-log|decisions]] → best practices →
    workflow documents. If two notes disagree, the higher one wins and the lower one gets fixed in
    the same change.
 3. If something is not covered, or the vault and the code disagree: **ask the owner**, never assume.
+
+## Finding notes
+
+Every folder has an **`INDEX.md`** with one line per note (its `description`) and links to the
+sub-folders' indexes; step lists show each step's status. Start at [[INDEX]], read the lines, and
+open only the notes the task needs. The indexes are **generated** by `scripts/build-indexes.py`:
+never edit them by hand.
 
 ## Categories (one folder each)
 
@@ -27,7 +35,7 @@ repository `OwneetOS/`; links in double brackets are notes of this vault.
 | `workflow/functional-analysis/` | What the product does for the user (vision, features, specs of behaviour). | Is it "what", seen by the user? |
 | `workflow/technical-analysis/` | How a component is built (design, API, internals). | Is it "how", seen by a developer? |
 | `workflow/waves/` | The plan: waves → phases → steps, with status and outcome. | Is it "when / in which order / is it done"? |
-| root, `templates/` | Everything else: this file, the vault home, the legacy map, templates. | — |
+| root, `templates/`, `scripts/` | Everything else: this file, the vault home, the legacy map, templates, the index generator. | — |
 
 Decisions and best practices often justify each other: link both ways (a best practice says
 which decision it comes from; a decision lists the practices and guards it creates).
@@ -37,9 +45,11 @@ which decision it comes from; a decision lists the practices and guards it creat
 - **One topic per note.** A note that covers two topics, or grows past ~150 lines, is split.
   Guards stay short (they are loaded every time): one line per rule, no history.
 - **File names:** `kebab-case.md`, unique in the whole vault (links use the bare name). Step notes:
-  `step-<n.m>-<topic>.md`.
+  `step-<n.m>-<topic>.md`. The only repeated name is `INDEX.md`, always linked with its path
+  (`[[decisions/INDEX]]`; the root one is `[[INDEX]]`).
 - **Front matter** on every note: `type` (guard, best-practice, decision, functional-analysis,
-  technical-analysis, wave, phase, step, meta) and `tags`. Decisions add `area`, `status`
+  technical-analysis, wave, phase, step, meta), **`description`** (one line: what the note covers
+  and when to read it; it is the note's line in its folder's index) and `tags`. Decisions add `area`, `status`
   (active, superseded, proposed), `decided`, `updated`; steps add `status` (done, in-progress,
   todo, needs-decision) and `phase`; `legacy` names the old section it came from.
 - **Links:** `[[note]]` or `[[note|text]]` for every reference to another note; never "see the
@@ -52,8 +62,12 @@ which decision it comes from; a decision lists the practices and guards it creat
   (summary at the top, a new row in its *History*), (2) add the row to [[decision-log]], (3) update
   every guard, best practice and step note it affects. A replaced decision is never deleted: its
   note gets `status: superseded` and a link to the one that replaces it.
-- **A step changes status or gets an outcome:** update its step note and the status in its phase
-  note.
+- **A step changes status or gets an outcome:** update its step note (`status:` and the outcome).
+  The status is written there only; the indexes show it.
+- **After adding, renaming, moving or describing a note:** the indexes must be rebuilt
+  (`scripts/build-indexes.py`). Claude Code does it by itself after every edit of a vault note, and
+  at the start of each session; after editing in Obsidian or with a shell command, run it.
+  `scripts/build-indexes.py --check` fails on stale indexes, missing descriptions and broken links.
 - **A new guard** needs the owner's agreement: guards are prohibitions, not preferences.
 - Old references in code comments (`PROJECT_RULES.md section 9.1`, `roadmap step 3.4`) are
   resolved with [[legacy-references]].

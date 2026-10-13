@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Spatial navigation and the global input map (controller-input-map) implemented once and shared by every screen."
 phase: "[[phase-3-frontend]]"
 step: "3.5"
 status: done

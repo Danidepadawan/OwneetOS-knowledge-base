@@ -1,5 +1,6 @@
 ---
 type: best-practice
+description: "Go conventions for owneetd: gofmt, standard library first, vendoring, package layout, doc comments, logging, API errors, tests."
 scope: language
 language: go
 tags: [best-practice, go]

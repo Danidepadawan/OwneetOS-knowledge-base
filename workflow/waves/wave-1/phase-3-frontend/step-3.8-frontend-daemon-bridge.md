@@ -1,5 +1,6 @@
 ---
 type: step
+description: "QML client for the `owneetd` API and event stream (XMLHttpRequest or a small C++ plugin in the fork, decided in 3.1)."
 phase: "[[phase-3-frontend]]"
 step: "3.8"
 status: done

@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Design tokens (palettes from design-direction), bundled fonts, 1280×720 scaling grid, safe area, focus ring, prompt bar with Xbox /…"
 phase: "[[phase-3-frontend]]"
 step: "3.3"
 status: done

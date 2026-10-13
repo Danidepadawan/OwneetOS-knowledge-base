@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "Fixed user owneet with autologin; gamescope or cage fallback; gamescope --steam; one systemd service per app."
 area: architecture
 status: active
 decided: 2026-10-05

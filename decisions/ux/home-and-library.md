@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "Overflow rule, library disks summary and Disks window, offline icon in the top bar."
 area: ux
 status: active
 decided: 2026-10-09

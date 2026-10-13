@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "Start-up animation from the splash; quick menu on B where there is nothing to go back to; View reserved."
 area: ux
 status: active
 decided: 2026-10-11

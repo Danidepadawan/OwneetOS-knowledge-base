@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "C1-C9: lightweight, gamepad only, x86_64, minimal Arch, GPLv3, English, name, modular, offline."
 area: product
 status: active
 decided: 2026-10-03

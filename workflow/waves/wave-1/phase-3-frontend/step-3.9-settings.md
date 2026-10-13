@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Appearance (palette, text size, reduce motion, persisted), Network, Controllers and Bluetooth, Audio, Display (resolution, refresh rate…"
 phase: "[[phase-3-frontend]]"
 step: "3.9"
 status: done

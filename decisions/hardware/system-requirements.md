@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "x86_64, UEFI, 4 GB RAM (8 recommended), 32 GB disk, Vulkan or cage fallback; 12 GB for live Steam."
 area: hardware
 status: active
 decided: 2026-10-03

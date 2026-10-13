@@ -1,5 +1,6 @@
 ---
 type: best-practice
+description: "What lives in the vault and what stays in the code repository's READMEs."
 scope: project
 tags: [best-practice, docs]
 ---

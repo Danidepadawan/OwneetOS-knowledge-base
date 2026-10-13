@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "In steps with the owner"
 area: process
 status: active
 decided: 2026-10-03

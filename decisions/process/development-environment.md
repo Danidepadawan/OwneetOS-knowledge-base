@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "Host safety, everything in the project folder, builder and test VMs, asking before host installs."
 area: process
 status: active
 decided: 2026-10-03

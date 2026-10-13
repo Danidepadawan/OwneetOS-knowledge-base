@@ -1,5 +1,6 @@
 ---
 type: best-practice
+description: "Markdown conventions: markdownlint config, 100-column prose, tables, code spans, vault links."
 scope: language
 language: markdown
 tags: [best-practice, markdown, docs]

@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Tagged release builds the ISO in CI, signs, writes checksums and release notes, publishes the ISO (and its source archive) to…"
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.2"
 status: todo

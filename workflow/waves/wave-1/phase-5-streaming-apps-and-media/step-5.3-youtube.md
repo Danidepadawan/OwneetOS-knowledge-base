@@ -1,5 +1,6 @@
 ---
 type: step
+description: "TV interface, playback controls on the gamepad."
 phase: "[[phase-5-streaming-apps-and-media]]"
 step: "5.3"
 status: todo

@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "Two-level OpenPGP key: offline primary, expiring signing subkey, who signs, unsigned development builds."
 area: distribution
 status: active
 decided: 2026-10-04

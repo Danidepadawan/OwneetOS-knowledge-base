@@ -1,5 +1,6 @@
 ---
 type: best-practice
+description: "When a new dependency is acceptable: lightweight first, licence check, CREDITS.md, vendoring, pinning."
 scope: project
 tags: [best-practice, dependencies]
 ---

@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "First-boot flow: controller, language, network, time zone; cable or Bluetooth controller notice."
 area: ux
 status: active
 decided: 2026-10-06

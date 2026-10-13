@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "The chosen component for each layer: boot, session, frontend, daemon, browser, media, stores, Proton, emulation."
 area: architecture
 status: active
 decided: 2026-10-03

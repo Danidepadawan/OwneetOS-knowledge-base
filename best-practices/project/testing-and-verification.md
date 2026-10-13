@@ -1,5 +1,6 @@
 ---
 type: best-practice
+description: "How steps are verified: builder and test VMs, frontend-preview, fakes, real hardware batches, measurements."
 scope: project
 tags: [best-practice, testing]
 ---

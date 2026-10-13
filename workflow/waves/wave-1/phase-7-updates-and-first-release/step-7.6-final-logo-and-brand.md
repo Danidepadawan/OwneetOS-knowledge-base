@@ -1,5 +1,6 @@
 ---
 type: step
+description: "The final OwneetOS logo and wordmark (the current wordmark is provisional), checked together with the trademark search of 7.5; boot…"
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.6"
 status: todo

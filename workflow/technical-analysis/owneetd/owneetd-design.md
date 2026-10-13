@@ -1,5 +1,6 @@
 ---
 type: technical-analysis
+description: "owneetd design: Go vs Rust, privileges, Unix socket transport, API conventions, open points."
 component: owneetd
 status: approved
 legacy: "docs/daemon-design.md"

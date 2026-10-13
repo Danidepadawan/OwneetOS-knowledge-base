@@ -1,5 +1,6 @@
 ---
 type: best-practice
+description: "Format, loudness, licence and naming rules for interface sound files; one sound per press."
 scope: project
 tags: [best-practice, sounds]
 ---

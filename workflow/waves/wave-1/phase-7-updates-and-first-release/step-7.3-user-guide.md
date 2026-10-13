@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Illustrated guide: download, write the USB stick (balenaEtcher / Ventoy), disable Secure Boot (per-brand pointers), anti-cheat warning…"
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.3"
 status: todo

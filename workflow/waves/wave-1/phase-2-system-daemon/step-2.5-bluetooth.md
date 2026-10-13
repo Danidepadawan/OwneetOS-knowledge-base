@@ -1,5 +1,6 @@
 ---
 type: step
+description: "BlueZ over D-Bus: list, pair, trust, forget; **automatic gamepad pairing mode** (accept any device that identifies as a gamepad, no…"
 phase: "[[phase-2-system-daemon]]"
 step: "2.5"
 status: done

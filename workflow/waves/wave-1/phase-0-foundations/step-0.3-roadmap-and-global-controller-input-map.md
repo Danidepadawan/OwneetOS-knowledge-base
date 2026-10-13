@@ -1,5 +1,6 @@
 ---
 type: step
+description: "This file; controller-input-map."
 phase: "[[phase-0-foundations]]"
 step: "0.3"
 status: done

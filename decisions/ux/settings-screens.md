@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "Settings review outcomes: controllers off/forget, brightness where possible, Mute first, Show password."
 area: ux
 status: active
 decided: 2026-10-09

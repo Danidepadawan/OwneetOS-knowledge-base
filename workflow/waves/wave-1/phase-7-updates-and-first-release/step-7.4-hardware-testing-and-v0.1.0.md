@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Test matrix (Intel / AMD / NVIDIA, old iGPU fallback, 4 GB RAM machine), bug fixing, RAM and boot-time measurements against the targets,…"
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.4"
 status: todo

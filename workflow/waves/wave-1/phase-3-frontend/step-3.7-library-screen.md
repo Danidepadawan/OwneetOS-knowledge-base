@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Unified grid, filters on LT/RT, sort on Y, disks with free space."
 phase: "[[phase-3-frontend]]"
 step: "3.7"
 status: done

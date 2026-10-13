@@ -1,5 +1,6 @@
 ---
 type: technical-analysis
+description: "API for daemon and OwneetOS version and session mode."
 component: owneetd
 legacy: "docs/daemon-design.md §4 Status"
 tags: [technical-analysis, owneetd, api]

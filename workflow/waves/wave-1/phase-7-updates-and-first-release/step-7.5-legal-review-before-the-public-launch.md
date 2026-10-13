@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Trademark search for 'OwneetOS' (EUIPO, Italian register); licence notices in the UI ('About → Licences'); review of licences,…"
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.5"
 status: todo

@@ -1,5 +1,6 @@
 ---
 type: technical-analysis
+description: "How gamepad input reaches QML and how Pegasus keys map to the OwneetOS input map."
 component: owneet-frontend
 legacy: "docs/frontend-architecture.md §3 Input"
 tags: [technical-analysis, frontend]

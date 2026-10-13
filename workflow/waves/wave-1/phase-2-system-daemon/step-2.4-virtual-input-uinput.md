@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Virtual keyboard and mouse devices for the system-wide on-screen keyboard and for apps that need key presses."
 phase: "[[phase-2-system-daemon]]"
 step: "2.4"
 status: done

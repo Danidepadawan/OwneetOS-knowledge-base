@@ -1,5 +1,6 @@
 ---
 type: step
+description: "The owner's final sounds (interface-sounds-spec: names, format, lengths, licences) replace the placeholders of `frontend/sounds/`;…"
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.7"
 status: todo

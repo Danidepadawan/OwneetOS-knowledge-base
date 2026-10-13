@@ -1,5 +1,6 @@
 ---
 type: guard
+description: "Never redistribute restricted components, ship NC/ND assets, use Pegasus or third-party logos, scrape, or skip credits."
 tags: [guard, legal]
 ---
 # Guard: legal

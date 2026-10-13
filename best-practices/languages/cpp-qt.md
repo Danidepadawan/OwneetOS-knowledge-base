@@ -1,5 +1,6 @@
 ---
 type: best-practice
+description: "C++/Qt conventions in owneet-frontend: owneet namespace, small changes to Pegasus, one commit per change, tests."
 scope: language
 language: cpp
 tags: [best-practice, cpp, qt, frontend]

@@ -1,5 +1,6 @@
 ---
 type: step
+description: "`iso/` profile derived from Arch `baseline`, minimal package list, pinned Arch Linux Archive snapshot date, OwneetOS branding in…"
 phase: "[[phase-1-minimal-bootable-os]]"
 step: "1.1"
 status: done

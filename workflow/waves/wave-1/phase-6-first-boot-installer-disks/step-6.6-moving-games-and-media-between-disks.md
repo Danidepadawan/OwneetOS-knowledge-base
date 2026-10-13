@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Menu on a game (later on media) → 'Move to another disk': the disks with their free space, copy with progress and cancel, check, then…"
 phase: "[[phase-6-first-boot-installer-disks]]"
 step: "6.6"
 status: todo

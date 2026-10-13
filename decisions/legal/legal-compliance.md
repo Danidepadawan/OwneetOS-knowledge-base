@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "GPL source archives, licence notices, never-redistributed components, trademarks, credits, asset licences, privacy."
 area: legal
 status: active
 decided: 2026-10-07

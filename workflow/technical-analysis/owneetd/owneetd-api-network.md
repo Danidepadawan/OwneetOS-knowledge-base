@@ -1,5 +1,6 @@
 ---
 type: technical-analysis
+description: "API for NetworkManager status, Wi-Fi scan, connect, forget, saved networks."
 component: owneetd
 legacy: "docs/daemon-design.md §4 Network"
 tags: [technical-analysis, owneetd, api]

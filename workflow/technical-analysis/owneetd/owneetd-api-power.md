@@ -1,5 +1,6 @@
 ---
 type: technical-analysis
+description: "API for shut down, restart and suspend through logind."
 component: owneetd
 legacy: "docs/daemon-design.md §4 Power"
 tags: [technical-analysis, owneetd, api]

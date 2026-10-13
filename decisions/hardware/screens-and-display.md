@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "One screen, others off; Keep this? after 15 s (30 s for a new screen); brightness only where possible."
 area: hardware
 status: active
 decided: 2026-10-08

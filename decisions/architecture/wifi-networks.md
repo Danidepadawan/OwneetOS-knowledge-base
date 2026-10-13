@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "Wi-Fi networks saved system-wide through a narrow polkit rule; owneet is not an administrator."
 area: architecture
 status: active
 decided: 2026-10-07

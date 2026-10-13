@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Evdev discovery and hot-plug, SDL_GameControllerDB mapping, Guide button detection, controller battery level, event stream to clients."
 phase: "[[phase-2-system-daemon]]"
 step: "2.3"
 status: done

@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "Guide is owned by owneetd: home toggle in gamescope, hold 2 s in cage, hold 1 s over Steam."
 area: architecture
 status: active
 decided: 2026-10-07

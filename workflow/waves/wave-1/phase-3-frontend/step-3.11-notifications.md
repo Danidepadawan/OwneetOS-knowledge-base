@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Notice area on home + transient toasts fed by daemon events."
 phase: "[[phase-3-frontend]]"
 step: "3.11"
 status: done

@@ -1,5 +1,6 @@
 ---
 type: step
+description: "A page with every app (streaming services, Videos, Music, stores, and the ones added later), reached from the home screen: when there…"
 phase: "[[phase-5-streaming-apps-and-media]]"
 step: "5.7"
 status: todo

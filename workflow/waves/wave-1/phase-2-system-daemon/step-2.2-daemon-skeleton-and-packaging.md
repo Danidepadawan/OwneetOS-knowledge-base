@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Project layout, config file, logging, systemd units, PKGBUILD, CI build + tests."
 phase: "[[phase-2-system-daemon]]"
 step: "2.2"
 status: done

@@ -1,5 +1,6 @@
 ---
 type: step
+description: "`packages/` with PKGBUILD layout, build script (clean chroot in the builder VM), repository database, package signing key, repo consumed…"
 phase: "[[phase-1-minimal-bootable-os]]"
 step: "1.2"
 status: done

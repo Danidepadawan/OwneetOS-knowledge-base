@@ -1,5 +1,6 @@
 ---
 type: step
+description: "A pointer moved by the controller (stick, A = click) for the few windows made only for a mouse: unknown installers (4.6), launchers…"
 phase: "[[phase-4-games]]"
 step: "4.7"
 status: todo

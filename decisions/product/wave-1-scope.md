@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "What Wave 1 contains, what later waves and nice-to-haves are."
 area: product
 status: active
 decided: 2026-10-03

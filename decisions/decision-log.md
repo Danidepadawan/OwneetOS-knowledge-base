@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "Every decision agreed with the owner, in date order, with the note where each lives now."
 legacy: "PROJECT_RULES.md §13"
 tags: [decision, log]
 ---
@@ -10,15 +11,7 @@ Every decision agreed with the owner, in order. The text of each row is the orig
 lives now. New decisions are added at the bottom, in the same change as their decision note
 ([[kb-rules]]).
 
-Decisions by area:
-- **architecture:** [[architecture-stack]] · [[boot-experience]] · [[console-session]] · [[frontend-fork]] · [[guide-button]] · [[owneetd]] · [[wifi-networks]]
-- **distribution:** [[distribution-and-updates]] · [[installer-and-firmware]] · [[package-signing]]
-- **games:** [[disks]] · [[game-library]] · [[games-on-disk]] · [[steam-integration]]
-- **hardware:** [[controllers-and-pairing]] · [[graphics-drivers]] · [[screens-and-display]] · [[system-requirements]] · [[xbox-wireless-dongle]]
-- **legal:** [[legal-compliance]]
-- **process:** [[development-environment]] · [[knowledge-base]] · [[repository]] · [[step-workflow]]
-- **product:** [[hard-constraints]] · [[online-and-chat]] · [[wave-1-scope]]
-- **ux:** [[controller-input-map]] · [[demo-before-code]] · [[design-direction]] · [[first-boot-setup]] · [[home-and-library]] · [[interface-sounds]] · [[languages]] · [[notifications]] · [[quick-menu-and-startup]] · [[settings-screens]]
+Decisions by area: [[decisions/INDEX|decisions index]].
 
 | Date | Decision | Notes |
 |---|---|---|

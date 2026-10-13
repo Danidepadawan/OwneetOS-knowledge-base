@@ -1,5 +1,6 @@
 ---
 type: best-practice
+description: "PKGBUILD rules: local sources and checksums, source-dirs, pkgrel bumps, clean chroot, kernel modules."
 scope: project
 tags: [best-practice, packaging]
 ---

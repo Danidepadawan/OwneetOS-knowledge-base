@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Widevine verified, browse / play / pause / seek on the gamepad."
 phase: "[[phase-5-streaming-apps-and-media]]"
 step: "5.4"
 status: todo

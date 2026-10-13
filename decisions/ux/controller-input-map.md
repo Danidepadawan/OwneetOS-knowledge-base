@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "The binding meaning of every button on every screen, keyboard fallback, OSK buttons, repeat timing."
 area: ux
 status: active
 decided: 2026-10-03

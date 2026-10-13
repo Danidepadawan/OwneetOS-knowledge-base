@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Short comparison (RAM, binary size, D-Bus/evdev libraries, contributor friendliness), API specification (endpoints + event stream),…"
 phase: "[[phase-2-system-daemon]]"
 step: "2.1"
 status: done

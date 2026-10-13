@@ -1,5 +1,6 @@
 ---
 type: technical-analysis
+description: "What OwneetOS changes in Pegasus's C++ and what lives in the QML theme (foundations, shell, sections)."
 component: owneet-frontend
 legacy: "docs/frontend-architecture.md §4"
 tags: [technical-analysis, frontend]

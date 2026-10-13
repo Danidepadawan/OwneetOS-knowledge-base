@@ -1,5 +1,6 @@
 ---
 type: best-practice
+description: "Interface wording: plain words for a TV seen from the sofa, no technical names, no error codes."
 scope: project
 tags: [best-practice, ux, writing]
 ---

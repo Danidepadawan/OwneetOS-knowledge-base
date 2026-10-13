@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "Controllers work instantly; zero-input Bluetooth auto-pairing of gamepads; pairing UI; glyph sets."
 area: hardware
 status: active
 decided: 2026-10-03

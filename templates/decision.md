@@ -1,5 +1,6 @@
 ---
 type: decision
+description: ""
 area:
 status: active
 decided: {{date:YYYY-MM-DD}}

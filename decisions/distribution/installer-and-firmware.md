@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "Own QML installer, dual boot considered but not required, BitLocker, Secure Boot always disabled."
 area: distribution
 status: active
 decided: 2026-10-03

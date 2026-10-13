@@ -1,5 +1,6 @@
 ---
 type: wave
+description: "Nice-to-have items with no order yet (screen reader, crash reports, emulation, Qt 6, translations, recording)."
 status: todo
 legacy: "ROADMAP.md Backlog"
 tags: [wave]

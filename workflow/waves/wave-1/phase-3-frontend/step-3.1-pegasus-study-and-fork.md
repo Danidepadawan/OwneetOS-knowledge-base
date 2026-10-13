@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Clone `mmatyas/pegasus-frontend` (master, with submodules), fork on GitHub as `owneet-frontend`, frontend-architecture describing build…"
 phase: "[[phase-3-frontend]]"
 step: "3.1"
 status: done

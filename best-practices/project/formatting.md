@@ -1,5 +1,6 @@
 ---
 type: best-practice
+description: "Indentation per file type, 100-column lines, UTF-8/LF (.editorconfig)."
 scope: project
 tags: [best-practice, style]
 ---

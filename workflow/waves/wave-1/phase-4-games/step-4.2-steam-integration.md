@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Steam login and store in `-gamepadui` mode, game launch via the daemon, return to home on exit, Steam Store tile."
 phase: "[[phase-4-games]]"
 step: "4.2"
 status: todo

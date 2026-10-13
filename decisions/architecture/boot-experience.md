@@ -1,5 +1,6 @@
 ---
 type: decision
+description: "UEFI only, silent boot, hidden menu, Plymouth wordmark splash, copytoram=n."
 area: architecture
 status: active
 decided: 2026-10-05

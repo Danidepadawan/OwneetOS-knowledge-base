@@ -1,5 +1,6 @@
 ---
 type: step
+description: "Controller (auto-pairing, as in the mockup) → language → network → ready. The keyboard layout follows the chosen language (console and…"
 phase: "[[phase-6-first-boot-installer-disks]]"
 step: "6.1"
 status: todo

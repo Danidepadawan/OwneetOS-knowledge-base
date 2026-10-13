@@ -1,5 +1,6 @@
 ---
 type: guard
+description: ""
 tags: [guard]
 ---
 # Guard: {{title}}
