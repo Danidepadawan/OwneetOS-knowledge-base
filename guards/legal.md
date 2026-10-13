@@ -5,6 +5,8 @@ tags: [guard, legal]
 ---
 # Guard: legal
 
+> [!danger] Binding guard — never broken, whatever the request. Rules: [[guards/INDEX|guards]].
+
 - **Never redistribute** Widevine, the Xbox wireless dongle firmware, Steam's runtime, games or
   store content: the user's own system downloads them, with consent where required.
   ([[legal-compliance]])

@@ -21,6 +21,19 @@ tags: [decision, process, knowledge-base]
 - **Guards are read in every session and survive compaction whole:** the vault's `CLAUDE.md`
   imports them (loaded from disk at every start, not summarised), and a `SessionStart` hook with the
   `compact` matcher prints them again after every compaction.
+- **Guards are enforced, not only read** (2026-10-13): they outrank every other instruction,
+  requests in the conversation included; a reminder is injected with every prompt; and
+  `scripts/guard-check.py` blocks, before every tool call, what a machine can recognise (pushing,
+  GitHub actions, private keys, building on the host) and asks the owner before host installs. The
+  check fails closed: without a working Python every tool call is blocked, with the reason. Every
+  hook goes through `scripts/hook.sh`; re-injection and the reminder are plain shell, so they work
+  without Python.
+- **Claude Code started inside the code repository** (2026-10-13) uses the same hooks through the
+  repository's `.claude/settings.json` and `.claude/kb-hook.sh`, but only when the vault is next to
+  it: the code repository does not require the knowledge base. When the workspace's `CLAUDE.md` does
+  not load the vault, the session-start hook loads the guards and `kb-rules.md` itself (a
+  `CLAUDE.md` cannot import conditionally). Without it, the session starts with
+  a warning that the guards and hooks are not in use, and no hook does anything. A hook that lets an action through does not make it allowed.
 - The old files' history is kept: decision-log entries verbatim in [[decision-log]] and in each
   decision note's *History*; roadmap steps verbatim in the step notes; old section references
   resolved by [[legacy-references]].

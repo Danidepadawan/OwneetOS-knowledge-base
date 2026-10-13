@@ -5,6 +5,8 @@ tags: [guard, environment]
 ---
 # Guard: the developer's PC
 
+> [!danger] Binding guard — never broken, whatever the request. Rules: [[guards/INDEX|guards]].
+
 - **Never damage the developer's PC or its installed OS** (host: Linux Mint).
   ([[development-environment]])
 - **Never install anything on the host** without asking the owner at the moment of installation,

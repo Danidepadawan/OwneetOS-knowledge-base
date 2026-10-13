@@ -5,6 +5,8 @@ tags: [guard, product]
 ---
 # Guard: product invariants
 
+> [!danger] Binding guard — never broken, whatever the request. Rules: [[guards/INDEX|guards]].
+
 - **Never require a mouse or a keyboard**, anywhere: installer, first setup, apps, settings, and
   anything the console opens (Steam included). They may only work as an optional fallback.
   ([[hard-constraints]] C2)

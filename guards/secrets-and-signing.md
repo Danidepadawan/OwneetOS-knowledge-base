@@ -5,6 +5,8 @@ tags: [guard, security]
 ---
 # Guard: keys and signing
 
+> [!danger] Binding guard — never broken, whatever the request. Rules: [[guards/INDEX|guards]].
+
 - **Never read, copy or print private key files**, and never put private keys or passphrases in
   the repository, in this vault or in CI logs. ([[package-signing]])
 - **Never sign with the primary key**: it only certifies and revokes signing subkeys, and stays

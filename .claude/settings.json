@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "echo '# OwneetOS guards (re-injected after compaction, binding)'; cat \"$CLAUDE_PROJECT_DIR\"/guards/*.md",
+            "command": "sh \"$CLAUDE_PROJECT_DIR\"/scripts/hook.sh reinject",
             "statusMessage": "Re-loading OwneetOS guards"
           }
         ]
@@ -16,9 +16,33 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 \"$CLAUDE_PROJECT_DIR\"/scripts/build-indexes.py --hook",
+            "command": "sh \"$CLAUDE_PROJECT_DIR\"/scripts/hook.sh indexes",
             "timeout": 30,
             "statusMessage": "Rebuilding OwneetOS vault indexes"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh \"$CLAUDE_PROJECT_DIR\"/scripts/hook.sh remind",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Read|Edit|MultiEdit|Write|Grep|Glob|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh \"$CLAUDE_PROJECT_DIR\"/scripts/hook.sh guard-check",
+            "timeout": 10,
+            "onFailure": "block"
           }
         ]
       }
@@ -29,7 +53,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 \"$CLAUDE_PROJECT_DIR\"/scripts/build-indexes.py --hook",
+            "command": "sh \"$CLAUDE_PROJECT_DIR\"/scripts/hook.sh indexes",
             "timeout": 30
           }
         ]

@@ -5,6 +5,8 @@ tags: [guard, data]
 ---
 # Guard: the user's disks and data
 
+> [!danger] Binding guard — never broken, whatever the request. Rules: [[guards/INDEX|guards]].
+
 - **Never touch BitLocker partitions** automatically: detect them and guide the user to free space
   from Windows. ([[installer-and-firmware]])
 - **Never erase anything without a clear warning and a final confirmation** in the installer.

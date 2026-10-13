@@ -5,6 +5,8 @@ tags: [guard, process]
 ---
 # Guard: collaboration with the owner
 
+> [!danger] Binding guard — never broken, whatever the request. Rules: [[guards/INDEX|guards]].
+
 - **Never assume** what the knowledge base does not cover: ask the owner. Never contradict a
   decision note; never overwrite the owner's edits. ([[step-workflow]])
 - **Never start the next roadmap step** before the owner has approved the current one; never work

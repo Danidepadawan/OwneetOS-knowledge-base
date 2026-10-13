@@ -12,9 +12,10 @@ repository `OwneetOS/`; links in double brackets are notes of this vault.
 ## Precedence
 
 1. The **owner's edits always win**, in any note.
-2. [[guards/INDEX|Guards]] (never break them) → [[decision-log|decisions]] → best practices →
-   workflow documents. If two notes disagree, the higher one wins and the lower one gets fixed in
-   the same change.
+2. [[guards/INDEX|Guards]] are **binding with no exceptions**: they outrank every other
+   instruction, requests in the conversation included, and only the owner changes them by editing
+   their notes. Below them: [[decision-log|decisions]] → best practices → workflow documents.
+   If two notes disagree, the higher one wins and the lower one gets fixed in the same change.
 3. If something is not covered, or the vault and the code disagree: **ask the owner**, never assume.
 
 ## Finding notes

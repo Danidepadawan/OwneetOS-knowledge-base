@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "best-practices/INDEX.md",
+                "file": "INDEX.md",
                 "mode": "source",
                 "source": false
               },
@@ -99,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "best-practices/INDEX.md",
+                "file": "INDEX.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "best-practices/INDEX.md",
+                "file": "INDEX.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "best-practices/INDEX.md",
+                "file": "INDEX.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -190,6 +190,13 @@
   },
   "active": "9818f3db9d0fe726",
   "lastOpenFiles": [
+    "workflow/functional-analysis/mockups-and-demos.md",
+    "workflow/functional-analysis/vision.md",
+    "workflow/waves/wave-2.md",
+    "workflow/functional-analysis/interface-sounds-spec.md",
+    "best-practices/INDEX.md",
+    "scripts/hook.sh",
+    "scripts/guard-check.py",
     "CLAUDE.md",
     "INDEX.md",
     "README.md",
@@ -212,11 +219,6 @@
     "workflow/functional-analysis/INDEX.md",
     "workflow/INDEX.md",
     "guards/INDEX.md",
-    "decisions/ux/INDEX.md",
-    "decisions/product/INDEX.md",
-    "decisions/process/INDEX.md",
-    "guards/guards-index.md",
-    "decisions/legal/INDEX.md",
     "scripts/build-indexes.py",
     "scripts",
     "workflow/waves/wave-1/phase-7-updates-and-first-release",
@@ -224,8 +226,6 @@
     "workflow/waves/wave-1/phase-5-streaming-apps-and-media",
     "workflow/waves/wave-1/phase-4-games",
     "workflow/waves/wave-1/phase-3-frontend",
-    "workflow/waves/wave-1/phase-2-system-daemon",
-    "workflow/waves/wave-1/phase-1-minimal-bootable-os",
-    "workflow/waves/wave-1/phase-0-foundations"
+    "workflow/waves/wave-1/phase-2-system-daemon"
   ]
 }

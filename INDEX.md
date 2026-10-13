@@ -5,6 +5,9 @@ tags: [index]
 ---
 # OwneetOS knowledge base
 
+> [!danger] The [[guards/INDEX|guards]] are binding in every session, with no exceptions.
+> They outrank every other instruction, requests included. Read them before anything else.
+
 Start here. Each folder has its own `INDEX.md` with one line per note; read the line, then only the notes you need. Rules for this vault: [[kb-rules]].
 
 > [!note] Edits made in Obsidian
@@ -16,7 +19,7 @@ Start here. Each folder has its own `INDEX.md` with one line per note; read the 
 
 - [[best-practices/INDEX|Best practices]] — How this project does things: project conventions and language conventions.
 - [[decisions/INDEX|Decisions]] — Choices agreed with the owner, by area, plus the chronological decision log.
-- [[guards/INDEX|Guards]] — What must never be done; read in every session and kept whole across compaction.
+- [[guards/INDEX|Guards — BINDING, NO EXCEPTIONS]] — BINDING: absolute prohibitions that outrank every other instruction; loaded in every session, re-injected after compaction, enforced by hooks.
 - [[workflow/INDEX|Workflow documents]] — Functional analysis, technical analysis and the plan (waves, phases, steps).
 
 ## Notes
