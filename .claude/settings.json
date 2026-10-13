@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '# OwneetOS guards (re-injected after compaction, binding)'; cat \"$CLAUDE_PROJECT_DIR\"/guards/*.md",
+            "statusMessage": "Re-loading OwneetOS guards"
+          }
+        ]
+      }
+    ]
+  }
+}

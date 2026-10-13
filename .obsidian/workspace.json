@@ -11,10 +11,14 @@
             "id": "9818f3db9d0fe726",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "guards/guards-index.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nuova scheda"
+              "title": "guards-index"
             }
           }
         ]
@@ -95,6 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "guards/guards-index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,6 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "guards/guards-index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -155,6 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "guards/guards-index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -182,5 +189,43 @@
     }
   },
   "active": "9818f3db9d0fe726",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "guards/collaboration.md",
+    "Senza nome.canvas",
+    "templates/step.md",
+    "templates/best-practice.md",
+    "templates/guard.md",
+    "templates/decision.md",
+    "README.md",
+    "legacy-references.md",
+    "decisions/process/knowledge-base.md",
+    "workflow/functional-analysis/mockups-and-demos.md",
+    "workflow/functional-analysis/wave-1-features.md",
+    "workflow/functional-analysis/vision.md",
+    "workflow/how-we-work.md",
+    "decisions/decision-log.md",
+    "workflow/functional-analysis/interface-sounds-spec.md",
+    "workflow/technical-analysis/owneet-frontend/frontend-architecture.md",
+    "workflow/technical-analysis/owneet-frontend/frontend-changes.md",
+    "workflow/technical-analysis/owneet-frontend/frontend-input.md",
+    "workflow/technical-analysis/owneet-frontend/frontend-steam-local-files.md",
+    "workflow/technical-analysis/owneet-frontend/frontend-pegasus-internals.md",
+    "workflow/technical-analysis/owneetd/owneetd-design.md",
+    "workflow/technical-analysis/owneetd/owneetd-api-events.md",
+    "workflow/technical-analysis/owneetd/owneetd-api-input.md",
+    "workflow/technical-analysis/owneetd/owneetd-api-display.md",
+    "workflow/technical-analysis/owneetd/owneetd-api-apps.md",
+    "workflow/technical-analysis/owneetd/owneetd-api-power.md",
+    "workflow/technical-analysis/owneetd/owneetd-api-audio.md",
+    "workflow/waves/wave-1/phase-7-updates-and-first-release",
+    "workflow/waves/wave-1/phase-6-first-boot-installer-disks",
+    "workflow/waves/wave-1/phase-5-streaming-apps-and-media",
+    "workflow/waves/wave-1/phase-4-games",
+    "workflow/waves/wave-1/phase-3-frontend",
+    "workflow/waves/wave-1/phase-2-system-daemon",
+    "workflow/waves/wave-1/phase-1-minimal-bootable-os",
+    "workflow/waves/wave-1/phase-0-foundations",
+    "templates",
+    "workflow/waves/wave-1"
+  ]
 }
