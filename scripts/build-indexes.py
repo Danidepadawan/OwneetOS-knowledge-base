@@ -27,7 +27,11 @@ FOLDERS = {
     "": ("OwneetOS knowledge base",
          "Top-level index of the vault: the four categories and the vault's own rules.",
          "Start here. Each folder has its own `INDEX.md` with one line per note; read the line, then "
-         "only the notes you need. Rules for this vault: [[kb-rules]]."),
+         "only the notes you need. Rules for this vault: [[kb-rules]].\n\n"
+         "> [!note] Edits made in Obsidian\n"
+         "> The indexes are rebuilt by Claude Code, not by Obsidian. A note added or changed in "
+         "Obsidian appears in its folder's index (or shows its new description) at the next Claude "
+         "Code session, or at once after running `python3 scripts/build-indexes.py` in the vault."),
     "guards": ("Guards",
                "What must never be done; read in every session and kept whole across compaction.",
                "Things that must **never** be done. They are loaded in every session and re-injected "
