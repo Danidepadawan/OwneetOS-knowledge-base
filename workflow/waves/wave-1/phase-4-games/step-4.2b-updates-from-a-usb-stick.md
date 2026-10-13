@@ -75,3 +75,13 @@ Up: [[phase-4-games]] · Status: **in-progress**
   (owneetd 0.11.12). Not enough: glitches in 1 of 2 starts while Steam's side menu opened and
   closed (one Steam window, never resized: parts of an already drawn window go wrong; a copy of
   Steam's top bar lower down, a shrunken copy of the screen). Next: Xwayland without Glamor.
+  The owner noticed (normal settings) that the glitches change at every frame Steam sends and
+  slow down as Steam stops redrawing: a sign of the compositor reading Steam's frames before
+  Xwayland has finished them (synchronisation). Also found: Back from the first page Steam
+  opened on left Steam loading for ever → Steam starts on its own home page and gets the page
+  once it is shown (gamescope; owneetd 0.11.13). Glamor off froze the console's own start-up
+  (no OpenGL for X11 programs) → with that switch the console draws itself in software
+  (owneet-session 0.0.18). The owner points out that the FrankenPC showed no glitches while it
+  ran the live system: "NVIDIA only" rested on live tests (the NiPoGi was never installed, and
+  the NiPoGi too had glitches at Steam's start, hidden by the settling time) → same-trigger
+  comparison live/installed with a new ISO carrying every fix so far.
