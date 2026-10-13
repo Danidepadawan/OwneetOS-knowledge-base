@@ -4,7 +4,7 @@ description: "Host safety, everything in the project folder, builder and test VM
 area: process
 status: active
 decided: 2026-10-03
-updated: 2026-10-03
+updated: 2026-10-13
 legacy: "PROJECT_RULES.md §11"
 tags: [decision, process, environment]
 ---
@@ -16,6 +16,10 @@ tags: [decision, process, environment]
   the **test VM** (`vm/`).
 - Host packages needed: `qemu-system-x86`, `ovmf`, `qemu-utils` (and `qemu-system-gui`) — **ask
   the owner at the moment of installation**, every time something must be installed on the host.
+  On an Arch-based host (e.g. CachyOS), QEMU's devices are separate packages: `qemu-base`,
+  `edk2-ovmf`, `qemu-hw-display-virtio-gpu`, `qemu-hw-display-virtio-vga` (without them the test
+  VM stops with "Virtio VGA not available"), and for windows and 3D `qemu-ui-gtk`,
+  `qemu-hw-display-virtio-gpu-gl`, `qemu-hw-display-virtio-vga-gl`. Full table: `vm/README.md`.
 - VirtualBox and KVM cannot run VMs at the same time on recent kernels.
 
 Guard: [[host-safety]]. Practices: [[testing-and-verification]], [[checks-before-commit]].
@@ -27,3 +31,4 @@ Entries of the [[decision-log]] that shaped this note.
 | Date | Decision |
 |---|---|
 | 2026-10-03 | Project scope, architecture and Wave 1 agreed ([[vision]]–11). |
+| 2026-10-13 | Host packages for Arch-based hosts listed (the test VM needs the `virtio-vga` packages). |

@@ -90,3 +90,4 @@ Decisions by area: [[decisions/INDEX|decisions index]].
 | 2026-10-13 | The ISO's system image is squashfs + xz instead of erofs + LZMA, which had silently corrupted six files (kernel modules, an AMD firmware); every ISO build now checks every file against its package. ISO 1822 MiB. | [[distribution-and-updates]], [[step-4.2a-tester-installer]] |
 | 2026-10-13 | Step 4.2 (Steam integration) approved after the owner's test on the NiPoGi. Next: step 4.3 (local DRM-free games). | [[step-4.2-steam-integration]] |
 | 2026-10-13 | A Steam game whose Linux version cannot start (Steam: "Missing game executable") gets an automatic recovery, offered to the user: try the version for Windows with Proton ([[step-4.5-windows-games-proton]]). | [[steam-integration]], [[step-4.5-windows-games-proton]] |
+| 2026-10-13 | Host packages for Arch-based hosts (e.g. CachyOS) listed, including the `virtio-vga` display packages the test VM needs. | [[development-environment]] |
