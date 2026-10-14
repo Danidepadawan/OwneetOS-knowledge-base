@@ -19,7 +19,7 @@ Steam's folder is `~/.local/share/Steam/` (`OWNEET_STEAM_DIR` points elsewhere, 
 | `userdata/<account id>/config/localconfig.vdf` | `UserLocalConfigStore/Software/Valve/Steam/apps/<appid>`: `Playtime` (minutes, whole account), `LastPlayed` (Unix time) | yes: play time and last played |
 | `appcache/librarycache/<appid>/` | cached artwork: `header.jpg` for most apps, `library_600x900.jpg` (portrait cover) for about a quarter, `library_hero.jpg`, `logo.png`, hashed files | later: covers (4.4) |
 | `appcache/appinfo.vdf` (binary, formats 27–29; 29 since 2024: key table at the offset after the header) | every app the client has looked up, with its type (game, tool, DLC…) and name | yes (4.2c, `SteamOwned.cpp`): type and name of the licences' apps; only type "game" |
-| `appcache/packageinfo.vdf` (binary, formats 27–28) | packages of the account's licences, with `status` and `appids` | yes (4.2c): apps of packages with `status` 0, package 0 left out → every owned game (88 on the owner's account, as Steam shows, checked on 2026-10-14) |
+| `appcache/packageinfo.vdf` (binary, formats 27–28) | packages of the account's licences, with `status` (whether the store still offers it, not the ownership), `appids` and `extended` | yes (4.2c): apps of every package but package 0 and free weekends (`extended` → `freeweekend`, an ended licence) → every owned game (88 on the owner's account, as Steam shows, checked on 2026-10-14) |
 | `userdata/<id>/config/licensecache` | licences, encrypted | never read |
 
 Every Steam game in the library carries `extra["steam.appid"]` and `extra["steam.installed"]`

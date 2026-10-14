@@ -20,8 +20,10 @@ The console keeps Steam's interface off the screen in everyday use ([[steam-inte
     first start, a cloud conflict, a choice of launch options), as today.
   - **Every owned Steam game** in the console's library, installed or not, from Steam's local
     caches, offline: licences in `appcache/packageinfo.vdf`, app types in `appcache/appinfo.vdf`
-    (binary, v28/v29), artwork in `appcache/librarycache`. Owned = a game in an active licence
-    (`status` 0), package 0 (Spacewar, Team Fortress 2, Dota 2, given to everyone) left out.
+    (binary, v28/v29), artwork in `appcache/librarycache`. Owned = a game in one of the account's licences,
+    package 0 (Spacewar, Team Fortress 2, Dota 2, given to everyone) and free weekends left out
+    (since 2026-10-14, after the FrankenPC test; before: packages with `status` 0, which is the
+    store's offer, not the ownership).
     Checked on the owner's account: 88 games and 2 soundtracks, as Steam's own library shows.
   - In the library ([[game-library]]): not-installed games dimmed with a download mark (A
     installs, X details; downloads first in "Recent"); the **"Installed" filter** comes back; a
@@ -79,3 +81,19 @@ The console keeps Steam's interface off the screen in everyday use ([[steam-inte
     confirmation (expected: holding Guide comes back); download states and bytes from a real
     download (one active, others queued; an update); a game on a disk that is not connected
     (unplug the 2 TB HDD with a game on it); Steam's first start blocked without a cable or Wi-Fi.
+  - **FrankenPC test (2026-10-14, owner)**: library faithful except two games (Mafia III, an
+    ended free weekend, listed; PAYDAY 2, from a package no longer offered, missing): fixed, the
+    rule above (88 games, PAYDAY 2 installs). Installing (Dragon's Wake), the "ready" banner,
+    uninstalling, the offline block: as expected; the home screen comes back by itself after a
+    confirmation, holding Home after cancelling one. Steam's confirmations are unreadable on
+    NVIDIA: the notice now says what to press (install and uninstall, on every PC). Starting
+    Silksong, Steam was shown after 20 s while it prepared the game's shaders (Fossilize, about
+    45 s): owneetd now waits while `fossilize_replay` runs, and the console's "Starting …" screen
+    covers every Steam start. Disk not connected: waits for automatic mounting (phase 6).
+  - **Open (owner to decide)**: games whose licence agreement Steam asks to accept at the first
+    start (e.g. Batman: Arkham Knight) cannot be read in Steam's window on NVIDIA. The local
+    `appinfo.vdf` gives which games have one and its official address
+    (`store.steampowered.com/eula/…`): proposal: a readable console window before the first start,
+    the agreement to read on a phone (QR code) or in the browser app (5.1), then what to press in
+    Steam. Steam's selection starts on "Decline": the console cannot (and should not) move it to
+    "Accept".

@@ -53,7 +53,8 @@ at a time; apps such as the browser may run next to it), `apps.unknown_app` (404
   console's "Starting …" screen, stays until the game's window), and Guide from the home screen
   never brings Steam's own window back unless it was the app last on screen. If no game has
   started 20 s after the address was handed over, Steam probably waits for the user (a licence to
-  accept, a cloud conflict, launch options): its window is shown. Not `-silent`: owneetd hands
+  accept, a cloud conflict, launch options): its window is shown; not while Steam prepares
+  the game's shaders (a `fossilize_replay` process in Steam's unit): the 20 s start again. Not `-silent`: owneetd hands
   Steam its first address once Steam's window exists, and gamescope already shows only what
   owneetd chooses. `install` / `uninstall` hand `steam://install/N` / `steam://uninstall/N` to
   Steam and show its confirmation; once Steam acts on it (the game's appmanifest appears, goes, or
