@@ -10,6 +10,6 @@ tags: [index]
 ## Notes
 
 - [[disks]] — Automatic mounting of every disk, read-only dirty NTFS, moving games and media between disks.
-- [[game-library]] — One library for Steam and local games; Steam installed games only; filters and the Add games tile.
+- [[game-library]] — One library for Steam and local games; every owned Steam game, installed or not; filters and the Add games tile.
 - [[games-on-disk]] — The Games folder convention, Windows games through hidden Proton, background installers, licence prompt.
 - [[steam-integration]] — Steam in the ISO, controller-only Steam, its screens shown automatically, 12 GB RAM in the live session.

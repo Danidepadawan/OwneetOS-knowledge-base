@@ -34,6 +34,20 @@ tags: [decision, games, steam]
   Steam window left in everyday use, announced on NVIDIA as a temporary display problem (option
   a); the console shows the download itself. Writing Steam's files to start downloads is turned
   down. Step: [[step-4.2c-steam-without-its-interface]]. Library: [[game-library]].
+- **Installing and uninstalling** (demo 4.2c proposal, 2026-10-14): the console asks first
+  ("Install {game}?"), then, on NVIDIA, shows the display-problem notice **every time until the
+  user ticks "Don't show again"** (the notice never names the driver), then Steam's confirmation
+  window. **Uninstalling** must always be possible without Steam's interface: Options →
+  "Uninstall" (and "Cancel installation" while a game downloads) goes through Steam's official
+  `steam://uninstall/<appid>`, with the same console question and notice before Steam's window.
+  Downloads are shown on the game's cover, in its details, in the home screen's notices, and a
+  banner says when a game is ready.
+- **No internet**: when an action needs the internet (Steam's first download, signing in to
+  Steam, installing a game) and there is none, the console says so plainly and **blocks the
+  action** with a clear message and a way to the network settings; it never shows "Preparing
+  Steam" or "Steam opens by itself" then. *(Owner, 2026-10-14: today the "Preparing Steam" screen
+  shows and disappears after a second offline, and its last words, "Steam opens by itself", are
+  not true.)*
 - **A Steam game whose Linux version cannot start** (Steam: "Missing game executable") gets an
   automatic recovery, offered to the user: try the version for Windows with Proton
   ([[step-4.5-windows-games-proton]]).
@@ -54,3 +68,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-12 | After the owner's first Steam test (Guide fought over by owneetd and Steam): **while Steam or a Steam game is on screen, a short Guide press is Steam's; holding Guide for 1 second comes back to the console** (option A; [[controller-input-map]]). "Exit Steam" in Steam's menu also comes back. Steam's own screens that matter (login, a game's launch progress) are shown automatically ([[game-library]]). |
 | 2026-10-13 | A Steam game whose Linux version cannot start (Steam: "Missing game executable") gets an automatic recovery, offered to the user: try the version for Windows with Proton ([[step-4.5-windows-games-proton]]). |
 | 2026-10-14 | **Steam without its interface:** Steam runs hidden; every owned game is listed from Steam's local caches (licences in `packageinfo.vdf`, types in `appinfo.vdf`, package 0 and inactive licences left out: 88 games, as Steam shows); installing through `steam://install/<appid>` (Steam's confirmation window, announced on NVIDIA as a temporary display problem; option a), the download shown by the console. Replaces "owned games are installed from Steam's library" (2026-10-11). Reason: glitches in Steam's own window with the NVIDIA driver, NVIDIA-only (same ISO clean on AMD), not removed by any setting. |
+| 2026-10-14 | Proposal for demo 4.2c agreed: the console asks before installing; the NVIDIA notice comes every time until "Don't show again"; uninstalling (and cancelling a download) through `steam://uninstall/<appid>`, so a game can always be uninstalled; downloads shown on the cover, in the details, in the home notices and with a "ready" banner; **without internet, an action that needs it is blocked with a clear message** (today's "Preparing Steam" screen disappears offline and wrongly says Steam opens by itself). |
