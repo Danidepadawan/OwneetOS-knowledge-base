@@ -19,8 +19,8 @@ Up: [[owneetd-design]] · Conventions: [[owneetd-design#4. API v1 (draft)]]
 
 | GET | `/v1/update` | Testers' updates from a USB stick (4.2b): `tester`, `state` (`none`, `available`, `installing`, `done`, `failed`, `no_stick`, `not_tester`), `message`, `packages` (`name`, `from`, `to`), `running` |
 | POST | `/v1/update/check` · `/v1/update/apply` | Start a check or the installation (202): root units `owneet-update@check` / `@apply.service`, allowed by a polkit rule; the result comes as `update.changed`. Errors `update.not_tester`, `update.busy` (409) |
-| GET | `/v1/steam` | `installed`, `allowed` (false in a live system with less than 12 GB of RAM), `prepared` (Steam has started once: no long first download), `running`, `games` (Steam app ids installed completely: the interface reads its games again when they change) (4.2) |
-| POST | `/v1/steam` | `{"open": "library"}` / `{"open": "store"}`, or `{"run": "480", "name": "…"}`, with `"language": "it"` (the console's language tag: Steam starts with `-language italian`) — Steam starts if needed (202); a game is listed in `/v1/apps` as `steam:480` once Steam has started it |
+| GET | `/v1/steam` | `installed`, `allowed` (false in a live system with less than 12 GB of RAM), `prepared` (Steam has started once: no long first download), `running`, `games` (Steam app ids installed completely) (4.2); `downloads` (`appid`, `state`: `downloading` / `updating` / `queued`, `done` / `total` bytes, `rate` bytes per second; the one moving first), `away` (app id → disk name: installed on a disk that is not connected), `account` (someone has signed in to Steam here), `licences` (Unix time Steam last wrote `packageinfo.vdf`), `nvidia` (Steam's window may show display errors) (4.2c) |
+| POST | `/v1/steam` | One of `{"open": "library"}` / `{"open": "store"}`, `{"run": "480", "name": "…"}`, `{"install": "480"}`, `{"uninstall": "480"}` (also cancels a download; 4.2c), with `"language": "it"` (the console's language tag: Steam starts with `-language italian`) — Steam starts if needed (202); a game is listed in `/v1/apps` as `steam:480` once Steam has started it |
 
 Errors: `apps.unavailable` (503), `apps.invalid` (400), `apps.program_not_found` (400),
 `apps.no_session` (409), `apps.already_running` (409, same id), `apps.game_running` (409, one game
@@ -48,6 +48,24 @@ at a time; apps such as the browser may run next to it), `apps.unknown_app` (404
   home screen. In cage,
   which shows only the newest window, holding Guide for 2 seconds closes the app on screen; a short
   press does nothing. `guide.pressed` and `guide.released` are still sent to clients.
+- **Steam without its interface (4.2c):** Steam starting a game stays **hidden** when an account
+  has signed in: its window is not brought to the front when it appears (the home screen, with the
+  console's "Starting …" screen, stays until the game's window), and Guide from the home screen
+  never brings Steam's own window back unless it was the app last on screen. If no game has
+  started 20 s after the address was handed over, Steam probably waits for the user (a licence to
+  accept, a cloud conflict, launch options): its window is shown. Not `-silent`: owneetd hands
+  Steam its first address once Steam's window exists, and gamescope already shows only what
+  owneetd chooses. `install` / `uninstall` hand `steam://install/N` / `steam://uninstall/N` to
+  Steam and show its confirmation; once Steam acts on it (the game's appmanifest appears, goes, or
+  changes state) the home screen comes back by itself; cancelled in Steam, nothing changes and
+  holding Guide comes back (the confirmation is forgotten after 10 minutes). While Steam runs (and
+  once after it stops) owneetd reads the appmanifests every second and sends `steam.changed` (the
+  status above) when games, downloads or disks change. Downloads from `StateFlags` (2 update
+  required, 4 fully installed, 256 / 1048576 running, 512 paused, 1024 started, 2048 uninstalling)
+  and `BytesDownloaded` + `BytesStaged` of `BytesToDownload` + `BytesToStage`; the one Steam works
+  on is the one whose bytes grew in the last 5 s; an installed game with an update waiting stays
+  "installed" (Steam updates it before playing). Disks not connected from `libraryfolders.vdf`
+  (folder `path` missing, its `apps`; name = `label`, else the mount folder's name).
 - Events: `app.started`, `app.exited` (with systemd's result: `success`, `exit-code`, `signal`,
   `timeout`…), `app.window` (gamescope can show one of the app's windows for the first time, e.g.
   Steam ready after its first download: its early helper windows are never shown), `focus.changed`
