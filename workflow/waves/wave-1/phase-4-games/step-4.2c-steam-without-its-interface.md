@@ -100,3 +100,16 @@ The console keeps Steam's interface off the screen in everyday use ([[steam-inte
     Steam at once for that start (`ask`). QR codes: Project Nayuki's library (MIT), credited.
   - The notice before Steam's confirmations got its own memory: a "Don't show again" given to the
     earlier notice (the owner's, by mistake) does not hide the new one.
+  - **Steam's install window also asks for the disk** (owner, 2026-10-14): guiding the user
+    blind does not work. There is no official API to drive Steam's windows (Steam's internal
+    `SteamClient` API used by Decky / Millennium means modding the client: guard [[legal]];
+    `steamcmd` needs a second sign-in). **Test (owner's agreement, 2026-10-14):** another
+    console session (deckshift, PR 8) saw the same stale parts of Steam's window on NVIDIA,
+    unaffected by `--force-composition` or `-cef-disable-gpu`, and gone with a layer that changes
+    every frame (MangoHud made transparent): gamescope then composes every frame. owneetd 0.12.3
+    does that without MangoHud (`daemon/internal/apps/repaint.go`): while Steam's own window is
+    on screen, on NVIDIA, with the test switch `owneet.debug.steam_repaint=on`, a one-pixel, all
+    but transparent window marked `GAMESCOPE_EXTERNAL_OVERLAY` changes every frame. Checked on
+    Xvfb in the builder VM (no X errors); gamescope's behaviour only on the FrankenPC. If it
+    works, Steam's window is readable again and the blind guidance of this step is reconsidered
+    with the owner.
