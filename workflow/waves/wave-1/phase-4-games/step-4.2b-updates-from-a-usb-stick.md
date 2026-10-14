@@ -85,3 +85,12 @@ Up: [[phase-4-games]] · Status: **in-progress**
   ran the live system: "NVIDIA only" rested on live tests (the NiPoGi was never installed, and
   the NiPoGi too had glitches at Steam's start, hidden by the settling time) → same-trigger
   comparison live/installed with a new ISO carrying every fix so far.
+- **Same ISO, same trigger (owner, 2026-10-14):** NiPoGi live (AMD Barcelo) clean; FrankenPC live
+  (GTX 1660 Super) glyphs, shifted copies of Steam's pages, green noise blocks; no driver error in
+  the logs (no Xid). The glitches are **NVIDIA-only**, live or installed alike. Glamor off: the
+  console's own window is shown but gamescope never updates the screen (the frontend works in
+  software on Xvfb), so that test cannot be done there. Test switches added
+  `owneet.debug.xwayland_protocol=sync` and `owneet.debug.nv_explicit_sync=off`
+  (owneet-session 0.0.19). **Owner's conclusion:** whatever the test, the glitches stay; it is a
+  known problem of X11 windows with the NVIDIA driver, not reported upstream for now. The way out
+  is to keep Steam's own interface off the screen: [[step-4.2c-steam-without-its-interface]].

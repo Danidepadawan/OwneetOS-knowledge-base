@@ -4,14 +4,16 @@ description: "Host safety, everything in the project folder, builder and test VM
 area: process
 status: active
 decided: 2026-10-03
-updated: 2026-10-13
+updated: 2026-10-14
 legacy: "PROJECT_RULES.md §11"
 tags: [decision, process, environment]
 ---
 # Development environment
 
 - Never damage the developer's PC or installed OS (host: Linux Mint).
-- Keep everything inside the project folder (sources, VM disks, caches, build artefacts).
+- Keep everything inside the project folder (sources, VM disks, caches, build artefacts). The
+  project is the code repository `OwneetOS/` **and** this knowledge base next to it,
+  `OwneetOS-knowledge-base/` (owner, 2026-10-14): writing in both is inside the project.
 - ISOs are built inside an **Arch "builder" VM** (QEMU/KVM), never on the host; they are booted in
   the **test VM** (`vm/`).
 - Host packages needed: `qemu-system-x86`, `ovmf`, `qemu-utils` (and `qemu-system-gui`) — **ask
