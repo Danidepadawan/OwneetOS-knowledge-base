@@ -36,4 +36,10 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
   tests). **To verify in the test:** the extension loads (its name "OwneetOS" appears in
   `~/.local/share/owneet/webapps/ID/Default/Preferences`), Widevine is on (Netflix plays: step
   5.4 checks it fully), no Brave welcome or sign-in page.
+- **Owner's test (2026-10-15), open:** `tools/lint` passed; the theme failed to load
+  (`Theme.onRunning` read as a signal handler, fixed in owneet-frontend 0.16.10); then web apps
+  open, one game or web app at a time works, removing an open web app works. **Guide does not
+  bring back the home screen from a web app** (bug to investigate next: owneetd's journal after a
+  Guide press). Inside the page the controller does nothing: expected until
+  [[step-5.2-extension-core]].
 - **Done when:** a test page opens fullscreen and Guide returns to home.
