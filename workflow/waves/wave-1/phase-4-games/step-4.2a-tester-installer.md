@@ -3,13 +3,13 @@ type: step
 description: "A boot entry 'Install OwneetOS (testers: erases a disk)' (text screen, keyboard) that installs the stick's own system image onto a whole…"
 phase: "[[phase-4-games]]"
 step: "4.2a"
-status: in-progress
+status: done
 legacy: "ROADMAP.md 4.2a"
 tags: [step, phase-4]
 ---
 # 4.2a Tester installer *(owner, 2026-10-13: test PCs are installed, not run from a stick)*
 
-Up: [[phase-4-games]] · Status: **in-progress**
+Up: [[phase-4-games]] · Status: **done**
 
 - **Deliverables:** a boot entry "Install OwneetOS (testers: erases a disk)" (text screen, keyboard)
   that installs the stick's own system image onto a whole internal disk chosen by the tester:
@@ -34,3 +34,4 @@ Up: [[phase-4-games]] · Status: **in-progress**
   it (owneet-base 0.0.27), and the update to 0.0.27 writes it on systems already installed;
   checked in the test VM (update from the stick at start-up, then a start through the Fallback
   entry).
+- **Approved by the owner (2026-10-14)** after the FrankenPC tests (installed, started from its disk, several updates applied from the stick at start-up and from Settings).

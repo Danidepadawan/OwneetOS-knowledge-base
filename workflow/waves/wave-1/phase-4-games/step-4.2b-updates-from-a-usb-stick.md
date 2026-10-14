@@ -3,13 +3,13 @@ type: step
 description: "OwneetOS packages copied by the owner into an `owneet-updates` folder on the OWNEETLOG stick (a command copies them from `out/repo`); a…"
 phase: "[[phase-4-games]]"
 step: "4.2b"
-status: in-progress
+status: done
 legacy: "ROADMAP.md 4.2b"
 tags: [step, phase-4]
 ---
 # 4.2b Updates from a USB stick *(owner, 2026-10-13)*
 
-Up: [[phase-4-games]] · Status: **in-progress**
+Up: [[phase-4-games]] · Status: **done**
 
 - **Deliverables:** OwneetOS packages copied by the owner into an `owneet-updates` folder on the
   OWNEETLOG stick (a command copies them from `out/repo`); a tester system applies them
@@ -94,3 +94,4 @@ Up: [[phase-4-games]] · Status: **in-progress**
   (owneet-session 0.0.19). **Owner's conclusion:** whatever the test, the glitches stay; it is a
   known problem of X11 windows with the NVIDIA driver, not reported upstream for now. The way out
   is to keep Steam's own interface off the screen: [[step-4.2c-steam-without-its-interface]].
+- **Approved by the owner (2026-10-14)** after the FrankenPC tests (installed, started from its disk, several updates applied from the stick at start-up and from Settings).
