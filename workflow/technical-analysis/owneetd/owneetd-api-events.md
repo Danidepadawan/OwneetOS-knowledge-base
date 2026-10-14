@@ -19,4 +19,5 @@ Events format). Event types (initial list):
 (implemented, 2.7), `power.suspending`, `power.resumed`, `power.shutting_down` (implemented, 2.8), `app.started`,
 `app.exited`, `focus.changed`, `guide.released` (implemented, 2.9), `input.layout_changed`
 (implemented, 2.4), `display.changed`, `display.pending`, `display.confirmed`, `display.reverted`
-(implemented, 3.9), `xone.firmware_needed` (later).
+(implemented, 3.9), `update.changed` (implemented, 4.2b), `apps.catalog.changed` (implemented, 5.0.0),
+`xone.firmware_needed` (later).
