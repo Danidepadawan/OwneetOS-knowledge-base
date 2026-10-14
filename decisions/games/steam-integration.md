@@ -41,7 +41,11 @@ tags: [decision, games, steam]
   on NVIDIA, that Steam's window may show display errors (never naming the driver); then Steam's
   confirmation window. Before the store, the display-errors part only (NVIDIA).
 - **Starting a game**, Steam stays hidden behind the console's "Starting …" screen, also while it
-  prepares the game's shaders; it is shown only if it seems to wait for the user. The same notice comes before **Steam's store** on those PCs, as long as the store is
+  prepares the game's shaders; it is shown only if it seems to wait for the user.
+- **Licence agreements** Steam asks to accept at a game's first start: the console first shows
+  its own window with the agreement's official address as a QR code (to read on a phone) and
+  "in Steam's window, press Left and then A to accept"; Steam is then shown at once. The console
+  never moves Steam's selection to "Accept" itself (owner, 2026-10-14). The same notice comes before **Steam's store** on those PCs, as long as the store is
   Steam's own window (until [[step-5.1-brave-in-the-os]]). **Uninstalling** must always be possible without Steam's interface: Options →
   "Uninstall" (and "Cancel installation" while a game downloads) goes through Steam's official
   `steam://uninstall/<appid>`, with the same console question and notice before Steam's window.
@@ -76,3 +80,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-14 | Proposal for demo 4.2c agreed: the console asks before installing; the NVIDIA notice comes every time until "Don't show again"; uninstalling (and cancelling a download) through `steam://uninstall/<appid>`, so a game can always be uninstalled; downloads shown on the cover, in the details, in the home notices and with a "ready" banner; **without internet, an action that needs it is blocked with a clear message** (today's "Preparing Steam" screen disappears offline and wrongly says Steam opens by itself). |
 | 2026-10-14 | Demo 4.2c review: the display-errors notice also comes before Steam's store (Steam's own window until step 5.1). |
 | 2026-10-14 | After the FrankenPC test: the notice before Steam's confirmations says what to press, on every PC; Steam stays hidden while it prepares a game's shaders; owned games = every licence but package 0 and free weekends. |
+| 2026-10-14 | Licence agreements at a game's first start: the console's window with a QR code of the official address and "press Left and then A to accept"; the console does not move Steam's selection. |

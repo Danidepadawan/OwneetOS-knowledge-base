@@ -90,10 +90,13 @@ The console keeps Steam's interface off the screen in everyday use ([[steam-inte
     Silksong, Steam was shown after 20 s while it prepared the game's shaders (Fossilize, about
     45 s): owneetd now waits while `fossilize_replay` runs, and the console's "Starting …" screen
     covers every Steam start. Disk not connected: waits for automatic mounting (phase 6).
-  - **Open (owner to decide)**: games whose licence agreement Steam asks to accept at the first
-    start (e.g. Batman: Arkham Knight) cannot be read in Steam's window on NVIDIA. The local
-    `appinfo.vdf` gives which games have one and its official address
-    (`store.steampowered.com/eula/…`): proposal: a readable console window before the first start,
-    the agreement to read on a phone (QR code) or in the browser app (5.1), then what to press in
-    Steam. Steam's selection starts on "Decline": the console cannot (and should not) move it to
-    "Accept".
+  - **Licence agreements** (owner, 2026-10-14): games whose agreement Steam asks to accept at the
+    first start (e.g. Batman: Arkham Knight) cannot be read in Steam's window on NVIDIA. The
+    console knows them from `appinfo.vdf` (common → eulas: id, name, official address) and
+    `localconfig.vdf` (apps → APPID → "APPID_eula_N": accepted) and, before that first start,
+    shows its own window: the agreement's address as a QR code (to read on a phone; the browser
+    app later, 5.1) and what to press ("in Steam's window, press Left and then A to accept":
+    Steam's selection starts on "Decline", and the console does not move it). owneetd then shows
+    Steam at once for that start (`ask`). QR codes: Project Nayuki's library (MIT), credited.
+  - The notice before Steam's confirmations got its own memory: a "Don't show again" given to the
+    earlier notice (the owner's, by mistake) does not hide the new one.
