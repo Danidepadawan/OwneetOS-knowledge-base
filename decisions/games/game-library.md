@@ -19,8 +19,8 @@ tags: [decision, games, library]
   ([[steam-integration]], [[step-4.2c-steam-without-its-interface]]). *(Until 2026-10-14:
   installed games only, owned games installed from Steam's own library.)*
 - **Not-installed Steam games** (demo 4.2c): a dimmed cover with a download mark; A installs them
-  (A plays an installed game), X shows the details; with the "Recent" sort they come after the
-  installed games. While a game downloads, its cover shows the progress and its state (waiting,
+  (A plays an installed game), X shows the details. With the "Recent" sort, **games being
+  downloaded come first** (in Steam's order), then the installed games, then the others. While a game downloads, its cover shows the progress and its state (waiting,
   downloading, updating). A Steam game installed on a disk that is not connected shows **"On a
   disk that is not connected"** instead of offering to install it again (from
   `libraryfolders.vdf`). Games on disks (DRM-free) on a disk that is not connected are still not
@@ -46,4 +46,5 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-11 | Library (for the demo of step 4.2): the "Installed" filter is removed (every game shown is installed); the last place of the grid is **"Add games"**, which opens a choice of sources (for now Steam, which opens on **Steam's library**, where owned games are installed and the store is one step away). |
 | 2026-10-14 | Every owned Steam game is listed by the console from Steam's local caches and installed through Steam, Steam's own interface staying hidden ([[steam-integration]]). |
 | 2026-10-14 | Proposal for demo 4.2c agreed: not-installed Steam games dimmed with a download mark (A installs, X details, after the installed ones in "Recent"); the **"Installed" filter is restored**; a Steam game on a disk that is not connected shows "On a disk that is not connected" (not for DRM-free games); "Add games → Steam" opens Steam's store. |
+| 2026-10-14 | Demo 4.2c review: with the "Recent" sort, games being downloaded come first. |
 | 2026-10-11 | Demo 4.2 approved (with the generic store icon for Steam and no "Add games" in Favorites). **Distribution:** the ISO goes to SourceForge, the website to a `.org` domain on GitHub Pages, packages stay on GitHub ([[distribution-and-updates]]). **Steam is in the ISO** with 32-bit drivers for every GPU (about +300 MiB, [multilib] from the same snapshot). |

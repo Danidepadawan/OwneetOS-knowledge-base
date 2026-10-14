@@ -24,8 +24,9 @@ The console keeps Steam's interface off the screen in everyday use ([[steam-inte
     (`status` 0), package 0 (Spacewar, Team Fortress 2, Dota 2, given to everyone) left out.
     Checked on the owner's account: 88 games and 2 soundtracks, as Steam's own library shows.
   - In the library ([[game-library]]): not-installed games dimmed with a download mark (A
-    installs, X details); the **"Installed" filter** comes back; a Steam game on a disk that is
-    not connected shows "On a disk that is not connected" (from `libraryfolders.vdf`).
+    installs, X details; downloads first in "Recent"); the **"Installed" filter** comes back; a
+    Steam game on a disk that is not connected shows "On a disk that is not connected" (from
+    `libraryfolders.vdf`).
   - **Installing** through Steam's official address `steam://install/<appid>`: the console asks
     "Install {game}?", then Steam's confirmation window appears briefly; with the NVIDIA driver
     the console first says that a temporary display problem may show in that window, every time
@@ -41,7 +42,8 @@ The console keeps Steam's interface off the screen in everyday use ([[steam-inte
     error, closes it in `daemon/internal/apps/apps.go` `checkWindows`) and its last words say
     Steam opens by itself.
   - "Add games → Steam" and the store open as Steam's official website in the browser app
-    ([[step-5.1-brave-in-the-os]]) instead of Steam's interface, when that app exists; until then, Steam's store.
+    ([[step-5.1-brave-in-the-os]]) instead of Steam's interface, when that app exists; until then,
+    Steam's store, after the same notice on PCs with the display errors.
   - Demo of the new screens (owned games, installing, download progress, uninstalling, the
     NVIDIA notice, no internet) approved before the code ([[demo-before-code]]): proposal agreed
     on 2026-10-14, demo `design/demos/4.2c-steam-library.html`.
