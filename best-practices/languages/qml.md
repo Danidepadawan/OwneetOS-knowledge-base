@@ -22,3 +22,5 @@ tags: [best-practice, qml, frontend]
 - Pegasus's `api.keys` names are kept but mapped to the OwneetOS meanings
   ([[frontend-input]]).
 - File names: `PascalCase.qml` for components; pages end in `Page`, windows in `Sheet`.
+- Property names never start with `on` + a capital letter (`onRunning`): QML reads them as signal
+  handlers and the theme fails to load (step 5.1, 2026-10-15). Use another name (`runningInk`).
