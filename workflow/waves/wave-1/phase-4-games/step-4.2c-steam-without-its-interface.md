@@ -71,7 +71,7 @@ The console keeps Steam's interface off the screen in everyday use ([[steam-inte
   - **Deviations**: Steam is kept hidden by owneetd (gamescope shows only what owneetd chooses),
     not with `-silent`, because owneetd hands Steam its first address once Steam's window exists.
     The home screen's rows (hero, recently played) show installed games only (not covered by the
-    demo: to be confirmed by the owner). Fixed on the way: an icon shown after the first drawing
+    demo; confirmed by the owner on 2026-10-14, [[game-library]]). Fixed on the way: an icon shown after the first drawing
     (the network icon) was sometimes left blank.
   - **Not verifiable in the VM** (FrankenPC test): Steam really hidden while it starts a game and
     shown when it needs the user; `steam://install` / `steam://uninstall` confirmations in
