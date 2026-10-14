@@ -34,7 +34,10 @@ Step 5.0 (Optional apps, 2026-10-13) is split in two: this step (the web apps) a
   - **Live system:** the same rule as Steam (at least 12 GB of RAM; otherwise a message asks to
     install OwneetOS), [[steam-integration]].
   - The installer's "What do you want to use?" question stays with [[step-6.4-installer-ui]].
-- **Demo first** ([[demo-before-code]]): `design/demos/5.0.0-optional-apps.html`.
+- **Demo first** ([[demo-before-code]]): `design/demos/5.0.0-optional-apps.html`. **Approved by
+  the owner (2026-10-14)**, with the install window's line "Usage requirements: Internet needed";
+  the size shown is about 500 MB for the first web app and "Less than 1 MB" for the next ones; A
+  on an installed web app says "later" until [[step-5.1-brave-in-the-os]].
 - **Done when:** in the test VM with no network, an installed system installs Netflix (Brave
   installed from the ISO's files), YouTube at once, removing both removes Brave; the live system
   follows the 12 GB rule; the owner's test on the FrankenPC passes.
