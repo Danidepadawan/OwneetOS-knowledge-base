@@ -3,13 +3,13 @@ type: step
 description: "Netflix, YouTube and Spotify installed and removed from the home screen's Apps grid; Brave, behind them and never shown, is installed from package files inside the ISO."
 phase: "[[phase-5-streaming-apps-and-media]]"
 step: "5.0.0"
-status: in-progress
+status: done
 legacy: "ROADMAP.md 5.0"
 tags: [step, phase-5]
 ---
 # 5.0.0 Optional web apps *(owner, 2026-10-14)*
 
-Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
+Up: [[phase-5-streaming-apps-and-media]] · Status: **done**
 
 Step 5.0 (Optional apps, 2026-10-13) is split in two: this step (the web apps) and
 [[step-5.0.1-optional-gaming-apps]] (Steam, Epic, GOG, RetroArch). Decision: [[optional-apps]].

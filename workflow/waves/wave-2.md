@@ -13,6 +13,9 @@ Scope agreed so far: [[wave-1-scope]] (later waves).
 - **9. Chat modules:** module interface, Discord web in the background, notifications in the overlay, mute and push-to-talk.
 - **Web browser app (owner, 2026-10-14):** free web browsing with the controller (Brave, already
   behind the web apps of [[step-5.0.0-optional-web-apps]]), under a generic name and icon.
+- **Web apps in the background (owner, 2026-10-14):** music web apps (Spotify, Tidal…) keep
+  playing while the user does something else; in Wave 1 a web app is closed by the user like a
+  game ([[step-5.1-brave-in-the-os]]).
 - **10. Dual boot (optional, not required):** "Install alongside Windows", BitLocker detection and guidance, RTC handling, default OS, "Restart into Windows".
 - **11. More stores:** Epic (legendary), GOG (gogdl); their Windows games use Wave 1's Proton (4.5).
 - **12. Console features:** user profiles, parental controls, play-time statistics, quick suspend and resume.
