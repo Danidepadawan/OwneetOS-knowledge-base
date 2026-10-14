@@ -19,7 +19,7 @@ the step that builds it; the details live there, not here.
 | Games on a disk | Plug in a disk with a `Games` folder and play, Linux or Windows, installers included | [[games-on-disk]] | [[step-4.3-local-drm-free-games]] – [[step-4.7-controller-pointer]] |
 | Disks | Disks mount by themselves; move games between disks | [[disks]] | [[step-6.5-automatic-disk-mounting]], [[step-6.6-moving-games-and-media-between-disks]] |
 | Streaming | Netflix, YouTube, Spotify in Brave with the controller | [[architecture-stack]], [[legal-compliance]] | [[phase-5-streaming-apps-and-media]] |
-| Apps | Install only the apps you want, at installation and later from the apps page | [[optional-apps]] | [[step-5.0-optional-apps]] |
+| Apps | Install only the apps you want, at installation and later from the home screen and the apps page | [[optional-apps]] | [[step-5.0.0-optional-web-apps]], [[step-5.0.1-optional-gaming-apps]] |
 | Settings | Network, controllers and Bluetooth, sound, display, appearance, language, storage, system | [[settings-screens]], [[screens-and-display]], [[design-direction]], [[languages]] | [[step-3.9-settings]] |
 | Text input | On-screen keyboard with the controller | [[controller-input-map]] | [[step-3.10-on-screen-keyboard]] |
 | Feedback | Notifications, interface sounds, start-up animation | [[notifications]], [[interface-sounds]] | [[step-3.11-notifications]], [[step-3.12-interface-sounds]] |

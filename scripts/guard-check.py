@@ -14,11 +14,13 @@ import re
 import sys
 
 
-# Private signing keys and secrets (tools/keys/create-signing-key, .gitignore).
+# Private signing keys and secrets (tools/keys/create-signing-key, .gitignore). A "*.key" file name
+# starts a word or a path and has a name of two characters or more, so that code such as `a.key`
+# or `el.dataset.key` (a property, not a file) is not taken for one (owner, 2026-10-14).
 KEY_FILE = re.compile(
     r"(?:secret[^/\s'\"]*\.(?:asc|gpg)|signing-subkey[^/\s'\"]*\.asc"
     r"|revocation-certificate[^/\s'\"]*\.asc|OwneetOS-signing-key/|(?:^|/)secrets/"
-    r"|\.gnupg/private-keys|[\w-]\.key\b)")
+    r"|\.gnupg/private-keys|(?:^|[\s'\"=<>/:])[\w-]{2,}\.key\b)")
 
 # Text before these markers runs on the developer's PC; after them it runs in the builder VM.
 IN_VM = re.compile(r"tools/build-in-vm|vm/builder\.sh\s+ssh")

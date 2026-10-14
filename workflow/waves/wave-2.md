@@ -11,6 +11,8 @@ Scope agreed so far: [[wave-1-scope]] (later waves).
 
 - **8. Overlay and quick menu:** gamescope overlay layer, quick menu over games, volume, battery, screenshots on View/Create.
 - **9. Chat modules:** module interface, Discord web in the background, notifications in the overlay, mute and push-to-talk.
+- **Web browser app (owner, 2026-10-14):** free web browsing with the controller (Brave, already
+  behind the web apps of [[step-5.0.0-optional-web-apps]]), under a generic name and icon.
 - **10. Dual boot (optional, not required):** "Install alongside Windows", BitLocker detection and guidance, RTC handling, default OS, "Restart into Windows".
 - **11. More stores:** Epic (legendary), GOG (gogdl); their Windows games use Wave 1's Proton (4.5).
 - **12. Console features:** user profiles, parental controls, play-time statistics, quick suspend and resume.

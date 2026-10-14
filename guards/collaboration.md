@@ -9,8 +9,9 @@ tags: [guard, process]
 
 - **Never assume** what the knowledge base does not cover: ask the owner. Never contradict a
   decision note; never overwrite the owner's edits. ([[step-workflow]])
-- **Never start the next roadmap step** before the owner has approved the current one; never work
-  on more than one step per prompt. ([[step-workflow]], [[how-we-work]])
+- **Never start a roadmap step on your own**: follow the order of the wave notes, unless the owner
+  names the step to work on; never work on more than one step (or sub-step) per prompt.
+  ([[step-workflow]], [[how-we-work]])
 - **Never change the plan silently.** A change of plan (split, merge, reorder, scope) is recorded
   as a decision and reflected in the wave notes in the same change. ([[step-workflow]])
 - **Never leave an agreed decision unrecorded**: it goes into its decision note and the

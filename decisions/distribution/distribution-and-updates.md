@@ -4,7 +4,7 @@ description: "ISO on SourceForge, website on GitHub Pages, [owneet] pacman repo,
 area: distribution
 status: active
 decided: 2026-10-03
-updated: 2026-10-13
+updated: 2026-10-14
 legacy: "PROJECT_RULES.md §5"
 tags: [decision, distribution]
 ---
@@ -20,7 +20,11 @@ tags: [decision, distribution]
 - ISO built with **archiso**, automated with **GitHub Actions**, with checksums and signatures. Its system
   image is **squashfs + xz** (erofs + LZMA had silently corrupted six files, 2026-10-13); every ISO
   build checks every file of the image against its package.
-- With [[optional-apps]] (step 5.0) the ISO becomes slim: apps are downloaded when chosen.
+- With [[optional-apps]] the apps are optional. Brave (behind the web apps) ships inside the ISO
+  as package files, an offline pacman repository in `/usr/share/owneet/bundled/`, installed only
+  when chosen ([[step-5.0.0-optional-web-apps]]); where the gaming programs come from is decided
+  at [[step-5.0.1-optional-gaming-apps]]. The bundled packages are signed like every other one
+  before they reach users ([[package-signing]]).
 - Packages built with **PKGBUILD**s; updates served from an **own pacman repository `[owneet]`**
   hosted on GitHub. Updates are triggered from the Settings menu with the gamepad.
 - Arch packages are **pinned to Arch Linux Archive snapshots**; the snapshot date is advanced only
@@ -43,3 +47,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-11 | Demo 4.2 approved (with the generic store icon for Steam and no "Add games" in Favorites). **Distribution:** the ISO goes to SourceForge, the website to a `.org` domain on GitHub Pages, packages stay on GitHub ([[distribution-and-updates]]). **Steam is in the ISO** with 32-bit drivers for every GPU (about +300 MiB, [multilib] from the same snapshot). |
 | 2026-10-13 | **Optional apps** (new step 5.0): the user installs only the apps they want (at installation and later, from the apps page, installed and missing ones shown differently); the ISO becomes slim when 5.0 arrives (apps downloaded when chosen; option b). |
 | 2026-10-13 | The ISO's system image is squashfs + xz instead of erofs + LZMA, which had silently corrupted six files (kernel modules, an AMD firmware); every ISO build now checks every file against its package. ISO 1822 MiB. |
+| 2026-10-14 | Brave ships inside the ISO as package files (an offline pacman repository), installed only when the user picks a web app (step 5.0.0). |
