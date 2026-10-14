@@ -22,4 +22,18 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
   deletes its profile; the remove confirmation says the user will have to sign in again.
 - **Demo first** ([[demo-before-code]]): `design/demos/5.1-web-app-running.html`, the hero with a
   running web app and the new remove text. **Approved by the owner (2026-10-15).**
+- **Implementation (2026-10-15), waiting for the owner's test:** owneet-base 0.0.33: Brave's
+  managed policies `/etc/brave/policies/managed/owneet.json` (no telemetry: P3A, stats ping, web
+  discovery, metrics off; no Rewards, Wallet, VPN, AI chat, News, Talk, Tor, sign-in, sync; no
+  downloads, printing, translate; `brave://`, `chrome://`, `file://` and the extension store
+  blocked; site notifications and location blocked) and the extension stub
+  `/usr/share/owneet/extension/` (empty Manifest V3, filled in [[step-5.2-extension-core]]).
+  owneetd 0.11.15: `POST /v1/apps/catalog/{id}/open`, kind `webapp` (one game or web app at a
+  time), a profile per web app with Widevine on, removal closes the app and deletes its profile
+  ([[owneetd-api-apps]]). owneet-frontend 0.16.9: the hero and tiles of the approved demo, the
+  new remove text; the "running" green became the token `Theme.running`. **Not checked yet:**
+  `tools/lint` (no builder VM on this machine), the ISO build, and everything in the VM (the owner
+  tests). **To verify in the test:** the extension loads (its name "OwneetOS" appears in
+  `~/.local/share/owneet/webapps/ID/Default/Preferences`), Widevine is on (Netflix plays: step
+  5.4 checks it fully), no Brave welcome or sign-in page.
 - **Done when:** a test page opens fullscreen and Guide returns to home.
