@@ -74,10 +74,8 @@ Code: `extension/` (Manifest V3), `daemon/cmd/owneet-bridge`. Bindings: [[contro
   launch.
 - The frontend sends the accent colours and the language with its request to open the web app;
   owneetd keeps them and the bridge passes them to the extension when it connects.
-- Planned owneetd endpoints (written into [[owneetd-api-apps]] once implemented):
-  `POST /v1/webapps/keyboard` (open / close, field kind, current text), `POST /v1/webapps/text`
-  (the keyboard's keys, frontend → extension), `POST /v1/webapps/ask-close`; events
-  `webapp.keyboard`, `webapp.text`, `webapp.ask_close`.
+- owneetd's endpoints (`/v1/webapps/look`, `/keyboard`, `/text`, `/ask-close`) and events
+  (`webapp.keyboard`, `webapp.text`, `webapp.ask_close`): [[owneetd-api-apps]].
 
 ## Terms of service
 

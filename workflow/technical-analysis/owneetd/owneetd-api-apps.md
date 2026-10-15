@@ -22,6 +22,10 @@ Up: [[owneetd-design]] · Conventions: [[owneetd-design#4. API v1 (draft)]]
 | GET | `/v1/apps/catalog` | The optional web apps (5.0.0): `apps` (`id`, `nameKey`, `icon`, `url`, `installed`, `busy` `install`/`remove`, `sizeMiB`: the space installing it takes now, its missing engines), `allowed` (false in a live system with less than 12 GB of RAM). From `/usr/share/owneet/apps.json`; the engines (Brave) are never listed |
 | POST | `/v1/apps/catalog/{id}/open` | Open an installed web app (204), or bring it back when it is open (5.1). owneetd builds the command from the catalogue (the interface sends no program, flag or address): Brave in kiosk mode with the web app's own profile (`$XDG_DATA_HOME/owneet/webapps/ID`, created with Widevine on and no welcome pages), the console's extension (`--load-extension=/usr/share/owneet/extension`), X11 under gamescope; it runs as the app `web:ID` of kind `webapp`. Errors `apps.unknown` (404), `apps.not_installed` (409), and those of `/v1/apps/launch` (`apps.game_running`: one game or web app at a time) |
 | POST | `/v1/apps/catalog/{id}/install` · `/v1/apps/catalog/{id}/remove` | Install or remove a web app (202). Removing closes it first if it is open and deletes its profile (5.1). The first web app installs its engine, the last one removes it: root units `owneet-apps-install@ENGINE` / `owneet-apps-remove@ENGINE.service` (polkit rule `50-owneet-apps.rules`), from the ISO's bundled repository; the outcome comes as `apps.catalog.changed` (the status plus `result`: `id`, `action`, `ok`, `error`). Errors `apps.unknown` (404), `apps.busy`, `apps.needs_install`, `apps.no_space` (409) |
+| GET | `/v1/webapps/look` | The look the console's extension draws with (5.2): `accent` (the palette's accent, `#RRGGBB`), `language`. Sent by the interface in the body of `/v1/apps/catalog/{id}/open` (`{"accent": "#FF8A5B", "language": "it"}`, optional; unknown fields refused, invalid values dropped) |
+| GET / POST | `/v1/webapps/keyboard` | The console's keyboard for a web app's text field (5.2, [[extension-design]]). Opened by the extension (`{"open": true, "kind": "email", "label": "…", "value": "…"}`; kinds text, email, password, search, url, tel, number): the home screen comes to the front (gamescope). Closed by the interface or the extension (`{"open": false, "next": true}`; `next`: Done, the selection moves on): the web app comes back. Event `webapp.keyboard` (with `app`, the web app's catalogue id) |
+| POST | `/v1/webapps/text` | `{"text": "…"}` (up to 64 characters) or `{"key": "backspace"}` (backspace, left, right): typed into the field by the extension. Event `webapp.text` |
+| POST | `/v1/webapps/ask-close` | B with nothing to go back to in the web app: the home screen comes to the front (gamescope) and the interface asks "Close {name}?". Event `webapp.ask_close` (`app`) |
 | GET | `/v1/steam` | `installed`, `allowed` (false in a live system with less than 12 GB of RAM), `prepared` (Steam has started once: no long first download), `running`, `games` (Steam app ids installed completely: the interface reads its games again when they change) (4.2) |
 | POST | `/v1/steam` | `{"open": "library"}` / `{"open": "store"}`, or `{"run": "480", "name": "…"}`, with `"language": "it"` (the console's language tag: Steam starts with `-language italian`) — Steam starts if needed (202); a game is listed in `/v1/apps` as `steam:480` once Steam has started it |
 
@@ -29,7 +33,8 @@ Errors: `apps.unavailable` (503), `apps.invalid` (400), `apps.program_not_found`
 `apps.no_session` (409), `apps.already_running` (409, same id), `apps.game_running` (409, one game
 or web app at a time, kinds `game` and `webapp`; other apps may run next to it), `apps.unknown_app` (404),
 `apps.focus_unsupported` (409, cage), `apps.no_window` (409), `apps.failed` (502),
-`steam.needs_install` (409: live system with too little memory for Steam's files).
+`steam.needs_install` (409: live system with too little memory for Steam's files), `webapps.unavailable` (503), `webapps.invalid` (400), `webapps.no_webapp` (409: no web app open),
+`webapps.keyboard_closed` (409).
 
 - **Session:** `owneet-session` starts the console UI through `owneet-session-app`, which writes
   `$XDG_RUNTIME_DIR/owneet/session-env` (display variables, session mode, process id of the home
@@ -79,3 +84,9 @@ or web app at a time, kinds `game` and `webapp`; other apps may run next to it),
 - Tested in the test VM: gamescope with its headless backend (test hook
   `owneet.debug.gamescope_backend=headless`) and cage, a virtual gamepad for Guide, `mpv` as the
   test app.
+- **Web apps and the extension (5.2):** the extension cannot reach the socket; Brave starts
+  `owneet-bridge` (`/usr/lib/owneet/owneet-bridge`, a native-messaging host) for it, listed in each
+  web app's profile (`NativeMessagingHosts/org.owneet.bridge.json`, written at every start) for
+  the extension's id only (derived from its folder `/usr/share/owneet/extension`:
+  `jlekhdampjopkpjhbgilolchffjpdjcn`). The bridge calls `/v1/webapps/*` and passes `webapp.keyboard`
+  (closed) and `webapp.text` back to the extension.
