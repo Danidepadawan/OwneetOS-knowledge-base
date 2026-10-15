@@ -37,3 +37,6 @@ Up: [[phase-4-games]] · Status: **in-progress**
   (`tools/preview-steps/library-disk.txt`). A disk without a games folder gives no notice.
   `game.txt` format agreed (owner, 2026-10-15, [[games-on-disk]]). Update on the OWNEETLOG stick;
   waiting for the FrankenPC test with the owner's SSD (`SSD-256GB-D`, `Giochi/`).
+- **FrankenPC test 1 (2026-10-15):** the SSD (USB-SATA adapter with UAS) was not mounted: the udev
+  rule asked for `ID_BUS` "usb", the adapter gives "ata". Fixed in owneet-base 0.0.33 (USB by the
+  device's path); the test report now lists the disks. Second test pending.

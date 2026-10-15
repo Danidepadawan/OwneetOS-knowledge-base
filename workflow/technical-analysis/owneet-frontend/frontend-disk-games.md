@@ -12,7 +12,9 @@ Demo: `design/demos/4.3-games-on-disk.html`
 ## Mounting (owneet-base, until [[step-6.5-automatic-disk-mounting]])
 
 - `90-owneet-usb-disks.rules` (udev): a file system on a **USB** disk (ext2/3/4, btrfs, xfs, vfat,
-  exFAT, NTFS) pulls in `owneet-mount-ro@<kernel name>.service`. Not the OWNEETLOG stick, not EFI
+  exFAT, NTFS) pulls in `owneet-mount-ro@<kernel name>.service`. USB is recognised by the
+  device's path (`ID_PATH` with `-usb-`): USB-SATA adapters with UAS (e.g. JMicron 152d:0583, the
+  owner's SSD on the FrankenPC, 2026-10-15) give `ID_BUS` "ata", so `ID_BUS` is not used. Not the OWNEETLOG stick, not EFI
   system partitions (e.g. the installation stick's), not internal disks (the tester installer
   only offers internal disks, so it never meets a mounted one).
 - `owneet-mount-ro start|stop <name>` (root): mounts **read only** at
