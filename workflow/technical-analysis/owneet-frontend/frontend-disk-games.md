@@ -42,7 +42,7 @@ a game.
   only installers → step 4.6); the log says which.
 - **The file to start**: the user's saved choice → `game.txt`'s `start` → `start.sh` at the top of
   the folder (GOG) → the only file found → none (the theme asks).
-- **`game.txt`** (optional, proposal waiting for the owner's confirmation): `key: value` lines,
+- **`game.txt`** (optional; format agreed with the owner, [[games-on-disk]]): `key: value` lines,
   keys `title`, `start` (relative path), `description`; `#` starts a comment.
 - **The game**: collection "Games on disks" (local, not Steam), its file is the game's folder (play
   time and owneetd's app id stay the same when the chosen file changes); title = `game.txt`'s or
