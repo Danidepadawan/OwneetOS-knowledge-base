@@ -46,6 +46,9 @@ tags: [decision, games, steam]
   composing every frame (a changing, all but transparent one-pixel overlay), which removes the
   stale parts of the window; permanent on NVIDIA until Valve fixes the problem
   ([[step-4.2c-steam-without-its-interface]]).
+- **Closing Steam** (owner, 2026-10-15): Menu on the home screen's Steam tile while Steam runs:
+  "Close Steam?" (downloads stop; a Steam game running closes too), Cancel first. Also the way
+  out of a Steam page that never finishes loading.
 - **Licence agreements** Steam asks to accept at a game's first start: the console first shows
   its own window with the agreement's official address as a QR code (to read on a phone) and
   "in Steam's window, press Left and then A to accept"; Steam is then shown at once. The console

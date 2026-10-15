@@ -26,9 +26,9 @@ tags: [decision, games, library]
   `libraryfolders.vdf`). Games on disks (DRM-free) on a disk that is not connected are still not
   shown.
 - **Moving in the library's grid** (owner, 2026-10-15): left / right at a row's edge go round to
-  the other end of the **same row**; down on the last row goes to the first row, up on the first
-  row to the last (the vertical part waits for the owner's answer on the disks, reached today by
-  up from the first row).
+  the other end of the **same row**; down on the last row goes to the first row (same column);
+  up on the first row goes to the disks, as before, and up from the disks to the last row
+  (option A, owner 2026-10-15).
 - **Home screen** (2026-10-14): its rows (the game to continue, recently played) show **installed
   games only**; every owned game is in the library.
 - **Library screen** (demo 4.2, changed by demo 4.2c): filters All / **Installed** / Favorites /
