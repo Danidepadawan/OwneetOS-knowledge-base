@@ -4,7 +4,7 @@ description: "The Games folder convention, Windows games through hidden Proton, 
 area: games
 status: active
 decided: 2026-10-11
-updated: 2026-10-11
+updated: 2026-10-15
 legacy: "PROJECT_RULES.md §6 (Games on a disk), §10, §13 (2026-10-11)"
 tags: [decision, games]
 ---
@@ -27,6 +27,10 @@ tags: [decision, games]
     installing you accept the game's licence" [Read] [Install] (the user is informed, the project
     is covered).
 - "Add games" also offers "From a USB stick or disk" ([[game-library]]).
+- **In the library** (demo 4.3 proposal, owner 2026-10-15): the title is the game folder's name as
+  the user wrote it (or `game.txt`'s), never rewritten; the file to start is asked once when there
+  are several, and can be changed from Options; Windows games appear with step 4.5 and folders
+  with only an installer with step 4.6 (until then they are not shown).
 
 Steps: [[step-4.3-local-drm-free-games]], [[step-4.5-windows-games-proton]], [[step-4.6-installers]].
 
@@ -37,4 +41,5 @@ Entries of the [[decision-log]] that shaped this note.
 | Date | Decision |
 |---|---|
 | 2026-10-11 | **Wave 1 scope grows** ([[disks]] and 10): DRM-free games on a disk play whatever their form (ready to run or installer, Linux or Windows through umu-launcher + GE-Proton, hidden from the user); installers run by themselves in the background; moving games and media between disks (new step 6.6). Games folder: `Games` or its translated name, one folder per game with any sub-folders, searched recursively. "Add games" also offers "From a USB stick or disk". |
+| 2026-10-15 | Demo 4.3 proposal: title = the folder's name as written (the user's control); the file to start asked once and changeable from Options; Windows games shown from step 4.5, installers from step 4.6. |
 | 2026-10-11 | Proton and its runtime are downloaded once, in the background, the first time the console is online ("a necessary evil": the only exception to C9, for Windows games before the first connection). Installing a game from an installer first shows "By installing you accept the game's licence" [Read] [Install] (the user is informed, the project is covered). Step 4.1 approved. |

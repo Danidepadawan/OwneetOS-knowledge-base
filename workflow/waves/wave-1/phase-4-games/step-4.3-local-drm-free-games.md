@@ -3,13 +3,13 @@ type: step
 description: "Folder convention + metadata file, automatic scan of mounted disks, artwork."
 phase: "[[phase-4-games]]"
 step: "4.3"
-status: todo
+status: in-progress
 legacy: "ROADMAP.md 4.3"
 tags: [step, phase-4]
 ---
 # 4.3 Local DRM-free games
 
-Up: [[phase-4-games]] · Status: **todo**
+Up: [[phase-4-games]] · Status: **in-progress**
 
 - **Deliverables:** folder convention + metadata file, automatic scan of mounted disks, artwork.
 - **Scope (owner, 2026-10-11, [[games-on-disk]] and [[wave-1-scope]]):** `Games` (or its translated
@@ -23,3 +23,12 @@ Up: [[phase-4-games]] · Status: **todo**
   has no room for test games). Everything else of disk mounting stays in
   [[step-6.5-automatic-disk-mounting]] (read-write, internal disks, Windows disks left dirty,
   notices, moving games). The plan is not reordered.
+- **Demo proposal agreed (owner, 2026-10-15):** a disk with a `Games` folder plugged in → the
+  notice "USB disk connected: N games found" (3.11), its games in the library as "Local"; title =
+  the folder's name as written (or `game.txt`), cover from `cover.jpg` / `cover.png` or generated;
+  unplugged → its games leave the library. One file to start → A starts it; several → at the
+  first start "Which file starts {game}?" (name and folder of each, chosen with the controller,
+  remembered), changed later from Options → "Choose the file to start"; uninstallers,
+  configurators and redistributables never listed. Details show the disk. **Windows games are not
+  shown until step 4.5, folders with only an installer not until step 4.6.** Demo:
+  `design/demos/4.3-games-on-disk.html`.
