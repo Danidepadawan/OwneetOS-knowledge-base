@@ -21,6 +21,7 @@ Open them in a browser; they can be driven with the keyboard or a gamepad. Proce
 | `design/demos/3.11-notifications.html` | Banners, bell, notifications list | [[step-3.11-notifications]] |
 | `design/demos/3.13-startup-power.html` | Start-up animation and quick menu | [[step-3.13-start-up-animation-and-power-options]] |
 | `design/demos/4.2-library-add-games.html` | Library with "Add games" | [[step-4.2-steam-integration]] |
+| `design/demos/4.3-games-on-disk.html` | Games on a USB stick or disk: the disk plugged in and out with its notice, its games in the library (folder's name, `cover.jpg`), "Which file starts the game?", Options → "Choose the file to start", the disk in the details (`#disk=0&open=choose\|options\|details`) | [[step-4.3-local-drm-free-games]] |
 | `design/demos/4.2c-steam-library.html` | Every owned Steam game in the library, installing and uninstalling through Steam's confirmation, downloads, the display-errors notice, no internet (`#gpu=amd&net=off&first=1&open=install\|notice\|steam\|uninstall\|details\|offline\|store`) | [[step-4.2c-steam-without-its-interface]] |
 
 The demos play the interface sounds from `design/demos/sounds.js` ([[sound-files]]).
