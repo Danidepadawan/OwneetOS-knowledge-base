@@ -25,6 +25,10 @@ tags: [decision, games, library]
   disk that is not connected"** instead of offering to install it again (from
   `libraryfolders.vdf`). Games on disks (DRM-free) on a disk that is not connected are still not
   shown.
+- **Moving in the library's grid** (owner, 2026-10-15): left / right at a row's edge go round to
+  the other end of the **same row**; down on the last row goes to the first row, up on the first
+  row to the last (the vertical part waits for the owner's answer on the disks, reached today by
+  up from the first row).
 - **Home screen** (2026-10-14): its rows (the game to continue, recently played) show **installed
   games only**; every owned game is in the library.
 - **Library screen** (demo 4.2, changed by demo 4.2c): filters All / **Installed** / Favorites /
@@ -50,4 +54,5 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-14 | Proposal for demo 4.2c agreed: not-installed Steam games dimmed with a download mark (A installs, X details, after the installed ones in "Recent"); the **"Installed" filter is restored**; a Steam game on a disk that is not connected shows "On a disk that is not connected" (not for DRM-free games); "Add games → Steam" opens Steam's store. |
 | 2026-10-14 | Demo 4.2c review: with the "Recent" sort, games being downloaded come first. |
 | 2026-10-14 | The home screen's rows show installed games only (step 4.2c code). |
+| 2026-10-15 | The library's selection goes round: left / right within the same row, down / up between the last and the first row. |
 | 2026-10-11 | Demo 4.2 approved (with the generic store icon for Steam and no "Add games" in Favorites). **Distribution:** the ISO goes to SourceForge, the website to a `.org` domain on GitHub Pages, packages stay on GitHub ([[distribution-and-updates]]). **Steam is in the ISO** with 32-bit drivers for every GPU (about +300 MiB, [multilib] from the same snapshot). |
