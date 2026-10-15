@@ -32,3 +32,9 @@ Up: [[phase-4-games]] · Status: **in-progress**
   configurators and redistributables never listed. Details show the disk. **Windows games are not
   shown until step 4.5, folders with only an installer not until step 4.6.** Demo:
   `design/demos/4.3-games-on-disk.html`.
+- **Demo approved (owner, 2026-10-15).** Code written 2026-10-15 (owneet-base 0.0.32,
+  owneet-frontend 0.18.0; design: [[frontend-disk-games]]); checked in the preview
+  (`tools/preview-steps/library-disk.txt`). A disk without a games folder gives no notice.
+  Waiting for the FrankenPC test with the owner's SSD (`SSD-256GB-D`, `Giochi/`) and the owner's
+  confirmation of the `game.txt` format (proposal: `key: value` lines, `title`, `start`,
+  `description`; the user's choice from Options wins over `start`).

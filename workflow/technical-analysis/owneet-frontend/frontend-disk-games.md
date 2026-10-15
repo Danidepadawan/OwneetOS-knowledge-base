@@ -1,0 +1,69 @@
+---
+type: technical-analysis
+description: "How games on a disk are found and started (step 4.3): read-only mounting of USB disks, the disk-games provider, the file to start, plug and unplug."
+component: owneet-frontend
+tags: [technical-analysis, frontend, games]
+---
+# owneet-frontend: games on a disk (step 4.3)
+
+Up: [[frontend-architecture]] · Behaviour: [[games-on-disk]], [[step-4.3-local-drm-free-games]] ·
+Demo: `design/demos/4.3-games-on-disk.html`
+
+## Mounting (owneet-base, until [[step-6.5-automatic-disk-mounting]])
+
+- `90-owneet-usb-disks.rules` (udev): a file system on a **USB** disk (ext2/3/4, btrfs, xfs, vfat,
+  exFAT, NTFS) pulls in `owneet-mount-ro@<kernel name>.service`. Not the OWNEETLOG stick, not EFI
+  system partitions (e.g. the installation stick's), not internal disks (the tester installer
+  only offers internal disks, so it never meets a mounted one).
+- `owneet-mount-ro start|stop <name>` (root): mounts **read only** at
+  `/run/media/owneet/<label>` (the kernel name without a label), `nosuid,nodev`, journals not
+  replayed (`noload`, `norecovery`, `rescue=nologreplay`: nothing is ever written); vfat, exFAT
+  and NTFS (`ntfs3`) owned by the console user (uid 1000). A device already mounted is left
+  alone. The unit `BindsTo` the device: unplugging stops it (lazy unmount, folder removed).
+- Games start from the disk, so it is not `noexec`. Windows disks left dirty are only read
+  ([[user-data]]).
+
+## Finding the games (`providers/owneet_disk/DiskGamesProvider.cpp`)
+
+Runs at every reading of the games (not cached). Roots: the home folder ("internal") and every
+mounted disk Storage lists (`/run/media`, `/media`, `/mnt`); `OWNEET_DISKS` adds folders that act
+as disks (previews). In each root, a top-level folder named `Games` or a translation
+(`owneet::DiskGames::folderNames()`: games, giochi; case does not matter); each of its folders is
+a game.
+
+- **What can start** (searched 5 sub-folders deep, at most 20 000 entries per game): ELF programs
+  for x86 / x86-64 with the exec bit (no extension, `.x86_64`, `.x86`, `.amd64`, `.bin`),
+  `.sh` scripts (run with bash, no exec bit needed), `.AppImage` with the exec bit (run with
+  `APPIMAGE_EXTRACT_AND_RUN=1`: no FUSE in the system). Never: names with unins, setup, install,
+  config, redist, directx, dxsetup, crash reporters; folders `support`, `docs`, `manual`,
+  licences, redistributables, Unity's `*_Data`, hidden ones. A `.sh` with "makeself" or
+  "MojoSetup" in its first 64 KiB is an installer (step 4.6).
+- **Not listed yet**: folders with nothing to start on Linux (only `.exe` / `.msi` → step 4.5,
+  only installers → step 4.6); the log says which.
+- **The file to start**: the user's saved choice → `game.txt`'s `start` → `start.sh` at the top of
+  the folder (GOG) → the only file found → none (the theme asks).
+- **`game.txt`** (optional, proposal waiting for the owner's confirmation): `key: value` lines,
+  keys `title`, `start` (relative path), `description`; `#` starts a comment.
+- **The game**: collection "Games on disks" (local, not Steam), its file is the game's folder (play
+  time and owneetd's app id stay the same when the chosen file changes); title = `game.txt`'s or
+  the folder's name as written; cover = `cover.jpg` / `.png` / `.jpeg` / `.webp` at the top
+  (asset `boxFront`). Extras: `disk.dir`, `disk.root` (mount folder or "internal"), `disk.files`
+  (relative paths, top-level first), `disk.start`.
+
+## The file to start (`owneet::DiskGames`, `diskGames` in QML)
+
+`chosen(game)` (relative path, "" when the user must choose), `choose(game, file)` (sets the
+launch command and working folder at once and saves `~/.config/owneet-frontend/disk-games.json`:
+game folder → file), `hasGames(root)`. The theme asks "Which file starts {title}?" at the first
+start (mode `chooseFile` of the dialog) and offers Options → "Choose the file to start" when
+there are several.
+
+## Plug and unplug
+
+`owneet::Storage` emits `volumesChanged` when the mount table changes (`/proc/self/mountinfo`
+polled for priority data, 0.7 s to settle; with `OWNEET_DISKS`, a watcher on the parent folder).
+The theme compares the disks: a new disk with a games folder, or a gone disk that had games, makes
+it read the games again (`reloadProviders`, which rebuilds the interface); the notice ("USB disk
+connected: N games found…" / "USB disk removed") is kept in `api.memory` (`diskNotice`) across the
+reading. While a game runs, the reading waits for its end. Disks without games change nothing.
+Preview: `tools/preview-steps/library-disk.txt` (`@disk`, `plug`, `unplug`).

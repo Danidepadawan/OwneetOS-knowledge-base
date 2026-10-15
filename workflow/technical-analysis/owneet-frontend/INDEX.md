@@ -11,6 +11,7 @@ tags: [index]
 
 - [[frontend-architecture]] — owneet-frontend: where the code lives, build, Qt 6 status, links to internals and changes.
 - [[frontend-changes]] — What OwneetOS changes in Pegasus's C++ and what lives in the QML theme (foundations, shell, sections).
+- [[frontend-disk-games]] — How games on a disk are found and started (step 4.3): read-only mounting of USB disks, the disk-games provider, the file to start, plug and unplug.
 - [[frontend-input]] — How gamepad input reaches QML and how Pegasus keys map to the OwneetOS input map.
 - [[frontend-pegasus-internals]] — How Pegasus works: backend, frontend, theme API, data providers kept or compiled out, game launching.
 - [[frontend-steam-local-files]] — Which Steam files are read (and which never) to list installed games and play time.

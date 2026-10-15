@@ -69,7 +69,12 @@ the network (Wi-Fi signal or cable).
 its licence (pacman's local database), for Settings → System → Credits and licences.
 
 **Disks (3.7):** `owneet::Storage` (`src/backend/owneet/`, `storage` in QML) lists the system disk
-and the mounted disks with their free space (Qt's `QStorageInfo`), for the library.
+and the mounted disks with their free space (Qt's `QStorageInfo`), for the library; since 4.3 it
+also says when a disk is mounted or unmounted (`volumesChanged`).
+
+**Games on a disk (4.3):** the provider `providers/owneet_disk/` and `owneet::DiskGames`
+(`diskGames` in QML): [[frontend-disk-games]]. `GameArt` passes the cover's address to the Canvas
+as text (a `url` value drew nothing: local covers were never shown before).
 
 Appearance choices are saved in the theme's memory (`api.memory`). Until Settings exists (3.9),
 they are opened from the temporary Settings section (`SettingsPage.qml` → `AppearanceSheet.qml`).

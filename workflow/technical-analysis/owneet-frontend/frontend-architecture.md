@@ -57,6 +57,7 @@ SVG and a few small libraries), roughly 30 MiB in the compressed ISO (now 1671 M
 
 - [[frontend-pegasus-internals]] — structure, theme API, data providers, game launching.
 - [[frontend-steam-local-files]] — Steam's local files (step 4.1).
+- [[frontend-disk-games]] — games on a disk: read-only mounting, the provider, the file to start (step 4.3).
 - [[frontend-input]] — gamepad input and the OwneetOS input map.
 - [[frontend-changes]] — changes in C++ and in QML.
 
