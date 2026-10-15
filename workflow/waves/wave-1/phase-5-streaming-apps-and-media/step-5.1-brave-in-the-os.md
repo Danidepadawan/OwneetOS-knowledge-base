@@ -52,7 +52,10 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
 - **Checked (2026-10-15), test VM, gamescope headless, owneetd 0.11.16:** Netflix opens through
   `POST /v1/apps/catalog/netflix/open`; its window (1280x720, the whole screen) is tagged and in
   front (`focus` `web:netflix`); Guide (virtual controller `owneet-testpad`) brings the home screen,
-  a second Guide brings Netflix back. **Not checked yet:** the picture on real hardware (gamescope
-  cannot show a screen in the VM), the chosen web apps surviving a restart (owneetd 0.11.17), the
-  extension loading and Widevine.
+  a second Guide brings Netflix back. Later the same day (owneetd 0.11.18): the chosen web apps
+  survive a restart; the Super key works as Guide (`vm/test.sh keys meta_l`, gamescope headless);
+  in the visible reduced (cage) session, holding Guide for 3 seconds (`owneet-testpad -hold 3s
+  guide`) closes Netflix and shows the home screen. **Not checked yet:** the picture on real hardware (gamescope
+  cannot show a screen in the VM), the extension loading and Widevine (both
+  not working yet: Brave ignores `--load-extension` and downloads no Widevine module).
 - **Done when:** a test page opens fullscreen and Guide returns to home.
