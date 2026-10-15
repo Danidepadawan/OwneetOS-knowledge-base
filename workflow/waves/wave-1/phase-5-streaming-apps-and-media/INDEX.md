@@ -17,7 +17,7 @@ tags: [index]
 
 Status comes from each step note (`status:`).
 
-- `in-progress` [[step-5.1-brave-in-the-os|5.1 Brave in the OS]] — Managed policies (forced extension, no first-run, Widevine on, locked settings), dedicated profile, kiosk launch through the daemon; web apps open from the home screen.
+- `done` [[step-5.1-brave-in-the-os|5.1 Brave in the OS]] — Managed policies (forced extension, no first-run, Widevine on, locked settings), dedicated profile, kiosk launch through the daemon; web apps open from the home screen.
 - `todo` [[step-5.2-extension-core|5.2 Extension core]] — Manifest V3 extension: Gamepad API loop, spatial navigation, B = back, exit to home, OSK for web forms.
 - `todo` [[step-5.3-youtube|5.3 YouTube]] — TV interface, playback controls on the gamepad.
 - `todo` [[step-5.4-netflix|5.4 Netflix]] — Widevine verified, browse / play / pause / seek on the gamepad.

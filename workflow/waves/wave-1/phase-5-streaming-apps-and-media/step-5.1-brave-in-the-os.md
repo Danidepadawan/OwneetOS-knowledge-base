@@ -3,13 +3,13 @@ type: step
 description: "Managed policies (forced extension, no first-run, Widevine on, locked settings), dedicated profile, kiosk launch through the daemon; web apps open from the home screen."
 phase: "[[phase-5-streaming-apps-and-media]]"
 step: "5.1"
-status: in-progress
+status: done
 legacy: "ROADMAP.md 5.1"
 tags: [step, phase-5]
 ---
 # 5.1 Brave in the OS
 
-Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
+Up: [[phase-5-streaming-apps-and-media]] · Status: **done**
 
 - **Deliverables:** managed policies (forced extension, no first-run, Widevine on, locked
   settings), dedicated profile, kiosk launch through the daemon; A on an installed web app opens
@@ -65,3 +65,9 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
   bitmovin.com/demos/drm, which played). The extension inside the real launch (kiosk, policies
   locked, `brave://` blocked) is proven in [[step-5.2-extension-core]], where it becomes visible.
 - **Done when:** a test page opens fullscreen and Guide returns to home.
+- **Outcome (2026-10-15):** done, as checked in the test VM (owner, 2026-10-15). owneetd 0.11.18,
+  owneet-frontend 0.16.10, owneet-base 0.0.33. Fixed during the tests: the theme's `onRunning`
+  token (read by QML as a signal handler), Brave's window not tagged in gamescope (its main
+  process leaves the unit), the chosen web apps lost on a power cut (state files now flushed to the
+  disk). Added on the way: the Super key as Guide on a keyboard. **Still to see:** the picture on
+  real hardware (FrankenPC), at the next hardware test.
