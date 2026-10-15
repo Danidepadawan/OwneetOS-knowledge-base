@@ -6,7 +6,7 @@ tags: [technical-analysis, extension]
 ---
 # Brave extension — design (step 5.2)
 
-Status: **agreed with the owner on 2026-10-15** ([[step-5.2-extension-core]]); being implemented.
+Status: **agreed with the owner on 2026-10-15** (moving: 2026-10-16) ([[step-5.2-extension-core]]); being implemented.
 Code: `extension/` (Manifest V3), `daemon/cmd/owneet-bridge`. Bindings: [[controller-input-map]]
 (section "Inside a web app").
 
@@ -33,13 +33,30 @@ Code: `extension/` (Manifest V3), `daemon/cmd/owneet-bridge`. Bindings: [[contro
 
 ## Moving
 
-- From the focused target (or, when there is none, the first target at the top left of the screen)
-  the candidates are those whose box lies past the current one in the pressed direction.
-- **Distance** = the gap along the direction + 2 × the offset across it; a candidate that overlaps
-  the current one across the direction wins over one that does not.
-- Off-screen candidates count: the chosen one is scrolled fully into view (its scrolling row, then
-  the page). When there is no candidate at all in that direction, the page (or the focused
-  element's scrolling container) scrolls one step.
+Agreed with the owner on 2026-10-16, after comparing three versions in the demo of step 5.2 (the
+nearest box; the page's order with geometry as a check; the version below). Code:
+`extension/content/spatnav.js`, tests `extension/test/spatnav.test.js`.
+
+- **Up / down — structure first.** Candidates are grouped by the smallest box (DOM ancestor) they
+  share with the current element; the search starts in the current element's own box and goes
+  outward only when nothing fits there. A first pass accepts only candidates **in line** (overlapping
+  the current element across the direction) through every level; diagonal ones only in a second pass.
+- **Left / right — the container, then the page's order** (the owner's rule). The container is the
+  smallest box holding the current element and another target. The best candidate in it wins,
+  whatever is nearer outside; with none, left goes to the target **just before** the container in the
+  page's order and right to the one **just after** it, wherever they are on screen.
+- **Within a group**, the distance of the W3C draft *CSS Spatial Navigation Level 1*
+  (<https://www.w3.org/TR/css-nav-1/>, Working Draft 2019): euclidean + displacement − alignment −
+  √overlap (displacement weighted ×30 sideways, ×2 up / down; alignment ×5). Ties: page order.
+- **The column (or row) is remembered** while moving on the same axis: down, down, up, up comes back
+  to the same element; it resets on a sideways move or A.
+- From the focused target (or, when there is none, the first target on screen in reading order).
+  Off-screen candidates count: the chosen one is scrolled fully into view (its scrolling row, then
+  the page, with a 15% margin for sticky headers). With no candidate at all, the page (or the row)
+  scrolls one step.
+- Pure page order was rejected for up / down (popups and sticky bars sit far from their place on
+  screen in the page's order); the nearest box alone jumped to sticky bars (seen on YouTube in the
+  test VM). Cards with several buttons (YouTube's site) need the per-site rules of step 5.3.
 - The selection is drawn as a ring in the palette's accent colour, handed over by the bridge (no
   colour in the extension's code: [[design-tokens]]).
 
