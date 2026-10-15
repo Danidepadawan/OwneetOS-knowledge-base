@@ -35,11 +35,11 @@ tags: [decision, games, steam]
   a); the console shows the download itself. Writing Steam's files to start downloads is turned
   down. Step: [[step-4.2c-steam-without-its-interface]]. Library: [[game-library]].
 - **Installing and uninstalling** (demo 4.2c proposal, 2026-10-14): the console asks first
-  ("Install {game}?"), then shows a notice **every time until the user ticks "Don't show
-  again"**: on every PC what to press in Steam's confirmation ("Press A to confirm the download /
-  the uninstallation, B to cancel, then hold Home to leave Steam"; after the FrankenPC test) and,
-  on NVIDIA, that Steam's window may show display errors (never naming the driver); then Steam's
-  confirmation window. Before the store, the display-errors part only (NVIDIA).
+  ("Install {game}?"), then, **on NVIDIA only**, a notice "Before Steam opens": Steam's window
+  *might* show display errors for a moment (never naming the driver), **every time until the
+  user ticks "Don't show again"**; then Steam's confirmation window. The same before the store.
+  *(2026-10-14 to 2026-10-15 the notice also said what to press, on every PC: dropped once Steam's
+  window became readable with the repaint overlay, owner 2026-10-15.)*
 - **Starting a game**, Steam stays hidden behind the console's "Starting …" screen, also while it
   prepares the game's shaders; it is shown only if it seems to wait for the user.
 - **Steam's window on NVIDIA** (2026-10-15): while it is on screen, owneetd keeps gamescope
@@ -84,5 +84,6 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-14 | Proposal for demo 4.2c agreed: the console asks before installing; the NVIDIA notice comes every time until "Don't show again"; uninstalling (and cancelling a download) through `steam://uninstall/<appid>`, so a game can always be uninstalled; downloads shown on the cover, in the details, in the home notices and with a "ready" banner; **without internet, an action that needs it is blocked with a clear message** (today's "Preparing Steam" screen disappears offline and wrongly says Steam opens by itself). |
 | 2026-10-14 | Demo 4.2c review: the display-errors notice also comes before Steam's store (Steam's own window until step 5.1). |
 | 2026-10-14 | After the FrankenPC test: the notice before Steam's confirmations says what to press, on every PC; Steam stays hidden while it prepares a game's shaders; owned games = every licence but package 0 and free weekends. |
+| 2026-10-15 | The notice before Steam's window: NVIDIA only again, titled "Before Steam opens", "might show", without what to press; the home screen's "Steam Store" app is named "Steam". |
 | 2026-10-15 | Steam's window on NVIDIA: gamescope kept composing every frame while it is on screen, permanent until Valve fixes the problem (clean in the FrankenPC test); if it fails, reverted. Other bugs first, Steam's visual defects afterwards. |
 | 2026-10-14 | Licence agreements at a game's first start: the console's window with a QR code of the official address and "press Left and then A to accept"; the console does not move Steam's selection. |
