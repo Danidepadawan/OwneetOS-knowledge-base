@@ -56,6 +56,12 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
   survive a restart; the Super key works as Guide (`vm/test.sh keys meta_l`, gamescope headless);
   in the visible reduced (cage) session, holding Guide for 3 seconds (`owneet-testpad -hold 3s
   guide`) closes Netflix and shows the home screen. **Not checked yet:** the picture on real hardware (gamescope
-  cannot show a screen in the VM), the extension loading and Widevine (both
-  not working yet: Brave ignores `--load-extension` and downloads no Widevine module).
+  cannot show a screen in the VM).
+- **Extension and Widevine (2026-10-15, test VM, Brave by hand in a normal window, policies moved
+  aside):** `brave://extensions` lists "OwneetOS", enabled, no errors (Brave does not record
+  command-line extensions in the profile's files: looking for it there proves nothing). Widevine is
+  on with owneetd's setting (`brave.widevine_opted_in`); Brave downloads the module the first time
+  a page asks for protected video (`WidevineCdm/4.10.3112.0` after the public test video at
+  bitmovin.com/demos/drm, which played). The extension inside the real launch (kiosk, policies
+  locked, `brave://` blocked) is proven in [[step-5.2-extension-core]], where it becomes visible.
 - **Done when:** a test page opens fullscreen and Guide returns to home.
