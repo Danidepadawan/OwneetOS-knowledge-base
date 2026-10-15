@@ -42,4 +42,9 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
   bring back the home screen from a web app** (bug to investigate next: owneetd's journal after a
   Guide press). Inside the page the controller does nothing: expected until
   [[step-5.2-extension-core]].
+- **Diagnosis (2026-10-15):** the first test ran in the reduced (cage) session, where a short
+  Guide press does nothing by design. In gamescope (headless, test VM) the web app opened but never
+  came to the front: Brave moves its main process into its own scope
+  (`app-org.chromium.Chromium-PID.scope`), so owneetd did not tag its window. owneetd 0.11.16 finds
+  it through its helper processes, which stay in the unit. Waiting for the owner's new test.
 - **Done when:** a test page opens fullscreen and Guide returns to home.

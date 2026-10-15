@@ -43,7 +43,7 @@ or web app at a time, kinds `game` and `webapp`; other apps may run next to it),
   vendored), tags the home screen and each app (by process: the home screen's process id, or the
   app's systemd unit from `/proc/PID/cgroup`), and sets `GAMESCOPECTRL_BASELAYER_APPID`: a new app
   comes to the front as soon as its window appears, with the home screen as fallback. App ids
-  are derived from the app's id, so they survive an owneetd restart.
+  are derived from the app's id, so they survive an owneetd restart. A window whose process left its unit is still found when that process is the parent of one in an app's unit: Brave (the web apps' engine) moves its main process, which owns the windows, into a scope of its own (`app-org.chromium.Chromium-PID.scope`) when it starts, and its helpers stay in the unit (5.1).
 - **Guide** (owned by the system, [[controller-input-map]]): in gamescope it toggles between
   the home screen and the app last shown; the game keeps running behind the home screen. While
   Steam or a Steam game is on screen a short press is Steam's (Steam reads the controllers itself
