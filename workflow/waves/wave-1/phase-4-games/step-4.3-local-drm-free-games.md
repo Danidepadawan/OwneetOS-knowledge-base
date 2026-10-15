@@ -18,3 +18,8 @@ Up: [[phase-4-games]] · Status: **todo**
   optional `cover.jpg` / `cover.png` and `game.txt`; when the choice is not clear, the console
   asks once with the controller and remembers (helpers, uninstallers, redistributables such as
   DirectX or Visual C++ are never offered). "Add games" → "From a USB stick or disk" explains it.
+- **Minimal mounting (owner, 2026-10-15):** external disks (USB) are mounted automatically, **read
+  only**, just enough for the console to find and start the games on them (the console's own disk
+  has no room for test games). Everything else of disk mounting stays in
+  [[step-6.5-automatic-disk-mounting]] (read-write, internal disks, Windows disks left dirty,
+  notices, moving games). The plan is not reordered.
