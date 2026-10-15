@@ -22,3 +22,6 @@ tags: [best-practice, go]
 - Tests: unit tests next to the code (`*_test.go`) with fakes for D-Bus services; integration tests
   that need `/dev/uinput` behind the `uinput` build tag. Race detector clean.
 - Static binary (`CGO_ENABLED=0`).
+- State files (the user's choices, settings) are saved with `internal/atomicfile.Write`: written,
+  flushed to the disk and renamed. A console's power can be cut at any time, and btrfs writes new
+  data only every few seconds (step 5.1, 2026-10-15: the chosen web apps were lost).

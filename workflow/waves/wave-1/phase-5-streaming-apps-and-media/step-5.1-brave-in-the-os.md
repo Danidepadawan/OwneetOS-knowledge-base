@@ -46,5 +46,8 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
   Guide press does nothing by design. In gamescope (headless, test VM) the web app opened but never
   came to the front: Brave moves its main process into its own scope
   (`app-org.chromium.Chromium-PID.scope`), so owneetd did not tag its window. owneetd 0.11.16 finds
-  it through its helper processes, which stay in the unit. Waiting for the owner's new test.
+  it through its helper processes, which stay in the unit. The chosen web apps were lost at each
+  VM restart (`vm/test.sh stop` cuts the power, and owneetd's file was not flushed to the disk):
+  owneetd 0.11.17 saves its state files with `internal/atomicfile` (web apps, display settings).
+  Waiting for the owner's new test.
 - **Done when:** a test page opens fullscreen and Guide returns to home.
