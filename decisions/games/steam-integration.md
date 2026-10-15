@@ -42,6 +42,10 @@ tags: [decision, games, steam]
   confirmation window. Before the store, the display-errors part only (NVIDIA).
 - **Starting a game**, Steam stays hidden behind the console's "Starting …" screen, also while it
   prepares the game's shaders; it is shown only if it seems to wait for the user.
+- **Steam's window on NVIDIA** (2026-10-15): while it is on screen, owneetd keeps gamescope
+  composing every frame (a changing, all but transparent one-pixel overlay), which removes the
+  stale parts of the window; permanent on NVIDIA until Valve fixes the problem
+  ([[step-4.2c-steam-without-its-interface]]).
 - **Licence agreements** Steam asks to accept at a game's first start: the console first shows
   its own window with the agreement's official address as a QR code (to read on a phone) and
   "in Steam's window, press Left and then A to accept"; Steam is then shown at once. The console
@@ -80,4 +84,5 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-14 | Proposal for demo 4.2c agreed: the console asks before installing; the NVIDIA notice comes every time until "Don't show again"; uninstalling (and cancelling a download) through `steam://uninstall/<appid>`, so a game can always be uninstalled; downloads shown on the cover, in the details, in the home notices and with a "ready" banner; **without internet, an action that needs it is blocked with a clear message** (today's "Preparing Steam" screen disappears offline and wrongly says Steam opens by itself). |
 | 2026-10-14 | Demo 4.2c review: the display-errors notice also comes before Steam's store (Steam's own window until step 5.1). |
 | 2026-10-14 | After the FrankenPC test: the notice before Steam's confirmations says what to press, on every PC; Steam stays hidden while it prepares a game's shaders; owned games = every licence but package 0 and free weekends. |
+| 2026-10-15 | Steam's window on NVIDIA: gamescope kept composing every frame while it is on screen, permanent until Valve fixes the problem (clean in the FrankenPC test); if it fails, reverted. Other bugs first, Steam's visual defects afterwards. |
 | 2026-10-14 | Licence agreements at a game's first start: the console's window with a QR code of the official address and "press Left and then A to accept"; the console does not move Steam's selection. |

@@ -113,3 +113,9 @@ The console keeps Steam's interface off the screen in everyday use ([[steam-inte
     Xvfb in the builder VM (no X errors); gamescope's behaviour only on the FrankenPC. If it
     works, Steam's window is readable again and the blind guidance of this step is reconsidered
     with the owner.
+  - **FrankenPC, 2026-10-14/15**: with the switch (on the stick) Steam's window was clean, a
+    little slower ("decidedly acceptable"); the five starts without the stick had the glitches
+    again, as expected (the switch lives on the stick). **Owner, 2026-10-15:** the repaint becomes
+    permanent on every NVIDIA PC (owneetd 0.12.4; `owneet.debug.steam_repaint=off` turns it off
+    to compare), until Valve fixes the problem; if it does not hold, it is reverted. Then the
+    other bugs the owner found come first, the visual defects of Steam afterwards.
