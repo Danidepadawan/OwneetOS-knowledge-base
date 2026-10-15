@@ -3,12 +3,12 @@ type: step
 description: "Steam runs hidden; the console lists every owned Steam game from Steam's local caches, installs it through Steam's own confirmation and shows the download itself."
 phase: "[[phase-4-games]]"
 step: "4.2c"
-status: in-progress
+status: done
 tags: [step, phase-4]
 ---
 # 4.2c Steam without its interface *(owner, 2026-10-14)*
 
-Up: [[phase-4-games]] · Status: **in-progress**
+Up: [[phase-4-games]] · Status: **done**
 
 Why: with the NVIDIA driver, Steam's own window shows glitches (pictures left over or not
 finished) that no setting removed; games are not affected ([[step-4.2b-updates-from-a-usb-stick]]).
@@ -53,8 +53,11 @@ The console keeps Steam's interface off the screen in everyday use ([[steam-inte
   closing a game, coming back with Guide) never shows Steam's own window except for its
   confirmation when installing or uninstalling; the library matches Steam's own count; without
   internet, Steam's actions say so and are blocked.
-- **Outcome:** *(2026-10-14, code done and verified in the VMs; waiting for the FrankenPC test and
-  the owner's approval)*
+- **Outcome:** **approved by the owner on 2026-10-15** after the FrankenPC tests (Steam's window
+  clean with the repaint overlay, permanent on NVIDIA). Reopened if Steam's display defects come
+  back. Left for later: a game on a disk that is not connected, checked once disks are mounted
+  automatically ([[step-6.5-automatic-disk-mounting]]). *(Code done and verified in the VMs on
+  2026-10-14.)*
   - **owneetd** (`daemon/internal/apps/steam.go`, `steamlib.go`): `GET /v1/steam` gives downloads,
     games on a disk not connected, account, licences, NVIDIA; `POST /v1/steam` `install` /
     `uninstall`; event `steam.changed`; Steam hidden while it starts a game, shown after 20 s
