@@ -41,6 +41,13 @@ Backspace = B, X = X, Y = Y, Q / E = LB / RB, Z / C = LT / RT, M = Menu, Page Up
 right stick, **Super (the Windows key) = Guide** (2026-10-15: owned by owneetd like Guide, also while
 a game or app runs; for testing and PCs without a controller).
 
+**Inside a web app** (step 5.2, 2026-10-15; the console's extension in Brave,
+[[extension-design]]): D-pad / left stick move a ring between the page's targets (spatial
+navigation); A presses the target (on a text field: the console's on-screen keyboard); B leaves full
+screen, closes the page's open dialog, or goes back a page, and where there is nothing to go back to
+asks to close the web app ("Close {name}?"); the right stick scrolls. X, Y, Menu, LB / RB and LT / RT
+do nothing (sites may get their own meanings in steps 5.3–5.5). Guide stays owneetd's.
+
 The input map is **fixed**: it is not saved in the frontend's settings, so a change reaches every
 system. **Held buttons:** a direction repeats after 360 ms, then every 140 ms; LB / RB and LT / RT
 repeat after 720 ms, then every 360 ms; analog triggers count as pressed above half their travel
@@ -73,3 +80,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-12 | After the owner's first Steam test (Guide fought over by owneetd and Steam): **while Steam or a Steam game is on screen, a short Guide press is Steam's; holding Guide for 1 second comes back to the console** (option A; [[controller-input-map]]). "Exit Steam" in Steam's menu also comes back. Steam's own screens that matter (login, a game's launch progress) are shown automatically ([[game-library]]). |
 | 2026-10-13 | On-screen keyboard (owner's request): LT held = capital letters while it is held, as on Steam's keyboard; the pages of keys move to LB / RB (no section can be switched while the keyboard is open); RT does nothing there ([[controller-input-map]]). |
 | 2026-10-15 | Keyboard fallback for Guide: the **Super (Windows) key**, handled by owneetd like Guide (also while a game or app runs). Chosen over G, which is used for typing and in games (owner's choice, assistant's advice). |
+| 2026-10-15 | Inside a web app (step 5.2): D-pad moves a ring between the page's targets, A presses, B goes back and asks to close where there is nothing to go back to, the right stick scrolls; text fields open the console's keyboard; the other buttons do nothing ([[extension-design]]). |
