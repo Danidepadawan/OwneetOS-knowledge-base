@@ -46,11 +46,16 @@ tags: [decision, games, steam]
   composing every frame (a changing, all but transparent one-pixel overlay), which removes the
   stale parts of the window; permanent on NVIDIA until Valve fixes the problem
   ([[step-4.2c-steam-without-its-interface]]).
-- **"Hold Home to return to the console"** (owner, 2026-10-15): for 6 seconds each time Steam's
-  own window comes on screen (gamescope session), a bar over it, drawn by the console in a window
-  marked as gamescope's external overlay (owneetd never takes it for an app). Showing it only
-  while a Steam page loads for ever is not possible: the console cannot see inside Steam's window
-  and Steam's logs show no sign of it.
+- **"How to come back from Steam"** (owner, 2026-10-15): before Steam's window opens the first
+  time after each start of the console (store, installing, uninstalling, a licence agreement),
+  a window says to hold Home to come back, and to close Steam (Menu on its tile) when a page
+  keeps loading; "Don't show again" ends it. *(It replaced a bar drawn over Steam's window for 6
+  seconds, which did not show on the FrankenPC.)*
+- **Steam Input for every controller** (owner, 2026-10-15): the console turns on the account's
+  `SteamController_XBoxSupport`, `SteamController_SwitchSupport` and
+  `SteamController_GenericGamepadSupport` (localconfig.vdf, UserLocalConfigStore; read on the
+  FrankenPC) once per account, while Steam is closed; PlayStation controllers keep Steam's
+  default ("on in games without support"). Later choices in Steam are kept.
 - **Steam's pages with the GPU on NVIDIA** (owner, 2026-10-15): since the repaint overlay they no
   longer show stale pictures with it, so `-cef-disable-gpu` is dropped (test switch
   `owneet.debug.steam_cef_gpu=off` brings it back); turned off again if the defects return.
@@ -97,4 +102,6 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-14 | After the FrankenPC test: the notice before Steam's confirmations says what to press, on every PC; Steam stays hidden while it prepares a game's shaders; owned games = every licence but package 0 and free weekends. |
 | 2026-10-15 | The notice before Steam's window: NVIDIA only again, titled "Before Steam opens", "might show", without what to press; the home screen's "Steam Store" app is named "Steam". |
 | 2026-10-15 | Steam's window on NVIDIA: gamescope kept composing every frame while it is on screen, permanent until Valve fixes the problem (clean in the FrankenPC test); if it fails, reverted. Other bugs first, Steam's visual defects afterwards. |
+| 2026-10-15 | Steam's pages keep the GPU on NVIDIA (no defects came back with it). "Close Steam" from the home screen's Steam tile. |
+| 2026-10-15 | The bar over Steam's window did not show: replaced by a window "How to come back from Steam" at the first opening of Steam's window after each start, until "Don't show again". Steam Input turned on for Xbox, Switch and generic controllers once per account. |
 | 2026-10-14 | Licence agreements at a game's first start: the console's window with a QR code of the official address and "press Left and then A to accept"; the console does not move Steam's selection. |
