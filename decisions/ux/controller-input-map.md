@@ -4,7 +4,7 @@ description: "The binding meaning of every button on every screen, keyboard fall
 area: ux
 status: active
 decided: 2026-10-03
-updated: 2026-10-13
+updated: 2026-10-15
 legacy: "PROJECT_RULES.md §9.1"
 tags: [decision, ux, input]
 ---
@@ -38,7 +38,8 @@ goes to the game.
 
 **Keyboard fallback** (optional, same meanings): arrows = D-pad, Enter / Space = A, Esc /
 Backspace = B, X = X, Y = Y, Q / E = LB / RB, Z / C = LT / RT, M = Menu, Page Up / Page Down =
-right stick.
+right stick, **Super (the Windows key) = Guide** (2026-10-15: owned by owneetd like Guide, also while
+a game or app runs; for testing and PCs without a controller).
 
 The input map is **fixed**: it is not saved in the frontend's settings, so a change reaches every
 system. **Held buttons:** a direction repeats after 360 ms, then every 140 ms; LB / RB and LT / RT
@@ -71,3 +72,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-11 | Step 3.12 (interface sounds) done; the first sound after boot needs the sound output running first (a looped silence). Demo 3.13 approved: animated start-up from the boot splash's wordmark; a **quick menu** (side panel from the right, as on SteamOS) with power options and a read-only "Controls and features" guide, opened by **B where there is nothing to go back to** (an accidental press only opens the menu). View stays reserved for screenshots in a later wave ([[controller-input-map]]). |
 | 2026-10-12 | After the owner's first Steam test (Guide fought over by owneetd and Steam): **while Steam or a Steam game is on screen, a short Guide press is Steam's; holding Guide for 1 second comes back to the console** (option A; [[controller-input-map]]). "Exit Steam" in Steam's menu also comes back. Steam's own screens that matter (login, a game's launch progress) are shown automatically ([[game-library]]). |
 | 2026-10-13 | On-screen keyboard (owner's request): LT held = capital letters while it is held, as on Steam's keyboard; the pages of keys move to LB / RB (no section can be switched while the keyboard is open); RT does nothing there ([[controller-input-map]]). |
+| 2026-10-15 | Keyboard fallback for Guide: the **Super (Windows) key**, handled by owneetd like Guide (also while a game or app runs). Chosen over G, which is used for typing and in games (owner's choice, assistant's advice). |
