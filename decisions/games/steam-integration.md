@@ -46,6 +46,14 @@ tags: [decision, games, steam]
   composing every frame (a changing, all but transparent one-pixel overlay), which removes the
   stale parts of the window; permanent on NVIDIA until Valve fixes the problem
   ([[step-4.2c-steam-without-its-interface]]).
+- **"Hold Home to return to the console"** (owner, 2026-10-15): for 6 seconds each time Steam's
+  own window comes on screen (gamescope session), a bar over it, drawn by the console in a window
+  marked as gamescope's external overlay (owneetd never takes it for an app). Showing it only
+  while a Steam page loads for ever is not possible: the console cannot see inside Steam's window
+  and Steam's logs show no sign of it.
+- **Steam's pages with the GPU on NVIDIA** (owner, 2026-10-15): since the repaint overlay they no
+  longer show stale pictures with it, so `-cef-disable-gpu` is dropped (test switch
+  `owneet.debug.steam_cef_gpu=off` brings it back); turned off again if the defects return.
 - **Closing Steam** (owner, 2026-10-15): Menu on the home screen's Steam tile while Steam runs:
   "Close Steam?" (downloads stop; a Steam game running closes too), Cancel first. Also the way
   out of a Steam page that never finishes loading.
