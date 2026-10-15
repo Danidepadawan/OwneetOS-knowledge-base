@@ -49,5 +49,10 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
   it through its helper processes, which stay in the unit. The chosen web apps were lost at each
   VM restart (`vm/test.sh stop` cuts the power, and owneetd's file was not flushed to the disk):
   owneetd 0.11.17 saves its state files with `internal/atomicfile` (web apps, display settings).
-  Waiting for the owner's new test.
+- **Checked (2026-10-15), test VM, gamescope headless, owneetd 0.11.16:** Netflix opens through
+  `POST /v1/apps/catalog/netflix/open`; its window (1280x720, the whole screen) is tagged and in
+  front (`focus` `web:netflix`); Guide (virtual controller `owneet-testpad`) brings the home screen,
+  a second Guide brings Netflix back. **Not checked yet:** the picture on real hardware (gamescope
+  cannot show a screen in the VM), the chosen web apps surviving a restart (owneetd 0.11.17), the
+  extension loading and Widevine.
 - **Done when:** a test page opens fullscreen and Guide returns to home.
