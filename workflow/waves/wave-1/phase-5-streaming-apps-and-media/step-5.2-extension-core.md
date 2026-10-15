@@ -26,3 +26,4 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
   on real hardware only: headless gamescope in the test VM shows no picture) → packaging.
 - **Known limits of 5.2:** native `<select>` popups and cross-origin iframes (e.g. captchas) are
   not driven by the controller.
+- **Demo approved (owner, 2026-10-15):** `design/demos/5.2-web-app-controls.html`. No sounds inside the page; Done moves the selection to the next target; show / hide password only in the fallback session's line. Seeking (±10 s) is not part of 5.2: it comes with each site's player in 5.3 and 5.4.
