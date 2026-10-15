@@ -50,7 +50,7 @@ or web app at a time, kinds `game` and `webapp`; other apps may run next to it),
   and opens its menu or overlay), and holding Guide for 1 second (`HoldToHome`) comes back to the
   home screen. In cage,
   which shows only the newest window, holding Guide for 2 seconds closes the app on screen; a short
-  press does nothing. `guide.pressed` and `guide.released` are still sent to clients.
+  press does nothing. `guide.pressed` and `guide.released` are still sent to clients. On a keyboard the Super (Windows) key is Guide (owneetd 0.11.18): keyboards are read like controllers, never grabbed, and only their Super keys count; the events then name the controller `keyboard`.
 - Events: `app.started`, `app.exited` (with systemd's result: `success`, `exit-code`, `signal`,
   `timeout`…), `app.window` (gamescope can show one of the app's windows for the first time, e.g.
   Steam ready after its first download: its early helper windows are never shown), `focus.changed`
