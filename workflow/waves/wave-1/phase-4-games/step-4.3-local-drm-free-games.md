@@ -49,4 +49,12 @@ Up: [[phase-4-games]] · Status: **in-progress**
   (3) CAYNE does not show up: Unity stops after finding the controller, the console stays on the
   home screen, the disk keeps working; the owner switched off after about a minute → the test
   report now lists the busiest processes and disk reads, and copies Unity's `Player.log`
-  (owneet-base 0.0.34); `owneet-xprobe` on the stick. Third test pending.
+  (owneet-base 0.0.34); `owneet-xprobe` on the stick. Beneath a Steel Sky: the owner decided to
+  leave games made for a mouse and keyboard as they are ([[games-on-disk]], 2026-10-16).
+- **FrankenPC test 3 (2026-10-16):** plugging the SSD gives only the notice (quiet reading OK).
+  CAYNE runs (Unity 5.4 initialises, its 1440×900 window is mapped) but stays behind the home
+  screen: its window has no `_NET_WM_PID`, so owneetd never tagged it for gamescope; the home
+  screen, still on screen, did not answer because the interface had paused the controller at the
+  launch → owneetd 0.12.9 finds a window's process through X-Resource when `_NET_WM_PID` is
+  missing (checked on Xvfb); owneet-frontend 0.18.2 pauses the controller only when a game is
+  really on screen. Fourth test pending.

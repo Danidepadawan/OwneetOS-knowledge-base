@@ -38,7 +38,9 @@ at a time; apps such as the browser may run next to it), `apps.unknown_app` (404
   (`STEAM_GAME`) and lets the shell choose which app is on screen, as Steam does on SteamOS.
   owneetd watches new windows on gamescope's X server (`github.com/jezek/xgb`, BSD-3-Clause,
   vendored), tags the home screen and each app (by process: the home screen's process id, or the
-  app's systemd unit from `/proc/PID/cgroup`), and sets `GAMESCOPECTRL_BASELAYER_APPID`: a new app
+  app's systemd unit from `/proc/PID/cgroup`; the process is the window's `_NET_WM_PID`, else the
+  X server's own record of the client through the X-Resource extension, `xgb/res`: Unity 5 games
+  such as CAYNE set no `_NET_WM_PID`, 2026-10-16), and sets `GAMESCOPECTRL_BASELAYER_APPID`: a new app
   comes to the front as soon as its window appears, with the home screen as fallback. App ids
   are derived from the app's id, so they survive an owneetd restart.
 - **Guide** (owned by the system, [[controller-input-map]]): in gamescope it toggles between

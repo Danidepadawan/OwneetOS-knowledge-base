@@ -4,7 +4,7 @@ description: "The Games folder convention, Windows games through hidden Proton, 
 area: games
 status: active
 decided: 2026-10-11
-updated: 2026-10-15
+updated: 2026-10-16
 legacy: "PROJECT_RULES.md §6 (Games on a disk), §10, §13 (2026-10-11)"
 tags: [decision, games]
 ---
@@ -34,6 +34,11 @@ tags: [decision, games]
 - **`game.txt`** (owner, 2026-10-15): `key: value` lines with English keys: `title`, `start` (the
   file to start, relative to the game's folder), `description`; `#` starts a comment. A file
   chosen from Options wins over `start`. Details: [[frontend-disk-games]].
+- **Games made for a mouse and keyboard** (owner, 2026-10-16, after Beneath a Steel Sky on the
+  FrankenPC): left exactly as their developers made them; the console adds no pointer or mapping
+  inside games, which could spoil the game. The controller pointer of
+  [[step-4.7-controller-pointer]] stays for the windows it lists (installers, launchers), never in
+  games.
 
 Steps: [[step-4.3-local-drm-free-games]], [[step-4.5-windows-games-proton]], [[step-4.6-installers]].
 
@@ -46,4 +51,5 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-11 | **Wave 1 scope grows** ([[disks]] and 10): DRM-free games on a disk play whatever their form (ready to run or installer, Linux or Windows through umu-launcher + GE-Proton, hidden from the user); installers run by themselves in the background; moving games and media between disks (new step 6.6). Games folder: `Games` or its translated name, one folder per game with any sub-folders, searched recursively. "Add games" also offers "From a USB stick or disk". |
 | 2026-10-15 | Demo 4.3 proposal: title = the folder's name as written (the user's control); the file to start asked once and changeable from Options; Windows games shown from step 4.5, installers from step 4.6. |
 | 2026-10-15 | `game.txt`: `key: value` lines, keys `title`, `start`, `description`; the file chosen from Options wins over `start`. |
+| 2026-10-16 | Games made for a mouse and keyboard are left as their developers made them: no pointer or mapping added inside games; the controller pointer (step 4.7) is never offered in games. |
 | 2026-10-11 | Proton and its runtime are downloaded once, in the background, the first time the console is online ("a necessary evil": the only exception to C9, for Windows games before the first connection). Installing a game from an installer first shows "By installing you accept the game's licence" [Read] [Install] (the user is informed, the project is covered). Step 4.1 approved. |
