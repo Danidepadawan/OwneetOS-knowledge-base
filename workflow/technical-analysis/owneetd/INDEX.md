@@ -19,4 +19,5 @@ tags: [index]
 - [[owneetd-api-network]] — API for NetworkManager status, Wi-Fi scan, connect, forget, saved networks.
 - [[owneetd-api-power]] — API for shut down, restart and suspend through logind.
 - [[owneetd-api-status]] — API for daemon and OwneetOS version and session mode.
+- [[owneetd-api-windows]] — API and design of Windows games in owneetd (step 4.5): the one-time download of Proton and its runtime with umu-launcher, its progress, owneet-windows-run.
 - [[owneetd-design]] — owneetd design: Go vs Rust, privileges, Unix socket transport, API conventions, open points.

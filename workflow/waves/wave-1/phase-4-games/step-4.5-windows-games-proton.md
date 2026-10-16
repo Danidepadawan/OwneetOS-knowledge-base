@@ -28,6 +28,14 @@ Up: [[phase-4-games]] · Status: **in-progress**
   first start takes a little longer" the first time; the Steam question for a broken Linux
   version. Games on a USB disk do not save in their own folder until step 6.5 (option B).
   Demo: `design/demos/4.5-windows-games.html`.
+- **Demo approved (owner, 2026-10-16).** Code written 2026-10-16, first part (games on a disk):
+  owneetd 0.13.1 (`/v1/windows`, the download with umu-launcher, `owneet-windows-run`; windows
+  without a usable `_NET_WM_PID` tagged through X-Resource), owneet-frontend 0.20.0 (Windows games,
+  GOG's info file, the notices, Settings → System, "Preparing…"), owneet-base 0.0.35 (umu-launcher,
+  CREDITS). Design: [[owneetd-api-windows]], [[frontend-disk-games]]. Checked in the preview and,
+  for umu-launcher's download, on the builder VM. The "about 1 GB" texts are a little high: about
+  650 MB are downloaded (2.3 GB on disk). Second part still to do: the Steam question for a
+  broken Linux version.
 
 - **Deliverables:** Windows DRM-free games start like any other: umu-launcher + GE-Proton, one
   prefix per game, never named in the interface; a "preparing the game" screen until the game's

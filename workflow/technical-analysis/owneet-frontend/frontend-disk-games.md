@@ -52,6 +52,20 @@ a game.
   (asset `boxFront`). Extras: `disk.dir`, `disk.root` (mount folder or "internal"), `disk.files`
   (relative paths, top-level first), `disk.start`.
 
+## Windows games (step 4.5)
+
+A folder with nothing to start on Linux but `.exe` files is a Windows game (`disk.windows`): it
+starts as GOG's `goggame-<id>.info` says (the primary `FileTask`: path, arguments, working folder;
+each part of the path matched without case, e.g. `DOSBOX\dosbox.exe` → `DOSBOX/DOSBox.exe`),
+otherwise the usual choice among its `.exe` files (never setup, uninstallers, configurators such
+as `GOGDOSConfig.exe`, help programs, `__redist`). The command is
+`/usr/lib/owneet/owneet-windows-run <prefix> <exe> <GOG's arguments>` ([[owneetd-api-windows]]).
+The theme tells owneetd when the library has one (`POST /v1/windows/needed`), blocks a start
+until owneetd's download is ready (its progress, or "connect to the internet"), and shows
+"Preparing {game}…" (the Steam preparing screen, `windows: true`) until the game is on screen;
+`diskGames.firstStart(game)` (no `pfx` in its prefix yet) adds "The first start takes a little
+longer". Preview: `tools/preview-steps/windows-games.txt`.
+
 ## The file to start (`owneet::DiskGames`, `diskGames` in QML)
 
 `chosen(game)` (relative path, "" when the user must choose), `choose(game, file)` (sets the
