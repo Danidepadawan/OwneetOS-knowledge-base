@@ -21,3 +21,9 @@ Scope agreed so far: [[wave-1-scope]] (later waves).
   brightness control (no backlight, no DDC/CI), an optional "Dim the picture" setting done by
   gamescope's colour pipeline: darker pixels, same backlight (no energy saved, lower contrast);
   it would apply to games too. Needs a demo and the owner's approval.
+- **16. Anything made console-ready by itself (owner, 2026-10-16):** the console takes any
+  package, installer or game it does not know yet and makes it "OwneetOS-friendly" on its own,
+  with no technical step for the user (Wave 1 covers only the known forms: games ready to run,
+  Windows games through Proton, the known installers of [[step-4.6-installers]]). Games made for
+  a mouse and keyboard stay as their developers made them ([[games-on-disk]]). To be detailed
+  into steps after the first release.

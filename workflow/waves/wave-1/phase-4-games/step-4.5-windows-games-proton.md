@@ -3,13 +3,17 @@ type: step
 description: "Windows DRM-free games start like any other: umu-launcher + GE-Proton, one prefix per game, never named in the interface; a 'preparing…"
 phase: "[[phase-4-games]]"
 step: "4.5"
-status: todo
+status: in-progress
 legacy: "ROADMAP.md 4.5"
 tags: [step, phase-4]
 ---
 # 4.5 Windows games (Proton) *(added 2026-10-11)*
 
-Up: [[phase-4-games]] · Status: **todo**
+Up: [[phase-4-games]] · Status: **in-progress**
+
+- **Started (owner, 2026-10-16).** Test games: free DRM-free Windows-only games from GOG, unpacked
+  from their installers with `innoextract` on the owner's PC (installed by the owner) and put in
+  the SSD's `Giochi/` folder, next to the two Linux games.
 
 - **Deliverables:** Windows DRM-free games start like any other: umu-launcher + GE-Proton, one
   prefix per game, never named in the interface; a "preparing the game" screen until the game's
