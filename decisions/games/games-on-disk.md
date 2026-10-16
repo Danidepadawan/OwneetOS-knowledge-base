@@ -19,12 +19,13 @@ tags: [decision, games]
 - **Whatever their form**: ready to run or with an installer, for Linux or for Windows.
   - **Windows games:** umu-launcher + GE-Proton, one prefix per game, **never named in the
     interface** (at most a "preparing the game" screen while it loads).
-  - **Proton and its runtime** (about 1 GB) stay out of the ISO: downloaded once, in the
+  - **Proton and its runtime** (a download of about 650 MB, 2.3 GB on disk) stay out of the ISO: downloaded once, in the
     background, the first time the console is online **with a Windows game in the library** (as
     soon as one appears; owner 2026-10-16: no download for users without Windows games) — "a
     necessary evil", the **only exception to C9** ([[hard-constraints]]). Until then a Windows
     game says it needs a download, needed only the first time. Its progress is shown in the home
-    screen's notices and in Settings → System; a banner says when Windows games are ready.
+    screen's notices and in Settings → System; a banner says when Windows games are ready. The
+    texts give the real size, "about 650 MB" (owner, 2026-10-16: be precise).
   - **Which file starts a Windows game:** GOG's `goggame-<id>.info` (its primary play task: file,
     arguments, working folder), else the same choice as for Linux games ([[step-4.5-windows-games-proton]]).
 - **Saves of games on a USB disk** (owner, 2026-10-16, option B): until
@@ -61,5 +62,6 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-15 | Demo 4.3 proposal: title = the folder's name as written (the user's control); the file to start asked once and changeable from Options; Windows games shown from step 4.5, installers from step 4.6. |
 | 2026-10-15 | `game.txt`: `key: value` lines, keys `title`, `start`, `description`; the file chosen from Options wins over `start`. |
 | 2026-10-16 | Games made for a mouse and keyboard are left as their developers made them: no pointer or mapping added inside games; the controller pointer (step 4.7) is never offered in games. |
+| 2026-10-16 | The download's texts say "about 650 MB" (the measured size), not "about 1 GB". |
 | 2026-10-16 | Demo 4.5 proposal: Proton is downloaded only once a Windows game is in the library; its progress in the home notices and Settings → System; GOG's `goggame-*.info` says which file starts a Windows game; games on a USB disk do not save in their own folder until step 6.5 (option B). |
 | 2026-10-11 | Proton and its runtime are downloaded once, in the background, the first time the console is online ("a necessary evil": the only exception to C9, for Windows games before the first connection). Installing a game from an installer first shows "By installing you accept the game's licence" [Read] [Install] (the user is informed, the project is covered). Step 4.1 approved. |

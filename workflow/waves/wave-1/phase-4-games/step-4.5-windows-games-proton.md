@@ -33,9 +33,15 @@ Up: [[phase-4-games]] · Status: **in-progress**
   without a usable `_NET_WM_PID` tagged through X-Resource), owneet-frontend 0.20.0 (Windows games,
   GOG's info file, the notices, Settings → System, "Preparing…"), owneet-base 0.0.35 (umu-launcher,
   CREDITS). Design: [[owneetd-api-windows]], [[frontend-disk-games]]. Checked in the preview and,
-  for umu-launcher's download, on the builder VM. The "about 1 GB" texts are a little high: about
-  650 MB are downloaded (2.3 GB on disk). Second part still to do: the Steam question for a
-  broken Linux version.
+  for umu-launcher's download, on the builder VM. About 650 MB are downloaded (2.3 GB on disk):
+  the texts say "about 650 MB" (owner, 2026-10-16). Second part still to do: the Steam question
+  for a broken Linux version.
+- **FrankenPC test 1 (2026-10-16):** the download works (about 2.5 minutes). Treasure Adventure
+  Game starts, after a short black flash of the screen (bearable, not pleasant); Stargunner and
+  Tyrian 2000 show DOSBox's screen and close after 5–9 seconds, with nothing in the logs. Either
+  DOSBox does not find GOG's configuration, or the DOS game cannot write in its folder (the disk
+  is read only) → owneet.debug.windows_log=on (tester switch) writes Proton's log and DOSBox's
+  messages (owneetd 0.13.2, owneet-base 0.0.36 copies them to the stick).
 
 - **Deliverables:** Windows DRM-free games start like any other: umu-launcher + GE-Proton, one
   prefix per game, never named in the interface; a "preparing the game" screen until the game's
