@@ -81,6 +81,13 @@ nearest box; the page's order with geometry as a check; the version below). Code
   page's `input` events), not typed through owneetd's virtual keyboard: it works whichever window
   has the focus. The virtual keyboard ([[owneetd-api-input]]) stays a fallback for sites that
   reject it.
+- **The controller never stays stuck** (owner, 2026-10-16). While the keyboard is open the
+  extension waits for `keyboard_closed`; a timer in the extension cannot tell "nobody answered"
+  from "still typing", so **owneetd** decides: the interface confirms that it shows the keyboard,
+  and without that confirmation within **3 seconds** of the open request, or when the interface
+  stops while the keyboard is open, owneetd closes the keyboard itself (`keyboard_closed`, no
+  `next`) and the extension takes the controller back. It also takes it back when the bridge
+  disconnects. The confirmation's form is defined with the frontend part of 5.2.
 
 ## Bridge to owneetd
 
