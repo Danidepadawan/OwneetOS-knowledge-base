@@ -40,13 +40,15 @@ Event `windows.changed` with the same object.
 In owneetd's package; the interface launches it through `POST /v1/apps/launch` like any game.
 It refuses (exit 3) until the Proton file exists, then runs `umu-run` with `PROTONPATH` = that
 folder (never "GE-Proton": no lookup online at a game's start), `UMU_RUNTIME_UPDATE=0`,
-`GAMEID=umu-default` (no game-specific fixes yet) and `WINEPREFIX` = the game's prefix
+`GAMEID=umu-default` (no game-specific fixes yet), `PROTON_USE_XALIA=0` (no controller-as-mouse
+helper inside games) and `WINEPREFIX` = the game's prefix
 (`~/.local/share/owneet/windows/prefixes/<folder>-<hash>`, one per game, on the console's disk).
 
 ## Windows on screen
 
 Proton's windows are tagged like any app's ([[owneetd-api-apps]]): by `_NET_WM_PID`, and when it
-is missing or leads to no app, by the process the X server records (X-Resource).
+is missing or leads to no app, by the process the X server records (X-Resource). Wine's console
+windows (`WM_CLASS` `conhost.exe`) are never tagged, so never shown.
 
 ## Not done yet
 

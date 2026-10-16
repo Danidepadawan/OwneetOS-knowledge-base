@@ -42,6 +42,12 @@ Up: [[phase-4-games]] · Status: **in-progress**
   DOSBox does not find GOG's configuration, or the DOS game cannot write in its folder (the disk
   is read only) → owneet.debug.windows_log=on (tester switch) writes Proton's log and DOSBox's
   messages (owneetd 0.13.2, owneet-base 0.0.36 copies them to the stick).
+- **FrankenPC test 2 (2026-10-16):** the black flash is Wine's console window (`conhost.exe`: GOG's
+  DOSBox is a console program, and so may be Proton's launcher for Linux paths): it is now never
+  shown (owneetd 0.13.3). GE-Proton also started Xalia (the controller as a mouse in Windows
+  programs): turned off (`PROTON_USE_XALIA=0`), as no mapping is added inside games. DOSBox loads
+  and ends after about 1.5 s; the debug log now lists the files opened (`+file`) to tell a missing
+  GOG configuration from a game that cannot write in its read-only folder.
 
 - **Deliverables:** Windows DRM-free games start like any other: umu-launcher + GE-Proton, one
   prefix per game, never named in the interface; a "preparing the game" screen until the game's
