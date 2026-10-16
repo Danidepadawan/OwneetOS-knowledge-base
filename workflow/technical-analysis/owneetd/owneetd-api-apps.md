@@ -12,8 +12,8 @@ Up: [[owneetd-design]] · Conventions: [[owneetd-design#4. API v1 (draft)]]
 | Method | Path | Purpose |
 |---|---|---|
 | POST | `/v1/apps/launch` | `{"id": "…", "name": "…", "kind": "game"/"app", "command": ["…"], "workdir": "/…"}` — start inside the session (201); `workdir` (optional, an existing absolute folder, default the home folder) is where the program starts (3.8) |
-| GET | `/v1/apps` | Running apps and games, and `focus`: `home`, an app id, or empty (cage, or no session) |
-| POST | `/v1/apps/{id}/focus` | Bring an app to the front ("Resume" on the home screen; gamescope only) |
+| GET | `/v1/apps` | Running apps and games, and `focus`: `home`, an app id, or empty (no session); in cage, what owneetd last decided (owneetd 0.12.2) |
+| POST | `/v1/apps/{id}/focus` | Bring an app to the front ("Resume" on the home screen). In cage (owneetd 0.12.2) it only sends `focus.changed`: the interface hides its own window and cage shows the app |
 | POST | `/v1/apps/{id}/close` | Close: SIGTERM to all its processes, SIGKILL after 10 seconds |
 | POST | `/v1/apps/{id}/kill` | Force-close a frozen game at once (SIGKILL to all its processes) |
 
@@ -23,7 +23,8 @@ Up: [[owneetd-design]] · Conventions: [[owneetd-design#4. API v1 (draft)]]
 | POST | `/v1/apps/catalog/{id}/open` | Open an installed web app (204), or bring it back when it is open (5.1). owneetd builds the command from the catalogue (the interface sends no program, flag or address): Brave in kiosk mode with the web app's own profile (`$XDG_DATA_HOME/owneet/webapps/ID`, created with Widevine on and no welcome pages), the console's extension (`--load-extension=/usr/share/owneet/extension`), X11 under gamescope; it runs as the app `web:ID` of kind `webapp`. Errors `apps.unknown` (404), `apps.not_installed` (409), and those of `/v1/apps/launch` (`apps.game_running`: one game or web app at a time) |
 | POST | `/v1/apps/catalog/{id}/install` · `/v1/apps/catalog/{id}/remove` | Install or remove a web app (202). Removing closes it first if it is open and deletes its profile (5.1). The first web app installs its engine, the last one removes it: root units `owneet-apps-install@ENGINE` / `owneet-apps-remove@ENGINE.service` (polkit rule `50-owneet-apps.rules`), from the ISO's bundled repository; the outcome comes as `apps.catalog.changed` (the status plus `result`: `id`, `action`, `ok`, `error`). Errors `apps.unknown` (404), `apps.busy`, `apps.needs_install`, `apps.no_space` (409) |
 | GET | `/v1/webapps/look` | The look the console's extension draws with (5.2): `accent` (the palette's accent, `#RRGGBB`), `language`. Sent by the interface in the body of `/v1/apps/catalog/{id}/open` (`{"accent": "#FF8A5B", "language": "it"}`, optional; unknown fields refused, invalid values dropped) |
-| GET / POST | `/v1/webapps/keyboard` | The console's keyboard for a web app's text field (5.2, [[extension-design]]). Opened by the extension (`{"open": true, "kind": "email", "label": "…", "value": "…"}`; kinds text, email, password, search, url, tel, number): the home screen comes to the front (gamescope). Closed by the interface or the extension (`{"open": false, "next": true}`; `next`: Done, the selection moves on): the web app comes back. Event `webapp.keyboard` (with `app`, the web app's catalogue id). **Never left open by a dead interface** (to be built with the frontend part of 5.2): the interface confirms that it shows the keyboard; without that within 3 s of the open request, or when the interface stops while it is open, owneetd closes it (`open: false`, no `next`) |
+| GET / POST | `/v1/webapps/keyboard` | The console's keyboard for a web app's text field (5.2, [[extension-design]]). Opened by the extension (`{"open": true, "kind": "email", "label": "…", "value": "…"}`; kinds text, email, password, search, url, tel, number): the home screen comes to the front (gamescope). Closed by the interface or the extension (`{"open": false, "next": true}`; `next`: Done, the selection moves on): the web app comes back. Event `webapp.keyboard` (with `app`, the web app's catalogue id). **Never left open by a dead interface** (owneetd 0.12.2): without `/shown` within 3 s of the open request, when the interface's process stops or is replaced afterwards (`OWNEET_HOME_PID` of the session file), or when the web app exits, owneetd closes it (`open: false`, no `next`) |
+| POST | `/v1/webapps/keyboard/shown` | The interface confirms that it shows the keyboard (owneetd 0.12.2). `webapps.keyboard_closed` (409) when it is not open |
 | POST | `/v1/webapps/text` | `{"text": "…"}` (up to 64 characters) or `{"key": "backspace"}` (backspace, left, right): typed into the field by the extension. Event `webapp.text` |
 | POST | `/v1/webapps/ask-close` | B with nothing to go back to in the web app: the home screen comes to the front (gamescope) and the interface asks "Close {name}?". Event `webapp.ask_close` (`app`) |
 | GET | `/v1/steam` | `installed`, `allowed` (false in a live system with less than 12 GB of RAM), `prepared` (Steam has started once: no long first download), `running`, `games` (Steam app ids installed completely: the interface reads its games again when they change) (4.2) |
@@ -32,7 +33,7 @@ Up: [[owneetd-design]] · Conventions: [[owneetd-design#4. API v1 (draft)]]
 Errors: `apps.unavailable` (503), `apps.invalid` (400), `apps.program_not_found` (400),
 `apps.no_session` (409), `apps.already_running` (409, same id), `apps.game_running` (409, one game
 or web app at a time, kinds `game` and `webapp`; other apps may run next to it), `apps.unknown_app` (404),
-`apps.focus_unsupported` (409, cage), `apps.no_window` (409), `apps.failed` (502),
+`apps.focus_unsupported` (409: no way to switch windows; not in cage since 0.12.2), `apps.no_window` (409), `apps.failed` (502),
 `steam.needs_install` (409: live system with too little memory for Steam's files), `webapps.unavailable` (503), `webapps.invalid` (400), `webapps.no_webapp` (409: no web app open),
 `webapps.keyboard_closed` (409).
 
@@ -61,7 +62,10 @@ or web app at a time, kinds `game` and `webapp`; other apps may run next to it),
   Steam ready after its first download: its early helper windows are never shown), `focus.changed`
   (also when the screen changes by itself, e.g. an app's window appears: the interface reads the
   controllers only while it is on screen; in cage, which owneetd cannot read, the newest app is
-  taken to be on screen).
+  taken to be on screen). **In cage owneetd decides and the interface carries it out** (0.12.2,
+  for the web keyboard and "Close {name}?" of 5.2): "show the home screen" and "bring back an
+  app" only send `focus.changed`; on `home` the interface shows its own window again (cage shows
+  the newest window), on an app it hides it.
 - **Steam (4.2):** the app `steam`, started as `env -u GAMESCOPE_WAYLAND_DISPLAY steam -gamepadui
   URL` (see below), with `-language` from the interface's language and, under the NVIDIA driver,
   `-cef-disable-gpu` (Steam's pages drawn with the GPU showed garbled, stale pictures inside
