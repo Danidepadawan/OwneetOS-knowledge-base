@@ -43,10 +43,10 @@ nearest box; the page's order with geometry as a check; the version below). Code
   the current element across the direction) through every level; diagonal ones only in a second pass.
 - **Left / right — the container, then the page's order** (the owner's rule). The container is the
   smallest box holding the current element and another target. The best candidate in it wins,
-  whatever is nearer outside; with none, left goes to the target **just before the current element**
-  in the page's order and right to the one **just after** it, wherever they are on screen (for the
-  first / last of a row: the target before / after the row; a full-width banner: the elements before
-  / after it; accepted side effect: in a vertical list, left / right go to the item above / below).
+  whatever is nearer outside; with none, left goes to the target **just before the container** in the
+  page's order and right to the one **just after** it, wherever they are on screen. An element whose
+  container is large (e.g. a full-width banner among rows in the same box) leaves that whole
+  container; going to the element's own neighbours instead was tried and rejected (2026-10-16).
 - **Within a group**, the distance of the W3C draft *CSS Spatial Navigation Level 1*
   (<https://www.w3.org/TR/css-nav-1/>, Working Draft 2019): euclidean + displacement − alignment −
   √overlap (displacement weighted ×30 sideways, ×2 up / down; alignment ×5). Ties: page order.
