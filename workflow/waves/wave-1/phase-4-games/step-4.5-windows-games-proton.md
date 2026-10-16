@@ -13,13 +13,27 @@ Up: [[phase-4-games]] · Status: **in-progress**
 
 - **Started (owner, 2026-10-16).** Test games: free DRM-free Windows-only games from GOG, unpacked
   from their installers with `innoextract` on the owner's PC (installed by the owner) and put in
-  the SSD's `Giochi/` folder, next to the two Linux games.
+  the SSD's `Giochi/` folder, next to the two Linux games: Treasure Adventure Game (a Windows
+  program), Tyrian 2000 and Stargunner (DOS games in GOG's DOSBox for Windows). Each has GOG's
+  `goggame-<id>.info` (primary play task, e.g. `DOSBOX\dosbox.exe` with `-conf` arguments and
+  working folder `DOSBOX`; the file is really `DOSBox.exe`: paths are matched without case).
+- **Demo proposal agreed (owner, 2026-10-16, [[games-on-disk]]):** Windows games in the library
+  like other games on a disk ("Local", never "Windows" or "Proton"); the file to start from GOG's
+  info file, else the Linux games' choice (never setup, uninstallers, configurators such as
+  `GOGDOSConfig.exe`, `__redist`); the download (about 1 GB, needed only the first time) starts
+  the first time the console is online with a Windows game in the library: "Getting Windows
+  games ready: 45%" in the home screen's notices and in Settings → System, a banner when ready;
+  starting a Windows game before it is ready shows the progress, and offline asks to connect
+  ([Network settings] [Cancel]); "Preparing {game}…" until the game's first picture, plus "The
+  first start takes a little longer" the first time; the Steam question for a broken Linux
+  version. Games on a USB disk do not save in their own folder until step 6.5 (option B).
+  Demo: `design/demos/4.5-windows-games.html`.
 
 - **Deliverables:** Windows DRM-free games start like any other: umu-launcher + GE-Proton, one
   prefix per game, never named in the interface; a "preparing the game" screen until the game's
   first picture. Credits and licences (Wine LGPL, Proton BSD, DXVK / VKD3D-Proton zlib/LGPL).
-- **Decided (owner, 2026-10-11):** Proton and its runtime (about 1 GB) stay out of the ISO:
-  downloaded once, in the background, the first time the console is online; until
+- **Decided (owner, 2026-10-11; refined 2026-10-16):** Proton and its runtime (about 1 GB) stay out of the ISO:
+  downloaded once, in the background, the first time the console is online with a Windows game in the library; until
   then a Windows game says that it needs a one-time download (the only exception to C9).
 - **Broken Linux versions of Steam games (owner, 2026-10-13):** some Steam games ship a Linux
   version that cannot start (e.g. Dragon's Wake, 399070: its Linux files lack the executable its
