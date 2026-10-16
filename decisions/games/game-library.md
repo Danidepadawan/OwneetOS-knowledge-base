@@ -4,7 +4,7 @@ description: "One library for Steam and local games; every owned Steam game, ins
 area: games
 status: active
 decided: 2026-10-03
-updated: 2026-10-14
+updated: 2026-10-16
 legacy: "PROJECT_RULES.md §8 (library)"
 tags: [decision, games, library]
 ---
@@ -38,6 +38,12 @@ tags: [decision, games, library]
   buy new games, since owned games are already in the library) and **"From a USB stick or
   disk"** (a guide to the `Games` folder, [[games-on-disk]]). Steam uses a generic store icon.
 - Steam's play time is Steam's: the frontend does not add its own on top.
+- **Artwork** (owner, 2026-10-16, [[step-4.4-artwork]]): only pictures already on the PC (Steam's
+  own artwork cache, the game folder's `cover.jpg` / `.png`), never downloaded. A cover is the
+  portrait cover, else a Steam game's title header shown whole over the generated art with the
+  title below (option A; the header cropped to fill, option C, if A does not look right), else
+  the generated art. The home screen's card: Steam's wide picture, else the header, else the
+  generated art; a game on a disk shows its cover there, whole.
 
 Layout rules shared with the home screen: [[home-and-library]].
 
@@ -56,3 +62,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-14 | The home screen's rows show installed games only (step 4.2c code). |
 | 2026-10-15 | The library's selection goes round: left / right within the same row, down / up between the last and the first row. |
 | 2026-10-11 | Demo 4.2 approved (with the generic store icon for Steam and no "Add games" in Favorites). **Distribution:** the ISO goes to SourceForge, the website to a `.org` domain on GitHub Pages, packages stay on GitHub ([[distribution-and-updates]]). **Steam is in the ISO** with 32-bit drivers for every GPU (about +300 MiB, [multilib] from the same snapshot). |
+| 2026-10-16 | Artwork (step 4.4, no demo): covers from pictures already on the PC only (Steam's artwork cache, a disk game's `cover.jpg` / `.png`); without a portrait cover, a Steam game's header shown whole over the generated art (option A, else C); the home screen's card: wide picture, header, generated art; a disk game's cover shown whole there. |

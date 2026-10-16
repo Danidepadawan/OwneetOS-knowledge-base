@@ -76,6 +76,11 @@ also says when a disk is mounted or unmounted (`volumesChanged`).
 (`diskGames` in QML): [[frontend-disk-games]]. `GameArt` passes the cover's address to the Canvas
 as text (a `url` value drew nothing: local covers were never shown before).
 
+**Artwork (4.4):** the Steam provider adds Steam's cached pictures ([[frontend-steam-local-files]]);
+`GameArt.fit` shows an image whole over the generated art (a header in a portrait cover, a disk
+game's cover in the home screen's card), and draws at once an image another art has already
+loaded (Qt's Canvas gives no `imageLoaded` for it).
+
 Appearance choices are saved in the theme's memory (`api.memory`). Until Settings exists (3.9),
 they are opened from the temporary Settings section (`SettingsPage.qml` → `AppearanceSheet.qml`).
 
