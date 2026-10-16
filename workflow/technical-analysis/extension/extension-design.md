@@ -90,10 +90,9 @@ nearest box; the page's order with geometry as a check; the version below). Code
 - The extension is loaded unpacked from `/usr/share/owneet/extension`, so its id is derived from
   that path and never changes; **no key pair** is made. The host's manifest (`allowed_origins` =
   that id) is a **static file installed system-wide** by the owneetd package:
-  `/etc/opt/chrome/native-messaging-hosts/org.owneet.bridge.json`. This Brave build reads hosts
-  only from there (and its default user folder): **not from a profile chosen with
-  `--user-data-dir`**, so a manifest in each web app's profile is never found ("Specified native
-  messaging host not found", tested 2026-10-16).
+  `/etc/opt/chrome/native-messaging-hosts/org.owneet.bridge.json`, where this Brave build looks.
+  It does **not** look in a profile chosen with `--user-data-dir`, so a manifest in each web app's
+  profile is never found: [[brave-native-messaging-host-not-found]].
 - The frontend sends the accent colours and the language with its request to open the web app;
   owneetd keeps them and the bridge passes them to the extension when it connects.
 - owneetd's endpoints (`/v1/webapps/look`, `/keyboard`, `/text`, `/ask-close`) and events

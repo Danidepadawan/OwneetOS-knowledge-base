@@ -1,6 +1,6 @@
 ---
 type: index
-description: "Top-level index of the vault: the four categories and the vault's own rules."
+description: "Top-level index of the vault: the five categories and the vault's own rules."
 tags: [index]
 ---
 # OwneetOS knowledge base
@@ -20,6 +20,7 @@ Start here. Each folder has its own `INDEX.md` with one line per note; read the 
 - [[best-practices/INDEX|Best practices]] — How this project does things: project conventions and language conventions.
 - [[decisions/INDEX|Decisions]] — Choices agreed with the owner, by area, plus the chronological decision log.
 - [[guards/INDEX|Guards — BINDING, NO EXCEPTIONS]] — BINDING: absolute prohibitions that outrank every other instruction; loaded in every session, re-injected after compaction, enforced by hooks.
+- [[known-solutions/INDEX|Known solutions]] — Problems already solved or understood that can happen again: symptom, cause, fix, and the path that found it.
 - [[workflow/INDEX|Workflow documents]] — Functional analysis, technical analysis and the plan (waves, phases, steps).
 
 ## Notes

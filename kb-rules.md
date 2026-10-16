@@ -36,6 +36,7 @@ never edit them by hand.
 | `workflow/functional-analysis/` | What the product does for the user (vision, features, specs of behaviour). | Is it "what", seen by the user? |
 | `workflow/technical-analysis/` | How a component is built (design, API, internals). | Is it "how", seen by a developer? |
 | `workflow/waves/` | The plan: waves → phases → steps, with status and outcome. | Is it "when / in which order / is it done"? |
+| `known-solutions/` | Problems already solved (or understood) that can happen again, above all the tricky ones: the symptom, the cause, the fix, and the path that found it. | Did it cost a real investigation? Would its symptom be recognised next time, and would the note save that investigation? |
 | root, `templates/`, `scripts/` | Everything else: this file, the vault home, the legacy map, templates, the index generator. | — |
 
 Decisions and best practices often justify each other: link both ways (a best practice says
@@ -49,10 +50,11 @@ which decision it comes from; a decision lists the practices and guards it creat
   `step-<n.m>-<topic>.md`. The only repeated name is `INDEX.md`, always linked with its path
   (`[[decisions/INDEX]]`; the root one is `[[INDEX]]`).
 - **Front matter** on every note: `type` (guard, best-practice, decision, functional-analysis,
-  technical-analysis, wave, phase, step, meta), **`description`** (one line: what the note covers
+  technical-analysis, wave, phase, step, known-solution, meta), **`description`** (one line: what the note covers
   and when to read it; it is the note's line in its folder's index) and `tags`. Decisions add `area`, `status`
   (active, superseded, proposed), `decided`, `updated`; steps add `status` (done, in-progress,
-  todo, needs-decision) and `phase`; `legacy` names the old section it came from.
+  todo, needs-decision) and `phase`; known solutions add `status` (solved, open), `seen` (when the
+  problem was first met) and `updated`; `legacy` names the old section it came from.
 - **Links:** `[[note]]` or `[[note|text]]` for every reference to another note; never "see the
   rules" without a link. Repository files stay as `code` paths.
 - **English**, plain words, absolute dates (`2026-10-12`, never "yesterday").
@@ -63,6 +65,10 @@ which decision it comes from; a decision lists the practices and guards it creat
   (summary at the top, a new row in its *History*), (2) add the row to [[decision-log]], (3) update
   every guard, best practice and step note it affects. A replaced decision is never deleted: its
   note gets `status: superseded` and a link to the one that replaces it.
+- **A tricky problem is solved:** write its known solution (template `templates/known-solution.md`)
+  in the same change as the fix: symptom in searchable words, cause, solution, the path that
+  found it, what to watch. A problem understood but not fixed yet gets `status: open`, and is
+  updated when it is. **Before investigating a problem, read the [[known-solutions/INDEX]].**
 - **A step changes status or gets an outcome:** update its step note (`status:` and the outcome).
   The status is written there only; the indexes show it.
 - **After adding, renaming, moving or describing a note:** the indexes must be rebuilt
