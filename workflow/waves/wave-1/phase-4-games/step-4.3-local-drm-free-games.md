@@ -3,13 +3,13 @@ type: step
 description: "Folder convention + metadata file, automatic scan of mounted disks, artwork."
 phase: "[[phase-4-games]]"
 step: "4.3"
-status: in-progress
+status: done
 legacy: "ROADMAP.md 4.3"
 tags: [step, phase-4]
 ---
 # 4.3 Local DRM-free games
 
-Up: [[phase-4-games]] · Status: **in-progress**
+Up: [[phase-4-games]] · Status: **done**
 
 - **Deliverables:** folder convention + metadata file, automatic scan of mounted disks, artwork.
 - **Scope (owner, 2026-10-11, [[games-on-disk]] and [[wave-1-scope]]):** `Games` (or its translated
@@ -57,4 +57,7 @@ Up: [[phase-4-games]] · Status: **in-progress**
   screen, still on screen, did not answer because the interface had paused the controller at the
   launch → owneetd 0.12.9 finds a window's process through X-Resource when `_NET_WM_PID` is
   missing (checked on Xvfb); owneet-frontend 0.18.2 pauses the controller only when a game is
-  really on screen. Fourth test pending.
+  really on screen.
+- **FrankenPC test 4 (2026-10-16):** everything works: CAYNE comes on screen, Home goes back and
+  forth, the game closes from the console. **Step approved by the owner (2026-10-16).**
+  Covers of games on disks are already drawn (4.3); the rest of artwork is step 4.4.
