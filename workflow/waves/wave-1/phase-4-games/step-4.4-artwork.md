@@ -3,13 +3,13 @@ type: step
 description: "Covers of Steam games from Steam's local cache (`appcache/librarycache`, 4.1; no download), covers of games on disks (`cover.jpg` /…"
 phase: "[[phase-4-games]]"
 step: "4.4"
-status: in-progress
+status: done
 legacy: "ROADMAP.md 4.4"
 tags: [step, phase-4]
 ---
 # 4.4 Artwork
 
-Up: [[phase-4-games]] · Status: **in-progress**
+Up: [[phase-4-games]] · Status: **done**
 
 - **Deliverables:** covers of Steam games from Steam's local cache (`appcache/librarycache`, 4.1;
   no download), covers of games on disks (`cover.jpg` / `cover.png`), generated fallback covers.
@@ -28,5 +28,6 @@ Up: [[phase-4-games]] · Status: **in-progress**
   Steam provider (both layouts of the cache: files at the top of `librarycache/<appid>/` or in
   sub-folders named after a hash; the newest copy wins), `GameArt.fit`; images another art has
   already loaded are drawn at once (a library opened after the home screen showed none). Preview:
-  `tools/preview-steps/artwork.txt`, `artwork-steam-home.txt` (invented pictures). Waiting for the
-  owner's look at the screenshots and the FrankenPC test.
+  `tools/preview-steps/artwork.txt`, `artwork-steam-home.txt` (invented pictures).
+- **FrankenPC test (2026-10-16):** everything works; all 88 owned games found a portrait cover in
+  Steam's cache. Option A kept. **Step approved by the owner (2026-10-16).**
