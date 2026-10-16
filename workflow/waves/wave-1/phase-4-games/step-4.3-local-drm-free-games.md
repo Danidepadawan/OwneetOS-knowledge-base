@@ -39,4 +39,14 @@ Up: [[phase-4-games]] · Status: **in-progress**
   waiting for the FrankenPC test with the owner's SSD (`SSD-256GB-D`, `Giochi/`).
 - **FrankenPC test 1 (2026-10-15):** the SSD (USB-SATA adapter with UAS) was not mounted: the udev
   rule asked for `ID_BUS` "usb", the adapter gives "ata". Fixed in owneet-base 0.0.33 (USB by the
-  device's path); the test report now lists the disks. Second test pending.
+  device's path); the test report now lists the disks.
+- **FrankenPC test 2 (2026-10-16):** the SSD is mounted; plugging, unplugging and plugging again
+  add and remove its games with their notices. (1) Plugging it showed the black loading screen
+  with the logo before the notice: the owner expects only the notice, as in a real OS → the
+  games are now read again quietly, the interface stays on screen (owneet-frontend 0.18.1,
+  [[frontend-disk-games]]). (2) Beneath a Steel Sky starts (GOG's ScummVM), but it is a game made
+  for a mouse; ScummVM could not write its settings file in the game's folder (read-only disk).
+  (3) CAYNE does not show up: Unity stops after finding the controller, the console stays on the
+  home screen, the disk keeps working; the owner switched off after about a minute → the test
+  report now lists the busiest processes and disk reads, and copies Unity's `Player.log`
+  (owneet-base 0.0.34); `owneet-xprobe` on the stick. Third test pending.

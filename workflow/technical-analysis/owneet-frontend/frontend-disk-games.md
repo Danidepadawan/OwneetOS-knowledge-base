@@ -65,7 +65,13 @@ there are several.
 `owneet::Storage` emits `volumesChanged` when the mount table changes (`/proc/self/mountinfo`
 polled for priority data, 0.7 s to settle; with `OWNEET_DISKS`, a watcher on the parent folder).
 The theme compares the disks: a new disk with a games folder, or a gone disk that had games, makes
-it read the games again (`reloadProviders`, which rebuilds the interface); the notice ("USB disk
-connected: N games found…" / "USB disk removed") is kept in `api.memory` (`diskNotice`) across the
-reading. While a game runs, the reading waits for its end. Disks without games change nothing.
+it read the games again **quietly** (owner, 2026-10-16: only the notice, as in a real OS): it sets
+`diskGames.quietReading` and calls `reloadProviders`; then `main.qml` keeps the theme loaded and
+shows no loading screen, and `Backend` keeps the old games until the new ones are ready, replaces
+them in one go and clears the flag. The old game objects are never deleted (Pegasus never deletes
+them), so windows and lists that still hold one stay safe; the theme refreshes its lists on
+`gamedataReady`, the library finds its selected game again (`GameInfo.sameGame`: app id, folder or
+title), and a window about a game of a disk that is gone closes. The notice ("USB disk connected:
+N games found…" / "USB disk removed") is kept in `api.memory` (`diskNotice`) until the games are
+ready. While a game runs, the reading waits for its end. Disks without games change nothing.
 Preview: `tools/preview-steps/library-disk.txt` (`@disk`, `plug`, `unplug`).
