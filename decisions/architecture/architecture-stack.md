@@ -4,7 +4,7 @@ description: "The chosen component for each layer: boot, session, frontend, daem
 area: architecture
 status: active
 decided: 2026-10-03
-updated: 2026-10-15
+updated: 2026-10-16
 legacy: "PROJECT_RULES.md §4"
 tags: [decision, architecture]
 ---
@@ -35,3 +35,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-03 | Project scope, architecture and Wave 1 agreed ([[vision]]–11). |
 | 2026-10-14 | Brave in the OS (step 5.1): one Brave profile per web app; Widevine turned on silently; a web app is closed by the user like a game (staying open in the background is Wave 2). |
 | 2026-10-15 | Extension core (step 5.2): own spatial navigation (focusable elements, any tabindex, interactive ARIA roles), a native-messaging bridge to owneetd, the console's keyboard over Brave (full screen in the fallback session). |
+| 2026-10-16 | The bridge's native-messaging manifest is one static file installed system-wide by the owneetd package (`/etc/opt/chrome/native-messaging-hosts/`): Brave does not read hosts from the web apps' profiles. A per-user file in Brave's default folder rejected. |

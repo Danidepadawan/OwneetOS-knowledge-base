@@ -85,8 +85,8 @@ or web app at a time, kinds `game` and `webapp`; other apps may run next to it),
   `owneet.debug.gamescope_backend=headless`) and cage, a virtual gamepad for Guide, `mpv` as the
   test app.
 - **Web apps and the extension (5.2):** the extension cannot reach the socket; Brave starts
-  `owneet-bridge` (`/usr/lib/owneet/owneet-bridge`, a native-messaging host) for it, listed in each
-  web app's profile (`NativeMessagingHosts/org.owneet.bridge.json`, written at every start) for
-  the extension's id only (derived from its folder `/usr/share/owneet/extension`:
+  `owneet-bridge` (`/usr/lib/owneet/owneet-bridge`, a native-messaging host) for it, listed
+  system-wide by the owneetd package (`/etc/opt/chrome/native-messaging-hosts/org.owneet.bridge.json`,
+  a static file; Brave does not read hosts from the web apps' profiles) for the extension's id only (derived from its folder `/usr/share/owneet/extension`:
   `jlekhdampjopkpjhbgilolchffjpdjcn`). The bridge calls `/v1/webapps/*` and passes `webapp.keyboard`
   (closed) and `webapp.text` back to the extension.
