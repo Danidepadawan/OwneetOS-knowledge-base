@@ -35,4 +35,6 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
   [[brave-native-messaging-host-not-found]]. Next: the frontend part (keyboard in web mode with
   the confirmation of [[extension-design]], "Close {name}?", the look in the open request; in the
   cage session the console must come in front of Brave), then the keyboard over Brave in
-  gamescope (real hardware), then packaging and the outcome. Open: [[brave-extension-worker-cached]].
+  gamescope (real hardware), then packaging and the outcome. Open: [[brave-extension-worker-cached]]
+  (fix agreed 2026-10-16: the package names the worker after a hash of its content,
+  [[extension-design]]; to do with the packaging).

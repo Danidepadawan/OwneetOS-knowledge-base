@@ -1,6 +1,6 @@
 ---
 type: known-solution
-description: "OPEN (cause found, fix not in the code yet): a web app profile keeps the extension's old background worker until the worker's file name changes; a version bump does nothing."
+description: "OPEN (fix agreed, not in the code yet): a web app profile keeps the extension's old background worker until the worker's file name changes; a version bump does nothing."
 status: open
 seen: 2026-10-16
 updated: 2026-10-16
@@ -45,16 +45,16 @@ working, so the problem only shows up as "my change does nothing".
 
 ## Solution
 
-**Agreed fix not chosen yet** (the owner decides; nothing in the code yet). The one the tests support:
+**Fix agreed (owner, 2026-10-16), not in the code yet** ([[decision-log]], [[extension-design]]):
 
-- **Recommended: the worker's file name changes whenever its content changes.** The owneet-base
+- **Agreed: the worker's file name changes whenever its content changes.** The owneet-base
   package (`packages/owneet-base/PKGBUILD`, which installs `extension/background.js`) installs it as
   `background-<short hash of the file>.js` and writes that name into the installed `manifest.json`.
   Every existing profile picks up the new worker at the next launch. Nothing in the profiles is
   touched, and the sites' own workers are kept. A test checks that the installed manifest's
   `service_worker` file exists. A hash is better than the version: the name changes exactly when
   the code does.
-- Fallback (works, not recommended): before it launches Brave, owneetd compares a stamp of the
+- Rejected (works, tested): before it launches Brave, owneetd compares a stamp of the
   installed extension with one saved in the profile. When they differ, it deletes
   `Default/Service Worker/`. It costs code in owneetd, and it also deletes the site's workers
   (YouTube's), which the site then registers again.
