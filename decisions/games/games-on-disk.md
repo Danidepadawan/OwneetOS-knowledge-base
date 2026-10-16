@@ -28,6 +28,11 @@ tags: [decision, games]
     texts give the real size, "about 650 MB" (owner, 2026-10-16: be precise).
   - **Which file starts a Windows game:** GOG's `goggame-<id>.info` (its primary play task: file,
     arguments, working folder), else the same choice as for Linux games ([[step-4.5-windows-games-proton]]).
+- **GOG's DOS games** (owner, 2026-10-16): GOG ships them with its own DOSBox for Windows; the
+  console starts them with Linux's DOSBox instead (Arch's `dosbox`; DOSBox Staging, proposed first,
+  is not in the official repositories), never with Proton (no download needed for them). The first
+  start copies the game (a few MB) to the console's disk with GOG's starting saves, so that it can
+  write its settings and saves; the USB disk is never written. ([[step-4.5-windows-games-proton]])
 - **Saves of games on a USB disk** (owner, 2026-10-16, option B): until
   [[step-6.5-automatic-disk-mounting]] mounts disks read-write, games that save in their own
   folder cannot save there (the disk is read only); no workaround (the step only checks that the
@@ -62,6 +67,7 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-15 | Demo 4.3 proposal: title = the folder's name as written (the user's control); the file to start asked once and changeable from Options; Windows games shown from step 4.5, installers from step 4.6. |
 | 2026-10-15 | `game.txt`: `key: value` lines, keys `title`, `start`, `description`; the file chosen from Options wins over `start`. |
 | 2026-10-16 | Games made for a mouse and keyboard are left as their developers made them: no pointer or mapping added inside games; the controller pointer (step 4.7) is never offered in games. |
+| 2026-10-16 | GOG's DOS games run with Linux's DOSBox (Arch's `dosbox`), from a copy on the console's disk (they can write and save), not with GOG's Windows DOSBox under Proton (it ended when the home screen was shown; Tyrian could not write). |
 | 2026-10-16 | The download's texts say "about 650 MB" (the measured size), not "about 1 GB". |
 | 2026-10-16 | Demo 4.5 proposal: Proton is downloaded only once a Windows game is in the library; its progress in the home notices and Settings → System; GOG's `goggame-*.info` says which file starts a Windows game; games on a USB disk do not save in their own folder until step 6.5 (option B). |
 | 2026-10-11 | Proton and its runtime are downloaded once, in the background, the first time the console is online ("a necessary evil": the only exception to C9, for Windows games before the first connection). Installing a game from an installer first shows "By installing you accept the game's licence" [Read] [Install] (the user is informed, the project is covered). Step 4.1 approved. |

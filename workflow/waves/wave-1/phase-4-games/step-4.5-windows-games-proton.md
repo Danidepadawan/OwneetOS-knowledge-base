@@ -66,6 +66,13 @@ Up: [[phase-4-games]] · Status: **in-progress**
   it cannot write its files on the read-only disk (Stargunner only warned about STARGUN.CFG, .HI,
   .SAV). Proposal for the owner: GOG's DOS games with a native DOSBox instead of GOG's Windows
   one.
+- **Native DOSBox for GOG's DOS games (owner, 2026-10-16, [[games-on-disk]]):** a GOG game whose
+  play task starts `dosbox.exe` is a DOS game (`disk.dos`, no Proton, no download):
+  `owneet-dos-run` (owneetd 0.14.0) copies it once to `~/.local/share/owneet/dos/<game>/game`
+  with GOG's starting saves (`__support/save`), rewrites GOG's configuration files' `[autoexec]`
+  mounts to Linux paths (backslashes, any case; GOG's `cloud_saves` overlay dropped: the copy is
+  writable) and runs Arch's `dosbox` (owneet-base 0.0.37, CREDITS) full screen; owneet-frontend
+  0.21.0. Checked on the builder VM with a stub DOSBox.
 
 - **Deliverables:** Windows DRM-free games start like any other: umu-launcher + GE-Proton, one
   prefix per game, never named in the interface; a "preparing the game" screen until the game's

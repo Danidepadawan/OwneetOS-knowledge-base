@@ -44,6 +44,16 @@ folder (never "GE-Proton": no lookup online at a game's start), `UMU_RUNTIME_UPD
 helper inside games) and `WINEPREFIX` = the game's prefix
 (`~/.local/share/owneet/windows/prefixes/<folder>-<hash>`, one per game, on the console's disk).
 
+## GOG's DOS games: `/usr/lib/owneet/owneet-dos-run DATA GAME_DIR WORKDIR [GOG's ARGS…]`
+
+For a GOG game whose play task starts `dosbox.exe` (owner, 2026-10-16): Linux's `dosbox`
+(0.74.3, Arch), no Proton. The first start copies the game folder to `DATA/game`
+(`~/.local/share/owneet/dos/<folder>-<hash>`) with `__support/save`; each `-conf` file is
+rewritten to `DATA/conf/N.conf` (CR removed; `[autoexec]` `mount`/`imgmount` paths resolved
+against the copy, without case; GOG's `-t overlay` cloud-saves mount dropped); a last
+`owneet.conf` sets `[sdl] fullscreen=true, fullresolution=desktop, output=opengl`; `-noconsole`
+is dropped; DOSBox runs in the copy's working folder.
+
 ## Windows on screen
 
 Proton's windows are tagged like any app's ([[owneetd-api-apps]]): by `_NET_WM_PID`, and when it
