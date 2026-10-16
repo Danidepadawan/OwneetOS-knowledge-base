@@ -48,6 +48,15 @@ Up: [[phase-4-games]] · Status: **in-progress**
   programs): turned off (`PROTON_USE_XALIA=0`), as no mapping is added inside games. DOSBox loads
   and ends after about 1.5 s; the debug log now lists the files opened (`+file`) to tell a missing
   GOG configuration from a game that cannot write in its read-only folder.
+- **FrankenPC test 3 (2026-10-16):** the debug log shows DOSBox not finding GOG's configuration
+  (`..\dosboxT2K.conf`: not found), so it mounts nothing and `-c exit` closes it. The files were in
+  `__support/app/`: a real GOG installation copies them to the game's folder (the
+  `supportData` action of `goggame-<id>.script`), `innoextract` does not. Done by hand on the
+  owner's SSD (owner's permission, 2026-10-16) for the three games; installers (step 4.6) will run
+  those actions. GOG's DOSBox setup also mounts `..\cloud_saves` as an overlay for saves (cannot
+  exist on a read-only disk: no saves until 6.5, option B), and Tyrian 2000 opens GOG's own menu
+  that needs the keys 1–4 (left as GOG made it). A short black flash is still there before the
+  games (not a priority, owner).
 
 - **Deliverables:** Windows DRM-free games start like any other: umu-launcher + GE-Proton, one
   prefix per game, never named in the interface; a "preparing the game" screen until the game's
