@@ -102,3 +102,10 @@ Up: [[phase-4-games]] · Status: **in-progress**
   CP437 configuration files turned into UTF-8). Owner: option A (per-game fixes refused) →
   DOSBox Staging packaged from source (with iir1 and libmt32emu, checksums checked against the AUR
   recipes: [[supply-chain-security]]), GOG's overlay instead of the copy.
+- **DOSBox Staging packaged (2026-10-16):** `packages/dosbox-staging` 0.83.0 (sources checked
+  against the AUR recipes), owneetd 0.14.1 (`owneet-dos-run`: overlay instead of copy, CP437 →
+  UTF-8), owneet-base 0.0.38, CREDITS. On the builder VM, with the package installed and the games
+  read only: Stargunner reaches its titles with the Sound Blaster 16 on, Tyrian's menu draws its
+  boxes. FrankenPC test pending (the update needs Arch's libraries online: install it from
+  Settings → System).
+

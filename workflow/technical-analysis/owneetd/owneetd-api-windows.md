@@ -46,13 +46,19 @@ helper inside games) and `WINEPREFIX` = the game's prefix
 
 ## GOG's DOS games: `/usr/lib/owneet/owneet-dos-run DATA GAME_DIR WORKDIR [GOG's ARGS…]`
 
-For a GOG game whose play task starts `dosbox.exe` (owner, 2026-10-16): Linux's `dosbox`
-(0.74.3, Arch), no Proton. The first start copies the game folder to `DATA/game`
-(`~/.local/share/owneet/dos/<folder>-<hash>`) with `__support/save`; each `-conf` file is
-rewritten to `DATA/conf/N.conf` (CR removed; `[autoexec]` `mount`/`imgmount` paths resolved
-against the copy, without case; GOG's `-t overlay` cloud-saves mount dropped); a last
-`owneet.conf` sets `[sdl] fullscreen=true, fullresolution=desktop, output=opengl`; `-noconsole`
-is dropped; DOSBox runs in the copy's working folder.
+For a GOG game whose play task starts `dosbox.exe` (owner, 2026-10-16): **DOSBox Staging** 0.83.0
+(`packages/dosbox-staging`, built from source with iir1 and libmt32emu as static libraries,
+[[supply-chain-security]]), no Proton. The game runs from its folder on its disk (read only);
+DATA is `~/.local/share/owneet/dos/<folder>-<hash>`:
+- each `-conf` file is rewritten to `DATA/conf/N.conf`: CP437 → UTF-8 (Staging reads UTF-8; GOG's
+  menus draw boxes), CR removed, `[autoexec]` `mount` / `imgmount` paths resolved against the game
+  (backslashes, any case), GOG's `-t overlay` `cloud_saves` mount pointed to `DATA/cloud_saves`
+  (where everything the game writes goes), seeded once with `__support/save`;
+- a last `owneet.conf` sets `[sdl] fullscreen=true`; `-noconsole` is dropped; Staging runs in GOG's
+  working folder. Staging warns about GOG's 0.74 settings it no longer knows and keeps going.
+- Checked on the builder VM (virtual screen): Stargunner (hangs at Sound Blaster 16 detection with
+  Arch's DOSBox 0.74.3) and Tyrian 2000 start. A copy of the whole game made by owneetd 0.14.0 is
+  removed at the next start.
 
 ## Windows on screen
 
