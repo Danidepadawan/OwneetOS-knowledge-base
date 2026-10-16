@@ -67,7 +67,9 @@ working, so the problem only shows up as "my change does nothing".
   0.0.38 manifest edited to version `0.1.0.1`. A headless run on a copy of the profile: one
   `DidStartWorkerFail` at the first start (50 ms after launch, the old stored worker), then a new
   `ScriptCache` entry and the old one gone; a second run: none. The real session: A on the search
-  field started `owneet-bridge`. **Still to verify:** the same through a real package update.
+  field started `owneet-bridge`. **Still to verify:** the same through a real package update,
+  at the next change of the worker's code (owner, 2026-10-16). owneet-base 0.0.39 built (its check
+  passed); 0.0.38 → 0.0.39 changes only the version, so it does not test this.
 - Rejected (works, tested): before it launches Brave, owneetd compares a stamp of the
   installed extension with one saved in the profile. When they differ, it deletes
   `Default/Service Worker/`. It costs code in owneetd, and it also deletes the site's workers
