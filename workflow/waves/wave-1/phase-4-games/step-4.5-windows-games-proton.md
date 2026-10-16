@@ -73,6 +73,11 @@ Up: [[phase-4-games]] · Status: **in-progress**
   mounts to Linux paths (backslashes, any case; GOG's `cloud_saves` overlay dropped: the copy is
   writable) and runs Arch's `dosbox` (owneet-base 0.0.37, CREDITS) full screen; owneet-frontend
   0.21.0. Checked on the builder VM with a stub DOSBox.
+- **FrankenPC test 5 (2026-10-16):** the update needs `dosbox` (and `umu-launcher` before) from Arch
+  online, and at start-up the network is not up yet: it failed at boot and was installed from
+  Settings → System once online (to improve for testers: say that an update waits for the
+  network). With Linux's DOSBox, Tyrian 2000 starts and plays; Stargunner shows a black screen
+  (Home goes back and forth, the console closes it). Both close from the home screen.
 
 - **Deliverables:** Windows DRM-free games start like any other: umu-launcher + GE-Proton, one
   prefix per game, never named in the interface; a "preparing the game" screen until the game's

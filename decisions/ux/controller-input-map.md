@@ -4,7 +4,7 @@ description: "The binding meaning of every button on every screen, keyboard fall
 area: ux
 status: active
 decided: 2026-10-03
-updated: 2026-10-14
+updated: 2026-10-16
 legacy: "PROJECT_RULES.md §9.1"
 tags: [decision, ux, input]
 ---
@@ -32,6 +32,10 @@ types the selected key, X deletes, Y types a space, **LB / RB change the page of
 symbols, accented letters), **LT held = capital letters while it is held** (as on Steam's
 keyboard), RT does nothing, Menu = Done, B closes the keyboard; the selection wraps around at
 every edge. These meanings hold only inside the keyboard; Guide and the right stick keep theirs.
+
+**Lists that go round:** the library's grid (left / right within a row, down / up between the
+last and the first row, [[game-library]]) and the list of Settings' sections (up on the first
+section goes to the last, down on the last to the first; owner, 2026-10-16).
 
 While a game or app is running, the system intercepts **only** the Guide button; every other input
 goes to the game.
@@ -71,3 +75,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-11 | Step 3.12 (interface sounds) done; the first sound after boot needs the sound output running first (a looped silence). Demo 3.13 approved: animated start-up from the boot splash's wordmark; a **quick menu** (side panel from the right, as on SteamOS) with power options and a read-only "Controls and features" guide, opened by **B where there is nothing to go back to** (an accidental press only opens the menu). View stays reserved for screenshots in a later wave ([[controller-input-map]]). |
 | 2026-10-12 | After the owner's first Steam test (Guide fought over by owneetd and Steam): **while Steam or a Steam game is on screen, a short Guide press is Steam's; holding Guide for 1 second comes back to the console** (option A; [[controller-input-map]]). "Exit Steam" in Steam's menu also comes back. Steam's own screens that matter (login, a game's launch progress) are shown automatically ([[game-library]]). |
 | 2026-10-13 | On-screen keyboard (owner's request): LT held = capital letters while it is held, as on Steam's keyboard; the pages of keys move to LB / RB (no section can be switched while the keyboard is open); RT does nothing there ([[controller-input-map]]). |
+| 2026-10-16 | The list of Settings' sections goes round: up on the first section to the last, down on the last to the first. |
