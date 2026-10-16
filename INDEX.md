@@ -25,6 +25,5 @@ Start here. Each folder has its own `INDEX.md` with one line per note; read the 
 ## Notes
 
 - [[README]] — What this vault is and where to start; for humans opening it in Obsidian or GitHub.
-- [[handoff-step-5.2]] — Handoff of the AI session on step 5.2 (2026-10-16) from the Mac to the Arch PC: state, the open bridge bug, how to test in the VM, working agreements. Read first when resuming 5.2; delete when 5.2 is done.
 - [[kb-rules]] — How the vault is organised and kept up to date: categories, note format, recording decisions. Read before adding or changing notes.
 - [[legacy-references]] — Where old references (PROJECT_RULES.md sections, ROADMAP.md steps, docs/*.md) point now.
