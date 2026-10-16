@@ -57,6 +57,15 @@ Up: [[phase-4-games]] · Status: **in-progress**
   exist on a read-only disk: no saves until 6.5, option B), and Tyrian 2000 opens GOG's own menu
   that needs the keys 1–4 (left as GOG made it). A short black flash is still there before the
   games (not a priority, owner).
+- **FrankenPC test 4 (2026-10-16):** Stargunner runs; pressing Home made GOG's DOSBox (the 2010
+  Windows build 0.74, under Proton) end with a divide-by-zero (0xC0000094) two seconds after it
+  lost the focus, while "Close Stargunner?" was open: the home screen took the focus and the
+  window could not be answered, and a "closed unexpectedly" notice came → owneet-frontend 0.20.2
+  (a window keeps the focus; "Close …?" goes, without a notice, when its game ends by itself).
+  Tyrian 2000 ends right after "1" in GOG's menu (exit code 0; Proton's log not copied): probably
+  it cannot write its files on the read-only disk (Stargunner only warned about STARGUN.CFG, .HI,
+  .SAV). Proposal for the owner: GOG's DOS games with a native DOSBox instead of GOG's Windows
+  one.
 
 - **Deliverables:** Windows DRM-free games start like any other: umu-launcher + GE-Proton, one
   prefix per game, never named in the interface; a "preparing the game" screen until the game's
