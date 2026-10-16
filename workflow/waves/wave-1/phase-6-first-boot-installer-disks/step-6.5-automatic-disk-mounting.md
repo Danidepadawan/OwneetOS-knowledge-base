@@ -15,9 +15,9 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **todo**
   NTFS, exFAT), read-only NTFS when Windows left it hibernated, with an explanation to the user.
   Free space and notices of every disk reach the library's disks summary and Disks window
   (approved in demo 3.7); later actions there, e.g. "Safely remove" for USB disks.
-- **GOG's DOS games in place (owner, 2026-10-16, [[games-on-disk]]):** once disks are mounted
-  read-write, a GOG DOS game runs from its own folder on its own disk (no copy): its settings and
-  saves stay with it (GOG's folder or `cloud_saves`), also on PCs with several disks. The copy on
-  the console's disk (step 4.5) stays only for disks left read only (e.g. a Windows disk left
-  dirty), and the game's details say so. At the switch, saves made in an existing copy go back to
-  the game's folder, then the copy is removed: nothing is lost.
+- **GOG's DOS games' saves with the game (owner, 2026-10-16, [[games-on-disk]]):** once disks are
+  mounted read-write, the overlay where a GOG DOS game writes (DOSBox Staging, step 4.5) is GOG's own
+  `cloud_saves` next to the game on its disk, so settings and saves travel with it, also on PCs
+  with several disks. The overlay folder on the console's disk stays only for disks left read only
+  (e.g. a Windows disk left dirty), and the game's details say so. At the switch, what an existing
+  overlay folder holds moves to `cloud_saves`: nothing is lost.

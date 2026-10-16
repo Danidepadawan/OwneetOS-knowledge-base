@@ -13,5 +13,5 @@ tags: [index]
 
 ## Notes
 
-- [[backlog]] — Nice-to-have items with no order yet (screen reader, crash reports, emulation, Qt 6, translations, recording).
+- [[backlog]] — Nice-to-have items with no order yet (screen reader, crash reports, emulation, Qt 6, translations, recording, sandboxed games, virus scanning).
 - [[wave-2]] — What comes after Wave 1, to be detailed into steps later.

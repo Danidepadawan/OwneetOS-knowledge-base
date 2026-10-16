@@ -95,3 +95,10 @@ Up: [[phase-4-games]] · Status: **in-progress**
 - **Note:** shader pre-compilation exists only for Steam games (Steam's own "Processing
   Vulkan shaders"); other games compile while they play, so the "preparing" screen covers the
   start only.
+- **Stargunner's black screen (2026-10-16):** on the builder VM (virtual screen, Tyrian as a check)
+  Arch's DOSBox 0.74.3 hangs at Stargunner's Sound Blaster 16 detection whatever the display
+  settings; it starts without sound or with a Sound Blaster Pro 2. DOSBox Staging 0.83.0's
+  official build starts it with GOG's settings (Tyrian too; its box-drawing characters need GOG's
+  CP437 configuration files turned into UTF-8). Owner: option A (per-game fixes refused) →
+  DOSBox Staging packaged from source (with iir1 and libmt32emu, checksums checked against the AUR
+  recipes: [[supply-chain-security]]), GOG's overlay instead of the copy.

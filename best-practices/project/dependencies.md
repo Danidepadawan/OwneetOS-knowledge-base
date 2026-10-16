@@ -18,3 +18,7 @@ Comes from: [[hard-constraints]] (C1, C8), [[legal-compliance]], [[owneetd]].
 - **Go modules are vendored** (`daemon/vendor/`): builds need no network ([[go]]).
 - Pin versions: Arch packages through the archive snapshot, CI actions by commit SHA, fonts and
   downloads by SHA-256.
+- **Programs we package are built from source**, never from ready-made binaries; an unsigned
+  source's checksum is checked against a second, independent source (e.g. the AUR recipe of the
+  same version) before it is written down; AUR recipes are read and rewritten, never run as they
+  are ([[supply-chain-security]]).

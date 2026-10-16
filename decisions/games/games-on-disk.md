@@ -29,14 +29,15 @@ tags: [decision, games]
   - **Which file starts a Windows game:** GOG's `goggame-<id>.info` (its primary play task: file,
     arguments, working folder), else the same choice as for Linux games ([[step-4.5-windows-games-proton]]).
 - **GOG's DOS games** (owner, 2026-10-16): GOG ships them with its own DOSBox for Windows; the
-  console starts them with Linux's DOSBox instead (Arch's `dosbox`; DOSBox Staging, proposed first,
-  is not in the official repositories), never with Proton (no download needed for them). The first
-  start copies the game (a few MB) to the console's disk with GOG's starting saves, so that it can
-  write its settings and saves; the USB disk is never written. ([[step-4.5-windows-games-proton]])
-  **The copy is temporary** (owner, 2026-10-16), while disks are read only: from
-  [[step-6.5-automatic-disk-mounting]] the game runs from its own folder with its saves (also with
-  several disks), the copy stays only for disks left read only, and saves made in it go back to the
-  game's folder.
+  console starts them with **DOSBox Staging**, built by OwneetOS from source
+  ([[supply-chain-security]]), never with Proton (no download needed for them). *(The same day,
+  Arch's DOSBox 0.74.3 was tried first: Stargunner hung at its Sound Blaster 16 detection.)* GOG's
+  own configuration files are used; their "cloud_saves" overlay (where a game's writes go) points to
+  a folder of that game on the console's disk while the game's disk is read only, seeded with GOG's
+  starting saves: the game runs from its disk, never copied, and the disk is never written. From
+  [[step-6.5-automatic-disk-mounting]] the overlay folder is GOG's own `cloud_saves` next to the
+  game, so saves travel with the disk; overlay folders made before go there, nothing is lost.
+  ([[step-4.5-windows-games-proton]])
 - **Saves of games on a USB disk** (owner, 2026-10-16, option B): until
   [[step-6.5-automatic-disk-mounting]] mounts disks read-write, games that save in their own
   folder cannot save there (the disk is read only); no workaround (the step only checks that the
@@ -73,6 +74,7 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-16 | Games made for a mouse and keyboard are left as their developers made them: no pointer or mapping added inside games; the controller pointer (step 4.7) is never offered in games. |
 | 2026-10-16 | GOG's DOS games run with Linux's DOSBox (Arch's `dosbox`), from a copy on the console's disk (they can write and save), not with GOG's Windows DOSBox under Proton (it ended when the home screen was shown; Tyrian could not write). |
 | 2026-10-16 | The DOS games' copy on the console's disk is temporary: from step 6.5 they run in place with their saves (several disks included); the copy only for disks left read only; its saves go back to the game. |
+| 2026-10-16 | GOG's DOS games: DOSBox Staging built from source (Arch's DOSBox could not start Stargunner); GOG's cloud-saves overlay on the console's disk replaces the copy of the game; from step 6.5 it is GOG's `cloud_saves` next to the game. |
 | 2026-10-16 | The download's texts say "about 650 MB" (the measured size), not "about 1 GB". |
 | 2026-10-16 | Demo 4.5 proposal: Proton is downloaded only once a Windows game is in the library; its progress in the home notices and Settings → System; GOG's `goggame-*.info` says which file starts a Windows game; games on a USB disk do not save in their own folder until step 6.5 (option B). |
 | 2026-10-11 | Proton and its runtime are downloaded once, in the background, the first time the console is online ("a necessary evil": the only exception to C9, for Windows games before the first connection). Installing a game from an installer first shows "By installing you accept the game's licence" [Read] [Install] (the user is informed, the project is covered). Step 4.1 approved. |
