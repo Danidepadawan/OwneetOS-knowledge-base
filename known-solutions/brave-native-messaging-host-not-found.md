@@ -35,7 +35,10 @@ One static manifest installed system-wide by the owneetd package (0.12.1):
 `/etc/opt/chrome/native-messaging-hosts/org.owneet.bridge.json`. owneetd no longer writes
 anything into the profiles. The test `TestManifestAllowsOnlyTheConsolesExtension`
 (`daemon/cmd/owneet-bridge/`) recomputes the extension's id from its folder and checks the file.
-Decision: [[decision-log]] 2026-10-16, [[extension-design]].
+Decision: [[decision-log]] 2026-10-16, [[extension-design]]. Verified 2026-10-16 in the test VM
+(reinstalled from the ISO with owneetd 0.12.1): A on YouTube's search field starts
+`owneet-bridge`, and `/v1/webapps/keyboard` shows `{"open": true, "kind": "text", "label":
+"Search", "app": "youtube"}`.
 
 ## How we found it
 
