@@ -100,11 +100,12 @@ nearest box; the page's order with geometry as a check; the version below). Code
   `/etc/opt/chrome/native-messaging-hosts/org.owneet.bridge.json`, where this Brave build looks.
   It does **not** look in a profile chosen with `--user-data-dir`, so a manifest in each web app's
   profile is never found: [[brave-native-messaging-host-not-found]].
-- **Updates of the worker** (owner, 2026-10-16): a profile already used keeps its stored worker
-  until the worker's file name changes ([[brave-extension-worker-cached]]). The owneet-base
-  package installs `background.js` as `background-<short hash of its content>.js` and writes that
-  name into the installed `manifest.json`; a test checks that the installed manifest's
-  `service_worker` file exists. The repository keeps `background.js`. Any script the worker loads
+- **Updates of the worker** (owner, 2026-10-16): a profile already used picks up a changed worker
+  only when the manifest's version **and** the worker's file name both change
+  ([[brave-extension-worker-cached]]). The owneet-base package installs `background.js` as
+  `background-<short hash of its content>.js` and writes that name and its own version
+  (`<pkgver>.<pkgrel>`) into the installed `manifest.json`; the build checks both. The repository
+  keeps `background.js`, and its manifest's `version` is not shipped. Any script the worker loads
   (`importScripts`, none today) gets the same treatment.
 - The frontend sends the accent colours and the language with its request to open the web app;
   owneetd keeps them and the bridge passes them to the extension when it connects.

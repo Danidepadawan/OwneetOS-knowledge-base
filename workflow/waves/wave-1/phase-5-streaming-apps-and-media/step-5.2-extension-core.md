@@ -36,5 +36,5 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
   the confirmation of [[extension-design]], "Close {name}?", the look in the open request; in the
   cage session the console must come in front of Brave), then the keyboard over Brave in
   gamescope (real hardware), then packaging and the outcome. Open: [[brave-extension-worker-cached]]
-  (fix agreed 2026-10-16: the package names the worker after a hash of its content,
-  [[extension-design]]; to do with the packaging).
+  (fix in owneet-base 0.0.39: the installed worker is named after a hash of its content and the
+  manifest gets the package's version, [[extension-design]]; to verify on a real update).

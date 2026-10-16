@@ -11,5 +11,5 @@ Read the lines here before investigating a problem: the symptom may already be k
 
 ## Notes
 
-- [[brave-extension-worker-cached]] — OPEN (fix agreed, not in the code yet): a web app profile keeps the extension's old background worker until the worker's file name changes; a version bump does nothing.
+- [[brave-extension-worker-cached]] — OPEN (fix in owneet-base 0.0.39, to verify on a real update): a used web app profile gets a changed extension worker only when the manifest's version AND the worker's file name both change; one alone keeps the old worker or leaves none.
 - [[brave-native-messaging-host-not-found]] — Brave never starts owneet-bridge: the native-messaging manifest in the web app's profile is ignored. Also the step-by-step path to see Brave's hidden errors.

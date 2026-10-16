@@ -1,6 +1,6 @@
 ---
 type: known-solution
-description: "OPEN (fix agreed, not in the code yet): a web app profile keeps the extension's old background worker until the worker's file name changes; a version bump does nothing."
+description: "OPEN (fix in owneet-base 0.0.39, to verify on a real update): a used web app profile gets a changed extension worker only when the manifest's version AND the worker's file name both change; one alone keeps the old worker or leaves none."
 status: open
 seen: 2026-10-16
 updated: 2026-10-16
@@ -36,30 +36,44 @@ registration (each one tested):
 
 What **does** trigger it:
 
-- **a new file name for the worker** (`"service_worker"` in the manifest): Brave registers the new
-  URL, runs the new code and drops the old script from `ScriptCache`;
+- **a new file name for the worker (`"service_worker"` in the manifest) together with a new
+  `version`**: Brave registers the new URL, runs the new code and drops the old script from
+  `ScriptCache` (the first rename tests ran after a version bump, so both had changed);
 - **no registration in the profile** (a fresh profile, or `Default/Service Worker/` deleted).
+
+What **breaks** it: **a new file name with the same `version`** (owneet-base 0.0.38, tested
+2026-10-16). Brave does not register the new URL and refuses to start the stored one: the profile
+is left **without a worker** (no bridge), and with full logging Brave prints
+`ERROR:…service_worker_task_queue.cc:533] DidStartWorkerFail <extension id>: 18` about every
+second.
 
 Why it was hard to see: everything else in the extension does update, and the old worker keeps
 working, so the problem only shows up as "my change does nothing".
 
 ## Solution
 
-**Fix agreed (owner, 2026-10-16), not in the code yet** ([[decision-log]], [[extension-design]]):
+**Fix (owner, 2026-10-16), in owneet-base 0.0.39** ([[decision-log]], [[extension-design]]):
 
-- **Agreed: the worker's file name changes whenever its content changes.** The owneet-base
-  package (`packages/owneet-base/PKGBUILD`, which installs `extension/background.js`) installs it as
-  `background-<short hash of the file>.js` and writes that name into the installed `manifest.json`.
-  Every existing profile picks up the new worker at the next launch. Nothing in the profiles is
-  touched, and the sites' own workers are kept. A test checks that the installed manifest's
-  `service_worker` file exists. A hash is better than the version: the name changes exactly when
-  the code does.
+- **The worker's file name and the manifest's version change together.** The owneet-base package
+  (`packages/owneet-base/PKGBUILD`) installs `extension/background.js` as
+  `background-<short hash of the file>.js`, and writes that name and **its own version**
+  (`<pkgver>.<pkgrel>`, e.g. `0.0.39.1`) into the installed `manifest.json`; the build fails if
+  either is missing. Every package release has a new version, so a changed worker always arrives
+  with both. A release with an unchanged worker only changes the version: Brave keeps the
+  identical worker. Nothing in the profiles is touched, and the sites' own workers are kept.
+- Rejected: a version made from the hash (a repeat by chance, once in 65,536 updates, would
+  rename the worker with the same version and leave every used profile without a worker).
+- **Verified by simulation** (2026-10-16, test VM, the YouTube profile used under 0.0.37): the
+  0.0.38 manifest edited to version `0.1.0.1`. A headless run on a copy of the profile: one
+  `DidStartWorkerFail` at the first start (50 ms after launch, the old stored worker), then a new
+  `ScriptCache` entry and the old one gone; a second run: none. The real session: A on the search
+  field started `owneet-bridge`. **Still to verify:** the same through a real package update.
 - Rejected (works, tested): before it launches Brave, owneetd compares a stamp of the
   installed extension with one saved in the profile. When they differ, it deletes
   `Default/Service Worker/`. It costs code in owneetd, and it also deletes the site's workers
   (YouTube's), which the site then registers again.
 
-Raising the manifest's `version` alone fixes nothing.
+Raising the manifest's `version` alone fixes nothing; renaming the worker alone is worse.
 
 ## How we found it
 
@@ -92,9 +106,12 @@ folder must not move, because its path sets the extension's id `jlekhdampjopkpjh
 
 ## Watch out
 
-- Until the fix is in: assume an extension update reaches the content scripts but **not** the
-  worker of existing profiles. When testing a worker change, use a fresh profile (headless, step 5
-  of [[brave-native-messaging-host-not-found]]) or rename the worker.
+- Without the package's renaming: assume an extension update reaches the content scripts but
+  **not** the worker of existing profiles. When testing a worker change by hand, use a fresh
+  profile (headless, step 5 of [[brave-native-messaging-host-not-found]]), or change the worker's
+  name **and** the manifest's version.
+- **Never rename the worker without a new version** (or the reverse when its code changed): the
+  first leaves used profiles without a worker, the second keeps the old code.
 - Scripts the worker loads with `importScripts` (none today) are stored with the registration
   too: they need the same renaming.
 - A new Brave build may behave differently: repeat step 2 of "How we found it" on a used profile.
