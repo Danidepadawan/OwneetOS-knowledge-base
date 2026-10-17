@@ -54,5 +54,8 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
   nothing. (4) done, owneet-frontend 0.16.14, verified in the test VM: B on YouTube's first page
   asks "Close YouTube?" with Cancel selected; Cancel and B bring YouTube back (B does not also go
   back in the page); Close closes it and the home screen stays; opening it again shows no black
-  screen (a `CageWindow` state left over after the close, fixed). Next: (5) the look in the open
-  request.
+  screen (a `CageWindow` state left over after the close, fixed). (5) done, owneet-frontend
+  0.16.15, verified in the test VM: `/v1/webapps/look` gives `{"accent": "#ff8a5b", "language":
+  "en"}`, the ring has the palette's accent and follows a palette change (at the next page load).
+  **The frontend part is done.** Next: part 6, the keyboard over the page in gamescope (real
+  hardware), then part 7 (packaging, terms of service, known limits, outcome).
