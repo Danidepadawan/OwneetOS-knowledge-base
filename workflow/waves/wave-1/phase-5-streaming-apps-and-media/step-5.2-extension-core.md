@@ -12,7 +12,9 @@ tags: [step, phase-5]
 Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
 
 - **Before shipping:** check the extension's behaviour and any user-agent change against the terms
-  of service of each streaming service ([[legal-compliance]]).
+  of service of each streaming service ([[legal-compliance]]). **Checked 2026-10-18** (owner):
+  Netflix §1.8(vi) goes to the legal review of [[step-7.5-legal-review-before-the-public-launch]];
+  the TV user agent is checked in [[step-5.3-youtube]]; nothing applies for Spotify.
 
 - **Deliverables:** Manifest V3 extension: Gamepad API loop, spatial navigation, B = back, exit to home, OSK for web forms.
 - **Agreed (owner, 2026-10-15):** bindings in [[controller-input-map]] ("Inside a web app"); design
