@@ -68,6 +68,12 @@ the network (Wi-Fi signal or cable).
 (`/etc/os-release`), the credited projects (CREDITS.md tables) and every installed package with
 its licence (pacman's local database), for Settings → System → Credits and licences.
 
+**The cage session (5.2):** cage shows only the newest window, so `CageWindow.qml` carries out
+owneetd's `focus.changed` with the interface's own window (owneetd 0.12.2): asked for the home
+screen while an app is on top, it hides and shows the window again (it becomes the newest); when
+the app comes back it hides it, and shows it again when the app exits. Starting an app is
+unchanged: the app's window covers the console when it appears. owneet-frontend 0.16.12.
+
 **Disks (3.7):** `owneet::Storage` (`src/backend/owneet/`, `storage` in QML) lists the system disk
 and the mounted disks with their free space (Qt's `QStorageInfo`), for the library.
 
