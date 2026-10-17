@@ -74,6 +74,11 @@ screen while an app is on top, it hides and shows the window again (it becomes t
 the app comes back it hides it, and shows it again when the app exits. Starting an app is
 unchanged: the app's window covers the console when it appears. owneet-frontend 0.16.12.
 
+**The web keyboard (5.2):** `WebKeyboard.qml` opens on owneetd's `webapp.keyboard` and confirms it
+(`/v1/webapps/keyboard/shown`): the web app's name, a line with the field's label and text, and
+the `Keyboard`, whose `typed`, `deleted` and `cursorMoved` signals are passed to the page through
+`/v1/webapps/text`. Done closes with `next`, B without. owneet-frontend 0.16.13.
+
 **Disks (3.7):** `owneet::Storage` (`src/backend/owneet/`, `storage` in QML) lists the system disk
 and the mounted disks with their free space (Qt's `QStorageInfo`), for the library.
 

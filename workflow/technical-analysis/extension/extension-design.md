@@ -17,6 +17,9 @@ Code: `extension/` (Manifest V3), `daemon/cmd/owneet-bridge`. Bindings: [[contro
   [[controller-input-map]]. Standard button 16 (Guide) is **ignored**: Guide is owneetd's
   ([[guide-button]]).
 - While the console's keyboard is open the loop pauses: the frontend reads the controller.
+- **When the page gets the controller back** (the keyboard closed, the page in front again), the
+  buttons still held count only once released and pressed again, and a held direction waits to
+  repeat: B that closed the keyboard used to go back in the page too (found 2026-10-17).
 
 ## Targets of the D-pad
 
@@ -77,6 +80,9 @@ nearest box; the page's order with geometry as a check; the version below). Code
 - The **console's own keyboard** (step 3.10). In gamescope it is drawn over Brave; in the fallback
   session (cage) the console comes to the front with the keyboard and a line showing the text
   (dots for passwords), and Done brings the web app back.
+- When the keyboard opens, the extension puts the field's cursor at the end, where the console's
+  line starts its own (email and number fields allow no cursor to be set: there cursor moves may
+  differ).
 - Text is **inserted by the extension** (`document.execCommand('insertText')`, which fires the
   page's `input` events), not typed through owneetd's virtual keyboard: it works whichever window
   has the focus. The virtual keyboard ([[owneetd-api-input]]) stays a fallback for sites that

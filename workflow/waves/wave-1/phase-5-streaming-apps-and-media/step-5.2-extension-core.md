@@ -47,4 +47,8 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
   (2) done, owneet-frontend 0.16.12 (`CageWindow.qml`), verified in the test VM: the home screen
   stays while YouTube starts; A on the search field brings the console in front of Brave and,
   without a confirmation, Brave comes back after 3 s; B on the first page brings the console in
-  front; holding Guide closes YouTube with the console on screen. Next: (3).
+  front; holding Guide closes YouTube with the console on screen. (3) done, owneet-frontend
+  0.16.13 (`WebKeyboard.qml`) and owneet-base 0.0.41, verified in the test VM (cage, YouTube's
+  search field): the screen stays open (confirmed), typing, delete and the cursor reach the page,
+  Done moves the ring on, B closes without going back in the page, A on the Done key clicks
+  nothing. Next: (4) "Close {name}?".
