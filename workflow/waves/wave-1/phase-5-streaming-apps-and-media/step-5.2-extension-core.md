@@ -51,4 +51,8 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
   0.16.13 (`WebKeyboard.qml`) and owneet-base 0.0.41, verified in the test VM (cage, YouTube's
   search field): the screen stays open (confirmed), typing, delete and the cursor reach the page,
   Done moves the ring on, B closes without going back in the page, A on the Done key clicks
-  nothing. Next: (4) "Close {name}?".
+  nothing. (4) done, owneet-frontend 0.16.14, verified in the test VM: B on YouTube's first page
+  asks "Close YouTube?" with Cancel selected; Cancel and B bring YouTube back (B does not also go
+  back in the page); Close closes it and the home screen stays; opening it again shows no black
+  screen (a `CageWindow` state left over after the close, fixed). Next: (5) the look in the open
+  request.

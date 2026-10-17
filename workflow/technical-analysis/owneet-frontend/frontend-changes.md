@@ -79,6 +79,10 @@ unchanged: the app's window covers the console when it appears. owneet-frontend 
 the `Keyboard`, whose `typed`, `deleted` and `cursorMoved` signals are passed to the page through
 `/v1/webapps/text`. Done closes with `next`, B without. owneet-frontend 0.16.13.
 
+**"Close {name}?" from a web app (5.2):** on `webapp.ask_close` the shell opens the close dialog
+(`confirmClose`) with a `back` action: Cancel and B bring the web app back (`/v1/apps/{id}/focus`),
+Close closes it. owneet-frontend 0.16.14.
+
 **Disks (3.7):** `owneet::Storage` (`src/backend/owneet/`, `storage` in QML) lists the system disk
 and the mounted disks with their free space (Qt's `QStorageInfo`), for the library.
 
