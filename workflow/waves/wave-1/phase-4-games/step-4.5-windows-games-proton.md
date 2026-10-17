@@ -109,3 +109,10 @@ Up: [[phase-4-games]] · Status: **in-progress**
   boxes. FrankenPC test pending (the update needs Arch's libraries online: install it from
   Settings → System).
 
+- **FrankenPC test 6 (2026-10-17):** the update installed at start-up from the stick alone, with
+  the Arch packages on it ([[step-4.2b-updates-from-a-usb-stick]]; DOSBox Staging as
+  `dosbox-staging`, owneetd 0.14.2). **Owner: everything works**: Stargunner and Tyrian 2000 play,
+  Home goes back and forth, both close from the home screen. Once, at 17:44, the PC froze 0.2 s
+  after DOSBox Staging opened its window: the NVIDIA driver reported Xid 79 ("GPU has fallen off
+  the bus"), a GPU or PCIe fault seen once in 43 starts; the same start worked afterwards. Watched:
+  if it comes back, look at the GPU's power and PCIe settings with the owner.

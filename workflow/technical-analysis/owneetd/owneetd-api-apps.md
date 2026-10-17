@@ -56,7 +56,10 @@ at a time; apps such as the browser may run next to it), `apps.unknown_app` (404
   never brings Steam's own window back unless it was the app last on screen. If no game has
   started 20 s after the address was handed over, Steam probably waits for the user (a licence to
   accept, a cloud conflict, launch options): its window is shown; not while Steam prepares
-  the game's shaders (a `fossilize_replay` process in Steam's unit): the 20 s start again. Not `-silent`: owneetd hands
+  the game's shaders (a `fossilize_replay` process in Steam's unit): the 20 s start again. Once
+  the game has started, Steam's window stays out of what gamescope may show (also when Steam asks
+  for it) until the game's window appears, then goes back behind the game; 20 s without a game
+  window, it is shown behind the game (owneetd 0.14.3, [[step-4.2c-steam-without-its-interface]]). Not `-silent`: owneetd hands
   Steam its first address once Steam's window exists, and gamescope already shows only what
   owneetd chooses. `install` / `uninstall` hand `steam://install/N` / `steam://uninstall/N` to
   Steam and show its confirmation; once Steam acts on it (the game's appmanifest appears, goes, or

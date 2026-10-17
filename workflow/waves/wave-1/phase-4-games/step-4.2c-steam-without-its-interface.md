@@ -122,3 +122,12 @@ The console keeps Steam's interface off the screen in everyday use ([[steam-inte
     permanent on every NVIDIA PC (owneetd 0.12.4; `owneet.debug.steam_repaint=off` turns it off
     to compare), until Valve fixes the problem; if it does not hold, it is reverted. Then the
     other bugs the owner found come first, the visual defects of Steam afterwards.
+- **Steam's window before a game's (owner, 2026-10-17):** starting Silksong, Steam's window (with
+  its defects) was on screen for about 10 s between the game's start and its window: owneetd put
+  Steam right behind the game, and gamescope shows the first window there is. There is no per-game
+  signal to wait for, but there is one for every game: its window appearing. owneetd 0.14.3 keeps
+  Steam's window out (also from Steam's own requests) until the game's window is there, then puts
+  Steam back behind it; after 20 s without a game window Steam is shown (it may be asking the
+  user something). The console's "Starting …" screen stays until the game's window appears
+  (owneet-frontend 0.21.2). Go test `TestSteamStaysBehindAGameWithoutWindow`; FrankenPC test
+  pending.
