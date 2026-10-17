@@ -105,5 +105,7 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
   [[gamescope-overlay-window-not-drawn-or-left-on-screen]]. The owner saw no visible difference
   between B and Done (by design: Done moves the ring to the next target, B leaves it on the field,
   the sounds differ); **kept as designed** (owner, 2026-10-17); "Done = search on search fields"
-  was offered and not taken for now. Open for part 7: the per-key log lines of 0.16.20 (keep or
-  drop), the keyboard's sounds and the ring around the field (see the checklist above).
+  was offered and not taken for now. Decided (owner, 2026-10-17): the diagnostic log lines are
+  dropped (the overlay property is logged only when it cannot be set), and **the ring stays around
+  the field while the keyboard is open**, as in the demo (owneet-base 0.0.43, owneet-frontend
+  0.16.21; to see at the next hardware test, with the keyboard's sounds).

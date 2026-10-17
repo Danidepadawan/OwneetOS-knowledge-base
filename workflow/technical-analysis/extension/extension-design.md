@@ -17,6 +17,8 @@ Code: `extension/` (Manifest V3), `daemon/cmd/owneet-bridge`. Bindings: [[contro
   [[controller-input-map]]. Standard button 16 (Guide) is **ignored**: Guide is owneetd's
   ([[guide-button]]).
 - While the console's keyboard is open the loop pauses: the frontend reads the controller.
+- **While the keyboard is open the ring stays around the field** (owner, 2026-10-17, as in the
+  approved demo); the loop only stops reading the controller.
 - **When the page gets the controller back** (the keyboard closed, the page in front again), the
   buttons still held count only once released and pressed again, and a held direction waits to
   repeat: B that closed the keyboard used to go back in the page too (found 2026-10-17).
