@@ -91,3 +91,12 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
   0.16.18: wait until the server knows the window, check every request, read the property back
   and log it, and set it again after the window is shown. To test on FrankenPC with the
   experiment still in place.
+- **Second FrankenPC test** (owneet-frontend 0.16.18, 2026-10-17): the property is set on every
+  opening (read back, no X errors) and **the keyboard appeared over YouTube** at the first
+  opening (external overlay). But it **stayed on screen after closing**: the interface closed and
+  reopened it three times (each reopening needs a close; the gamepad was stopped and started
+  again), while its picture remained. Likely gamescope kept the last frame once the window was
+  unmapped, over a page that did not change. Fix in 0.16.19: on closing, the window first turns
+  fully transparent (`_NET_WM_WINDOW_OPACITY` 0: gamescope repaints on an overlay's opacity change
+  and does not draw it at 0), and is unmapped 150 ms later. The experiment is removed: the
+  external overlay is the kind that appeared.
