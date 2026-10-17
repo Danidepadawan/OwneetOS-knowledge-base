@@ -27,7 +27,11 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
   (close dialog, keyboard in web mode, full screen first) → keyboard layered in gamescope (checked
   on real hardware only: headless gamescope in the test VM shows no picture) → packaging.
 - **Known limits of 5.2:** native `<select>` popups and cross-origin iframes (e.g. captchas) are
-  not driven by the controller.
+  not driven by the controller; in email and number fields the page's cursor cannot be set, so
+  cursor moves on the keyboard may land elsewhere in the page than in the console's line;
+  site-specific work is left to their steps (YouTube's cards with several buttons and the TV
+  interface: [[step-5.3-youtube]]; Netflix's cookie banner, hard to reach with the D-pad:
+  [[step-5.4-netflix]]).
 - **Demo approved (owner, 2026-10-15):** `design/demos/5.2-web-app-controls.html`. No sounds inside the page; Done moves the selection to the next target; show / hide password only in the fallback session's line. Seeking (±10 s) is not part of 5.2: it comes with each site's player in 5.3 and 5.4.
 - **Progress (2026-10-16):** vault, demo, extension (navigation tested by the owner in the VM:
   "solid") and bridge + owneetd endpoints done. Verified in the test VM with owneetd 0.12.1:
@@ -111,3 +115,15 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
   dropped (the overlay property is logged only when it cannot be set), and **the ring stays around
   the field while the keyboard is open**, as in the demo (owneet-base 0.0.43, owneet-frontend
   0.16.21; to see at the next hardware test, with the keyboard's sounds).
+- **Outcome (2026-10-18):** the console's Brave extension drives web apps with the controller
+  (spatial navigation, ring, A, B chain up to "Close {name}?", right stick), talks to owneetd
+  through `owneet-bridge` (a system-wide native-messaging manifest), types into text fields with
+  the console's keyboard (cage: the console in front with a line; gamescope: drawn over the page as
+  an external overlay), and takes the console's look. Packages: owneetd 0.12.4, owneet-base 0.0.43,
+  owneet-frontend 0.16.21. Verified in the test VM (cage, and headless gamescope for the logic) and
+  on FrankenPC (gamescope, NVIDIA: the keyboard over YouTube). Terms of service checked (Netflix
+  §1.8(vi) to the legal review of 7.5). Known solutions written: the bridge not found by Brave, the
+  cached extension worker, empty files after a hard stop, the gamescope overlay window. **Still
+  open:** at the next hardware test the ring around the field during typing and the keyboard's
+  sounds; the worker-update fix through a real update when the worker's code next changes
+  ([[brave-extension-worker-cached]]).
