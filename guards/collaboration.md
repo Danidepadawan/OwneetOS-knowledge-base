@@ -24,6 +24,8 @@ tags: [guard, process]
   long-term impact) without the owner's explicit approval at that moment. ([[step-workflow]])
 - **Never push to GitHub** or act on GitHub (issues, PRs, settings): commit locally, the owner
   pushes. ([[repository]])
+- **Never narrow, or propose narrowing, the guard checks** (`scripts/guard-check.py`), not even
+  for a false positive: report it to the owner, who decides case by case. ([[knowledge-base]])
 - **Never write project text in a language other than English** (code, comments, documentation,
   commit messages, issues, PRs, this vault). The UI is translated through message files only.
   ([[hard-constraints]] C6)

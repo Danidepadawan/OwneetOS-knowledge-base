@@ -4,7 +4,7 @@ description: "Why and how project knowledge moved to this Obsidian vault; the ol
 area: process
 status: active
 decided: 2026-10-13
-updated: 2026-10-16
+updated: 2026-10-17
 legacy: "CLAUDE.md, PROJECT_RULES.md (replaced)"
 tags: [decision, process, knowledge-base]
 ---
@@ -30,6 +30,12 @@ tags: [decision, process, knowledge-base]
   check fails closed: without a working Python every tool call is blocked, with the reason. Every
   hook goes through `scripts/hook.sh`; re-injection and the reminder are plain shell, so they work
   without Python.
+- **The guard checks are never narrowed** (owner, 2026-10-17), not even when they block an
+  innocent command: `scripts/guard-check.py` blocks any command whose text names a forbidden
+  action (e.g. the build tools, in a file being read or edited, or in a commit message). A check
+  that let such text through could be bypassed by writing the forbidden commands into a script and
+  running it. A false positive is reported to the owner, who decides how to go on (2026-10-17: an
+  edit with the editor tool; the commit, by the owner).
 - **Claude Code started inside the code repository** (2026-10-13) uses the same hooks through the
   repository's `.claude/settings.json` and `.claude/kb-hook.sh`, but only when the vault is next to
   it: the code repository does not require the knowledge base. When the workspace's `CLAUDE.md` does
@@ -54,3 +60,4 @@ Entries of the [[decision-log]] that shaped this note.
 |---|---|
 | 2026-10-13 | The knowledge base moves to the Obsidian vault `OwneetOS-knowledge-base`: guards, best practices, decisions and workflow documents in their own folders; guards loaded in every session and re-injected after compaction; `PROJECT_RULES.md`, `ROADMAP.md` and the design documents migrated with their history. |
 | 2026-10-16 | A fifth category, **known solutions** (`known-solutions/`): problems already solved or understood that can happen again, above all the tricky ones, with the path that found them; written in the same change as the fix, read before investigating a problem. |
+| 2026-10-17 | The guard checks are never narrowed, not even for false positives (blocked commands that only mention a forbidden action): text let through could be written into a script and run. False positives go to the owner, who decides case by case. Added to the collaboration guard. |
