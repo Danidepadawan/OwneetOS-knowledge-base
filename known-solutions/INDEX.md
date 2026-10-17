@@ -13,3 +13,4 @@ Read the lines here before investigating a problem: the symptom may already be k
 
 - [[brave-extension-worker-cached]] — OPEN (fix in owneet-base 0.0.39, to verify on a real update): a used web app profile gets a changed extension worker only when the manifest's version AND the worker's file name both change; one alone keeps the old worker or leaves none.
 - [[brave-native-messaging-host-not-found]] — Brave never starts owneet-bridge: the native-messaging manifest in the web app's profile is ignored. Also the step-by-step path to see Brave's hidden errors.
+- [[empty-files-after-an-update-and-a-hard-stop]] — A package installed with pacman, then the machine stopped by hand: the package's files are 0 bytes (\"Exec format error\", the interface does not start). How to see it and repair it.

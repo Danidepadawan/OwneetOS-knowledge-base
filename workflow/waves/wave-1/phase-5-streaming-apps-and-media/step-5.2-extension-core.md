@@ -41,8 +41,8 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
 - **Frontend part, plan agreed (owner, 2026-10-16):** (1) owneetd: keyboard confirmation and cage
   focus; (2) the interface's window in cage; (3) the web keyboard; (4) "Close {name}?"; (5) the
   look in the open request. Until part 6, gamescope uses the fallback design too (the console in
-  front with the line and the keyboard). Whether part 6 stays (keyboard over the page in gamescope
-  only) or is dropped for one design everywhere: to decide before part 6.
+  front with the line and the keyboard). **Part 6 stays** (owner, 2026-10-17): in gamescope the
+  keyboard is drawn over the page, as in the approved demo; the fallback design stays for cage.
 - **Progress (2026-10-17):** (1) done, owneetd 0.12.2: the 3-second timeout seen in the test VM.
   (2) done, owneet-frontend 0.16.12 (`CageWindow.qml`), verified in the test VM: the home screen
   stays while YouTube starts; A on the search field brings the console in front of Brave and,
