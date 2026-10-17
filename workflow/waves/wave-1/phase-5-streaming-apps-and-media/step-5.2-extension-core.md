@@ -82,3 +82,12 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
   between the external overlay and `STEAM_OVERLAY` without input focus (the path of Steam's own
   keyboard; it takes the input only with `STEAM_INPUT_FOCUS`, so the earlier "it takes the input"
   was imprecise).
+- **What the logs showed** (FrankenPC, 2026-10-17, logs on the OwneetOS stick): neither opening
+  appeared. The probe shows the keyboard window (`0x400030`) mapped with **no overlay property at
+  all** and listed in `GAMESCOPE_FOCUSABLE_WINDOWS` as a home-screen window, while the interface
+  had logged setting it on that same window: the property never reached the X server's window
+  (one Xwayland server, `:0`). Most likely the request, sent on a connection of the interface's
+  own, overtook Qt's request that creates the window and failed unseen. Fix in owneet-frontend
+  0.16.18: wait until the server knows the window, check every request, read the property back
+  and log it, and set it again after the window is shown. To test on FrankenPC with the
+  experiment still in place.
