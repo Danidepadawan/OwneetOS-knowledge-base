@@ -24,3 +24,12 @@ tags: [best-practice, qml, frontend]
 - File names: `PascalCase.qml` for components; pages end in `Page`, windows in `Sheet`.
 - Property names never start with `on` + a capital letter (`onRunning`): QML reads them as signal
   handlers and the theme fails to load (step 5.1, 2026-10-15). Use another name (`runningInk`).
+- Never name a property like one of `Item`'s own (`focus`, `state`, `data`, `visible`, `enabled`,
+  `opacity`, `scale`, `clip`…): the final ones cannot be redeclared ("Cannot override FINAL
+  property") and the theme fails to load (step 5.2, 2026-10-17). Use another name (`current`).
+- Signal handlers with parameters use the function form (`onTyped: function(text) { … }`), not
+  the parameters injected by name.
+- **The theme must load without a QML warning.** The owneet-frontend package's `check()` runs the
+  interface for 15 s without a screen and fails on any warning from `qrc:/themes/…` or when the
+  theme is not loaded: mistakes that only show when the theme is loaded stop the build instead of
+  reaching a console.
