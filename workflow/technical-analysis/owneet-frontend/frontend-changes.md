@@ -83,6 +83,13 @@ the `Keyboard`, whose `typed`, `deleted` and `cursorMoved` signals are passed to
 (`confirmClose`) with a `back` action: Cancel and B bring the web app back (`/v1/apps/{id}/focus`),
 Close closes it. owneet-frontend 0.16.14.
 
+**The web keyboard over the page in gamescope (5.2, part 6):** `WebKeyboard.qml` shows its
+keyboard in a window of its own (`layered`), made a gamescope external overlay by
+`owneet::Overlay` (`overlay` in QML: `makeOverlay`, `routeGamepad`; `platform::make_external_overlay`
+in `GamescopeTag_x11.cpp`). `GamepadButtonNavigation::setKeyTarget` sends the gamepad's keys to
+that keyboard, and `Backend.cpp` reads the gamepad while the home screen is in front or the web
+keyboard is open. owneet-frontend 0.16.16.
+
 **Disks (3.7):** `owneet::Storage` (`src/backend/owneet/`, `storage` in QML) lists the system disk
 and the mounted disks with their free space (Qt's `QStorageInfo`), for the library.
 

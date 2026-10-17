@@ -80,6 +80,14 @@ nearest box; the page's order with geometry as a check; the version below). Code
 - The **console's own keyboard** (step 3.10). In gamescope it is drawn over Brave; in the fallback
   session (cage) the console comes to the front with the keyboard and a line showing the text
   (dots for passwords), and Done brings the web app back.
+- **How it is drawn over Brave in gamescope** (owner, 2026-10-17): a window of its own that
+  gamescope shows as an **external overlay** (X11 property `GAMESCOPE_EXTERNAL_OVERLAY` = 1, set
+  before the window is first shown; a surface with an alpha channel). gamescope draws it over the
+  app on screen, blended with its transparency, and never focuses it: Brave stays in front and
+  focused, so the extension keeps typing into the page. The interface's gamepad keys go to that
+  keyboard directly (no focused window of its own), and the interface reads the gamepad while the
+  web keyboard is open. `STEAM_OVERLAY` (Steam's own overlay, which takes the input) is not used.
+  Facts from gamescope's `steamcompmgr.cpp`; checked in the test VM with headless gamescope.
 - When the keyboard opens, the extension puts the field's cursor at the end, where the console's
   line starts its own (email and number fields allow no cursor to be set: there cursor moves may
   differ).

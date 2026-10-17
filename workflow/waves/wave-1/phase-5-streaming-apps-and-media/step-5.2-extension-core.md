@@ -57,5 +57,16 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
   screen (a `CageWindow` state left over after the close, fixed). (5) done, owneet-frontend
   0.16.15, verified in the test VM: `/v1/webapps/look` gives `{"accent": "#ff8a5b", "language":
   "en"}`, the ring has the palette's accent and follows a palette change (at the next page load).
-  **The frontend part is done.** Next: part 6, the keyboard over the page in gamescope (real
-  hardware), then part 7 (packaging, terms of service, known limits, outcome).
+  **The frontend part is done.**
+- **Part 6, plan agreed (owner, 2026-10-17):** the keyboard as a gamescope external overlay
+  ([[extension-design]]). Done in owneetd 0.12.3 and owneet-frontend 0.16.16, checked in the test
+  VM (2026-10-17): cage unchanged; headless gamescope keeps YouTube in front and focused
+  (`GAMESCOPE_FOCUSED_WINDOW` = Brave), the window "OwneetOS keyboard" is mapped with
+  `GAMESCOPE_EXTERNAL_OVERLAY = 1` and a 32-bit visual, outside `GAMESCOPE_FOCUSABLE_WINDOWS`,
+  and the virtual controller types through it (`webapp.text`, Done → `next`). **To check on real
+  hardware** (next hardware test): the picture, i.e. the page visible through the band (on NVIDIA
+  the transparent part may come out black: a known gamescope report); the keyboard's sounds; the
+  overlay also carries the home screen's `STEAM_GAME` (owneetd tags the interface's windows;
+  gamescope forces an external overlay's app id to 0); the extension hides its ring while the
+  keyboard is open, while the demo keeps it around the field. Next: part 7 (packaging, terms of
+  service, known limits, outcome).
