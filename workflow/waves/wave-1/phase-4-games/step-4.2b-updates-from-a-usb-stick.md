@@ -95,3 +95,13 @@ Up: [[phase-4-games]] · Status: **done**
   known problem of X11 windows with the NVIDIA driver, not reported upstream for now. The way out
   is to keep Steam's own interface off the screen: [[step-4.2c-steam-without-its-interface]].
 - **Approved by the owner (2026-10-14)** after the FrankenPC tests (installed, started from its disk, several updates applied from the stick at start-up and from Settings).
+- **Arch packages on the stick too (2026-10-17, after approval):** the step 4.5 update (DOSBox
+  Staging and six new Arch packages) failed on the FrankenPC: at start-up there is no network yet,
+  and from Settings the Arch Linux Archive answered in about 23 s, beyond pacman's 10-second
+  limit. `tools/update-extras` (builder VM) puts on the stick, with the OwneetOS packages, the
+  Arch packages they need that the test PC lacks (its ISO's package list as the baseline),
+  downloaded from the same snapshot with Arch's signatures, which the test PC checks; the update
+  then installs offline. `owneet-update` no longer gives up on a slow Archive
+  (`--disable-download-timeout`, owneet-base 0.0.39). DOSBox Staging is installed as
+  `dosbox-staging`, next to Arch's `dosbox` rather than in conflict with it: pacman's automatic
+  mode never removes a package, so the update would have failed on PCs that had it.
