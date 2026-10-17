@@ -70,3 +70,15 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
   gamescope forces an external overlay's app id to 0); the extension hides its ring while the
   keyboard is open, while the demo keeps it around the field. Next: part 7 (packaging, terms of
   service, known limits, outcome).
+- **Part 6 on real hardware (FrankenPC, live USB, 2026-10-17): not working yet.** A and B open and
+  close the keyboard (its keys arrive), but it is **not drawn over YouTube**; after Guide the home
+  screen comes in front and the keyboard shows there, on a dark background, and works. It behaves
+  like an ordinary window of the home screen, not an external overlay. gamescope 3.16.31 (the
+  snapshot's; the source read for the plan), no Qt Wayland plugin (the interface is on X11),
+  `--force-composition` on NVIDIA. Cause unknown: being investigated with owneetd 0.12.4,
+  owneet-base 0.0.42, owneet-frontend 0.16.17 (a new ISO): the test log writes to the OwneetOS
+  stick itself when there is no OWNEETLOG stick ([[known-solutions/INDEX]] once understood), the X
+  probe ships with owneetd, and a **temporary experiment** alternates the keyboard's openings
+  between the external overlay and `STEAM_OVERLAY` without input focus (the path of Steam's own
+  keyboard; it takes the input only with `STEAM_INPUT_FOCUS`, so the earlier "it takes the input"
+  was imprecise).
