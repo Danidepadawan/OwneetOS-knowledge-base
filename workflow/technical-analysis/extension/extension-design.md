@@ -86,8 +86,11 @@ nearest box; the page's order with geometry as a check; the version below). Code
   app on screen, blended with its transparency, and never focuses it: Brave stays in front and
   focused, so the extension keeps typing into the page. The interface's gamepad keys go to that
   keyboard directly (no focused window of its own), and the interface reads the gamepad while the
-  web keyboard is open. `STEAM_OVERLAY` (Steam's own overlay, which takes the input) is not used.
-  Facts from gamescope's `steamcompmgr.cpp`; checked in the test VM with headless gamescope.
+  web keyboard is open. `STEAM_OVERLAY` (Steam's own overlay; it takes the input only with
+  `STEAM_INPUT_FOCUS`) is not used. Facts from gamescope's `steamcompmgr.cpp`. The property is set
+  only once the X server knows the window, checked and read back, and set again after showing;
+  hiding goes through opacity 0 first: [[gamescope-overlay-window-not-drawn-or-left-on-screen]].
+  Verified on FrankenPC (2026-10-17).
 - When the keyboard opens, the extension puts the field's cursor at the end, where the console's
   line starts its own (email and number fields allow no cursor to be set: there cursor moves may
   differ).

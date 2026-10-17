@@ -100,3 +100,10 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
   fully transparent (`_NET_WM_WINDOW_OPACITY` 0: gamescope repaints on an overlay's opacity change
   and does not draw it at 0), and is unmapped 150 ms later. The experiment is removed: the
   external overlay is the kind that appeared.
+- **Part 6 verified on FrankenPC** (owneet-frontend 0.16.20, 2026-10-17): the keyboard appears over
+  YouTube, typing reaches the page, B and Done close it and it disappears; a second opening works.
+  [[gamescope-overlay-window-not-drawn-or-left-on-screen]]. The owner saw no visible difference
+  between B and Done (by design: Done moves the ring to the next target, B leaves it on the field,
+  the sounds differ); **kept as designed** (owner, 2026-10-17); "Done = search on search fields"
+  was offered and not taken for now. Open for part 7: the per-key log lines of 0.16.20 (keep or
+  drop), the keyboard's sounds and the ring around the field (see the checklist above).
