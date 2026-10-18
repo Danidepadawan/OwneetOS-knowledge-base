@@ -16,6 +16,15 @@ Scope agreed so far: [[wave-1-scope]] (later waves).
 - **Web apps in the background (owner, 2026-10-14):** music web apps (Spotify, Tidal…) keep
   playing while the user does something else; in Wave 1 a web app is closed by the user like a
   game ([[step-5.1-brave-in-the-os]]).
+- **9a. Stable live boot (owner, 2026-10-19), before dual boot:** OwneetOS fully usable when
+  booted from the USB stick, without installing it: the user chooses the disks where games are
+  saved; the game library is cached (in the owner's words: "tiles shadowing, download from library etc."); the
+  boot is faster; RAM is saved wherever possible. Details agreed when the step is planned; it
+  revisits what the live system does today: Steam and the web apps only with 12 GB of RAM
+  ([[steam-integration]], [[optional-apps]]), a writable space in RAM of up to 75 %
+  (`cow_spacesize=75%`, [[step-4.2-steam-integration]]), no copy of the image to RAM
+  (`copytoram=n`, [[boot-experience]]), the slow boot from a USB stick
+  ([[step-1.5-hardware-support-set]]). The user's disks: [[disks]], guard [[user-data]].
 - **10. Dual boot (optional, not required):** "Install alongside Windows", BitLocker detection and guidance, RTC handling, default OS, "Restart into Windows".
 - **11. More stores:** Epic (legendary), GOG (gogdl); their Windows games use Wave 1's Proton (4.5).
 - **12. Console features:** user profiles, parental controls, play-time statistics, quick suspend and resume.
