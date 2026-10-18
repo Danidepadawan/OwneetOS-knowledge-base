@@ -129,5 +129,6 @@ The console keeps Steam's interface off the screen in everyday use ([[steam-inte
   Steam's window out (also from Steam's own requests) until the game's window is there, then puts
   Steam back behind it; after 20 s without a game window Steam is shown (it may be asking the
   user something). The console's "Starting …" screen stays until the game's window appears
-  (owneet-frontend 0.21.2). Go test `TestSteamStaysBehindAGameWithoutWindow`; FrankenPC test
-  pending.
+  (owneet-frontend 0.21.2). Go test `TestSteamStaysBehindAGameWithoutWindow`. **FrankenPC
+  (owner, 2026-10-17): passed**: Silksong started from "Starting …" straight into the game,
+  Steam's window never on screen (no repaint in the log).
