@@ -128,3 +128,7 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   Brave downloaded Widevine (4.10.3112.0) and showed no window; the videos played; the sidebar
   stays hidden; YouTube's and Netflix's (older) profiles both have `ask_widevine_install` false and
   `sidebar_show_option` 3 in both settings files. **Sub-step 3 is done.**
+- **Sub-step 4, checked by the owner** (2026-10-19, test VM, cage; no code needed): in the player A
+  pauses and plays (YouTube's Enter); seeking works with YouTube's own progress bar (its controls,
+  then left / right); search works with YouTube's own keyboard (D-pad and A); signing in goes
+  through the phone (QR code or `yt.be/activate`). **Sub-step 4 is done.** Next: sub-step 5 (close).
