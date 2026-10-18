@@ -67,7 +67,9 @@ project is reviewed by someone experienced in open-source licensing ([[step-7.5-
     with a TV user agent set by owneetd (brand-neutral first). The owner's view: allowed, since the
     terms allow the modes the service makes available, the TV interface is one of them, and a user
     agent alters neither the app nor its content; it still **goes to the legal review**
-    ([[step-7.5-legal-review-before-the-public-launch]]).
+    ([[step-7.5-legal-review-before-the-public-launch]]). On the TV interface the extension only
+    sends the keys a remote or a keyboard would (arrows, Enter, Escape), each on the user's button,
+    and shows nothing in the page (2026-10-19).
   - **Spotify** (Terms of Use §3, User Guidelines): no bot, script or automated process (about
     inflating plays), no modifying or altering the Services, no ad blocking. Nothing applies to
     the extension.

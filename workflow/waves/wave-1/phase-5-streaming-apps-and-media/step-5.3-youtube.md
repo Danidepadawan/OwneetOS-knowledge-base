@@ -131,4 +131,34 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
 - **Sub-step 4, checked by the owner** (2026-10-19, test VM, cage; no code needed): in the player A
   pauses and plays (YouTube's Enter); seeking works with YouTube's own progress bar (its controls,
   then left / right); search works with YouTube's own keyboard (D-pad and A); signing in goes
-  through the phone (QR code or `yt.be/activate`). **Sub-step 4 is done.** Next: sub-step 5 (close).
+  through the phone (QR code or `yt.be/activate`). **Sub-step 4 is done.**
+- **Terms of service (sub-step 5, 2026-10-19):** on the TV interface the extension only sends the
+  keys a remote or a keyboard would (arrows, Enter, Escape), each in answer to the user's button;
+  it changes no content and shows nothing in the page (its ring element is there, never shown).
+  Still to the legal review of [[step-7.5-legal-review-before-the-public-launch]]: the TV user agent
+  (the owner holds it allowed), Brave's ad blocking (Shields on; an ad still played on the TV
+  interface). The console's consent to Google's Widevine terms comes with [[step-5.4-netflix]]
+  ([[legal-compliance]]).
+- **Known limits of 5.3:**
+  - Signing in needs a phone or another device (YouTube's TV interface offers only "Sign in with
+    your phone"; "Watch as guest" needs nothing).
+  - LT / RT do nothing: no key of the TV interface seeks by 10 s; seeking is done with YouTube's
+    progress bar.
+  - B asks "Close YouTube?" when Escape changed nothing within half a second: a slow reaction of
+    YouTube could rarely bring the dialog up by mistake (Cancel is selected, B closes it).
+  - A new profile's first protected video may need the web app to be opened again (Widevine works
+    after Brave restarts): solved in [[step-5.4-netflix]].
+- **To check on real hardware** (batched with the next hardware test, FrankenPC, gamescope,
+  NVIDIA): the TV interface at the screen's full resolution; the keys and "Close YouTube?" in
+  gamescope; no Brave window (Widevine) and no sidebar. Together with the follow-ups of
+  [[step-5.2-extension-core]] (the ring around the field while typing, the keyboard's sounds) and
+  of [[step-5.1-brave-in-the-os]] (the picture on real hardware).
+- **Outcome (2026-10-19):** YouTube opens its **TV interface** with a brand-neutral TV user agent
+  that owneetd takes from the catalogue; the console's extension drives it with its own keys
+  (D-pad = arrows, A = Enter, B = Escape, and "Close YouTube?" where YouTube's back has nothing
+  left), with no ring; playback, seeking, search and signing in work with the controller through
+  YouTube's own interface. owneetd turns Brave's own Widevine question and its sidebar off before
+  every opening of a web app. Packages: owneetd 0.12.7, owneet-base 0.0.45. Verified in the test
+  VM (cage). Known solution written: [[brave-widevine-window-over-a-web-app]]. **Still open:** the
+  hardware check above; the Widevine consent and the first-session restart in [[step-5.4-netflix]].
+  **Waiting for the owner's approval to close the step.**
