@@ -133,3 +133,8 @@ Up: [[phase-4-games]] · Status: **in-progress**
   a question it waits on; and the Proton chosen was 5.13 (`proton_513`, a number larger than 11):
   newest by app id now. Dragon's Wake keeps Proton 5.13 on the FrankenPC (it works; the console
   does not change a tool already set).
+- **Regression check (FrankenPC, 2026-10-18, owneetd 0.14.5):** Dragon's Wake and Silksong start
+  without Steam's window. **Owner, 2026-10-18:** a game keeps the Proton it works with (Dragon's
+  Wake keeps 5.13); another version is offered only if problems come after an update of the game
+  ([[steam-integration]]). Approved: "Starting …" shows the percentage of what Steam downloads
+  before a game starts.
