@@ -31,10 +31,11 @@ tags: [known-solution, brave, widevine, web-apps]
 
 ## Solution
 
-owneetd 0.12.7 ( `daemon/internal/catalog/open.go`, [[step-5.3-youtube]]):
-before every opening of a web app (Brave closed for it), owneetd sets
-`brave.ask_widevine_install` = false (and the sidebar setting) in both settings files of the
-profile, keeping everything else Brave wrote. The user's consent to Google's terms is asked by the
+owneetd 0.12.7 (`daemon/internal/catalog/open.go`, [[step-5.3-youtube]]): before every opening
+of a web app (Brave closed for it), owneetd sets `brave.ask_widevine_install` = false (and the
+sidebar setting) in both settings files of the profile, keeping everything else Brave wrote.
+Verified in the test VM (2026-10-19): a new profile downloaded Widevine without the window, and an
+older profile got the settings at its next opening. The user's consent to Google's terms is asked by the
 console instead, from [[step-5.4-netflix]] ([[legal-compliance]]). Still open there: the first
 protected video of a new profile may fail until Brave restarts.
 
