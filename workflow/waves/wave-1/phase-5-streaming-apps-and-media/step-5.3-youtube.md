@@ -90,3 +90,13 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   no ring. **Brave's sidebar is hidden** for every web app (owner, 2026-10-18), in sub-step 3
   (the profile's setting, checked in the VM). Still to find before the code (a second probe): how
   the account page is told apart (its address), and which key seeks by 10 s.
+- **Second probe** (owner, 2026-10-19, test VM; it shows the address and the focused element, and
+  measures how far keys sent by a script move the video, on the video's own clock):
+  - **The account page has the same address as the home grid** (`/tv#/`); a video is
+    `/tv#/watch?v=ID`. The address cannot tell the account page apart.
+  - **No key moves the video by 10 s** (watch page): fast-forward (`MediaFastForward`) and rewind
+    (`MediaRewind`) pause it (a remote's scrubbing, waiting for a confirmation), the arrows move
+    nothing (on a remote they bring up YouTube's controls), `l` and `j` pause it. The play/pause
+    media key sent by a script resumes it. (A first run of the probe hit the home grid's preview
+    video, which plays in the background: those numbers are discarded.)
+  - Brave 1.97.57 has the setting `brave.sidebar.sidebar_show_option` (found in its program).
