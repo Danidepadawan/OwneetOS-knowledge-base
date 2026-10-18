@@ -106,7 +106,7 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
 - **Sub-step 3, implemented (2026-10-19), waiting for the owner's test:** `extension/content/youtube-tv.js`
   (tests `extension/test/youtube-tv.test.js`) and the gamepad loop of `input.js`; new web-app profiles
   start with Brave's sidebar hidden (`brave.sidebar.sidebar_show_option` = 3, owneetd's profile seed;
-  profiles made before keep it until the web app is removed and added again). owneetd 0.12.6,
+  from owneetd 0.12.7 set before every opening, old profiles too). owneetd 0.12.6,
   owneet-base 0.0.45. The extension's worker is unchanged (not yet the real update of
   [[brave-extension-worker-cached]]).
 - **Owner's test of sub-step 3** (2026-10-19, test VM, cage): everything works as agreed on YouTube;
@@ -115,5 +115,12 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   to enable Google Widevine" (Block / Allow, "Don't ask again", "By installing, you'll agree to
   Google's terms of use") over the video: Brave's own interface, out of any extension's reach, so
   the controller cannot close it ([[product-invariants]]: never require a mouse; and against 5.1's
-  "Widevine turned on silently"). Being diagnosed; likely each new profile downloads Widevine on
-  its first use and Brave on Linux asks for a restart (Netflix's profile, older, already has it).
+  "Widevine turned on silently"). **Diagnosed:** both profiles have Widevine 4.10.3112.0 and
+  `widevine_opted_in` true: Brave downloaded Widevine in the new profile and, on Linux, asks to
+  restart before it works; it asks again after every Widevine update, old profiles too.
+  [[brave-widevine-window-over-a-web-app]].
+- **Decided (owner, 2026-10-19):** the console asks for consent to Google's Widevine terms (once,
+  and at every new Widevine version) in [[step-5.4-netflix]]; in 5.3 **owneetd turns Brave's
+  question off before every opening** (`brave.ask_widevine_install` = false, with the sidebar
+  setting, in both settings files of the profile, Brave closed for it; everything else kept).
+  owneetd 0.12.7, waiting for the owner's test.

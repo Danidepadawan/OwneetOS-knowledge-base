@@ -28,4 +28,9 @@ Up: [[phase-7-updates-and-first-release]] · Status: **todo**
 - **To include (2026-10-18):** Brave's Shields block ads by default, and the managed policies
   (`packages/owneet-base/brave-policies.json`) do not turn them off, so YouTube's and Spotify's ads
   are blocked in the web apps. Kept as it is (owner, 2026-10-18); the review decides whether the
-  policies must turn ad blocking off for the web apps ([[legal-compliance]]).
+  policies must turn ad blocking off for the web apps ([[legal-compliance]]). Seen on 2026-10-19:
+  an ad played on YouTube's TV interface with Shields on.
+- **To include (2026-10-19):** the console asks for consent to Google's Widevine terms once and at
+  every new Widevine version ([[step-5.4-netflix]]); whether that is enough, since a change of
+  Google's terms without a new Widevine version cannot be seen by the console without asking a
+  server ([[legal-compliance]]).
