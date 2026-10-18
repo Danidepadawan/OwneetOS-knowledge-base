@@ -3,13 +3,13 @@ type: step
 description: "Manifest V3 extension: Gamepad API loop, spatial navigation, B = back, exit to home, OSK for web forms."
 phase: "[[phase-5-streaming-apps-and-media]]"
 step: "5.2"
-status: in-progress
+status: done
 legacy: "ROADMAP.md 5.2"
 tags: [step, phase-5]
 ---
 # 5.2 Extension core
 
-Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
+Up: [[phase-5-streaming-apps-and-media]] · Status: **done** (owner, 2026-10-18)
 
 - **Before shipping:** check the extension's behaviour and any user-agent change against the terms
   of service of each streaming service ([[legal-compliance]]). **Checked 2026-10-18** (owner):
@@ -126,4 +126,5 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress**
   cached extension worker, empty files after a hard stop, the gamescope overlay window. **Still
   open:** at the next hardware test the ring around the field during typing and the keyboard's
   sounds; the worker-update fix through a real update when the worker's code next changes
-  ([[brave-extension-worker-cached]]).
+  ([[brave-extension-worker-cached]]). **Step closed by the owner on 2026-10-18**, with these open
+  items as follow-ups.
