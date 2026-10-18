@@ -3,13 +3,13 @@ type: step
 description: "Windows DRM-free games start like any other: umu-launcher + GE-Proton, one prefix per game, never named in the interface; a 'preparing…"
 phase: "[[phase-4-games]]"
 step: "4.5"
-status: in-progress
+status: done
 legacy: "ROADMAP.md 4.5"
 tags: [step, phase-4]
 ---
 # 4.5 Windows games (Proton) *(added 2026-10-11)*
 
-Up: [[phase-4-games]] · Status: **in-progress**
+Up: [[phase-4-games]] · Status: **done**
 
 - **Started (owner, 2026-10-16).** Test games: free DRM-free Windows-only games from GOG, unpacked
   from their installers with `innoextract` on the owner's PC (installed by the owner) and put in
@@ -144,3 +144,10 @@ Up: [[phase-4-games]] · Status: **in-progress**
   the screen is up; no "ready" banner for the game being started or running. Preview
   `tools/preview-steps/steam-broken-linux.txt`. FrankenPC: seen the next time Steam downloads
   something before a game starts.
+- **Outcome: approved by the owner on 2026-10-18** after the FrankenPC tests: Windows and DOS
+  games on a disk start like the others (GE-Proton through umu-launcher, downloaded once; GOG's
+  DOS games with DOSBox Staging), and a Steam game whose Linux version does not start gets the
+  console's question and runs with Valve's Proton, Steam hidden throughout ("Starting …" with the
+  download percentage). Left as known: a short black flash before Windows games (not a
+  priority); one GPU fault (Xid 79) seen once, watched. Follow-up: the player's own
+  compatibility layers, [[wave-2]] item 17.

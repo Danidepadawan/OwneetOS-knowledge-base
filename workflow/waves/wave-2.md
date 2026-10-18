@@ -27,3 +27,17 @@ Scope agreed so far: [[wave-1-scope]] (later waves).
   Windows games through Proton, the known installers of [[step-4.6-installers]]). Games made for
   a mouse and keyboard stay as their developers made them ([[games-on-disk]]). To be detailed
   into steps after the first release.
+- **17. The player's own compatibility layers (owner, 2026-10-18):** the console cannot ship
+  every compatibility layer (new ones keep appearing), so a player can import their own from a
+  USB stick: a Proton-shaped tool (a folder or archive with `proton`, `compatibilitytool.vdf` and
+  `toolmanifest.vdf`, e.g. GE-Proton, Proton-CachyOS, Luxtorpeda) copied to the console's disk in
+  Steam's `compatibilitytools.d` (Steam already registers the console's GE-Proton from there:
+  FrankenPC, 2026-10-18), then chosen per game ("Automatic" always there to go back) for Steam
+  games (Steam's per-game tool, as in [[step-4.5-windows-games-proton]]) and for Windows games on
+  disks (`owneet-windows-run`). Managed in Settings (list, remove). Feasibility seen on
+  2026-10-18: about the size of step 4.3, in two parts (importing and Steam games first, games
+  on disks next). To decide first: where technical names may be shown (the guard
+  [[product-invariants]]: the player's own tool needs its name; e.g. an "Advanced" area), the
+  warning at import (third-party code, only from trusted sources; [[supply-chain-security]],
+  sandboxing in [[backlog]]), and tools whose runtime needs the internet the first time.
+  Needs a demo. Related to item 16.
