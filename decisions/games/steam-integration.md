@@ -4,7 +4,7 @@ description: "Steam in the ISO, controller-only Steam, its screens shown automat
 area: games
 status: active
 decided: 2026-10-11
-updated: 2026-10-14
+updated: 2026-10-18
 legacy: "PROJECT_RULES.md §8 (Steam), §13 (2026-10-11, 2026-10-12)"
 tags: [decision, games, steam]
 ---
@@ -79,7 +79,9 @@ tags: [decision, games, steam]
   not true.)*
 - **A Steam game whose Linux version cannot start** (Steam: "Missing game executable") gets an
   automatic recovery, offered to the user: try the version for Windows with Proton
-  ([[step-4.5-windows-games-proton]]).
+  ([[step-4.5-windows-games-proton]]). That Proton is **Valve's**, which Steam downloads and keeps
+  up to date itself (the one Valve tests Steam games with), not the GE-Proton of the console's
+  Windows games on disks (owner, 2026-10-18).
 - Steam stays in the ISO until [[optional-apps]] arrive (step 5.0): then it is downloaded when chosen.
 
 Technical design: [[owneetd-api-apps]], [[frontend-steam-local-files]]. Steps: [[step-4.1-steam-library]],
@@ -104,4 +106,5 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-15 | Steam's window on NVIDIA: gamescope kept composing every frame while it is on screen, permanent until Valve fixes the problem (clean in the FrankenPC test); if it fails, reverted. Other bugs first, Steam's visual defects afterwards. |
 | 2026-10-15 | Steam's pages keep the GPU on NVIDIA (no defects came back with it). "Close Steam" from the home screen's Steam tile. |
 | 2026-10-15 | The bar over Steam's window did not show: replaced by a window "How to come back from Steam" at the first opening of Steam's window after each start, until "Don't show again". Steam Input turned on for Xbox, Switch and generic controllers once per account. |
+| 2026-10-18 | A Steam game's version for Windows (the broken Linux version's recovery) runs with Valve's Proton, downloaded and updated by Steam, not the console's GE-Proton (option A). |
 | 2026-10-14 | Licence agreements at a game's first start: the console's window with a QR code of the official address and "press Left and then A to accept"; the console does not move Steam's selection. |

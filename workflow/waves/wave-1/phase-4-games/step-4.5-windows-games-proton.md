@@ -89,7 +89,8 @@ Up: [[phase-4-games]] · Status: **in-progress**
   version that cannot start (e.g. Dragon's Wake, 399070: its Linux files lack the executable its
   launch settings name; Steam says "Missing game executable"). owneetd notices the failed launch
   in Steam's log and the console asks "This game's Linux version does not start. Try the version
-  for Windows?" [Try] [Cancel]; Try sets Proton for that game in Steam (Steam closed and reopened:
+  for Windows?" [Try] [Cancel]; Try sets Proton (Valve's, which Steam downloads itself: owner,
+  2026-10-18, [[steam-integration]]) for that game in Steam (Steam closed and reopened:
   it saves the setting only while closed) and starts it again. Demo first; checked on real
   hardware with the owner's account (it reads an undocumented Steam log).
 - **Note:** shader pre-compilation exists only for Steam games (Steam's own "Processing
