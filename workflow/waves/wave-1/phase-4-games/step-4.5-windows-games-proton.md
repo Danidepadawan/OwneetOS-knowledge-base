@@ -138,3 +138,9 @@ Up: [[phase-4-games]] · Status: **in-progress**
   Wake keeps 5.13); another version is offered only if problems come after an update of the game
   ([[steam-integration]]). Approved: "Starting …" shows the percentage of what Steam downloads
   before a game starts.
+- **Download percentage (2026-10-18):** demo 4.5 updated ("Starting {game}…" with "Steam is
+  downloading what the game needs: N%" and a bar), **approved by the owner on 2026-10-18**.
+  owneet-frontend 0.21.4: Steam's active downloads (its queue left out) in one percentage while
+  the screen is up; no "ready" banner for the game being started or running. Preview
+  `tools/preview-steps/steam-broken-linux.txt`. FrankenPC: seen the next time Steam downloads
+  something before a game starts.
