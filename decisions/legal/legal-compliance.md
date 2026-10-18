@@ -42,7 +42,8 @@ project is reviewed by someone experienced in open-source licensing ([[step-7.5-
   terms of service before they ship (roadmap step 5.2).
 - **The extension against the terms (checked 2026-10-18, owner):** it only moves a selection ring,
   clicks, scrolls and types in answer to the user's buttons; it changes no content, scrapes
-  nothing, blocks no ads and changes no user agent. Its scripts are content scripts loaded by
+  nothing, blocks no ads and changes no user agent (the extension itself: Brave blocks ads, and
+  owneetd starts YouTube with a TV user agent, see below). Its scripts are content scripts loaded by
   Brave from the extension's folder and run in Chromium's isolated world (nothing goes into the
   site's code); the one thing added to the page is the ring, an `<owneet-ring>` element with a
   closed shadow root.
@@ -54,9 +55,20 @@ project is reviewed by someone experienced in open-source licensing ([[step-7.5-
   - **YouTube** (Terms of Service, access rights and restrictions): no altering or modifying the
     Service, no circumventing or interfering, no automated means. The extension alters nothing of
     YouTube's; the TV interface (`youtube.com/tv`) and any TV user agent are checked in
-    [[step-5.3-youtube]].
+    [[step-5.3-youtube]]. **TV user agent (owner, 2026-10-18):** YouTube opens its TV interface
+    with a TV user agent set by owneetd (brand-neutral first). The owner's view: allowed, since the
+    terms allow the modes the service makes available, the TV interface is one of them, and a user
+    agent alters neither the app nor its content; it still **goes to the legal review**
+    ([[step-7.5-legal-review-before-the-public-launch]]).
   - **Spotify** (Terms of Use §3, User Guidelines): no bot, script or automated process (about
-    inflating plays), no modifying or altering the Services, no ad blocking. Nothing applies.
+    inflating plays), no modifying or altering the Services, no ad blocking. Nothing applies to
+    the extension.
+- **Brave's ad blocking (found 2026-10-18):** Brave's Shields block ads by default and the managed
+  policies (`packages/owneet-base/brave-policies.json`) do not turn them off, so YouTube's and
+  Spotify's ads are blocked in the web apps (Spotify's terms forbid ad blocking; YouTube's forbid
+  circumventing). **Kept as it is** (owner, 2026-10-18); **goes to the legal review**
+  ([[step-7.5-legal-review-before-the-public-launch]]), which decides whether the policies turn
+  ad blocking off for the web apps.
 - **Local data first:** game metadata comes from local files; no scraping or undocumented store
   APIs (Pegasus's Steam store, GOG API and Play Store downloads are disabled).
 - **Privacy:** no telemetry. Any collection of personal data (e.g. opt-in crash reports) needs
@@ -73,3 +85,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-07 | Legal compliance rules adopted ([[legal-compliance]]). CI stops publishing the ISO as a download until releases ship a GPL source archive (option A). |
 | 2026-10-08 | Legal check before phase 3: the frontend fork is named `owneet-frontend` (Pegasus's trademark terms); Pegasus's CC BY-NC-SA theme, logo, Roboto fonts and button images are not used; its online metadata downloads are disabled. `CREDITS.md` credits every project OwneetOS builds on and ships in the image ([[legal-compliance]]). Step 2.9 approved. |
 | 2026-10-18 | The Brave extension checked against the terms of Netflix, YouTube and Spotify: an input method acting only on the user's buttons, content scripts in Chromium's isolated world, one ring element in a closed shadow root. Netflix §1.8(vi) ("insert any code or product…") goes to the legal review of step 7.5; the YouTube TV interface and user agent are checked in step 5.3. |
+| 2026-10-18 | YouTube opens its TV interface with a **TV user agent** set by owneetd from the catalogue, brand-neutral first; the owner holds it allowed (the TV interface is a mode the service makes available; a user agent alters neither the app nor its content), and it goes to the legal review of step 7.5. **Brave's Shields block the web apps' ads** by default (no policy turns them off): kept as it is, to the legal review of 7.5. |

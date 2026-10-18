@@ -134,4 +134,6 @@ nearest box; the page's order with geometry as a check; the version below). Code
 ## Terms of service
 
 The extension only moves the focus, clicks, scrolls and types; it changes no content and no user
-agent. Checked against each service's terms before shipping ([[legal-compliance]]).
+agent. Checked against each service's terms before shipping ([[legal-compliance]]). YouTube's TV
+user agent is not the extension's: owneetd passes it to Brave from the catalogue
+([[step-5.3-youtube]]).
