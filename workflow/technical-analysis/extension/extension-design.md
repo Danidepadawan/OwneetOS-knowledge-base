@@ -131,6 +131,26 @@ nearest box; the page's order with geometry as a check; the version below). Code
 - owneetd's endpoints (`/v1/webapps/look`, `/keyboard`, `/text`, `/ask-close`) and events
   (`webapp.keyboard`, `webapp.text`, `webapp.ask_close`): [[owneetd-api-apps]].
 
+## YouTube's TV interface (step 5.3)
+
+Agreed with the owner on 2026-10-18 ([[step-5.3-youtube]]; bindings: [[controller-input-map]],
+"Inside YouTube"). owneetd opens `youtube.com/tv` with a TV user agent.
+
+- The TV interface **does not read the controller** (checked in the test VM): it is made for a
+  remote and takes **keyboard keys**. On its address (`www.youtube.com/tv`) the gamepad loop sends
+  keys instead of moving the ring: `KeyboardEvent`s `keydown` / `keyup` with `key`, `code` and
+  `keyCode` (Brave keeps the `keyCode` of the event's init dictionary), bubbling and composed, on
+  the focused element. Keys sent by a script were checked in the VM to move YouTube's selection,
+  open, and go back; owneetd's virtual keyboard is not needed.
+- **No ring and no spatial navigation** there: YouTube draws its own selection. Its own keyboard is
+  used for search; signing in is done on a phone (a QR code or `yt.be/activate`).
+- The rules of the loop stay: the map's repeat timing; buttons held when the page gets the
+  controller back count only once pressed again; Guide is never read.
+- **B** sends Escape; where Escape has nothing left to go back to (YouTube's "Welcome back" account
+  page, the end of its back chain) it asks to close the web app, as in 5.2. How that page is told
+  apart is fixed in sub-step 3 of the step.
+- Every other page (e.g. Google's sign-in pages) keeps the navigation above.
+
 ## Terms of service
 
 The extension only moves the focus, clicks, scrolls and types; it changes no content and no user

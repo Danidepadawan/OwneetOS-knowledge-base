@@ -79,5 +79,14 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   - **Signing in:** only "Sign in with your phone": a QR code, or `yt.be/activate` and a code
     typed on a phone or a computer. Nothing is typed on the console.
   - Seen in the screenshots: **Brave's sidebar** (bookmarks, reading list, add, settings) at the
-    right edge, mouse-only; and a black band under the page (the VM's screen is 640 × 480). To
-    look at.
+    right edge, mouse-only; and a black band under the page (the VM's screen is 640 × 480: only the
+    resolution, owner).
+  - **Escape goes back up to YouTube's "Welcome back" account page** ("Sign in with your phone",
+    "Add a kid account", "Watch as guest") and then does nothing: YouTube shows no exit prompt of
+    its own.
+- **Bindings agreed (owner, 2026-10-18):** [[controller-input-map]] "Inside YouTube" and
+  [[extension-design]] "YouTube's TV interface": D-pad = arrows, A = Enter, B = Escape and
+  "Close YouTube?" on the account page, LT / RT = ±10 s in the player if a key does exactly that,
+  no ring. **Brave's sidebar is hidden** for every web app (owner, 2026-10-18), in sub-step 3
+  (the profile's setting, checked in the VM). Still to find before the code (a second probe): how
+  the account page is told apart (its address), and which key seeks by 10 s.
