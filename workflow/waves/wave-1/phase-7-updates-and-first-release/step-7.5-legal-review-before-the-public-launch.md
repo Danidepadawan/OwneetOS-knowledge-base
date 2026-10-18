@@ -23,8 +23,8 @@ Up: [[phase-7-updates-and-first-release]] · Status: **todo**
   user agent fits YouTube's Terms of Service (no altering or modifying the Service, no
   circumventing; access "to the extent made available to you"). The owner's view: it does: the
   terms allow the modes the service makes available, the TV interface is one of them, and a user
-  agent alters neither the app nor its content. The exact string is the one in YouTube's line of
-  `packages/owneet-base/apps.json` (brand-neutral, [[step-5.3-youtube]]).
+  agent alters neither the app nor its content. The string, approved by the owner on 2026-10-18 (YouTube's line
+  of `packages/owneet-base/apps.json`, brand-neutral, [[step-5.3-youtube]]): `Mozilla/5.0 (Linux; SMART-TV) AppleWebKit/537.36 (KHTML, like Gecko) Safari/537.36`.
 - **To include (2026-10-18):** Brave's Shields block ads by default, and the managed policies
   (`packages/owneet-base/brave-policies.json`) do not turn them off, so YouTube's and Spotify's ads
   are blocked in the web apps. Kept as it is (owner, 2026-10-18); the review decides whether the

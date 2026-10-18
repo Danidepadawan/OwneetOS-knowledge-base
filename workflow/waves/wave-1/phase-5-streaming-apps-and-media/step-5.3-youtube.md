@@ -62,4 +62,6 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   with `Mozilla/5.0 (Linux; SMART-TV) AppleWebKit/537.36 (KHTML, like Gecko) Safari/537.36` YouTube
   opens its TV interface, and its own on-screen keyboard works. **The navigation is broken there:**
   the extension's navigation of 5.2 still runs on the TV interface, against the TV interface's own
-  selection (expected; sub-steps 2 and 3). The string waits for the owner's approval.
+  selection (expected; sub-steps 2 and 3). **The string is approved by the owner (2026-10-18):
+  sub-step 1 is done.** Typing with YouTube's own keyboard worked although the navigation was
+  broken: a hint that the TV interface reads the controller itself, checked first in sub-step 2.
