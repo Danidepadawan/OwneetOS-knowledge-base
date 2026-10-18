@@ -117,3 +117,12 @@ Up: [[phase-4-games]] · Status: **in-progress**
   after DOSBox Staging opened its window: the NVIDIA driver reported Xid 79 ("GPU has fallen off
   the bus"), a GPU or PCIe fault seen once in 43 starts; the same start worked afterwards. Watched:
   if it comes back, look at the GPU's power and PCIe settings with the owner.
+- **Second part, broken Linux versions of Steam games (2026-10-18):** Steam's line for Dragon's
+  Wake read on the FrankenPC (`LaunchApp failed with AppError_28` in `logs/console_log.txt`).
+  owneetd 0.14.4 (`steamwindows.go`, [[owneetd-api-apps]]): `steam.launch_failed`, Steam's error
+  kept hidden; `{"windows": appid}` closes Steam, sets Valve's newest Proton for the game in
+  `config.vdf` and starts it again. owneet-frontend 0.21.3: the demo's question ("{title} does not
+  start" [Try] [Cancel]), "Starting …" kept while Steam starts again. Go tests
+  (`TestSteamWindowsVersion` and the log, tool and `config.vdf` readers); preview
+  `tools/preview-steps/steam-broken-linux.txt`. FrankenPC test pending (Steam downloading its
+  Proton the first time is shown by Steam after 20 s).

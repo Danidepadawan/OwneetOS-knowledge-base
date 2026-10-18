@@ -20,7 +20,7 @@ Up: [[owneetd-design]] · Conventions: [[owneetd-design#4. API v1 (draft)]]
 | GET | `/v1/update` | Testers' updates from a USB stick (4.2b): `tester`, `state` (`none`, `available`, `installing`, `done`, `failed`, `no_stick`, `not_tester`), `message`, `packages` (`name`, `from`, `to`), `running` |
 | POST | `/v1/update/check` · `/v1/update/apply` | Start a check or the installation (202): root units `owneet-update@check` / `@apply.service`, allowed by a polkit rule; the result comes as `update.changed`. Errors `update.not_tester`, `update.busy` (409) |
 | GET | `/v1/steam` | `installed`, `allowed` (false in a live system with less than 12 GB of RAM), `prepared` (Steam has started once: no long first download), `running`, `games` (Steam app ids installed completely) (4.2); `downloads` (`appid`, `state`: `downloading` / `updating` / `queued`, `done` / `total` bytes, `rate` bytes per second; the one moving first), `away` (app id → disk name: installed on a disk that is not connected), `account` (someone has signed in to Steam here), `licences` (Unix time Steam last wrote `packageinfo.vdf`), `nvidia` (Steam's window may show display errors) (4.2c) |
-| POST | `/v1/steam` | One of `{"open": "library"}` / `{"open": "store"}`, `{"run": "480", "name": "…"}`, `{"install": "480"}`, `{"uninstall": "480"}` (also cancels a download; 4.2c), `{"ask": "480"}` (the next start of that game asks the user first, a licence agreement: Steam is shown at once for it; nothing starts), with `"language": "it"` (the console's language tag: Steam starts with `-language italian`) — Steam starts if needed (202); a game is listed in `/v1/apps` as `steam:480` once Steam has started it |
+| POST | `/v1/steam` | One of `{"open": "library"}` / `{"open": "store"}`, `{"run": "480", "name": "…"}`, `{"install": "480"}`, `{"uninstall": "480"}` (also cancels a download; 4.2c), `{"ask": "480"}` (the next start of that game asks the user first, a licence agreement: Steam is shown at once for it; nothing starts), `{"windows": "399070", "name": "…"}` (its Linux version does not start: Steam closed, the game's version for Windows set, the game started again; 4.5), with `"language": "it"` (the console's language tag: Steam starts with `-language italian`) — Steam starts if needed (202); a game is listed in `/v1/apps` as `steam:480` once Steam has started it |
 
 Errors: `apps.unavailable` (503), `apps.invalid` (400), `apps.program_not_found` (400),
 `apps.no_session` (409), `apps.already_running` (409, same id), `apps.game_running` (409, one game
@@ -77,7 +77,17 @@ at a time; apps such as the browser may run next to it), `apps.unknown_app` (404
   Steam ready after its first download: its early helper windows are never shown), `focus.changed`
   (also when the screen changes by itself, e.g. an app's window appears: the interface reads the
   controllers only while it is on screen; in cage, which owneetd cannot read, the newest app is
-  taken to be on screen).
+  taken to be on screen), `steam.launch_failed` (`{"appid", "reason": "linux_version"}`: see below).
+- **A Steam game whose Linux version does not start (4.5, `steamwindows.go`):** for 2 minutes after
+  `run`, owneetd reads the new lines of Steam's console log (`logs/console_log.txt`, undocumented,
+  times checked against the request) for `GameAction [AppID N, …] : LaunchApp failed with
+  AppError_28` (Steam's "Missing game executable"). Unless the game already has a compatibility
+  tool, it sends `steam.launch_failed` and does not show Steam's error. `windows` closes Steam
+  cleanly (up to a minute), writes the game's tool in `config/config.vdf` (InstallConfigStore →
+  Software → Valve → Steam → CompatToolMapping → N: `name`, `config`, `priority` 250, as Steam's
+  own "Force the use of a specific compatibility tool"), Valve's newest `proton_N` registered in
+  `logs/compat_log.txt` (else `proton_experimental`; [[steam-integration]], owner 2026-10-18), then
+  `run`s the game again; Steam downloads that Proton itself the first time.
 - **Steam (4.2):** the app `steam`, started as `env -u GAMESCOPE_WAYLAND_DISPLAY steam -gamepadui
   URL` (see below), with `-language` from the interface's language and, under the NVIDIA driver,
   `-cef-disable-gpu` (Steam's pages drawn with the GPU showed garbled, stale pictures inside
