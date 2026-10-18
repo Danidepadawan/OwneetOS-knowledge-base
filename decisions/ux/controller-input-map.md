@@ -4,7 +4,7 @@ description: "The binding meaning of every button on every screen, keyboard fall
 area: ux
 status: active
 decided: 2026-10-03
-updated: 2026-10-18
+updated: 2026-10-19
 legacy: "PROJECT_RULES.md §9.1"
 tags: [decision, ux, input]
 ---
@@ -53,10 +53,9 @@ do nothing (sites may get their own meanings in steps 5.3–5.5). Guide stays ow
 (YouTube draws its selection). D-pad / left stick = arrows (YouTube's selection; held directions
 repeat with this map's timing); A = Enter (select; in the player YouTube's own pause / play);
 B = Escape (YouTube's back), and where YouTube's back has nothing left (its "Welcome back" account
-page, where Escape does nothing) asks to close the web app ("Close YouTube?"); **LT / RT = back /
-forward 10 s in the player** (nothing elsewhere), only if a key of the TV interface does exactly
-that, otherwise they do nothing; X, Y, Menu, View and the right stick do nothing; LB / RB are never
-used. Guide stays owneetd's. Other pages (e.g. Google's) keep the web-app bindings above.
+page, where Escape does nothing) asks to close the web app ("Close YouTube?"); LT / RT, X, Y, Menu,
+View and the right stick do nothing (no key of the TV interface seeks by 10 s: seeking is done
+with YouTube's own progress bar, 2026-10-19); LB / RB are never used. Guide stays owneetd's. Other pages (e.g. Google's) keep the web-app bindings above.
 
 The input map is **fixed**: it is not saved in the frontend's settings, so a change reaches every
 system. **Held buttons:** a direction repeats after 360 ms, then every 140 ms; LB / RB and LT / RT
@@ -92,3 +91,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-15 | Keyboard fallback for Guide: the **Super (Windows) key**, handled by owneetd like Guide (also while a game or app runs). Chosen over G, which is used for typing and in games (owner's choice, assistant's advice). |
 | 2026-10-15 | Inside a web app (step 5.2): D-pad moves a ring between the page's targets, A presses, B goes back and asks to close where there is nothing to go back to, the right stick scrolls; text fields open the console's keyboard; the other buttons do nothing ([[extension-design]]). |
 | 2026-10-18 | Inside YouTube (step 5.3, its TV interface): the extension sends YouTube's keys and draws no ring: D-pad = arrows, A = Enter, B = Escape and "Close YouTube?" where YouTube's back has nothing left (its account page), LT / RT = ±10 s in the player if a key does exactly that; the other buttons do nothing ([[controller-input-map]]). |
+| 2026-10-19 | Inside YouTube: LT / RT stay unused (no key of the TV interface seeks by exactly 10 s; seeking the video directly from the extension rejected); seeking is done with YouTube's own progress bar ([[controller-input-map]]). |

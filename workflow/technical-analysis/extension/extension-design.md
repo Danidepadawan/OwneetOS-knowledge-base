@@ -147,8 +147,16 @@ Agreed with the owner on 2026-10-18 ([[step-5.3-youtube]]; bindings: [[controlle
 - The rules of the loop stay: the map's repeat timing; buttons held when the page gets the
   controller back count only once pressed again; Guide is never read.
 - **B** sends Escape; where Escape has nothing left to go back to (YouTube's "Welcome back" account
-  page, the end of its back chain) it asks to close the web app, as in 5.2. How that page is told
-  apart is fixed in sub-step 3 of the step.
+  page, the end of its back chain) it asks to close the web app, as in 5.2. That page has the
+  same address as the home grid (`/tv#/`), so **"nothing left" means that Escape changed nothing**:
+  about half a second after it, neither the address nor the focused element has changed (owner,
+  2026-10-19). It does not depend on YouTube's element names; a slow reaction could rarely bring
+  the dialog up by mistake (Cancel is selected, B closes it). Recognising the page by YouTube's
+  element names rejected: it would break silently when YouTube renames them.
+- **No seeking keys:** no key of the TV interface moves the video by 10 s (fast-forward and rewind
+  pause it, waiting for a confirmation, as a remote's scrubbing), so LT / RT do nothing; seeking
+  is done with YouTube's own progress bar. The extension never changes the video itself (setting
+  its position directly rejected, owner, 2026-10-19).
 - Every other page (e.g. Google's sign-in pages) keeps the navigation above.
 
 ## Terms of service

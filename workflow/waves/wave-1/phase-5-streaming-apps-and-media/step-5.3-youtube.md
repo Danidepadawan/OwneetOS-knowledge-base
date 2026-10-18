@@ -100,3 +100,6 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
     media key sent by a script resumes it. (A first run of the probe hit the home grid's preview
     video, which plays in the background: those numbers are discarded.)
   - Brave 1.97.57 has the setting `brave.sidebar.sidebar_show_option` (found in its program).
+- **Decided (owner, 2026-10-19):** B asks "Close YouTube?" when **Escape changed nothing** (neither
+  the address nor the focused element, about half a second later); **LT / RT stay unused** (seeking
+  with YouTube's own progress bar; seeking the video directly rejected). **Sub-step 2 is done.**
