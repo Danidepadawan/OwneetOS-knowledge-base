@@ -134,7 +134,8 @@ nearest box; the page's order with geometry as a check; the version below). Code
 ## YouTube's TV interface (step 5.3)
 
 Agreed with the owner on 2026-10-18 ([[step-5.3-youtube]]; bindings: [[controller-input-map]],
-"Inside YouTube"). owneetd opens `youtube.com/tv` with a TV user agent.
+"Inside YouTube"). owneetd opens `youtube.com/tv` with a TV user agent. Code:
+`extension/content/youtube-tv.js`, tests `extension/test/youtube-tv.test.js`.
 
 - The TV interface **does not read the controller** (checked in the test VM): it is made for a
   remote and takes **keyboard keys**. On its address (`www.youtube.com/tv`) the gamepad loop sends

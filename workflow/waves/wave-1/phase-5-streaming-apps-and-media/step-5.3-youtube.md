@@ -103,3 +103,9 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
 - **Decided (owner, 2026-10-19):** B asks "Close YouTube?" when **Escape changed nothing** (neither
   the address nor the focused element, about half a second later); **LT / RT stay unused** (seeking
   with YouTube's own progress bar; seeking the video directly rejected). **Sub-step 2 is done.**
+- **Sub-step 3, implemented (2026-10-19), waiting for the owner's test:** `extension/content/youtube-tv.js`
+  (tests `extension/test/youtube-tv.test.js`) and the gamepad loop of `input.js`; new web-app profiles
+  start with Brave's sidebar hidden (`brave.sidebar.sidebar_show_option` = 3, owneetd's profile seed;
+  profiles made before keep it until the web app is removed and added again). owneetd 0.12.6,
+  owneet-base 0.0.45. The extension's worker is unchanged (not yet the real update of
+  [[brave-extension-worker-cached]]).
