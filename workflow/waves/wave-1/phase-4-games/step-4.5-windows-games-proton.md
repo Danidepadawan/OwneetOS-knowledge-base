@@ -126,3 +126,10 @@ Up: [[phase-4-games]] · Status: **in-progress**
   (`TestSteamWindowsVersion` and the log, tool and `config.vdf` readers); preview
   `tools/preview-steps/steam-broken-linux.txt`. FrankenPC test pending (Steam downloading its
   Proton the first time is shown by Steam after 20 s).
+- **FrankenPC, broken Linux version (owner, 2026-10-18):** works: the question, Try, Dragon's Wake
+  starts with Proton (a second start goes straight in). Two fixes in owneetd 0.14.5: Steam's window
+  was shown for about 25 s while Steam downloaded the game's version for Windows and Proton (45 s):
+  Steam now stays hidden while its console log says it works on the launch, and is shown only for
+  a question it waits on; and the Proton chosen was 5.13 (`proton_513`, a number larger than 11):
+  newest by app id now. Dragon's Wake keeps Proton 5.13 on the FrankenPC (it works; the console
+  does not change a tool already set).

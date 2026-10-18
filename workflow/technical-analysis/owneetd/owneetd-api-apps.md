@@ -86,8 +86,13 @@ at a time; apps such as the browser may run next to it), `apps.unknown_app` (404
   cleanly (up to a minute), writes the game's tool in `config/config.vdf` (InstallConfigStore →
   Software → Valve → Steam → CompatToolMapping → N: `name`, `config`, `priority` 250, as Steam's
   own "Force the use of a specific compatibility tool"), Valve's newest `proton_N` registered in
-  `logs/compat_log.txt` (else `proton_experimental`; [[steam-integration]], owner 2026-10-18), then
-  `run`s the game again; Steam downloads that Proton itself the first time.
+  `logs/compat_log.txt`, newest by app id (the names drop the dot: `proton_513` is 5.13; else
+  `proton_experimental`; [[steam-integration]], owner 2026-10-18), then `run`s the game again;
+  Steam downloads that Proton itself the first time. The same log gives the launch's tasks
+  (`LaunchApp changed task to DownloadingDepots`, `CreatingProcess`, `WaitingGameWindow`…):
+  while Steam works on one, Steam stays hidden past the 20 s, however long (owneetd 0.14.5);
+  a question Steam has waited on (`waiting for user response to …`) for 3 s is shown (Steam
+  answers its routine ones within a second).
 - **Steam (4.2):** the app `steam`, started as `env -u GAMESCOPE_WAYLAND_DISPLAY steam -gamepadui
   URL` (see below), with `-language` from the interface's language and, under the NVIDIA driver,
   `-cef-disable-gpu` (Steam's pages drawn with the GPU showed garbled, stale pictures inside
