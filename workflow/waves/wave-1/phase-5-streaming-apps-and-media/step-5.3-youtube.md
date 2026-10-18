@@ -109,3 +109,11 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   profiles made before keep it until the web app is removed and added again). owneetd 0.12.6,
   owneet-base 0.0.45. The extension's worker is unchanged (not yet the real update of
   [[brave-extension-worker-cached]]).
+- **Owner's test of sub-step 3** (2026-10-19, test VM, cage): everything works as agreed on YouTube;
+  Netflix keeps 5.2's navigation. **An ad played** on the TV interface with Shields on ("Skip in"),
+  noted for 7.5. **Found:** in a fresh YouTube profile Brave showed its own window "Restart browser
+  to enable Google Widevine" (Block / Allow, "Don't ask again", "By installing, you'll agree to
+  Google's terms of use") over the video: Brave's own interface, out of any extension's reach, so
+  the controller cannot close it ([[product-invariants]]: never require a mouse; and against 5.1's
+  "Widevine turned on silently"). Being diagnosed; likely each new profile downloads Widevine on
+  its first use and Brave on Linux asks for a restart (Netflix's profile, older, already has it).
