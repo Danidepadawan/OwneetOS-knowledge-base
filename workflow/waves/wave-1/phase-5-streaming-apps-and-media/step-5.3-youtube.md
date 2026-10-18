@@ -3,13 +3,13 @@ type: step
 description: "TV interface, playback controls on the gamepad."
 phase: "[[phase-5-streaming-apps-and-media]]"
 step: "5.3"
-status: in-progress
+status: done
 legacy: "ROADMAP.md 5.3"
 tags: [step, phase-5]
 ---
 # 5.3 YouTube
 
-Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
+Up: [[phase-5-streaming-apps-and-media]] · Status: **done** (owner, 2026-10-19)
 
 - **Deliverables:** TV interface, playback controls on the gamepad.
 - **Before shipping (2026-10-18):** check the TV interface (`youtube.com/tv`) and any TV user agent
@@ -161,4 +161,5 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   every opening of a web app. Packages: owneetd 0.12.7, owneet-base 0.0.45. Verified in the test
   VM (cage). Known solution written: [[brave-widevine-window-over-a-web-app]]. **Still open:** the
   hardware check above; the Widevine consent and the first-session restart in [[step-5.4-netflix]].
-  **Waiting for the owner's approval to close the step.**
+  **Step closed by the owner on 2026-10-19**, with these open items as follow-ups; the FrankenPC
+  test comes after [[step-5.4-netflix]] is closed at the earliest (owner).

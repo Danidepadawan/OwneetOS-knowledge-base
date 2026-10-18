@@ -20,3 +20,6 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **todo**
   freshly downloaded Widevine works only after Brave restarts (Linux), so the first protected
   video of a new profile may fail until the web app is opened again: to be solved here. Brave's own
   question ("Restart browser to enable Google Widevine") is already turned off by owneetd (5.3).
+- **Next hardware test** (owner, 2026-10-19): on FrankenPC after this step is closed at the
+  earliest, with the open hardware checks of [[step-5.1-brave-in-the-os]],
+  [[step-5.2-extension-core]] and [[step-5.3-youtube]].
