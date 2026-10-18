@@ -65,3 +65,19 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   selection (expected; sub-steps 2 and 3). **The string is approved by the owner (2026-10-18):
   sub-step 1 is done.** Typing with YouTube's own keyboard worked although the navigation was
   broken: a hint that the TV interface reads the controller itself, checked first in sub-step 2.
+- **Sub-step 2, the check** (owner, 2026-10-18, test VM, cage; the extension moved aside, then a
+  probe extension of the VM only, `vm/run/probe-5.3/`, never shipped):
+  - **The TV interface does not read the controller:** without the extension no button did
+    anything (only the mouse worked). The typing seen in sub-step 1 most likely came from the
+    extension's own focus moves and clicks on the keys of YouTube's keyboard.
+  - **It takes keyboard keys:** real keys (sent with `vm/test.sh keys`) work: arrows, Enter,
+    Escape, Backspace and the play/pause media key. **Keys sent by a script work too**:
+    `KeyboardEvent`s with `key`, `code` and `keyCode` (Brave keeps the `keyCode`) moved YouTube's
+    own selection, Enter opened the tile, Escape went back from it, Backspace on a tile moved to
+    YouTube's left menu. So the extension can drive the TV interface by sending keys itself;
+    owneetd's virtual keyboard is not needed.
+  - **Signing in:** only "Sign in with your phone": a QR code, or `yt.be/activate` and a code
+    typed on a phone or a computer. Nothing is typed on the console.
+  - Seen in the screenshots: **Brave's sidebar** (bookmarks, reading list, add, settings) at the
+    right edge, mouse-only; and a black band under the page (the VM's screen is 640 × 480). To
+    look at.
