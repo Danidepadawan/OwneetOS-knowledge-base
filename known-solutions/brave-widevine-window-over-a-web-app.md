@@ -1,7 +1,7 @@
 ---
 type: known-solution
 description: "Brave shows its own window 'Restart browser to enable Google Widevine' (Block / Allow) over a web app; the controller cannot close it. Comes after every Widevine download."
-status: open
+status: solved
 seen: 2026-10-19
 updated: 2026-10-19
 tags: [known-solution, brave, widevine, web-apps]
@@ -31,7 +31,7 @@ tags: [known-solution, brave, widevine, web-apps]
 
 ## Solution
 
-**Being verified** (owneetd 0.12.7, `daemon/internal/catalog/open.go`, [[step-5.3-youtube]]):
+owneetd 0.12.7 ( `daemon/internal/catalog/open.go`, [[step-5.3-youtube]]):
 before every opening of a web app (Brave closed for it), owneetd sets
 `brave.ask_widevine_install` = false (and the sidebar setting) in both settings files of the
 profile, keeping everything else Brave wrote. The user's consent to Google's terms is asked by the

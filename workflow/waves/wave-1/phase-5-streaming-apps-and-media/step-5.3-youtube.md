@@ -123,4 +123,8 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   and at every new Widevine version) in [[step-5.4-netflix]]; in 5.3 **owneetd turns Brave's
   question off before every opening** (`brave.ask_widevine_install` = false, with the sidebar
   setting, in both settings files of the profile, Brave closed for it; everything else kept).
-  owneetd 0.12.7, waiting for the owner's test.
+  owneetd 0.12.7.
+- **Sub-step 3 verified** (owner, 2026-10-19, test VM, owneetd 0.12.7): in a new YouTube profile
+  Brave downloaded Widevine (4.10.3112.0) and showed no window; the videos played; the sidebar
+  stays hidden; YouTube's and Netflix's (older) profiles both have `ask_widevine_install` false and
+  `sidebar_show_option` 3 in both settings files. **Sub-step 3 is done.**
