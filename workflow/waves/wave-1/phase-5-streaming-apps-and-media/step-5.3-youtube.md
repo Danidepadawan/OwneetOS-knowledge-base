@@ -58,3 +58,8 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   string (also `(X11; Linux x86_64; TV)`) gets a short page that sends the browser to the desktop
   site (`location.assign('https://www.youtube.com/?app=desktop…')`). What the TV client does in
   Brave is checked in the VM (sub-step 1).
+- **Sub-step 1 checked** (owner, 2026-10-18, test VM, cage; owneetd 0.12.5, owneet-base 0.0.44):
+  with `Mozilla/5.0 (Linux; SMART-TV) AppleWebKit/537.36 (KHTML, like Gecko) Safari/537.36` YouTube
+  opens its TV interface, and its own on-screen keyboard works. **The navigation is broken there:**
+  the extension's navigation of 5.2 still runs on the TV interface, against the TV interface's own
+  selection (expected; sub-steps 2 and 3). The string waits for the owner's approval.
