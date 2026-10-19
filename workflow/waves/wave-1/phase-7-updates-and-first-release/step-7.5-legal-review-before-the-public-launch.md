@@ -33,4 +33,8 @@ Up: [[phase-7-updates-and-first-release]] · Status: **todo**
 - **To include (2026-10-19):** the console asks for consent to Google's Widevine terms once and at
   every new Widevine version ([[step-5.4-netflix]]); whether that is enough, since a change of
   Google's terms without a new Widevine version cannot be seen by the console without asking a
-  server ([[legal-compliance]]).
+  server ([[legal-compliance]]). Also: the wording of the console's consent ([[step-5.4-netflix]]);
+  Widevine's own `LICENSE` ("You may not use … the Software without a separate license agreement
+  with Google"): whether Brave's agreement with Google covers its users on OwneetOS; Brave's help
+  page says that turning Widevine on means agreeing to Google's Terms of Use and that Brave is not
+  liable for it.

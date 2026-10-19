@@ -48,3 +48,22 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
      5.2), the profile picker, signing in, Widevine playback.
   5. **Netflix's controls: code** (`extension/content/netflix.js`: LT / RT in the player).
   6. **Close:** terms of service (Netflix §1.8(vi) stays with 7.5), known limits, outcome.
+- **Sub-step 1, the facts (2026-10-19, test VM):**
+  - Widevine comes per profile as `WidevineCdm/4.10.3112.0/` (`manifest.json`, `LICENSE`, the
+    library under `_platform_specific/linux_x64`) and `latest-component-updated-widevine-cdm`
+    (`{"Path": …}`): owneetd can read the installed version there.
+  - Its **`LICENSE`** says, in full: Google owns the content decryption module and its
+    documentation; "You may not use, modify, sell, or otherwise distribute the Software without a
+    separate license agreement with Google. The Software is not open source software. If you are
+    interested in licensing the Software, please contact www.widevine.com".
+  - Brave's program links **no terms**: only its help page "How do I view DRM protected
+    content?", which says that turning Widevine on means agreeing to **Google's Terms of Use** and
+    accepting that Brave is not liable for Widevine; Widevine is off by default in Brave.
+- **Demo** `design/demos/5.4-widevine-consent.html` (2026-10-19), built on the approved demo 5.0.0,
+  **waiting for the owner's approval**: the consent in the install confirmation of the first web
+  app (a fact "Protected videos: Google Widevine, downloaded from Google" and "By installing, you
+  accept Google's terms of use for Widevine", with *Read the terms*; later installs do not ask);
+  the terms window (what Widevine is, "OwneetOS is not responsible for Widevine", the address
+  `policies.google.com/terms`, a QR code as a variant: V); asked again at opening after a Widevine
+  update, and on a console installed before 5.4 (*Accept and open*, *Read the terms*, *Not now*:
+  the web app does not open). The wording of the consent goes to the legal review.
