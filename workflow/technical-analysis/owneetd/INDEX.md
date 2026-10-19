@@ -18,6 +18,7 @@ tags: [index]
 - [[owneetd-api-input]] — API for the virtual keyboard and mouse used by the on-screen keyboard; keyboard layouts.
 - [[owneetd-api-installs]] — API and design of game installs in owneetd (step 4.6): GOG's .sh extracted, Windows installers run silently under Proton, the queue, the marks in a game's folder, stopping and uninstalling.
 - [[owneetd-api-network]] — API for NetworkManager status, Wi-Fi scan, connect, forget, saved networks.
+- [[owneetd-api-pointer]] — API and design of the controller pointer in owneetd (step 4.7): one window, the controllers read without a grab, the virtual mouse, gamescope's focused window and the text cursor.
 - [[owneetd-api-power]] — API for shut down, restart and suspend through logind.
 - [[owneetd-api-status]] — API for daemon and OwneetOS version and session mode.
 - [[owneetd-api-windows]] — API and design of Windows games in owneetd (step 4.5): the one-time download of Proton and its runtime with umu-launcher, its progress, owneet-windows-run.

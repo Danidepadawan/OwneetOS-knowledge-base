@@ -45,3 +45,14 @@ Up: [[phase-4-games]] · Status: **in-progress**
   Xwayland; verified only on the FrankenPC); Y stays as the fallback. Known limits told to the
   owner: selectable text in Chromium-based launchers may open it (B closes), apps that draw their
   own pointer need Y.
+- **Code (2026-10-19):** owneetd 0.16.0 (`internal/pointer`, `/v1/pointer`,
+  [[owneetd-api-pointer]]; `vinput.Retrying` fixes the virtual keyboard and mouse never made on
+  the FrankenPC; XFixes vendored from the same `jezek/xgb` module, with its `render` and `shape`);
+  owneet-frontend 0.23.0 (the card's "Resume with the pointer" / "Turn the pointer off" and badge,
+  the explanation once with the controller drawing and "Don't show again", the keyboard asked by
+  owneetd with Send / Cancel, Controls in the quick menu, the `ls` glyph, the `pointer` icon).
+  Verified: Go tests (one window, home screen waits, off on another window or when the app
+  closes, speeds, D-pad repeat, wheel, buttons, the text cursor's shape, SDL mappings, ignored
+  virtual pads), `tools/lint`; the preview (`tools/preview-steps/pointer.txt`, new `@gamescope`).
+  Only on the FrankenPC: a real launcher, the pointer's speed, gamescope's cursor, the text
+  cursor read through XFixes, typing into a Proton window.
