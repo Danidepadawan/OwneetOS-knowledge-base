@@ -75,5 +75,8 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   app** (the same window after a Widevine update and on consoles installed before 5.4: *Accept and
   open*, *Read the terms*, *Not now*); the install confirmation only says it will come. **One
   consent per user** (owner): today the console has one user, later every person on the console
-  accepts for themselves. Demo `design/demos/5.4-widevine-consent.html` updated, **waiting for the
-  owner's approval**.
+  accepts for themselves. Demo `design/demos/5.4-widevine-consent.html` updated.
+- **Demo approved (owner, 2026-10-19)** as it is. The legal questions it leaves stay with
+  [[step-7.5-legal-review-before-the-public-launch]] (Widevine's licence and Brave's agreement with
+  Google, the console's consent in place of Brave's window, the wording, a change of Google's terms
+  without a new Widevine version). **Sub-step 1 is done.** Next: sub-step 2, the code.
