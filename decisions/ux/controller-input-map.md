@@ -4,7 +4,7 @@ description: "The binding meaning of every button on every screen, keyboard fall
 area: ux
 status: active
 decided: 2026-10-03
-updated: 2026-10-16
+updated: 2026-10-19
 legacy: "PROJECT_RULES.md §9.1"
 tags: [decision, ux, input]
 ---
@@ -56,8 +56,17 @@ repeat after 720 ms, then every 360 ms; analog triggers count as pressed above h
 > change only with the owner's agreement, so the owner confirms it (or changes it) when reviewing
 > the merge, and this box is then removed.
 
-Implemented once for every screen in step 3.5 (`Nav`, `NavArea`: [[qml]]). Pending binding: the
-controller pointer of [[step-4.7-controller-pointer]] goes here before it is implemented.
+**Controller pointer** ([[step-4.7-controller-pointer]], owner 2026-10-19): for apps and
+launchers made for a mouse (e.g. a Steam game's EA app or Ubisoft Connect, a game's start or
+options window), **never on a game** itself. The user turns it on by hand from the console (Guide,
+then the app's own entry), and off the same way; it also ends when the app closes. While it is on:
+**left stick** moves the pointer, **D-pad** moves it in small steps, **A** = click, **X** = right
+click, **right stick** = wheel (scroll), **Y** = type: the console's on-screen keyboard, then the
+text goes to the window; Guide keeps its meaning. It intercepts nothing: the app still receives
+every input (no grab), the pointer only adds a virtual mouse's movements and clicks (owner,
+2026-10-19: compatible with the guard [[product-invariants]]).
+
+Implemented once for every screen in step 3.5 (`Nav`, `NavArea`: [[qml]]).
 
 ## History
 
@@ -76,3 +85,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-12 | After the owner's first Steam test (Guide fought over by owneetd and Steam): **while Steam or a Steam game is on screen, a short Guide press is Steam's; holding Guide for 1 second comes back to the console** (option A; [[controller-input-map]]). "Exit Steam" in Steam's menu also comes back. Steam's own screens that matter (login, a game's launch progress) are shown automatically ([[game-library]]). |
 | 2026-10-13 | On-screen keyboard (owner's request): LT held = capital letters while it is held, as on Steam's keyboard; the pages of keys move to LB / RB (no section can be switched while the keyboard is open); RT does nothing there ([[controller-input-map]]). |
 | 2026-10-16 | The list of Settings' sections goes round: up on the first section to the last, down on the last to the first. |
+| 2026-10-19 | Controller pointer (step 4.7): turned on by hand from the console, for apps and launchers, never on games; left stick moves, D-pad small steps, A click, X right click, right stick wheel, Y types with the console's keyboard; nothing intercepted (no grab: compatible with the guard). |
