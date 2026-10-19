@@ -29,3 +29,11 @@ Up: [[phase-4-games]] · Status: **in-progress**
   to the user must be elegant and not annoying (owner): in the demo. Also to fix: owneetd opens
   `/dev/uinput` before the session is active and never tries again (the FrankenPC logs "virtual
   keyboard and mouse not available" at every start).
+- **Demo proposal agreed (owner, 2026-10-19):** launchers run as part of their game, so "Resume
+  with the pointer" is offered on the running game or app's card on the home screen; the pointer
+  holds for one window and turns off by itself when another window takes the screen (the game
+  after its launcher) or the app closes; with it on, the card has a "Pointer on" badge and "Turn
+  the pointer off". Explained elegantly: once, a compact card with the controller drawing and a
+  label at each button ("Got it", "Don't show again"), and always in the quick menu's Controls
+  (3.13). Y opens the console's keyboard on the home screen ("Type in {app}"), Send types the text
+  into the window and goes back with the pointer still on.
