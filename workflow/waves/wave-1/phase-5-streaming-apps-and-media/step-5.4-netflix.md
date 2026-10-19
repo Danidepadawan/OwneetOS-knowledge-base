@@ -87,3 +87,13 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   [[owneetd-api-apps]]) and owneet-frontend 0.16.22 (`theme.qml`: the install confirmation's
   notice, the question at opening, Google's page and back to the question on B, Guide or its end;
   texts in `frontend/i18n`, English and Italian).
+- **Owner's test of sub-step 2** (2026-10-19, test VM, cage): the install confirmation's notice
+  overflowed its window, and after B on Google's terms page the question came back **without the
+  selection** (the home page selects its hero a moment after the running app changes; the
+  question had opened before the app list was refreshed): fixed in owneet-frontend 0.16.23 (the
+  question opens once the list is updated; the notice sized to the window). A mouse click on the
+  question then did nothing (the interface's buttons have no mouse support: fine, the console
+  never needs a mouse) and the screen looked frozen; the interface's 137 % CPU was not a hang: it
+  uses 189 % idle in the VM (software drawing). With 0.16.23, **with the controller, it works**:
+  the question, Google's live page, B back to the question with the selection, *Accept and open*
+  opens Netflix.
