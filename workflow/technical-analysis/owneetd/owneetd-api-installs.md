@@ -15,7 +15,7 @@ Frontend side: [[frontend-disk-games]] · Code: `daemon/internal/installs/`
 | POST | `/v1/installs/inspect` | `{installer, kind}` → `{need, exact, free, licence}`: the space needed on the console's disk (`exact` for GOG's `.sh`, else twice the installer's files), the free space, the licence's text ("" when not found) |
 | POST | `/v1/installs` | `{installer, kind, dest, prefix, title}` → 202, queued; 400 `installs.invalid`, 409 `installs.no_space` / `installs.exists` |
 | POST | `/v1/installs/stop` | `{dest}` → 204: the install in progress stops (what it wrote is removed), or leaves the queue; 404 `installs.not_found` |
-| POST | `/v1/installs/uninstall` | `{dest}` → 204: removes a game the console installed; 404 when its folder has no `.owneet-installed` |
+| POST | `/v1/installs/uninstall` | `{dest}` → 204: removes a game the console installed; 404 when its folder has no `.owneet-installed`; 409 `installs.in_use` while a process works in it (its working folder or program, `/proc`) |
 
 Events: `installs.changed` (the status above; at most twice a second while bytes move),
 `install.done` `{dest, title}`, `install.failed` `{dest, title, reason}` with reason `cancelled`,

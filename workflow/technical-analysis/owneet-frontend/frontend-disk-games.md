@@ -60,8 +60,9 @@ a game.
   not installed. A: unusable → why; Windows installer before Windows games are ready → their
   progress; inspect → "Not enough space" or "Install {game}?" [Read] [Install] [Cancel]; Read
   shows the licence in a scrolled box (right stick) or where it is. Options: Stop installing,
-  Uninstall (`disk.installed`). `install.done` notifies and reads the games again quietly
-  (`readGamesQuietly`, as for disks). Preview: `tools/preview-steps/installers.txt` and
+  Uninstall (`disk.installed`). `install.done` notifies and reads the games again quietly at once,
+  also while a game runs (`readGamesQuietly`; disks plugged in wait for the game's end). No
+  Uninstall on the running game (owneetd answers 409 `installs.in_use` anyway). Preview: `tools/preview-steps/installers.txt` and
   `installers-windows.txt` (`@disk` has GOG `.sh`, Inno Setup, too big, Galaxy, unknown, and a game
   installed earlier; `fake-owneetd.py` installs in a few seconds).
 - **The file to start**: the user's saved choice → `game.txt`'s `start` → `start.sh` at the top of

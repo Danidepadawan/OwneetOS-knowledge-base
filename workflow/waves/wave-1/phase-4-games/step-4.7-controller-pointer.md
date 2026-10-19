@@ -56,3 +56,7 @@ Up: [[phase-4-games]] · Status: **in-progress**
   virtual pads), `tools/lint`; the preview (`tools/preview-steps/pointer.txt`, new `@gamescope`).
   Only on the FrankenPC: a real launcher, the pointer's speed, gamescope's cursor, the text
   cursor read through XFixes, typing into a Proton window.
+- **FrankenPC test (owner, 2026-10-19):** all the pointer's checks passed on Beneath a Steel Sky's
+  ScummVM window (the explanation once, stick, D-pad, A, X, wheel, Y with the console's keyboard,
+  the badge and "Turn the pointer off"; off by itself when the game closed). The virtual mouse now
+  exists on the FrankenPC.

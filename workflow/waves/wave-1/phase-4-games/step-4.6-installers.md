@@ -56,3 +56,19 @@ Up: [[phase-4-games]] · Status: **in-progress**
 - **Test together with step 4.7 (owner, 2026-10-19):** the owner asked to move on to 4.7 before
   testing 4.6 ([[collaboration]]'s exception): 4.6 stays in progress; the FrankenPC test with
   real installers (GOG `.sh`, a GOG offline `setup_*.exe`, the Galaxy installer) comes with 4.7's.
+- **SSD prepared and real installers checked (2026-10-19, the owner's SSD on this PC):** GOG's
+  `.sh` for Beneath a Steel Sky and Cayne have `data/noarch` (with `start.sh`), `data/options`
+  (only MojoSetup's icon and menu markers) and the licence in `data/noarch/docs/End User License
+  Agreement.txt`; owneetd's own extraction of the real Beneath a Steel Sky `.sh` in the builder
+  VM: 106 files, 158 MB, the GOG EULA found (`TestRealGOGScript`, run with `OWNEET_GOG_SH`). The
+  owner downloaded GOG's offline Windows installers of Tyrian 2000 and Treasure Adventure Game and
+  TAG's Galaxy installer: recognised as Inno Setup and Galaxy. Hand-extracted copies moved to
+  `Estratti (test 4.3)/` outside `Giochi`.
+- **FrankenPC test with 4.7 (owner, 2026-10-19):** both GOG `.sh` installed (Cayne 4.2 GB in 52 s)
+  with the percentage, the licence and the banner; stopping works; Tyrian 2000 and Treasure
+  Adventure Game installed under Proton (15 s and 10 s, no window shown) and start (Tyrian with
+  DOSBox Staging from GOG's own files); the Galaxy installer explained. Two bugs, fixed: a game
+  could be uninstalled while running (ScummVM lost its files and crashed, the screen went off) →
+  owneetd 0.16.1 refuses it (409 `installs.in_use`: a process works in its folder) and Options no
+  longer offers it; after an uninstall the library changed only once the running game closed →
+  owneet-frontend 0.23.1 reads the games again at once after installs and uninstalls.
