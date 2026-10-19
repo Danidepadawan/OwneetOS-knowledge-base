@@ -117,3 +117,8 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   be refactored to "only the console's first opening, copies for the others" if testing shows the
   need); the wait **reuses the approved "Preparing…" screen** of Steam's first start, with texts
   for the web app ("the first time takes a few seconds"), so no new demo.
+- **Sub-step 3, the fix implemented (2026-10-19), waiting for the owner's test:** owneetd 0.12.9
+  (`internal/catalog/widevine.go`: `prepareAndLaunch`, `fetchWidevine`: Brave `--headless=new` in
+  its own process group, stopped as soon as `WidevineCdm/latest-component-updated-widevine-cdm`
+  appears; [[owneetd-api-apps]]) and owneet-frontend 0.16.24 (the "Preparing…" screen, now
+  `Preparing.qml` for Steam and the web apps).
