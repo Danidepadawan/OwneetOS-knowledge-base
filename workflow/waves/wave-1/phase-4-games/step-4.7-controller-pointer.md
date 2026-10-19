@@ -3,13 +3,13 @@ type: step
 description: "A pointer moved by the controller (stick, A = click) for the few windows made only for a mouse: unknown installers (4.6), launchers…"
 phase: "[[phase-4-games]]"
 step: "4.7"
-status: in-progress
+status: done
 legacy: "ROADMAP.md 4.7"
 tags: [step, phase-4]
 ---
 # 4.7 Controller pointer *(added 2026-10-11)*
 
-Up: [[phase-4-games]] · Status: **in-progress**
+Up: [[phase-4-games]] · Status: **done**
 
 - **Deliverables:** a pointer moved by the controller (stick, A = click) for the few windows
   made only for a mouse: unknown installers (4.6), launchers inside some games (EA app, Ubisoft
@@ -60,3 +60,8 @@ Up: [[phase-4-games]] · Status: **in-progress**
   ScummVM window (the explanation once, stick, D-pad, A, X, wheel, Y with the console's keyboard,
   the badge and "Turn the pointer off"; off by itself when the game closed). The virtual mouse now
   exists on the FrankenPC.
+- **Outcome: approved by the owner on 2026-10-19**, tested together with step 4.6: an app or a
+  launcher (never a game) can be resumed with the controller as a mouse for its window only,
+  turned on by hand from its card, explained once, with the console's keyboard on text fields
+  (Y as the fallback) and off by itself when the window changes or the app closes. owneetd
+  0.16.1, owneet-frontend 0.23.1.

@@ -3,13 +3,13 @@ type: step
 description: "Installers found in a game's folder (GOG Linux `.sh`, Windows Inno Setup / NSIS / MSI, e.g. GOG's `setup_*.exe`) run silently in the…"
 phase: "[[phase-4-games]]"
 step: "4.6"
-status: in-progress
+status: done
 legacy: "ROADMAP.md 4.6"
 tags: [step, phase-4]
 ---
 # 4.6 Installers *(added 2026-10-11)*
 
-Up: [[phase-4-games]] · Status: **in-progress**
+Up: [[phase-4-games]] · Status: **done**
 
 - **Deliverables:** installers found in a game's folder (GOG Linux `.sh`, Windows Inno Setup /
   NSIS / MSI, e.g. GOG's `setup_*.exe`) run silently in the background with their known options,
@@ -72,3 +72,11 @@ Up: [[phase-4-games]] · Status: **in-progress**
   owneetd 0.16.1 refuses it (409 `installs.in_use`: a process works in its folder) and Options no
   longer offers it; after an uninstall the library changed only once the running game closed →
   owneet-frontend 0.23.1 reads the games again at once after installs and uninstalls.
+- **Retest of the two fixes (owner, 2026-10-19):** Uninstall is not offered on a running game;
+  with a game open, uninstalling another one shows "Not installed" and the download icon at once.
+- **Outcome: approved by the owner on 2026-10-19**, tested together with step 4.7: installers in
+  a game's folder install the game on the console's disk with the controller only. GOG's `.sh` is
+  extracted by owneetd (percentage, licence, space check), Inno Setup / NSIS / MSI run silently
+  under Proton, Galaxy and unknown installers are explained; installs queue, can be stopped, and a
+  game the console installed can be uninstalled (never while it runs). owneetd 0.16.1,
+  owneet-frontend 0.23.1.
