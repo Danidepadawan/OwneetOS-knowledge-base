@@ -103,3 +103,17 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   has `widevine_opted_in` true; with an older accepted version (set by hand) opening Netflix asked
   again, and accepting recorded 4.10.3112.0 with a new date. **Sub-step 2 is done.** Next:
   sub-step 3, the first-session restart.
+- **Sub-step 3, the check** (owner, 2026-10-19, test VM; a probe extension of the VM only,
+  `vm/run/probe-5.4/`, asking for Widevine through the page's media keys every 5 s):
+  - **A new profile cannot use Widevine in its first session:** Brave downloaded it 29 s after
+    starting (4.10.3112.0), and the page still had no Widevine 110 s after loading; after
+    reopening, available at once.
+  - **A copy of another profile's Widevine** (with its `latest-component-updated-widevine-cdm`
+    pointing into the new profile) is usable at the first start.
+  - **A hidden start works:** Brave with no window (`--headless=new`, `--component-updater=fast-update`)
+    in a new profile downloaded Widevine in **20 s**; the web app opened afterwards had it at once.
+- **Decided (owner, 2026-10-19):** **each web app's first opening** (its profile has no Widevine)
+  runs the hidden start in its own profile first, about 20 s, with no copies between profiles (to
+  be refactored to "only the console's first opening, copies for the others" if testing shows the
+  need); the wait **reuses the approved "Preparing…" screen** of Steam's first start, with texts
+  for the web app ("the first time takes a few seconds"), so no new demo.
