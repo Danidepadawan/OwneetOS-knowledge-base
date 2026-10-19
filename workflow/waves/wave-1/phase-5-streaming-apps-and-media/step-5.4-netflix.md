@@ -138,4 +138,4 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   0.23.2, owneet-base 0.0.46. "Preparing…" is now `main`'s Steam screen (`Preparing.qml`) with an
   optional title and text for the web apps' first opening. The knowledge base's phase 4 notes are
   on its branch `feature/step4_games`, not merged into its `main` (the code links to one note
-  only that branch has, [[supply-chain-security]]).
+  only that branch has, `supply-chain-security`).
