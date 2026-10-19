@@ -13,9 +13,9 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
 
 - **Deliverables:** Widevine verified, browse / play / pause / seek on the gamepad.
 - **To do here (owner, 2026-10-19, from [[step-5.3-youtube]]):** the **console's consent to
-  Google's Widevine terms**, replacing 5.1's silent opt-in ([[legal-compliance]]): asked once when
-  the user installs the first web app ([Read] [Continue]), and **again at every new Widevine
-  version** (owneetd compares the version in each web app's profile, `WidevineCdm/<version>`, with
+  Google's Widevine terms**, replacing 5.1's silent opt-in ([[legal-compliance]]): asked once
+  (at the first opening of a web app, per user: see the owner's review below), and **again at every
+  new Widevine version** (owneetd compares the version in each web app's profile, `WidevineCdm/<version>`, with
   the one the user agreed to). New console UI: **demo first** ([[demo-before-code]]). Also: a
   freshly downloaded Widevine works only after Brave restarts (Linux), so the first protected
   video of a new profile may fail until the web app is opened again: to be solved here. Brave's own
@@ -59,11 +59,21 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   - Brave's program links **no terms**: only its help page "How do I view DRM protected
     content?", which says that turning Widevine on means agreeing to **Google's Terms of Use** and
     accepting that Brave is not liable for Widevine; Widevine is off by default in Brave.
-- **Demo** `design/demos/5.4-widevine-consent.html` (2026-10-19), built on the approved demo 5.0.0,
-  **waiting for the owner's approval**: the consent in the install confirmation of the first web
+- **First version of the demo** (2026-10-19), built on the approved demo 5.0.0: the consent in the install confirmation of the first web
   app (a fact "Protected videos: Google Widevine, downloaded from Google" and "By installing, you
   accept Google's terms of use for Widevine", with *Read the terms*; later installs do not ask);
   the terms window (what Widevine is, "OwneetOS is not responsible for Widevine", the address
   `policies.google.com/terms`, a QR code as a variant: V); asked again at opening after a Widevine
   update, and on a console installed before 5.4 (*Accept and open*, *Read the terms*, *Not now*:
   the web app does not open). The wording of the consent goes to the legal review.
+- **Owner's review of the demo (2026-10-19):** no QR code; **the terms shown directly**, with their
+  address. Google's terms are not copied into the console (Google's text is under no free licence,
+  [[legal]]; a copy goes stale) nor fetched and turned into console text (scraping): **Read the
+  terms opens Google's live page** (`policies.google.com/terms`) in the web apps' full-screen
+  window (right stick scrolls, B comes back to the question), and the question shows the address.
+  That window comes with the first install, so **the question moves to the first opening of a web
+  app** (the same window after a Widevine update and on consoles installed before 5.4: *Accept and
+  open*, *Read the terms*, *Not now*); the install confirmation only says it will come. **One
+  consent per user** (owner): today the console has one user, later every person on the console
+  accepts for themselves. Demo `design/demos/5.4-widevine-consent.html` updated, **waiting for the
+  owner's approval**.

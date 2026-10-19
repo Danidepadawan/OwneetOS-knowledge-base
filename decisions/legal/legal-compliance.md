@@ -24,8 +24,9 @@ project is reviewed by someone experienced in open-source licensing ([[step-7.5-
 - **Proprietary but redistributable components** (NVIDIA driver, device firmware, CPU microcode)
   are shipped only as their licences allow, unmodified, with their licence texts.
 - **Widevine consent (owner, 2026-10-19):** Brave downloads Widevine with "By installing, you'll
-  agree to Google's terms of use", so the **console asks for the user's consent** (once, when the
-  first web app is installed, with [Read] [Continue]) and **again at every new Widevine version**
+  agree to Google's terms of use", so the **console asks for the user's consent** (once per user,
+  at the first opening of a web app; *Read the terms* opens Google's live page, never a copy) and
+  **again at every new Widevine version**
   (owneetd sees the version in each web app's profile, `WidevineCdm/<version>`), replacing 5.1's
   silent opt-in; in [[step-5.4-netflix]] (demo first). Brave's own question is turned off: it is a
   window of Brave's that the controller cannot reach. A change of Google's terms without a new
@@ -97,3 +98,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-18 | The Brave extension checked against the terms of Netflix, YouTube and Spotify: an input method acting only on the user's buttons, content scripts in Chromium's isolated world, one ring element in a closed shadow root. Netflix §1.8(vi) ("insert any code or product…") goes to the legal review of step 7.5; the YouTube TV interface and user agent are checked in step 5.3. |
 | 2026-10-18 | YouTube opens its TV interface with a **TV user agent** set by owneetd from the catalogue, brand-neutral first; the owner holds it allowed (the TV interface is a mode the service makes available; a user agent alters neither the app nor its content), and it goes to the legal review of step 7.5. **Brave's Shields block the web apps' ads** by default (no policy turns them off): kept as it is, to the legal review of 7.5. |
 | 2026-10-19 | **Widevine consent:** the console asks for the user's consent to Google's terms (once at the first web app, and at every new Widevine version) instead of 5.1's silent opt-in, in step 5.4; Brave's own question turned off (unreachable with the controller). A change of Google's terms alone cannot be detected without a server: to the legal review of 7.5. |
+| 2026-10-19 | Widevine consent: once **per user**, at the first opening of a web app; *Read the terms* shows **Google's live page** in the web apps' window (Google's terms are never copied into the console: no free licence, and a copy goes stale); a QR code rejected. |
