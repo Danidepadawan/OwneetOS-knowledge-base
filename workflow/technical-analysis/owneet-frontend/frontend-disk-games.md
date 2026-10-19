@@ -40,8 +40,30 @@ a game.
   config, redist, directx, dxsetup, crash reporters; folders `support`, `docs`, `manual`,
   licences, redistributables, Unity's `*_Data`, hidden ones. A `.sh` with "makeself" or
   "MojoSetup" in its first 64 KiB is an installer (step 4.6).
-- **Not listed yet**: folders with nothing to start on Linux (only `.exe` / `.msi` → step 4.5,
-  only installers → step 4.6); the log says which.
+- **Only an installer (4.6)**: the best installer of the folder (kinds the console can use
+  first, then the shallowest) makes a game "not installed" with `disk.installer` and
+  `disk.installer.kind`: `sh` (a makeself / MojoSetup script whose ZIP list, in its last 4 MiB,
+  names `data/noarch/`; other scripts `unknown`), `inno` / `nsis` (an `.exe` named setup /
+  install, not unins, whose first 4 MiB say "Inno Setup" / "Nullsoft"; else `unknown`), `msi`,
+  `galaxy` (`GOG_Galaxy_*.exe`, never a Windows game's file). Folders marked `.owneet-installing`
+  are not listed; a game folder marked `.owneet-installed` has `disk.installed` and
+  `disk.installed.from` (its installer), and hides installers of the same folder name on other
+  disks. `DiskGames::installRequest(game, language)` gives owneetd's request
+  ([[owneetd-api-installs]]): `dest` in the home folder's games folder (made as `Giochi` / `Games`
+  by the console's language when there is none; the game's own folder when its installer is
+  already on the console's disk), `prefix` = `windowsPrefix(dest)`. `folderSize(path)`: what
+  uninstalling frees. Folders with nothing at all are not listed; the log says which.
+- **Installers in the theme (4.6, approved demo `design/demos/4.6-installers.html`)**:
+  `GameInfo.steamState` gives such a game `none`, `queued`, `installing` (with `progress`, none
+  for Windows installers: the cover's bar keeps moving) or `unusable`, from owneetd's installs
+  (`GameInfo.installs`, matched by folder name), so filters, sorting and covers treat it as a game
+  not installed. A: unusable → why; Windows installer before Windows games are ready → their
+  progress; inspect → "Not enough space" or "Install {game}?" [Read] [Install] [Cancel]; Read
+  shows the licence in a scrolled box (right stick) or where it is. Options: Stop installing,
+  Uninstall (`disk.installed`). `install.done` notifies and reads the games again quietly
+  (`readGamesQuietly`, as for disks). Preview: `tools/preview-steps/installers.txt` and
+  `installers-windows.txt` (`@disk` has GOG `.sh`, Inno Setup, too big, Galaxy, unknown, and a game
+  installed earlier; `fake-owneetd.py` installs in a few seconds).
 - **The file to start**: the user's saved choice → `game.txt`'s `start` → `start.sh` at the top of
   the folder (GOG) → the only file found → none (the theme asks).
 - **`game.txt`** (optional; format agreed with the owner, [[games-on-disk]]): `key: value` lines,

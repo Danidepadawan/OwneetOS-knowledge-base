@@ -43,3 +43,13 @@ Up: [[phase-4-games]] · Status: **in-progress**
   "Installing…" with a moving bar, like NSIS / MSI in the demo (Shadow Harbor updated in the
   demo); only GOG's `.sh` have a percentage. [Read] for a Windows installer shows a licence file
   of the game's folder, else where to find it.
+- **Code (2026-10-19):** owneetd 0.15.0 (`daemon/internal/installs`, [[owneetd-api-installs]]:
+  queue, GOG `.sh` extracted with Go's ZIP reader, Windows installers in a transient unit with
+  `owneet-windows-run`, marks, stop, uninstall, clean-up after a restart); owneet-frontend 0.22.0
+  (the provider lists installer-only folders, `DiskGames::installRequest`, the theme's states,
+  questions, licence, notices, Options; [[frontend-disk-games]]). Verified: Go tests (a fake GOG
+  `.sh`: script + ZIP; Windows installers with a fake runner: options, NSIS link, not ready,
+  nothing written; stop, source gone, restart), `tools/lint`; the preview (both step files: every
+  window of the demo, the percentage, the moving bar, stop, uninstall). Sizes under 1 GB in MB.
+  Not verifiable without real installers: GOG's `.sh` layout and licence file, a real Inno Setup
+  `setup_*.exe` under Proton (FrankenPC test).

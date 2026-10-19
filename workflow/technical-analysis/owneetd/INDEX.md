@@ -16,6 +16,7 @@ tags: [index]
 - [[owneetd-api-display]] — API for the screen in use, modes, Keep this?, other cards turned off, brightness, keyboard layout.
 - [[owneetd-api-events]] — The event stream (/v1/events) and every event type.
 - [[owneetd-api-input]] — API for the virtual keyboard and mouse used by the on-screen keyboard; keyboard layouts.
+- [[owneetd-api-installs]] — API and design of game installs in owneetd (step 4.6): GOG's .sh extracted, Windows installers run silently under Proton, the queue, the marks in a game's folder, stopping and uninstalling.
 - [[owneetd-api-network]] — API for NetworkManager status, Wi-Fi scan, connect, forget, saved networks.
 - [[owneetd-api-power]] — API for shut down, restart and suspend through logind.
 - [[owneetd-api-status]] — API for daemon and OwneetOS version and session mode.
