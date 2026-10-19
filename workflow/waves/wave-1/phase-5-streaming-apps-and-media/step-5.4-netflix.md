@@ -80,3 +80,10 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   [[step-7.5-legal-review-before-the-public-launch]] (Widevine's licence and Brave's agreement with
   Google, the console's consent in place of Brave's window, the wording, a change of Google's terms
   without a new Widevine version). **Sub-step 1 is done.** Next: sub-step 2, the code.
+- **Sub-step 2, implemented (2026-10-19), waiting for the owner's test:** owneetd 0.12.8
+  (`internal/catalog/widevine.go`: the consent per user with its Widevine version, read from each
+  profile's `WidevineCdm/latest-component-updated-widevine-cdm`; Open refused without it;
+  `widevine_opted_in` set before every opening; Google's terms page as `web:widevine-terms`;
+  [[owneetd-api-apps]]) and owneet-frontend 0.16.22 (`theme.qml`: the install confirmation's
+  notice, the question at opening, Google's page and back to the question on B, Guide or its end;
+  texts in `frontend/i18n`, English and Italian).
