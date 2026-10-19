@@ -65,7 +65,8 @@ by itself when another window takes the screen (e.g. the game after its launcher
 app closes. While it is on:
 **left stick** moves the pointer, **D-pad** moves it in small steps, **A** = click, **X** = right
 click, **right stick** = wheel (scroll), **Y** = type: the console's on-screen keyboard, then the
-text goes to the window; Guide keeps its meaning. It intercepts nothing: the app still receives
+text goes to the window (a fallback: **A on a text field opens the keyboard by itself**, owner
+2026-10-19, when the pointer has the text "I" shape after the click); Guide keeps its meaning. It intercepts nothing: the app still receives
 every input (no grab), the pointer only adds a virtual mouse's movements and clicks (owner,
 2026-10-19: compatible with the guard [[product-invariants]]).
 
@@ -89,3 +90,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-13 | On-screen keyboard (owner's request): LT held = capital letters while it is held, as on Steam's keyboard; the pages of keys move to LB / RB (no section can be switched while the keyboard is open); RT does nothing there ([[controller-input-map]]). |
 | 2026-10-16 | The list of Settings' sections goes round: up on the first section to the last, down on the last to the first. |
 | 2026-10-19 | Controller pointer (step 4.7): turned on by hand from the console, for apps and launchers, never on games; left stick moves, D-pad small steps, A click, X right click, right stick wheel, Y types with the console's keyboard; nothing intercepted (no grab: compatible with the guard). |
+| 2026-10-19 | Pointer: A on a text field opens the console's keyboard by itself (the pointer's "I" shape after the click, read through XFixes); Y stays as the fallback. |

@@ -37,3 +37,11 @@ Up: [[phase-4-games]] · Status: **in-progress**
   label at each button ("Got it", "Don't show again"), and always in the quick menu's Controls
   (3.13). Y opens the console's keyboard on the home screen ("Type in {app}"), Send types the text
   into the window and goes back with the pointer still on.
+- **Demo approved (owner, 2026-10-19):** `design/demos/4.7-controller-pointer.html` (the running
+  game's card with "Resume with the pointer" / "Turn the pointer off" and the "Pointer on" badge,
+  the explanation card once, the keyboard for typing, Controls in the quick menu). One change,
+  agreed without a new demo (no new screen): **A on a text field opens the keyboard by itself**
+  when the pointer has the text "I" shape after the click (read through XFixes on gamescope's
+  Xwayland; verified only on the FrankenPC); Y stays as the fallback. Known limits told to the
+  owner: selectable text in Chromium-based launchers may open it (B closes), apps that draw their
+  own pointer need Y.
