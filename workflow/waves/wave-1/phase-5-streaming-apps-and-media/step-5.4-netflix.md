@@ -97,3 +97,9 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   uses 189 % idle in the VM (software drawing). With 0.16.23, **with the controller, it works**:
   the question, Google's live page, B back to the question with the selection, *Accept and open*
   opens Netflix.
+- **Sub-step 2 verified** (owner, 2026-10-19, test VM; owneetd 0.12.8, owneet-frontend 0.16.23):
+  the consent is saved per user with the installed Widevine (`{"users": {"console": {"version":
+  "4.10.3112.0", "accepted": …}}}` in `~/.local/state/owneetd/widevine.json`) and Netflix's profile
+  has `widevine_opted_in` true; with an older accepted version (set by hand) opening Netflix asked
+  again, and accepting recorded 4.10.3112.0 with a new date. **Sub-step 2 is done.** Next:
+  sub-step 3, the first-session restart.
