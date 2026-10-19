@@ -20,5 +20,5 @@ Events format). Event types (initial list):
 `app.exited`, `focus.changed`, `guide.released` (implemented, 2.9), `input.layout_changed`
 (implemented, 2.4), `display.changed`, `display.pending`, `display.confirmed`, `display.reverted`
 (implemented, 3.9), `update.changed` (implemented, 4.2b), `apps.catalog.changed` (implemented, 5.0.0),
-`apps.open_failed` (`id`, `error`: a web app's first opening failed after Widevine was fetched, 5.4),
+`apps.open_failed` (`id`, `code`: `apps.widevine_failed` or `apps.failed`, `error`: a web app's first opening failed, 5.4),
 `xone.firmware_needed` (later).

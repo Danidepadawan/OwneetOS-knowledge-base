@@ -122,3 +122,7 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   its own process group, stopped as soon as `WidevineCdm/latest-component-updated-widevine-cdm`
   appears; [[owneetd-api-apps]]) and owneet-frontend 0.16.24 (the "Preparing…" screen, now
   `Preparing.qml` for Steam and the web apps).
+- **Decided (owner, 2026-10-19):** when Widevine is not downloaded (60 s at most), **the web app
+  does not open**: the console says "Google Widevine could not be downloaded" with *Try again* (the
+  existing message window of a failed install). Opening it anyway without Widevine rejected (the
+  failure would only move to the first protected video).
