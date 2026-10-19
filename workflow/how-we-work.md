@@ -12,6 +12,9 @@ Decision: [[step-workflow]] · Guard: [[collaboration]] · Plan: [[wave-1]]
    expected to need more than one prompt; it is still reviewed as one unit.
 2. At the end of every step the assistant reports what was done, how it was verified, and anything
    that deviated from the plan. The step is marked done only after the **owner approves it**.
+   Exception (owner, 2026-10-19): an author (the owner or Danidepadawan) may expressly ask to
+   move on before a step is approved; that step stays in progress, is tested together with the
+   next one, and is approved afterwards ([[collaboration]]).
 3. Steps marked **Owner input** stop and ask before acting (installing software on the host,
    creating remote resources, choices with long-term impact).
 4. Any change of plan is recorded in the [[decision-log]] (and its decision note) and reflected in
@@ -27,4 +30,5 @@ Decision: [[step-workflow]] · Guard: [[collaboration]] · Plan: [[wave-1]]
    ([[checks-before-commit]]); commit locally ([[commits-and-branches]]).
 4. Write the outcome in the step note (what, how verified, measurements, versions, open points)
    and set its status; record any new decision ([[kb-rules]]).
-5. Report to the owner and wait for approval before the next step.
+5. Report to the owner and wait for approval before the next step (unless an author expressly
+   asks to move on: see point 2 above).

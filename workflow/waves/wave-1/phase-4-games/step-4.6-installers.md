@@ -53,3 +53,6 @@ Up: [[phase-4-games]] · Status: **in-progress**
   window of the demo, the percentage, the moving bar, stop, uninstall). Sizes under 1 GB in MB.
   Not verifiable without real installers: GOG's `.sh` layout and licence file, a real Inno Setup
   `setup_*.exe` under Proton (FrankenPC test).
+- **Test together with step 4.7 (owner, 2026-10-19):** the owner asked to move on to 4.7 before
+  testing 4.6 ([[collaboration]]'s exception): 4.6 stays in progress; the FrankenPC test with
+  real installers (GOG `.sh`, a GOG offline `setup_*.exe`, the Galaxy installer) comes with 4.7's.
