@@ -38,3 +38,8 @@ Up: [[phase-4-games]] · Status: **in-progress**
   Windows installers wait for Windows games to be ready; the home screen's notice and a banner
   when ready; Options: Stop installing (confirmed), Uninstall (confirmed; the installer stays);
   installed games stay when the disk is unplugged; unplugging it stops an install, with a banner.
+- **Option B changed (owner, 2026-10-19):** `innoextract` needs `boost-libs` (51 MB, not in the
+  system; "about 1 MB" was a mistake, told to the owner): not added. Windows installers show
+  "Installing…" with a moving bar, like NSIS / MSI in the demo (Shadow Harbor updated in the
+  demo); only GOG's `.sh` have a percentage. [Read] for a Windows installer shows a licence file
+  of the game's folder, else where to find it.

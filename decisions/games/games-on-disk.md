@@ -51,8 +51,9 @@ tags: [decision, games]
     [[step-6.5-automatic-disk-mounting]]). GOG's Linux `.sh` (MojoSetup) are **extracted**, never
     run: their `data/noarch` is the installed game (no installer code runs; no desktop shortcuts);
     Windows installers (Inno Setup, e.g. GOG's `setup_*.exe`; NSIS; MSI) **run silently under
-    Proton** in the game's prefix, so the publisher's scripts run too. `innoextract` reads an
-    Inno Setup installer's total size, for the percentage (option B). [Read] shows the licence's
+    Proton** in the game's prefix, so the publisher's scripts run too. Only GOG's `.sh` show a
+    percentage; Windows installers show "Installing…" with a moving bar (owner, 2026-10-19,
+    option 2: `innoextract` would have needed `boost-libs`, 51 MB, only for a percentage). [Read] shows the licence's
     text when the console finds it, in the game's folder or inside the installer, else says where
     it is (option C1). Installers the console cannot use (online ones such as GOG Galaxy's, unknown
     kinds) are **shown** in the library with a message that they cannot be used yet (option D).
@@ -85,7 +86,7 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-16 | GOG's DOS games run with Linux's DOSBox (Arch's `dosbox`), from a copy on the console's disk (they can write and save), not with GOG's Windows DOSBox under Proton (it ended when the home screen was shown; Tyrian could not write). |
 | 2026-10-16 | The DOS games' copy on the console's disk is temporary: from step 6.5 they run in place with their saves (several disks included); the copy only for disks left read only; its saves go back to the game. |
 | 2026-10-16 | GOG's DOS games: DOSBox Staging built from source (Arch's DOSBox could not start Stargunner); GOG's cloud-saves overlay on the console's disk replaces the copy of the game; from step 6.5 it is GOG's `cloud_saves` next to the game. |
-| 2026-10-19 | Installers (step 4.6): installed on the console's disk; GOG's Linux `.sh` extracted (never run), Windows installers run silently under Proton; `innoextract` for the percentage; [Read] shows the licence's text when found; installers that cannot be used are shown with a message. |
+| 2026-10-19 | Installers (step 4.6): installed on the console's disk; GOG's Linux `.sh` extracted (never run), Windows installers run silently under Proton; no percentage for Windows installers (no `innoextract`: with `boost-libs` it costs 52 MB); [Read] shows the licence's text when found; installers that cannot be used are shown with a message. |
 | 2026-10-16 | The download's texts say "about 650 MB" (the measured size), not "about 1 GB". |
 | 2026-10-16 | Demo 4.5 proposal: Proton is downloaded only once a Windows game is in the library; its progress in the home notices and Settings → System; GOG's `goggame-*.info` says which file starts a Windows game; games on a USB disk do not save in their own folder until step 6.5 (option B). |
 | 2026-10-11 | Proton and its runtime are downloaded once, in the background, the first time the console is online ("a necessary evil": the only exception to C9, for Windows games before the first connection). Installing a game from an installer first shows "By installing you accept the game's licence" [Read] [Install] (the user is informed, the project is covered). Step 4.1 approved. |
