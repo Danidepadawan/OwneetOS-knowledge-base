@@ -30,3 +30,11 @@ Up: [[phase-4-games]] · Status: **in-progress**
   credited) for Inno Setup's total; [Read] shows the licence's text when found (C1); online and
   unknown installers shown with "cannot be used yet" (D). Test material: the owner's GOG `.sh`
   (BASS, CAYNE, Stargunner) and a GOG offline `setup_*.exe`; NSIS / MSI only if a sample is found.
+- **Demo approved (owner, 2026-10-19):** `design/demos/4.6-installers.html` (built on demo 4.5):
+  covers "Not installed" (dimmed, download mark), "Installing · N%" (no percentage for NSIS /
+  MSI), "Waiting" (one install at a time), "Cannot be installed yet" (GOG Galaxy's online
+  installer, unknown kinds, with the reason); "Install {game}?" with the size, [Read] (the licence,
+  scrolled with the right stick, or where to find it) [Install] [Cancel]; "Not enough space";
+  Windows installers wait for Windows games to be ready; the home screen's notice and a banner
+  when ready; Options: Stop installing (confirmed), Uninstall (confirmed; the installer stays);
+  installed games stay when the disk is unplugged; unplugging it stops an install, with a banner.
