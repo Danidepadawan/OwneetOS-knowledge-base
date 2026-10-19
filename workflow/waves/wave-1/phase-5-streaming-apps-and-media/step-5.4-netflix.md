@@ -126,3 +126,10 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   does not open**: the console says "Google Widevine could not be downloaded" with *Try again* (the
   existing message window of a failed install). Opening it anyway without Widevine rejected (the
   failure would only move to the first protected video).
+- **Sub-step 3 verified** (owner, 2026-10-20, test VM, cage; owneetd 0.12.9, owneet-frontend
+  0.16.24): YouTube's first opening (new profile) showed "Preparing YouTube…", Brave got Widevine
+  in 22 s and YouTube opened; with the VM's network down, after 60 s "Widevine not downloaded",
+  YouTube did not open and the console showed "Google Widevine could not be downloaded"; with the
+  network back, *Try again* prepared and opened YouTube. (On the way the install command hung:
+  [[vm-run-hangs-after-exit]].) **Sub-step 3 is done.** Next: sub-step 4, Netflix's controls
+  (a probe, then the bindings).
