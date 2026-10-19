@@ -13,3 +13,17 @@ Up: [[phase-7-updates-and-first-release]] · Status: **todo**
 
 - **Deliverables:** the final OwneetOS logo and wordmark (the current wordmark is provisional),
   checked together with the trademark search of 7.5; boot splash, interface and documents updated.
+- **Draft (owner, 2026-10-19, outside the roadmap; nothing adopted yet):**
+  `design/demos/logo-gamepad-o.html`. The wordmark stays "OwneetOS" (Bricolage Grotesque, "OS" in
+  the second colour; the font may change later). The first "O" becomes a filled circle in the
+  colour of "OS", 125 % of the old "O" and centred on it, with a generic gamepad cut out of it as
+  a hole: one straight top edge with corners as round as the grips, two round ends below it as
+  short grips, a narrower middle; D-pad and four buttons back in the circle's colour, no
+  thumbsticks; the "Large" gamepad. Kept away from any real controller's outline (to be checked
+  with the trademark search of [[step-7.5-legal-review-before-the-public-launch|7.5]]). Boot splash (still, on black):
+  white letters, the "O" and "OS" `#B0B0B0`. Start-up animation, in the palette's colours: the
+  "O" appears in the middle, the other letters come out of it as one strip ("S" first) while it
+  moves left, all centred, then the subtitle "don't worry, it's yours!" fades in 32 px under the
+  circle (on a 1600 × 900 screen; in the system from the message files, translated). Tried and
+  rejected: the circle in the letters' colour with the gamepad in the second colour; a glow; a
+  more intense colour; neon (soft and sharp); the three letters pulsing.
