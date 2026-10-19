@@ -133,3 +133,9 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   network back, *Try again* prepared and opened YouTube. (On the way the install command hung:
   [[vm-run-hangs-after-exit]].) **Sub-step 3 is done.** Next: sub-step 4, Netflix's controls
   (a probe, then the bindings).
+- **`main` merged into the code branch** (owner's request, 2026-10-20, `81b3a8e`): phase 4 (steps
+  4.2c to 4.7) and the draft "O" logo demo. Versions from here on: owneetd 0.16.2, owneet-frontend
+  0.23.2, owneet-base 0.0.46. "Preparing…" is now `main`'s Steam screen (`Preparing.qml`) with an
+  optional title and text for the web apps' first opening. The knowledge base's phase 4 notes are
+  on its branch `feature/step4_games`, not merged into its `main` (the code links to one note
+  only that branch has, [[supply-chain-security]]).
