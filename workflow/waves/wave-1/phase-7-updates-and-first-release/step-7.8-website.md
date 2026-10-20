@@ -71,3 +71,5 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   their OFL licences, credited. Checked: `ng build` prerenders `/` and `/it` (`lang` and title of
   each), `ng test` 4 tests (the app, both languages, the same keys in every language, `{n}`),
   screenshots of every section in English (1280 px) and Italian (390 px) matching the demo.
+  Then, at the owner's request, every component moved under `core/components/` next to
+  `core/services/` (no `pages`, no nested `components`); build and tests passed again.
