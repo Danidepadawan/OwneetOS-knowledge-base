@@ -73,3 +73,8 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   screenshots of every section in English (1280 px) and Italian (390 px) matching the demo.
   Then, at the owner's request, every component moved under `core/components/` next to
   `core/services/` (no `pages`, no nested `components`); build and tests passed again.
+- **The Angular home approved (owner, 2026-10-20):** tried with `ng serve`; the only change asked:
+  no "Signed, with its source code." under "Coming soon" (it says nothing to users; the
+  releases stay signed and with their sources, [[package-signing]], [[legal-compliance]]).
+  Still to do in 7.8: the other pages (guide, FAQ, credits, privacy, contributing), each with its
+  demo first, and the publication on GitHub Pages.
