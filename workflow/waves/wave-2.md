@@ -12,7 +12,10 @@ Scope agreed so far: [[wave-1-scope]] (later waves).
 - **8. Overlay and quick menu:** gamescope overlay layer, quick menu over games, volume, battery, screenshots on View/Create.
 - **9. Chat modules:** module interface, Discord web in the background, notifications in the overlay, mute and push-to-talk.
 - **Web browser app (owner, 2026-10-14):** free web browsing with the controller (Brave, already
-  behind the web apps of [[step-5.0.0-optional-web-apps]]), under a generic name and icon.
+  behind the web apps of [[step-5.0.0-optional-web-apps]]), under a generic name and icon. **The
+  extension's generic navigation for any web page is reworked entirely then** (owner,
+  2026-10-20); until then it stays as 5.2 left it, and each supported web app has its own
+  ([[extension-design]]).
 - **Web apps in the background (owner, 2026-10-14):** music web apps (Spotify, Tidal…) keep
   playing while the user does something else; in Wave 1 a web app is closed by the user like a
   game ([[step-5.1-brave-in-the-os]]).

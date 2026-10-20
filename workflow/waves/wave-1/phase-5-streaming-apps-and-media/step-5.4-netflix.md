@@ -142,3 +142,21 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   optional title and text for the web apps' first opening. The knowledge base's phase 4 notes are
   on its branch `feature/step4_games`, not merged into its `main` (the code links to one note
   only that branch has, `supply-chain-security`).
+- **Sub-step 4, the check** (owner, 2026-10-20, test VM, cage; a probe next to the extension,
+  `vm/run/probe-5.4b/`, never shipped):
+  - **Widevine playback works** on a brand-new Netflix profile (it went through "Preparing
+    Netflix…"): an episode played.
+  - **No cookie banner**, not even on a brand-new profile (Netflix does not show it here: the
+    country, or Brave's Shields hiding it): the limit of [[step-5.2-extension-core]] does not show
+    up; kept on the list for the hardware test.
+  - Signing in uses a code sent by email (four boxes), typed with the console's keyboard.
+  - **Netflix's player takes keys sent by a script:** → and ← move the video by 10 s (measured
+    +9.2 and −11.1 s while it kept playing), Space pauses and plays.
+  - **The generic navigation of 5.2 does not fit Netflix:** its rows do not scroll sideways, a
+    title's window opens without the selection going into it, and the player's control bar is
+    out of reach. (The VM restarted by itself during the check, before the title window's
+    screenshot.)
+- **Decided (owner, 2026-10-20):** **each supported web app gets its own navigation** (as YouTube
+  already has), with code in common where it fits; **the generic navigation is reworked entirely
+  only with free web browsing** ([[wave-2]]). Netflix's own navigation is designed next, for
+  the owner's approval, before any code.

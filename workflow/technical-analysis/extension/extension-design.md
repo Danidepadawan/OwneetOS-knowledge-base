@@ -131,6 +131,15 @@ nearest box; the page's order with geometry as a check; the version below). Code
 - owneetd's endpoints (`/v1/webapps/look`, `/keyboard`, `/text`, `/ask-close`) and events
   (`webapp.keyboard`, `webapp.text`, `webapp.ask_close`): [[owneetd-api-apps]].
 
+## One navigation per supported app (owner, 2026-10-20)
+
+- **Each supported web app (YouTube, Netflix, Spotify) has its own navigation**, made for its
+  pages; they share common code where it fits (the gamepad loop, the repeat timing, the rule for
+  buttons held when the page gets the controller back, B's "Close {name}?").
+- **The generic navigation above** (any page, 5.2) stays as it is; it still drives the pages an
+  app opens outside its own (e.g. sign-in pages). It is **reworked entirely with free web
+  browsing** ([[wave-2]]), not before.
+
 ## YouTube's TV interface (step 5.3)
 
 Agreed with the owner on 2026-10-18 ([[step-5.3-youtube]]; bindings: [[controller-input-map]],
