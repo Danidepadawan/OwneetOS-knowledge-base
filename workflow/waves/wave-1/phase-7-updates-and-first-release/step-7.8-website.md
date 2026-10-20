@@ -36,11 +36,23 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   multiple languages supported" (the owner expects French and Spanish reviews before the
   release, maybe German: [[languages]] still lists Italian and English for Wave 1); "Runs on
   low-end PCs". "Credits" added to the header; below 1100 px the header shows the Menu button.
-  Then: the opening line "Plug it. Play it. Own it!" (Italian "Collegalo. Giocaci. Fallo tuo!",
-  to be confirmed); Guide and FAQ leave the header for a new "Info" section of the home ("Need
+  Then: the opening line "Plug it. Play it. Own it!" (Italian "Collegalo. Giocaci. Fallo tuo!"); Guide and FAQ leave the header for a new "Info" section of the home ("Need
   help?", two cards leading to the guide and the FAQ). The hand-drawn icons replaced by Lucide's
   ([[website]]).
 - **Home demo approved (owner, 2026-10-20):** `design/demos/7.8-website-home.html` (one page:
   home, features carousel, requirements, open, info, download; English and Italian; Lucide's
   icons, credited in `CREDITS.md`). The console picture is refined later with Danidepadawan's
-  home screen changes. Next: the Angular project, its downloads approved by the owner first. The console picture waits for Danidepadawan's changes to the home screen.
+  home screen changes. Next: the Angular project, its downloads approved by the owner first.
+- **Angular project created (owner's approval of the downloads, 2026-10-20):**
+  `OwneetOS-website/`, its own git repository on `feature/step7_website` (first commit 47147be;
+  the owner creates `fancy-dino/OwneetOS-website` on GitHub, shares it with Danidepadawan and
+  pushes). Angular CLI 22.2.1 run once with `npx`, dependencies installed with
+  `npm install --before=2026-10-06` (all `@angular/*` 22.2.1, TypeScript 6.0.3, Vitest 5.0.3; 281
+  packages, 306 MB in `node_modules`), npm's cache in `OwneetOS/out/npm-cache`: nothing written
+  outside the project folder (checked). The CLI's usage statistics off (`NG_CLI_ANALYTICS=false`,
+  `"analytics": false`). SCSS, routing, zoneless, `outputMode: static` (every page prerendered,
+  the Express server removed). npm 11 blocked the install scripts of esbuild, lmdb,
+  msgpackr-extract and @parcel/watcher: left blocked, the build works without them. Angular's
+  welcome page and favicon (its logo) removed; SPDX headers, GPL-3.0 `LICENSE`, `README.md`,
+  `CREDITS.md`. Checked: `ng build` prerenders the page, `ng test` passes. Next: the approved home
+  in Angular components (texts in translation files, fonts and Lucide served by the site).
