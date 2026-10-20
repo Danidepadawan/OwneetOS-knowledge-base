@@ -39,4 +39,8 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   Then: the opening line "Plug it. Play it. Own it!" (Italian "Collegalo. Giocaci. Fallo tuo!",
   to be confirmed); Guide and FAQ leave the header for a new "Info" section of the home ("Need
   help?", two cards leading to the guide and the FAQ). The hand-drawn icons replaced by Lucide's
-  ([[website]]). The console picture waits for Danidepadawan's changes to the home screen.
+  ([[website]]).
+- **Home demo approved (owner, 2026-10-20):** `design/demos/7.8-website-home.html` (one page:
+  home, features carousel, requirements, open, info, download; English and Italian; Lucide's
+  icons, credited in `CREDITS.md`). The console picture is refined later with Danidepadawan's
+  home screen changes. Next: the Angular project, its downloads approved by the owner first. The console picture waits for Danidepadawan's changes to the home screen.

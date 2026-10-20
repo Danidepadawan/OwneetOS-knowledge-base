@@ -25,5 +25,7 @@ Open them in a browser; they can be driven with the keyboard or a gamepad. Proce
 | `design/demos/4.5-windows-games.html` | Windows games on the disk listed like the others; the download they need the first time (home notices, Settings → System, banner when ready); a Windows game started before it is ready (progress, or connect to the internet); "Preparing {game}…"; GOG's info file or the usual question for the file to start; a Steam game whose Linux version does not start (`#win=waiting\|downloading\|ready&net=off&section=home\|settings&open=offline\|progress\|prep\|choose\|broken`) | [[step-4.5-windows-games-proton]] |
 | `design/demos/4.2c-steam-library.html` | Every owned Steam game in the library, installing and uninstalling through Steam's confirmation, downloads, the display-errors notice, no internet (`#gpu=amd&net=off&first=1&open=install\|notice\|steam\|uninstall\|details\|offline\|store`) | [[step-4.2c-steam-without-its-interface]] |
 
+| `design/demos/7.8-website-home.html` | The website's home: one page whose sections snap (home, features carousel, requirements, open, info, download), English and Italian | [[step-7.8-website]] |
+
 The demos play the interface sounds from `design/demos/sounds.js` ([[sound-files]]).
 Fonts and wordmark: [[design-tokens]].
