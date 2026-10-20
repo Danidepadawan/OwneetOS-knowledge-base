@@ -26,4 +26,6 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   Local pictures, All apps). Second round: the texts cut to a title and a short line each and
   corrected (English and Italian only, offline only for DRM-free games, the trademarks of the
   names used), the hidden notice no longer peeking at the bottom. The carousel's side cards
-  were tried fading out, then blurred; the owner chose one card at a time with arrows and dots. The console picture waits for Danidepadawan's changes to the home screen.
+  were tried fading out, then blurred; the owner chose one card at a time with arrows and dots,
+  the cards half a screen apart, then autoplay and a loop (checked in Chromium: one card every
+  5 s, after the ninth the first again, going on forward). The console picture waits for Danidepadawan's changes to the home screen.
