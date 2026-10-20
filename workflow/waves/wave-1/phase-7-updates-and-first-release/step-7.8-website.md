@@ -30,4 +30,9 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   the cards half a screen apart, then autoplay and a loop (checked in Chromium: one card every
   5 s, after the ninth the first again, going on forward); the pause button was removed: it
   stops only while pointed at. The home's opening line became "Plug it. Play it. It's yours!" (owner;
-  Italian "Collegalo. Giocaci. È tuo!", to be confirmed). The console picture waits for Danidepadawan's changes to the home screen.
+  Italian "Collegalo. Giocaci. È tuo!", confirmed). Third round of texts (owner): "You only need
+  a controller"; "Supporting Steam and DRM-free games"; the "Steam built in" card removed (Steam
+  will be optional, [[step-5.0-optional-apps]]); "Stream them or play your own"; "21 palettes,
+  multiple languages supported" (the owner expects French and Spanish reviews before the
+  release, maybe German: [[languages]] still lists Italian and English for Wave 1); "Runs on
+  low-end PCs". "Credits" added to the header; below 1100 px the header shows the Menu button. The console picture waits for Danidepadawan's changes to the home screen.
