@@ -4,7 +4,7 @@ description: "ISO on SourceForge, website on GitHub Pages, [owneet] pacman repo,
 area: distribution
 status: active
 decided: 2026-10-03
-updated: 2026-10-13
+updated: 2026-10-20
 legacy: "PROJECT_RULES.md §5"
 tags: [decision, distribution]
 ---
@@ -14,7 +14,8 @@ tags: [decision, distribution]
   limit on size or downloads, mirrors worldwide), with its source archive ([[legal-compliance]]).
   The project's **website** has its own `.org` domain on **GitHub Pages**; packages and updates
   stay on GitHub (decided 2026-10-11: with Steam the ISO is over GitHub's 2 GB limit per file).
-  The SourceForge project and the domain are created by the owner at roadmap step 7.2.
+  The SourceForge project and the domain are created by the owner at roadmap step 7.2. The
+  website itself: [[website]] (Angular, its own repository, download as a redirect).
   - **Steam is in the ISO** with the 32-bit graphics drivers of every GPU ([multilib]); Steam's
     runtime is downloaded by Steam on first launch, not shipped in the ISO ([[steam-integration]]).
 - ISO built with **archiso**, automated with **GitHub Actions**, with checksums and signatures. Its system
@@ -42,4 +43,5 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-06 | xone packaged without `xone_wired` and without blacklisting `xpad`/`mt76x2u` (wired controllers and USB Wi-Fi adapters keep working); CI builds use the ISO's Arch snapshot for build dependencies too (step 1.7). |
 | 2026-10-11 | Demo 4.2 approved (with the generic store icon for Steam and no "Add games" in Favorites). **Distribution:** the ISO goes to SourceForge, the website to a `.org` domain on GitHub Pages, packages stay on GitHub ([[distribution-and-updates]]). **Steam is in the ISO** with 32-bit drivers for every GPU (about +300 MiB, [multilib] from the same snapshot). |
 | 2026-10-13 | **Optional apps** (new step 5.0): the user installs only the apps they want (at installation and later, from the apps page, installed and missing ones shown differently); the ISO becomes slim when 5.0 arrives (apps downloaded when chosen; option b). |
+| 2026-10-20 | The website: Angular, static on GitHub Pages, its own repository; download as a redirect to SourceForge ([[website]]). |
 | 2026-10-13 | The ISO's system image is squashfs + xz instead of erofs + LZMA, which had silently corrupted six files (kernel modules, an AMD firmware); every ISO build now checks every file against its package. ISO 1822 MiB. |
