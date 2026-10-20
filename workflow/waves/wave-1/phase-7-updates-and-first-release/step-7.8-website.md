@@ -62,3 +62,12 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   The `main` ruleset copied from OwneetOS required its Lint and ISO checks, which never run here:
   removed. `.github/workflows/ci.yml` (check **Build**) builds and tests, checked on a clean copy
   (`npm ci`, `ng build`, `ng test`); once it has run on GitHub, "Build" becomes required.
+- **The home in Angular (2026-10-20, website commit ea9470f):** the owner chose the texts in JSON
+  files like the console's (English at `/`, Italian at `/it`) and the current wordmark. A first
+  version with short file names was rejected: the owner asked for a real Angular structure
+  ([[angular]]: `core/services`, `shared/components`, `components`, `pages`; `.component.ts`,
+  `.service.ts`; models in `.model.ts`). Components: header, home (sections, dots), console
+  screen, features carousel, icon (Lucide), wordmark; the console's fonts in `public/fonts/` with
+  their OFL licences, credited. Checked: `ng build` prerenders `/` and `/it` (`lang` and title of
+  each), `ng test` 4 tests (the app, both languages, the same keys in every language, `{n}`),
+  screenshots of every section in English (1280 px) and Italian (390 px) matching the demo.

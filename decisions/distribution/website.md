@@ -32,9 +32,14 @@ Agreed with the owner on 2026-10-20, before the release; built in [[step-7.8-web
   off screen. No pause button (owner, 2026-10-20: it was tried; WCAG 2.2.2 asks for one on moving
   content, the owner chose without).
 - **English and Italian**, the texts in translation files, never written in the code (as in the
-  console, [[ui-text-and-i18n]]).
+  console, [[ui-text-and-i18n]]): **one JSON file per language in the console's format**
+  (`src/i18n/en.json`, `it.json`) read by the site's own `I18nService`, not Angular's XLIFF i18n
+  (owner, 2026-10-20). Each language has its own address, prerendered: English at `/`, Italian
+  at `/it` (more languages: a file and a path).
 - **Look:** the console's tokens and fonts (Bricolage Grotesque, Lexend, the palettes,
-  [[design-tokens]]) and its logo ([[step-7.6-final-logo-and-brand]]).
+  [[design-tokens]]) and its logo ([[step-7.6-final-logo-and-brand]]): for now the current
+  provisional wordmark (owner, 2026-10-20), replaced in one place by the final logo of 7.6.
+- **Code structure:** a real Angular application ([[angular]], owner, 2026-10-20).
 - **Icons: [Lucide](https://lucide.dev)** (owner, 2026-10-20; ISC License, some icons derived
   from Feather, MIT), instead of icons drawn by hand: every icon of the site, at a pinned version
   older than two weeks (`lucide-static` 1.52.0, checked against npm's SHA-512), credited in
@@ -82,4 +87,5 @@ project folder. No data collected keeps the site free of consent banners and GDP
 | 2026-10-20 | Home demo feedback: one page whose sections snap, the address following the section on screen; less text; the features in a carousel showing one card at a time with arrows and dots (fading, then blurred side cards were tried and rejected), playing by itself and looping, stopping only while pointed at (a pause button was tried and removed); the console picture to follow the real home screen (generic apps instead of service names), refined later with Danidepadawan's changes. Fonts served by the site itself, no third-party requests. |
 | 2026-10-20 | Project setup: Angular 22 with SCSS (not CSS), static output, dependencies at least two weeks old, npm's cache in the project, the CLI's usage statistics always off. |
 | 2026-10-20 | Repository `fancy-dino/OwneetOS-website` created by the owner (Danidepadawan invited as a collaborator); CI "Build" on pull requests and `main`, to be required by `main`'s ruleset (OwneetOS's Lint and ISO checks do not apply here). |
+| 2026-10-20 | Texts in one JSON file per language in the console's format, the site's own service (not Angular's XLIFF); English at `/`, Italian at `/it`; the current wordmark until 7.6; Angular structure and file names ([[angular]]). |
 | 2026-10-20 | Icons: Lucide (ISC), pinned and checked, credited in `CREDITS.md`; Tabler Icons and Phosphor were the alternatives. |
