@@ -28,4 +28,5 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   names used), the hidden notice no longer peeking at the bottom. The carousel's side cards
   were tried fading out, then blurred; the owner chose one card at a time with arrows and dots,
   the cards half a screen apart, then autoplay and a loop (checked in Chromium: one card every
-  5 s, after the ninth the first again, going on forward). The console picture waits for Danidepadawan's changes to the home screen.
+  5 s, after the ninth the first again, going on forward); the pause button was removed: it
+  stops only while pointed at. The console picture waits for Danidepadawan's changes to the home screen.
