@@ -24,7 +24,8 @@ Agreed with the owner on 2026-10-20, before the release; built in [[step-7.8-web
 - **The home is one page** (owner, 2026-10-20): each section fills the screen and the scrolling
   snaps from one to the next; the address follows the section on screen (`#features`,
   `#requirements`, ...) and opening it scrolls there. Little text: short titles and one short
-  line; the features in a carousel, one at a time, the cards beside it fading out.
+  line; the features in a carousel showing one card at a time, moved by its arrows and dots (no
+  fade or blur of side cards, owner, 2026-10-20).
 - **English and Italian**, the texts in translation files, never written in the code (as in the
   console, [[ui-text-and-i18n]]).
 - **Look:** the console's tokens and fonts (Bricolage Grotesque, Lexend, the palettes,
@@ -61,4 +62,4 @@ project folder. No data collected keeps the site free of consent banners and GDP
 | Date | Decision |
 |---|---|
 | 2026-10-20 | Website agreed: Angular, static on GitHub Pages, own folder and repository (shared with Danidepadawan), the pages, English and Italian, the console's look, no data collected, download as a redirect to SourceForge, GPL code and CC BY-SA texts, Node on the host (option a); new step 7.8, started at the owner's request while phase 5 is with Danidepadawan. |
-| 2026-10-20 | Home demo feedback: one page whose sections snap, the address following the section on screen; less text; the features in a carousel whose side cards fade out; the console picture to follow the real home screen (generic apps instead of service names), refined later with Danidepadawan's changes. Fonts served by the site itself, no third-party requests. |
+| 2026-10-20 | Home demo feedback: one page whose sections snap, the address following the section on screen; less text; the features in a carousel showing one card at a time with arrows and dots (fading, then blurred side cards were tried and rejected); the console picture to follow the real home screen (generic apps instead of service names), refined later with Danidepadawan's changes. Fonts served by the site itself, no third-party requests. |

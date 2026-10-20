@@ -25,5 +25,5 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   real home screen with generic apps (Video streaming, Audio streaming, Local videos, Local music,
   Local pictures, All apps). Second round: the texts cut to a title and a short line each and
   corrected (English and Italian only, offline only for DRM-free games, the trademarks of the
-  names used), the carousel's side cards fading out, the hidden notice no longer peeking at the
-  bottom. The console picture waits for Danidepadawan's changes to the home screen.
+  names used), the hidden notice no longer peeking at the bottom. The carousel's side cards
+  were tried fading out, then blurred; the owner chose one card at a time with arrows and dots. The console picture waits for Danidepadawan's changes to the home screen.
