@@ -38,4 +38,5 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   low-end PCs". "Credits" added to the header; below 1100 px the header shows the Menu button.
   Then: the opening line "Plug it. Play it. Own it!" (Italian "Collegalo. Giocaci. Fallo tuo!",
   to be confirmed); Guide and FAQ leave the header for a new "Info" section of the home ("Need
-  help?", two cards leading to the guide and the FAQ). The console picture waits for Danidepadawan's changes to the home screen.
+  help?", two cards leading to the guide and the FAQ). The hand-drawn icons replaced by Lucide's
+  ([[website]]). The console picture waits for Danidepadawan's changes to the home screen.

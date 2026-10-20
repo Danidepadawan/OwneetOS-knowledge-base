@@ -35,6 +35,10 @@ Agreed with the owner on 2026-10-20, before the release; built in [[step-7.8-web
   console, [[ui-text-and-i18n]]).
 - **Look:** the console's tokens and fonts (Bricolage Grotesque, Lexend, the palettes,
   [[design-tokens]]) and its logo ([[step-7.6-final-logo-and-brand]]).
+- **Icons: [Lucide](https://lucide.dev)** (owner, 2026-10-20; ISC License, some icons derived
+  from Feather, MIT), instead of icons drawn by hand: every icon of the site, at a pinned version
+  older than two weeks (`lucide-static` 1.52.0, checked against npm's SHA-512), credited in
+  `CREDITS.md`. Tabler Icons and Phosphor (MIT) were the alternatives.
 - **No data collected:** no analytics, no cookies, no forms, no newsletter, **no third-party
   requests**: the fonts are served by the site itself (never from Google Fonts or another CDN,
   which would see the visitor's address). The privacy page says so.
@@ -68,3 +72,4 @@ project folder. No data collected keeps the site free of consent banners and GDP
 |---|---|
 | 2026-10-20 | Website agreed: Angular, static on GitHub Pages, own folder and repository (shared with Danidepadawan), the pages, English and Italian, the console's look, no data collected, download as a redirect to SourceForge, GPL code and CC BY-SA texts, Node on the host (option a); new step 7.8, started at the owner's request while phase 5 is with Danidepadawan. |
 | 2026-10-20 | Home demo feedback: one page whose sections snap, the address following the section on screen; less text; the features in a carousel showing one card at a time with arrows and dots (fading, then blurred side cards were tried and rejected), playing by itself and looping, stopping only while pointed at (a pause button was tried and removed); the console picture to follow the real home screen (generic apps instead of service names), refined later with Danidepadawan's changes. Fonts served by the site itself, no third-party requests. |
+| 2026-10-20 | Icons: Lucide (ISC), pinned and checked, credited in `CREDITS.md`; Tabler Icons and Phosphor were the alternatives. |
