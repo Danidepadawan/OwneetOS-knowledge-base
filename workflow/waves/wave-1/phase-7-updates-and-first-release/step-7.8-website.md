@@ -57,3 +57,8 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   welcome page and favicon (its logo) removed; SPDX headers, GPL-3.0 `LICENSE`, `README.md`,
   `CREDITS.md`. Checked: `ng build` prerenders the page, `ng test` passes. Next: the approved home
   in Angular components (texts in translation files, fonts and Lucide served by the site).
+- **Repository and CI (2026-10-20):** the owner created `fancy-dino/OwneetOS-website` (public),
+  invited Danidepadawan (personal repository: collaborators have no roles to choose) and pushed.
+  The `main` ruleset copied from OwneetOS required its Lint and ISO checks, which never run here:
+  removed. `.github/workflows/ci.yml` (check **Build**) builds and tests, checked on a clean copy
+  (`npm ci`, `ng build`, `ng test`); once it has run on GitHub, "Build" becomes required.
