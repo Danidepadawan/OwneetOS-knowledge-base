@@ -35,4 +35,7 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   will be optional, [[step-5.0-optional-apps]]); "Stream them or play your own"; "21 palettes,
   multiple languages supported" (the owner expects French and Spanish reviews before the
   release, maybe German: [[languages]] still lists Italian and English for Wave 1); "Runs on
-  low-end PCs". "Credits" added to the header; below 1100 px the header shows the Menu button. The console picture waits for Danidepadawan's changes to the home screen.
+  low-end PCs". "Credits" added to the header; below 1100 px the header shows the Menu button.
+  Then: the opening line "Plug it. Play it. Own it!" (Italian "Collegalo. Giocaci. Fallo tuo!",
+  to be confirmed); Guide and FAQ leave the header for a new "Info" section of the home ("Need a
+  hand?", two cards leading to the guide and the FAQ). The console picture waits for Danidepadawan's changes to the home screen.

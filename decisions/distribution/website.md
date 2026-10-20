@@ -21,7 +21,8 @@ Agreed with the owner on 2026-10-20, before the release; built in [[step-7.8-web
 - **Pages:** home (what OwneetOS is, pictures, who it is for), features, system requirements,
   download, installation guide, FAQ, credits and licences, privacy, how to contribute and
   translate.
-- **The home is one page** (owner, 2026-10-20): each section fills the screen and the scrolling
+- **The home is one page** (owner, 2026-10-20): home, features, requirements, open, info (the
+  guide and the FAQ), download; each section fills the screen and the scrolling
   snaps from one to the next; the address follows the section on screen (`#features`,
   `#requirements`, ...) and opening it scrolls there. Little text: short titles and one short
   line; the features in a carousel showing one card at a time, the next one half a screen away
