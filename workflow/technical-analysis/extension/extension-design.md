@@ -140,6 +140,23 @@ nearest box; the page's order with geometry as a check; the version below). Code
   app opens outside its own (e.g. sign-in pages). It is **reworked entirely with free web
   browsing** ([[wave-2]]), not before.
 
+## Netflix (step 5.4)
+
+Agreed with the owner on 2026-10-22 ([[step-5.4-netflix]]; bindings: [[controller-input-map]],
+"Inside Netflix"). Netflix has no web TV interface: its desktop site, with a navigation of its own.
+
+- **Browsing pages:** a grid of rows: up / down between rows (about the same column; Netflix's top
+  menu above the first row), left / right between tiles, sliding the row on at the edge of what is
+  visible (Netflix's own arrows). A opens the title window and the selection goes into it.
+- **Title window:** the selection stays inside it; B closes it and returns to its tile.
+- **Player:** Netflix's controls are brought up as a mouse movement does; the D-pad moves between
+  them, A presses; hidden controls: A = Space (pause / play); LT / RT send ← / → (Netflix seeks by
+  10 s: measured in the test VM, keys sent by a script work); B closes an open menu, otherwise
+  leaves the player.
+- **Other pages** (start, sign-in, email code, profile picker) use the generic navigation.
+- How Netflix's rows, tiles, title window and controls are found: from a probe of their elements
+  in the test VM, before the code (sub-step 5).
+
 ## YouTube's TV interface (step 5.3)
 
 Agreed with the owner on 2026-10-18 ([[step-5.3-youtube]]; bindings: [[controller-input-map]],

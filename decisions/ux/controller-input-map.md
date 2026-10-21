@@ -4,7 +4,7 @@ description: "The binding meaning of every button on every screen, keyboard fall
 area: ux
 status: active
 decided: 2026-10-03
-updated: 2026-10-19
+updated: 2026-10-22
 legacy: "PROJECT_RULES.md §9.1"
 tags: [decision, ux, input]
 ---
@@ -57,6 +57,21 @@ page, where Escape does nothing) asks to close the web app ("Close YouTube?"); L
 View and the right stick do nothing (no key of the TV interface seeks by 10 s: seeking is done
 with YouTube's own progress bar, 2026-10-19); LB / RB are never used. Guide stays owneetd's. Other pages (e.g. Google's) keep the web-app bindings above.
 
+**Inside Netflix** (step 5.4, 2026-10-22; Netflix's desktop site, its own navigation,
+[[extension-design]]): on the **browsing pages** (Home, Series, Films, My list, search results)
+D-pad / left stick move from row to row keeping about the same column, with Netflix's top menu
+above the first row, and from tile to tile in a row, the row sliding on at the edge of what is
+visible; A on a tile opens Netflix's title window and the selection goes into it; the right stick
+scrolls the page. In the **title window** the D-pad moves between its buttons (Play / Resume, My
+list, rating, the season, the episodes, "More like this"); B closes it and the selection goes back
+to its tile. In the **player** any button brings up Netflix's controls and the D-pad moves between
+them (back, play / pause, −10 / +10, volume, next episode, episodes, subtitles and audio, speed);
+A presses the selected control, and pauses / plays while the controls are hidden; **LT / RT = −10
+/ +10 s** (Netflix's own ← / →, repeating with this map's LT / RT timing); B closes an open menu,
+otherwise leaves the player. Pages outside Netflix's main screens (start page, sign-in, the email
+code, "Who's watching?") keep the web-app bindings above. X, Y, Menu and View do nothing (Y =
+Netflix's search offered, not decided); LB / RB are never used; Guide stays owneetd's.
+
 The input map is **fixed**: it is not saved in the frontend's settings, so a change reaches every
 system. **Held buttons:** a direction repeats after 360 ms, then every 140 ms; LB / RB and LT / RT
 repeat after 720 ms, then every 360 ms; analog triggers count as pressed above half their travel
@@ -92,3 +107,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-15 | Inside a web app (step 5.2): D-pad moves a ring between the page's targets, A presses, B goes back and asks to close where there is nothing to go back to, the right stick scrolls; text fields open the console's keyboard; the other buttons do nothing ([[extension-design]]). |
 | 2026-10-18 | Inside YouTube (step 5.3, its TV interface): the extension sends YouTube's keys and draws no ring: D-pad = arrows, A = Enter, B = Escape and "Close YouTube?" where YouTube's back has nothing left (its account page), LT / RT = ±10 s in the player if a key does exactly that; the other buttons do nothing ([[controller-input-map]]). |
 | 2026-10-19 | Inside YouTube: LT / RT stay unused (no key of the TV interface seeks by exactly 10 s; seeking the video directly from the extension rejected); seeking is done with YouTube's own progress bar ([[controller-input-map]]). |
+| 2026-10-22 | Inside Netflix (step 5.4): Netflix's own navigation on its browsing pages (rows and tiles, rows sliding on, A into the title window), the title window (B back to the tile) and the player (any button shows the controls, D-pad between them, A presses or pauses, LT / RT ±10 s, B closes a menu or leaves); other pages keep the web-app bindings ([[controller-input-map]]). |

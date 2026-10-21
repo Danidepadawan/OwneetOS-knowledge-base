@@ -160,3 +160,9 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   already has), with code in common where it fits; **the generic navigation is reworked entirely
   only with free web browsing** ([[wave-2]]). Netflix's own navigation is designed next, for
   the owner's approval, before any code.
+- **Bindings approved (owner, 2026-10-22):** [[controller-input-map]] "Inside Netflix" and
+  [[extension-design]] "Netflix": rows and tiles with rows sliding on, A into the title window and B
+  back to the tile, the player's controls with the D-pad, A presses or pauses, LT / RT ±10 s, B
+  closes a menu or leaves; other pages keep the generic navigation. Y = Netflix's search offered,
+  not decided. **Sub-step 4 is done.** Next: sub-step 5, the code (first a probe of Netflix's
+  elements).
