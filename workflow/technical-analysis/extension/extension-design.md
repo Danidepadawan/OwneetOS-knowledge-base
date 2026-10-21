@@ -16,6 +16,10 @@ Code: `extension/` (Manifest V3), `daemon/cmd/owneet-bridge`. Bindings: [[contro
   `requestAnimationFrame`). Repeat timing, stick dead zone and analog triggers follow the
   [[controller-input-map]]. Standard button 16 (Guide) is **ignored**: Guide is owneetd's
   ([[guide-button]]).
+- **The controller is read in the standard layout**, also when Brave does not know it (`mapping`
+  ""): Xbox-style controllers on the xpad driver (11 buttons, 8 axes: D-pad on axes 6 / 7,
+  triggers on axes 2 / 5) are translated (`extension/content/pad.js`, 2026-10-22); other layouts
+  are read as they come ([[controller-without-standard-layout-in-brave]]).
 - While the console's keyboard is open the loop pauses: the frontend reads the controller.
 - **While the keyboard is open the ring stays around the field** (owner, 2026-10-17, as in the
   approved demo); the loop only stops reading the controller.

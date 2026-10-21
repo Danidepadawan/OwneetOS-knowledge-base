@@ -182,3 +182,8 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   and mouse events; Netflix's keys sent to its player's focus element (`data-uia="player"`), where
   the probe's keys worked. Still possible for LT / RT: Brave seeing the controller without the
   standard button layout (to check if they still do nothing).
+- **Owner's test of 0.0.48** (2026-10-22): everything works except LT / RT. A probe showed that
+  Brave reports the owner's controller (Nacon GC-100) with no layout: the triggers and the D-pad
+  are axes there, so LT / RT and the D-pad did nothing (the owner navigates with the left stick).
+  Fixed in owneet-base 0.0.49: such controllers are translated into the standard layout
+  ([[controller-without-standard-layout-in-brave]]).
