@@ -166,3 +166,4 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   closes a menu or leaves; other pages keep the generic navigation. Y = Netflix's search offered,
   not decided. **Sub-step 4 is done.** Next: sub-step 5, the code (first a probe of Netflix's
   elements).
+- **Y = Netflix's search** on the browsing pages (owner, 2026-10-22). Sub-step 5 started.

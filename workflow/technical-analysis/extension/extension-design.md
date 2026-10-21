@@ -153,6 +153,7 @@ Agreed with the owner on 2026-10-22 ([[step-5.4-netflix]]; bindings: [[controlle
   them, A presses; hidden controls: A = Space (pause / play); LT / RT send ← / → (Netflix seeks by
   10 s: measured in the test VM, keys sent by a script work); B closes an open menu, otherwise
   leaves the player.
+- **Y** on the browsing pages opens Netflix's search (owner, 2026-10-22).
 - **Other pages** (start, sign-in, email code, profile picker) use the generic navigation.
 - How Netflix's rows, tiles, title window and controls are found: from a probe of their elements
   in the test VM, before the code (sub-step 5).

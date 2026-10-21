@@ -69,8 +69,9 @@ them (back, play / pause, −10 / +10, volume, next episode, episodes, subtitles
 A presses the selected control, and pauses / plays while the controls are hidden; **LT / RT = −10
 / +10 s** (Netflix's own ← / →, repeating with this map's LT / RT timing); B closes an open menu,
 otherwise leaves the player. Pages outside Netflix's main screens (start page, sign-in, the email
-code, "Who's watching?") keep the web-app bindings above. X, Y, Menu and View do nothing (Y =
-Netflix's search offered, not decided); LB / RB are never used; Guide stays owneetd's.
+code, "Who's watching?") keep the web-app bindings above. **Y opens Netflix's search** on the
+browsing pages (owner, 2026-10-22); X, Menu and View do nothing; LB / RB are never used; Guide
+stays owneetd's.
 
 The input map is **fixed**: it is not saved in the frontend's settings, so a change reaches every
 system. **Held buttons:** a direction repeats after 360 ms, then every 140 ms; LB / RB and LT / RT
