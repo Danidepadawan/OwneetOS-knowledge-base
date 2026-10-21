@@ -155,8 +155,22 @@ Agreed with the owner on 2026-10-22 ([[step-5.4-netflix]]; bindings: [[controlle
   leaves the player.
 - **Y** on the browsing pages opens Netflix's search (owner, 2026-10-22).
 - **Other pages** (start, sign-in, email code, profile picker) use the generic navigation.
-- How Netflix's rows, tiles, title window and controls are found: from a probe of their elements
-  in the test VM, before the code (sub-step 5).
+- **How the parts are found** (Netflix's site as of 2026-10-22, read with probes in the test VM;
+  its older names, e.g. `.lolomoRow`, `.slider-item`, are gone): rows
+  `section[data-uia^="carousel-row-section"]`, each with a `carousel-scroller` and its arrows
+  `carousel-hawkins-left-button` / `carousel-hawkins-right-button`; tiles are links named by kind,
+  `data-uia` `standard-card`, `episodic-card`, `progress-card`, `ranked-card`, `cloud-game-card`,
+  with the title as `aria-label` (about 11 per row in the page, a few visible); top bar
+  `navigation+subheader` (`nav-home`, `nav-series`…, search `navigation+actions+search+icon` and
+  `…+search+input`); banner `billboard` (`play-video-button`, `billboard-more-info`); title window
+  `modal-motion-container-DETAIL_MODAL` (`role="dialog"`; `play-button`, `add-to-my-list`,
+  `thumbs-rate-button`, close `previewModal-closebtn`); player `watch-video` (focus on
+  `[data-uia="player"]`), controls `control-nav-back`, `control-flag`, `timeline-knob`,
+  `control-play-pause-*`, `control-back10`, `control-forward10`, `control-volume-*`,
+  `control-next`, `control-episodes`, `control-audio-subtitle`, `control-speed`,
+  `control-fullscreen-enter`. Netflix renames its site from time to time: these names live in one
+  place of `extension/content/netflix.js`, and anything not found falls back to the generic
+  navigation.
 
 ## YouTube's TV interface (step 5.3)
 
