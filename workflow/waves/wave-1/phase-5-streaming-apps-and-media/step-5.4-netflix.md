@@ -172,3 +172,13 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   [[extension-design]] "Netflix") and `input.js` asking a supported app's driver first, then the
   generic navigation; the gamepad loop reads Y and the analog LT / RT (the map's thresholds and
   repeat timing); YouTube's TV mode answers through the same interface.
+- **Owner's test of sub-step 5** (2026-10-22, test VM, owneet-base 0.0.47): rows, tiles, the title
+  window, Y and YouTube work; **not working:** the top menu was out of reach (the probe's
+  `navigation+subheader` is the bar below it; on a small screen the links fold into the "Browse"
+  menu), only A brought up the player's controls (pausing shows them: the made-up mouse movement
+  was ignored), LT / RT did nothing, and the controls hid while the D-pad moved between them.
+  Fixed in owneet-base 0.0.48: the menu's items addressed one by one; the mouse movement sent to
+  the innermost element under the point with a changing screen position and a movement, as pointer
+  and mouse events; Netflix's keys sent to its player's focus element (`data-uia="player"`), where
+  the probe's keys worked. Still possible for LT / RT: Brave seeing the controller without the
+  standard button layout (to check if they still do nothing).
