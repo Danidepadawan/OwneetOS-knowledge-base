@@ -167,3 +167,8 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   not decided. **Sub-step 4 is done.** Next: sub-step 5, the code (first a probe of Netflix's
   elements).
 - **Y = Netflix's search** on the browsing pages (owner, 2026-10-22). Sub-step 5 started.
+- **Sub-step 5, implemented (2026-10-22), waiting for the owner's test:** owneet-base 0.0.47,
+  `extension/content/netflix.js` (Netflix's names from two structure probes in the test VM,
+  [[extension-design]] "Netflix") and `input.js` asking a supported app's driver first, then the
+  generic navigation; the gamepad loop reads Y and the analog LT / RT (the map's thresholds and
+  repeat timing); YouTube's TV mode answers through the same interface.
