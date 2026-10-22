@@ -91,7 +91,17 @@ that keyboard, and `Backend.cpp` reads the gamepad while the home screen is in f
 keyboard is open. owneet-frontend 0.16.16.
 
 **Disks (3.7):** `owneet::Storage` (`src/backend/owneet/`, `storage` in QML) lists the system disk
-and the mounted disks with their free space (Qt's `QStorageInfo`), for the library.
+and the mounted disks with their free space (Qt's `QStorageInfo`), for the library; since 4.3 it
+also says when a disk is mounted or unmounted (`volumesChanged`).
+
+**Games on a disk (4.3):** the provider `providers/owneet_disk/` and `owneet::DiskGames`
+(`diskGames` in QML): [[frontend-disk-games]]. `GameArt` passes the cover's address to the Canvas
+as text (a `url` value drew nothing: local covers were never shown before).
+
+**Artwork (4.4):** the Steam provider adds Steam's cached pictures ([[frontend-steam-local-files]]);
+`GameArt.fit` shows an image whole over the generated art (a header in a portrait cover, a disk
+game's cover in the home screen's card), and draws at once an image another art has already
+loaded (Qt's Canvas gives no `imageLoaded` for it).
 
 Appearance choices are saved in the theme's memory (`api.memory`). Until Settings exists (3.9),
 they are opened from the temporary Settings section (`SettingsPage.qml` → `AppearanceSheet.qml`).

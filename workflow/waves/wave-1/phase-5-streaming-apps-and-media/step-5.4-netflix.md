@@ -141,7 +141,9 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **done** (owner, 2026-10-22)
   "Starting {game}…" (`53e1d24`). "Preparing…" is now `main`'s Steam screen (`Preparing.qml`) with an
   optional title and text for the web apps' first opening. The knowledge base's phase 4 notes are
   on its branch `feature/step4_games`, not merged into its `main` (the code links to one note
-  only that branch has, `supply-chain-security`).
+  only that branch has, `supply-chain-security`). The knowledge base's `main`, which by then had
+  them, was merged into its `feature/step5_media` on 2026-10-22: [[supply-chain-security]] is here
+  now.
 - **Sub-step 4, the check** (owner, 2026-10-20, test VM, cage; a probe next to the extension,
   `vm/run/probe-5.4b/`, never shipped):
   - **Widevine playback works** on a brand-new Netflix profile (it went through "Preparing

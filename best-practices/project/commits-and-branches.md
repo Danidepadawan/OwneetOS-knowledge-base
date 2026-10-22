@@ -10,6 +10,10 @@ Comes from: [[repository]] (Conventional Commits confirmed by the owner, 2026-10
 
 - `main` must always build. Work happens on short-lived branches named
   `<area>/<short-description>`, e.g. `daemon/bluetooth-autopair`, `iso/plymouth-theme`.
+- Since 2026-10-14 each developer works on a **phase branch** ([[repository]]), in the code
+  repository and in this vault alike: phase 4 on `feature/step4_games`. The assistant commits
+  there, never on `main`. At the end of the phase the owner pushes it into `main`; the other
+  phase arrives through a reviewed pull request.
 - Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/):
   `type(scope): summary`, e.g. `feat(daemon): auto-pair gamepads over Bluetooth`.
   - Types: `feat`, `fix`, `docs`, `refactor`, `test`, `build`, `ci`, `chore`. In practice the

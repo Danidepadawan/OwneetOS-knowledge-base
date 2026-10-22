@@ -21,7 +21,7 @@ screen. New bindings are added here (with the owner) before they are implemented
 | X / □ | Secondary action on the selected item (e.g. Details, Install) |
 | Y / △ | Page-level option (e.g. Sort, Search) |
 | LB / RB (L1 / R1) | Switch top-level section (Home, Library, Settings, …) — **reserved, never used for anything else** (except inside the on-screen keyboard, where no section can be switched: its pages of keys) |
-| LT / RT (L2 / R2) | Switch filter inside the current page (e.g. Library: All / Installed / Favorites — "Installed" was removed on 2026-10-11, [[game-library]]). There are no sub-tabs: tabs are only the sections on LB / RB |
+| LT / RT (L2 / R2) | Switch filter inside the current page (e.g. Library: All / Installed / Favorites — "Installed" was removed on 2026-10-11 and restored on 2026-10-14, [[game-library]]). There are no sub-tabs: tabs are only the sections on LB / RB |
 | Menu / Options | Options menu for the selected item |
 | View / Create | Reserved (screenshot in a later wave) |
 | Guide / PS | **Owned by the system daemon**: home / quick menu from anywhere, including in games. Apps and themes must never bind it. Prompt label: "Home". **Exception, Steam** (2026-10-12): while Steam or a Steam game is on screen, a short press is Steam's (its menu; its overlay in games) and **holding it for 1 second** comes back to the console (Steam and the game keep running). See [[guide-button]]. |
@@ -32,6 +32,10 @@ types the selected key, X deletes, Y types a space, **LB / RB change the page of
 symbols, accented letters), **LT held = capital letters while it is held** (as on Steam's
 keyboard), RT does nothing, Menu = Done, B closes the keyboard; the selection wraps around at
 every edge. These meanings hold only inside the keyboard; Guide and the right stick keep theirs.
+
+**Lists that go round:** the library's grid (left / right within a row, down / up between the
+last and the first row, [[game-library]]) and the list of Settings' sections (up on the first
+section goes to the last, down on the last to the first; owner, 2026-10-16).
 
 While a game or app is running, the system intercepts **only** the Guide button; every other input
 goes to the game.
@@ -86,8 +90,21 @@ repeat after 720 ms, then every 360 ms; analog triggers count as pressed above h
 > change only with the owner's agreement, so the owner confirms it (or changes it) when reviewing
 > the merge, and this box is then removed.
 
-Implemented once for every screen in step 3.5 (`Nav`, `NavArea`: [[qml]]). Pending binding: the
-controller pointer of [[step-4.7-controller-pointer]] goes here before it is implemented.
+**Controller pointer** ([[step-4.7-controller-pointer]], owner 2026-10-19): for apps and
+launchers made for a mouse (e.g. a Steam game's EA app or Ubisoft Connect, a game's start or
+options window), **never left on a game** itself. The user turns it on by hand from the console
+(Guide, then "Resume with the pointer" on the running game or app: launchers belong to their
+game, so it is offered there too), and off the same way; it holds for **one window**: it turns off
+by itself when another window takes the screen (e.g. the game after its launcher) and when the
+app closes. While it is on:
+**left stick** moves the pointer, **D-pad** moves it in small steps, **A** = click, **X** = right
+click, **right stick** = wheel (scroll), **Y** = type: the console's on-screen keyboard, then the
+text goes to the window (a fallback: **A on a text field opens the keyboard by itself**, owner
+2026-10-19, when the pointer has the text "I" shape after the click); Guide keeps its meaning. It intercepts nothing: the app still receives
+every input (no grab), the pointer only adds a virtual mouse's movements and clicks (owner,
+2026-10-19: compatible with the guard [[product-invariants]]).
+
+Implemented once for every screen in step 3.5 (`Nav`, `NavArea`: [[qml]]).
 
 ## History
 
@@ -107,6 +124,9 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-13 | On-screen keyboard (owner's request): LT held = capital letters while it is held, as on Steam's keyboard; the pages of keys move to LB / RB (no section can be switched while the keyboard is open); RT does nothing there ([[controller-input-map]]). |
 | 2026-10-15 | Keyboard fallback for Guide: the **Super (Windows) key**, handled by owneetd like Guide (also while a game or app runs). Chosen over G, which is used for typing and in games (owner's choice, assistant's advice). |
 | 2026-10-15 | Inside a web app (step 5.2): D-pad moves a ring between the page's targets, A presses, B goes back and asks to close where there is nothing to go back to, the right stick scrolls; text fields open the console's keyboard; the other buttons do nothing ([[extension-design]]). |
+| 2026-10-16 | The list of Settings' sections goes round: up on the first section to the last, down on the last to the first. |
 | 2026-10-18 | Inside YouTube (step 5.3, its TV interface): the extension sends YouTube's keys and draws no ring: D-pad = arrows, A = Enter, B = Escape and "Close YouTube?" where YouTube's back has nothing left (its account page), LT / RT = ±10 s in the player if a key does exactly that; the other buttons do nothing ([[controller-input-map]]). |
+| 2026-10-19 | Controller pointer (step 4.7): turned on by hand from the console, for apps and launchers, never on games; left stick moves, D-pad small steps, A click, X right click, right stick wheel, Y types with the console's keyboard; nothing intercepted (no grab: compatible with the guard). |
+| 2026-10-19 | Pointer: A on a text field opens the console's keyboard by itself (the pointer's "I" shape after the click, read through XFixes); Y stays as the fallback. |
 | 2026-10-19 | Inside YouTube: LT / RT stay unused (no key of the TV interface seeks by exactly 10 s; seeking the video directly from the extension rejected); seeking is done with YouTube's own progress bar ([[controller-input-map]]). |
 | 2026-10-22 | Inside Netflix (step 5.4): Netflix's own navigation on its browsing pages (rows and tiles, rows sliding on, A into the title window), the title window (B back to the tile) and the player (any button shows the controls, D-pad between them, A presses or pauses, LT / RT ±10 s, B closes a menu or leaves); other pages keep the web-app bindings ([[controller-input-map]]). |

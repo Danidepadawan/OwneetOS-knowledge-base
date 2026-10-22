@@ -4,7 +4,7 @@ description: "GitHub repository, main ruleset and owner bypass, the owner pushes
 area: process
 status: active
 decided: 2026-10-03
-updated: 2026-10-04
+updated: 2026-10-14
 legacy: "PROJECT_RULES.md §11 (repository), §13 (2026-10-03, 2026-10-04)"
 tags: [decision, process, git]
 ---
@@ -16,6 +16,12 @@ tags: [decision, process, git]
     passing CI checks (`Lint`, `ISO`) required. **The owner (repository admin) is on the bypass
     list** and may push directly ("option A"); every other contributor goes through pull
     requests. CI runs on every push anyway.
+  - **Phase branches** (owner and Danidepadawan, 2026-10-14), in the code repository **and in
+    the knowledge base**: the owner finishes phase 4 on `feature/step4_games`, Danidepadawan works
+    on phase 5 on a branch of his own. The assistant commits phase 4 work on
+    `feature/step4_games`, **never on `main`**.
+  - **End of a phase:** the owner pushes phase 4 into `main`; then Danidepadawan opens a pull
+    request for his phase, which is reviewed before it is merged.
   - There is no GitHub CLI (`gh`) on the host and the assistant's shell has no GitHub credentials:
     the assistant commits locally, the **owner pushes** ("Sync Changes" in VS Code). Other GitHub
     actions are done by the owner through VS Code or the website, until `gh` is installed (with
@@ -36,3 +42,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-04 | License GPL-3.0-or-later and Conventional Commits confirmed by the owner; step 0.4 approved. |
 | 2026-10-04 | Repository published at github.com/fancy-dino/OwneetOS; `main` ruleset active (step 0.5). |
 | 2026-10-04 | `main` ruleset: PR + approval + green CI for contributors; owner bypasses and pushes directly (option A). |
+| 2026-10-14 | Phase branches, in the code repository and in the knowledge base: phase 4 is finished on `feature/step4_games` (owner), phase 5 on Danidepadawan's own branch; the assistant never commits on `main`. At the end of the phase the owner pushes phase 4 into `main`, then Danidepadawan opens a pull request, which is reviewed. |

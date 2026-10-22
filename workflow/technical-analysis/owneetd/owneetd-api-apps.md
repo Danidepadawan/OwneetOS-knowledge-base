@@ -28,8 +28,8 @@ Up: [[owneetd-design]] · Conventions: [[owneetd-design#4. API v1 (draft)]]
 | POST | `/v1/webapps/keyboard/shown` | The interface confirms that it shows the keyboard (owneetd 0.12.2). `webapps.keyboard_closed` (409) when it is not open |
 | POST | `/v1/webapps/text` | `{"text": "…"}` (up to 64 characters) or `{"key": "backspace"}` (backspace, left, right): typed into the field by the extension. Event `webapp.text` |
 | POST | `/v1/webapps/ask-close` | B with nothing to go back to in the web app: the home screen comes to the front (gamescope) and the interface asks "Close {name}?". Event `webapp.ask_close` (`app`) |
-| GET | `/v1/steam` | `installed`, `allowed` (false in a live system with less than 12 GB of RAM), `prepared` (Steam has started once: no long first download), `running`, `games` (Steam app ids installed completely: the interface reads its games again when they change) (4.2) |
-| POST | `/v1/steam` | `{"open": "library"}` / `{"open": "store"}`, or `{"run": "480", "name": "…"}`, with `"language": "it"` (the console's language tag: Steam starts with `-language italian`) — Steam starts if needed (202); a game is listed in `/v1/apps` as `steam:480` once Steam has started it |
+| GET | `/v1/steam` | `installed`, `allowed` (false in a live system with less than 12 GB of RAM), `prepared` (Steam has started once: no long first download), `running`, `games` (Steam app ids installed completely) (4.2); `downloads` (`appid`, `state`: `downloading` / `updating` / `queued`, `done` / `total` bytes, `rate` bytes per second; the one moving first), `away` (app id → disk name: installed on a disk that is not connected), `account` (someone has signed in to Steam here), `licences` (Unix time Steam last wrote `packageinfo.vdf`), `nvidia` (Steam's window may show display errors) (4.2c) |
+| POST | `/v1/steam` | One of `{"open": "library"}` / `{"open": "store"}`, `{"run": "480", "name": "…"}`, `{"install": "480"}`, `{"uninstall": "480"}` (also cancels a download; 4.2c), `{"ask": "480"}` (the next start of that game asks the user first, a licence agreement: Steam is shown at once for it; nothing starts), `{"windows": "399070", "name": "…"}` (its Linux version does not start: Steam closed, the game's version for Windows set, the game started again; 4.5), with `"language": "it"` (the console's language tag: Steam starts with `-language italian`) — Steam starts if needed (202); a game is listed in `/v1/apps` as `steam:480` once Steam has started it |
 
 Errors: `apps.unavailable` (503), `apps.invalid` (400), `apps.program_not_found` (400),
 `apps.no_session` (409), `apps.already_running` (409, same id), `apps.game_running` (409, one game
@@ -48,7 +48,9 @@ or web app at a time, kinds `game` and `webapp`; other apps may run next to it),
   (`STEAM_GAME`) and lets the shell choose which app is on screen, as Steam does on SteamOS.
   owneetd watches new windows on gamescope's X server (`github.com/jezek/xgb`, BSD-3-Clause,
   vendored), tags the home screen and each app (by process: the home screen's process id, or the
-  app's systemd unit from `/proc/PID/cgroup`), and sets `GAMESCOPECTRL_BASELAYER_APPID`: a new app
+  app's systemd unit from `/proc/PID/cgroup`; the process is the window's `_NET_WM_PID`, else the
+  X server's own record of the client through the X-Resource extension, `xgb/res`: Unity 5 games
+  such as CAYNE set no `_NET_WM_PID`, 2026-10-16), and sets `GAMESCOPECTRL_BASELAYER_APPID`: a new app
   comes to the front as soon as its window appears, with the home screen as fallback. App ids
   are derived from the app's id, so they survive an owneetd restart. A window whose process left its unit is still found when that process is the parent of one in an app's unit: Brave (the web apps' engine) moves its main process, which owns the windows, into a scope of its own (`app-org.chromium.Chromium-PID.scope`) when it starts, and its helpers stay in the unit (5.1).
 - **Guide** (owned by the system, [[controller-input-map]]): in gamescope it toggles between
@@ -58,15 +60,52 @@ or web app at a time, kinds `game` and `webapp`; other apps may run next to it),
   home screen. In cage,
   which shows only the newest window, holding Guide for 2 seconds closes the app on screen; a short
   press does nothing. `guide.pressed` and `guide.released` are still sent to clients. On a keyboard the Super (Windows) key is Guide (owneetd 0.11.18): keyboards are read like controllers, never grabbed, and only their Super keys count; the events then name the controller `keyboard`.
+- **Steam without its interface (4.2c):** Steam starting a game stays **hidden** when an account
+  has signed in: its window is not brought to the front when it appears (the home screen, with the
+  console's "Starting …" screen, stays until the game's window), and Guide from the home screen
+  never brings Steam's own window back unless it was the app last on screen. If no game has
+  started 20 s after the address was handed over, Steam probably waits for the user (a licence to
+  accept, a cloud conflict, launch options): its window is shown; not while Steam prepares
+  the game's shaders (a `fossilize_replay` process in Steam's unit): the 20 s start again. Once
+  the game has started, Steam's window stays out of what gamescope may show (also when Steam asks
+  for it) until the game's window appears, then goes back behind the game; 20 s without a game
+  window, it is shown behind the game (owneetd 0.14.3, [[step-4.2c-steam-without-its-interface]]). Not `-silent`: owneetd hands
+  Steam its first address once Steam's window exists, and gamescope already shows only what
+  owneetd chooses. `install` / `uninstall` hand `steam://install/N` / `steam://uninstall/N` to
+  Steam and show its confirmation; once Steam acts on it (the game's appmanifest appears, goes, or
+  changes state) the home screen comes back by itself; cancelled in Steam, nothing changes and
+  holding Guide comes back (the confirmation is forgotten after 10 minutes). While Steam runs (and
+  once after it stops) owneetd reads the appmanifests every second and sends `steam.changed` (the
+  status above) when games, downloads or disks change. Downloads from `StateFlags` (2 update
+  required, 4 fully installed, 256 / 1048576 running, 512 paused, 1024 started, 2048 uninstalling)
+  and `BytesDownloaded` + `BytesStaged` of `BytesToDownload` + `BytesToStage`; the one Steam works
+  on is the one whose bytes grew in the last 5 s; an installed game with an update waiting stays
+  "installed" (Steam updates it before playing). Disks not connected from `libraryfolders.vdf`
+  (folder `path` missing, its `apps`; name = `label`, else the mount folder's name).
 - Events: `app.started`, `app.exited` (with systemd's result: `success`, `exit-code`, `signal`,
   `timeout`…), `app.window` (gamescope can show one of the app's windows for the first time, e.g.
   Steam ready after its first download: its early helper windows are never shown), `focus.changed`
   (also when the screen changes by itself, e.g. an app's window appears: the interface reads the
   controllers only while it is on screen; in cage, which owneetd cannot read, the newest app is
-  taken to be on screen). **In cage owneetd decides and the interface carries it out** (0.12.2,
+  taken to be on screen), `steam.launch_failed` (`{"appid", "reason": "linux_version"}`: see below). **In cage owneetd decides and the interface carries it out** (0.12.2,
   for the web keyboard and "Close {name}?" of 5.2): "show the home screen" and "bring back an
   app" only send `focus.changed`; on `home` the interface shows its own window again (cage shows
   the newest window), on an app it hides it.
+- **A Steam game whose Linux version does not start (4.5, `steamwindows.go`):** for 2 minutes after
+  `run`, owneetd reads the new lines of Steam's console log (`logs/console_log.txt`, undocumented,
+  times checked against the request) for `GameAction [AppID N, …] : LaunchApp failed with
+  AppError_28` (Steam's "Missing game executable"). Unless the game already has a compatibility
+  tool, it sends `steam.launch_failed` and does not show Steam's error. `windows` closes Steam
+  cleanly (up to a minute), writes the game's tool in `config/config.vdf` (InstallConfigStore →
+  Software → Valve → Steam → CompatToolMapping → N: `name`, `config`, `priority` 250, as Steam's
+  own "Force the use of a specific compatibility tool"), Valve's newest `proton_N` registered in
+  `logs/compat_log.txt`, newest by app id (the names drop the dot: `proton_513` is 5.13; else
+  `proton_experimental`; [[steam-integration]], owner 2026-10-18), then `run`s the game again;
+  Steam downloads that Proton itself the first time. The same log gives the launch's tasks
+  (`LaunchApp changed task to DownloadingDepots`, `CreatingProcess`, `WaitingGameWindow`…):
+  while Steam works on one, Steam stays hidden past the 20 s, however long (owneetd 0.14.5);
+  a question Steam has waited on (`waiting for user response to …`) for 3 s is shown (Steam
+  answers its routine ones within a second).
 - **Steam (4.2):** the app `steam`, started as `env -u GAMESCOPE_WAYLAND_DISPLAY steam -gamepadui
   URL` (see below), with `-language` from the interface's language and, under the NVIDIA driver,
   `-cef-disable-gpu` (Steam's pages drawn with the GPU showed garbled, stale pictures inside

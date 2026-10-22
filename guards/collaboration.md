@@ -3,6 +3,7 @@ type: guard
 description: "Never act without the owner: approvals, asking, one step at a time, recording decisions, no pushing, English only."
 tags: [guard, process]
 ---
+
 # Guard: collaboration with the owner
 
 > [!danger] Binding guard — never broken, whatever the request. Rules: [[guards/INDEX|guards]].
@@ -12,6 +13,12 @@ tags: [guard, process]
 - **Never start a roadmap step on your own**: follow the order of the wave notes, unless the owner
   names the step to work on; never work on more than one step (or sub-step) per prompt.
   ([[step-workflow]], [[how-we-work]])
+- **Never start the next roadmap step** before the owner has approved the current one; never work
+  on more than one step per prompt. The only exception: an author (the owner or Danidepadawan)
+  expressly asks to move on before the current step is approved; that step then stays in
+  progress, is tested together with the next one, and is approved afterwards.
+  ([[step-workflow]], [[how-we-work]])
+
 - **Never change the plan silently.** A change of plan (split, merge, reorder, scope) is recorded
   as a decision and reflected in the wave notes in the same change. ([[step-workflow]])
 - **Never leave an agreed decision unrecorded**: it goes into its decision note and the
