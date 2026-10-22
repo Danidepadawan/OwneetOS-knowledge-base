@@ -3,13 +3,13 @@ type: step
 description: "Widevine verified, browse / play / pause / seek on the gamepad."
 phase: "[[phase-5-streaming-apps-and-media]]"
 step: "5.4"
-status: in-progress
+status: done
 legacy: "ROADMAP.md 5.4"
 tags: [step, phase-5]
 ---
 # 5.4 Netflix
 
-Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
+Up: [[phase-5-streaming-apps-and-media]] · Status: **done** (owner, 2026-10-22)
 
 - **Deliverables:** Widevine verified, browse / play / pause / seek on the gamepad.
 - **To do here (owner, 2026-10-19, from [[step-5.3-youtube]]):** the **console's consent to
@@ -188,3 +188,45 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   Fixed in owneet-base 0.0.49: such controllers are translated into the standard layout
   ([[controller-without-standard-layout-in-brave]]).
 - **Also found by the owner:** a dropdown opened with A (Browse or profile menu, a title's seasons) could not be closed: B did its usual job. Fixed in owneet-base 0.0.50: B closes an open dropdown first.
+- **Sub-step 5 verified** (owner, 2026-10-22, test VM, owneet-base 0.0.50): Netflix's own
+  navigation works with the D-pad (rows and tiles, the top menu, the title window, dropdowns closed
+  by B, the player's controls, Y search), and the D-pad works on YouTube too. **LT / RT on Netflix
+  not tested:** Netflix refused to play ("open on another PC", the account's limit of screens);
+  to check at the next test.
+- **Terms of service** ([[legal-compliance]]): on Netflix the extension moves the selection, clicks,
+  sends Netflix's own keys (← / →, Space, Escape) and makes Netflix's controls appear as a mouse
+  movement does, each in answer to the user's button; it changes no content. The ring element in
+  the page stays the question of Netflix §1.8(vi) for the legal review of
+  [[step-7.5-legal-review-before-the-public-launch]], with the Widevine questions (its licence and
+  Brave's agreement with Google, the console's consent in place of Brave's window, its wording, a
+  change of Google's terms without a new Widevine version).
+- **Known limits of 5.4:**
+  - Netflix's own navigation relies on the names Netflix gives its site (read on 2026-10-22,
+    [[extension-design]] "Netflix"): a redesign can break parts of it until they are read again;
+    what is not found falls back to the generic navigation.
+  - Search results, sign-in and the profile picker use the generic navigation.
+  - A web app's first opening waits about 20 s ("Preparing…") while Brave downloads Widevine into
+    its own profile; without internet it says that Widevine could not be downloaded.
+  - One consent per user, and the console has one user today.
+  - Netflix's cookie banner was not seen on this setup (the limit of 5.2 not observed).
+  - Controllers Brave does not know are translated only when they have the xpad driver's shape
+    ([[controller-without-standard-layout-in-brave]]).
+- **To check at the next hardware test** (FrankenPC, gamescope, NVIDIA; the owner's plan after
+  this step, with an ISO built from this branch, which brings owneet-base's new dependencies of
+  phase 4): Netflix with the controller in gamescope (and the console's keyboard over Netflix for
+  the sign-in code), LT / RT on Netflix, the Widevine question, Google's terms page and
+  "Preparing…" in gamescope, a protected title playing; with the open checks of
+  [[step-5.1-brave-in-the-os]], [[step-5.2-extension-core]] and [[step-5.3-youtube]], and phase 4's
+  features from `main` (Steam, games on a disk, Windows games, installers, the controller as a
+  mouse). Also the interface preview of Steam's "Starting {game}…" after the merge fix (owneet-frontend 0.23.3).
+- **Outcome (2026-10-22):** Netflix works with the controller through a navigation of its own
+  (rows and tiles, the top menu, the title window, dropdowns, the player's controls, LT / RT ±10 s,
+  Y search), the extension reads controllers Brave does not know in the standard layout, and each
+  supported web app now has its own navigation (YouTube's, Netflix's), the generic one waiting for
+  free web browsing. Widevine: the console asks for the user's consent to Google's terms (Google's
+  live page behind "Read the terms"; again at every new Widevine version), turns Widevine on only
+  then, and gets it before a web app's first opening ("Preparing…"; a clear message if it cannot).
+  `main` (phase 4) merged into the branch. Packages: owneetd 0.16.2, owneet-frontend 0.23.3,
+  owneet-base 0.0.50. Verified in the test VM (cage). Known solutions written:
+  [[vm-run-hangs-after-exit]], [[controller-without-standard-layout-in-brave]]. **Step closed by
+  the owner on 2026-10-22**, with LT / RT on Netflix and the hardware checks above as follow-ups.

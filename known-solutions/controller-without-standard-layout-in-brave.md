@@ -1,7 +1,7 @@
 ---
 type: known-solution
 description: "In a web app LT / RT and the D-pad do nothing (the left stick, A and B work), and the right stick scrolls oddly: Brave reports the controller with no layout (mapping \"\"), in the Linux driver's order."
-status: open
+status: solved
 seen: 2026-10-22
 updated: 2026-10-22
 tags: [known-solution, extension, controllers, brave]
@@ -28,7 +28,8 @@ pressed, and 0 until they first move). The extension read only the standard layo
 
 ## Solution
 
-`extension/content/pad.js` (owneet-base 0.0.49; to verify in the test VM): a controller with no
+`extension/content/pad.js` (owneet-base 0.0.49, verified in the test VM on 2026-10-22: the D-pad
+works in Netflix and YouTube; LT / RT through the same translation, still to see on Netflix): a controller with no
 standard layout and that shape (11 buttons, 8 axes) is translated into the standard layout before
 anything reads it; Guide (button 8 there) is never passed on. Other unknown layouts are read as
 they come: if one shows up, the next step is owneetd telling the extension the controller's layout
