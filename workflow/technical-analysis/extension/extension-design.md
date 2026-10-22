@@ -158,6 +158,9 @@ Agreed with the owner on 2026-10-22 ([[step-5.4-netflix]]; bindings: [[controlle
   10 s: measured in the test VM, keys sent by a script work); B closes an open menu, otherwise
   leaves the player.
 - **Y** on the browsing pages opens Netflix's search (owner, 2026-10-22).
+- **B closes an open dropdown first** (the Browse and profile menus, a title's seasons): a popup
+  button marked expanded (`aria-haspopup`, `aria-expanded="true"`) or a visible menu / list;
+  Escape, and its button again if it stays open; the selection goes back to its button.
 - **Other pages** (start, sign-in, email code, profile picker) use the generic navigation.
 - **How the parts are found** (Netflix's site as of 2026-10-22, read with probes in the test VM;
   its older names, e.g. `.lolomoRow`, `.slider-item`, are gone): rows

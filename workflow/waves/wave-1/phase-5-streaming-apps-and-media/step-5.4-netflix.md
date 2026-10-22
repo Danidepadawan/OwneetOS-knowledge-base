@@ -187,3 +187,4 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress**
   are axes there, so LT / RT and the D-pad did nothing (the owner navigates with the left stick).
   Fixed in owneet-base 0.0.49: such controllers are translated into the standard layout
   ([[controller-without-standard-layout-in-brave]]).
+- **Also found by the owner:** a dropdown opened with A (Browse or profile menu, a title's seasons) could not be closed: B did its usual job. Fixed in owneet-base 0.0.50: B closes an open dropdown first.

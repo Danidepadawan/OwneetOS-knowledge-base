@@ -68,7 +68,8 @@ to its tile. In the **player** any button brings up Netflix's controls and the D
 them (back, play / pause, −10 / +10, volume, next episode, episodes, subtitles and audio, speed);
 A presses the selected control, and pauses / plays while the controls are hidden; **LT / RT = −10
 / +10 s** (Netflix's own ← / →, repeating with this map's LT / RT timing); B closes an open menu,
-otherwise leaves the player. Pages outside Netflix's main screens (start page, sign-in, the email
+otherwise leaves the player. B closes an open dropdown first (the Browse and profile menus, a
+title's seasons; owner's test, 2026-10-22). Pages outside Netflix's main screens (start page, sign-in, the email
 code, "Who's watching?") keep the web-app bindings above. **Y opens Netflix's search** on the
 browsing pages (owner, 2026-10-22); X, Menu and View do nothing; LB / RB are never used; Guide
 stays owneetd's.
