@@ -29,7 +29,7 @@ pressed, and 0 until they first move). The extension read only the standard layo
 ## Solution
 
 `extension/content/pad.js` (owneet-base 0.0.49, verified in the test VM on 2026-10-22: the D-pad
-works in Netflix and YouTube; LT / RT through the same translation, still to see on Netflix): a controller with no
+works in Netflix and YouTube, and LT / RT seek by 10 s in Netflix's player): a controller with no
 standard layout and that shape (11 buttons, 8 axes) is translated into the standard layout before
 anything reads it; Guide (button 8 there) is never passed on. Other unknown layouts are read as
 they come: if one shows up, the next step is owneetd telling the extension the controller's layout

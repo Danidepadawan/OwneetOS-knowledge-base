@@ -190,9 +190,10 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **done** (owner, 2026-10-22)
 - **Also found by the owner:** a dropdown opened with A (Browse or profile menu, a title's seasons) could not be closed: B did its usual job. Fixed in owneet-base 0.0.50: B closes an open dropdown first.
 - **Sub-step 5 verified** (owner, 2026-10-22, test VM, owneet-base 0.0.50): Netflix's own
   navigation works with the D-pad (rows and tiles, the top menu, the title window, dropdowns closed
-  by B, the player's controls, Y search), and the D-pad works on YouTube too. **LT / RT on Netflix
-  not tested:** Netflix refused to play ("open on another PC", the account's limit of screens);
-  to check at the next test.
+  by B, the player's controls, Y search), and the D-pad works on YouTube too. LT / RT on Netflix
+  could not be tested then (Netflix refused to play: "open on another PC", the account's limit of
+  screens). **LT / RT verified later the same day** (owner, 2026-10-22, test VM, owneet-base
+  0.0.50): they seek by 10 s in Netflix's player.
 - **Terms of service** ([[legal-compliance]]): on Netflix the extension moves the selection, clicks,
   sends Netflix's own keys (← / →, Space, Escape) and makes Netflix's controls appear as a mouse
   movement does, each in answer to the user's button; it changes no content. The ring element in
@@ -214,7 +215,7 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **done** (owner, 2026-10-22)
 - **To check at the next hardware test** (FrankenPC, gamescope, NVIDIA; the owner's plan after
   this step, with an ISO built from this branch, which brings owneet-base's new dependencies of
   phase 4): Netflix with the controller in gamescope (and the console's keyboard over Netflix for
-  the sign-in code), LT / RT on Netflix, the Widevine question, Google's terms page and
+  the sign-in code), the Widevine question, Google's terms page and
   "Preparing…" in gamescope, a protected title playing; with the open checks of
   [[step-5.1-brave-in-the-os]], [[step-5.2-extension-core]] and [[step-5.3-youtube]], and phase 4's
   features from `main` (Steam, games on a disk, Windows games, installers, the controller as a
@@ -229,4 +230,5 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **done** (owner, 2026-10-22)
   `main` (phase 4) merged into the branch. Packages: owneetd 0.16.2, owneet-frontend 0.23.3,
   owneet-base 0.0.50. Verified in the test VM (cage). Known solutions written:
   [[vm-run-hangs-after-exit]], [[controller-without-standard-layout-in-brave]]. **Step closed by
-  the owner on 2026-10-22**, with LT / RT on Netflix and the hardware checks above as follow-ups.
+  the owner on 2026-10-22**, with the hardware checks above as a follow-up (LT / RT on Netflix,
+  the other follow-up, verified in the test VM the same day).
