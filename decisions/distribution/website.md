@@ -31,6 +31,11 @@ Agreed with the owner on 2026-10-20, before the release; built in [[step-7.8-web
   it stops only while the pointer is on it (or it has focus from the keyboard) and while it is
   off screen. No pause button (owner, 2026-10-20: it was tried; WCAG 2.2.2 asks for one on moving
   content, the owner chose without).
+- **The slogan "Plug it. Play it. Own it!" is never translated** (owner, 2026-10-24: more
+  iconic): the same in every language's file and in the start-up animation (it replaces the
+  Italian "Collegalo. Giocaci. Fallo tuo!" of 2026-10-20).
+- **The credits open with the authors** (owner, 2026-10-24): Marco De Franco (fancy-dino) and
+  Daniele De Padova (Danidepadawan).
 - **English and Italian**, the texts in translation files, never written in the code (as in the
   console, [[ui-text-and-i18n]]): **one JSON file per language in the console's format**
   (`src/i18n/en.json`, `it.json`) read by the site's own `I18nService`, not Angular's XLIFF i18n
@@ -98,3 +103,4 @@ project folder. No data collected keeps the site free of consent banners and GDP
 | 2026-10-20 | Icons: Lucide (ISC), pinned and checked, credited in `CREDITS.md`; Tabler Icons and Phosphor were the alternatives. |
 | 2026-10-23 | The rest of the website split into steps 7.8b–7.8l: before the merge the pages, publishing on GitHub Pages, a not-found page, a favicon, search engines and sharing, WOFF2 fonts (optional, confirmed); after the merge the domain, the final logo, the console picture (and "Local pictures"), more languages; at the release the download link. |
 | 2026-10-24 | Pages demo (7.8b, started before 7.8 is approved, the author's exception): guide, FAQ, credits, privacy, contributing; the gamepad "O" draft as the site's logo and its start-up animation before the site (website variant), in the demo; step 7.6 stays open. |
+| 2026-10-24 | Pages demo approved. The slogan "Plug it. Play it. Own it!" is never translated (replaces the Italian "Collegalo. Giocaci. Fallo tuo!"); the credits open with the authors, Marco De Franco and Daniele De Padova. |

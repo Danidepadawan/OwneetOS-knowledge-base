@@ -31,3 +31,7 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress** · Part of 
   Asked with it: the gamepad "O" logo on the site and its start-up animation (website variant of
   the logo demo: from transparent over 2 s, the words 0.5 s apart, the site after 0.8 s more);
   skipped for visitors who asked for reduced motion.
+- **Demo approved (owner, 2026-10-24)**, with two changes made in it: the slogan "Plug it. Play
+  it. Own it!" stays in English in every language (more iconic; the Angular site too), and the
+  credits open with the authors, Marco De Franco (fancy-dino) and Daniele De Padova
+  (Danidepadawan). Next: the pages in Angular.

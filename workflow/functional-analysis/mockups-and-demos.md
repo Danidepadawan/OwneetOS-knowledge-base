@@ -27,5 +27,7 @@ Open them in a browser; they can be driven with the keyboard or a gamepad. Proce
 
 | `design/demos/7.8-website-home.html` | The website's home: one page whose sections snap (home, features carousel, requirements, open, info, download), English and Italian | [[step-7.8-website]] |
 
+| `design/demos/7.8b-website-pages.html` | The website's pages: guide, FAQ, credits (the authors first), privacy, contributing; the gamepad "O" logo and its start-up animation | [[step-7.8b-website-pages]] |
+
 The demos play the interface sounds from `design/demos/sounds.js` ([[sound-files]]).
 Fonts and wordmark: [[design-tokens]].
