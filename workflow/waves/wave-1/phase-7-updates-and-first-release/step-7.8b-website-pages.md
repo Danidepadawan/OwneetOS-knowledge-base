@@ -37,3 +37,14 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress** · Part of 
   (Danidepadawan). Next: the pages in Angular.
   The two authors side by side, at the same level, on every screen (owner, 2026-10-24); Daniele
   agreed to have his full name on the site.
+- **The pages in Angular (2026-10-24, website commit 42aa7a7):** `core/components/` guide, faq,
+  credits (data and models next to it: the authors, a selection of `CREDITS.md`, the site's
+  own), privacy, contribute, a shared `page` frame and `footer`; the texts in `en.json` /
+  `it.json`; English at `/guide`, Italian at `/it/guide` (12 prerendered pages), each route
+  setting its language, title and description. The logo is the gamepad "O" draft
+  (`wordmark.data.ts` generated from the logo demo's code); the start-up animation is the
+  `intro` component, CSS only (it plays in the prerendered pages before any script; off with
+  reduced motion). Fixed in the demo first: the Italian "Info" lost behind a comment.
+  Checked: `ng build` (12 pages), `ng test` 7 tests (each page in both languages and its title,
+  the two authors, the untranslated slogan), screenshots of the start-up animation, the home and
+  four pages.

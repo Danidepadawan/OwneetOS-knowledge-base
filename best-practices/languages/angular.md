@@ -10,7 +10,8 @@ Comes from: [[website]] (owner, 2026-10-20). Applies to `OwneetOS-website/`.
 
 - **A real Angular application structure**, one folder per component or service:
   - `src/app/core/components/<name>/` — the site's components, the root and the pages too (`app`,
-    `header`, `home`, `console-screen`, `feature-carousel`), next to
+    `intro`, `header`, `footer`, `page`, `home`, `console-screen`, `feature-carousel`, `guide`,
+    `faq`, `credits`, `privacy`, `contribute`), next to
   - `src/app/core/services/<name>/` — app-wide services (`i18n`, `sections`, `notice`);
   - `src/app/shared/components/<name>/` — components used in several places (`icon`, `wordmark`).
   - No `pages` folder and no `components` folder inside a component (owner, 2026-10-20); related
