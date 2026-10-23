@@ -22,8 +22,8 @@ Status comes from each step note (`status:`).
 - `todo` [[step-7.5-legal-review-before-the-public-launch|7.5 Legal review before the public launch]] — Trademark search for 'OwneetOS' (EUIPO, Italian register); licence notices in the UI ('About → Licences'); review of licences,…
 - `todo` [[step-7.6-final-logo-and-brand|7.6 Final logo and brand]] — The final OwneetOS logo and wordmark (the current wordmark is provisional), checked together with the trademark search of 7.5; boot…
 - `todo` [[step-7.7-final-interface-sounds|7.7 Final interface sounds]] — The owner's final sounds (interface-sounds-spec: names, format, lengths, licences) replace the placeholders of `frontend/sounds/`;…
-- `in-progress` [[step-7.8-website|7.8 Website]] — The project's website (Angular, static on GitHub Pages, English and Italian, no data collected): demo of the pages first, then the code in its own repository.
-- `in-progress` [[step-7.8b-website-pages|7.8b Website pages]] — The website's other pages: installation guide, FAQ, credits and licences, privacy, contributing and translating; each with its demo approved first. Before the merge.
+- `done` [[step-7.8-website|7.8 Website]] — The project's website (Angular, static on GitHub Pages, English and Italian, no data collected): demo of the pages first, then the code in its own repository.
+- `done` [[step-7.8b-website-pages|7.8b Website pages]] — The website's other pages: installation guide, FAQ, credits and licences, privacy, contributing and translating; each with its demo approved first. Before the merge.
 - `todo` [[step-7.8c-website-publishing|7.8c Website publishing on GitHub Pages]] — A GitHub Actions workflow publishes the prerendered site to GitHub Pages; the owner turns Pages on. Before the merge.
 - `todo` [[step-7.8d-website-not-found-page|7.8d Website not-found page]] — A 404 page in English and Italian for wrong addresses, served by GitHub Pages. Before the merge.
 - `todo` [[step-7.8e-website-favicon|7.8e Website favicon]] — The site's own icon in the browser's tab (Angular's was removed: it is Angular's logo). Before the merge.

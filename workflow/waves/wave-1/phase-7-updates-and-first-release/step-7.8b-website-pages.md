@@ -3,12 +3,12 @@ type: step
 description: "The website's other pages: installation guide, FAQ, credits and licences, privacy, contributing and translating; each with its demo approved first. Before the merge."
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.8b"
-status: in-progress
+status: done
 tags: [step, phase-7, website]
 ---
 # 7.8b Website pages *(added 2026-10-23)*
 
-Up: [[phase-7-updates-and-first-release]] · Status: **in-progress** · Part of the website: [[step-7.8-website]]
+Up: [[phase-7-updates-and-first-release]] · Status: **done** · Part of the website: [[step-7.8-website]]
 
 - **Deliverables:** the pages linked from the home ([[website]]): **installation guide** (write the
   ISO to a USB stick, start in UEFI with Secure Boot off, install with the controller; its
@@ -48,3 +48,6 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress** · Part of 
   Checked: `ng build` (12 pages), `ng test` 7 tests (each page in both languages and its title,
   the two authors, the untranslated slogan), screenshots of the start-up animation, the home and
   four pages.
+- **Outcome: approved by the owner on 2026-10-24**: the five pages (guide, FAQ, credits with the
+  two authors first, privacy, contributing), the gamepad "O" draft as the site's logo and its
+  start-up animation, in Angular, English and Italian (12 prerendered pages).

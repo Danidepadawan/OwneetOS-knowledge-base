@@ -3,12 +3,12 @@ type: step
 description: "The project's website (Angular, static on GitHub Pages, English and Italian, no data collected): demo of the pages first, then the code in its own repository."
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.8"
-status: in-progress
+status: done
 tags: [step, phase-7]
 ---
 # 7.8 Website *(added 2026-10-20)*
 
-Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
+Up: [[phase-7-updates-and-first-release]] · Status: **done**
 
 - **Deliverables:** the website of [[website]]: home, features, system requirements, download
   (a redirect to SourceForge, "coming soon" until releases are published), installation guide,
@@ -90,3 +90,8 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
 - **`.npmrc` (owner, 2026-10-23):** the site's `.npmrc` keeps npm's cache and logs in
   `OwneetOS-website/.npm-cache/` (ignored by git): `npm start` is all the owner needs (checked:
   nothing written to `~/.npm`).
+- **Outcome: approved by the owner on 2026-10-24** together with 7.8b: the website's project in
+  `OwneetOS-website/` (Angular 22, SCSS, static output, the CLI's statistics off, `.npmrc`), its
+  repository `fancy-dino/OwneetOS-website` with the CI check "Build", and the approved home (one page
+  of snapping sections, the features carousel, the console picture, requirements, open, info,
+  download), English and Italian. Left before the merge: 7.8c–7.8g.
