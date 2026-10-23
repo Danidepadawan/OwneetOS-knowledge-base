@@ -77,7 +77,12 @@ project folder. No data collected keeps the site free of consent banners and GDP
 
 - Guards: none new ([[host-safety]], [[legal]], [[product-invariants]] apply).
 - Best practices: none yet.
-- Steps: [[step-7.8-website]].
+- Steps: [[step-7.8-website]]; before the merge [[step-7.8b-website-pages]],
+  [[step-7.8c-website-publishing]], [[step-7.8d-website-not-found-page]],
+  [[step-7.8e-website-favicon]], [[step-7.8f-website-search-and-sharing]],
+  [[step-7.8g-website-lighter-fonts]]; after the merge [[step-7.8h-website-domain]],
+  [[step-7.8i-website-final-logo]], [[step-7.8j-website-console-picture]],
+  [[step-7.8k-website-more-languages]]; at the release [[step-7.8l-website-download-link]].
 
 ## History
 
@@ -89,3 +94,4 @@ project folder. No data collected keeps the site free of consent banners and GDP
 | 2026-10-20 | Repository `fancy-dino/OwneetOS-website` created by the owner (Danidepadawan invited as a collaborator); CI "Build" on pull requests and `main`, to be required by `main`'s ruleset (OwneetOS's Lint and ISO checks do not apply here). |
 | 2026-10-20 | Texts in one JSON file per language in the console's format, the site's own service (not Angular's XLIFF); English at `/`, Italian at `/it`; the current wordmark until 7.6; Angular structure and file names ([[angular]]). |
 | 2026-10-20 | Icons: Lucide (ISC), pinned and checked, credited in `CREDITS.md`; Tabler Icons and Phosphor were the alternatives. |
+| 2026-10-23 | The rest of the website split into steps 7.8b–7.8l: before the merge the pages, publishing on GitHub Pages, a not-found page, a favicon, search engines and sharing, WOFF2 fonts (optional, confirmed); after the merge the domain, the final logo, the console picture (and "Local pictures"), more languages; at the release the download link. |

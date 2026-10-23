@@ -11,6 +11,9 @@ tags: [step, phase-7]
 
 Up: [[phase-7-updates-and-first-release]] · Status: **todo**
 
+- **With the release:** the website's download button becomes the link to the ISO
+  ([[step-7.8l-website-download-link]]).
+
 - **Deliverables:** test matrix (Intel / AMD / NVIDIA, old iGPU fallback, 4 GB RAM machine), bug
   fixing, RAM and boot-time measurements against the targets, release **v0.1.0**.
   Before the release: the testers' boot entries ("diagnostics", "test games") and the test log on a

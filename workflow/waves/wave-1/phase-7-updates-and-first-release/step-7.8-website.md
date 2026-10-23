@@ -17,6 +17,15 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   domain.
 - **Done when:** the owner approved the demo of the pages, the site builds to static files in its
   own repository, works with the keyboard, the mouse and on a phone, and the owner approved it.
+- **Split (owner, 2026-10-23):** this step is the project, the repository, the CI and the home;
+  the rest is in its own steps. Before the merge of `feature/step7_website` into `main`:
+  [[step-7.8b-website-pages]], [[step-7.8c-website-publishing]],
+  [[step-7.8d-website-not-found-page]], [[step-7.8e-website-favicon]],
+  [[step-7.8f-website-search-and-sharing]], [[step-7.8g-website-lighter-fonts]] (optional,
+  confirmed). After the merge: [[step-7.8h-website-domain]], [[step-7.8i-website-final-logo]],
+  [[step-7.8j-website-console-picture]] (with "Local pictures"),
+  [[step-7.8k-website-more-languages]]. At the release: [[step-7.8l-website-download-link]].
+  The website is paused (owner, 2026-10-23) while the logo demo goes on ([[step-7.6-final-logo-and-brand]]).
 - **Started (owner, 2026-10-20)** while phase 5 is with Danidepadawan, before the release.
   Proposal agreed ([[website]]); first the home page's demo.
 - **Home demo, first round (2026-10-20):** `design/demos/7.8-website-home.html`. The owner's

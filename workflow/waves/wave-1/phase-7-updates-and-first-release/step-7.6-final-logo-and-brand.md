@@ -12,7 +12,8 @@ tags: [step, phase-7]
 Up: [[phase-7-updates-and-first-release]] · Status: **todo**
 
 - **Deliverables:** the final OwneetOS logo and wordmark (the current wordmark is provisional),
-  checked together with the trademark search of 7.5; boot splash, interface and documents updated.
+  checked together with the trademark search of 7.5; boot splash, interface and documents updated;
+  the website takes it in [[step-7.8i-website-final-logo]].
 - **Draft (owner, 2026-10-19, outside the roadmap; nothing adopted yet):**
   `design/demos/logo-gamepad-o.html`. The wordmark stays "OwneetOS" (Bricolage Grotesque, "OS" in
   the second colour; the font may change later). The first "O" becomes a filled circle in the

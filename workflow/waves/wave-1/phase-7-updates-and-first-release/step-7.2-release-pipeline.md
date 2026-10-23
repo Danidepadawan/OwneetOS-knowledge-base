@@ -12,9 +12,10 @@ tags: [step, phase-7]
 Up: [[phase-7-updates-and-first-release]] · Status: **todo**
 
 - **Deliverables:** tagged release builds the ISO in CI, signs, writes checksums and release
-  notes, publishes the ISO (and its source archive) to SourceForge and the packages to GitHub;
-  the website on GitHub Pages with the project's `.org` domain ([[distribution-and-updates]]).
-- **Owner input:** create the SourceForge project and buy the domain.
+  notes, publishes the ISO (and its source archive) to SourceForge and the packages to GitHub
+  ([[distribution-and-updates]]). The website, its publishing and its domain have their own steps
+  (owner, 2026-10-23: [[step-7.8c-website-publishing]], [[step-7.8h-website-domain]]).
+- **Owner input:** create the SourceForge project.
 - **Legal ([[legal-compliance]]):** a **source archive** for every release (PKGBUILDs and
   exact sources of every package in the ISO and the repository), licence list in the ISO; only
   then may CI publish ISOs and packages again.
