@@ -35,3 +35,5 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress** · Part of 
   it. Own it!" stays in English in every language (more iconic; the Angular site too), and the
   credits open with the authors, Marco De Franco (fancy-dino) and Daniele De Padova
   (Danidepadawan). Next: the pages in Angular.
+  The two authors side by side, at the same level, on every screen (owner, 2026-10-24); Daniele
+  agreed to have his full name on the site.

@@ -35,7 +35,8 @@ Agreed with the owner on 2026-10-20, before the release; built in [[step-7.8-web
   iconic): the same in every language's file and in the start-up animation (it replaces the
   Italian "Collegalo. Giocaci. Fallo tuo!" of 2026-10-20).
 - **The credits open with the authors** (owner, 2026-10-24): Marco De Franco (fancy-dino) and
-  Daniele De Padova (Danidepadawan).
+  Daniele De Padova (Danidepadawan), side by side at the same level on every screen; Daniele
+  agreed to have his full name on the site (told by the owner, 2026-10-24).
 - **English and Italian**, the texts in translation files, never written in the code (as in the
   console, [[ui-text-and-i18n]]): **one JSON file per language in the console's format**
   (`src/i18n/en.json`, `it.json`) read by the site's own `I18nService`, not Angular's XLIFF i18n
