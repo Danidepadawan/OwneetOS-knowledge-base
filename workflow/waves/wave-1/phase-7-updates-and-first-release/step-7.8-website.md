@@ -78,3 +78,6 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   releases stay signed and with their sources, [[package-signing]], [[legal-compliance]]).
   Still to do in 7.8: the other pages (guide, FAQ, credits, privacy, contributing), each with its
   demo first, and the publication on GitHub Pages.
+- **`.npmrc` (owner, 2026-10-23):** the site's `.npmrc` keeps npm's cache and logs in
+  `OwneetOS-website/.npm-cache/` (ignored by git): `npm start` is all the owner needs (checked:
+  nothing written to `~/.npm`).

@@ -55,7 +55,7 @@ Agreed with the owner on 2026-10-20, before the release; built in [[step-7.8-web
 - **Project setup** (owner, 2026-10-20): Angular 22 with **SCSS**, routing, zoneless,
   `outputMode: static` (prerendered files only, no server); new dependencies only at versions
   published at least two weeks earlier (`npm install --before=<date>`), npm's cache inside the
-  project folder; the Angular CLI's usage statistics **always off** (mandatory: no telemetry,
+  project folder (the site's `.npmrc`: `.npm-cache/`, owner, 2026-10-23, so `npm start` is enough); the Angular CLI's usage statistics **always off** (mandatory: no telemetry,
   [[product-invariants]]).
 - **CI** (owner, 2026-10-20): GitHub Actions builds and tests every pull request and every push
   to `main` (check **Build**: Node 24.21.0, `npm ci`, `ng build`, `ng test`), actions pinned by
