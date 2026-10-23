@@ -12,4 +12,7 @@ Up: [[phase-7-updates-and-first-release]] · Status: **todo** · Part of the web
 
 - **Deliverables:** the final logo and wordmark of [[step-7.6-final-logo-and-brand]] on the site
   (the `wordmark` component and its data, the favicon, the sharing picture).
-- **When:** after the website's merge and the final logo (owner, 2026-10-23).
+- **When:** after the website's merge and the final logo (owner, 2026-10-23). The demo of the
+  pages already shows the gamepad "O" draft and its start-up animation (owner, 2026-10-24,
+  [[step-7.8b-website-pages]]); [[step-7.6-final-logo-and-brand]] stays open (research and
+  Danidepadawan's review).

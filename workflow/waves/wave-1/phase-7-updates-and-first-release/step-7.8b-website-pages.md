@@ -3,12 +3,12 @@ type: step
 description: "The website's other pages: installation guide, FAQ, credits and licences, privacy, contributing and translating; each with its demo approved first. Before the merge."
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.8b"
-status: todo
+status: in-progress
 tags: [step, phase-7, website]
 ---
 # 7.8b Website pages *(added 2026-10-23)*
 
-Up: [[phase-7-updates-and-first-release]] · Status: **todo** · Part of the website: [[step-7.8-website]]
+Up: [[phase-7-updates-and-first-release]] · Status: **in-progress** · Part of the website: [[step-7.8-website]]
 
 - **Deliverables:** the pages linked from the home ([[website]]): **installation guide** (write the
   ISO to a USB stick, start in UEFI with Secure Boot off, install with the controller; its
@@ -17,3 +17,17 @@ Up: [[phase-7-updates-and-first-release]] · Status: **todo** · Part of the web
   translating**. English and Italian; Angular structure ([[angular]]).
 - **Done when:** each page's demo is approved ([[demo-before-code]]), then its Angular page; the
   home's "coming soon" notices for these pages are gone.
+- **Started (owner, 2026-10-24)** before [[step-7.8-website]] is approved (the author's
+  exception of [[collaboration]]: 7.8 stays in progress and is approved with this one).
+- **Demo, first round (2026-10-24):** `design/demos/7.8b-website-pages.html`, on the approved home:
+  the five pages at `#/guide`, `#/faq`, `#/credits`, `#/privacy`, `#/contribute` (header's
+  Credits, Info's cards, the requirements' link, the footer), English and Italian, ordinary
+  scrolling. Guide: six steps (check the PC, download, write the stick with balenaEtcher or
+  Ventoy, start from it in UEFI with Secure Boot off, install with the controller on the whole
+  disk, first start) and the anti-cheat warning ([[installer-and-firmware]]). FAQ: nine short
+  answers. Credits: a selection of `CREDITS.md` and the site's own, with the link to the full
+  list. Privacy: no data, GitHub Pages may record addresses (its statement linked), crash reports
+  only with consent ([[legal-compliance]]). Contributing: translate, test and report, code.
+  Asked with it: the gamepad "O" logo on the site and its start-up animation (website variant of
+  the logo demo: from transparent over 2 s, the words 0.5 s apart, the site after 0.8 s more);
+  skipped for visitors who asked for reduced motion.

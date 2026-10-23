@@ -38,7 +38,9 @@ Agreed with the owner on 2026-10-20, before the release; built in [[step-7.8-web
   at `/it` (more languages: a file and a path).
 - **Look:** the console's tokens and fonts (Bricolage Grotesque, Lexend, the palettes,
   [[design-tokens]]) and its logo ([[step-7.6-final-logo-and-brand]]): for now the current
-  provisional wordmark (owner, 2026-10-20), replaced in one place by the final logo of 7.6.
+  provisional wordmark (owner, 2026-10-20), replaced in one place by the final logo of 7.6. The
+  demo of the pages (2026-10-24) shows the gamepad "O" draft, and the site opens with the logo's
+  start-up animation (website variant: from transparent), the site showing only after it.
 - **Code structure:** a real Angular application ([[angular]], owner, 2026-10-20).
 - **Icons: [Lucide](https://lucide.dev)** (owner, 2026-10-20; ISC License, some icons derived
   from Feather, MIT), instead of icons drawn by hand: every icon of the site, at a pinned version
@@ -95,3 +97,4 @@ project folder. No data collected keeps the site free of consent banners and GDP
 | 2026-10-20 | Texts in one JSON file per language in the console's format, the site's own service (not Angular's XLIFF); English at `/`, Italian at `/it`; the current wordmark until 7.6; Angular structure and file names ([[angular]]). |
 | 2026-10-20 | Icons: Lucide (ISC), pinned and checked, credited in `CREDITS.md`; Tabler Icons and Phosphor were the alternatives. |
 | 2026-10-23 | The rest of the website split into steps 7.8b–7.8l: before the merge the pages, publishing on GitHub Pages, a not-found page, a favicon, search engines and sharing, WOFF2 fonts (optional, confirmed); after the merge the domain, the final logo, the console picture (and "Local pictures"), more languages; at the release the download link. |
+| 2026-10-24 | Pages demo (7.8b, started before 7.8 is approved, the author's exception): guide, FAQ, credits, privacy, contributing; the gamepad "O" draft as the site's logo and its start-up animation before the site (website variant), in the demo; step 7.6 stays open. |
