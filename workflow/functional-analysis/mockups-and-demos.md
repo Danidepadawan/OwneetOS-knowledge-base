@@ -29,6 +29,7 @@ Open them in a browser; they can be driven with the keyboard or a gamepad. Proce
 
 | `design/demos/7.8b-website-pages.html` | The website's pages: guide, FAQ, credits (the authors first), privacy, contributing; the gamepad "O" logo and its start-up animation | [[step-7.8b-website-pages]] |
 | `design/demos/7.8d-website-not-found.html` | The website's not-found page: in the address's language (`/it/...` in Italian), the way home, the guide and the questions | [[step-7.8d-website-not-found-page]] |
+| `design/demos/7.8e-website-favicon.html` | The website's favicon from the gamepad "O": three shapes, its colours, on light and dark tab bars, at 16 and 32 px, on a phone | [[step-7.8e-website-favicon]] |
 
 The demos play the interface sounds from `design/demos/sounds.js` ([[sound-files]]).
 Fonts and wordmark: [[design-tokens]].
