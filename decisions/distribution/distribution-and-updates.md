@@ -47,3 +47,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-23 | The domain is bought after the website's merge (step 7.8h), no longer at step 7.2. |
 | 2026-10-20 | The website: Angular, static on GitHub Pages, its own repository; download as a redirect to SourceForge ([[website]]). |
 | 2026-10-13 | The ISO's system image is squashfs + xz instead of erofs + LZMA, which had silently corrupted six files (kernel modules, an AMD firmware); every ISO build now checks every file against its package. ISO 1822 MiB. |
+| 2026-10-24 | The website's domain is **owneetos.org**, bought by the owner at Hostinger after a preliminary trademark search (step 7.5). |
