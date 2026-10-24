@@ -4,7 +4,7 @@ description: "The chosen component for each layer: boot, session, frontend, daem
 area: architecture
 status: active
 decided: 2026-10-03
-updated: 2026-10-19
+updated: 2026-10-24
 legacy: "PROJECT_RULES.md §4"
 tags: [decision, architecture]
 ---
@@ -37,3 +37,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-15 | Extension core (step 5.2): own spatial navigation (focusable elements, any tabindex, interactive ARIA roles), a native-messaging bridge to owneetd, the console's keyboard over Brave (full screen in the fallback session). |
 | 2026-10-16 | The bridge's native-messaging manifest is one static file installed system-wide by the owneetd package (`/etc/opt/chrome/native-messaging-hosts/`): Brave does not read hosts from the web apps' profiles. A per-user file in Brave's default folder rejected. |
 | 2026-10-19 | Widevine: the console asks for the user's consent to Google's terms (once, and again at every new Widevine version) instead of turning it on silently; in step 5.4. Brave's own Widevine question is turned off. |
+| 2026-10-24 | Brave's windows that need a mouse are turned off by the managed policies: also its password saving, password leak warnings and address saving (`PasswordManagerEnabled`, `PasswordLeakDetectionEnabled`, `AutofillAddressEnabled` false; found on Spotify's sign-in, verified in the test VM). Each web app keeps its sign-in in its own profile, so nothing is lost. |

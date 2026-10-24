@@ -26,7 +26,8 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **done**
   managed policies `/etc/brave/policies/managed/owneet.json` (no telemetry: P3A, stats ping, web
   discovery, metrics off; no Rewards, Wallet, VPN, AI chat, News, Talk, Tor, sign-in, sync; no
   downloads, printing, translate; `brave://`, `chrome://`, `file://` and the extension store
-  blocked; site notifications and location blocked) and the extension stub
+  blocked; site notifications and location blocked; **from [[step-5.5-spotify]] (2026-10-24) also
+  no password saving, password leak warnings or address saving**, whose windows need a mouse) and the extension stub
   `/usr/share/owneet/extension/` (empty Manifest V3, filled in [[step-5.2-extension-core]]).
   owneetd 0.11.15: `POST /v1/apps/catalog/{id}/open`, kind `webapp` (one game or web app at a
   time), a profile per web app with Widevine on, removal closes the app and deletes its profile

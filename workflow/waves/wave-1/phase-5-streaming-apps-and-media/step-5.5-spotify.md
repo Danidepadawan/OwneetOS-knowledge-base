@@ -58,3 +58,57 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress** (owner, 2026
      `netflix.js` in one shared file, `input.js` passing X, Menu and LB / RB to the site's
      driver, the manifest, an owneet-base version.
   4. **Close:** terms of service, known limits, the next hardware checks, outcome.
+- **Sub-step 1, the check** (owner, 2026-10-23 / 24, test VM, cage, 800×600 then 1422×1090; a
+  probe next to the extension, `vm/run/probe-5.5/`, three versions, never shipped; Free account):
+  - **A TV user agent gets Spotify's page for phones, which plays nothing:** no player bar, an
+    "Open App" button, no keyboard shortcuts, and Play reloads the page. The owner liked its
+    bigger, one-column look, but **the desktop web player stays** (the only one that plays).
+    The desktop layout looked cramped mostly because the VM's screen was 800×600; how to make it
+    calmer on a TV (Brave's scale for this web app, Spotify's sidebars folded, its full-screen
+    "Now playing" view) is for sub-step 2.
+  - **Spotify's own keys, sent by a script, that work:** Space play / pause; **Shift+← / Shift+→
+    seek −5 / +5 s** (the progress bar moves by exactly 5000 ms; its slider steps by 5000 ms);
+    **Alt+J opens the context menu** of the focused item (a `contextmenu` event too), with the
+    focus inside it; Ctrl+K opens Quick Search (a dialog, Escape closes it); Ctrl+Shift+L goes to
+    Search, Alt+Shift+H to Home. **Not working:** Alt+← / Alt+→ (history), Alt+Shift+0 (Your
+    Library is the left sidebar in this layout), Enter on a focused button or card (scripted
+    Enter activates nothing: a click does), the arrows on the progress bar.
+  - **Spotify's own arrow-key navigation:** in a song list Down / Up move between songs and Right
+    / Left between a song's links; in an open menu Down / Up move between its items; in a shelf
+    Down / Up move from card to card (each card is a `row` of a grid) and Right / Left into a
+    card's play button and link; **nothing moves between shelves or regions**. So the
+    navigation is the extension's own (as Netflix's), over Spotify's named parts.
+  - **Spotify's shortcut list** (Ctrl+/, its own window): Playback: Space, Like Alt+Shift+B,
+    Shuffle Alt+S, Repeat Alt+R, previous / next Ctrl+← / Ctrl+→, seek Shift+← / Shift+→, volume
+    Alt+↑ / Alt+↓, speed Shift+, / Shift+.; Navigation: Home Alt+Shift+H, back / forward Alt+← /
+    Alt+→, Currently playing Alt+Shift+J, Search Ctrl+Shift+L, Liked songs Alt+Shift+S, Queue
+    Alt+Shift+Q, Your Library Alt+Shift+0 (and 1–7 for its parts), Made for you Alt+Shift+M, New
+    releases Alt+Shift+N, Charts Alt+Shift+C, Recents Alt+Shift+Y; Layout: left sidebar
+    Alt+Shift+L, right sidebar Alt+Shift+R (and their widths); Quick Search Ctrl+K, context menu
+    Alt+J.
+  - **The parts' names** (desktop layout, 2026-10-24): left sidebar `nav[aria-label="Main"]`
+    (Your Library, its rows `role=row` with `play-button`s); top bar `global-nav-bar` (`home-button`,
+    `search-input`, `browse-button`, `upgrade-button`, `user-widget-link`); main view
+    `main` / `home-page`; shelves `component-shelf` (a `role=grid` named by the shelf's title,
+    `carousel-scroller`, `carousel-previous-button` / `carousel-next-button`, `see-all-link`);
+    cards `[data-encore-id="card"]` (`role=listitem`, a `role=button` with `tabindex`, a
+    `play-button`, the title link); songs `tracklist-row` in a `role=row` with `aria-rowindex`
+    (`internal-track-link`); player bar `now-playing-bar` (`now-playing-widget-v2`,
+    `control-button-skip-back`, `-playpause`, `-skip-forward`, `-repeat`, `control-button-queue`,
+    `playback-position`, `playback-progressbar`, `playback-duration`, `volume-bar`,
+    `fullscreen-mode-button`); context menu `#context-menu` (`data-testid="context-menu"`,
+    `ul[role=menu]`, items `role=menuitem` **with no names of their own**: "Add to queue" is found
+    only by its label); after "Add to queue" Spotify says "Added to queue" in a live region.
+  - **A Spotify window keeps the selection outside it** (the "Start listening with a free
+    account" window): the navigation has to go into Spotify's windows (as Netflix's title window).
+  - **Brave's save-password window** (found by the owner, 2026-10-23: it needs a mouse) **is gone
+    with three managed policies:** `PasswordManagerEnabled`, `PasswordLeakDetectionEnabled` and
+    `AutofillAddressEnabled` set to false (verified by the owner in the test VM, 2026-10-24, after a
+    new sign-in). They go into `packages/owneet-base/brave-policies.json` with the code of this step.
+  - **Signing out does not reach Facebook / Google / Apple sign-in** (owner, 2026-10-24): Spotify's
+    Log out ends only Spotify's session; the provider's sign-in stays in the web app's profile, so
+    "Continue with Facebook" goes straight back to the same account. Today only removing the web
+    app (which deletes its profile, [[step-5.1-brave-in-the-os]]) signs out of everything. A
+    console "Sign out of {name}" (empty the web app's cookies and site data, keep the app and
+    Widevine) is proposed for [[step-5.7-apps-page]]; **where it goes is the owner's choice**.
+  - **Sub-step 1 done (2026-10-24).** Next: sub-step 2, the bindings.
