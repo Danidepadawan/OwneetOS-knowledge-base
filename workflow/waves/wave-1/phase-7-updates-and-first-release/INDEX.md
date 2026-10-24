@@ -24,10 +24,10 @@ Status comes from each step note (`status:`).
 - `todo` [[step-7.7-final-interface-sounds|7.7 Final interface sounds]] — The owner's final sounds (interface-sounds-spec: names, format, lengths, licences) replace the placeholders of `frontend/sounds/`;…
 - `done` [[step-7.8-website|7.8 Website]] — The project's website (Angular, static on GitHub Pages, English and Italian, no data collected): demo of the pages first, then the code in its own repository.
 - `done` [[step-7.8b-website-pages|7.8b Website pages]] — The website's other pages: installation guide, FAQ, credits and licences, privacy, contributing and translating; each with its demo approved first. Before the merge.
-- `in-progress` [[step-7.8c-website-publishing|7.8c Website publishing on GitHub Pages]] — A GitHub Actions workflow publishes the prerendered site to GitHub Pages; the owner turns Pages on. Before the merge.
-- `in-progress` [[step-7.8d-website-not-found-page|7.8d Website not-found page]] — A 404 page in English and Italian for wrong addresses, served by GitHub Pages. Before the merge.
-- `in-progress` [[step-7.8e-website-favicon|7.8e Website favicon]] — The site's own icon in the browser's tab (Angular's was removed: it is Angular's logo). Before the merge.
-- `in-progress` [[step-7.8f-website-search-and-sharing|7.8f Website search engines and sharing]] — hreflang links between the languages, sitemap.xml, robots.txt and the picture shown when the site is shared. Before the merge.
+- `done` [[step-7.8c-website-publishing|7.8c Website publishing on GitHub Pages]] — A GitHub Actions workflow publishes the prerendered site to GitHub Pages; the owner turns Pages on. Before the merge.
+- `done` [[step-7.8d-website-not-found-page|7.8d Website not-found page]] — A 404 page in English and Italian for wrong addresses, served by GitHub Pages. Before the merge.
+- `done` [[step-7.8e-website-favicon|7.8e Website favicon]] — The site's own icon in the browser's tab (Angular's was removed: it is Angular's logo). Before the merge.
+- `done` [[step-7.8f-website-search-and-sharing|7.8f Website search engines and sharing]] — hreflang links between the languages, sitemap.xml, robots.txt and the picture shown when the site is shared. Before the merge.
 - `done` [[step-7.8g-website-lighter-fonts|7.8g Website lighter fonts]] — The site's fonts as WOFF2 instead of TTF, about a third of the size (optional, confirmed by the owner). Before the merge.
 - `todo` [[step-7.8h-website-domain|7.8h Website domain]] — The project's own .org domain for the website (CNAME, HTTPS on GitHub Pages); bought by the owner. After the merge.
 - `todo` [[step-7.8i-website-final-logo|7.8i Website final logo]] — The website takes the final logo of step 7.6 in place of the provisional wordmark (one component). After the merge.

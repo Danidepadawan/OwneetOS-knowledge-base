@@ -3,12 +3,12 @@ type: step
 description: "hreflang links between the languages, sitemap.xml, robots.txt and the picture shown when the site is shared. Before the merge."
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.8f"
-status: in-progress
+status: done
 tags: [step, phase-7, website]
 ---
 # 7.8f Website search engines and sharing *(added 2026-10-23)*
 
-Up: [[phase-7-updates-and-first-release]] · Status: **in-progress** · Part of the website: [[step-7.8-website]]
+Up: [[phase-7-updates-and-first-release]] · Status: **done** · Part of the website: [[step-7.8-website]]
 
 - **Deliverables:** `hreflang` links between the English and Italian pages (and canonical
   addresses), `sitemap.xml`, `robots.txt`, the description and the preview picture shown when a
@@ -31,3 +31,4 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress** · Part of 
   GitHub gives, so the domain changes nothing here). Long dashes removed from the site's texts
   (owner, [[writing-for-users]]). `robots.txt` only counts at a domain's root: it takes effect
   with [[step-7.8h-website-domain]]. **Open:** a shared link checked after the merge.
+- **Outcome: approved by the owner on 2026-10-24** after the merge into `main`: the published pages carry the complete canonical and `hreflang` addresses; `sitemap.xml`, `robots.txt` and the sharing picture are online; the owner saw the preview in a chat.

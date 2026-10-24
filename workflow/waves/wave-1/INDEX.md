@@ -18,7 +18,7 @@ Plan and status legend: [[wave-1]]. Scope: [[wave-1-scope]].
 - [[workflow/waves/wave-1/phase-4-games/INDEX|Phase 4 — Games]] — 10 of 10 steps done.
 - [[workflow/waves/wave-1/phase-5-streaming-apps-and-media/INDEX|Phase 5 — Streaming apps and media]] — 0 of 8 steps done.
 - [[workflow/waves/wave-1/phase-6-first-boot-installer-disks/INDEX|Phase 6 — First boot, installer, disks]] — 0 of 6 steps done.
-- [[workflow/waves/wave-1/phase-7-updates-and-first-release/INDEX|Phase 7 — Updates and first release (Wave 1 complete)]] — 3 of 19 steps done.
+- [[workflow/waves/wave-1/phase-7-updates-and-first-release/INDEX|Phase 7 — Updates and first release (Wave 1 complete)]] — 7 of 19 steps done.
 
 ## Notes
 

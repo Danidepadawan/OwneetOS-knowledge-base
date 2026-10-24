@@ -3,12 +3,12 @@ type: step
 description: "A GitHub Actions workflow publishes the prerendered site to GitHub Pages; the owner turns Pages on. Before the merge."
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.8c"
-status: in-progress
+status: done
 tags: [step, phase-7, website]
 ---
 # 7.8c Website publishing on GitHub Pages *(added 2026-10-23)*
 
-Up: [[phase-7-updates-and-first-release]] · Status: **in-progress** · Part of the website: [[step-7.8-website]]
+Up: [[phase-7-updates-and-first-release]] · Status: **done** · Part of the website: [[step-7.8-website]]
 
 - **Deliverables:** a workflow that builds the static site and publishes it to **GitHub Pages**
   (actions pinned by commit hash, as the CI; only the website, never ISOs or packages:
@@ -25,3 +25,4 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress** · Part of 
   `/OwneetOS-website/`: the 12 pages, the fonts, the trailing slash (`/it/guide/`) and the
   languages work. **Open:** the owner turns Pages on; the first publication comes with the merge
   into `main`, and the step is checked then.
+- **Outcome: approved by the owner on 2026-10-24** after the merge into `main`: the Pages workflow published `main` (pushed by the owner); home, `/it/`, the pages answer at `https://fancy-dino.github.io/OwneetOS-website/` with the site's fonts.

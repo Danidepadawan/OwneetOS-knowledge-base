@@ -3,12 +3,12 @@ type: step
 description: "The site's own icon in the browser's tab (Angular's was removed: it is Angular's logo). Before the merge."
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.8e"
-status: in-progress
+status: done
 tags: [step, phase-7, website]
 ---
 # 7.8e Website favicon *(added 2026-10-23)*
 
-Up: [[phase-7-updates-and-first-release]] · Status: **in-progress** · Part of the website: [[step-7.8-website]]
+Up: [[phase-7-updates-and-first-release]] · Status: **done** · Part of the website: [[step-7.8-website]]
 
 - **Deliverables:** a favicon of OwneetOS (SVG, plus the sizes browsers ask for) from the current
   wordmark's "O" or the logo of the moment; replaced with the final logo
@@ -26,3 +26,4 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress** · Part of 
   on a square Dusk tile: the phone rounds the corners); linked relatively in `src/index.html`.
   Run it again with the final logo ([[step-7.8i-website-final-logo]]). **Open:** checked in the
   tab of the published site, light and dark, after the merge.
+- **Outcome: approved by the owner on 2026-10-24** after the merge into `main`: the owner saw the favicon in the browser's tab; the three icons are online.
