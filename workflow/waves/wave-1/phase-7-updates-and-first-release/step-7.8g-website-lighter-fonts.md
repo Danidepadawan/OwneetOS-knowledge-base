@@ -3,12 +3,12 @@ type: step
 description: "The site's fonts as WOFF2 instead of TTF, about a third of the size (optional, confirmed by the owner). Before the merge."
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.8g"
-status: in-progress
+status: done
 tags: [step, phase-7, website]
 ---
 # 7.8g Website lighter fonts *(added 2026-10-23)*
 
-Up: [[phase-7-updates-and-first-release]] · Status: **in-progress** · Part of the website: [[step-7.8-website]]
+Up: [[phase-7-updates-and-first-release]] · Status: **done** · Part of the website: [[step-7.8-website]]
 
 - **Deliverables:** the console's font instances converted to **WOFF2** (in the builder VM with
   fontTools, as `tools/branding/make-fonts`), the TTF files replaced, the OFL licences kept next
@@ -22,4 +22,7 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress** · Part of 
   WOFF2 of `googlefonts/lexend` (version 1.008, commit 7894f02, SHA-256 in the site's
   `CREDITS.md`): 75 KB instead of 157 KB; same licence text. **Open:** Bricolage Grotesque. The
   console's instance (wght 800, wdth 80, opsz 32, made by `tools/branding/make-fonts`) has no
-  official WOFF2: the project publishes width 100 or 75 only. Waiting for the owner's choice.
+  official WOFF2: the project publishes width 100 or 75 only.
+- **Outcome (owner, 2026-10-24):** done. Bricolage Grotesque stays the console's TTF instance
+  (90 KB, the same look as the console); turning it into WOFF2 in the builder VM (about 45 KB)
+  is left for a time the VM is on anyway. The site's fonts: 165 KB instead of 247 KB.
