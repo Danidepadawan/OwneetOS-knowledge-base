@@ -17,4 +17,12 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress** · Part of 
   pages demo): a big "404", "This page is not here" / "Questa pagina non c’è", "The address may be
   mistyped, or the page has moved.", and three ways out: back to the home, the install guide, the
   questions; the site's header and footer. Its language comes from the address (`/it/...` in
-  Italian, every other address in English). Waiting for the owner's approval.
+  Italian, every other address in English). Approved by the owner on 2026-10-24.
+- **Code (2026-10-24, website commit 31b18c2):** `core/components/not-found/` on the page frame
+  (which gets `back` and an `.above` slot); routes `it/**` (Italian) and `**` (English), plus
+  `/404`, prerendered and turned into `404.html` by `scripts/not-found-page.mjs` (in `npm run
+  build` and in the Pages workflow); `robots: noindex` on it; the language links keep the wrong
+  address (`/nowhere` ↔ `/it/nowhere`); texts `not-found.*` in the JSON files; one more test (8).
+  Tried under `/OwneetOS-website/` with a server that answers like GitHub Pages: wrong addresses
+  answer 404 with the page, in Italian under `/it/`. **Open:** checked on the published site
+  after the merge, with 7.8c.
