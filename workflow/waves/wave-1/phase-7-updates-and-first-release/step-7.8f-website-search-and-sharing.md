@@ -19,4 +19,4 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress** · Part of 
   middle square that some apps cut (one picture for every language), or B the logo, the home's
   title and line in the page's language and the gamepad "O" large at the right (one per
   language); Dusk or Daylight; shown whole and in two plain link previews (large, and cut to a
-  square). Waiting for the owner's choice.
+  square). The owner chose A in Dusk (2026-10-24).
