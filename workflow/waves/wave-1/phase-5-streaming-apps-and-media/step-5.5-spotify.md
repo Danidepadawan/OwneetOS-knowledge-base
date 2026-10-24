@@ -110,5 +110,17 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress** (owner, 2026
     "Continue with Facebook" goes straight back to the same account. Today only removing the web
     app (which deletes its profile, [[step-5.1-brave-in-the-os]]) signs out of everything. A
     console "Sign out of {name}" (empty the web app's cookies and site data, keep the app and
-    Widevine) is proposed for [[step-5.7-apps-page]]; **where it goes is the owner's choice**.
+    Widevine) was proposed; **the owner declined it (2026-10-24): no "Sign out of" option.**
+    Removing the web app stays the only way to sign out of everything (a known limit of this step).
   - **Sub-step 1 done (2026-10-24).** Next: sub-step 2, the bindings.
+- **Sub-step 2, the bindings** (owner, 2026-10-24): "Inside Spotify" in [[controller-input-map]] and
+  "Spotify" in [[extension-design]]: its own navigation (shelves and cards, song lists, the left
+  sidebar, the top bar); A clicks; B closes a menu or window, goes back, then "Close Spotify?";
+  X adds to the queue; **Y moves the selection to the player bar and back** (owner's choice over
+  Quick Search: previous / next are there); Menu = Spotify's context menu; LT / RT −5 / +5 s;
+  **LB / RB = Home → Search → Your Library**, going round (owner's choice over Home ↔ Search).
+  **On a TV** (owner's choice): **Spotify drawn bigger** (laid out as on a screen about 1280 px
+  wide, 1.5× on a 1080p TV) and **its right panel folded away**; the left sidebar stays open and
+  Spotify's full-screen view is only its own button in the player bar. "Install App", "Open in
+  Desktop app" and "Open Miniplayer" are never reached. **Sub-step 2 done.** Next: sub-step 3,
+  the code (extension, Brave's password policies, an owneet-base version).

@@ -4,7 +4,7 @@ description: "The binding meaning of every button on every screen, keyboard fall
 area: ux
 status: active
 decided: 2026-10-03
-updated: 2026-10-22
+updated: 2026-10-24
 legacy: "PROJECT_RULES.md §9.1"
 tags: [decision, ux, input]
 ---
@@ -78,6 +78,27 @@ code, "Who's watching?") keep the web-app bindings above. **Y opens Netflix's se
 browsing pages (owner, 2026-10-22); X, Menu and View do nothing; LB / RB are never used; Guide
 stays owneetd's.
 
+**Inside Spotify** (step 5.5, 2026-10-24; Spotify's desktop web player, its own navigation,
+[[extension-design]]): D-pad / left stick move over Spotify's parts: in the **main view** from
+shelf to shelf keeping about the same column and from card to card in a shelf, the shelf sliding
+on with Spotify's own arrows at the edge of what is visible; in a **song list** from song to song
+(each song is one target); left from the main view to the **left sidebar** (Your Library), up to
+the **top bar**. **A** clicks: a card opens its page, a song plays, a text field opens the
+console's keyboard. **B** closes an open menu or window first (Spotify's windows keep the selection
+inside them), otherwise goes back a page, and where there is nothing to go back to asks to close
+the web app ("Close Spotify?"). **X adds the selected song, album or playlist to the queue**
+(Spotify's context menu, "Add to queue"; owner, 2026-10-23). **Y moves the selection to the player
+bar** (shuffle, previous, play / pause, next, repeat, queue, volume, full screen…) **and Y or B
+brings it back** where it was (owner, 2026-10-24); previous / next song are pressed there. **Menu**
+opens Spotify's context menu for the selected item (inside it the D-pad moves between its items, A
+presses one, B closes it). **LT / RT = −5 / +5 s** (Spotify's own Shift+← / Shift+→, repeating with
+this map's LT / RT timing; owner, 2026-10-23). **LB / RB switch Spotify's top-level sections,
+Home → Search → Your Library** (going round, as the console's sections; Your Library moves the
+selection into the left sidebar; owner, 2026-10-24). The right stick scrolls. "Install App", "Open
+in Desktop app" and "Open Miniplayer" are never reached: they open windows the console cannot
+show. View does nothing; Guide stays owneetd's. Pages outside Spotify's player (sign-in, Facebook /
+Google / Apple sign-in) keep the web-app bindings above.
+
 The input map is **fixed**: it is not saved in the frontend's settings, so a change reaches every
 system. **Held buttons:** a direction repeats after 360 ms, then every 140 ms; LB / RB and LT / RT
 repeat after 720 ms, then every 360 ms; analog triggers count as pressed above half their travel
@@ -130,3 +151,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-19 | Pointer: A on a text field opens the console's keyboard by itself (the pointer's "I" shape after the click, read through XFixes); Y stays as the fallback. |
 | 2026-10-19 | Inside YouTube: LT / RT stay unused (no key of the TV interface seeks by exactly 10 s; seeking the video directly from the extension rejected); seeking is done with YouTube's own progress bar ([[controller-input-map]]). |
 | 2026-10-22 | Inside Netflix (step 5.4): Netflix's own navigation on its browsing pages (rows and tiles, rows sliding on, A into the title window), the title window (B back to the tile) and the player (any button shows the controls, D-pad between them, A presses or pauses, LT / RT ±10 s, B closes a menu or leaves); other pages keep the web-app bindings ([[controller-input-map]]). |
+| 2026-10-24 | Inside Spotify (step 5.5, its desktop web player): its own navigation (shelves and cards, song lists, the left sidebar, the top bar); A clicks; B closes a menu or window, goes back, then "Close Spotify?"; X adds to the queue; Y to the player bar and back; Menu = Spotify's context menu; LT / RT −5 / +5 s; LB / RB Home → Search → Your Library, going round ([[controller-input-map]]). |

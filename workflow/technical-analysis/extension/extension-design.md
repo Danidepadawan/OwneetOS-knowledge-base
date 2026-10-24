@@ -179,6 +179,50 @@ Agreed with the owner on 2026-10-22 ([[step-5.4-netflix]]; bindings: [[controlle
   place of `extension/content/netflix.js`, and anything not found falls back to the generic
   navigation.
 
+## Spotify (step 5.5)
+
+Agreed with the owner on 2026-10-24 ([[step-5.5-spotify]]; bindings: [[controller-input-map]],
+"Inside Spotify"). Spotify has no web TV interface: a TV user agent gets its page for phones,
+which plays nothing, so its **desktop web player** (`open.spotify.com`), with a navigation of its
+own, as Netflix's. Spotify's own arrow keys move only inside a song list, a menu or one shelf, never
+between them.
+
+- **Areas:** the main view (shelves of cards, or a page's header and its song list), the left
+  sidebar (Your Library), the top bar, and the player bar (reached with Y). Up / down between
+  shelves keep about the same column; left / right between cards slide the shelf with Spotify's
+  `carousel-previous-button` / `carousel-next-button` at the edge; a song is one target.
+- **A clicks** (a scripted Enter activates nothing on Spotify).
+- **B:** an open context menu or Spotify window closes first (Escape; the selection goes back to
+  where it was), then the page before; with nothing left, "Close {name}?" as in 5.2. Spotify's
+  windows (e.g. "Start listening with a free account") keep the selection inside them.
+- **X:** the selected item's context menu, then its "Add to queue" item. The items carry no names
+  of their own, so it is found by Spotify's label in the console's languages (English, Italian);
+  in another language X only opens the menu. Spotify confirms with "Added to queue".
+- **Menu:** Alt+J on the selected item (focused first), Spotify's own context menu; inside it the
+  D-pad sends Spotify's arrows (its items, its sub-menus to the right), A clicks, B closes.
+- **LT / RT:** Shift+← / Shift+→ (Spotify seeks by 5 s; measured: its progress bar moves 5000 ms).
+- **LB / RB:** Home (Alt+Shift+H), Search (Ctrl+Shift+L), Your Library (the selection into the
+  left sidebar), going round.
+- **Y:** the selection to the player bar and back.
+- **Never reached:** "Install App", "Open in Desktop app", "Open Miniplayer" (`pip-toggle-button`):
+  they open windows or programs the console cannot show.
+- **Look on a TV** (owner, 2026-10-24): Spotify is **drawn bigger**, so that its page lays out as on
+  a screen about 1280 px wide (1.5× on a 1080p TV), in proportion on any screen (Brave's zoom for
+  Spotify, set by the console); **Spotify's right panel** ("Now playing view") **is folded away**
+  when Spotify opens (its own setting, Alt+Shift+R).
+- **How the parts are found** (Spotify's site as of 2026-10-24, read with probes in the test VM):
+  left sidebar `nav[aria-label="Main"]` (Your Library's rows: `role=row` with `play-button`s); top
+  bar `global-nav-bar` (`home-button`, `search-input`, `browse-button`, `user-widget-link`); main
+  view `main` (`home-page`); shelves `component-shelf` (a `role=grid` named by the shelf's title,
+  `carousel-scroller`, `see-all-link`); cards `[data-encore-id="card"]` (`role=listitem`, a
+  `role=button` with `tabindex`, a `play-button`, the title link); songs `tracklist-row` in a
+  `role=row` with `aria-rowindex` (`internal-track-link`); player bar `now-playing-bar`
+  (`now-playing-widget-v2`, `control-button-skip-back`, `-playpause`, `-skip-forward`, `-repeat`,
+  `control-button-queue`, `playback-progressbar`, `volume-bar`, `fullscreen-mode-button`,
+  `pip-toggle-button`); context menu `#context-menu` (`data-testid="context-menu"`,
+  `ul[role=menu]`, items `role=menuitem`). These names live in one place of
+  `extension/content/spotify.js`; anything not found falls back to the generic navigation.
+
 ## YouTube's TV interface (step 5.3)
 
 Agreed with the owner on 2026-10-18 ([[step-5.3-youtube]]; bindings: [[controller-input-map]],
