@@ -28,4 +28,8 @@ Comes from: [[website]] (owner, 2026-10-20). Applies to `OwneetOS-website/`.
   prerendered).
 - Texts only through `I18nService` and the JSON files in `src/i18n/` ([[ui-text-and-i18n]]);
   colours only through the tokens in `src/styles.scss` ([[design-tokens]]).
+- **Never link the site's own files from the root** (`/fonts/...`): the site lives under a base
+  path on GitHub Pages (`/OwneetOS-website/` until the domain). Links go through the router and
+  `<base href>`; stylesheet URLs to `public/` are relative (`fonts/...`) and listed in
+  `externalDependencies` ([[step-7.8c-website-publishing]]).
 - SPDX header on every file ([[license-headers]]); the Angular CLI's statistics stay off.
