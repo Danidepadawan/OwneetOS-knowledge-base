@@ -124,3 +124,10 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress** (owner, 2026
   Spotify's full-screen view is only its own button in the player bar. "Install App", "Open in
   Desktop app" and "Open Miniplayer" are never reached. **Sub-step 2 done.** Next: sub-step 3,
   the code (extension, Brave's password policies, an owneet-base version).
+- **Sub-step 3, implemented (2026-10-24), waiting for the owner's test:** owneet-base 0.0.51:
+  `extension/content/spotify.js` (Spotify's own navigation, as agreed in sub-step 2; tests
+  `test/spotify.test.js`), `extension/content/shared.js` (the rows' geometry and the keys, moved out
+  of `netflix.js`; `test/shared.test.js`), `input.js` passing X, Menu and LB / RB to the site's
+  driver, the worker setting Brave's zoom for Spotify, and Brave's managed policies without password
+  or address saving. One detail beyond sub-step 2, for the owner to confirm: **right at the end of a
+  shelf reaches its "Show all"** (otherwise unreachable from the cards).

@@ -188,10 +188,16 @@ own, as Netflix's. Spotify's own arrow keys move only inside a song list, a menu
 between them.
 
 - **Areas:** the main view (shelves of cards, or a page's header and its song list), the left
-  sidebar (Your Library), the top bar, and the player bar (reached with Y). Up / down between
-  shelves keep about the same column; left / right between cards slide the shelf with Spotify's
-  `carousel-previous-button` / `carousel-next-button` at the edge; a song is one target.
-- **A clicks** (a scripted Enter activates nothing on Spotify).
+  sidebar (Your Library), the top bar, and the player bar (reached with Y). A card, a song and a
+  Your Library row are one target each (their own buttons and links are not). Up / down from a card
+  go to the next shelf's cards, about the same column (its title and "Show all" skipped); left /
+  right between cards slide the shelf with Spotify's `carousel-previous-button` /
+  `carousel-next-button` at the edge, and **right at the shelf's end reaches its "Show all"**
+  (2026-10-24, with the code; otherwise unreachable from the cards). Elsewhere the nearest target
+  in the direction, staying in the same part when one fits as well. Below the last song drawn the
+  page scrolls and the move is tried once more (Spotify draws long lists as they come).
+- **A clicks** (a scripted Enter activates nothing on Spotify); on a song it clicks the song's own
+  play button (a click on the row only selects it).
 - **B:** an open context menu or Spotify window closes first (Escape; the selection goes back to
   where it was), then the page before; with nothing left, "Close {name}?" as in 5.2. Spotify's
   windows (e.g. "Start listening with a free account") keep the selection inside them.
@@ -208,8 +214,15 @@ between them.
   they open windows or programs the console cannot show.
 - **Look on a TV** (owner, 2026-10-24): Spotify is **drawn bigger**, so that its page lays out as on
   a screen about 1280 px wide (1.5× on a 1080p TV), in proportion on any screen (Brave's zoom for
-  Spotify, set by the console); **Spotify's right panel** ("Now playing view") **is folded away**
-  when Spotify opens (its own setting, Alt+Shift+R).
+  Spotify, set by the console: the page sends its width, the worker sets the tab's zoom with
+  `chrome.tabs.setZoom`, between 100 % and 300 % in steps of 5 %, kept by Brave for the site);
+  **Spotify's right panel** ("Now playing view") **is folded away** once when Spotify opens (its own
+  Alt+Shift+R, sent when the main view ends more than 120 px from the right edge).
+- **Code:** `extension/content/spotify.js` (tests `extension/test/spotify.test.js`); the rows'
+  geometry and the keys it shares with Netflix are in `extension/content/shared.js`
+  (`test/shared.test.js`). `input.js` passes X, Menu and LB / RB to a site's driver that has them
+  (`secondary`, `options`, `section`; LB / RB repeat with the map's timing) and the right stick's
+  amounts to its `scroll`.
 - **How the parts are found** (Spotify's site as of 2026-10-24, read with probes in the test VM):
   left sidebar `nav[aria-label="Main"]` (Your Library's rows: `role=row` with `play-button`s); top
   bar `global-nav-bar` (`home-button`, `search-input`, `browse-button`, `user-widget-link`); main
