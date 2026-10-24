@@ -20,3 +20,14 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress** · Part of 
   title and line in the page's language and the gamepad "O" large at the right (one per
   language); Dusk or Daylight; shown whole and in two plain link previews (large, and cut to a
   square). The owner chose A in Dusk (2026-10-24).
+- **Code (2026-10-24, website commit 4a6b49e):** `core/services/head/` sets each page's
+  head: title and description, the canonical address and `hreflang` (en, it, x-default; the
+  addresses end with "/" as the published folders), Open Graph (title, description, address,
+  locale, `share-picture.png` 1200 x 630 with its alt text) and `twitter:card`; the not-found page
+  only `noindex`. `scripts/sitemap.mjs` writes `sitemap.xml` (12 addresses with their languages)
+  and `robots.txt` after the build; `scripts/make-share-picture.mjs` makes the picture with a
+  Chromium already on the computer, from the logo, the site's font and the Dusk tokens. The
+  site's address is `SITE_URL` (`define` in `angular.json`; the Pages workflow passes the address
+  GitHub gives, so the domain changes nothing here). Long dashes removed from the site's texts
+  (owner, [[writing-for-users]]). `robots.txt` only counts at a domain's root: it takes effect
+  with [[step-7.8h-website-domain]]. **Open:** a shared link checked after the merge.
