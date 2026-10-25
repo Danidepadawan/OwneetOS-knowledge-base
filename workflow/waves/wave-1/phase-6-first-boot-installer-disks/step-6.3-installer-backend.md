@@ -1,6 +1,6 @@
 ---
 type: step
-description: "Whole-disk install: partitioning, btrfs subvolumes, snapper, bootloader, user, first-boot setup. Tested on virtual disks only, never on…"
+description: "Whole-disk install: partitioning, btrfs subvolumes, bootloader, user, first-boot setup. Tested on virtual disks only, never on…"
 phase: "[[phase-6-first-boot-installer-disks]]"
 step: "6.3"
 status: in-progress

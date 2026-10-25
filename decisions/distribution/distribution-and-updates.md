@@ -1,6 +1,6 @@
 ---
 type: decision
-description: "ISO on SourceForge, website on GitHub Pages, [owneet] pacman repo, pinned snapshots, btrfs + snapper."
+description: "ISO on SourceForge, website on GitHub Pages, [owneet] pacman repo, pinned snapshots, btrfs rollback (no snapper)."
 area: distribution
 status: active
 decided: 2026-10-03
