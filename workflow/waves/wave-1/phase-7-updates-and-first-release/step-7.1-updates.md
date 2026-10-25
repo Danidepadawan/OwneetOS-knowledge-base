@@ -26,3 +26,23 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   for the owner's approval.
 - **Demo approved by the owner (2026-10-25)** after one change: the versions of 7.1b in a
   scrolling list, one per line.
+- **Engine (2026-10-25, code commit 2d7dadd on `feature/step7_updates`):** package
+  `owneet-updates`: `owneet-updates check` downloads the signed list of releases
+  (`URL/updates/releases.json`, one release per line: version, date, Arch Linux Archive date,
+  notes per language), verifies it with pacman's keyring, and for a newer release works out the
+  changed packages and the download size in a database of its own; `apply` runs the rollback's
+  `prepare`, writes the release's `pacman.conf` (its archive date, `[owneet]` at `URL/vVERSION`
+  with signatures required), downloads (the system unchanged if that fails), installs and runs
+  `arm`. State for owneetd in `/run/owneet/system-update.json`, the verified list in
+  `/run/owneet/releases.json`. A daily timer (3 minutes after start-up, then every day);
+  `owneet-rollback-now.service`; polkit lets the console user start the three units. The version of
+  OwneetOS is this package's `pkgver` (`/usr/share/owneet/version`), set by each release
+  ([[step-7.2-release-pipeline]]). `tools/make-test-release` makes a pretend release signed with a
+  throwaway key that never leaves the builder VM.
+- **Tested in the test VM (2026-10-25):** 0.0.1 installed; a tampered list refused (`not_signed`);
+  the signed test release 0.0.2 found with its package and size, installed (spare copy of 0.0.1,
+  3 tries), blessed after the restart, then "up to date"; "Go back to the previous version"
+  brought 0.0.1 back and 0.0.2 was offered again. A missing list (no release published yet)
+  counts as "up to date", not "offline".
+- **Left in 7.1:** owneetd (status, check, install, restart, go back, the notice after a
+  rollback) and the Settings screens of the approved demo.
