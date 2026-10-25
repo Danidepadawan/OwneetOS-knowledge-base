@@ -22,3 +22,5 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
 - **Split (owner, 2026-10-25):** 7.1 keeps updates and "Go back to the previous version"; choosing
   any published version is [[step-7.1b-going-back-to-any-version]]. The demo shows both. Branch
   `feature/step7_updates` (from `feature/step6_installer`, owner, 2026-10-25).
+- **Demo (2026-10-25):** `design/demos/7.1-updates.html`, on the approved settings demo; waiting
+  for the owner's approval.
