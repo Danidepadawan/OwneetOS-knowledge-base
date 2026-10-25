@@ -21,3 +21,12 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
 - **Starts from** the tester installer `owneet-tester-install` of [[step-4.2a-tester-installer]]
   (GPT, 1 GiB EFI system partition, btrfs subvolumes, systemd-boot).
 - **Branch:** `feature/step6_installer` in the code and in this vault (owner, 2026-10-25).
+- **Plan (owner, 2026-10-25):** a new package `owneet-installer` (no change to `owneet-base`):
+  `owneet-install disks` (each internal disk with its model, size, partitions, Windows and
+  BitLocker found) and `owneet-install install` (offline: the stick's own image, with its
+  progress), run as root through a systemd service; [[step-6.4-installer-ui]] wires it to
+  `owneetd` and draws it. The rollback machinery of option C (snapper, the "before the update"
+  boot entry with the previous kernel, boot counting, the boot marked good only when the console
+  reaches the home screen, the rollback command) is part of this step, tested in the VM by
+  breaking an update on purpose; [[step-7.1-updates]] keeps the update flow in Settings and its
+  screens. Disks, Windows and BitLocker, the console's name: [[installer-and-firmware]].

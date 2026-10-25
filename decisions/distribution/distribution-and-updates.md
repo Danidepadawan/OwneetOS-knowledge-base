@@ -34,8 +34,9 @@ tags: [decision, distribution]
   with the controller** (Settings → "Go back to before the last update"), and **automatically**: a
   new version that does not reach the home screen in 3 boots is left by systemd-boot's boot
   counting for the previous one, with a notice. The hidden boot menu is only a keyboard fallback
-  ([[hard-constraints]] C2). The user's data (games, saves, profiles, settings) live in separate
-  subvolumes, never rolled back. GRUB + grub-btrfs and Limine were turned down: keyboard-only
+  ([[hard-constraints]] C2). The user's data (games, saves, profiles, the console's settings: the
+  home of `owneet`) live in separate subvolumes, never rolled back. Only the system goes back:
+  Wi-Fi networks or controllers added after the update are added again (owner, 2026-10-25). GRUB + grub-btrfs and Limine were turned down: keyboard-only
   menus, a bootloader more, no automatic fallback.
 - The only "hands-on" step for the user: writing the ISO to a USB stick (balenaEtcher or Ventoy),
   explained in an illustrated guide.
