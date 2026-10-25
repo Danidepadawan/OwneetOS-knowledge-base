@@ -162,3 +162,4 @@ Decisions by area: [[decisions/INDEX|decisions index]].
 | 2026-10-25 | Step 6.3 (installer backend and rollback) approved after the VM tests. Next: 7.1. | [[step-6.3-installer-backend]] |
 | 2026-10-25 | Step 7.1 agreed: signed updates as GitHub Releases; automatic check, install only on request; "Restart now" / "Later"; packages in an optional "Details" section; going back always possible, to the previous version (no time limit) or to any published version (downloaded), with a warning. | [[distribution-and-updates]], [[step-7.1-updates]] |
 | 2026-10-25 | Plan: step 7.1 split; going back to any published version becomes step 7.1b (approved separately). Branch `feature/step7_updates` from `feature/step6_installer`. | [[step-7.1-updates]], [[step-7.1b-going-back-to-any-version]] |
+| 2026-10-25 | Demo 7.1 (updates) approved, with the versions of 7.1b in a scrolling list. | [[step-7.1-updates]], [[step-7.1b-going-back-to-any-version]] |

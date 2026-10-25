@@ -24,3 +24,5 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   `feature/step7_updates` (from `feature/step6_installer`, owner, 2026-10-25).
 - **Demo (2026-10-25):** `design/demos/7.1-updates.html`, on the approved settings demo; waiting
   for the owner's approval.
+- **Demo approved by the owner (2026-10-25)** after one change: the versions of 7.1b in a
+  scrolling list, one per line.
