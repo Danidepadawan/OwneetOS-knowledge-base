@@ -65,5 +65,6 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   installer `owneet-tester-install` (in `owneet-base`) is left as it is.
 - **Added (owner, 2026-10-25, code f7e9fdc):** every installation needs `OWNEET_INSTALL_ERASE`
   set to the chosen disk (the player's confirmation), for any disk; otherwise
-  `erase_not_confirmed` and nothing is touched. To be checked in the VM again. Waiting for the
-  owner's approval.
+  `erase_not_confirmed` and nothing is touched. Checked in the VM (2026-10-25, owneet-installer
+  0.0.2): no confirmation and a confirmation for another disk refused with the disk untouched; the
+  confirmed request installed. Waiting for the owner's approval.
