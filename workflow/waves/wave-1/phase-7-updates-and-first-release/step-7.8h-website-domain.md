@@ -1,6 +1,6 @@
 ---
 type: step
-description: "The project's own .org domain for the website (CNAME, HTTPS on GitHub Pages); bought by the owner. After the merge."
+description: "The website on its own domain owneetos.org: DNS at Hostinger, verified on GitHub, HTTPS on GitHub Pages; bought by the owner."
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.8h"
 status: done

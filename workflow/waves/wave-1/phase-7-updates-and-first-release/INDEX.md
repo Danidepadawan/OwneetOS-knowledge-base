@@ -29,7 +29,7 @@ Status comes from each step note (`status:`).
 - `done` [[step-7.8e-website-favicon|7.8e Website favicon]] — The site's own icon in the browser's tab (Angular's was removed: it is Angular's logo). Before the merge.
 - `done` [[step-7.8f-website-search-and-sharing|7.8f Website search engines and sharing]] — hreflang links between the languages, sitemap.xml, robots.txt and the picture shown when the site is shared. Before the merge.
 - `done` [[step-7.8g-website-lighter-fonts|7.8g Website lighter fonts]] — The site's fonts as WOFF2 instead of TTF, about a third of the size (optional, confirmed by the owner). Before the merge.
-- `done` [[step-7.8h-website-domain|7.8h Website domain]] — The project's own .org domain for the website (CNAME, HTTPS on GitHub Pages); bought by the owner. After the merge.
+- `done` [[step-7.8h-website-domain|7.8h Website domain]] — The website on its own domain owneetos.org: DNS at Hostinger, verified on GitHub, HTTPS on GitHub Pages; bought by the owner.
 - `todo` [[step-7.8i-website-final-logo|7.8i Website final logo]] — The website takes the final logo of step 7.6 in place of the provisional wordmark (one component). After the merge.
 - `todo` [[step-7.8j-website-console-picture|7.8j Website console picture]] — The console picture on the website's home redrawn from the real home screen after Danidepadawan's changes; and "Local pictures": added to the plan or removed. After the merge.
 - `todo` [[step-7.8k-website-more-languages|7.8k Website in more languages]] — The website in German, French and Spanish: a JSON file and an address per language, checked by people the authors know before publishing.
