@@ -25,6 +25,20 @@ tags: [decision, distribution]
 - With [[optional-apps]] (step 5.0) the ISO becomes slim: apps are downloaded when chosen.
 - Packages built with **PKGBUILD**s; updates served from an **own pacman repository `[owneet]`**
   hosted on GitHub. Updates are triggered from the Settings menu with the gamepad.
+- **Updates for users (owner, 2026-10-25, step 7.1):** published as **GitHub Releases** of the
+  code repository, signed ([[package-signing]]; publishing in [[step-7.2-release-pipeline]]).
+  The console **checks by itself** at start-up and once a day when online (only the list, with a
+  discreet notice) and **installs only when the user asks**. After installing: "Restart now" or
+  "Later" (the new version is put on trial at the restart). The user sees the version, the
+  download size and a short "what's new" per language; the list of packages is an optional,
+  closed "Details" section for those who want it (transparency, [[writing-for-users]]).
+- **Going back, always (owner, 2026-10-25):** "Go back to the previous version" stays available
+  with no time limit (the spare copy lasts until the next update). The user can also **choose any
+  published version** to go back to: every release's OwneetOS packages stay published, Arch's
+  packages come from the Arch Linux Archive date of that release, and going back is an update in
+  reverse (spare copy, download, 3 tries). A warning before confirming: personal data (saves,
+  profiles) do not go back, and an old version has old security problems and may not know newer
+  hardware.
 - Arch packages are **pinned to Arch Linux Archive snapshots**; the snapshot date is advanced only
   after testing. CI builds use the ISO's snapshot for build dependencies too.
 - **Package signing**: see [[package-signing]].
@@ -63,3 +77,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-24 | The website's domain is **owneetos.org**, bought by the owner at Hostinger after a preliminary trademark search (step 7.5). |
 | 2026-10-25 | Rollback (option C, step 6.3): systemd-boot stays; snapshot and previous kernel kept at every update; rollback from Settings with the controller and automatic after 3 failed boots (boot counting); the boot menu only a keyboard fallback; the user's data never rolled back. GRUB + grub-btrfs and Limine turned down. |
 | 2026-10-25 | No snapper: one spare copy of the system (btrfs snapshot), always the last version that reached the home screen; an update replaces it only from a confirmed working system, so broken releases never overwrite it. |
+| 2026-10-25 | Step 7.1: updates as signed GitHub Releases; automatic check (start-up, daily), install only on request; "Restart now" or "Later"; version, size and "what's new", packages in an optional "Details" section. Going back always possible: to the previous version with no time limit, and to any published version (downloaded, an update in reverse), with a warning. |
