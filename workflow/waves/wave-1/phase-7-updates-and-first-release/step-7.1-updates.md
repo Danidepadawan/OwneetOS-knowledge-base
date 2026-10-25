@@ -19,3 +19,6 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   the engine (signed updates around the rollback of [[step-6.3-installer-backend]]: `prepare`
   before, `arm` after), the screens' code after the demo is approved, tests in the VM with a test
   repository. Updates from the tester stick stay as they are.
+- **Split (owner, 2026-10-25):** 7.1 keeps updates and "Go back to the previous version"; choosing
+  any published version is [[step-7.1b-going-back-to-any-version]]. The demo shows both. Branch
+  `feature/step7_updates` (from `feature/step6_installer`, owner, 2026-10-25).
