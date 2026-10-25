@@ -3,13 +3,13 @@ type: step
 description: "Whole-disk install: partitioning, btrfs subvolumes, bootloader, user, first-boot setup. Tested on virtual disks only, never on…"
 phase: "[[phase-6-first-boot-installer-disks]]"
 step: "6.3"
-status: in-progress
+status: done
 legacy: "ROADMAP.md 6.3"
 tags: [step, phase-6]
 ---
 # 6.3 Installer backend *(multi-prompt)*
 
-Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
+Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
 
 - **Deliverables:** whole-disk install: partitioning, btrfs subvolumes, bootloader, user,
   first-boot setup. Tested on virtual disks only, never on the host.
@@ -67,4 +67,5 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   set to the chosen disk (the player's confirmation), for any disk; otherwise
   `erase_not_confirmed` and nothing is touched. Checked in the VM (2026-10-25, owneet-installer
   0.0.2): no confirmation and a confirmation for another disk refused with the disk untouched; the
-  confirmed request installed. Waiting for the owner's approval.
+  confirmed request installed.
+- **Outcome: approved by the owner on 2026-10-25.**
