@@ -1,6 +1,6 @@
 ---
 type: step
-description: "Trademark search for 'OwneetOS' (EUIPO, Italian register); licence notices in the UI ('About → Licences'); review of licences,…"
+description: "Licence notices in the UI ('About → Licences'), review of licences, third-party terms and privacy; the name's search done, no trademark registered."
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.5"
 status: in-progress
@@ -11,9 +11,11 @@ tags: [step, phase-7]
 
 Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
 
-- **Deliverables:** trademark search for "OwneetOS" (EUIPO, Italian register); licence notices in
-  the UI ("About → Licences"); review of licences, third-party terms and privacy by someone
-  experienced in open-source licensing ([[legal-compliance]]).
+- **Deliverables:** licence notices in the UI ("About → Licences"); review of licences,
+  third-party terms and privacy by someone experienced in open-source licensing
+  ([[legal-compliance]]); the name's trademark search (done, below). **No trademark is
+  registered** (the authors, 2026-10-25: too costly for its worth): the step only makes sure
+  everything the project does is legal.
 - **Trademark search, preliminary (owner and Claude, 2026-10-24):** done by us, not by a
   professional, before buying the domain. Web: nothing named "Owneet" or "OwneetOS" (closest:
   OWNet, a 1-Wire library, not a trademark). TMview (EUIPO, UIBM, WIPO; exact names; classes 9
@@ -28,9 +30,6 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
     "own it"; against it, different goods (no software), the weak common word "own", a
     different look.
   - **ownet**: no result.
-- **Outcome so far:** the name can be used and the domain was bought (owneetos.org,
-  [[step-7.8h-website-domain]]). **Before registering the trademark:** a professional's opinion,
-  above all on dedicom's OwnIT (an opposition is possible in the 3 months after publication); a
-  filing limited to downloadable operating-system software would overlap less. Who owns the
-  trademark (both authors, one with a written agreement, or an association), EU or Italy, and
-  when: the authors decide ([[legal-compliance]]).
+- **Outcome of the search:** the name can be used legally and the domain was bought (owneetos.org,
+  [[step-7.8h-website-domain]]). Registering the trademark was weighed (a professional's opinion on
+  dedicom's OwnIT first, then a filing) and **dropped by the authors on 2026-10-25**.

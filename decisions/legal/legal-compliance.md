@@ -1,6 +1,6 @@
 ---
 type: decision
-description: "GPL source archives, licence notices, never-redistributed components, trademarks, credits, asset licences, privacy."
+description: "GPL source archives, licence notices, never-redistributed components, trademarks (third parties'; ours not registered), credits, asset licences, privacy."
 area: legal
 status: active
 decided: 2026-10-07
@@ -27,8 +27,10 @@ project is reviewed by someone experienced in open-source licensing ([[step-7.5-
   store content. They are downloaded by the user's own system, with consent where required.
 - **Trademarks:** third-party names (Xbox, PlayStation, Netflix, Steam…) only to say what works
   with OwneetOS; no third-party logos; never imply endorsement. "Based on Arch Linux" is allowed;
-  the Arch logo is not used. The name **OwneetOS** gets a trademark search (EUIPO, Italian
-  register) before the public launch.
+  the Arch logo is not used. The name **OwneetOS** is **not registered as a trademark** (the
+  authors, 2026-10-25: it costs too much for what it gives); a preliminary search (step 7.5,
+  2026-10-24) found no conflicting mark, so the name is used legally. What carries the project's
+  name or logo never imitates someone else's mark, logo or product shape.
 - **Credits:** the projects OwneetOS is built on are credited by name, author and licence in
   `CREDITS.md` (shipped in the image at `/usr/share/doc/owneetos/CREDITS.md`, shown in the UI under
   "About → Credits and licences" with the full list of installed packages). Every new third-party
@@ -55,3 +57,4 @@ Entries of the [[decision-log]] that shaped this note.
 |---|---|
 | 2026-10-07 | Legal compliance rules adopted ([[legal-compliance]]). CI stops publishing the ISO as a download until releases ship a GPL source archive (option A). |
 | 2026-10-08 | Legal check before phase 3: the frontend fork is named `owneet-frontend` (Pegasus's trademark terms); Pegasus's CC BY-NC-SA theme, logo, Roboto fonts and button images are not used; its online metadata downloads are disabled. `CREDITS.md` credits every project OwneetOS builds on and ships in the image ([[legal-compliance]]). Step 2.9 approved. |
+| 2026-10-25 | The OwneetOS trademark is not registered (the authors: too costly for its worth). The preliminary search of 2026-10-24 found no conflicting mark; the project only makes sure everything it does is legal. |

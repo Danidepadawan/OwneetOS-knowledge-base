@@ -1,6 +1,6 @@
 ---
 type: decision
-description: "The project's website: Angular, static on GitHub Pages, own repository and folder, its pages, English and Italian, no data collected, download as a redirect."
+description: "The project's website: Angular, static on GitHub Pages, own repository and folder, its pages, English and Italian (German, French and Spanish planned), owneetos.org, no data collected, download as a redirect."
 area: distribution
 status: active
 decided: 2026-10-20
@@ -12,8 +12,8 @@ tags: [decision, distribution, website]
 Agreed with the owner on 2026-10-20, before the release; built in [[step-7.8-website]].
 
 - **Angular**, prerendered to a **static site** and published on **GitHub Pages** with the
-  project's `.org` domain ([[distribution-and-updates]]; the name depends on the domain found,
-  e.g. `owneet-os.org`, created by the owner). No server of our own ([[online-and-chat]]).
+  project's domain **`owneetos.org`** ([[distribution-and-updates]]; bought by the owner on
+  2026-10-24, on the site since 2026-10-25). No server of our own ([[online-and-chat]]).
 - **Its own project and repository:** the folder `OwneetOS-website/` next to `OwneetOS/` and this
   vault (inside the project folder), the repository `fancy-dino/OwneetOS-website`, created by the
   owner and shared with Danidepadawan. Everything known about the website (decisions, steps)
@@ -41,7 +41,8 @@ Agreed with the owner on 2026-10-20, before the release; built in [[step-7.8-web
   console, [[ui-text-and-i18n]]): **one JSON file per language in the console's format**
   (`src/i18n/en.json`, `it.json`) read by the site's own `I18nService`, not Angular's XLIFF i18n
   (owner, 2026-10-20). Each language has its own address, prerendered: English at `/`, Italian
-  at `/it` (more languages: a file and a path).
+  at `/it` (more languages: a file and a path). **German, French and Spanish** come next
+  ([[step-7.8k-website-more-languages]], owner, 2026-10-25), each checked by someone who speaks it.
 - **Look:** the console's tokens and fonts (Bricolage Grotesque, Lexend, the palettes,
   [[design-tokens]]) and its logo ([[step-7.6-final-logo-and-brand]]): for now the current
   provisional wordmark (owner, 2026-10-20), replaced in one place by the final logo of 7.6. The
@@ -109,3 +110,4 @@ project folder. No data collected keeps the site free of consent banners and GDP
 | 2026-10-24 | Favicon (7.8e): the whole gamepad "O" mark in the accent, following the device like the site (`favicon.svg`: Dusk orange, Daylight blue when light); `favicon.ico` (16, 32 px) and the phone's `apple-touch-icon.png` (180 px, on a square Dusk tile) in Dusk, the site's default palette. Made by `scripts/make-favicon.mjs` from the logo's data and the palette tokens. |
 | 2026-10-24 | Search engines and sharing (7.8f): `hreflang` and canonical addresses, `sitemap.xml` and `robots.txt`, Open Graph with the sharing picture A (the logo and the slogan, in Dusk, one for every language), all generated with the site from its address (`SITE_URL`, given by GitHub in the Pages workflow). No long dashes in the site's texts. |
 | 2026-10-24 | Lighter fonts (7.8g): Lexend as its project's official WOFF2 (1.008, checked by hash); Bricolage Grotesque stays the console's TTF instance (no official WOFF2 of width 80). Then `feature/step7_website` merged into `main` in the three repositories (owner and Danidepadawan). |
+| 2026-10-25 | The site lives at **owneetos.org** (7.8h done). Its languages grow to **German, French and Spanish** (7.8k), each checked by people the authors know before it is published. |
