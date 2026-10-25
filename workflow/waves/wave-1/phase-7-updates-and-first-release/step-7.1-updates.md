@@ -1,6 +1,7 @@
 ---
 type: step
-description: "Update check and install from Settings, snapshot before every update, rollback path (as decided in 6.3), archive snapshot date advanced…"
+description: "Update check and install from Settings, snapshot before every update, rollback path (decided in 6.3, option C: from Settings with the controller and automatic after
+  3 failed boots, [[distribution-and-updates]]), archive snapshot date advanced…"
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.1"
 status: todo
