@@ -19,6 +19,9 @@ tags: [decision, distribution, installer]
   specific warning (what was found and that all of it, encrypted files included, will be lost)
   and the final confirmation (owner, 2026-10-25); nothing is ever erased or changed automatically
   ([[user-data]]).
+- **Formatting always needs the player's confirmation** (owner, 2026-10-25), for every disk: the
+  installer's backend refuses to touch a disk unless the request carries the confirmation for that
+  very disk, besides the Windows or BitLocker confirmation.
 - **The console's name** (on the network and over Bluetooth) is **editable**, so several consoles
   can be told apart (owner, 2026-10-25); default "OwneetOS". If it becomes a problem, changing it
   moves to [[wave-2]] (item 19).

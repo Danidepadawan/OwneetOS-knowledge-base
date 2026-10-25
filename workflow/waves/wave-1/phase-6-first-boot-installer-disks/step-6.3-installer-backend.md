@@ -62,5 +62,8 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   volume is needed); "working" means the interface and `owneetd` running for a minute, until the
   console gives a precise "home screen reached" signal (after Danidepadawan's merge of phase 5);
   the update flow calling `prepare`/`arm` and the notice are [[step-7.1-updates]]; the tester
-  installer `owneet-tester-install` (in `owneet-base`) is left as it is. Waiting for the owner's
-  approval.
+  installer `owneet-tester-install` (in `owneet-base`) is left as it is.
+- **Added (owner, 2026-10-25, code f7e9fdc):** every installation needs `OWNEET_INSTALL_ERASE`
+  set to the chosen disk (the player's confirmation), for any disk; otherwise
+  `erase_not_confirmed` and nothing is touched. To be checked in the VM again. Waiting for the
+  owner's approval.
