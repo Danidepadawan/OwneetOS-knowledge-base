@@ -11,7 +11,7 @@ tags: [step, phase-6]
 
 Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
 
-- **Deliverables:** whole-disk install: partitioning, btrfs subvolumes, snapper, bootloader, user,
+- **Deliverables:** whole-disk install: partitioning, btrfs subvolumes, bootloader, user,
   first-boot setup. Tested on virtual disks only, never on the host.
 - **Decision (owner, 2026-10-25): option C.** systemd-boot cannot boot btrfs snapshots by itself;
   instead of GRUB + grub-btrfs or Limine (keyboard-only menus, a bootloader more), systemd-boot
@@ -25,7 +25,7 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   `owneet-install disks` (each internal disk with its model, size, partitions, Windows and
   BitLocker found) and `owneet-install install` (offline: the stick's own image, with its
   progress), run as root through a systemd service; [[step-6.4-installer-ui]] wires it to
-  `owneetd` and draws it. The rollback machinery of option C (snapper, the "before the update"
+  `owneetd` and draws it. The rollback machinery of option C (a btrfs spare copy of the last working system, no snapper; the "before the update"
   boot entry with the previous kernel, boot counting, the boot marked good only when the console
   reaches the home screen, the rollback command) is part of this step, tested in the VM by
   breaking an update on purpose; [[step-7.1-updates]] keeps the update flow in Settings and its
