@@ -16,7 +16,9 @@ tags: [decision, games, disks]
   - Windows games on NTFS with Proton are unreliable → readable, but suggest moving them.
 - **Moving games and media between disks** (Wave 1, roadmap 6.6): e.g. from a USB stick to the
   console's disk, with progress and cancel (cancel asks first, "Keep going" selected); the
-  original is deleted only after the copy is checked. Steam games are moved by Steam itself (its storage settings, opened from the console).
+  original is deleted only after the copy is checked. A copy that fails its check is removed and
+  the original stays untouched: "The copy did not work" with Close (selected) and Try again; with
+  several games the others go on and a summary comes at the end. Steam games are moved by Steam itself (its storage settings, opened from the console).
 - The library shows the disks with their free space and notices ([[home-and-library]]).
 - **Until step 6.5** (owner, 2026-10-15): step 4.3 mounts external disks automatically, read only,
   just enough to read the games on them; the full mounting stays in step 6.5.
@@ -34,3 +36,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-15 | Step 4.3 mounts external disks automatically, read only, just enough to read games on them; full mounting stays in step 6.5 (plan not reordered). |
 | 2026-10-11 | **Wave 1 scope grows** ([[disks]] and 10): DRM-free games on a disk play whatever their form (ready to run or installer, Linux or Windows through umu-launcher + GE-Proton, hidden from the user); installers run by themselves in the background; moving games and media between disks (new step 6.6). Games folder: `Games` or its translated name, one folder per game with any sub-folders, searched recursively. "Add games" also offers "From a USB stick or disk". |
 | 2026-10-26 | Cancelling a copy or move asks first ("Stop?", "Keep going" selected by default); the copy waits meanwhile. |
+| 2026-10-26 | A copy that fails its check: removed, the original untouched, "The copy did not work" with Close (selected) and Try again; with several games the others go on, then a summary. |

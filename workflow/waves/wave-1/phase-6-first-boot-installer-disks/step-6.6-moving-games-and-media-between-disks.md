@@ -35,3 +35,9 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
 - **Cancel asks first (owner, 2026-10-26):** Cancel or B during the copy pauses it and asks
   "Stop?" (the partial copy is removed and the game stays where it was): "Keep going" is selected
   by default and resumes, B on the question keeps going too, "Stop" cancels.
+- **A failed check (owner, 2026-10-26):** a copy that is not the same as the original (or stops by
+  itself: disk unplugged, full, read error) is removed; the original is never touched. One game:
+  "The copy of {title} did not work", the check step crossed, "The original is still on {disk},
+  untouched. {disk} may have a problem.", Close (selected by default) and Try again. Several games:
+  the others go on, then "{ok} of {n} games copied" with Try again for the failed ones only. The
+  cross uses the palette's colours (there is no error colour token). Demo key K: the next check fails.
