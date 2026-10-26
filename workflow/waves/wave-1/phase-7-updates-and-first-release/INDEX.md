@@ -34,4 +34,4 @@ Status comes from each step note (`status:`).
 - `todo` [[step-7.8j-website-console-picture|7.8j Website console picture]] — The console picture on the website's home redrawn from the real home screen after Danidepadawan's changes; and "Local pictures": added to the plan or removed. After the merge.
 - `in-progress` [[step-7.8k-website-more-languages|7.8k Website in more languages]] — The website in German, French and Spanish: a JSON file and an address per language, checked by people the authors know before publishing.
 - `todo` [[step-7.8l-website-download-link|7.8l Website download link]] — The download button becomes the redirect to the signed ISO on SourceForge at the first release. At the release.
-- `in-progress` [[step-7.8m-website-header|7.8m Website header: languages and theme]] — The website's header: the languages in a drop-down menu and a light / dark switch remembered in the browser; demo first.
+- `done` [[step-7.8m-website-header|7.8m Website header: languages and theme]] — The website's header: the languages in a drop-down menu and a light / dark switch remembered in the browser; demo first.

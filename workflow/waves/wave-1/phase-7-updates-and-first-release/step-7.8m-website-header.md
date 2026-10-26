@@ -3,12 +3,12 @@ type: step
 description: "The website's header: the languages in a drop-down menu and a light / dark switch remembered in the browser; demo first."
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.8m"
-status: in-progress
+status: done
 tags: [step, phase-7, website]
 ---
 # 7.8m Website header: languages and theme *(added 2026-10-26)*
 
-Up: [[phase-7-updates-and-first-release]] · Status: **in-progress** · Part of the website: [[step-7.8-website]]
+Up: [[phase-7-updates-and-first-release]] · Status: **done** · Part of the website: [[step-7.8-website]]
 
 - **Deliverables (owner, 2026-10-26):** the five language buttons of the header become a
   drop-down menu (a globe and the current language; the languages in their own names, the current
@@ -27,3 +27,4 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress** · Part of 
   Lucide icons from `lucide-static` 1.52.0 checked by SHA-512. On a phone the languages' button
   keeps its globe; the languages no longer go into the Menu. 12 tests pass. Waiting for the
   owner's check; published with [[step-7.8k-website-more-languages]] after the reviews.
+- **Outcome: approved by the owner on 2026-10-26.** Goes online with the merge of `feature/step7_8k_languages` after the reviews of 7.8k.
