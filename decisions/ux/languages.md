@@ -1,6 +1,6 @@
 ---
 type: decision
-description: "JSON message files, English default and fallback, Italian in Wave 1, keyboard layout chosen separately."
+description: "JSON message files, English default and fallback; Wave 1 in English, Italian, German, French and Spanish; keyboard layout chosen separately."
 area: ux
 status: active
 decided: 2026-10-03

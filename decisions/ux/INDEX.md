@@ -15,7 +15,7 @@ tags: [index]
 - [[first-boot-setup]] — First-boot flow: controller, language, network, time zone; cable or Bluetooth controller notice.
 - [[home-and-library]] — Overflow rule, library disks summary and Disks window, offline icon in the top bar.
 - [[interface-sounds]] — Eleven interface sounds from the owner, Kenney placeholders until then, outputs never sleep.
-- [[languages]] — JSON message files, English default and fallback, Italian in Wave 1, keyboard layout chosen separately.
+- [[languages]] — JSON message files, English default and fallback; Wave 1 in English, Italian, German, French and Spanish; keyboard layout chosen separately.
 - [[notifications]] — Banners, bell and list on Y; attention vs info sounds; nothing drawn over a game.
 - [[quick-menu-and-startup]] — Start-up animation from the splash; quick menu on B where there is nothing to go back to; View reserved.
 - [[settings-screens]] — Settings review outcomes: controllers off/forget, brightness where possible, Mute first, Show password.
