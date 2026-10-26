@@ -23,7 +23,8 @@ tags: [decision, distribution, installer]
   installer's backend refuses to touch a disk unless the request carries the confirmation for that
   very disk, besides the Windows or BitLocker confirmation.
 - **The console's name** (on the network and over Bluetooth) is **editable**, so several consoles
-  can be told apart (owner, 2026-10-25); default "OwneetOS". If it becomes a problem, changing it
+  can be told apart (owner, 2026-10-25); default "OwneetOS"; chosen in the installer, changed
+  later in Settings, not asked at the first start (owner, 2026-10-26). If it becomes a problem, changing it
   moves to [[wave-2]] (item 19).
 - **Dual boot must be considered, but it is NOT required.** OwneetOS must work fully as the only OS
   on the machine. Design choices (partitioning, bootloader, installer flow) must not prevent adding
