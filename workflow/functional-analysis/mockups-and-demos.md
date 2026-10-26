@@ -26,6 +26,7 @@ Open them in a browser; they can be driven with the keyboard or a gamepad. Proce
 | `design/demos/4.2c-steam-library.html` | Every owned Steam game in the library, installing and uninstalling through Steam's confirmation, downloads, the display-errors notice, no internet (`#gpu=amd&net=off&first=1&open=install\|notice\|steam\|uninstall\|details\|offline\|store`) | [[step-4.2c-steam-without-its-interface]] |
 | `design/demos/6.1-first-start.html` | The first start: pairing (as the mockup), language, network or later, time zone (suggested or a list of cities), the Xbox adapter's firmware with consent, ready | [[step-6.1-first-boot-flow]] |
 | `design/demos/6.4-installer.html` | The installer: welcome, the internal disks, the console's name, the warning (Windows or BitLocker to confirm with a switch), A held three seconds to erase and install, progress, end, errors | [[step-6.4-installer-ui]] |
+| `design/demos/6.6-moving-games.html` | Moving games between disks: the disks with their room, copy with Cancel, check, the original removed after; Steam's games moved by Steam; "Play from here / Copy to the console" | [[step-6.6-moving-games-and-media-between-disks]] |
 
 | `design/demos/7.8-website-home.html` | The website's home: one page whose sections snap (home, features carousel, requirements, open, info, download), English and Italian | [[step-7.8-website]] |
 
