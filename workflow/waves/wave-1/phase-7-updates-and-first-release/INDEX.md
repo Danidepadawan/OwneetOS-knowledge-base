@@ -34,3 +34,4 @@ Status comes from each step note (`status:`).
 - `todo` [[step-7.8j-website-console-picture|7.8j Website console picture]] — The console picture on the website's home redrawn from the real home screen after Danidepadawan's changes; and "Local pictures": added to the plan or removed. After the merge.
 - `todo` [[step-7.8k-website-more-languages|7.8k Website in more languages]] — The website in German, French and Spanish: a JSON file and an address per language, checked by people the authors know before publishing.
 - `todo` [[step-7.8l-website-download-link|7.8l Website download link]] — The download button becomes the redirect to the signed ISO on SourceForge at the first release. At the release.
+- `todo` [[step-7.9-console-more-languages|7.9 Console in German, French and Spanish]] — The console's interface in German, French and Spanish too, for the first release: drafted, checked by people the authors know; after Danidepadawan's merge.
