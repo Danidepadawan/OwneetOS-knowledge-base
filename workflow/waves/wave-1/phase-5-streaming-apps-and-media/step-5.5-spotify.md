@@ -156,3 +156,8 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress** (owner, 2026
   it; LT / RT press Spotify's progress bar ±5 s with the full player open (a click on its own bar,
   allowed by the owner); LB / RB its bottom tabs; the footer, links leaving Spotify, "Get App" /
   "Open App" and the fixed bottom bars never reached by the D-pad ([[controller-input-map]]).
+- **Sub-step 3, implemented again (2026-10-26), waiting for the owner's test:** owneetd 0.16.3
+  (Brave's performance alert off), owneet-base 0.0.52 (Spotify's Android TV user agent in
+  `apps.json`, `RestoreOnStartup` = 5, `extension/content/spotify.js` rebuilt on that view). The
+  "More" menu's items and Spotify's search field in this view were not seen by the probe: the
+  driver finds them by role and label, to be checked in the test.
