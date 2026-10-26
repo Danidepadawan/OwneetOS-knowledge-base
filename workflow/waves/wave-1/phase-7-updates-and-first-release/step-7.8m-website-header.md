@@ -17,4 +17,13 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress** · Part of 
   told on the Privacy page). Demo first ([[demo-before-code]]).
 - **Branch:** `feature/step7_8k_languages` in the site, the code repository (the demo) and this
   vault, with [[step-7.8k-website-more-languages]].
-- **Demo (2026-10-26):** `design/demos/7.8m-website-header.html`; waiting for the owner's approval.
+- **Demo (2026-10-26):** `design/demos/7.8m-website-header.html`, approved by the owner after one
+  change (the colours fade when the theme is switched).
+- **Built (2026-10-26, website commit c747100):** the drop-down in the header (names from each
+  language's `@meta`), `ThemeService` (`data-theme` on `<html>`, `localStorage` key
+  `owneet-theme`), a script in `index.html` that applies the choice before the page shows, both
+  icons drawn and CSS showing the right one (prerendered pages never differ), the fade
+  (`html.theming`, none with reduced motion), the Privacy sentence in the five languages; five
+  Lucide icons from `lucide-static` 1.52.0 checked by SHA-512. On a phone the languages' button
+  keeps its globe; the languages no longer go into the Menu. 12 tests pass. Waiting for the
+  owner's check; published with [[step-7.8k-website-more-languages]] after the reviews.
