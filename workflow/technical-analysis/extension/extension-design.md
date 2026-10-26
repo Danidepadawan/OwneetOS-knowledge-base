@@ -181,61 +181,48 @@ Agreed with the owner on 2026-10-22 ([[step-5.4-netflix]]; bindings: [[controlle
 
 ## Spotify (step 5.5)
 
-Agreed with the owner on 2026-10-24 ([[step-5.5-spotify]]; bindings: [[controller-input-map]],
-"Inside Spotify"). **Being redone (owner, 2026-10-26):** Spotify gets a TV user agent, and the
-navigation below (written for the desktop player) is rebuilt on the view that agent gets. Spotify has no web TV interface: a TV user agent gets its page for phones,
-which plays nothing, so its **desktop web player** (`open.spotify.com`), with a navigation of its
-own, as Netflix's. Spotify's own arrow keys move only inside a song list, a menu or one shelf, never
-between them.
+Agreed with the owner on 2026-10-24, **redone on 2026-10-26** ([[step-5.5-spotify]]; bindings:
+[[controller-input-map]], "Inside Spotify"). owneetd opens Spotify with a brand-neutral **Android
+TV user agent** (`apps.json`): Spotify then serves its player for phones and TVs, one column with
+horizontal shelves, a mini player and tabs fixed at the bottom, and a full player over the page.
+Other agents get a page that plays nothing (`(Linux; SMART-TV)`, 2026-10-24) or the desktop player
+(no agent). Spotify's keyboard shortcuts do not exist in this view: the extension clicks.
 
-- **Areas:** the main view (shelves of cards, or a page's header and its song list), the left
-  sidebar (Your Library), the top bar, and the player bar (reached with Y). A card, a song and a
-  Your Library row are one target each (their own buttons and links are not). Up / down from a card
-  go to the next shelf's cards, about the same column (its title and "Show all" skipped); left /
-  right between cards slide the shelf with Spotify's `carousel-previous-button` /
-  `carousel-next-button` at the edge, and **right at the shelf's end reaches its "Show all"**
-  (2026-10-24, with the code; otherwise unreachable from the cards). Elsewhere the nearest target
-  in the direction, staying in the same part when one fits as well. Below the last song drawn the
-  page scrolls and the move is tried once more (Spotify draws long lists as they come).
-- **A clicks** (a scripted Enter activates nothing on Spotify); on a song it clicks the song's own
-  play button (a click on the row only selects it).
-- **B:** an open context menu or Spotify window closes first (Escape; the selection goes back to
-  where it was), then the page before; with nothing left, "Close {name}?" as in 5.2. Spotify's
-  windows (e.g. "Start listening with a free account") keep the selection inside them.
-- **X:** the selected item's context menu, then its "Add to queue" item. The items carry no names
-  of their own, so it is found by Spotify's label in the console's languages (English, Italian);
-  in another language X only opens the menu. Spotify confirms with "Added to queue".
-- **Menu:** Alt+J on the selected item (focused first), Spotify's own context menu; inside it the
-  D-pad sends Spotify's arrows (its items, its sub-menus to the right), A clicks, B closes.
-- **LT / RT:** Shift+← / Shift+→ (Spotify seeks by 5 s; measured: its progress bar moves 5000 ms).
-- **LB / RB:** Home (Alt+Shift+H), Search (Ctrl+Shift+L), Your Library (the selection into the
-  left sidebar), going round.
-- **Y:** the selection to the player bar and back.
-- **Never reached:** "Install App", "Open in Desktop app", "Open Miniplayer" (`pip-toggle-button`):
-  they open windows or programs the console cannot show.
-- **Look on a TV** (owner, 2026-10-24): Spotify is **drawn bigger**, so that its page lays out as on
-  a screen about 1280 px wide (1.5× on a 1080p TV), in proportion on any screen (Brave's zoom for
-  Spotify, set by the console: the page sends its width, the worker sets the tab's zoom with
-  `chrome.tabs.setZoom`, between 100 % and 300 % in steps of 5 %, kept by Brave for the site);
-  **Spotify's right panel** ("Now playing view") **is folded away** once when Spotify opens (its own
-  Alt+Shift+R, sent when the main view ends more than 120 px from the right edge).
+- **Targets:** the page's, never the footer, links to other sites, "Get App" / "Open App", nor the
+  fixed bottom bars. A card and a song are one target each. In a shelf left / right go from card to
+  card (the shelf scrolls); up / down from a card go to the next shelf's cards, about the same
+  column (other shelves' titles skipped); elsewhere the nearest target in the direction. The page
+  scrolls so that the selection is never under the fixed bars; below the last song drawn it scrolls
+  and the move is tried once more.
+- **A** clicks: a card through its own link, a song's row (Spotify plays it).
+- **B:** an open menu or Spotify window closes first (Escape, else its Close / Cancel button), then
+  the full player (its Close button), then the generic B (back a page, "Close {name}?").
+- **X:** the selected item's "More" menu, then its "Add to queue", found by Spotify's label in the
+  console's languages (English, Italian); in another language the menu stays open.
+- **Menu:** the selected item's "More" menu (in the full player: the player's own).
+- **Y:** a click on the mini player opens the full player, the selection on its play / pause; Y or B
+  closes it (its Close button) and the selection goes back where it was.
+- **LT / RT** (full player only): Spotify's progress bar clicked 5 s back / forward, from its time
+  labels (owner, 2026-10-26: a press on its own bar, as a click there would; never the position set
+  by a script). Presses close together add up.
+- **LB / RB:** Spotify's tabs Home, Search, Your Library (their links in the bottom bar), going
+  round; on Search the selection goes to the search field.
+- **Look on a TV** (owner, 2026-10-24): drawn as on a screen about 1280 px wide (the page sends its
+  width, the worker sets the tab's zoom with `chrome.tabs.setZoom`, 100–300 % in steps of 5 %).
+- **How the parts are found** (Spotify's player for an Android TV, as of 2026-10-26, read with
+  probes in the test VM): shelves `carousel-mwp`; cards `home-card` (Home) and `card-mwp` (other
+  pages); songs `track-row`, each with `context-menu-action-button` ("More"); top bar of a page
+  `entity-view-top-bar`; mini player `floating-now-playing-bar`; tabs `bottom-tab-navigation` (Home,
+  Search, Your Library, Get App); full player in an `aside` with `npv-play-button`,
+  `npv-skip-previous-button`, `npv-skip-forward-button`, `npv-shuffle-button`, `npv-repeat-button`,
+  `npv-context-menu`, `progress-bar` and `npv-progress-bar-time-labels`; footer `footer-div`,
+  `masthead-footer`. These names live in one place of `extension/content/spotify.js`; anything not
+  found falls back to the generic navigation.
 - **Code:** `extension/content/spotify.js` (tests `extension/test/spotify.test.js`); the rows'
   geometry and the keys it shares with Netflix are in `extension/content/shared.js`
   (`test/shared.test.js`). `input.js` passes X, Menu and LB / RB to a site's driver that has them
   (`secondary`, `options`, `section`; LB / RB repeat with the map's timing) and the right stick's
   amounts to its `scroll`.
-- **How the parts are found** (Spotify's site as of 2026-10-24, read with probes in the test VM):
-  left sidebar `nav[aria-label="Main"]` (Your Library's rows: `role=row` with `play-button`s); top
-  bar `global-nav-bar` (`home-button`, `search-input`, `browse-button`, `user-widget-link`); main
-  view `main` (`home-page`); shelves `component-shelf` (a `role=grid` named by the shelf's title,
-  `carousel-scroller`, `see-all-link`); cards `[data-encore-id="card"]` (`role=listitem`, a
-  `role=button` with `tabindex`, a `play-button`, the title link); songs `tracklist-row` in a
-  `role=row` with `aria-rowindex` (`internal-track-link`); player bar `now-playing-bar`
-  (`now-playing-widget-v2`, `control-button-skip-back`, `-playpause`, `-skip-forward`, `-repeat`,
-  `control-button-queue`, `playback-progressbar`, `volume-bar`, `fullscreen-mode-button`,
-  `pip-toggle-button`); context menu `#context-menu` (`data-testid="context-menu"`,
-  `ul[role=menu]`, items `role=menuitem`). These names live in one place of
-  `extension/content/spotify.js`; anything not found falls back to the generic navigation.
 
 ## YouTube's TV interface (step 5.3)
 

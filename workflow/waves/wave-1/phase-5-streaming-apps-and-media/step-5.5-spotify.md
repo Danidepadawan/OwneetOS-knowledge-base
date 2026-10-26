@@ -144,3 +144,15 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress** (owner, 2026
   fold; Brave's "Fix the tabs slowing your browser" window (a performance alert that needs a mouse)
   listed two other Spotify tabs, which the owner had Brave close. The alert is turned off with the
   next owneetd (a Brave feature off in its command); where the extra tabs come from is still open.
+- **The view checked (owner, 2026-10-26, test VM 806×556):** the owner's string (an Android TV
+  WebView: `Android 11; IRIS 2K SmartTV Build/…; wv … Chrome/148… Mobile Safari`) gets Spotify's
+  player for phones and TVs, and it plays; so does a brand-neutral one without the model and build,
+  **the one chosen** (owner). Brave was reopening the session's tabs at each opening (hidden Spotify
+  players, Spotify's "Listen on this phone" window, Brave's performance alert): gone with the managed
+  policy `RestoreOnStartup` = 5 (verified). The parts' names read with the probe (fourth version):
+  [[extension-design]] "Spotify". The owner found that the desktop driver reached neither the mini
+  player nor the full player in this view (expected: its parts are missing there).
+- **Bindings redone for this view (owner, 2026-10-26):** Y opens the full player and Y or B closes
+  it; LT / RT press Spotify's progress bar ±5 s with the full player open (a click on its own bar,
+  allowed by the owner); LB / RB its bottom tabs; the footer, links leaving Spotify, "Get App" /
+  "Open App" and the fixed bottom bars never reached by the D-pad ([[controller-input-map]]).
