@@ -32,3 +32,6 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
 - **Demo approved by the owner (2026-10-26)** once the steps no longer stopped at the end (a fault
   of the demo) and B cancels during the copy (the check and the removal are never stopped half
   way). The code after Danidepadawan's merge and [[step-6.5-automatic-disk-mounting]].
+- **Cancel asks first (owner, 2026-10-26):** Cancel or B during the copy pauses it and asks
+  "Stop?" (the partial copy is removed and the game stays where it was): "Keep going" is selected
+  by default and resumes, B on the question keeps going too, "Stop" cancels.
