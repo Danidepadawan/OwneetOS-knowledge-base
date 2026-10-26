@@ -41,3 +41,5 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   untouched. {disk} may have a problem.", Close (selected by default) and Try again. Several games:
   the others go on, then "{ok} of {n} games copied" with Try again for the failed ones only. The
   cross uses the palette's colours (there is no error colour token). Demo key K: the next check fails.
+- **Final demo approved by the owner (2026-10-26)** with the cancel question, the failed check and the
+  switch that keeps the focus. The code after Danidepadawan's merge and [[step-6.5-automatic-disk-mounting]].
