@@ -17,3 +17,4 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress** · Part of 
   told on the Privacy page). Demo first ([[demo-before-code]]).
 - **Branch:** `feature/step7_8k_languages` in the site, the code repository (the demo) and this
   vault, with [[step-7.8k-website-more-languages]].
+- **Demo (2026-10-26):** `design/demos/7.8m-website-header.html`; waiting for the owner's approval.
