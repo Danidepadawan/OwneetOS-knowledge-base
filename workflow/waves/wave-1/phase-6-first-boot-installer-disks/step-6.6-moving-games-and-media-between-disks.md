@@ -28,5 +28,7 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   checked" (on by default; off, a copy), then the steps listed and ticked one by one (copy with
   Cancel, check, removal only after). "Copy to the console" asks which disk, the one with the most
   room first, never forced onto the system SSD (the FrankenPC: a 96 GB SSD and a 2 TB HDD). Each
-  game's cover says its disk when the console has more than one (also in Details). Waiting for the
-  owner's approval.
+  game's cover says its disk when the console has more than one (also in Details).
+- **Demo approved by the owner (2026-10-26)** once the steps no longer stopped at the end (a fault
+  of the demo) and B cancels during the copy (the check and the removal are never stopped half
+  way). The code after Danidepadawan's merge and [[step-6.5-automatic-disk-mounting]].
