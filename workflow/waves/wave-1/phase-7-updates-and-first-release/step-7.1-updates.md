@@ -46,3 +46,6 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   counts as "up to date", not "offline".
 - **Left in 7.1:** owneetd (status, check, install, restart, go back, the notice after a
   rollback) and the Settings screens of the approved demo.
+- **Paused (owner, 2026-10-26):** owneetd and the Settings screens touch `daemon/cmd/owneetd/main.go`
+  and the interface's translation files, which Danidepadawan's phase 5 branch also changes; they
+  are done after his merge, to keep out of his way. Meanwhile [[step-7.8k-website-more-languages]].
