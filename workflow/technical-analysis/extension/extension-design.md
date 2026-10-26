@@ -182,7 +182,8 @@ Agreed with the owner on 2026-10-22 ([[step-5.4-netflix]]; bindings: [[controlle
 ## Spotify (step 5.5)
 
 Agreed with the owner on 2026-10-24 ([[step-5.5-spotify]]; bindings: [[controller-input-map]],
-"Inside Spotify"). Spotify has no web TV interface: a TV user agent gets its page for phones,
+"Inside Spotify"). **Being redone (owner, 2026-10-26):** Spotify gets a TV user agent, and the
+navigation below (written for the desktop player) is rebuilt on the view that agent gets. Spotify has no web TV interface: a TV user agent gets its page for phones,
 which plays nothing, so its **desktop web player** (`open.spotify.com`), with a navigation of its
 own, as Netflix's. Spotify's own arrow keys move only inside a song list, a menu or one shelf, never
 between them.

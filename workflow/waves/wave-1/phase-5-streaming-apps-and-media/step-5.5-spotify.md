@@ -131,3 +131,16 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress** (owner, 2026
   driver, the worker setting Brave's zoom for Spotify, and Brave's managed policies without password
   or address saving. One detail beyond sub-step 2, for the owner to confirm: **right at the end of a
   shelf reaches its "Show all"** (otherwise unreachable from the cards).
+- **Change of plan (owner, 2026-10-26): Spotify gets a TV user agent**, as YouTube, replacing "the
+  desktop web player stays" of 2026-10-24. The owner tested a TV user agent on a computer: Spotify's
+  view changes and folds its side bars; the owner judges that view better for the console and asked
+  to rebuild the navigation on it first. (In the test VM on 2026-10-24 the same agent gave
+  Spotify's page for phones, where Play reloaded the page; at that time other Spotify tabs were open
+  in the same Brave, playing elsewhere, which may have caused it: checked again with this view.)
+  Next: the view checked with a probe in the test VM (its parts' names, playing, the keys), then
+  the driver redone for it; the bindings of sub-step 2 stay unless the view needs otherwise (with
+  the owner). The agent goes to [[step-7.5-legal-review-before-the-public-launch]], as YouTube's.
+- **Also found (owner's test of 0.0.51, 2026-10-26, VM screen 640×480):** the right panel did not
+  fold; Brave's "Fix the tabs slowing your browser" window (a performance alert that needs a mouse)
+  listed two other Spotify tabs, which the owner had Brave close. The alert is turned off with the
+  next owneetd (a Brave feature off in its command); where the extra tabs come from is still open.
