@@ -27,5 +27,9 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   network (cable, Wi-Fi with the console's keyboard, or "Not now": games on disks work offline),
   the time zone (suggested from the language with its time; a scrolling list of cities for a
   language with several zones; "Choose another city"), the Xbox adapter's firmware (only with an
-  adapter and the internet: Download, Read the terms, Not now), ready with a summary. Waiting for
-  the owner's approval. Branch `feature/step6_installer`.
+  adapter and the internet: Download, Read the terms, Not now), ready with a summary. Branch
+  `feature/step6_installer`.
+- **Demo approved by the owner (2026-10-26)** after two changes: the Wi-Fi signal drawn as the
+  settings' icon, and the five languages of Wave 1 in the picker ([[languages]]) with their time
+  zones (Berlin; Paris, Bruxelles, Genève, Montréal; Madrid, Ciudad de México, Bogotá, Lima, Buenos
+  Aires, Santiago). The screens' code comes after Danidepadawan's merge.
