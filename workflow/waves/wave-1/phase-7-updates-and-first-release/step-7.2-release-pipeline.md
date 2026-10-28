@@ -38,3 +38,9 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   source archives the ISO needs (it keeps a small subset), so option (a) cannot copy them from
   there. **Decided (owner, 2026-10-28):** the missing archives are made from Arch's packaging
   repository at each version's tag, for every package ([[legal-compliance]]).
+- **Arch's archives tested (2026-10-28)** in the builder VM (`tools/release/arch-source`, run
+  with the owner's permission rule): all 485 tags exist; xz made with its checked git sources;
+  zlib (an epoch in its version) stopped on a generated GitHub patch whose checksum drifted, hence
+  the owner's rule for generated patches (8 of the 485 recipes use such links), after which it
+  was made with the difference noted. The full run, hundreds of archives, happens at the first
+  real release; a source an upstream has removed stops it and is solved by hand.

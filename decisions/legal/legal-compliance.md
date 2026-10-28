@@ -31,6 +31,11 @@ project is reviewed by someone experienced in open-source licensing ([[step-7.5-
     exact version in Arch's packaging repository, with every upstream source downloaded and
     checked against the PKGBUILD's checksums (`makepkg --allsource`). Every package, not only the
     copyleft ones (owner: the users see no difference, and we depend less on Arch).
+  - **Generated patches (owner, 2026-10-28, option 1):** a patch that GitHub or GitLab generates
+    from a commit or a pull request can change its header lines over time, so its checksum stops
+    matching Arch's PKGBUILD while the change to the code is the same. Only when every file that
+    failed is such a patch is the archive made with the files just downloaded, and the difference
+    is written in a notes file next to it. Any other failed checksum stops the release.
 - **Licence notices:** every package keeps its licence files (`/usr/share/licenses`); the ISO and
   the UI ("About → Licences", later) list the licences of what OwneetOS ships.
 - **Proprietary but redistributable components** (NVIDIA driver, device firmware, CPU microcode)
@@ -72,3 +77,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-25 | The OwneetOS trademark is not registered (the authors: too costly for its worth). The preliminary search of 2026-10-24 found no conflicting mark; the project only makes sure everything it does is legal. |
 | 2026-10-28 | Source archive (step 7.2, option a): our packages' PKGBUILDs and sources per release; every Arch package's exact `.src.tar.gz` copied from `sources.archlinux.org` to a shared `sources/` folder on SourceForge; a release missing any source publishes nothing. |
 | 2026-10-28 | Arch's source archives: `sources.archlinux.org` keeps only a subset (33 of 518), so the missing ones are made like Arch makes them (PKGBUILD at the version's tag in Arch's packaging repository, upstream sources checked, `makepkg --allsource`); every package, whatever its licence. |
+| 2026-10-28 | A generated patch (GitHub or GitLab, from a commit or a pull request) whose checksum drifted is accepted and noted next to its archive; any other failed checksum stops the release. |
