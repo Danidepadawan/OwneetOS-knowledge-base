@@ -4,7 +4,7 @@ description: "GPL source archives, licence notices, never-redistributed componen
 area: legal
 status: active
 decided: 2026-10-07
-updated: 2026-10-08
+updated: 2026-10-28
 legacy: "PROJECT_RULES.md §12"
 tags: [decision, legal]
 ---
@@ -19,6 +19,12 @@ project is reviewed by someone experienced in open-source licensing ([[step-7.5-
   archive** (PKGBUILDs and the exact sources of every package it contains) or a valid written
   offer. Until the release pipeline does this (roadmap step 7.2), **CI does not publish
   downloadable ISOs or packages**: ISOs built in CI are checks only; test ISOs are built locally.
+  - **How (owner, 2026-10-28, option a of [[step-7.2-release-pipeline]]):** a full archive, never
+    only a written offer. OwneetOS's own packages: their PKGBUILDs and exact sources, in the
+    release's folder on SourceForge. Arch's packages: the exact `.src.tar.gz` of every package
+    version shipped, taken from `sources.archlinux.org` and **copied to SourceForge** (a `sources/`
+    folder shared by every release, so each release uploads only new versions): the obligation is
+    ours, and stays met even if Arch removes them. A release missing any source publishes nothing.
 - **Licence notices:** every package keeps its licence files (`/usr/share/licenses`); the ISO and
   the UI ("About → Licences", later) list the licences of what OwneetOS ships.
 - **Proprietary but redistributable components** (NVIDIA driver, device firmware, CPU microcode)
@@ -58,3 +64,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-07 | Legal compliance rules adopted ([[legal-compliance]]). CI stops publishing the ISO as a download until releases ship a GPL source archive (option A). |
 | 2026-10-08 | Legal check before phase 3: the frontend fork is named `owneet-frontend` (Pegasus's trademark terms); Pegasus's CC BY-NC-SA theme, logo, Roboto fonts and button images are not used; its online metadata downloads are disabled. `CREDITS.md` credits every project OwneetOS builds on and ships in the image ([[legal-compliance]]). Step 2.9 approved. |
 | 2026-10-25 | The OwneetOS trademark is not registered (the authors: too costly for its worth). The preliminary search of 2026-10-24 found no conflicting mark; the project only makes sure everything it does is legal. |
+| 2026-10-28 | Source archive (step 7.2, option a): our packages' PKGBUILDs and sources per release; every Arch package's exact `.src.tar.gz` copied from `sources.archlinux.org` to a shared `sources/` folder on SourceForge; a release missing any source publishes nothing. |
