@@ -36,4 +36,5 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   0.0.1. Not testable before the first real release: SourceForge, GitHub Releases, the CI secrets.
 - **Open, for the owner (2026-10-28):** `sources.archlinux.org` has only **33 of the 518** Arch
   source archives the ISO needs (it keeps a small subset), so option (a) cannot copy them from
-  there. How Arch's sources are gathered waits for the owner's decision.
+  there. **Decided (owner, 2026-10-28):** the missing archives are made from Arch's packaging
+  repository at each version's tag, for every package ([[legal-compliance]]).
