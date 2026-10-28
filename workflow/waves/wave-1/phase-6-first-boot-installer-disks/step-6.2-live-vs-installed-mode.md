@@ -29,3 +29,8 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
 - **Second round (owner, 2026-10-28):** the card and the notice overlapped when Home had little
   room (the side column had a row too few), and the demo key M did nothing (M is the Menu
   button): fixed, the demo key is now I.
+- **Third round (owner, 2026-10-28):** the notice under the card was still cut with little room,
+  so the live entry is now a **strip above the hero** ("Install OwneetOS - From the USB stick:
+  nothing is kept when it turns off."), which takes its room from the hero: the apps and the
+  notices keep the approved layout, also with bigger text. The settings demo opens on System,
+  where the difference is.
