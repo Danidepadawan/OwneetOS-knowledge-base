@@ -34,3 +34,5 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   nothing is kept when it turns off."), which takes its room from the hero: the apps and the
   notices keep the approved layout, also with bigger text. The settings demo opens on System,
   where the difference is.
+- **Demo approved by the owner (2026-10-28).** The detection is done; the interface's code (the
+  strip on Home, the entry in Settings → System) after Danidepadawan's merge.
