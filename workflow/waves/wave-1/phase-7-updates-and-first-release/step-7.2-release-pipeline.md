@@ -3,13 +3,13 @@ type: step
 description: "Tagged release builds the ISO in CI, signs, writes checksums and release notes, publishes the ISO (and its source archive) to…"
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.2"
-status: in-progress
+status: done
 legacy: "ROADMAP.md 7.2"
 tags: [step, phase-7]
 ---
 # 7.2 Release pipeline
 
-Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
+Up: [[phase-7-updates-and-first-release]] · Status: **done**
 
 - **Deliverables:** tagged release builds the ISO in CI, signs, writes checksums and release
   notes, publishes the ISO (and its source archive) to SourceForge and the packages to GitHub
@@ -44,3 +44,17 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   the owner's rule for generated patches (8 of the 485 recipes use such links), after which it
   was made with the difference noted. The full run, hundreds of archives, happens at the first
   real release; a source an upstream has removed stops it and is solved by hand.
+- **Outcome: approved by the owner on 2026-10-28.** What only the first real release can check
+  (the uploads, the full run of Arch's archives) is checked then, with
+  [[step-7.4-hardware-testing-and-v0.1.0]].
+- **Before the first release, the owner** (the assistant reminds the owner when the time comes,
+  owner 2026-10-28):
+  1. creates the SourceForge project (its name goes in the variable `SF_PROJECT`) and adds an SSH
+     key to the SourceForge account (the account name goes in `SF_USER`);
+  2. creates the GitHub environment `release` in the code repository, with an author as required
+     reviewer, the secrets `OWNEET_SIGNING_SUBKEY` (the signing subkey exported with its
+     passphrase), `OWNEET_SIGNING_PASSPHRASE` and `SF_SSH_KEY`, and the variables `SF_USER` and
+     `SF_PROJECT` ([[package-signing]]);
+  3. approves the release notes of that version in every language (drafted by the assistant);
+  4. pushes the release commit and its tag `vX.Y.Z` on `main`, approves the build, tests the ISO
+     from the run, then approves the publishing.

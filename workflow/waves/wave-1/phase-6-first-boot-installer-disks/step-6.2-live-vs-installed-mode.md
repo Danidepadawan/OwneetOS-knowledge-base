@@ -26,3 +26,6 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   System says "0.3.0, from the USB stick" and offers "Install OwneetOS on this PC" in place of the
   updates and going back, which need an installed system. Installed, neither is shown. The
   interface's code after the demo's approval and Danidepadawan's merge.
+- **Second round (owner, 2026-10-28):** the card and the notice overlapped when Home had little
+  room (the side column had a row too few), and the demo key M did nothing (M is the Menu
+  button): fixed, the demo key is now I.
