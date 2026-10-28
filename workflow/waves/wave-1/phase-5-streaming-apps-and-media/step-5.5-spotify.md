@@ -171,3 +171,7 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress** (owner, 2026
   "looks ok but works very poorly" with the driver of 2026-10-24; **the D-pad moves by position
   only**, in Spotify's own code (the owner's request; boilerplate accepted), the other bindings are
   those of 2026-10-24 ([[controller-input-map]]). The Android TV agent leaves `apps.json`.
+- **Sub-step 3, implemented a third time (2026-10-28), waiting for the owner's test:** owneet-base
+  0.0.53: `apps.json` without Spotify's agent; `extension/content/spotify.js` on the desktop player
+  with its own position-only geometry (`spatialPick`, tested by `test/spotify.test.js`) and the
+  desktop bindings; owneetd 0.16.3 (Brave's performance alert off) and `RestoreOnStartup` stay.
