@@ -161,3 +161,13 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress** (owner, 2026
   `apps.json`, `RestoreOnStartup` = 5, `extension/content/spotify.js` rebuilt on that view). The
   "More" menu's items and Spotify's search field in this view were not seen by the probe: the
   driver finds them by role and label, to be checked in the test.
+- **The Android TV view checked further (owner, 2026-10-27, test VM 2327×1223, probe sixth
+  version):** Your Library's tab opens "Enjoy Your Library … in the Spotify App"; of its addresses
+  only `/collection/tracks` (Liked Songs) loads, `/collection` and `/collection/playlists`,
+  `/albums`, `/artists`, `/podcasts`, `/your-episodes` show "Continue in the Spotify app". The full
+  player's bar is a slider (`input type=range`, seconds, step 5): clicks, touches, drags and its
+  keys sent by a script move nothing. The owner rejected a console without Your Library.
+- **Back to the desktop player (owner, 2026-10-28):** tried at full screen with Brave's zoom, it
+  "looks ok but works very poorly" with the driver of 2026-10-24; **the D-pad moves by position
+  only**, in Spotify's own code (the owner's request; boilerplate accepted), the other bindings are
+  those of 2026-10-24 ([[controller-input-map]]). The Android TV agent leaves `apps.json`.
