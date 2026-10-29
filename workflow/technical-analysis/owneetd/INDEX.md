@@ -21,6 +21,6 @@ tags: [index]
 - [[owneetd-api-pointer]] — API and design of the controller pointer in owneetd (step 4.7): one window, the controllers read without a grab, the virtual mouse, gamescope's focused window and the text cursor.
 - [[owneetd-api-power]] — API for shut down, restart and suspend through logind.
 - [[owneetd-api-status]] — API for daemon and OwneetOS version and session mode.
-- [[owneetd-api-time]] — API for the time zone (systemd-timedated) and the Xbox wireless adapter's firmware, used by the first start and Settings.
+- [[owneetd-api-time]] — API for the time zone and the time by hand (systemd-timedated) and the Xbox wireless adapter's firmware, used by the first start and Settings.
 - [[owneetd-api-windows]] — API and design of Windows games in owneetd (step 4.5): the one-time download of Proton and its runtime with umu-launcher, its progress, owneet-windows-run.
 - [[owneetd-design]] — owneetd design: Go vs Rust, privileges, Unix socket transport, API conventions, open points.

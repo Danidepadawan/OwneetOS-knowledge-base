@@ -76,3 +76,27 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   screen) and the new `6.1-settings-time.html` (Settings → Language: "Time zone", the list of
   cities; "Date and time", from the internet, or by hand without it).
 - **Second round approved by the owner (2026-10-29)**, with the guarantee that without the internet the first start sets the date and time too, not only the time zone.
+- **Built, second round (2026-10-29):** owneetd 0.18.0 (`PUT /v1/time/now`, the date and time in
+  the zone given or the console's; polkit's set-time, [[owneetd-api-time]]); `owneet-frontend`
+  0.25.0: the "Date and time" window (`ClockSheet.qml`: day, month, year, hours, minutes, as in the
+  demo; at the first start in the time of the city shown, since the console's zone is not set
+  yet), the list of
+  every city (`TimeZoneSheet.qml`, the current one ticked and in the middle), the cities shared by
+  the first start and Settings (`TimeZones.qml`), Settings → Language "Time zone" and "Date and
+  time" (from the internet: it says so; without it: the window), the top bar clock following the
+  zone chosen, and "Read the terms" as a QR code with the address. Seen in the interface preview
+  (`tools/preview-steps/first-start-time.txt`).
+- **Tested in the test VM (2026-10-29)** with the ISO of the branch, live, network off: the first
+  start in Italian, "Not now", Rome suggested; "Set the time" opened on Rome's time (not the
+  system's UTC) and saved two hours later: the system clock moved by two hours, the internet's time
+  on again (`timedatectl`); "Continue" set Europe/Rome; the top bar clock showed the new time;
+  Settings → Language: "Time zone" Rome · UTC+1, "Date and time" from the PC's clock, set again by
+  hand; the toasts "Time set" and "Time zone: Rome". Microsoft's terms as a QR code seen in the
+  interface preview (no Xbox adapter in the VM). Fixed on the way: the first start's time now
+  follows a change at once, and the Settings row follows the top bar clock's minute.
+- **Aligned with the approved demos (2026-10-29):** the code had added things the demos do not
+  have (the city and UTC over the time fields, a D-pad prompt, a "Set the time" button under the
+  list of cities, a short year, other prompts on the terms): removed at the owner's request, the
+  screens are exactly as approved. Open for the owner: without the internet, a language with
+  several cities (English, French, Spanish) has "Set the time" only in Settings, as in the demo,
+  not in the first start.
