@@ -99,6 +99,11 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   list of cities, a short year, other prompts on the terms): removed at the owner's request, the
   screens are exactly as approved. Without the internet, a language with several cities (English,
   French, Spanish) had "Set the time" only in Settings, as in the demo.
-- **Decided (owner, 2026-10-29):** the languages must not make a difference: "Set the time" also
-  under the list of cities, in the time of the city last selected ([[first-boot-setup]]). The demo
-  `6.1-first-start.html` is updated; the code waits for its approval ([[demo-before-code]]).
+- **Decided (owner, 2026-10-29):** the languages must not make a difference ([[first-boot-setup]]).
+  First "Set the time" under the list of cities, in the time of the city last selected (demo
+  approved); the interface preview showed that reaching the button passes over every city, so the
+  window opened on the last one's time (Singapore for English). The owner chose instead: a city
+  picked in a list gets the suggested city's screen (Continue, Choose another city, Set the time),
+  with the text "Once online the clock sets itself; the time zone stays the one you choose." (not
+  "Suggested from your language"). Demo `6.1-first-start.html` updated; the code waits for its
+  approval ([[demo-before-code]]).

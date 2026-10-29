@@ -30,8 +30,11 @@ tags: [decision, ux, first-boot]
   English, and the reviews may come later, an occasion to ask the community to help improve
   OwneetOS.
 - **The same settings in every language (owner, 2026-10-29):** the language never changes what the
-  first start offers. Without the internet "Set the time" is under the suggested city and under
-  the list of cities alike (English, French, Spanish), in the time of the city last selected.
+  first start offers. A city picked in a list (a language with several zones, or "Choose another
+  city") gets the same screen as the suggested city: its time, Continue, Choose another city and,
+  without the internet, "Set the time" in that city's time; B goes back to the list. (A first
+  version put "Set the time" under the list, in the time of the city last selected: reaching it
+  passes over every city, so the window opened on the last one's time; replaced the same day.)
 
 ## History
 
@@ -45,3 +48,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-29 | The first start: once on an installed console until "Ready" (turned off half way it starts again, keeping what was chosen); at every start from the USB stick; the picker lists the five languages from the start. |
 | 2026-10-29 | Microsoft's terms as a QR code; the time zone and a manual date and time in Settings → Language (demo first); the picker alphabetical after English. |
 | 2026-10-29 | The same settings in every language: "Set the time" also under the first start's list of cities (demo first). |
+| 2026-10-29 | A city picked in a list gets the suggested city's screen (Continue, Set the time), in every language; no "Set the time" under the list. |
