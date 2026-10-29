@@ -10,7 +10,8 @@ tags: [decision, architecture, boot]
 ---
 # Boot experience
 
-- **UEFI only**, booted by systemd-boot (no legacy BIOS); no SSH server, cloud-init or VM guest
+- **UEFI only**, booted by systemd-boot (no legacy BIOS; kept for the installed system's rollback,
+  with its boot counting: [[distribution-and-updates]], 2026-10-25); no SSH server, cloud-init or VM guest
   tools in the ISO.
 - **Silent boot**: quiet kernel and systemd, **hidden systemd-boot menu** (hold / tap a key to show
   it), Plymouth splash `owneet` with the generated wordmark, no text on screen in normal boots.
@@ -40,3 +41,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-05 | Boot splash approved by the owner with the wordmark "Owneet" + coral "OS" (as in the mockups page header) instead of "owneet." ([[design-direction]]). |
 | 2026-10-15 | Everything before the start-up animation is neutral (white on black), the same for every palette; the animation brings the palette's colours. A splash per palette (boot image rebuilt at every change) turned down. |
 | 2026-10-06 | Step 1.5 verified on real hardware (NiPoGi E3B AMD, owner's desktop RTX 4060). Live ISO boots with `copytoram=n` (no copy of the image to RAM: faster boot from USB). |
+| 2026-10-25 | systemd-boot stays on installed systems: rollback from the console and automatic fallback through its boot counting (step 6.3, option C). |

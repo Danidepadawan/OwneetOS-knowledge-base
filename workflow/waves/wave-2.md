@@ -58,3 +58,9 @@ Scope agreed so far: [[wave-1-scope]] (later waves).
   warning at import (third-party code, only from trusted sources; [[supply-chain-security]],
   sandboxing in [[backlog]]), and tools whose runtime needs the internet the first time.
   Needs a demo. Related to item 16.
+- **18. Installing on an external disk (owner, 2026-10-25):** the Wave 1 installer offers internal
+  disks only (never the USB stick it starts from, never other USB disks); installing OwneetOS on an
+  external disk (e.g. a USB SSD) comes here.
+- **19. Changing the console's name (owner, 2026-10-25, only if needed):** Wave 1 makes the name
+  editable ([[step-6.3-installer-backend]]); if that turns into a problem during development, the
+  way to change it moves here.

@@ -16,7 +16,7 @@ tags: [index]
 Status comes from each step note (`status:`).
 
 - `todo` [[step-7.0-update-stick-image-for-the-test-vm|7.0 Update stick image for the test VM]] — An OWNEETLOG stick image for the test VM (tools/make-update-stick --image), so the installed VM is upgraded in place with the packages just built instead of reinstalled.
-- `todo` [[step-7.1-updates|7.1 Updates]] — Update check and install from Settings, snapshot before every update, rollback path (as decided in 6.3), archive snapshot date advanced…
+- `in-progress` [[step-7.1-updates|7.1 Updates]] — Update check and install from Settings, snapshot before every update, rollback path (decided in 6.3, option C: from Settings with the controller and automatic after
 - `todo` [[step-7.2-release-pipeline|7.2 Release pipeline]] — Tagged release builds the ISO in CI, signs, writes checksums and release notes, publishes the ISO (and its source archive) to…
 - `todo` [[step-7.3-user-guide|7.3 User guide]] — Illustrated guide: download, write the USB stick (balenaEtcher / Ventoy), disable Secure Boot (per-brand pointers), anti-cheat warning…
 - `todo` [[step-7.4-hardware-testing-and-v0.1.0|7.4 Hardware testing and v0.1.0]] — Test matrix (Intel / AMD / NVIDIA, old iGPU fallback, 4 GB RAM machine), bug fixing, RAM and boot-time measurements against the targets,…
@@ -35,3 +35,4 @@ Status comes from each step note (`status:`).
 - `todo` [[step-7.8j-website-console-picture|7.8j Website console picture]] — The console picture on the website's home redrawn from the real home screen after Danidepadawan's changes; and "Local pictures": added to the plan or removed. After the merge.
 - `todo` [[step-7.8k-website-more-languages|7.8k Website in more languages]] — The website in German, French and Spanish: a JSON file and an address per language, checked by people the authors know before publishing.
 - `todo` [[step-7.8l-website-download-link|7.8l Website download link]] — The download button becomes the redirect to the signed ISO on SourceForge at the first release. At the release.
+- `todo` [[step-7.9-console-more-languages|7.9 Console in German, French and Spanish]] — The console's interface in German, French and Spanish too, for the first release: drafted, checked by people the authors know; after Danidepadawan's merge.
