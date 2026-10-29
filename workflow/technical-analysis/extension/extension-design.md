@@ -213,13 +213,14 @@ app"), and has neither keys nor a seekable bar a script may move.
 - **LB / RB do nothing** (owner, 2026-10-29).
 - **Look on a TV** (owner, 2026-10-24): drawn as on a screen about 1280 px wide (the page sends its
   width, the worker sets the tab's zoom with `chrome.tabs.setZoom`, 100–300 % in steps of 5 %);
-  Spotify's right panel ("Now playing view") folded away when Spotify opens and after A plays
-  something (its own Alt+Shift+R: the desktop player reopens it when a song starts). The key
-  toggles the panel, so it is sent only while the panel's own parts (`npv-…`) are on screen,
-  checked once a second for a few seconds (2026-10-29: a check by the page's layout fired while
-  the page was still laid out and opened the folded panel). Brave's own
-  Alt+Shift+R (its reading view, Speedreader: a page that needs a mouse) is turned off in owneetd's
-  command; keys sent by a script never reach Brave anyway.
+  **R3 folds or opens Spotify's right panel** ("Now playing view", its own Alt+Shift+R; owner,
+  2026-10-29): the desktop player opens it when a song starts, and the user closes it. (Folding it
+  automatically, tried on 2026-10-29, showed it for a moment at every song and was dropped.) The
+  panel is out of the D-pad's reach. Brave's own
+  Alt+Shift+R on a keyboard (Chromium's Reading mode, `ReadAnything`, a full page that needs a
+  mouse) is turned off in owneetd's command (`--disable-features=…,ReadAnything`), and Brave's own
+  reading view by the policy `BraveSpeedreaderEnabled` = false; keys sent by a script never reach
+  Brave anyway.
 - **How the parts are found** (Spotify's desktop player as of 2026-10-24, read with probes in the
   test VM): left sidebar `nav` (Your Library's rows: `role=row`); top bar `global-nav-bar`
   (`search-input`); main view `main`; shelves `component-shelf` (`carousel-scroller`); cards
@@ -230,8 +231,9 @@ app"), and has neither keys nor a seekable bar a script may move.
   generic navigation.
 - **Code:** `extension/content/spotify.js` (tests `extension/test/spotify.test.js`, its geometry
   included); `extension/content/shared.js` holds what Netflix and Spotify share (keys).
-  `input.js` passes X, Menu and LB / RB to a site's driver that has them (`secondary`, `options`,
-  `section`; LB / RB repeat with the map's timing) and the right stick's amounts to its `scroll`.
+  `input.js` passes X, Menu, LB / RB and R3 to a site's driver that has them (`secondary`,
+  `options`, `section`, `stickPress`; LB / RB repeat with the map's timing) and the right stick's
+  amounts to its `scroll`.
 
 ## YouTube's TV interface (step 5.3)
 

@@ -197,3 +197,7 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress** (owner, 2026
   keyboard still opens a reading view: by the names in Brave's program it is Chromium's Reading mode
   (`ReadAnything`, its full-page `ReadAnythingImmersive…` view), not Speedreader; Brave's
   Speedreader policy is `BraveSpeedreaderEnabled`. The exact feature names are being read.
+- **Decided (owner, 2026-10-29):** no automatic folding of the right panel; **R3 folds or opens it**
+  ([[controller-input-map]]). Brave's reading views off: `ReadAnything` in owneetd's
+  `--disable-features` (the feature among the names read in the test VM), and the policy
+  `BraveSpeedreaderEnabled` = false.

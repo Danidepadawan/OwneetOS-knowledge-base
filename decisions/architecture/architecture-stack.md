@@ -4,7 +4,7 @@ description: "The chosen component for each layer: boot, session, frontend, daem
 area: architecture
 status: active
 decided: 2026-10-03
-updated: 2026-10-26
+updated: 2026-10-29
 legacy: "PROJECT_RULES.md §4"
 tags: [decision, architecture]
 ---
@@ -39,3 +39,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-19 | Widevine: the console asks for the user's consent to Google's terms (once, and again at every new Widevine version) instead of turning it on silently; in step 5.4. Brave's own Widevine question is turned off. |
 | 2026-10-24 | Brave's windows that need a mouse are turned off by the managed policies: also its password saving, password leak warnings and address saving (`PasswordManagerEnabled`, `PasswordLeakDetectionEnabled`, `AutofillAddressEnabled` false; found on Spotify's sign-in, verified in the test VM). Each web app keeps its sign-in in its own profile, so nothing is lost. |
 | 2026-10-26 | Brave opens only the address owneetd gives (managed policy `RestoreOnStartup` = 5: the session's tabs were reopened at every opening) and its performance alert is off (`--disable-features=PerformanceInterventionUI` in owneetd's command, together with the extension's feature in one switch). |
+| 2026-10-29 | Brave's reading views are off for the web apps: Chromium's Reading mode (`ReadAnything` in owneetd's `--disable-features`) and Brave's Speedreader (managed policy `BraveSpeedreaderEnabled` = false). |

@@ -95,7 +95,10 @@ or B brings it back** where it was (owner, 2026-10-24). **LT / RT = −5 / +5 s*
 Shift+← / Shift+→, repeating with this map's LT / RT timing; owner, 2026-10-23). **LB / RB do
 nothing** (owner, 2026-10-29: everything is reachable by position). The right stick scrolls.
 "Install App", "Open in Desktop app" and "Open Miniplayer" are never reached: they open windows the
-console cannot show. View, L3 and R3 do nothing; Guide stays owneetd's. Pages outside Spotify's
+console cannot show. **R3 (the right stick pressed) folds or opens Spotify's right panel** ("Now
+playing view", Spotify's own Alt+Shift+R; owner, 2026-10-29: Spotify opens it when a song starts,
+the user closes it; the panel is out of the D-pad's reach). View and L3 do nothing; Guide stays
+owneetd's. Pages outside Spotify's
 player (sign-in, Facebook / Google / Apple sign-in) keep the web-app bindings above.
 
 The input map is **fixed**: it is not saved in the frontend's settings, so a change reaches every
@@ -154,3 +157,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-26 | Inside Spotify redone for its player with an Android TV user agent: Y opens the full player (this view's player bar) and Y or B closes it; LT / RT press Spotify's progress bar ±5 s with the full player open, nothing elsewhere; LB / RB the bottom tabs; the footer, links leaving Spotify, "Get App" / "Open App" and the fixed bottom bars never reached by the D-pad. |
 | 2026-10-28 | Inside Spotify back on its desktop web player (the Android TV view keeps Your Library in Spotify's app): the bindings of 2026-10-24, and the **D-pad moves by position only** (the nearest target in the direction, no rows or columns; owner), in Spotify's own code. |
 | 2026-10-29 | Inside Spotify: **A plays** a card, Your Library row or song at once, **Menu opens its page**; LB / RB do nothing (everything is reachable by position); the D-pad moves by position in the player bar, menus and windows too, Spotify's sliders not stops. |
+| 2026-10-29 | Inside Spotify: **R3 folds or opens Spotify's right panel** (its own Alt+Shift+R), replacing the automatic folding (owner: Spotify opens it when a song starts, the user closes it). |
