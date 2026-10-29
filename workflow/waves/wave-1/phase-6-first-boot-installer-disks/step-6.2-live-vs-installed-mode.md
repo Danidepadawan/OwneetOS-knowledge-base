@@ -36,3 +36,8 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   where the difference is.
 - **Demo approved by the owner (2026-10-28).** The detection is done; the interface's code (the
   strip on Home, the entry in Settings → System) after Danidepadawan's merge.
+- **Code started (owner, 2026-10-29)** on `feature/phase6`, after 6.1. The "Install OwneetOS" entries
+  open the installer of [[step-6.4-installer-ui]], which is not built yet: the owner chose to write
+  6.2 now (owneetd tells the mode, the strip on Home, Settings → System as in the demos) and to
+  connect "Install" in 6.4. 6.2 stays in progress and is tested and approved together with 6.4.
+
