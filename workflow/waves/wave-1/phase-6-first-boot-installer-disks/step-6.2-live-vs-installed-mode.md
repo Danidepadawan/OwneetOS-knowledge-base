@@ -40,4 +40,15 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   open the installer of [[step-6.4-installer-ui]], which is not built yet: the owner chose to write
   6.2 now (owneetd tells the mode, the strip on Home, Settings → System as in the demos) and to
   connect "Install" in 6.4. 6.2 stays in progress and is tested and approved together with 6.4.
+- **Built (2026-10-29):** owneetd 0.19.0: package `live` reads the mode (`Mode()`: `/run/owneet/mode`,
+  before owneet-mode has run `/run/archiso`), the live checks (Steam, the optional apps) use it, and
+  `GET /v1/status` gives `mode` ([[owneetd-design]]); owneet-frontend 0.26.0 as in the approved
+  demos: the strip above the hero on Home, Settings → System with the version "from the USB stick",
+  "Install OwneetOS on this PC" and "Updates - Once OwneetOS is installed". "Install" shows "Coming
+  in a later version" until [[step-6.4-installer-ui]] connects the installer. Previews
+  `tools/preview-steps/live-mode.txt` and `installed-mode.txt` (`@live`).
+- **Tested in the test VM (2026-10-29)** with the ISO of the branch: from the stick `/run/owneet/mode`
+  is `live`, owneetd answers `"mode": "live"`, Home has the strip and System its three rows with
+  the real version; with the mode file set to `installed` and the interface restarted, no strip.
+  Approval together with 6.4 (owner).
 
