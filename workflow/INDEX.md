@@ -12,7 +12,7 @@ How we work: [[how-we-work]].
 ## Folders
 
 - [[workflow/functional-analysis/INDEX|Functional analysis]] — What the product does for the user: vision, features, specs.
-- [[workflow/technical-analysis/INDEX|Technical analysis]] — How components are built: owneetd and owneet-frontend.
+- [[workflow/technical-analysis/INDEX|Technical analysis]] — How components are built: owneetd, owneet-frontend and the Brave extension.
 - [[workflow/waves/INDEX|Waves]] — The plan: Wave 1 (phases and steps), Wave 2, backlog.
 
 ## Notes

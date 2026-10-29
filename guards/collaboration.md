@@ -10,6 +10,9 @@ tags: [guard, process]
 
 - **Never assume** what the knowledge base does not cover: ask the owner. Never contradict a
   decision note; never overwrite the owner's edits. ([[step-workflow]])
+- **Never start a roadmap step on your own**: follow the order of the wave notes, unless the owner
+  names the step to work on; never work on more than one step (or sub-step) per prompt.
+  ([[step-workflow]], [[how-we-work]])
 - **Never start the next roadmap step** before the owner has approved the current one; never work
   on more than one step per prompt. The only exception: an author (the owner or Danidepadawan)
   expressly asks to move on before the current step is approved; that step then stays in
@@ -28,6 +31,8 @@ tags: [guard, process]
   long-term impact) without the owner's explicit approval at that moment. ([[step-workflow]])
 - **Never push to GitHub** or act on GitHub (issues, PRs, settings): commit locally, the owner
   pushes. ([[repository]])
+- **Never narrow, or propose narrowing, the guard checks** (`scripts/guard-check.py`), not even
+  for a false positive: report it to the owner, who decides case by case. ([[knowledge-base]])
 - **Never write project text in a language other than English** (code, comments, documentation,
   commit messages, issues, PRs, this vault). The UI is translated through message files only.
   ([[hard-constraints]] C6)

@@ -14,6 +14,10 @@ tags: [best-practice, docs]
   folder (purpose, build and test commands, layout), `docs/translating.md` (translators),
   `frontend/sounds/SOURCES.md` (attribution), and later the user guide.
 - Every top-level folder has a short README stating its purpose.
+- **Files that ship to users never contain vault links** (`[[note]]`): `CREDITS.md` (installed as
+  `/usr/share/doc/owneetos/CREDITS.md`), `frontend/sounds/SOURCES.md` and anything else a package
+  installs. Users do not have the vault: write plain words ("Settings → System → Credits and
+  licences") instead.
 - Component READMEs describe the current state; history and reasons go to the vault (step notes,
   decision notes).
 - Markdown style: [[markdown]].

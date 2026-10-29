@@ -8,7 +8,8 @@ tags: [workflow, process]
 
 Decision: [[step-workflow]] · Guard: [[collaboration]] · Plan: [[wave-1]]
 
-1. **One step per prompt**, in the order of the wave notes. A step marked *(multi-prompt)* is
+1. **One step (or sub-step) per prompt**, in the order of the wave notes; the assistant never
+   starts a step on its own, and a step the owner names comes next. A step marked *(multi-prompt)* is
    expected to need more than one prompt; it is still reviewed as one unit.
 2. At the end of every step the assistant reports what was done, how it was verified, and anything
    that deviated from the plan. The step is marked done only after the **owner approves it**.

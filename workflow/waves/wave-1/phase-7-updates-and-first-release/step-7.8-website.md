@@ -41,7 +41,7 @@ Up: [[phase-7-updates-and-first-release]] · Status: **done**
   stops only while pointed at. The home's opening line became "Plug it. Play it. It's yours!" (owner;
   Italian "Collegalo. Giocaci. È tuo!", confirmed). Third round of texts (owner): "You only need
   a controller"; "Supporting Steam and DRM-free games"; the "Steam built in" card removed (Steam
-  will be optional, [[step-5.0-optional-apps]]); "Stream them or play your own"; "21 palettes,
+  will be optional, [[step-5.0.1-optional-gaming-apps]]); "Stream them or play your own"; "21 palettes,
   multiple languages supported" (the owner expects French and Spanish reviews before the
   release, maybe German: [[languages]] still lists Italian and English for Wave 1); "Runs on
   low-end PCs". "Credits" added to the header; below 1100 px the header shows the Menu button.

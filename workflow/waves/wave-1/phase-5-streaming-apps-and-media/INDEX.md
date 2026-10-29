@@ -10,16 +10,17 @@ tags: [index]
 ## Notes
 
 - [[phase-5-streaming-apps-and-media]] — Scope notes of Phase 5 — Streaming apps and media; the steps are in this folder's INDEX.
+- [[step-5.0.0-optional-web-apps]] — Netflix, YouTube and Spotify installed and removed from the home screen's Apps grid; Brave, behind them and never shown, is installed from package files inside the ISO.
+- [[step-5.0.1-optional-gaming-apps]] — The gaming programs as optional apps: Steam (with its 32-bit drivers), later Epic, GOG and RetroArch, installed and removed like the web apps of 5.0.0.
 
 ## Steps
 
 Status comes from each step note (`status:`).
 
-- `todo` [[step-5.0-optional-apps|5.0 Optional apps]] — A catalogue of the apps (name, generic icon, size, internet needed, packages): real programs (Steam with its 32-bit drivers, Brave,…
-- `todo` [[step-5.1-brave-in-the-os|5.1 Brave in the OS]] — `brave-bin` built into `[owneet]`, managed policies (forced extension, no first-run, Widevine on, locked settings), dedicated profile,…
-- `todo` [[step-5.2-extension-core|5.2 Extension core]] — Manifest V3 extension: Gamepad API loop, spatial navigation, B = back, exit to home, OSK for web forms.
-- `todo` [[step-5.3-youtube|5.3 YouTube]] — TV interface, playback controls on the gamepad.
-- `todo` [[step-5.4-netflix|5.4 Netflix]] — Widevine verified, browse / play / pause / seek on the gamepad.
+- `done` [[step-5.1-brave-in-the-os|5.1 Brave in the OS]] — Managed policies (forced extension, no first-run, Widevine on, locked settings), dedicated profile, kiosk launch through the daemon; web apps open from the home screen.
+- `done` [[step-5.2-extension-core|5.2 Extension core]] — Manifest V3 extension: Gamepad API loop, spatial navigation, B = back, exit to home, OSK for web forms.
+- `done` [[step-5.3-youtube|5.3 YouTube]] — TV interface, playback controls on the gamepad.
+- `done` [[step-5.4-netflix|5.4 Netflix]] — Widevine verified, browse / play / pause / seek on the gamepad.
 - `todo` [[step-5.5-spotify|5.5 Spotify]] — Web player navigation, playback continues in the background.
 - `todo` [[step-5.6-local-videos-and-music|5.6 Local videos and music]] — Mpv with gamepad bindings, Videos and Music browsing in the frontend from mounted disks.
 - `todo` [[step-5.7-apps-page|5.7 Apps page]] — A page with every app (streaming services, Videos, Music, stores, and the ones added later), reached from the home screen: when there…

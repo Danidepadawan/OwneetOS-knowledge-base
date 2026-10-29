@@ -22,7 +22,11 @@ tags: [decision, distribution]
 - ISO built with **archiso**, automated with **GitHub Actions**, with checksums and signatures. Its system
   image is **squashfs + xz** (erofs + LZMA had silently corrupted six files, 2026-10-13); every ISO
   build checks every file of the image against its package.
-- With [[optional-apps]] (step 5.0) the ISO becomes slim: apps are downloaded when chosen.
+- With [[optional-apps]] the apps are optional. Brave (behind the web apps) ships inside the ISO
+  as package files, an offline pacman repository in `/usr/share/owneet/bundled/`, installed only
+  when chosen ([[step-5.0.0-optional-web-apps]]); where the gaming programs come from is decided
+  at [[step-5.0.1-optional-gaming-apps]]. The bundled packages are signed like every other one
+  before they reach users ([[package-signing]]).
 - Packages built with **PKGBUILD**s; updates served from an **own pacman repository `[owneet]`**
   hosted on GitHub. Updates are triggered from the Settings menu with the gamepad.
 - Arch packages are **pinned to Arch Linux Archive snapshots**; the snapshot date is advanced only
@@ -47,4 +51,5 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-23 | The domain is bought after the website's merge (step 7.8h), no longer at step 7.2. |
 | 2026-10-20 | The website: Angular, static on GitHub Pages, its own repository; download as a redirect to SourceForge ([[website]]). |
 | 2026-10-13 | The ISO's system image is squashfs + xz instead of erofs + LZMA, which had silently corrupted six files (kernel modules, an AMD firmware); every ISO build now checks every file against its package. ISO 1822 MiB. |
+| 2026-10-14 | Brave ships inside the ISO as package files (an offline pacman repository), installed only when the user picks a web app (step 5.0.0). |
 | 2026-10-24 | The website's domain is **owneetos.org**, bought by the owner at Hostinger after a preliminary trademark search (step 7.5). |

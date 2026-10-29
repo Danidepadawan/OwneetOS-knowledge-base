@@ -1,6 +1,6 @@
 ---
 type: index
-description: "How components are built: owneetd and owneet-frontend."
+description: "How components are built: owneetd, owneet-frontend and the Brave extension."
 tags: [index]
 ---
 # Technical analysis
@@ -9,5 +9,6 @@ tags: [index]
 
 ## Folders
 
+- [[workflow/technical-analysis/extension/INDEX|extension]] — Design of the Brave extension that makes web apps work with a controller.
 - [[workflow/technical-analysis/owneet-frontend/INDEX|owneet-frontend]] — Architecture of the console interface (Pegasus fork).
 - [[workflow/technical-analysis/owneetd/INDEX|owneetd]] — Design and API of the system daemon owneetd.

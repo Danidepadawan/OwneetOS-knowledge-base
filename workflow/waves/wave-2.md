@@ -11,7 +11,24 @@ Scope agreed so far: [[wave-1-scope]] (later waves).
 
 - **8. Overlay and quick menu:** gamescope overlay layer, quick menu over games, volume, battery, screenshots on View/Create.
 - **9. Chat modules:** module interface, Discord web in the background, notifications in the overlay, mute and push-to-talk.
-- **10. Dual boot (optional, not required):** "Install alongside Windows", BitLocker detection and guidance, RTC handling, default OS, "Restart into Windows".
+- **Web browser app (owner, 2026-10-14):** free web browsing with the controller (Brave, already
+  behind the web apps of [[step-5.0.0-optional-web-apps]]), under a generic name and icon. **The
+  extension's generic navigation for any web page is reworked entirely then** (owner,
+  2026-10-20); until then it stays as 5.2 left it, and each supported web app has its own
+  ([[extension-design]]).
+- **Web apps in the background (owner, 2026-10-14):** music web apps (Spotify, Tidal…) keep
+  playing while the user does something else; in Wave 1 a web app is closed by the user like a
+  game ([[step-5.1-brave-in-the-os]]).
+- **10a. Stable live boot (owner, 2026-10-19):** OwneetOS fully usable when booted from the USB
+  stick, without installing it: the user chooses the disks where games are saved; the game
+  library is cached (in the owner's words: "tiles shadowing, download from library etc."); the
+  boot is faster; RAM is saved wherever possible. Details agreed when the step is planned; it
+  revisits what the live system does today: Steam and the web apps only with 12 GB of RAM
+  ([[steam-integration]], [[optional-apps]]), a writable space in RAM of up to 75 %
+  (`cow_spacesize=75%`, [[step-4.2-steam-integration]]), no copy of the image to RAM
+  (`copytoram=n`, [[boot-experience]]), the slow boot from a USB stick
+  ([[step-1.5-hardware-support-set]]). The user's disks: [[disks]], guard [[user-data]].
+- **10b. Dual boot (optional, not required):** "Install alongside Windows", BitLocker detection and guidance, RTC handling, default OS, "Restart into Windows".
 - **11. More stores:** Epic (legendary), GOG (gogdl); their Windows games use Wave 1's Proton (4.5).
 - **12. Console features:** user profiles, parental controls, play-time statistics, quick suspend and resume.
 - **13. Custom accent colour** with automatic contrast checking.

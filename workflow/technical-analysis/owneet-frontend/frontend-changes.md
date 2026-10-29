@@ -68,6 +68,28 @@ the network (Wi-Fi signal or cable).
 (`/etc/os-release`), the credited projects (CREDITS.md tables) and every installed package with
 its licence (pacman's local database), for Settings → System → Credits and licences.
 
+**The cage session (5.2):** cage shows only the newest window, so `CageWindow.qml` carries out
+owneetd's `focus.changed` with the interface's own window (owneetd 0.12.2): asked for the home
+screen while an app is on top, it hides and shows the window again (it becomes the newest); when
+the app comes back it hides it, and shows it again when the app exits. Starting an app is
+unchanged: the app's window covers the console when it appears. owneet-frontend 0.16.12.
+
+**The web keyboard (5.2):** `WebKeyboard.qml` opens on owneetd's `webapp.keyboard` and confirms it
+(`/v1/webapps/keyboard/shown`): the web app's name, a line with the field's label and text, and
+the `Keyboard`, whose `typed`, `deleted` and `cursorMoved` signals are passed to the page through
+`/v1/webapps/text`. Done closes with `next`, B without. owneet-frontend 0.16.13.
+
+**"Close {name}?" from a web app (5.2):** on `webapp.ask_close` the shell opens the close dialog
+(`confirmClose`) with a `back` action: Cancel and B bring the web app back (`/v1/apps/{id}/focus`),
+Close closes it. owneet-frontend 0.16.14.
+
+**The web keyboard over the page in gamescope (5.2, part 6):** `WebKeyboard.qml` shows its
+keyboard in a window of its own (`layered`), made a gamescope external overlay by
+`owneet::Overlay` (`overlay` in QML: `makeOverlay`, `routeGamepad`; `platform::make_external_overlay`
+in `GamescopeTag_x11.cpp`). `GamepadButtonNavigation::setKeyTarget` sends the gamepad's keys to
+that keyboard, and `Backend.cpp` reads the gamepad while the home screen is in front or the web
+keyboard is open. owneet-frontend 0.16.16.
+
 **Disks (3.7):** `owneet::Storage` (`src/backend/owneet/`, `storage` in QML) lists the system disk
 and the mounted disks with their free space (Qt's `QStorageInfo`), for the library; since 4.3 it
 also says when a disk is mounted or unmounted (`volumesChanged`).
