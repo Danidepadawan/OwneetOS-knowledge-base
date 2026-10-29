@@ -9,6 +9,7 @@ tags: [index]
 
 ## Notes
 
-- [[distribution-and-updates]] — ISO on SourceForge, website on GitHub Pages, [owneet] pacman repo, pinned snapshots, btrfs + snapper.
+- [[distribution-and-updates]] — ISO on SourceForge, website on GitHub Pages, [owneet] pacman repo, pinned snapshots, btrfs rollback (no snapper).
 - [[installer-and-firmware]] — Own QML installer, dual boot considered but not required, BitLocker, Secure Boot always disabled.
 - [[package-signing]] — Two-level OpenPGP key: offline primary, expiring signing subkey, who signs, unsigned development builds.
+- [[website]] — The project's website: Angular, static on GitHub Pages, own repository and folder, its pages, English and Italian (German, French and Spanish planned), owneetos.org, no data collected, download as a redirect.

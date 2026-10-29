@@ -4,7 +4,7 @@ description: "Two-level OpenPGP key: offline primary, expiring signing subkey, w
 area: distribution
 status: active
 decided: 2026-10-04
-updated: 2026-10-13
+updated: 2026-10-28
 legacy: "PROJECT_RULES.md §5 (Package signing)"
 tags: [decision, distribution, security]
 ---
@@ -29,6 +29,11 @@ Two-level OpenPGP key:
 - **Who signs:** every signature needs the passphrase, typed by a key holder
   (`tools/keys/install-working-key` once per builder VM, then `tools/sign-repo`). From roadmap step
   7.2, release builds are signed by CI with the subkey stored as a protected GitHub secret.
+  **How (owner, 2026-10-28):** the owner exports the signing subkey **with its passphrase** into
+  one secret and puts the passphrase in a second one (the key alone, if it leaked, could not
+  sign); both belong to the GitHub environment `release`, whose jobs wait for an author's
+  approval, so a tag alone never signs or publishes. The key lives only in a temporary GnuPG home
+  of the job and is never printed.
 - **Development builds** may use the local `[owneet]` repository unsigned (packages are built and
   consumed inside the same builder VM); `tools/build-iso` prints a warning. A signed repository is
   always verified (`SigLevel = Required DatabaseRequired`). **Anything distributed to users must be
@@ -47,3 +52,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-04 | Package signing: two-level key (primary offline with the owner, expiring signing subkey for owner + second developer), dedicated project e-mail ([[distribution-and-updates]]). |
 | 2026-10-04 | Signing key created (primary `B3BD F4E3 E477 2D3F 7E86 1A87 8D02 23BC EE51 456E`, `owneet@proton.me`). Key holders sign with their passphrase; development builds may be unsigned; distributed builds must be signed ([[distribution-and-updates]]). |
 | 2026-10-13 | **Test PCs are installed**, not run from a stick: a tester installer (step 4.2a, boot entry "Install OwneetOS (testers)") and updates from a USB stick (step 4.2b: the `owneet-updates` folder on the OWNEETLOG stick, applied automatically at boot and from Settings → System), before step 4.3. Nothing is published online. Only systems installed by the tester installer accept unsigned OwneetOS packages, and only from that stick (option b). Test PC: "FrankenPC" (i7-6700, 16 GB, 96 GB SSD + 2 TB HDD, GTX 1660 Super); the NiPoGi stays a live-stick test PC. |
+| 2026-10-28 | CI signing (step 7.2): the subkey exported with its passphrase in one secret, the passphrase in another, both in the GitHub environment `release` that needs an author's approval. |

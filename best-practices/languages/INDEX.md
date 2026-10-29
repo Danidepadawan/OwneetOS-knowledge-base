@@ -9,6 +9,7 @@ tags: [index]
 
 ## Notes
 
+- [[angular]] — Angular conventions of the website: folders, file names (.component.ts, .service.ts), models and enums next to their component, signals, texts and colours.
 - [[cpp-qt]] — C++/Qt conventions in owneet-frontend: owneet namespace, small changes to Pegasus, one commit per change, tests.
 - [[go]] — Go conventions for owneetd: gofmt, standard library first, vendoring, package layout, doc comments, logging, API errors, tests.
 - [[markdown]] — Markdown conventions: markdownlint config, 100-column prose, tables, code spans, vault links.

@@ -24,6 +24,17 @@ Open them in a browser; they can be driven with the keyboard or a gamepad. Proce
 | `design/demos/4.3-games-on-disk.html` | Games on a USB stick or disk: the disk plugged in and out with its notice, its games in the library (folder's name, `cover.jpg`), "Which file starts the game?", Options → "Choose the file to start", the disk in the details (`#disk=0&open=choose\|options\|details`) | [[step-4.3-local-drm-free-games]] |
 | `design/demos/4.5-windows-games.html` | Windows games on the disk listed like the others; the download they need the first time (home notices, Settings → System, banner when ready); a Windows game started before it is ready (progress, or connect to the internet); "Preparing {game}…"; GOG's info file or the usual question for the file to start; a Steam game whose Linux version does not start (`#win=waiting\|downloading\|ready&net=off&section=home\|settings&open=offline\|progress\|prep\|choose\|broken`) | [[step-4.5-windows-games-proton]] |
 | `design/demos/4.2c-steam-library.html` | Every owned Steam game in the library, installing and uninstalling through Steam's confirmation, downloads, the display-errors notice, no internet (`#gpu=amd&net=off&first=1&open=install\|notice\|steam\|uninstall\|details\|offline\|store`) | [[step-4.2c-steam-without-its-interface]] |
+| `design/demos/6.1-first-start.html` | The first start: pairing (as the mockup), language, network or later, time zone (suggested or a list of cities), the Xbox adapter's firmware with consent, ready | [[step-6.1-first-boot-flow]] |
+| `design/demos/6.4-installer.html` | The installer: welcome, the internal disks, the console's name, the warning (Windows or BitLocker to confirm with a switch), A held three seconds to erase and install, progress, end, errors | [[step-6.4-installer-ui]] |
+| `design/demos/6.6-moving-games.html` | Moving games between disks: the disks with their room, copy with Cancel, check, the original removed after; Steam's games moved by Steam; "Play from here / Copy to the console" | [[step-6.6-moving-games-and-media-between-disks]] |
+
+| `design/demos/7.8-website-home.html` | The website's home: one page whose sections snap (home, features carousel, requirements, open, info, download), English and Italian | [[step-7.8-website]] |
+
+| `design/demos/7.8b-website-pages.html` | The website's pages: guide, FAQ, credits (the authors first), privacy, contributing; the gamepad "O" logo and its start-up animation | [[step-7.8b-website-pages]] |
+| `design/demos/7.8d-website-not-found.html` | The website's not-found page: in the address's language (`/it/...` in Italian), the way home, the guide and the questions | [[step-7.8d-website-not-found-page]] |
+| `design/demos/7.8e-website-favicon.html` | The website's favicon from the gamepad "O": three shapes, its colours, on light and dark tab bars, at 16 and 32 px, on a phone | [[step-7.8e-website-favicon]] |
+| `design/demos/7.8f-website-sharing-picture.html` | The picture shown when a link to the website is shared: logo and slogan, or logo and the home's title; Dusk or Daylight; in link previews | [[step-7.8f-website-search-and-sharing]] |
+| `design/demos/7.1-updates.html` | The updates in Settings → System: notice, "What's new", optional package details, install, restart now or later, going back to the previous or any version, the notice after a failed update | [[step-7.1-updates]], [[step-7.1b-going-back-to-any-version]] |
 
 The demos play the interface sounds from `design/demos/sounds.js` ([[sound-files]]).
 Fonts and wordmark: [[design-tokens]].

@@ -9,4 +9,4 @@ tags: [index]
 
 ## Notes
 
-- [[legal-compliance]] — GPL source archives, licence notices, never-redistributed components, trademarks, credits, asset licences, privacy.
+- [[legal-compliance]] — GPL source archives, licence notices, never-redistributed components, trademarks (third parties'; ours not registered), credits, asset licences, privacy.

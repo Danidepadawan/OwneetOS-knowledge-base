@@ -1,10 +1,10 @@
 ---
 type: decision
-description: "GPL source archives, licence notices, never-redistributed components, trademarks, credits, asset licences, privacy."
+description: "GPL source archives, licence notices, never-redistributed components, trademarks (third parties'; ours not registered), credits, asset licences, privacy."
 area: legal
 status: active
 decided: 2026-10-07
-updated: 2026-10-19
+updated: 2026-10-28
 legacy: "PROJECT_RULES.md §12"
 tags: [decision, legal]
 ---
@@ -19,6 +19,23 @@ project is reviewed by someone experienced in open-source licensing ([[step-7.5-
   archive** (PKGBUILDs and the exact sources of every package it contains) or a valid written
   offer. Until the release pipeline does this (roadmap step 7.2), **CI does not publish
   downloadable ISOs or packages**: ISOs built in CI are checks only; test ISOs are built locally.
+  - **How (owner, 2026-10-28, option a of [[step-7.2-release-pipeline]]):** a full archive, never
+    only a written offer. OwneetOS's own packages: their PKGBUILDs and exact sources, in the
+    release's folder on SourceForge. Arch's packages: the exact `.src.tar.gz` of **every** package
+    version shipped, whatever its licence, **copied to SourceForge** (a `sources/` folder shared by
+    every release, so each release uploads only new versions): the obligation is ours, and stays
+    met even if Arch or an upstream removes them. A release missing any source publishes nothing.
+  - **Where Arch's archives come from (owner, 2026-10-28):** `sources.archlinux.org` keeps only a
+    small subset (33 of the 518 the first ISO needs). The archive is taken from there when it
+    exists; otherwise it is made the way Arch makes it: the package's PKGBUILD at the tag of that
+    exact version in Arch's packaging repository, with every upstream source downloaded and
+    checked against the PKGBUILD's checksums (`makepkg --allsource`). Every package, not only the
+    copyleft ones (owner: the users see no difference, and we depend less on Arch).
+  - **Generated patches (owner, 2026-10-28, option 1):** a patch that GitHub or GitLab generates
+    from a commit or a pull request can change its header lines over time, so its checksum stops
+    matching Arch's PKGBUILD while the change to the code is the same. Only when every file that
+    failed is such a patch is the archive made with the files just downloaded, and the difference
+    is written in a notes file next to it. Any other failed checksum stops the release.
 - **Licence notices:** every package keeps its licence files (`/usr/share/licenses`); the ISO and
   the UI ("About → Licences", later) list the licences of what OwneetOS ships.
 - **Proprietary but redistributable components** (NVIDIA driver, device firmware, CPU microcode)
@@ -36,8 +53,10 @@ project is reviewed by someone experienced in open-source licensing ([[step-7.5-
   store content. They are downloaded by the user's own system, with consent where required.
 - **Trademarks:** third-party names (Xbox, PlayStation, Netflix, Steam…) only to say what works
   with OwneetOS; no third-party logos; never imply endorsement. "Based on Arch Linux" is allowed;
-  the Arch logo is not used. The name **OwneetOS** gets a trademark search (EUIPO, Italian
-  register) before the public launch.
+  the Arch logo is not used. The name **OwneetOS** is **not registered as a trademark** (the
+  authors, 2026-10-25: it costs too much for what it gives); a preliminary search (step 7.5,
+  2026-10-24) found no conflicting mark, so the name is used legally. What carries the project's
+  name or logo never imitates someone else's mark, logo or product shape.
 - **Credits:** the projects OwneetOS is built on are credited by name, author and licence in
   `CREDITS.md` (shipped in the image at `/usr/share/doc/owneetos/CREDITS.md`, shown in the UI under
   "About → Credits and licences" with the full list of installed packages). Every new third-party
@@ -99,3 +118,7 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-18 | YouTube opens its TV interface with a **TV user agent** set by owneetd from the catalogue, brand-neutral first; the owner holds it allowed (the TV interface is a mode the service makes available; a user agent alters neither the app nor its content), and it goes to the legal review of step 7.5. **Brave's Shields block the web apps' ads** by default (no policy turns them off): kept as it is, to the legal review of 7.5. |
 | 2026-10-19 | **Widevine consent:** the console asks for the user's consent to Google's terms (once at the first web app, and at every new Widevine version) instead of 5.1's silent opt-in, in step 5.4; Brave's own question turned off (unreachable with the controller). A change of Google's terms alone cannot be detected without a server: to the legal review of 7.5. |
 | 2026-10-19 | Widevine consent: once **per user**, at the first opening of a web app; *Read the terms* shows **Google's live page** in the web apps' window (Google's terms are never copied into the console: no free licence, and a copy goes stale); a QR code rejected. |
+| 2026-10-25 | The OwneetOS trademark is not registered (the authors: too costly for its worth). The preliminary search of 2026-10-24 found no conflicting mark; the project only makes sure everything it does is legal. |
+| 2026-10-28 | Source archive (step 7.2, option a): our packages' PKGBUILDs and sources per release; every Arch package's exact `.src.tar.gz` copied from `sources.archlinux.org` to a shared `sources/` folder on SourceForge; a release missing any source publishes nothing. |
+| 2026-10-28 | Arch's source archives: `sources.archlinux.org` keeps only a subset (33 of 518), so the missing ones are made like Arch makes them (PKGBUILD at the version's tag in Arch's packaging repository, upstream sources checked, `makepkg --allsource`); every package, whatever its licence. |
+| 2026-10-28 | A generated patch (GitHub or GitLab, from a commit or a pull request) whose checksum drifted is accepted and noted next to its archive; any other failed checksum stops the release. |
