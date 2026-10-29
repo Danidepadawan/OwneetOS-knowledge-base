@@ -190,3 +190,10 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress** (owner, 2026
   panel Spotify remembered folded: fixed in owneet-base 0.0.55); Alt+Shift+R on a real keyboard still
   opens Brave's reading view (`--disable-features=Speedreader` does not stop it: its names are
   being read in the test VM).
+- **Owner's test of 0.0.55 (2026-10-29):** A plays, Menu opens the page, X adds to the queue, the
+  D-pad and the player bar work; the right panel stays folded, and when Spotify opens it as a song
+  starts the extension folds it again within seconds. Brave's command carries
+  `--disable-features=PerformanceInterventionUI,Speedreader` (every process), yet Alt+Shift+R on a
+  keyboard still opens a reading view: by the names in Brave's program it is Chromium's Reading mode
+  (`ReadAnything`, its full-page `ReadAnythingImmersive…` view), not Speedreader; Brave's
+  Speedreader policy is `BraveSpeedreaderEnabled`. The exact feature names are being read.
