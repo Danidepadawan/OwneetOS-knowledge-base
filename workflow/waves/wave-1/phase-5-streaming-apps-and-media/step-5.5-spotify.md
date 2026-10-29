@@ -175,3 +175,9 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress** (owner, 2026
   0.0.53: `apps.json` without Spotify's agent; `extension/content/spotify.js` on the desktop player
   with its own position-only geometry (`spatialPick`, tested by `test/spotify.test.js`) and the
   desktop bindings; owneetd 0.16.3 (Brave's performance alert off) and `RestoreOnStartup` stay.
+- **Owner's test of 0.0.53 (2026-10-29):** Alt+Shift+R on a real keyboard folds the right panel but
+  also opens Brave's reading view (Speedreader); the panel is not folded when Spotify opens; in the
+  player bar left / right went round play / next / repeat / the progress bar and never reached its
+  right side (the generic rules inside it); no way to play from a card. Decided: A plays, Menu opens
+  the page, LB / RB nothing, the D-pad by position inside the bar, menus and windows too
+  ([[controller-input-map]]).

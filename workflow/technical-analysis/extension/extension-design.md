@@ -188,31 +188,35 @@ no user agent of its own): its player for phones and TVs (an Android TV agent, t
 app"), and has neither keys nor a seekable bar a script may move.
 
 - **The D-pad moves by position only** (owner, 2026-10-28; Spotify's own code, the generic
-  navigation untouched): the targets are the top bar's, the left sidebar's (Your Library) and the
-  main view's, never the player bar's (Y) nor "Install App", "Open in Desktop app", "Open
-  Miniplayer"; a card, a song and a Your Library row are one target each. From the selection, the
+  navigation untouched), in the page and also inside the player bar, a menu or a window (owner,
+  2026-10-29: the generic rules went round the bar's middle and never reached its right side): the
+  targets are the top bar's, the left sidebar's (Your Library) and the main view's (the player
+  bar's only after Y), never Spotify's sliders (progress, volume) nor "Install App", "Open in
+  Desktop app", "Open Miniplayer"; a card, a song and a Your Library row are one target each. From the selection, the
   nearest target past its edge in the pressed direction: the gap along the direction plus twice
   the offset across it, targets lined up across first; no rows, columns or parts. The page and a
   shelf scroll to the selection (a shelf that does not scroll slides with Spotify's
   `carousel-previous-button` / `carousel-next-button`); nothing in the direction: the page
   scrolls a step and the move is tried once more.
-- **A clicks** (a scripted Enter activates nothing on Spotify); on a song it clicks the song's own
-  play button (a click on the row only selects it).
+- **A plays** a card, a Your Library row or a song: their own play button (`play-button`; a
+  song's first button); elsewhere A clicks (a scripted Enter activates nothing on Spotify).
+- **Menu opens the selected item's page:** a card or a Your Library row is clicked (its own link),
+  a song through its title link (`internal-track-link`).
 - **B:** an open context menu or Spotify window closes first (Escape; the selection goes back to
   where it was), then the player bar (back where Y found the selection), then the page before; with
   nothing left, "Close {name}?" as in 5.2.
 - **X:** the selected item's context menu (as a right click), then its "Add to queue", found by
   Spotify's label in the console's languages (English, Italian); in another language X only opens
   the menu. Spotify confirms with "Added to queue".
-- **Menu:** the selected item's context menu; inside it the D-pad moves between its items.
 - **Y:** the selection to the player bar (play / pause) and back.
 - **LT / RT:** Shift+← / Shift+→ (Spotify seeks by 5 s; measured).
-- **LB / RB:** Home (Alt+Shift+H), Search (Ctrl+Shift+L, the selection on the search field), Your
-  Library (the selection into the left sidebar), going round.
+- **LB / RB do nothing** (owner, 2026-10-29).
 - **Look on a TV** (owner, 2026-10-24): drawn as on a screen about 1280 px wide (the page sends its
   width, the worker sets the tab's zoom with `chrome.tabs.setZoom`, 100–300 % in steps of 5 %);
-  Spotify's right panel ("Now playing view") folded away once when Spotify opens (its own
-  Alt+Shift+R).
+  Spotify's right panel ("Now playing view") folded away when Spotify opens and after A plays
+  something (its own Alt+Shift+R: the desktop player reopens it when a song starts). Brave's own
+  Alt+Shift+R (its reading view, Speedreader: a page that needs a mouse) is turned off in owneetd's
+  command; keys sent by a script never reach Brave anyway.
 - **How the parts are found** (Spotify's desktop player as of 2026-10-24, read with probes in the
   test VM): left sidebar `nav` (Your Library's rows: `role=row`); top bar `global-nav-bar`
   (`search-input`); main view `main`; shelves `component-shelf` (`carousel-scroller`); cards
