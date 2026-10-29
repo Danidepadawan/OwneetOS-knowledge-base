@@ -214,7 +214,10 @@ app"), and has neither keys nor a seekable bar a script may move.
 - **Look on a TV** (owner, 2026-10-24): drawn as on a screen about 1280 px wide (the page sends its
   width, the worker sets the tab's zoom with `chrome.tabs.setZoom`, 100–300 % in steps of 5 %);
   Spotify's right panel ("Now playing view") folded away when Spotify opens and after A plays
-  something (its own Alt+Shift+R: the desktop player reopens it when a song starts). Brave's own
+  something (its own Alt+Shift+R: the desktop player reopens it when a song starts). The key
+  toggles the panel, so it is sent only while the panel's own parts (`npv-…`) are on screen,
+  checked once a second for a few seconds (2026-10-29: a check by the page's layout fired while
+  the page was still laid out and opened the folded panel). Brave's own
   Alt+Shift+R (its reading view, Speedreader: a page that needs a mouse) is turned off in owneetd's
   command; keys sent by a script never reach Brave anyway.
 - **How the parts are found** (Spotify's desktop player as of 2026-10-24, read with probes in the

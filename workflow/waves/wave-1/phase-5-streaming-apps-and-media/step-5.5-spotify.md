@@ -185,3 +185,8 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress** (owner, 2026
   off too), owneet-base 0.0.54 (A plays, Menu opens the page, LB / RB nothing, the position-only
   D-pad inside the player bar, menus and windows, sliders not stops, the right panel folded again
   after A plays).
+- **Owner's test of 0.0.54 (2026-10-29):** the player bar works; the right panel was folded at first,
+  then opened (the extension's check fired while the page was still laid out and toggled the
+  panel Spotify remembered folded: fixed in owneet-base 0.0.55); Alt+Shift+R on a real keyboard still
+  opens Brave's reading view (`--disable-features=Speedreader` does not stop it: its names are
+  being read in the test VM).
