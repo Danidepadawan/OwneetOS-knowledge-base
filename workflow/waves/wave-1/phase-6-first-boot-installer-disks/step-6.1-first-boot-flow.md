@@ -57,3 +57,10 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   ([[step-5.0.0-optional-web-apps]]), so it is not there at the first start: the owner chooses
   how. The time zone in Settings (this step's deliverable) needs its demo first
   ([[demo-before-code]]).
+- **Decided (owner, 2026-10-29):** "Read the terms" shows a QR code with the address of
+  Microsoft's terms, read on a phone (option a); if it turns out too awkward, the button goes and
+  the consent sentence stays (option b). Settings → Language gets a "Time zone" row that opens the
+  same list of cities, and the date and time can be set by hand when the console has not had them
+  from the internet (a console with no internet and a wrong clock): demo first. The picker: English
+  first, then alphabetical by the languages' own names. German, French and Spanish are translated
+  for the whole console now ([[step-7.9-console-more-languages]]).

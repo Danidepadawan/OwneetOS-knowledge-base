@@ -36,3 +36,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-08 | English is the default UI language and the fallback for missing labels; Italian is one of the additional languages ([[design-direction]]). |
 | 2026-10-26 | Wave 1 adds German, French and Spanish to English and Italian (step 7.9, after Danidepadawan's merge; checked by people the authors know). |
 | 2026-10-29 | The language picker lists the five languages of Wave 1 from the start, before German, French and Spanish are complete or checked (missing messages in English; the reviews may come later and invite the community to help); new screens come in the five languages. |
+| 2026-10-29 | German, French and Spanish translated for the whole console now, with step 6.1 (step 7.9 moved earlier); the picker alphabetical after English. |
