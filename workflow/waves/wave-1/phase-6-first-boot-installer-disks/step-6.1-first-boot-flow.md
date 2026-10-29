@@ -3,13 +3,13 @@ type: step
 description: "Controller (auto-pairing, as in the mockup) → language → network → ready. The keyboard layout follows the chosen language (console and…"
 phase: "[[phase-6-first-boot-installer-disks]]"
 step: "6.1"
-status: in-progress
+status: done
 legacy: "ROADMAP.md 6.1"
 tags: [step, phase-6]
 ---
 # 6.1 First-boot flow
 
-Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
+Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
 
 - **Deliverables:** controller (auto-pairing, as in the mockup) → language → network → ready.
   The keyboard layout follows the chosen language (console and on-screen keyboard), and can be
@@ -113,4 +113,4 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   network off, in English: New York picked, its own screen with "Set the time", the window opened
   on New York's time and saved one hour later (the system clock moved by one hour), "Continue" set
   America/New_York, the summary and the top bar clock right. Italian (one city) unchanged.
-
+- **Approved by the owner (2026-10-29): step 6.1 done.** Next, in numeric order: [[step-6.2-live-vs-installed-mode]].
