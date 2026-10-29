@@ -75,3 +75,4 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   terms" as a QR code with the address under it; without the internet "Set the time" on the time
   screen) and the new `6.1-settings-time.html` (Settings → Language: "Time zone", the list of
   cities; "Date and time", from the internet, or by hand without it).
+- **Second round approved by the owner (2026-10-29)**, with the guarantee that without the internet the first start sets the date and time too, not only the time zone.
