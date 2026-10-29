@@ -4,7 +4,7 @@ description: "ISO on SourceForge, website on GitHub Pages, [owneet] pacman repo,
 area: distribution
 status: active
 decided: 2026-10-03
-updated: 2026-10-20
+updated: 2026-10-28
 legacy: "PROJECT_RULES.md §5"
 tags: [decision, distribution]
 ---
@@ -43,6 +43,13 @@ tags: [decision, distribution]
   reverse (spare copy, download, 3 tries). A warning before confirming: personal data (saves,
   profiles) do not go back, and an old version has old security problems and may not know newer
   hardware.
+- **Releasing (owner, 2026-10-28, [[step-7.2-release-pipeline]]):** an author pushes the tag
+  `vVERSION` of a release commit (the version in `owneet-updates`, the release notes in every
+  language of the console, drafted by the assistant and approved by the owner). The GitHub
+  environment `release` waits for an author's approval before the build is signed and again
+  before anything is published. Order of publishing: sources, then the ISO (SourceForge), then
+  the packages (GitHub Release `vVERSION`), and last the list of releases, so nothing is ever
+  visible without its sources.
 - Arch packages are **pinned to Arch Linux Archive snapshots**; the snapshot date is advanced only
   after testing. CI builds use the ISO's snapshot for build dependencies too.
 - **Package signing**: see [[package-signing]].
@@ -83,3 +90,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-25 | Rollback (option C, step 6.3): systemd-boot stays; snapshot and previous kernel kept at every update; rollback from Settings with the controller and automatic after 3 failed boots (boot counting); the boot menu only a keyboard fallback; the user's data never rolled back. GRUB + grub-btrfs and Limine turned down. |
 | 2026-10-25 | No snapper: one spare copy of the system (btrfs snapshot), always the last version that reached the home screen; an update replaces it only from a confirmed working system, so broken releases never overwrite it. |
 | 2026-10-25 | Step 7.1: updates as signed GitHub Releases; automatic check (start-up, daily), install only on request; "Restart now" or "Later"; version, size and "what's new", packages in an optional "Details" section. Going back always possible: to the previous version with no time limit, and to any published version (downloaded, an update in reverse), with a warning. |
+| 2026-10-28 | Releasing (step 7.2): a tag on a release commit; the GitHub environment `release` needs an author's approval; release notes per version in every console language (drafted by the assistant, approved by the owner); published in the order sources, ISO, packages, list of releases. |
