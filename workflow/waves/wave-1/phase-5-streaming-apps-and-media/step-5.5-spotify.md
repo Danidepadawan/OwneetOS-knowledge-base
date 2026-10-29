@@ -181,3 +181,7 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress** (owner, 2026
   right side (the generic rules inside it); no way to play from a card. Decided: A plays, Menu opens
   the page, LB / RB nothing, the D-pad by position inside the bar, menus and windows too
   ([[controller-input-map]]).
+- **Implemented (2026-10-29), waiting for the owner's test:** owneetd 0.16.4 (Brave's reading view
+  off too), owneet-base 0.0.54 (A plays, Menu opens the page, LB / RB nothing, the position-only
+  D-pad inside the player bar, menus and windows, sliders not stops, the right panel folded again
+  after A plays).
