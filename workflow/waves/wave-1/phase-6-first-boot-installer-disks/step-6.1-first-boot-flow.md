@@ -42,3 +42,18 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   ([[first-boot-setup]], [[languages]]). Plan: owneetd (the time zone through systemd-timedated,
   the Xbox adapter's firmware through a root unit, both allowed by polkit to the console user
   only; the first start's state), then the screens as in the approved demo, then the test VM.
+- **Built (2026-10-29):** owneetd 0.17.0 (`/v1/time`, `/v1/time/zone`, `/v1/time/zones`,
+  `/v1/xone`, [[owneetd-api-time]]); `owneet-xone` 0.5.8-4 (the install unit and its polkit rule,
+  the helper's progress file); `owneet-base` 0.0.52 (systemd-timesyncd on); `owneet-frontend`
+  0.24.0 (`FirstStart.qml`, `Tr.trIn` for the title shown in each language, the messages in the
+  five languages, the cities' names as messages). The first start counts as done with the
+  interface's memory `firstStartDone`, which an installed console keeps and the USB stick never
+  does. The picker lists the languages as Settings does (English first, then by their own name).
+  Seen in the interface preview (`tools/preview-steps/first-start.txt`, `@firststart`): language,
+  Wi-Fi with the keyboard, the suggested zone and the list of every city, the adapter's firmware,
+  ready, no first start after a restart.
+- **Open (2026-10-29):** "Read the terms" of the adapter's firmware: the demo opened Microsoft's
+  terms in the web apps' window, but Brave is installed only with a web app
+  ([[step-5.0.0-optional-web-apps]]), so it is not there at the first start: the owner chooses
+  how. The time zone in Settings (this step's deliverable) needs its demo first
+  ([[demo-before-code]]).
