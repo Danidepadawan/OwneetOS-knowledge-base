@@ -201,3 +201,6 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress** (owner, 2026
   ([[controller-input-map]]). Brave's reading views off: `ReadAnything` in owneetd's
   `--disable-features` (the feature among the names read in the test VM), and the policy
   `BraveSpeedreaderEnabled` = false.
+- **Implemented (2026-10-29), waiting for the owner's test:** owneetd 0.16.5 (`ReadAnything` off too),
+  owneet-base 0.0.56 (R3 folds or opens the right panel, no automatic folding;
+  `BraveSpeedreaderEnabled` = false).
