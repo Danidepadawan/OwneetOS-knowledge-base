@@ -3,12 +3,12 @@ type: step
 description: "The console's interface in German, French and Spanish too, for the first release: drafted, checked by people the authors know; after Danidepadawan's merge."
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.9"
-status: todo
+status: in-progress
 tags: [step, phase-7]
 ---
 # 7.9 Console in German, French and Spanish *(added 2026-10-26)*
 
-Up: [[phase-7-updates-and-first-release]] · Status: **todo**
+Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
 
 - **Deliverables (owner, 2026-10-26):** the console's message files (`frontend/i18n/`) in German,
   French and Spanish, besides English and Italian, for Wave 1 ([[languages]]): every screen,
@@ -21,6 +21,9 @@ Up: [[phase-7-updates-and-first-release]] · Status: **todo**
 - **Moved earlier (owner, 2026-10-29):** the whole console is translated into German, French and
   Spanish now, together with [[step-6.1-first-boot-flow]] on the branch `feature/phase6`, not after
   it; the reviews by people the authors know stay for later.
+- **Drafted (2026-10-29):** `frontend/i18n/de.json`, `fr.json`, `es.json`, every message (German
+  with "du", French with "vous", Spanish with "tú"), and the three keyboard layouts. What is left:
+  the reviews.
 - **Reviews (owner, 2026-10-29):** the picker lists the five languages from step 6.1 on, so the
   drafts may ship before the people the authors know have checked them; the checks may come after
   the first release, and are a way to ask the community to help improve OwneetOS ([[languages]]).

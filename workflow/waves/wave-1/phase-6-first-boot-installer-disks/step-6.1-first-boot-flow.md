@@ -64,3 +64,14 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   from the internet (a console with no internet and a wrong clock): demo first. The picker: English
   first, then alphabetical by the languages' own names. German, French and Spanish are translated
   for the whole console now ([[step-7.9-console-more-languages]]).
+- **Tested in the test VM (2026-10-29)** with the ISO of the branch, live, no controller: the
+  pairing screen with its title in each language; a keyboard goes on; Italian; the cable;
+  Rome suggested and set by owneetd through polkit (`timedatectl`: Europe/Rome, synchronised); no
+  adapter, so no firmware screen; the summary.
+- **Done 2026-10-29:** the whole console in German, French and Spanish (664 messages each,
+  drafted, `tools/i18n-check` wants the five complete), with their keyboard layouts in owneetd and
+  on the on-screen keyboard (German QWERTZ, French AZERTY, Spanish), following the language.
+- **Second round of the demos, for approval (2026-10-29):** `6.1-first-start.html` ("Read the
+  terms" as a QR code with the address under it; without the internet "Set the time" on the time
+  screen) and the new `6.1-settings-time.html` (Settings → Language: "Time zone", the list of
+  cities; "Date and time", from the internet, or by hand without it).
