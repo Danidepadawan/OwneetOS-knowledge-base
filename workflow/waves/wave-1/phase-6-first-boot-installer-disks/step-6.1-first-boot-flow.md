@@ -97,6 +97,8 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
 - **Aligned with the approved demos (2026-10-29):** the code had added things the demos do not
   have (the city and UTC over the time fields, a D-pad prompt, a "Set the time" button under the
   list of cities, a short year, other prompts on the terms): removed at the owner's request, the
-  screens are exactly as approved. Open for the owner: without the internet, a language with
-  several cities (English, French, Spanish) has "Set the time" only in Settings, as in the demo,
-  not in the first start.
+  screens are exactly as approved. Without the internet, a language with several cities (English,
+  French, Spanish) had "Set the time" only in Settings, as in the demo.
+- **Decided (owner, 2026-10-29):** the languages must not make a difference: "Set the time" also
+  under the list of cities, in the time of the city last selected ([[first-boot-setup]]). The demo
+  `6.1-first-start.html` is updated; the code waits for its approval ([[demo-before-code]]).

@@ -29,6 +29,9 @@ tags: [decision, ux, first-boot]
   even before their messages are complete or checked ([[languages]]): a missing message shows in
   English, and the reviews may come later, an occasion to ask the community to help improve
   OwneetOS.
+- **The same settings in every language (owner, 2026-10-29):** the language never changes what the
+  first start offers. Without the internet "Set the time" is under the suggested city and under
+  the list of cities alike (English, French, Spanish), in the time of the city last selected.
 
 ## History
 
@@ -41,3 +44,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-26 | Time zone: suggested from the language, a list of cities when the language has several zones, no geolocation; the console's name not asked at the first start (installer, then Settings). |
 | 2026-10-29 | The first start: once on an installed console until "Ready" (turned off half way it starts again, keeping what was chosen); at every start from the USB stick; the picker lists the five languages from the start. |
 | 2026-10-29 | Microsoft's terms as a QR code; the time zone and a manual date and time in Settings → Language (demo first); the picker alphabetical after English. |
+| 2026-10-29 | The same settings in every language: "Set the time" also under the first start's list of cities (demo first). |
