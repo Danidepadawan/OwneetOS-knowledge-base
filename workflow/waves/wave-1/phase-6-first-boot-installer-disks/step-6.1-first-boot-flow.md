@@ -33,3 +33,12 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   settings' icon, and the five languages of Wave 1 in the picker ([[languages]]) with their time
   zones (Berlin; Paris, Bruxelles, Genève, Montréal; Madrid, Ciudad de México, Bogotá, Lima, Buenos
   Aires, Santiago). The screens' code comes after Danidepadawan's merge.
+- **Code started (owner, 2026-10-29)** on the branch `feature/phase6`, one branch for the whole
+  phase 6. Agreed at the start: the first start is shown once on an installed console, until
+  "Ready" (turned off half way it starts again, keeping the choices already made), and at every
+  start from the USB stick ([[step-6.2-live-vs-installed-mode]]); the picker lists the five
+  languages from the start, the first start's own messages in all five and the rest of the console
+  in English for German, French and Spanish until [[step-7.9-console-more-languages]]
+  ([[first-boot-setup]], [[languages]]). Plan: owneetd (the time zone through systemd-timedated,
+  the Xbox adapter's firmware through a root unit, both allowed by polkit to the console user
+  only; the first start's state), then the screens as in the approved demo, then the test VM.

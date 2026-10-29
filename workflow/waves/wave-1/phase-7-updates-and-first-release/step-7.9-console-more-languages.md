@@ -18,3 +18,6 @@ Up: [[phase-7-updates-and-first-release]] · Status: **todo**
   work), as for the website ([[step-7.8k-website-more-languages]]).
 - **When:** after Danidepadawan's merge of phase 5 (the message files are his too, owner,
   2026-10-26); every screen added after that comes in the five languages.
+- **Reviews (owner, 2026-10-29):** the picker lists the five languages from step 6.1 on, so the
+  drafts may ship before the people the authors know have checked them; the checks may come after
+  the first release, and are a way to ask the community to help improve OwneetOS ([[languages]]).
