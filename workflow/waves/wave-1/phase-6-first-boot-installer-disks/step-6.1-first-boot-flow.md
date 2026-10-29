@@ -107,3 +107,10 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   with the text "Once online the clock sets itself; the time zone stays the one you choose." (not
   "Suggested from your language"). Demo `6.1-first-start.html` updated; the code waits for its
   approval ([[demo-before-code]]).
+- **Built and tested (2026-10-29):** the demo approved by the owner; `FirstStart.qml`: a city
+  picked in a list gets the suggested city's screen (new message `first.time.chosen` in the five
+  languages); preview `tools/preview-steps/first-start-time-list.txt`. In the test VM, live,
+  network off, in English: New York picked, its own screen with "Set the time", the window opened
+  on New York's time and saved one hour later (the system clock moved by one hour), "Continue" set
+  America/New_York, the summary and the top bar clock right. Italian (one city) unchanged.
+
