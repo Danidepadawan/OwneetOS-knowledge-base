@@ -217,10 +217,10 @@ app"), and has neither keys nor a seekable bar a script may move.
   2026-10-29): the desktop player opens it when a song starts, and the user closes it. (Folding it
   automatically, tried on 2026-10-29, showed it for a moment at every song and was dropped.) The
   panel is out of the D-pad's reach. Brave's own
-  Alt+Shift+R on a keyboard (Chromium's Reading mode, `ReadAnything`, a full page that needs a
-  mouse) is turned off in owneetd's command (`--disable-features=…,ReadAnything`), and Brave's own
-  reading view by the policy `BraveSpeedreaderEnabled` = false; keys sent by a script never reach
-  Brave anyway.
+  Alt+Shift+R pressed on a keyboard still opens a full-page reading view (Chromium's Reading
+  mode): turning off `ReadAnything` in owneetd's command and Brave's Speedreader (policy
+  `BraveSpeedreaderEnabled` = false) did not stop it. **A known limit, keyboard only** (owner,
+  2026-10-30): the controller never opens it, since keys sent by a script never reach Brave.
 - **How the parts are found** (Spotify's desktop player as of 2026-10-24, read with probes in the
   test VM): left sidebar `nav` (Your Library's rows: `role=row`); top bar `global-nav-bar`
   (`search-input`); main view `main`; shelves `component-shelf` (`carousel-scroller`); cards

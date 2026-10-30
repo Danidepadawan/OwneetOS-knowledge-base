@@ -204,3 +204,7 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress** (owner, 2026
 - **Implemented (2026-10-29), waiting for the owner's test:** owneetd 0.16.5 (`ReadAnything` off too),
   owneet-base 0.0.56 (R3 folds or opens the right panel, no automatic folding;
   `BraveSpeedreaderEnabled` = false).
+- **Owner's test of owneetd 0.16.5 / owneet-base 0.0.56 (2026-10-30):** everything works (R3 folds and
+  opens the right panel, A, Menu, X, Y, the D-pad); Alt+Shift+R on a physical keyboard still opens
+  the full-page reading view: **a known limit, keyboard only** (owner). **Sub-step 3 done.** Next:
+  sub-step 4, the close.
