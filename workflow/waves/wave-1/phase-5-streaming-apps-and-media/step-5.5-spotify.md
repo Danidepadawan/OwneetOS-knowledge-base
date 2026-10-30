@@ -208,3 +208,50 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress** (owner, 2026
   opens the right panel, A, Menu, X, Y, the D-pad); Alt+Shift+R on a physical keyboard still opens
   the full-page reading view: **a known limit, keyboard only** (owner). **Sub-step 3 done.** Next:
   sub-step 4, the close.
+- **Sub-step 4, the close (2026-10-31), waiting for the owner's approval:**
+  - **Terms of service** ([[legal-compliance]]): on Spotify the extension moves its own ring,
+    clicks Spotify's own buttons and links (a play button, a card, a menu item), sends Spotify's
+    own keyboard shortcuts (Shift+← / →, Alt+Shift+R, Escape), opens its context menu as a right
+    click does and sets Brave's zoom for the page, each in answer to one press of the user's
+    button: nothing plays, likes or follows by itself, so the rule against bots and automated
+    plays (Terms of Use §3) does not apply, and no content is changed. Spotify's "no modifying or
+    altering the Services" and the ring element in the page go to
+    [[step-7.5-legal-review-before-the-public-launch]] with Netflix's §1.8(vi); Brave's ad
+    blocking is already there. No user agent of Spotify's own (the Android TV one was dropped).
+  - **Known limits of 5.5:**
+    - The navigation relies on the names Spotify gives its desktop player (read on 2026-10-24,
+      [[extension-design]] "Spotify"): a redesign can break parts until they are read again; what
+      is not found falls back to the generic navigation.
+    - X finds "Add to queue" by its English or Italian label; in another language X only opens the
+      menu. The context menu's other entries (Add to playlist, Go to artist…) are not reachable:
+      Menu opens the page (the owner's choice; L3 is free if they are wanted).
+    - Spotify opens its right panel when a song starts; R3 folds it.
+    - Spotify's sliders (progress, volume) are not stops: LT / RT seek by Spotify's 5 s, the
+      console's quick menu sets the volume.
+    - Signing out of Spotify does not reach a Facebook / Google / Apple sign-in kept in the web
+      app's profile; removing the web app is the only full sign-out (no "Sign out of" option).
+    - Alt+Shift+R pressed on a physical keyboard opens Brave's full-page reading view (keyboard
+      only; the controller never opens it).
+    - Spotify's player for phones and TVs is not used: it keeps Your Library (but for Liked Songs)
+      in Spotify's app.
+    - Playing in the background is Wave 2: Spotify is closed like any web app.
+  - **To check at the next hardware test** (FrankenPC, gamescope, NVIDIA, the TV's real size; with
+    the open checks of [[step-5.1-brave-in-the-os]] to [[step-5.4-netflix]]): Spotify drawn bigger
+    (laid out as about 1280 px wide), the D-pad by position over the top bar, Your Library and the
+    shelves, A playing, Menu opening a page, X "Added to queue", Y and the player bar's right
+    side, LT / RT, R3 and the right panel; a song playing on first opening ("Preparing…", Widevine);
+    the console's keyboard on Spotify's search field in gamescope; no Brave window over the page
+    (performance alert, reading view, password saving, old tabs); Netflix and YouTube again after
+    the shared code moved (`shared.js`) and with owneetd 0.16.5's flags.
+  - **Outcome:** Spotify works with the controller on its **desktop web player**, drawn bigger on a
+    TV, with a navigation of its own: the D-pad by position only (Spotify's own geometry, also in
+    the player bar, menus and windows), A plays, Menu opens the page, X adds to the queue, Y the
+    player bar and back, LT / RT ±5 s, R3 the right panel, LB / RB nothing. The way there: the
+    desktop driver of 2026-10-24, then Spotify's player for an Android TV (2026-10-26: it plays but
+    keeps Your Library in Spotify's app and has no bar a script may move), then back to the desktop
+    player with the owner's position-only D-pad (2026-10-28). Brave hardened for every web app: no
+    password or address saving, no performance alert, only owneetd's address opened (old tabs
+    piled up hidden), its reading views off as far as Brave allows. Packages: owneetd 0.16.5,
+    owneet-base 0.0.56. Verified in the test VM (cage, up to 2327×1223). Probes: `vm/run/probe-5.5/`,
+    six versions, never shipped. Known solutions written: [[brave-reopens-old-tabs-in-a-web-app]],
+    [[vm-screen-stays-small]].

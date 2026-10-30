@@ -47,6 +47,9 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
 - ~~**To include (2026-10-26):** the same question for **Spotify**, opened with a TV user agent too~~
   **Dropped (2026-10-28):** Spotify went back to its desktop web player without a user agent of
   its own ([[step-5.5-spotify]]); nothing to review for Spotify's agent.
+- **To include (2026-10-31):** Spotify's "no modifying or altering the Services" (Terms of Use §3)
+  against the extension's ring element in the page and Brave's zoom for Spotify (drawn as on a
+  screen about 1280 px wide), with Netflix's §1.8(vi) above ([[step-5.5-spotify]]).
 - **To include (2026-10-18):** Brave's Shields block ads by default, and the managed policies
   (`packages/owneet-base/brave-policies.json`) do not turn them off, so YouTube's and Spotify's ads
   are blocked in the web apps. Kept as it is (owner, 2026-10-18); the review decides whether the
