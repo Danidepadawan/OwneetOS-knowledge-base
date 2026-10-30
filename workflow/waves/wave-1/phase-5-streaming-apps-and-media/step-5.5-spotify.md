@@ -3,13 +3,13 @@ type: step
 description: "Spotify's web player with its own navigation on the controller; playing in the background is Wave 2."
 phase: "[[phase-5-streaming-apps-and-media]]"
 step: "5.5"
-status: in-progress
+status: done
 legacy: "ROADMAP.md 5.5"
 tags: [step, phase-5]
 ---
 # 5.5 Spotify
 
-Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress** (owner, 2026-10-23)
+Up: [[phase-5-streaming-apps-and-media]] · Status: **done** (owner, 2026-10-31)
 
 - **Deliverables:** Spotify's web player with its own navigation on the controller
   ([[extension-design]], "One navigation per supported app"): browsing, search, playing.
@@ -208,7 +208,7 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress** (owner, 2026
   opens the right panel, A, Menu, X, Y, the D-pad); Alt+Shift+R on a physical keyboard still opens
   the full-page reading view: **a known limit, keyboard only** (owner). **Sub-step 3 done.** Next:
   sub-step 4, the close.
-- **Sub-step 4, the close (2026-10-31), waiting for the owner's approval:**
+- **Sub-step 4, the close (2026-10-31), approved by the owner:**
   - **Terms of service** ([[legal-compliance]]): on Spotify the extension moves its own ring,
     clicks Spotify's own buttons and links (a play button, a card, a menu item), sends Spotify's
     own keyboard shortcuts (Shift+← / →, Alt+Shift+R, Escape), opens its context menu as a right
@@ -255,3 +255,4 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in progress** (owner, 2026
     owneet-base 0.0.56. Verified in the test VM (cage, up to 2327×1223). Probes: `vm/run/probe-5.5/`,
     six versions, never shipped. Known solutions written: [[brave-reopens-old-tabs-in-a-web-app]],
     [[vm-screen-stays-small]].
+- **Step closed by the owner on 2026-10-31**, with the hardware checks above as a follow-up.
