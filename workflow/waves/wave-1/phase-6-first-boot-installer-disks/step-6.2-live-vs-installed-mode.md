@@ -51,4 +51,6 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   is `live`, owneetd answers `"mode": "live"`, Home has the strip and System its three rows with
   the real version; with the mode file set to `installed` and the interface restarted, no strip.
   Approval together with 6.4 (owner).
+- **"Install" connected (2026-11-01):** Home's strip and Settings → System open the installer of
+  [[step-6.4-installer-ui]]; tested in the VM from the stick to the installed console.
 
