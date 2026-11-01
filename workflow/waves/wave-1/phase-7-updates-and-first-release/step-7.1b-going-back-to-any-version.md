@@ -3,12 +3,12 @@ type: step
 description: "Going back to any published version of OwneetOS from Settings: the list of versions, the download in reverse, the warning; split from 7.1."
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.1b"
-status: in-progress
+status: done
 tags: [step, phase-7]
 ---
 # 7.1b Going back to any version *(split from 7.1 on 2026-10-25)*
 
-Up: [[phase-7-updates-and-first-release]] · Status: **in-progress** · Follows [[step-7.1-updates]]
+Up: [[phase-7-updates-and-first-release]] · Status: **done** · Follows [[step-7.1-updates]]
 
 - **Deliverables:** in Settings → System, the published versions of OwneetOS with their dates; the
   user picks one, reads the warning (personal data do not go back; an old version has old
@@ -60,4 +60,5 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress** · Follows 
   **Not checked here:** the screens on the console in the VM (the first start waits for a
   controller; seen in the preview instead), real hardware (with the next hardware test), a real
   release going back over a different Arch Linux Archive date (the test releases share one date).
-  Code commit 369f926. Waiting for the owner's approval.
+  Code commit 369f926.
+- **Approved by the owner (2026-11-01): done.**
