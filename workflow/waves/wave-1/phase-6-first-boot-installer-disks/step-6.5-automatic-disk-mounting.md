@@ -1,17 +1,17 @@
 ---
 type: step
-description: "Udisks2 policy + daemon logic for internal and removable disks (ext4, btrfs, NTFS, exFAT), read-only NTFS when Windows left it…"
+description: "Mounting (OwneetOS's own mounter) for internal and removable disks (ext4, btrfs, NTFS, exFAT), read-only NTFS when Windows left it…"
 phase: "[[phase-6-first-boot-installer-disks]]"
 step: "6.5"
-status: todo
+status: in-progress
 legacy: "ROADMAP.md 6.5"
 tags: [step, phase-6]
 ---
 # 6.5 Automatic disk mounting
 
-Up: [[phase-6-first-boot-installer-disks]] · Status: **todo**
+Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
 
-- **Deliverables:** udisks2 policy + daemon logic for internal and removable disks (ext4, btrfs,
+- **Deliverables:** mounting for internal and removable disks (ext4, btrfs,
   NTFS, exFAT), read-only NTFS when Windows left it hibernated, with an explanation to the user.
   Free space and notices of every disk reach the library's disks summary and Disks window
   (approved in demo 3.7); later actions there, e.g. "Safely remove" for USB disks.
@@ -21,3 +21,8 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **todo**
   with several disks. The overlay folder on the console's disk stays only for disks left read only
   (e.g. a Windows disk left dirty), and the game's details say so. At the switch, what an existing
   overlay folder holds moves to `cloud_saves`: nothing is lost.
+- **Started (owner, 2026-11-01)** on `feature/phase6`, after 6.2 and 6.4. **Decided:** OwneetOS's
+  own mounter of step 4.3 grows instead of udisks2 (plan changed: the deliverable said "udisks2
+  policy"); Windows's own partition always read only; from the USB stick the internal disks read
+  only, and the installer unmounts the chosen disk before erasing it ([[disks]]).
+

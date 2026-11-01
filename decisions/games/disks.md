@@ -4,7 +4,7 @@ description: "Automatic mounting of every disk, read-only dirty NTFS, moving gam
 area: games
 status: active
 decided: 2026-10-03
-updated: 2026-10-26
+updated: 2026-11-01
 legacy: "PROJECT_RULES.md §6 (mounting, moving)"
 tags: [decision, games, disks]
 ---
@@ -22,6 +22,14 @@ tags: [decision, games, disks]
 - The library shows the disks with their free space and notices ([[home-and-library]]).
 - **Until step 6.5** (owner, 2026-10-15): step 4.3 mounts external disks automatically, read only,
   just enough to read the games on them; the full mounting stays in step 6.5.
+- **How (owner, 2026-11-01, step 6.5):** OwneetOS's own small mounter grows (the udev rule and the
+  root service of step 4.3), no udisks2 (a daemon and a package more for nothing the console
+  needs). Read-write when the file system is clean; NTFS left dirty by Windows read only, with the
+  note. **The partition where Windows itself is installed (C:) is always read only**, even when
+  Windows was shut down completely: its games can be read, OwneetOS never writes there; other NTFS
+  data partitions read-write when clean. **From the USB stick** (live) the internal disks are
+  mounted read only (nothing is kept there anyway, and the installer may erase one: it unmounts
+  the chosen disk first); USB disks as on the installed console.
 
 Guard: [[user-data]]. Steps: [[step-6.5-automatic-disk-mounting]],
 [[step-6.6-moving-games-and-media-between-disks]].
@@ -37,3 +45,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-11 | **Wave 1 scope grows** ([[disks]] and 10): DRM-free games on a disk play whatever their form (ready to run or installer, Linux or Windows through umu-launcher + GE-Proton, hidden from the user); installers run by themselves in the background; moving games and media between disks (new step 6.6). Games folder: `Games` or its translated name, one folder per game with any sub-folders, searched recursively. "Add games" also offers "From a USB stick or disk". |
 | 2026-10-26 | Cancelling a copy or move asks first ("Stop?", "Keep going" selected by default); the copy waits meanwhile. |
 | 2026-10-26 | A copy that fails its check: removed, the original untouched, "The copy did not work" with Close (selected) and Try again; with several games the others go on, then a summary. |
+| 2026-11-01 | Step 6.5: OwneetOS's own mounter grows (no udisks2); Windows's own partition (C:) always read only; from the USB stick the internal disks read only, the installer unmounts the chosen disk first. |
