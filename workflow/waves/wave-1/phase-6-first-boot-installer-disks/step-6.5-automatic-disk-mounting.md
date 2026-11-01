@@ -3,13 +3,13 @@ type: step
 description: "Mounting (OwneetOS's own mounter) for internal and removable disks (ext4, btrfs, NTFS, exFAT), read-only NTFS when Windows left it…"
 phase: "[[phase-6-first-boot-installer-disks]]"
 step: "6.5"
-status: in-progress
+status: done
 legacy: "ROADMAP.md 6.5"
 tags: [step, phase-6]
 ---
 # 6.5 Automatic disk mounting
 
-Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
+Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
 
 - **Deliverables:** mounting for internal and removable disks (ext4, btrfs,
   NTFS, exFAT), read-only NTFS when Windows left it hibernated, with an explanation to the user.
@@ -45,4 +45,8 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   taken for the Windows folder. The DOS saves checked by hand with a stand-in DOSBox.
 - **Demo for approval (2026-11-01):** `design/demos/6.5-saves-read-only.html` (on demo 4.5): the
   details of a GOG DOS game on a read-only disk say "Saves: On the console: this disk is read only".
+- **Demo approved by the owner (2026-11-01)**; the row written (`owneet-frontend` 0.29.0, theme's
+  `detailsFacts`: a game with `disk.dos` on a read-only disk), seen in the preview
+  (`tools/preview-steps/saves-read-only.txt`). **Step 6.5 done (owner, 2026-11-01).** Later, as
+  the step says: "Safely remove" for USB disks in the Disks window.
 
