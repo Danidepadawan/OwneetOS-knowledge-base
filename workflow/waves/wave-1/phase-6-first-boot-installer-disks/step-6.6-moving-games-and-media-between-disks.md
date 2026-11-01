@@ -43,3 +43,20 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   cross uses the palette's colours (there is no error colour token). Demo key K: the next check fails.
 - **Final demo approved by the owner (2026-10-26)** with the cancel question, the failed check and the
   switch that keeps the focus. The code after Danidepadawan's merge and [[step-6.5-automatic-disk-mounting]].
+- **Code (owner, 2026-11-01)** on `feature/phase6`, after [[step-6.5-automatic-disk-mounting]]:
+  - owneetd 0.22.0, package `moves`: `POST /v1/moves` `{games: [{dir, title}], to, remove}` (`to`:
+    `internal`, the home's games folder, or a mounted disk's folder: its games folder, or a new
+    `Games`; a name taken gets " (2)"), the copy with permissions and links and its progress in
+    `moves.changed`, the check (every file's size and SHA-256, nothing more and nothing less), then
+    the original removed only when asked; `pause`, `resume`, `stop` during the copy (stop: the
+    partial copy removed). Failed or not passing: the copy removed, the original never touched, the
+    others go on. Steam's storage settings: `open: "storage"` → `steam://settings/storage`.
+  - owneet-frontend 0.31.0: `MoveSheet.qml` (Options → "Move to another disk", the disks, the
+    confirmation with the switch, the steps, "Stop?", the failed check, Steam's games); a USB disk
+    with games plugged in asks "Play from here / Copy to the console" (the notice stays when the
+    question cannot come now); each cover says its disk when the console has several. Messages in
+    the five languages; previews `move-game`, `move-game-fail` (`@movefail`), `plug-copy`.
+  - Not as in the demo, for the owner: Steam's games carry no disk on their cover (the console does
+    not know where Steam keeps them); `steam://settings/storage` to be checked with Steam on the test
+    hardware.
+
