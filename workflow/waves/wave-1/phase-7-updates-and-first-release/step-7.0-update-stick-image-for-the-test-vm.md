@@ -3,12 +3,12 @@ type: step
 description: "An OWNEETLOG stick image for the test VM (tools/make-update-stick --image), so the installed VM is upgraded in place with the packages just built instead of reinstalled."
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.0"
-status: in-progress
+status: done
 tags: [step, phase-7]
 ---
 # 7.0 Update stick image for the test VM
 
-Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
+Up: [[phase-7-updates-and-first-release]] · Status: **done**
 
 - **Why:** the system installed in the test VM already updates itself from the OWNEETLOG stick at
   start-up (`owneet-update`, [[step-4.2b-updates-from-a-usb-stick]]), and `vm/test.sh boot --stick
@@ -46,4 +46,4 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   `done`; no ISO built, no reinstall. The real package (0.0.1-1) rebuilt afterwards, so
   `out/repo` has no test version. **Open points:** the logs the test VM writes on the image
   (`owneet-testlog`) are lost when the image is made again; the test VM first ignored the ISO
-  (stale firmware entries, [[test-vm-ignores-the-iso]]). Waiting for the owner's approval.
+  (stale firmware entries, [[test-vm-ignores-the-iso]]). **Approved by the owner (2026-11-01): done.**
