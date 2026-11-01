@@ -4,7 +4,7 @@ description: "The project's website: Angular, static on GitHub Pages, own reposi
 area: distribution
 status: active
 decided: 2026-10-20
-updated: 2026-10-20
+updated: 2026-11-01
 tags: [decision, distribution, website]
 ---
 # Website
@@ -31,6 +31,15 @@ Agreed with the owner on 2026-10-20, before the release; built in [[step-7.8-web
   it stops only while the pointer is on it (or it has focus from the keyboard) and while it is
   off screen. No pause button (owner, 2026-10-20: it was tried; WCAG 2.2.2 asks for one on moving
   content, the owner chose without).
+- **The user guide is the site's guide page** (owner, 2026-11-01, [[step-7.3-user-guide]]): the
+  short guide of 7.8b grows into the whole illustrated guide, in the site's languages; the code
+  repository links to it. Pictures: real screens of OwneetOS (made with the preview) and simple
+  drawings of our own for the steps on the PC; never screenshots of other programs (their logos,
+  [[legal]]). Besides downloading, writing the stick, UEFI and Secure Boot per PC maker, the
+  anti-cheat warning and the first start, it covers trying OwneetOS from the stick, what to do
+  when the PC does not start from it, checking the download, and the first steps with the console.
+  Built on the branch `feature/step7_8k_languages`, so it comes in German, French and Spanish too
+  (drafts reviewed with the rest).
 - **The slogan "Plug it. Play it. Own it!" is never translated** (owner, 2026-10-24: more
   iconic): the same in every language's file and in the start-up animation (it replaces the
   Italian "Collegalo. Giocaci. Fallo tuo!" of 2026-10-20).
@@ -111,3 +120,4 @@ project folder. No data collected keeps the site free of consent banners and GDP
 | 2026-10-24 | Search engines and sharing (7.8f): `hreflang` and canonical addresses, `sitemap.xml` and `robots.txt`, Open Graph with the sharing picture A (the logo and the slogan, in Dusk, one for every language), all generated with the site from its address (`SITE_URL`, given by GitHub in the Pages workflow). No long dashes in the site's texts. |
 | 2026-10-24 | Lighter fonts (7.8g): Lexend as its project's official WOFF2 (1.008, checked by hash); Bricolage Grotesque stays the console's TTF instance (no official WOFF2 of width 80). Then `feature/step7_website` merged into `main` in the three repositories (owner and Danidepadawan). |
 | 2026-10-25 | The site lives at **owneetos.org** (7.8h done). Its languages grow to **German, French and Spanish** (7.8k), each checked by people the authors know before it is published. |
+| 2026-11-01 | The user guide (7.3) is the site's guide page, grown into the illustrated guide: OwneetOS's screens and our own drawings (no other programs' screenshots); also trying from the stick, when the PC does not start from it, checking the download, the first steps; on the branch of the new languages. |
