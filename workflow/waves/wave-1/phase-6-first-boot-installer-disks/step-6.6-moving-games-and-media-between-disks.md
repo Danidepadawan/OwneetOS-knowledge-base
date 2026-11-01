@@ -3,13 +3,13 @@ type: step
 description: "Menu on a game (later on media) → 'Move to another disk': the disks with their free space, copy with progress and cancel, check, then…"
 phase: "[[phase-6-first-boot-installer-disks]]"
 step: "6.6"
-status: in-progress
+status: done
 legacy: "ROADMAP.md 6.6"
 tags: [step, phase-6]
 ---
 # 6.6 Moving games and media between disks *(added and approved for Wave 1, 2026-10-11)*
 
-Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
+Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
 
 - **Deliverables:** Menu on a game (later on media) → "Move to another disk": the disks with their
   free space, copy with progress and cancel, check, then the original is deleted (never before).
@@ -69,4 +69,7 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   new version, so the ISO kept the old mounter (0.0.54). A game with Linux links cannot be copied
   to exFAT or FAT (they have no links): its copy fails its check safely, the original untouched.
   Steam's storage settings stay to be checked with Steam on the test hardware.
+- **Owner (2026-11-01):** Steam's games without their disk on the cover: fine. "Open Steam's
+  storage" (`steam://settings/storage`) to be tried as soon as possible on the test hardware.
+  **Approved by the owner (2026-11-01): step 6.6 done.**
 
