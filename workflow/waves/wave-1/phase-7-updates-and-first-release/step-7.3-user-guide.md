@@ -25,3 +25,14 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   - website branch `feature/step7_8k_languages`: the guide comes in German, French and Spanish
     too, drafts reviewed with the rest of [[step-7.8k-website-more-languages]].
   Next: the demo of the page ([[demo-before-code]]), then the Angular page.
+- **Demo (2026-11-01, code commit 7db0ec4 on `feature/phase7`):** `design/demos/7.3-user-guide.html`,
+  on the approved site demo 7.8m, English and Italian: a list of the nine parts, then check the PC
+  (`msinfo32` for UEFI or Legacy, the erase warning), download (checking the ISO, folded: the
+  `.sha256` and `.sig` files, the primary key's fingerprint), write the stick (balenaEtcher;
+  Ventoy, Windows and Linux only), start from the stick (a table of keys for Acer, ASUS, Dell, HP,
+  Lenovo, MSI, Gigabyte, ASRock and Microsoft Surface, from the makers' and common published lists;
+  Windows' Advanced startup; Secure Boot and Legacy / CSM; the anti-cheat warning), try it from
+  the stick, install, first start, first steps, and five problems with their answers. Thirteen
+  real screens (WebP, made with `tools/frontend-preview`, steps `user-guide-*.txt`), opening full
+  size when clicked, and three drawings of our own (the ISO to the stick, a boot menu, a firmware
+  page). Waiting for the owner's approval.
