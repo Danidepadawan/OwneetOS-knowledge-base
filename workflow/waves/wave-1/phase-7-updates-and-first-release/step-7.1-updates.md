@@ -49,3 +49,46 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
 - **Paused (owner, 2026-10-26):** owneetd and the Settings screens touch `daemon/cmd/owneetd/main.go`
   and the interface's translation files, which Danidepadawan's phase 5 branch also changes; they
   are done after his merge, to keep out of his way. Meanwhile [[step-7.8k-website-more-languages]].
+- **Resumed (owner, 2026-11-01)** on `feature/phase7`, after [[step-7.0-update-stick-image-for-the-test-vm]]
+  (Danidepadawan's merge was done on 2026-10-29). Owner's choices for the screens:
+  - the "up to date" row says "Checked today at {time}" for a check made today, "Checked on
+    {date}" otherwise (a text the demo did not have);
+  - the demo's "Other versions" row comes with [[step-7.1b-going-back-to-any-version]], not before;
+  - PCs installed with the tester installer keep only the updates from the USB stick
+    ([[step-4.2b-updates-from-a-usb-stick]]); the rows of 7.1 are for systems installed by the
+    installer of [[step-6.4-installer-ui]] (they have the rollback the updates rely on).
+  - the notice of an update found by the console, and of an installation finished while the player
+    is on another screen, is a notification of [[step-3.11-notifications]] (banner, bell, list), not
+    the demo's toast;
+  - three error texts the demo did not have, in a window with OK like "The update did not work":
+    download or check failed ("The update could not be downloaded: OwneetOS stays as it was. Try
+    again later."), installation failed ("The update did not finish installing. Restart the
+    console: if this version does not work, it goes back to the previous one by itself."), going
+    back failed ("The console could not go back to the previous version. Nothing has changed.").
+- **owneetd and the screens (2026-11-01, `feature/phase7`):** `owneet-rollback` 0.0.2 publishes its
+  state for owneetd in `/run/owneet/rollback.json` (the boot partition is root's only) after every
+  change and at every start-up, with the spare copy's version (kept as `/previous/version`) and
+  when the console last went back by itself. owneetd 0.23.0: package `sysupdate`, API
+  `/v1/system-update` ([[owneetd-api-system-update]]), event `system-update.changed`; the last
+  check is kept across start-ups. owneet-frontend 0.32.0: Settings → System as in the approved
+  demo (without "Other versions"), the dot on System, the windows (checking, available with "What's
+  new" and Details scrolled with the right stick, downloading and installing with the bar, ready
+  with "Restart now" / "Later", going back with Cancel first, "The update did not work"), the
+  notifications and the three error texts, in the five languages (German, French and Spanish
+  drafted, to be checked with [[step-7.9-console-more-languages]]). `tools/frontend-preview`
+  learnt `@sysupdate STATE` (fake owneetd), five steps files `system-update*.txt`.
+  `tools/make-test-release` makes its throwaway key again once it has expired (it lasts a day: the
+  release of 2026-11-01 was not signed at first).
+- **Tested (2026-11-01):** Go tests and `tools/lint` (all checks passed); every screen in
+  `tools/frontend-preview`, compared with the demo. In the test VM: ISO `owneetos-2026.11.01`,
+  installed on the virtual disk with `owneet-install` (6.3), test release 0.0.2 served on
+  `127.0.0.1` and its key trusted. Through owneetd's API: check → `available` with notes, the
+  package and the size; install → `downloading`, `ready`, spare copy 0.0.1 with its date, 3 tries;
+  restart → 0.0.2 counted as working, the previous version 0.0.1 shown, the last check kept;
+  go back → `back: done`, restart → 0.0.1. The notice after going back by itself (the file written
+  by `keep`, published) opened "The update did not work" on the console by itself, with 0.0.1.
+  **Not checked here:** the screens on the console in the VM (the first start waits for a
+  controller; seen in the preview instead), a real fall back after 3 failed starts (checked in
+  6.3), the screens on real hardware (with the next hardware test). Waiting for the owner's
+  approval.
+
