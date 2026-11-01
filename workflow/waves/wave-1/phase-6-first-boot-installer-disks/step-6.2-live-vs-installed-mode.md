@@ -3,13 +3,13 @@ type: step
 description: "Detection, 'Install OwneetOS' entry shown only in live mode."
 phase: "[[phase-6-first-boot-installer-disks]]"
 step: "6.2"
-status: in-progress
+status: done
 legacy: "ROADMAP.md 6.2"
 tags: [step, phase-6]
 ---
 # 6.2 Live vs installed mode
 
-Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
+Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
 
 - **Deliverables:** detection, "Install OwneetOS" entry shown only in live mode.
 - **Detection (2026-10-28):** `owneet-mode` (package `owneet-base`, `owneet-mode.service`, early at
@@ -53,4 +53,4 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   Approval together with 6.4 (owner).
 - **"Install" connected (2026-11-01):** Home's strip and Settings → System open the installer of
   [[step-6.4-installer-ui]]; tested in the VM from the stick to the installed console.
-
+- **Approved by the owner (2026-11-01), together with 6.4: step 6.2 done.**

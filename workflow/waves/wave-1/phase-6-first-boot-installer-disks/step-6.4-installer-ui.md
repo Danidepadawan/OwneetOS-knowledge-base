@@ -3,13 +3,13 @@ type: step
 description: "QML installer in the OwneetOS style, gamepad-only, clear warnings and a final confirmation before erasing anything."
 phase: "[[phase-6-first-boot-installer-disks]]"
 step: "6.4"
-status: in-progress
+status: done
 legacy: "ROADMAP.md 6.4"
 tags: [step, phase-6]
 ---
 # 6.4 Installer UI
 
-Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
+Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
 
 - **Deliverables:** QML installer in the OwneetOS style, gamepad-only, clear warnings and a final confirmation before erasing anything.
 - **Demo (2026-10-26):** `design/demos/6.4-installer.html`, on the backend of
@@ -46,4 +46,4 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   mode `installed`, pretty name Salotto, host name `salotto`, root `@`, the first start, then Home
   without the strip. The Windows warning and its switch were seen in the preview (Windows found on
   a disk was tested with the backend in 6.3).
-
+- **Owner (2026-11-01):** the error texts approved, "legacy" instead of "old mode" for the UEFI one. **Approved by the owner (2026-11-01), together with 6.2: step 6.4 done.**
