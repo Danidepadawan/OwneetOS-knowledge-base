@@ -4,13 +4,13 @@ description: "Update check and install from Settings, snapshot before every upda
   3 failed boots, [[distribution-and-updates]]), archive snapshot date advanced…"
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.1"
-status: in-progress
+status: done
 legacy: "ROADMAP.md 7.1"
 tags: [step, phase-7]
 ---
 # 7.1 Updates
 
-Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
+Up: [[phase-7-updates-and-first-release]] · Status: **done**
 
 - **Deliverables:** update check and install from Settings, snapshot before every update,
   rollback path (as decided in 6.3), archive snapshot date advanced only after tests.
@@ -89,6 +89,5 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   by `keep`, published) opened "The update did not work" on the console by itself, with 0.0.1.
   **Not checked here:** the screens on the console in the VM (the first start waits for a
   controller; seen in the preview instead), a real fall back after 3 failed starts (checked in
-  6.3), the screens on real hardware (with the next hardware test). Waiting for the owner's
-  approval.
-
+  6.3), the screens on real hardware (with the next hardware test).
+- **Approved by the owner (2026-11-01): done.**
