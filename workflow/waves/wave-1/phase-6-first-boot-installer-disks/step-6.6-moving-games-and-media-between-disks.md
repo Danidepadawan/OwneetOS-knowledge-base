@@ -59,4 +59,14 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   - Not as in the demo, for the owner: Steam's games carry no disk on their cover (the console does
     not know where Steam keeps them); `steam://settings/storage` to be checked with Steam on the test
     hardware.
+- **Tested in the test VM (2026-11-01)** with the ISO of the branch and the test disk of 6.5 as a USB
+  disk: a game made on its ext4 partition (40 MB of data, a program, a link) moved to the console
+  through owneetd (the copy identical by SHA-256, the program still executable, the link kept, the
+  original removed after the check); copied to the clean NTFS partition keeping the original (link
+  and permissions there too); then moved from the screens (Options → Move to another disk, the
+  disks with the read-only one off and why, the confirmation, the steps, the notice, the Library
+  read again with each cover's disk). Found and fixed on the way: owneet-base's fix of 6.5 had no
+  new version, so the ISO kept the old mounter (0.0.54). A game with Linux links cannot be copied
+  to exFAT or FAT (they have no links): its copy fails its check safely, the original untouched.
+  Steam's storage settings stay to be checked with Steam on the test hardware.
 
