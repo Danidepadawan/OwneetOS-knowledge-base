@@ -51,6 +51,40 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
      embedded cover); mpv's saved positions (`watch_later`) and reading a video's progress from
      them; `ffprobe` in the image, what it reads from the songs and its time per file. Decoding
      speed is not judged in the VM (software); the FrankenPC checks it.
+     **Result (owner's test VM, cage, a Nacon GC-100 passed through, 2026-11-02):**
+     - **Versions:** mpv 0.41.0 (SDL2 through `sdl2-compat` 2.32 on SDL3 3.4, LuaJIT), FFmpeg
+       9.0.2 with `ffprobe`; mpv has `--input-gamepad`, `--save-position-on-quit`,
+       `--watch-later-dir`, `--write-filename-in-watch-later-config`.
+     - **The controller:** mpv reads it itself (`--input-gamepad=yes`); the console user can read
+       the pad (`uaccess`). mpv's names: A `GAMEPAD_ACTION_DOWN`, B `ACTION_RIGHT`, X
+       `ACTION_LEFT`, Y `ACTION_UP`, LB / RB `LEFT_SHOULDER` / `RIGHT_SHOULDER`, LT / RT
+       `LEFT_TRIGGER` / `RIGHT_TRIGGER`, View `BACK`, Menu `START`, **Guide `GAMEPAD_MENU`** (SDL's
+       Guide button: never bound), L3 / R3 `LEFT_STICK` / `RIGHT_STICK`, `DPAD_*`,
+       `LEFT_STICK_*`, `RIGHT_STICK_*`. **mpv 0.41 binds no controller button by default** (its
+       input test: "(nothing)" for every one). A held stick sends 3–4 presses a second.
+     - **Seeking:** a relative seek goes to the nearest keyframe (−5 s jumped 3–9 s in files with a
+       keyframe every 8 s): the player needs exact seeks (`--hr-seek=yes`).
+     - **In cage:** full screen with `--vo=gpu-next,gpu,wlshm --gpu-context=wayland,waylandvk`
+       (`gpu` in the VM), sound through PipeWire. No hardware decoding in the VM (VA-API, Vulkan
+       and CUDA refused, as expected): the FrankenPC checks it. gamescope is not checked here (the
+       VM has only headless gamescope): with the real player in sub-step 5.
+     - **Formats:** H.264, HEVC, VP9 and AV1 in mp4 and mkv all decode. A side `.srt` with the
+       video's name is loaded and shown by itself; embedded subtitles are found but not turned on;
+       audio tracks come with their language and title.
+     - **Saved positions:** owneetd's close (as the console closes an app) makes mpv quit cleanly
+       and save; the next start resumes there (25.3 s). The file is named after the **MD5 of the
+       video's full path** (upper case) and holds `start=`: the console reads a video's progress
+       without mpv. mpv also saves the chosen tracks: the probe's X went through "audio off", so
+       the resumed video was silent. To fix in the player: audio switches only between tracks,
+       and what is saved is chosen (the position; never "audio off"). Songs got a saved position
+       too. mpv also writes a tiny "redirect" file for each parent folder.
+     - **Covers:** a song shows its embedded cover, or the folder's `cover.jpg`.
+     - **The on-screen display:** a Lua script drew a text (accented letters included) and a bar
+       in a colour given at start (`--script-opts`): the planned display works.
+     - **Tags (`ffprobe`):** mp3, flac and m4a give title, artist, album artist, album, track and
+       date in the file's tags; **Ogg Vorbis keeps them in the stream's tags** (read both); an
+       untagged song has none (its folder and file names then). **75 ms per song** in the VM, one
+       `ffprobe` per file (about 75 s for 1,000 songs), mostly starting the program.
   2. **Bindings, "Inside the player"** ([[controller-input-map]], with the owner, before any code),
      from what the check finds. Starting proposal: A pause / play; LT / RT −10 / +10 s (the map's
      repeat); D-pad left / right the same in small steps (music: previous / next song); Y
