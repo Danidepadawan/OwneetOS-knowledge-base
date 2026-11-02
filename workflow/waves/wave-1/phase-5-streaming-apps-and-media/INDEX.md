@@ -22,6 +22,6 @@ Status comes from each step note (`status:`).
 - `done` [[step-5.3-youtube|5.3 YouTube]] — TV interface, playback controls on the gamepad.
 - `done` [[step-5.4-netflix|5.4 Netflix]] — Widevine verified, browse / play / pause / seek on the gamepad.
 - `done` [[step-5.5-spotify|5.5 Spotify]] — Spotify's web player with its own navigation on the controller; playing in the background is Wave 2.
-- `todo` [[step-5.6-local-videos-and-music|5.6 Local videos and music]] — Mpv with gamepad bindings, Videos and Music browsing in the frontend from mounted disks.
+- `in-progress` [[step-5.6-local-videos-and-music|5.6 Local videos and music]] — Mpv with gamepad bindings, Videos and Music browsing in the frontend from mounted disks.
 - `todo` [[step-5.6a-command-legend|5.6a Command legend]] — A legend of what each controller button does in the app on screen, opened by the user: a window over the app in gamescope, a full-screen page in cage.
 - `todo` [[step-5.7-apps-page|5.7 Apps page]] — A page with every app (streaming services, Videos, Music, stores, and the ones added later), reached from the home screen: when there…
