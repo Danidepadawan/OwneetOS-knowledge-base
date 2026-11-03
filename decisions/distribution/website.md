@@ -40,6 +40,9 @@ Agreed with the owner on 2026-10-20, before the release; built in [[step-7.8-web
   when the PC does not start from it, checking the download, and the first steps with the console.
   Built on the branch `feature/step7_8k_languages`, so it comes in German, French and Spanish too
   (drafts reviewed with the rest).
+- **The public signing key is on the site** (owner, 2026-11-03): `owneetos.org/owneetos.asc`, the
+  public half only (primary key and signing subkey), for checking the ISO's signature. The guide
+  names no e-mail address (the key's own identity still holds the project address).
 - **The slogan "Plug it. Play it. Own it!" is never translated** (owner, 2026-10-24: more
   iconic): the same in every language's file and in the start-up animation (it replaces the
   Italian "Collegalo. Giocaci. Fallo tuo!" of 2026-10-20).
@@ -121,3 +124,4 @@ project folder. No data collected keeps the site free of consent banners and GDP
 | 2026-10-24 | Lighter fonts (7.8g): Lexend as its project's official WOFF2 (1.008, checked by hash); Bricolage Grotesque stays the console's TTF instance (no official WOFF2 of width 80). Then `feature/step7_website` merged into `main` in the three repositories (owner and Danidepadawan). |
 | 2026-10-25 | The site lives at **owneetos.org** (7.8h done). Its languages grow to **German, French and Spanish** (7.8k), each checked by people the authors know before it is published. |
 | 2026-11-01 | The user guide (7.3) is the site's guide page, grown into the illustrated guide: OwneetOS's screens and our own drawings (no other programs' screenshots); also trying from the stick, when the PC does not start from it, checking the download, the first steps; on the branch of the new languages. |
+| 2026-11-03 | The public signing key is published on the site as `owneetos.asc` (public half only), linked from the guide's check of the download; the guide shows no e-mail address. |

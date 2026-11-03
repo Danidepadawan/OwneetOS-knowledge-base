@@ -36,3 +36,11 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   real screens (WebP, made with `tools/frontend-preview`, steps `user-guide-*.txt`), opening full
   size when clicked, and three drawings of our own (the ISO to the stick, a boot menu, a firmware
   page). Waiting for the owner's approval.
+- **Demo, owner's corrections (2026-11-03, in progress):** no line under the title; "Check your PC"
+  becomes **Requirements**, Minimum and Recommended side by side as on Steam's store pages, one
+  aligned row per requirement (graphics: any card, with the "reduced mode" explained; storage: 32 GB
+  plus the space the games need; the USB stick and the controller among them); "Does your PC start
+  in UEFI mode?" as steps; the download as steps ("Download the file": the button at the top right,
+  SourceForge, the name `owneetos-X.Y.Z-x86_64.iso`) and the optional checks split in two; no
+  e-mail address; the public key `owneetos.asc` on the site. **Every correction goes to every
+  language of the final page** (German, French and Spanish too, owner).
