@@ -56,3 +56,19 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   (development server), not published; its console screens are made again after the final logo
   ([[step-7.6-final-logo-and-brand]], next) and Danidepadawan's apps page
   ([[step-5.7-apps-page]]); the guide is published after both. 7.3 stays in progress until then.
+- **The page in Angular (2026-11-03, website commit 843bdbe on `feature/step7_8k_languages`, not
+  published):** the guide page's parts in `guide.data.ts` (blocks of texts, procedures, pictures,
+  drawings, the requirements, the keys, the problems), the texts in the five message files under
+  `guide.` (English and Italian as approved; German, French and Spanish drafted, reviewed with
+  [[step-7.8k-website-more-languages]]); `shared/components/rich-text` (**bold**, `code` and
+  [links](name) in translated texts, without HTML); `core/components/guide-drawing` (the three
+  drawings); the screens in `public/guide-pictures/` (English for now); `public/owneetos.asc`
+  (the public half of the signing key, exported from `packages/owneet-keyring/owneet.gpg`). Found
+  while exporting it: the key's name is "OwneetOS Package Signing", so gpg says "Good signature from
+  "OwneetOS Package Signing"" (the guide and the demo say so, still without the e-mail address).
+  The page frame shows the line under a title only when the page has one; the guide's
+  `guide.description` is for search engines. Checked: `ng test` (15 tests, the guide's parts,
+  columns, keys, key link, no e-mail address, every text in every language), `npm run build` (31
+  pages, no warning), the Italian page in a browser from the development server. **Left:** the
+  screens made again in each language after [[step-7.6-final-logo-and-brand]] and
+  [[step-5.7-apps-page]], then publishing.
