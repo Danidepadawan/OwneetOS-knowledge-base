@@ -4,7 +4,7 @@ description: "Videos and Music: the media folders on every disk, Music's two vie
 area: ux
 status: active
 decided: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-04
 tags: [decision, ux, media]
 ---
 # Local videos and music
@@ -16,14 +16,18 @@ tags: [decision, ux, media]
 - **Music has two views:**
   - **by folder:** the folders as they are on the disk;
   - **by artist and album:** built from the songs' own tags. It is read **only when the user
-    enters that view**, with a spinner meanwhile.
+    enters that view**, with a spinner meanwhile. The tags are read by the frontend itself with
+    FFmpeg's library (libavformat), both the file's and the stream's tags (Ogg keeps them in the
+    stream), and kept in a list on the console's disk (owner, 2026-11-04).
 - **Guide keeps it playing:** the player is an open app, like a game. Guide shows the home screen
   while the sound goes on, and Resume brings the player back. One app runs at a time.
 - **Videos remember where they stopped:** a started video shows its progress, A resumes, and Menu
   has "Watch from the start". The positions are kept on the console's disk; the media disks are
-  never written for this.
+  never written for this. Only the position is kept (never a track choice such as "no sound").
+- **Music starts from the beginning** (owner, 2026-11-04): a song never resumes, and the rest of
+  its folder or album plays after it.
 - **The player is mpv** ([[architecture-stack]]). It reads the controller itself; Guide stays
-  owneetd's ([[guide-button]]). Its bindings are in [[controller-input-map]].
+  owneetd's ([[guide-button]]). Its bindings ("Inside the player") are in [[controller-input-map]].
 
 ## Why
 
@@ -34,7 +38,11 @@ tags: [decision, ux, media]
   only on entering that view keeps the folder view instant.
 - **Guide:** pausing on Guide was the alternative; music that goes on while the user looks at the
   home screen is what a console's player does.
-- **Resuming:** always starting from the beginning was the alternative.
+- **Resuming:** always starting from the beginning was the alternative. Songs are short and are
+  listened to again from the start, so only videos resume.
+- **Tags with FFmpeg's library:** running `ffprobe` for each song took 75 ms a song in the test VM
+  (about 75 s for 1,000 songs), mostly starting the program; the library is already in the image
+  with FFmpeg, so nothing is added.
 
 ## Creates
 
@@ -50,3 +58,4 @@ Entries of the [[decision-log]] that shaped this note.
 | Date | Decision |
 |---|---|
 | 2026-11-02 | Local videos and music (step 5.6): `Videos` / `Music` folders (or their translated names) at the top of every disk and on the console's disk; Music by folder and by artist and album, the second read only on entering it with a spinner; Guide keeps it playing, like an open app; videos resume where they stopped, Menu "Watch from the start". |
+| 2026-11-04 | Step 5.6 sub-step 2: the player's bindings ([[controller-input-map]], "Inside the player"); music starts from the beginning and the rest of its folder or album follows; only a video's position is kept; the songs' tags read with FFmpeg's library inside the frontend in place of `ffprobe` (plan change, sub-step 4). |

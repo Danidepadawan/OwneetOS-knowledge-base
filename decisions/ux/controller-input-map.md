@@ -4,7 +4,7 @@ description: "The binding meaning of every button on every screen, keyboard fall
 area: ux
 status: active
 decided: 2026-10-03
-updated: 2026-10-29
+updated: 2026-11-04
 legacy: "PROJECT_RULES.md §9.1"
 tags: [decision, ux, input]
 ---
@@ -101,6 +101,22 @@ the user closes it; the panel is out of the D-pad's reach). View and L3 do nothi
 owneetd's. Pages outside Spotify's
 player (sign-in, Facebook / Google / Apple sign-in) keep the web-app bindings above.
 
+**Inside the player** (step 5.6, local videos and music; mpv, which reads the controller itself,
+[[local-media]]; owner, 2026-11-04): the same buttons for a video and a song. **A** pauses / plays.
+**D-pad left / right = −10 / +10 s**, exact (not to the nearest keyframe), repeating with this
+map's direction timing. **LT / RT = the previous / next video or song** (the videos of the same
+folder; music: the folder or album that is playing), repeating with this map's LT / RT timing.
+**X = the next audio track** (videos with more than one; it never goes through "no sound"). **Y =
+subtitles:** off, then each track in turn. **B leaves the player** and goes back to the list it was
+opened from (a video's position is saved). Every press shows the on-screen display for a moment
+(the title, the progress, the time); D-pad up / down, Menu and L3 / R3 only show it, and so do X
+and Y for a song. The sticks do nothing (a held stick sends bursts of presses); **View** (reserved)
+and **LB / RB** are not bound at all. **Guide stays owneetd's:** mpv never binds it (its name in
+mpv is `GAMEPAD_MENU`, [[step-5.6-local-videos-and-music]]), and mpv's own default bindings are
+off. The keyboard fallback keys have the same meanings; Q / E and the Super key are not bound in
+the player. **The Videos and Music pages** keep this map as it stands: Music's two views (by folder,
+by artist and album) are the page's filters on LT / RT.
+
 The input map is **fixed**: it is not saved in the frontend's settings, so a change reaches every
 system. **Held buttons:** a direction repeats after 360 ms, then every 140 ms; LB / RB and LT / RT
 repeat after 720 ms, then every 360 ms; analog triggers count as pressed above half their travel
@@ -158,3 +174,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-28 | Inside Spotify back on its desktop web player (the Android TV view keeps Your Library in Spotify's app): the bindings of 2026-10-24, and the **D-pad moves by position only** (the nearest target in the direction, no rows or columns; owner), in Spotify's own code. |
 | 2026-10-29 | Inside Spotify: **A plays** a card, Your Library row or song at once, **Menu opens its page**; LB / RB do nothing (everything is reachable by position); the D-pad moves by position in the player bar, menus and windows too, Spotify's sliders not stops. |
 | 2026-10-29 | Inside Spotify: **R3 folds or opens Spotify's right panel** (its own Alt+Shift+R), replacing the automatic folding (owner: Spotify opens it when a song starts, the user closes it). |
+| 2026-11-04 | Inside the player (step 5.6, mpv): A pause / play, D-pad left / right −10 / +10 s (exact), LT / RT the previous / next video or song (owner: in place of the proposed LT / RT seeking), X the next audio track (never "no sound"), Y subtitles, B leaves the player (a video's position saved); every press shows the on-screen display; View and LB / RB not bound, Guide never bound by mpv. Music's two views are the Music page's filters on LT / RT. |

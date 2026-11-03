@@ -18,7 +18,7 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
     names `app.videos` / `app.music` are in the message files.
   - **mpv and FFmpeg are already in the image** (`packages/owneet-session` depends on mpv) and in
     `CREDITS.md`; mpv is the chosen player, Kodi rejected ([[architecture-stack]]). No new
-    dependency is expected: FFmpeg's `ffprobe` can read the songs' tags.
+    dependency is expected: FFmpeg can read the songs' tags (its library, sub-step 4).
   - USB disks are mounted automatically, read only, since [[step-4.3-local-drm-free-games]]; full
     mounting is [[step-6.5-automatic-disk-mounting]]. The `Games` folder and its reading in the
     frontend (`DiskGamesProvider`, `owneet::DiskGames::folderNames`) are the pattern to follow.
@@ -92,6 +92,17 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
      LB / RB never used; Guide owneetd's; the same on the keyboard fallback keys. In the Videos and
      Music pages: the map as it is, LT / RT switching Music's views (the map's "filter inside the
      page").
+     **Agreed (owner, 2026-11-04):** [[controller-input-map]], "Inside the player": the same
+     buttons for a video and a song; A pause / play; **D-pad left / right −10 / +10 s**, exact;
+     **LT / RT the previous / next video or song** (the owner swapped them: the proposal had LT /
+     RT seeking and the D-pad in small steps); X the next audio track (never "no sound"); Y
+     subtitles (off, then each track); B leaves the player, back to the list (a video's position
+     saved); every press shows the on-screen display, the buttons without a meaning only show it;
+     the sticks do nothing; View and LB / RB not bound; Guide never bound by mpv; mpv's defaults
+     off; the same on the keyboard. **Music starts from the beginning** (a song never resumes; the
+     rest of its folder or album plays after it) and only a video's position is kept
+     ([[local-media]]). **Plan change:** the songs' tags are read by the frontend with FFmpeg's
+     library in place of `ffprobe` (sub-step 4 below).
   3. **Demo** `design/demos/5.6-videos-and-music.html` ([[demo-before-code]]): Videos (folders as
      cards, a folder's videos, progress, Menu → "Watch from the start", covers from an image in
      the folder or generated, the empty page explaining the Videos folder); Music (the folder view,
@@ -100,12 +111,17 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
      tiles, B back home; in cage too.
   4. **Code, reading the media and the two pages:** a media reader in the frontend next to
      `DiskGames` (folder names and translations, a disk coming or going re-read quietly, covers,
-     progress from the saved positions, tags read with `ffprobe` in the background on entering the
-     artist view and kept in a list on the console's disk); the Videos and Music pages; the tiles
-     open them; message files (en, it); tests.
+     progress from the saved positions, tags read in the background on entering the artist view and
+     kept in a list on the console's disk); the Videos and Music pages; the tiles open them; message
+     files (en, it); tests. **The tags are read with FFmpeg's library (libavformat) inside the
+     frontend** (owner, 2026-11-04, in place of one `ffprobe` per song, 75 ms each in sub-step 1):
+     the file's and the stream's tags; FFmpeg is already in the image and in `CREDITS.md`
+     (GPL-3.0-only as packaged, which the frontend's GPLv3 allows); its time per song measured
+     here.
   5. **Code, the player:** mpv's configuration shipped by OwneetOS (the bindings of sub-step 2,
      mpv's defaults off; its on-screen display as a small Lua script given the palette tokens and
-     the translated texts by the console; saved positions on the console's disk); started through
+     the translated texts by the console; exact seeks; saved positions on the console's disk, a
+     video's position only, never for songs); started through
      owneetd as an app that runs one at a time, like a game; package versions; tests (the launch,
      mpv's bindings never naming Guide).
   6. **Close:** known limits, the FrankenPC checks (hardware decoding, a Switch controller's buttons
