@@ -52,3 +52,7 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   617bea2 on `feature/phase7`). Next: the guide page in Angular on the website's branch
   `feature/step7_8k_languages`, in the five languages, with the console's screens in each language
   and `owneetos.asc`.
+- **Order (owner, 2026-11-03):** the guide page is built now in the Angular site and seen locally
+  (development server), not published; its console screens are made again after the final logo
+  ([[step-7.6-final-logo-and-brand]], next) and Danidepadawan's apps page
+  ([[step-5.7-apps-page]]); the guide is published after both. 7.3 stays in progress until then.
