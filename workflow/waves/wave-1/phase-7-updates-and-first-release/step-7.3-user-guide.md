@@ -42,5 +42,13 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   plus the space the games need; the USB stick and the controller among them); "Does your PC start
   in UEFI mode?" as steps; the download as steps ("Download the file": the button at the top right,
   SourceForge, the name `owneetos-X.Y.Z-x86_64.iso`) and the optional checks split in two; no
-  e-mail address; the public key `owneetos.asc` on the site. **Every correction goes to every
+  e-mail address; the public key `owneetos.asc` on the site; step 3 "Write the downloaded image",
+  the programs given as examples ("such as", no Rufus or other added); the stick in the boot menu
+  said accurately (its name or its maker's; the entry with "UEFI" when it shows twice); the keys
+  table by motherboard maker; "Dual boot is currently not supported"; no word on the Xbox wireless
+  adapter; "write the stick again" last among the answers. **Every correction goes to every
   language of the final page** (German, French and Spanish too, owner).
+- **Demo approved by the owner (2026-11-03)** with these corrections (code commits from feb848a to
+  617bea2 on `feature/phase7`). Next: the guide page in Angular on the website's branch
+  `feature/step7_8k_languages`, in the five languages, with the console's screens in each language
+  and `owneetos.asc`.
