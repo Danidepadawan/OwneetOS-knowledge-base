@@ -13,4 +13,4 @@ tags: [index]
 - [[graphics-drivers]] — nvidia-open or nouveau chosen at boot, forced composition on NVIDIA, INTEL_DEBUG=noccs, NVIDIA DDC/CI.
 - [[screens-and-display]] — One screen, others off; Keep this? after 15 s (30 s for a new screen); brightness only where possible.
 - [[system-requirements]] — x86_64, UEFI, 4 GB RAM (8 recommended), 32 GB disk, Vulkan or cage fallback; 12 GB for live Steam.
-- [[xbox-wireless-dongle]] — xone in the image, Microsoft firmware downloaded with consent, xpad and mt76x2u kept.
+- [[xbox-wireless-dongle]] — Wave 2 (since 2026-11-03): xone in the image, Microsoft firmware downloaded with consent, xpad and mt76x2u kept.

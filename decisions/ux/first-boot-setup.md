@@ -13,7 +13,8 @@ tags: [decision, ux, first-boot]
 - Flow: controller (auto-pairing, as in the mockup) → language → network → ready. The keyboard
   layout follows the chosen language and can be changed in Settings.
 - Notice: the first setup needs a **Bluetooth or cable controller**; consent dialog for the Xbox
-  dongle firmware ([[xbox-wireless-dongle]]).
+  dongle firmware ([[xbox-wireless-dongle]]; Wave 2 since 2026-11-03: the window stays in the code,
+  idle without the driver).
 - **Time zone:** chosen in the first-boot flow, changeable in Settings; until then the system runs
   on UTC. Suggested from the language (Italian → Europe/Rome); a language spoken in several time
   zones (English, Spanish...) shows a list of cities to pick with the controller. Once online the
