@@ -23,9 +23,16 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in progress** · Part of 
   4. **Own it!**: OwneetOS belongs to everyone (today's "Open").
   5. **Download**, reached by scrolling to the end or with "Get OwneetOS"; no Download link in the
      header.
-- **Demo:** `design/demos/7.8m-website-home.html`, its screens in `design/demos/7.8m-website-home/`
-  (made with `tools/preview-steps/site-home.txt` and `site-home-game.txt`). Waiting for the owner.
-- **Proposed in the demo, for the owner to judge:**
+- **Demo approved (owner, 2026-11-04):** `design/demos/7.8m-website-home.html`, its screens in
+  `design/demos/7.8m-website-home/` (made with `tools/preview-steps/site-home.txt` and
+  `site-home-game.txt`).
+- **Built (2026-11-04, site branch `feature/step7_8k_languages`):** in the five languages (German,
+  French and Spanish are drafts, checked in [[step-7.8k-website-more-languages]]); pictures in
+  `public/home-pictures/`, the tour in `PlayTourComponent`. Beyond the demo, which has no start-up
+  animation: what plays by itself waits for its end, or the first slide would be over as it ends. The
+  old addresses (`#features`, `#requirements`, `#open`, `#info`) simply open the home. The drawn console
+  picture left the site ([[step-7.8j-website-console-picture]]). Waiting for the owner's review.
+- **In the approved demo:**
   - The header's links are "Plug it.", "Play it.", "Own it!", in every language like the slogan.
   - One sentence per slide.
   - "Play it.": four moves with their five buttons (LB / RB, A, Home, B); the console's screen follows
@@ -44,10 +51,9 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in progress** · Part of 
     "We will NEVER force updates on you", "A community driven, ever growing project"; the download's
     title "Almost here!". In every language. Offline is left out: for DRM-free games it is obvious.
   - "Own it!"'s icons: Lucide's `globe-off` and `user-group` replace `wifi-off` and `users`. The site's
-    `icon.data.ts` takes them, and `house` for "Play it.", from `lucide-static` 1.52.0.
+    `icon.data.ts` has them, and `house` for "Play it.", from `lucide-static` 1.52.0.
   - "No forced telemetry" stands: the crash reports sent only with consent are optional telemetry, in
     the owner's words ([[online-and-chat]], [[legal-compliance]]).
 - **Before publishing:**
   - The screens are taken again after [[step-5.7-apps-page]] if it changes them, in each
     language (the preview needs a way to choose it, as for [[step-7.3-user-guide]]).
-  - The old addresses (`#features`, `#requirements`, `#open`, `#info`) lead nowhere: decide what they do.
