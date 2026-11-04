@@ -48,5 +48,7 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   bar**. The slogan "Plug it. Play it. Own it!" under the full-screen logo, never translated ([[website]]),
   as far from the word as the symbol looks (the symbol's bottom to the small letters under it: about
   58 units of a 1600 x 900 screen; owner, code commit d9167a0). The demo shows this combination (code commit
-  19ed391). Waiting for the owner's approval; then the check that the symbol imitates no one's logo or a
+  19ed391). The demo also plays both start-up animations with the new logo (code commit 0322d51), in the
+  approved four beats; the boot splash keeps the slogan's room, so the logo stays in place when the
+  console's animation starts. Waiting for the owner's approval; then the check that the symbol imitates no one's logo or a
   real controller ([[legal-compliance]]), and the boot splash, interface, documents and website.
