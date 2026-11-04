@@ -40,6 +40,8 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in progress** · Part of 
     "Own it!": "Completely free and open source", "No forced telemetry, we respect your privacy",
     "We will NEVER force updates on you", "A community driven, ever growing project"; the download's
     title "Almost here!". In every language. Offline is left out: for DRM-free games it is obvious.
+  - "Own it!"'s icons: Lucide's `globe-off` and `user-group` replace `wifi-off` and `users`. The site's
+    `icon.data.ts` takes them, and `house` for "Play it.", from `lucide-static` 1.52.0.
   - "No forced telemetry" stands: the crash reports sent only with consent are optional telemetry, in
     the owner's words ([[online-and-chat]], [[legal-compliance]]).
 - **Before publishing:**
