@@ -113,10 +113,10 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
      the artist and album view with its spinner on the first visit, the empty page); the player's
      screens (the video's on-screen display, music's now-playing screen); opened from their Apps
      tiles, B back home; in cage too.
-     **Written (2026-11-04), waiting for the owner's review:** `design/demos/5.6-videos-and-music.html`
+     **Written and approved by the owner (2026-11-04):** `design/demos/5.6-videos-and-music.html`
      (on the approved home and library demos; its player's rules checked with scripted key
-     presses: LT's 5 s, Autoplay at the end, Guide, B). What it proposes beyond the decisions,
-     approved with the demo:
+     presses: LT's 5 s, Autoplay at the end, Guide, B). What it adds beyond the decisions,
+     approved with the demo ([[local-media]]):
      - **Videos:** a **"Continue watching"** row (started videos, the latest first) above the
        folders; 16:9 cards; a folder opens as a list beside its picture (its `cover.jpg` /
        `folder.jpg`, a season using its series' picture, or one drawn from its name), with the

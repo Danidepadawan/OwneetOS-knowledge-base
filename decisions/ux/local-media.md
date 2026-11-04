@@ -33,6 +33,25 @@ tags: [decision, ux, media]
   player** ([[controller-input-map]]). Music is not affected.
 - **Previous goes back to the start first** (owner, 2026-11-04): LT in the first 5 s of a video or
   song goes to the previous one; from 0:05 on, to the start of the one playing.
+- **The pages and the player** (demo 5.6, approved 2026-11-04;
+  `design/demos/5.6-videos-and-music.html`):
+  - **Videos:** "Continue watching" (started videos, the latest first) above the folders; a folder
+    opens as a list beside its picture (its `cover.jpg` / `folder.jpg`, a season using its series'
+    picture, or one drawn from its name), with the selected video's languages and where it
+    stopped; the disk's name on the cards when two disks have media.
+  - **Music:** Artists → an artist's albums → the songs; untagged songs under "Unknown artist",
+    their file's name as the title and their folder as the album; the first reading counts the
+    songs read.
+  - **While the player is open:** another video or song moves the player to it (a game open:
+    close it first); Guide shows the console where it was, the playing item marked "Playing" (A
+    resumes it), the home screen's hero with Resume and Close.
+  - **Positions and tracks:** mpv's own behaviour (a saved position used up when the video opens,
+    saved again when it is left; watched to the end, shown as not started; previous / next resume
+    a started video). A `.srt` beside the video shows by itself; embedded subtitles start off.
+  - **The display:** the folder and the title, the progress and the times, the Audio / Subtitles
+    / Autoplay states with their buttons, the prompts, short messages at the top; music's screen
+    shows the picture, title, artist, album, progress and the next song.
+  - **A USB disk removed while it plays:** the player stops, the position kept, and says so.
 - **The player is mpv** ([[architecture-stack]]). It reads the controller itself; Guide stays
   owneetd's ([[guide-button]]). Its bindings ("Inside the player") are in [[controller-input-map]].
 
@@ -67,3 +86,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-11-02 | Local videos and music (step 5.6): `Videos` / `Music` folders (or their translated names) at the top of every disk and on the console's disk; Music by folder and by artist and album, the second read only on entering it with a spinner; Guide keeps it playing, like an open app; videos resume where they stopped, Menu "Watch from the start". |
 | 2026-11-04 | Step 5.6 sub-step 2: the player's bindings ([[controller-input-map]], "Inside the player"); music starts from the beginning and the rest of its folder or album follows; only a video's position is kept; the songs' tags read with FFmpeg's library inside the frontend in place of `ffprobe` (plan change, sub-step 4). |
 | 2026-11-04 | Autoplay for videos: a switch, on by default and remembered (on: the next video of the folder starts; off: back to the list at the end), Y in the Videos page and Menu in the player; LT goes back to the start first (the previous one only in the first 5 s). |
+| 2026-11-04 | Demo 5.6 approved: Continue watching, a folder as a list beside its picture, Artists → albums → songs, untagged songs under "Unknown artist", another item moves the player to it, Guide shows the console where it was with the item marked "Playing", mpv's own saved positions and subtitles, the player's display and music's screen, a USB disk removed stops the player. |
