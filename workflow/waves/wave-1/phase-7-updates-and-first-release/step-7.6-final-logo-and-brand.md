@@ -45,7 +45,8 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
 - **Owner's choice (2026-11-04):** less space between the symbol and the word (150 units on the left,
   100 above, in the outlines' units; proportions kept: the symbol 960 units wide on the left, 1250
   above, the letters 684 high); **the symbol above on the full screen, the symbol on the left in the top
-  bar**. The slogan "Plug it. Play it. Own it!" under the full-screen logo, 32 units of a 1600 x 900
-  screen below it, never translated ([[website]]). The demo shows this combination (code commit
+  bar**. The slogan "Plug it. Play it. Own it!" under the full-screen logo, never translated ([[website]]),
+  as far from the word as the symbol looks (the symbol's bottom to the small letters under it: about
+  58 units of a 1600 x 900 screen; owner, code commit d9167a0). The demo shows this combination (code commit
   19ed391). Waiting for the owner's approval; then the check that the symbol imitates no one's logo or a
   real controller ([[legal-compliance]]), and the boot splash, interface, documents and website.
