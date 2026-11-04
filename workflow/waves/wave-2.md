@@ -67,3 +67,6 @@ Scope agreed so far: [[wave-1-scope]] (later waves).
 - **19. Changing the console's name (owner, 2026-10-25, only if needed):** Wave 1 makes the name
   editable ([[step-6.3-installer-backend]]); if that turns into a problem during development, the
   way to change it moves here.
+- **20. Local pictures (owner, 2026-11-04):** looking at one's own pictures from a disk or a USB stick,
+  next to the local videos and music of [[step-5.6-local-videos-and-music]]. Details and demo when it is
+  planned.
