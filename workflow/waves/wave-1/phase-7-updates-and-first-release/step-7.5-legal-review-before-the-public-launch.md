@@ -71,4 +71,6 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   buttons. Two resemblances found in a first search, not by a professional: the Super Famicom / Super Nintendo
   controller (Nintendo filed its image and its four-button layout as trademarks) and Discord's "Clyde"
   (a registered trademark, a rounded form that suggests a gamepad). Also a search by image in the
-  registers (EUIPO, TMview, WIPO), classes 9, 28 and 42, which has not been done.
+  registers (EUIPO, TMview, WIPO), classes 9, 28 and 42, which has not been done. The symbol stays as
+  it is until then (owner, 2026-11-04); if the answer asks for a change, ways to move it away from both:
+  two thumbsticks in place of the D-pad and the buttons, or small shoulder buttons on top.

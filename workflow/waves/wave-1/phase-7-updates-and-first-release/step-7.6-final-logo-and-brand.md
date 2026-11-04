@@ -89,4 +89,5 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   - **Outcome:** nothing found that stops the symbol; two resemblances go to the lawyer
     ([[step-7.5-legal-review-before-the-public-launch]]). Sources: patent and trademark news on Nintendo's
     filings (nintendowire.com, nintendosoup.com, mynintendonews.com), reddie.co.uk on the EUIPO's decisions,
-    logotyp.us and discord.com/branding on Clyde. Waiting for the owner's decision.
+    logotyp.us and discord.com/branding on Clyde.
+- **Owner's decision (2026-11-04):** the symbol stays as it is; both resemblances go to the lawyer.
