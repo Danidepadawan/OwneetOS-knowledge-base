@@ -24,7 +24,8 @@ Up: [[phase-7-updates-and-first-release]] · Status: **done**
   [[step-7.8f-website-search-and-sharing]], [[step-7.8g-website-lighter-fonts]] (optional,
   confirmed). After the merge: [[step-7.8h-website-domain]], [[step-7.8i-website-final-logo]],
   [[step-7.8j-website-console-picture]] (with "Local pictures"),
-  [[step-7.8k-website-more-languages]]. At the release: [[step-7.8l-website-download-link]].
+  [[step-7.8k-website-more-languages]], [[step-7.8m-website-simpler-home]] (added 2026-11-04). At the
+  release: [[step-7.8l-website-download-link]].
   The website is paused (owner, 2026-10-23) while the logo demo goes on ([[step-7.6-final-logo-and-brand]]).
 - **Started (owner, 2026-10-20)** while phase 5 is with Danidepadawan, before the release.
   Proposal agreed ([[website]]); first the home page's demo.

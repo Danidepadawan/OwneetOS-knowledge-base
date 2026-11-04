@@ -4,7 +4,7 @@ description: "The project's website: Angular, static on GitHub Pages, own reposi
 area: distribution
 status: active
 decided: 2026-10-20
-updated: 2026-11-01
+updated: 2026-11-04
 tags: [decision, distribution, website]
 ---
 # Website
@@ -31,6 +31,11 @@ Agreed with the owner on 2026-10-20, before the release; built in [[step-7.8-web
   it stops only while the pointer is on it (or it has focus from the keyboard) and while it is
   off screen. No pause button (owner, 2026-10-20: it was tried; WCAG 2.2.2 asks for one on moving
   content, the owner chose without).
+- **A much simpler home (owner, 2026-11-04, demo waiting for approval, [[step-7.8m-website-simpler-home]]):**
+  when approved it replaces the sections above with five: Home (reached with the name: a carousel of
+  one sentence beside one screen of the console, and a link to the credits), Plug it. (the guide and
+  the FAQ), Play it. (a short, appealing guide to using it), Own it! (it belongs to everyone), Download
+  (scrolling to the end or "Get OwneetOS"; no Download link in the header).
 - **The user guide is the site's guide page** (owner, 2026-11-01, [[step-7.3-user-guide]]): the
   short guide of 7.8b grows into the whole illustrated guide, in the site's languages; the code
   repository links to it. Pictures: real screens of OwneetOS (made with the preview) and simple
@@ -103,7 +108,8 @@ project folder. No data collected keeps the site free of consent banners and GDP
   [[step-7.8e-website-favicon]], [[step-7.8f-website-search-and-sharing]],
   [[step-7.8g-website-lighter-fonts]]; after the merge [[step-7.8h-website-domain]],
   [[step-7.8i-website-final-logo]], [[step-7.8j-website-console-picture]],
-  [[step-7.8k-website-more-languages]]; at the release [[step-7.8l-website-download-link]].
+  [[step-7.8k-website-more-languages]], [[step-7.8m-website-simpler-home]]; at the release
+  [[step-7.8l-website-download-link]].
 
 ## History
 
@@ -126,3 +132,4 @@ project folder. No data collected keeps the site free of consent banners and GDP
 | 2026-11-01 | The user guide (7.3) is the site's guide page, grown into the illustrated guide: OwneetOS's screens and our own drawings (no other programs' screenshots); also trying from the stick, when the PC does not start from it, checking the download, the first steps; on the branch of the new languages. |
 | 2026-11-03 | The public signing key is published on the site as `owneetos.asc` (public half only), linked from the guide's check of the download; the guide shows no e-mail address. |
 | 2026-11-04 | The site takes the final logo (7.8i): the symbol on the left in the header and the footer, above in the start-up animation and the sharing picture. |
+| 2026-11-04 | A much simpler home (7.8m, demo first): five sections following the slogan, Home with a carousel of the console's screens and a link to the credits, Plug it., Play it., Own it!, Download; no Download link in the header. |
