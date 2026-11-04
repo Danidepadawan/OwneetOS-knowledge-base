@@ -57,3 +57,12 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   with Google"): whether Brave's agreement with Google covers its users on OwneetOS; Brave's help
   page says that turning Widevine on means agreeing to Google's Terms of Use and that Brave is not
   liable for it.
+- **To include (owner, 2026-11-04):** whether the names of third-party products may appear in the
+  console and in the pictures of the website and the user guide, with no logos and no sign of
+  endorsement ([[legal-compliance]]):
+  - the names of the apps, "Netflix", "YouTube", "Spotify" and so on, on the console's tiles (a letter
+    in place of the logo) and in the screens shown by the guide and the site: the owner would like to
+    keep them;
+  - the disks' makers and models, "Samsung SSD 980", "Crucial MX500", "Kingston SSD", invented
+    examples of the preview in the installer's screens of the guide: kept or replaced with invented names
+    according to the answer ([[step-7.3-user-guide]]).
