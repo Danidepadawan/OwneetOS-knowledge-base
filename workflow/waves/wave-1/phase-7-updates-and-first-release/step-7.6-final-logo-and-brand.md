@@ -55,5 +55,7 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   start-up sound with the animations (code commit c0d6b45; from "Play again" or Enter, browsers
   allow sound only after a press; without the silence before it, as the package removes it). The
   final `startup.wav` has its three hits at about 1.98, 2.48 and 2.98 s from its first sound, on the
-  animation's words at 2.0, 2.5 and 3.0 s. Waiting for the owner's check by ear; then the check that the symbol imitates no one's logo or a
+  animation's words at 2.0, 2.5 and 3.0 s. The console's animation starts on the boot splash's black,
+  which fades into the palette's background with the logo's colours over the first 2 s (owner, code
+  commit b8a5d6f). Waiting for the owner's check by ear; then the check that the symbol imitates no one's logo or a
   real controller ([[legal-compliance]]), and the boot splash, interface, documents and website.
