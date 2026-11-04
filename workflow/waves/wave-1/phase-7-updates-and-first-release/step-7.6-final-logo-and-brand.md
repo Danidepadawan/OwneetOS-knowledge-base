@@ -62,7 +62,11 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   palette's background (Dusk `#6FD3FF`, Tide `#FF9E8A`, Bloom `#7FE8C8`, Ember `#7CCBFF`, Espresso
   `#8AD0E8`, Harbor `#8FC4F5`, Forest `#FFA8C8`, Lagoon `#FFC56B`, Amethyst `#FFD66B`, Crimson `#7FE3EE`,
   Synthwave `#6FE8FF`, Amber `#8CBEFF`, Olive `#CDB2FF`, Daylight and Arctic `#B8400B`, Sand and Latte
-  `#0B6A85`, Sakura `#0A6F6A`). In the black and white versions (the boot splash; Graphite and the two high
-  contrasts: the assistant's reading, to confirm) they stay in the symbol's colour. It becomes a
-  palette token in the final version ([[design-tokens]]). Waiting for the owner's check by ear; then the check that the symbol imitates no one's logo or a
-  real controller ([[legal-compliance]]), and the boot splash, interface, documents and website.
+  `#0B6A85`, Sakura `#0A6F6A`). In the black and white versions (the boot splash, Graphite) they stay in
+  the symbol's colour. The two high contrasts have each other's colour (owner, code commit d2a0321): High
+  contrast's blue lighter, `#8AB4FF` (10.1:1), High contrast light's yellow darker, `#6E5200` (7.3:1), since
+  as they are they would be 2.3:1 and 1.3:1. It becomes a palette token in the final version
+  ([[design-tokens]]).
+- **The whole design approved by the owner (2026-11-04)**, with the console's black fading into the
+  palette over the first 2 s. **Left:** the check that the symbol imitates no one's logo or a real
+  controller ([[legal-compliance]]), and the boot splash, interface, documents and website.
