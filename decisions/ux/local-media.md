@@ -26,6 +26,13 @@ tags: [decision, ux, media]
   never written for this. Only the position is kept (never a track choice such as "no sound").
 - **Music starts from the beginning** (owner, 2026-11-04): a song never resumes, and the rest of
   its folder or album plays after it.
+- **Autoplay for videos** (owner, 2026-11-04): a switch, **on** on a new console and remembered on
+  the console's disk. On: when a video ends, the next video of the same folder starts (after the
+  last one, back to the list). Off: the video stops at its end and the player goes back to the
+  list. It is switched with **Y in the Videos page** ("Autoplay: On / Off") and **Menu in the
+  player** ([[controller-input-map]]). Music is not affected.
+- **Previous goes back to the start first** (owner, 2026-11-04): LT in the first 5 s of a video or
+  song goes to the previous one; from 0:05 on, to the start of the one playing.
 - **The player is mpv** ([[architecture-stack]]). It reads the controller itself; Guide stays
   owneetd's ([[guide-button]]). Its bindings ("Inside the player") are in [[controller-input-map]].
 
@@ -59,3 +66,4 @@ Entries of the [[decision-log]] that shaped this note.
 |---|---|
 | 2026-11-02 | Local videos and music (step 5.6): `Videos` / `Music` folders (or their translated names) at the top of every disk and on the console's disk; Music by folder and by artist and album, the second read only on entering it with a spinner; Guide keeps it playing, like an open app; videos resume where they stopped, Menu "Watch from the start". |
 | 2026-11-04 | Step 5.6 sub-step 2: the player's bindings ([[controller-input-map]], "Inside the player"); music starts from the beginning and the rest of its folder or album follows; only a video's position is kept; the songs' tags read with FFmpeg's library inside the frontend in place of `ffprobe` (plan change, sub-step 4). |
+| 2026-11-04 | Autoplay for videos: a switch, on by default and remembered (on: the next video of the folder starts; off: back to the list at the end), Y in the Videos page and Menu in the player; LT goes back to the start first (the previous one only in the first 5 s). |

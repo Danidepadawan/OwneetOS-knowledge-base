@@ -102,7 +102,11 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
      off; the same on the keyboard. **Music starts from the beginning** (a song never resumes; the
      rest of its folder or album plays after it) and only a video's position is kept
      ([[local-media]]). **Plan change:** the songs' tags are read by the frontend with FFmpeg's
-     library in place of `ffprobe` (sub-step 4 below).
+     library in place of `ffprobe` (sub-step 4 below). **Then (owner, 2026-11-04):** an
+     **Autoplay** switch for videos, on by default and remembered (on: the next video of the folder
+     starts when one ends; off: back to the list), switched by Y in the Videos page and Menu in the
+     player; **LT goes back to the start first** (to the previous video or song only in the first
+     5 s).
   3. **Demo** `design/demos/5.6-videos-and-music.html` ([[demo-before-code]]): Videos (folders as
      cards, a folder's videos, progress, Menu → "Watch from the start", covers from an image in
      the folder or generated, the empty page explaining the Videos folder); Music (the folder view,

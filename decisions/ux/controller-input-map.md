@@ -105,17 +105,22 @@ player (sign-in, Facebook / Google / Apple sign-in) keep the web-app bindings ab
 [[local-media]]; owner, 2026-11-04): the same buttons for a video and a song. **A** pauses / plays.
 **D-pad left / right = −10 / +10 s**, exact (not to the nearest keyframe), repeating with this
 map's direction timing. **LT / RT = the previous / next video or song** (the videos of the same
-folder; music: the folder or album that is playing), repeating with this map's LT / RT timing.
+folder; music: the folder or album that is playing), repeating with this map's LT / RT timing;
+**LT goes back to the start first:** in the first 5 s of a video or song (before 0:05) it goes to
+the previous one, from 0:05 on to the start of the one playing (owner, 2026-11-04); on the first
+one it goes to its start. **Menu switches Autoplay** for videos (the display says whether it is on;
+[[local-media]]; Y in the Videos page switches it too).
 **X = the next audio track** (videos with more than one; it never goes through "no sound"). **Y =
 subtitles:** off, then each track in turn. **B leaves the player** and goes back to the list it was
 opened from (a video's position is saved). Every press shows the on-screen display for a moment
-(the title, the progress, the time); D-pad up / down, Menu and L3 / R3 only show it, and so do X
-and Y for a song. The sticks do nothing (a held stick sends bursts of presses); **View** (reserved)
+(the title, the progress, the time); D-pad up / down and L3 / R3 only show it, and so do X, Y and
+Menu for a song. The sticks do nothing (a held stick sends bursts of presses); **View** (reserved)
 and **LB / RB** are not bound at all. **Guide stays owneetd's:** mpv never binds it (its name in
 mpv is `GAMEPAD_MENU`, [[step-5.6-local-videos-and-music]]), and mpv's own default bindings are
 off. The keyboard fallback keys have the same meanings; Q / E and the Super key are not bound in
 the player. **The Videos and Music pages** keep this map as it stands: Music's two views (by folder,
-by artist and album) are the page's filters on LT / RT.
+by artist and album) are the page's filters on LT / RT, and **Y in the Videos page switches
+Autoplay** (a page-level option, "Autoplay: On / Off").
 
 The input map is **fixed**: it is not saved in the frontend's settings, so a change reaches every
 system. **Held buttons:** a direction repeats after 360 ms, then every 140 ms; LB / RB and LT / RT
@@ -175,3 +180,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-29 | Inside Spotify: **A plays** a card, Your Library row or song at once, **Menu opens its page**; LB / RB do nothing (everything is reachable by position); the D-pad moves by position in the player bar, menus and windows too, Spotify's sliders not stops. |
 | 2026-10-29 | Inside Spotify: **R3 folds or opens Spotify's right panel** (its own Alt+Shift+R), replacing the automatic folding (owner: Spotify opens it when a song starts, the user closes it). |
 | 2026-11-04 | Inside the player (step 5.6, mpv): A pause / play, D-pad left / right −10 / +10 s (exact), LT / RT the previous / next video or song (owner: in place of the proposed LT / RT seeking), X the next audio track (never "no sound"), Y subtitles, B leaves the player (a video's position saved); every press shows the on-screen display; View and LB / RB not bound, Guide never bound by mpv. Music's two views are the Music page's filters on LT / RT. |
+| 2026-11-04 | Inside the player: **LT goes back to the start first** (in the first 5 s to the previous video or song, from 0:05 on to the start of the one playing); **Menu switches Autoplay** for videos, and so does **Y in the Videos page** ([[local-media]]). |
