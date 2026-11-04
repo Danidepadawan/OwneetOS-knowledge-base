@@ -66,3 +66,9 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   - the disks' makers and models, "Samsung SSD 980", "Crucial MX500", "Kingston SSD", invented
     examples of the preview in the installer's screens of the guide: kept or replaced with invented names
     according to the answer ([[step-7.3-user-guide]]).
+- **To include (2026-11-04):** whether the logo's symbol ([[step-7.6-final-logo-and-brand]], demo
+  `design/demos/7.6-logo.html`) can be used: a disc with a generic gamepad cut out of it, a D-pad and four
+  buttons. Two resemblances found in a first search, not by a professional: the Super Famicom / Super Nintendo
+  controller (Nintendo filed its image and its four-button layout as trademarks) and Discord's "Clyde"
+  (a registered trademark, a rounded form that suggests a gamepad). Also a search by image in the
+  registers (EUIPO, TMview, WIPO), classes 9, 28 and 42, which has not been done.

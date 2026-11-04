@@ -70,3 +70,23 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
 - **The whole design approved by the owner (2026-11-04)**, with the console's black fading into the
   palette over the first 2 s. **Left:** the check that the symbol imitates no one's logo or a real
   controller ([[legal-compliance]]), and the boot splash, interface, documents and website.
+- **Check that the symbol imitates no one, first pass (2026-11-04, the assistant, web searches; not a
+  professional's opinion, and no search by image in the trademark registers):**
+  - **Super Famicom / Super Nintendo controller, the closest shape:** the same elements (a cross on the
+    left, four buttons in a diamond on the right, no thumbsticks, two round ends and a narrower
+    middle). Nintendo filed an image of that controller as a trademark in December 2016 and later its
+    four-button layout; the sources found do not say where or for which goods. Differences: a straight top
+    edge, no shoulder buttons, no Start and Select, one colour for the buttons, drawn as a hole in a disc.
+  - **Discord's "Clyde", the closest logo:** a registered trademark, described as a rounded form that
+    suggests a gamepad, with two round eyes; a similar silhouette with a notch below. Differences: a
+    D-pad and four buttons instead of two eyes, the disc around it; the two come nearer at 16-24 px, where
+    the buttons blur.
+  - **Generic use:** a controller in a logo is common (stock logos and templates); no single brand found
+    with a disc and a controller cut out of it.
+  - **In the symbol's favour:** in 2025 the EUIPO's Board of Appeal found the GameCube controller's button
+    layout within the sector's norms, so not distinctive without proof of use; that case is another
+    controller and a different question.
+  - **Outcome:** nothing found that stops the symbol; two resemblances go to the lawyer
+    ([[step-7.5-legal-review-before-the-public-launch]]). Sources: patent and trademark news on Nintendo's
+    filings (nintendowire.com, nintendosoup.com, mynintendonews.com), reddie.co.uk on the EUIPO's decisions,
+    logotyp.us and discord.com/branding on Clyde. Waiting for the owner's decision.
