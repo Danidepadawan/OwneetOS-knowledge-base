@@ -57,16 +57,8 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   final `startup.wav` has its three hits at about 1.98, 2.48 and 2.98 s from its first sound, on the
   animation's words at 2.0, 2.5 and 3.0 s. The console's animation starts on the boot splash's black,
   which fades into the palette's background with the logo's colours over the first 2 s (owner, code
-  commit b8a5d6f). **The symbol's D-pad and buttons in a colour of their own** (owner, 2026-11-04, code
-  commit c27dcf1), for contrast in every palette: the opposite of the symbol's colour, at least 4.5:1 on the
-  palette's background (Dusk `#6FD3FF`, Tide `#FF9E8A`, Bloom `#7FE8C8`, Ember `#7CCBFF`, Espresso
-  `#8AD0E8`, Harbor `#8FC4F5`, Forest `#FFA8C8`, Lagoon `#FFC56B`, Amethyst `#FFD66B`, Crimson `#7FE3EE`,
-  Synthwave `#6FE8FF`, Amber `#8CBEFF`, Olive `#CDB2FF`, Daylight and Arctic `#B8400B`, Sand and Latte
-  `#0B6A85`, Sakura `#0A6F6A`). In the black and white versions (the boot splash, Graphite) they stay in
-  the symbol's colour. The two high contrasts have each other's colour (owner, code commit d2a0321): High
-  contrast's blue lighter, `#8AB4FF` (10.1:1), High contrast light's yellow darker, `#6E5200` (7.3:1), since
-  as they are they would be 2.3:1 and 1.3:1. It becomes a palette token in the final version
-  ([[design-tokens]]).
+  commit b8a5d6f). A colour of their own for the symbol's D-pad and buttons in each palette was tried (commits c27dcf1, d2a0321)
+  and given up: see below.
 - **The whole design approved by the owner (2026-11-04)**, with the console's black fading into the
   palette over the first 2 s. **Left:** the check that the symbol imitates no one's logo or a real
   controller ([[legal-compliance]]), and the boot splash, interface, documents and website.
@@ -99,7 +91,7 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   below it, at a fixed 800 pixels wide (Plymouth does not scale: 42 % of a 1080p screen, against the
   demo's 50 %; the same on the loading screen), the spinner at 92 % of the height. owneet-frontend
   0.35.0: `Intro.qml` as in the demo, `foundation/Logo.qml` in the top bar, the first start and the
-  installer, `Theme.logoButtons` per palette, `Theme.splashAccent`, the slogan in the message files, the
+  installer, `Theme.splashAccent`, the slogan in the message files, the
   same in every language. The beats run on a timer, not on animations, which follow the screen's
   frames (three times too fast in the preview, without vsync), so the words stay with the sound.
   **Checked:** `tools/lint`; the preview; in the test VM, on the installed system, a real reboot: boot
@@ -107,3 +99,8 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   **Not checked here:** with the sound (the VM has none) and on real hardware (next hardware test).
   **Left:** documents and the website ([[step-7.8i-website-final-logo]]). Found on the way:
   [[build-chroot-emptied-by-systemd-tmpfiles]].
+- **The symbol's D-pad and buttons in the symbol's colour (owner, 2026-11-04, code commit af51273):** orange
+  in Dusk and so on in every palette; the colour per palette is given up, in the console and in the demo.
+  The first start's pairing note no longer speaks of the Xbox wireless adapter
+  ([[step-1.7-xbox-wireless-dongle-xone]]). owneet-frontend 0.36.0.
+- **The owner confirms the whole after the tests on real hardware.**

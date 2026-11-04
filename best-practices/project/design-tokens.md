@@ -9,8 +9,7 @@ tags: [best-practice, ux, design]
 Comes from: [[design-direction]], guard [[product-invariants]] (no hard-coded colours).
 
 - **No hard-coded colours**: UI colours come from the palette tokens of `Theme` (eight colour
-  tokens per palette), plus `logoButtons`, the colour of the logo's D-pad and buttons
-  ([[step-7.6-final-logo-and-brand]]): opposite the symbol's, at least 4.5:1 on the background.
+  tokens per palette).
 - **Every palette passes a contrast check:** text ≥ 7:1, secondary text and text on the accent
   ≥ 4.5:1, accent against the background ≥ 3:1.
 - Sizes on the **1280×720 design grid** (`Theme.px()`); text sizes follow the "Text size" option
