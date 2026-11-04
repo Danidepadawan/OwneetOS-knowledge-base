@@ -3,13 +3,13 @@ type: step
 description: "The final OwneetOS logo and wordmark (the current wordmark is provisional), checked not to imitate others' logos; boot…"
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.6"
-status: todo
+status: in-progress
 legacy: "ROADMAP.md 7.6"
 tags: [step, phase-7]
 ---
 # 7.6 Final logo and brand
 
-Up: [[phase-7-updates-and-first-release]] · Status: **todo**
+Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
 
 - **Deliverables:** the final OwneetOS logo and wordmark (the current wordmark is provisional),
   checked not to imitate someone else's logo or a real controller's shape ([[legal-compliance]];
@@ -34,3 +34,12 @@ Up: [[phase-7-updates-and-first-release]] · Status: **todo**
   one strip, then "don't worry, it's yours!" faded in. Tried and
   rejected: the circle in the letters' colour with the gamepad in the second colour; a glow; a
   more intense colour; neon (soft and sharp); the three letters pulsing.
+- **Started (owner, 2026-11-04):** friends, family and acquaintances all read the gamepad "O" draft
+  as "wneetOS", so **the wordmark gets its letter "O" back** ("OwneetOS", the current outlines, "OS"
+  in the second colour) and **the gamepad stays as a symbol of its own** (the same disc with the
+  gamepad cut out, in the colour of "OS"). The draft's "O" above is given up.
+- **Demo, first round (2026-11-04, code commit 83f473a on `feature/phase7`):**
+  `design/demos/7.6-logo.html`: the two layouts the owner asked to compare, the symbol on the left
+  and the symbol above, large, on the boot splash (white letters, the symbol and "OS" `#B0B0B0`)
+  and in the top bar, the symbol alone from 192 to 16 px, every palette. Waiting for the owner's
+  choice.
