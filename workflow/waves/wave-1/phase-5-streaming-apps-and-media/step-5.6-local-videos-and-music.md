@@ -113,6 +113,35 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
      the artist and album view with its spinner on the first visit, the empty page); the player's
      screens (the video's on-screen display, music's now-playing screen); opened from their Apps
      tiles, B back home; in cage too.
+     **Written (2026-11-04), waiting for the owner's review:** `design/demos/5.6-videos-and-music.html`
+     (on the approved home and library demos; its player's rules checked with scripted key
+     presses: LT's 5 s, Autoplay at the end, Guide, B). What it proposes beyond the decisions,
+     approved with the demo:
+     - **Videos:** a **"Continue watching"** row (started videos, the latest first) above the
+       folders; 16:9 cards; a folder opens as a list beside its picture (its `cover.jpg` /
+       `folder.jpg`, a season using its series' picture, or one drawn from its name), with the
+       selected video's audio and subtitle languages and where it stopped; the disk's name on the
+       cards when two disks have media; Y "Autoplay: On / Off" in the page's head.
+     - **Music:** square cards; a folder of songs or an album as a list (the artist under each song
+       only in a folder of several artists); Artists → an artist's albums → the songs; untagged
+       songs under "Unknown artist", their file's name as the title and their folder as the
+       album; the spinner counts the songs read ("12 of 24").
+     - **While the player is open:** another video or song moves the player to it (a game open:
+       "{name} is open: close it first."); Guide (gamescope) shows the console where it was, the
+       item marked "Playing" (A on it resumes), the home screen's hero with Resume and Close, the
+       Videos or Music tile with the green dot; in cage holding Guide closes the player, back to
+       the list.
+     - **Positions:** mpv's own behaviour, a video's saved position used up when it opens and saved
+       again when it is left; a video watched to the end shows as not started; previous / next
+       resume a started video. A `.srt` beside the video shows by itself (mpv's own); embedded
+       subtitles start off.
+     - **The player's display:** the folder and the title, the progress and the times, the Audio /
+       Subtitles / Autoplay states with their buttons, the prompts (in cage, Guide "Hold: close");
+       short messages at the top ("Resumed at 12:04", "+10 s", "Back to the start", "Audio:
+       Italian (2 of 2)"); the subtitles move up while it shows; paused, it stays. Music's screen:
+       the picture, title, artist, album, progress and the next song.
+     - **A USB disk removed while it plays:** the player stops (the position kept) with "The USB
+       disk was removed: {title} stopped."; otherwise the pages change quietly.
   4. **Code, reading the media and the two pages:** a media reader in the frontend next to
      `DiskGames` (folder names and translations, a disk coming or going re-read quietly, covers,
      progress from the saved positions, tags read in the background on entering the artist view and
@@ -125,7 +154,9 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
   5. **Code, the player:** mpv's configuration shipped by OwneetOS (the bindings of sub-step 2,
      mpv's defaults off; its on-screen display as a small Lua script given the palette tokens and
      the translated texts by the console; exact seeks; saved positions on the console's disk, a
-     video's position only, never for songs); started through
+     video's position only, never for songs; to check: whether mpv still acts on the controller
+     while the console is over it in gamescope, and if so the script ignores the buttons until the
+     player is on screen again); started through
      owneetd as an app that runs one at a time, like a game; package versions; tests (the launch,
      mpv's bindings never naming Guide).
   6. **Close:** known limits, the FrankenPC checks (hardware decoding, a Switch controller's buttons
