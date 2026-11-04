@@ -16,7 +16,7 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in progress** · Part of 
   1. **Home**, reached with the name: a carousel, one sentence beside one screen of the console, no
      other text and no buttons; under it a link to the credits ("Made by two really fed-up players,
      thanks to a lot of amazing people."). The first slide is the home screen with "Turn your PC into
-     a game console, with a light-weight OS."; six more say what the features carousel says now,
+     a game console, with a lightweight OS."; six more say what the features carousel says now,
      rewritten by the owner (below).
   2. **Plug it.**: the guide and the FAQ (today's "Info").
   3. **Play it.**: a short guide to using OwneetOS once it is set up, not complete but appealing.
@@ -35,7 +35,7 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in progress** · Part of 
 - **Owner's answers and corrections (2026-11-04):**
   - The Requirements section leaves the home: the requirements stay in the guide
     ([[step-7.3-user-guide]]). The dots on the right stay, one per section.
-  - Seven slides: "Your controllers" (redundant) and "Light" leave; "light-weight" goes in the first.
+  - Seven slides: "Your controllers" (redundant) and "Light" leave; "lightweight" goes in the first.
     New sentences: "You only need a controller. Mouse and keyboard are optional."; "One library for
     all your games."; "Safe updates. Something wrong? Roll back to your version of choice."; "Your
     style: multiple palettes and languages."
