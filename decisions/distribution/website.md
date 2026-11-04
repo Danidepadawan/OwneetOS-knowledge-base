@@ -37,6 +37,10 @@ Agreed with the owner on 2026-10-20, before the release; built in [[step-7.8-web
   Play it. (a short, appealing tour of the buttons), Own it! (it belongs to everyone), Download
   (scrolling to the end or "Get OwneetOS"; no Download link in the header). The header's links are the
   slogan's three, never translated. The requirements stay in the guide; no drawn console picture.
+- **Published ahead of plan (owner, 2026-11-04):** the whole branch `feature/step7_8k_languages` goes
+  online with the simpler home: the guide before [[step-5.7-apps-page]] and German, French and Spanish
+  before their check. Both are done afterwards ([[step-7.3-user-guide]],
+  [[step-7.8k-website-more-languages]]).
 - **The user guide is the site's guide page** (owner, 2026-11-01, [[step-7.3-user-guide]]): the
   short guide of 7.8b grows into the whole illustrated guide, in the site's languages; the code
   repository links to it. Pictures: real screens of OwneetOS (made with the preview) and simple
@@ -135,3 +139,4 @@ project folder. No data collected keeps the site free of consent banners and GDP
 | 2026-11-04 | The site takes the final logo (7.8i): the symbol on the left in the header and the footer, above in the start-up animation and the sharing picture. |
 | 2026-11-04 | A much simpler home (7.8m, demo first): five sections following the slogan, Home with a carousel of the console's screens and a link to the credits, Plug it., Play it., Own it!, Download; no Download link in the header. |
 | 2026-11-04 | The simpler home's demo approved and built, in the five languages; the drawn console picture (7.8j) is no longer needed. |
+| 2026-11-04 | The guide and German, French and Spanish go online with the simpler home, before their planned moments (the guide after 5.7, the languages after their check); the guide's screens are made again and the languages checked afterwards. The owner sees no problem in naming the apps in a product not yet released; the names stay on the lawyer's list. |

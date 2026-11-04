@@ -56,6 +56,9 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   (development server), not published; its console screens are made again after the final logo
   ([[step-7.6-final-logo-and-brand]], next) and Danidepadawan's apps page
   ([[step-5.7-apps-page]]); the guide is published after both. 7.3 stays in progress until then.
+- **Order changed (owner, 2026-11-04):** the guide goes online now with the site's branch, its screens
+  still the old ones (before the final logo and the apps page). They are made again afterwards: 7.3
+  stays in progress until then.
 - **The page in Angular (2026-11-03, website commit 843bdbe on `feature/step7_8k_languages`, not
   published):** the guide page's parts in `guide.data.ts` (blocks of texts, procedures, pictures,
   drawings, the requirements, the keys, the problems), the texts in the five message files under
@@ -71,4 +74,4 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   columns, keys, key link, no e-mail address, every text in every language), `npm run build` (31
   pages, no warning), the Italian page in a browser from the development server. **Left:** the
   screens made again in each language after [[step-7.6-final-logo-and-brand]] and
-  [[step-5.7-apps-page]], then publishing.
+  [[step-5.7-apps-page]] (publishing came first, owner, 2026-11-04).

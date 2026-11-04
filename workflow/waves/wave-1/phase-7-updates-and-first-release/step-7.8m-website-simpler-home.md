@@ -33,7 +33,7 @@ Up: [[phase-7-updates-and-first-release]] · Status: **done** · Part of the web
   old addresses (`#features`, `#requirements`, `#open`, `#info`) simply open the home. The drawn console
   picture left the site ([[step-7.8j-website-console-picture]]).
 - **Approved (owner, 2026-11-04)** on the development server. Publishing is the owner's: it goes out with
-  the merge of the site's branch into `main` (see the decision of that moment in [[website]]).
+  the merge of the site's branch into `main`, all of it ([[website]]).
 - **In the approved demo:**
   - The header's links are "Plug it.", "Play it.", "Own it!", in every language like the slogan.
   - One sentence per slide.
