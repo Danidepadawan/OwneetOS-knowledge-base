@@ -3,12 +3,12 @@ type: step
 description: "The website's home made much simpler: five sections (Home, Plug it., Play it., Own it!, Download), a carousel of real console screens, the slogan as the header's links. Demo first."
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.8m"
-status: in-progress
+status: done
 tags: [step, phase-7, website]
 ---
 # 7.8m Website simpler home *(added 2026-11-04)*
 
-Up: [[phase-7-updates-and-first-release]] · Status: **in progress** · Part of the website: [[step-7.8-website]]
+Up: [[phase-7-updates-and-first-release]] · Status: **done** · Part of the website: [[step-7.8-website]]
 
 - **Why (owner, 2026-11-04):** during the last review of the site, before Danidepadawan's last
   changes: as it is, the site is hard to navigate. The new sections follow the slogan.
@@ -31,7 +31,9 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in progress** · Part of 
   `public/home-pictures/`, the tour in `PlayTourComponent`. Beyond the demo, which has no start-up
   animation: what plays by itself waits for its end, or the first slide would be over as it ends. The
   old addresses (`#features`, `#requirements`, `#open`, `#info`) simply open the home. The drawn console
-  picture left the site ([[step-7.8j-website-console-picture]]). Waiting for the owner's review.
+  picture left the site ([[step-7.8j-website-console-picture]]).
+- **Approved (owner, 2026-11-04)** on the development server. Publishing is the owner's: it goes out with
+  the merge of the site's branch into `main` (see the decision of that moment in [[website]]).
 - **In the approved demo:**
   - The header's links are "Plug it.", "Play it.", "Own it!", in every language like the slogan.
   - One sentence per slide.
