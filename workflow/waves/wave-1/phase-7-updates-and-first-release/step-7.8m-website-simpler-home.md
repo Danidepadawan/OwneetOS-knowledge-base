@@ -38,8 +38,10 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in progress** · Part of 
     shows Storage, with invented figures, as no screen says it.
   - Texts: "Five buttons and you're playing."; the quick menu's "power options and a quick tutorial";
     "Own it!": "Completely free and open source", "No forced telemetry, we respect your privacy",
-    "You can use it offline, we'll NEVER force updates on you", "A community driven, ever growing
-    project"; the download's title "Almost here!". In every language.
+    "We will NEVER force updates on you", "A community driven, ever growing project"; the download's
+    title "Almost here!". In every language. Offline is left out: for DRM-free games it is obvious.
+  - "No forced telemetry" stands: the crash reports sent only with consent are optional telemetry, in
+    the owner's words ([[online-and-chat]], [[legal-compliance]]).
 - **Before publishing:**
   - The screens are taken again after [[step-5.7-apps-page]] if it changes them, in each
     language (the preview needs a way to choose it, as for [[step-7.3-user-guide]]).
