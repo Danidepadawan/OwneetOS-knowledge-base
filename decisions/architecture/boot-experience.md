@@ -42,3 +42,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-15 | Everything before the start-up animation is neutral (white on black), the same for every palette; the animation brings the palette's colours. A splash per palette (boot image rebuilt at every change) turned down. |
 | 2026-10-06 | Step 1.5 verified on real hardware (NiPoGi E3B AMD, owner's desktop RTX 4060). Live ISO boots with `copytoram=n` (no copy of the image to RAM: faster boot from USB). |
 | 2026-10-25 | systemd-boot stays on installed systems: rollback from the console and automatic fallback through its boot counting (step 6.3, option C). |
+| 2026-11-04 | The splash shows the final logo ([[step-7.6-final-logo-and-brand]]): the symbol above the word, in white and grey on black, in the middle, the spinner lower. |

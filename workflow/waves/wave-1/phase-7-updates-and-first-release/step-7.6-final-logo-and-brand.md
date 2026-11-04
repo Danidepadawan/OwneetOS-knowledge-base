@@ -91,3 +91,19 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
     filings (nintendowire.com, nintendosoup.com, mynintendonews.com), reddie.co.uk on the EUIPO's decisions,
     logotyp.us and discord.com/branding on Clyde.
 - **Owner's decision (2026-11-04):** the symbol stays as it is; both resemblances go to the lawyer.
+- **After "Own it!" (owner, 2026-11-04):** as on the website, 0.8 s and a fade of 0.4 s into the pages, with the
+  logo already in the top bar; no flight (4.2 s in all).
+- **On the console (2026-11-04, code commit 84746a3 on `feature/phase7`):** `tools/branding/make-logo`
+  generates `packages/owneet-branding/owneetos-splash.svg` and `foundation/LogoData.qml` from the same
+  outlines. owneet-branding 0.0.4: the logo in white and grey in the middle, with the slogan's room
+  below it, at a fixed 800 pixels wide (Plymouth does not scale: 42 % of a 1080p screen, against the
+  demo's 50 %; the same on the loading screen), the spinner at 92 % of the height. owneet-frontend
+  0.35.0: `Intro.qml` as in the demo, `foundation/Logo.qml` in the top bar, the first start and the
+  installer, `Theme.logoButtons` per palette, `Theme.splashAccent`, the slogan in the message files, the
+  same in every language. The beats run on a timer, not on animations, which follow the screen's
+  frames (three times too fast in the preview, without vsync), so the words stay with the sound.
+  **Checked:** `tools/lint`; the preview; in the test VM, on the installed system, a real reboot: boot
+  splash, loading screen, colours, the three words, the fade into the first start, the logo not moving.
+  **Not checked here:** with the sound (the VM has none) and on real hardware (next hardware test).
+  **Left:** documents and the website ([[step-7.8i-website-final-logo]]). Found on the way:
+  [[build-chroot-emptied-by-systemd-tmpfiles]].

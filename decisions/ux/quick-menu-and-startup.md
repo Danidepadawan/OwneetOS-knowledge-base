@@ -28,3 +28,4 @@ Entries of the [[decision-log]] that shaped this note.
 | Date | Decision |
 |---|---|
 | 2026-10-11 | Step 3.12 (interface sounds) done; the first sound after boot needs the sound output running first (a looped silence). Demo 3.13 approved: animated start-up from the boot splash's wordmark; a **quick menu** (side panel from the right, as on SteamOS) with power options and a read-only "Controls and features" guide, opened by **B where there is nothing to go back to** (an accidental press only opens the menu). View stays reserved for screenshots in a later wave ([[controller-input-map]]). |
+| 2026-11-04 | The start-up animation changes with the final logo ([[step-7.6-final-logo-and-brand]]): colours over 2 s, the slogan's three words, a fade of 0.4 s into the pages, 4.2 s in all; no more flight to the top bar. |
