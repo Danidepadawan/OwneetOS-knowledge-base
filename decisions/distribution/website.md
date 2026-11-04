@@ -125,3 +125,4 @@ project folder. No data collected keeps the site free of consent banners and GDP
 | 2026-10-25 | The site lives at **owneetos.org** (7.8h done). Its languages grow to **German, French and Spanish** (7.8k), each checked by people the authors know before it is published. |
 | 2026-11-01 | The user guide (7.3) is the site's guide page, grown into the illustrated guide: OwneetOS's screens and our own drawings (no other programs' screenshots); also trying from the stick, when the PC does not start from it, checking the download, the first steps; on the branch of the new languages. |
 | 2026-11-03 | The public signing key is published on the site as `owneetos.asc` (public half only), linked from the guide's check of the download; the guide shows no e-mail address. |
+| 2026-11-04 | The site takes the final logo (7.8i): the symbol on the left in the header and the footer, above in the start-up animation and the sharing picture. |
