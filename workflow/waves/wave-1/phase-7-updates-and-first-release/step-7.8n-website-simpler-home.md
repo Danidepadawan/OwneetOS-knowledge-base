@@ -2,11 +2,11 @@
 type: step
 description: "The website's home made much simpler: five sections (Home, Plug it., Play it., Own it!, Download), a carousel of real console screens, the slogan as the header's links. Demo first."
 phase: "[[phase-7-updates-and-first-release]]"
-step: "7.8m"
+step: "7.8n"
 status: done
 tags: [step, phase-7, website]
 ---
-# 7.8m Website simpler home *(added 2026-11-04)*
+# 7.8n Website simpler home *(added 2026-11-04)*
 
 Up: [[phase-7-updates-and-first-release]] · Status: **done** · Part of the website: [[step-7.8-website]]
 
@@ -23,8 +23,8 @@ Up: [[phase-7-updates-and-first-release]] · Status: **done** · Part of the web
   4. **Own it!**: OwneetOS belongs to everyone (today's "Open").
   5. **Download**, reached by scrolling to the end or with "Get OwneetOS"; no Download link in the
      header.
-- **Demo approved (owner, 2026-11-04):** `design/demos/7.8m-website-home.html`, its screens in
-  `design/demos/7.8m-website-home/` (made with `tools/preview-steps/site-home.txt` and
+- **Demo approved (owner, 2026-11-04):** `design/demos/7.8n-website-home.html`, its screens in
+  `design/demos/7.8n-website-home/` (made with `tools/preview-steps/site-home.txt` and
   `site-home-game.txt`).
 - **Built (2026-11-04, site branch `feature/step7_8k_languages`):** in the five languages (German,
   French and Spanish are drafts, checked in [[step-7.8k-website-more-languages]]); pictures in
@@ -59,3 +59,6 @@ Up: [[phase-7-updates-and-first-release]] · Status: **done** · Part of the web
 - **Before publishing:**
   - The screens are taken again after [[step-5.7-apps-page]] if it changes them, in each
     language (the preview needs a way to choose it, as for [[step-7.3-user-guide]]).
+- **Renumbered (2026-11-05):** first called 7.8m by mistake: [[step-7.8m-website-header]] already had
+  that number, on a branch not merged yet. The published site's comments (`home.component.ts`,
+  `play-tour.component.ts`) still say 7.8m and the old demo name, until its next change.

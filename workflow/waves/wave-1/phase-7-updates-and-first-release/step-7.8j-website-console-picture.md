@@ -16,6 +16,6 @@ Up: [[phase-7-updates-and-first-release]] · Status: **done** · Part of the web
 - **"Local pictures" (owner, 2026-11-04):** it was only a placeholder: the tile leaves the picture
   in this step, and the feature goes to [[wave-2]].
 - **When:** after the website's merge (owner, 2026-10-23).
-- **Outcome (owner, 2026-11-04):** not needed any more: with [[step-7.8m-website-simpler-home]] the home
+- **Outcome (owner, 2026-11-04):** not needed any more: with [[step-7.8n-website-simpler-home]] the home
   shows real screens of the console, and the drawn picture (`console-screen`, with its "Local
   pictures" tile) left the site. Those screens are taken again after [[step-5.7-apps-page]] if needed.
