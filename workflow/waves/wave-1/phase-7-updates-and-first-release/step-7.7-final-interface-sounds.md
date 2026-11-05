@@ -3,13 +3,13 @@ type: step
 description: "The owner's final sounds (interface-sounds-spec: names, format, lengths, licences) replace the placeholders of `frontend/sounds/`;…"
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.7"
-status: in-progress
+status: done
 legacy: "ROADMAP.md 7.7"
 tags: [step, phase-7]
 ---
 # 7.7 Final interface sounds *(Owner delivery)*
 
-Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
+Up: [[phase-7-updates-and-first-release]] · Status: **done**
 
 - **Deliverables:** the owner's final sounds ([[interface-sounds-spec]]: names, format, lengths, licences)
   replace the placeholders of `frontend/sounds/`; `CREDITS.md` updated with their authors and
@@ -23,3 +23,4 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   bf1f93c on `feature/phase7`); the demos'
   `sounds.js` made again (the demos that played `notify-error` play `notify` or `error`).
   Waiting for the owner to hear them on the console.
+- **Approved by the owner (2026-11-05)** after hearing them on FrankenPC.

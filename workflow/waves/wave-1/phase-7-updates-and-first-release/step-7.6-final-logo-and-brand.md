@@ -107,4 +107,7 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   shows a logo. Pegasus's logos are still in the imported source (`src/frontend/assets/logo.png`,
   `etc/branding/`), but are neither built in nor installed ([[frontend-fork]]). The website took the logo in
   [[step-7.8i-website-final-logo]].
-- **Left: the owner confirms the whole after the tests on real hardware.**
+- **Owner's test on FrankenPC (2026-11-05):** the passage from the splash to the colours is not seamless: the
+  screen goes black, then the animation seems to start in colour. The animation now waits 1.5 s on the still
+  logo (owneet-frontend 0.36.1); the black itself stays: [[black-screen-between-boot-splash-and-session]].
+- **Left: the owner confirms on FrankenPC with owneet-frontend 0.36.1.**
