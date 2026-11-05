@@ -120,4 +120,8 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   restart. The picture's grey is pure (176, 176, 176), so the cause is not in the file. A splash all white was
   built and **reverted at once: it was not the owner's decision** (owneet-branding 0.0.6 is white and grey). The
   owner decides what to do.
-- **Left: the owner's test on FrankenPC (owneet-frontend 0.36.2, owneet-branding 0.0.6), and the cream.**
+- **Owner's test on FrankenPC (2026-11-05):** the start-up: not as described, "but it is fine like this". At restart and at power-off
+  the logo shows. With the Graphite palette the interface's greys are grey, so the cream is not simply the screen: the
+  splash is drawn through the firmware's video mode (`simpledrm`), before the NVIDIA driver; the cause is not proved.
+- **The owner asks for messages on the splash only (2026-11-05):** "Starting" and "Shutting down". In demo 7.6, waiting for approval.
+- **Left: the demo of the messages, then their code; what to do about the cream (the owner's choice).**

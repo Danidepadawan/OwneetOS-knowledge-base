@@ -75,5 +75,7 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
 - **Steam's storage, checked (2026-11-05):** on FrankenPC "Open Steam's storage" showed Steam's home. In the test VM, with
   the owner signed in to Steam, `steam://settings/storage` opens the Storage page when Steam is ready. FrankenPC's log shows
   the address reaching Steam 1 s after its window, with its interface still starting, and no sign that Steam ran it. owneetd
-  0.24.2 waits 5 s after the window for its settings pages. That path runs in gamescope only, so it **waits for the
-  owner's test on FrankenPC**; the VM has no gamescope, and the login was wiped from it after the test. The button also plays the opening sound.
+  0.24.2 waited 5 s after the window for its settings pages; the VM has no gamescope, and the login was wiped from it after
+  the test. **Owner's test on FrankenPC (2026-11-05):** Storage opens, after passing by Steam's home, with Steam's logo and a
+  flicker on screen for some seconds. owneetd 0.24.3: Steam's window stays hidden 8 s more when the console starts it with an account,
+  and the page goes 3 s before it shows. The button also plays the opening sound. **Waits for the owner's next test.**

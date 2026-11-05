@@ -50,7 +50,7 @@ coherent; a dedicated sound can be added later by adding a file.
 | `sheet-close.wav` | That window closes, also with B (mirror of `sheet-open`) | 100–200 ms |
 | `notify.wav` | A notification at the top right: news, an action completed (Wi-Fi connected, controller paired, update ready), a controller connects, and what needs attention (controller battery low or disconnected, Wi-Fi lost, game closed unexpectedly, an installation that failed) | 250–600 ms |
 | `error.wav` | Something you just did failed (wrong Wi-Fi password, game did not start, a setting could not change), or cannot be done now (the "No internet" window) | 300–600 ms |
-| `game-launch.wav` | A game or app starts, and Guide opens the home screen over a running game | 0.5–1.5 s |
+| `game-launch.wav` | A game or app starts, and the home screen comes back from a game or an app (Guide, or it closed; owner, 2026-11-05) | 0.5–1.5 s |
 | `startup.wav` | The interface appears after boot (short "console on" chime) | 1.5–3 s |
 
 Later wave: `screenshot.wav` (a screenshot is taken, 150–400 ms).
@@ -70,6 +70,6 @@ quick menu). Settings → Sound has "Interface sounds" on/off and their volume.
 48 kHz, mono, silence cut at both ends) and installs them in `/usr/share/owneet-frontend/sounds/`;
 the interface loads all of them at start (Qt `SoundEffect`) and plays the one `Nav.feedback`
 reports. `startup` plays once per boot (not when the interface restarts, e.g. after moving to
-another screen); `game-launch` also plays when Guide brings the home screen over a running game.
+another screen); `game-launch` also plays when the home screen comes back from a game or an app.
 Sound outputs never go to sleep (`owneet-hardware`: WirePlumber `session.suspend-timeout-seconds
 = 0`), so the first click after a quiet moment is not cut or late.
