@@ -25,8 +25,9 @@ reported as serious). Holding Guide still comes back to the console; closing Ste
 
 ## Solution
 
-None yet. The likely cause (not proved): the first entry of Steam's own page history is its loading screen, and B goes back to it.
-**Next, the deciding test:** Steam started with no address at all, B on its home: if it loads for ever too, it is Steam's own behaviour and not ours.
+**Closed for Wave 1 (owner, 2026-11-05):** left as it is; the way out is the window "How to come back from Steam" (hold Home, then close Steam from its tile).
+The note stays open for [[wave-2]], item 10d. The likely cause (not proved): the first entry of Steam's own page history is its loading screen, and B goes back to it.
+**The deciding test, when it comes back:** Steam started with no address at all, B on its home: if it loads for ever too, it is Steam's own behaviour and not ours.
 
 ## The owner's idea (2026-11-05)
 

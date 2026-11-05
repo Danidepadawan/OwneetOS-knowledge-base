@@ -4,7 +4,7 @@ description: "Steam in the ISO, controller-only Steam, its screens shown automat
 area: games
 status: active
 decided: 2026-10-11
-updated: 2026-10-18
+updated: 2026-11-05
 legacy: "PROJECT_RULES.md §8 (Steam), §13 (2026-10-11, 2026-10-12)"
 tags: [decision, games, steam]
 ---
@@ -51,6 +51,7 @@ tags: [decision, games, steam]
   a window says to hold Home to come back, and to close Steam (Menu on its tile) when a page
   keeps loading; "Don't show again" ends it. *(It replaced a bar drawn over Steam's window for 6
   seconds, which did not show on the FrankenPC.)*
+- **The endless loading after B on Steam's home** (owner, 2026-11-05): closed for Wave 1, this window is the way out; back in [[wave-2]] ([[steam-loading-for-ever-after-b]]).
 - **Steam Input for every controller** (owner, 2026-10-15): the console turns on the account's
   `SteamController_XBoxSupport`, `SteamController_SwitchSupport` and
   `SteamController_GenericGamepadSupport` (localconfig.vdf, UserLocalConfigStore; read on the
@@ -111,3 +112,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-18 | A Steam game's version for Windows (the broken Linux version's recovery) runs with Valve's Proton, downloaded and updated by Steam, not the console's GE-Proton (option A). |
 | 2026-10-18 | The Proton a game works with stays (not moved to newer versions automatically); another version is offered only if problems come after an update of the game. |
 | 2026-10-14 | Licence agreements at a game's first start: the console's window with a QR code of the official address and "press Left and then A to accept"; the console does not move Steam's selection. |
+| 2026-11-05 | The endless loading after B on Steam's home is left as it is for Wave 1, with "How to come back from Steam" as the way out; looked at again in Wave 2. |

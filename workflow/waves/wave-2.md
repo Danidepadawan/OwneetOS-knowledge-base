@@ -32,6 +32,9 @@ Scope agreed so far: [[wave-1-scope]] (later waves).
 - **10c. Xbox wireless dongle (owner, 2026-11-03):** [[step-1.7-xbox-wireless-dongle-xone]], moved
   here from Wave 1: the xone driver and the download of Microsoft's firmware with consent, already
   built and parked in `packages/wave-2/`; it comes back once it can be tested with a real dongle.
+- **10d. Steam's endless loading after B (owner, 2026-11-05):** closed for Wave 1, looked at again here:
+  B on Steam's home leaves it loading for ever, and the console could come back by itself if it knew
+  the page Steam is on ([[steam-loading-for-ever-after-b]], guard [[legal]]).
 - **11. More stores:** Epic (legendary), GOG (gogdl); their Windows games use Wave 1's Proton (4.5).
 - **12. Console features:** user profiles, parental controls, play-time statistics, quick suspend and resume.
 - **13. Custom accent colour** with automatic contrast checking.
