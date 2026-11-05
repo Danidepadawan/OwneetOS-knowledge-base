@@ -108,6 +108,13 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   `etc/branding/`), but are neither built in nor installed ([[frontend-fork]]). The website took the logo in
   [[step-7.8i-website-final-logo]].
 - **Owner's test on FrankenPC (2026-11-05):** the passage from the splash to the colours is not seamless: the
-  screen goes black, then the animation seems to start in colour. The animation now waits 1.5 s on the still
-  logo (owneet-frontend 0.36.1); the black itself stays: [[black-screen-between-boot-splash-and-session]].
-- **Left: the owner confirms on FrankenPC with owneet-frontend 0.36.1.**
+  screen goes black, then the animation seems to start in colour; 1.5 s on the still logo (0.36.1) changed
+  nothing. The black stays: [[black-screen-between-boot-splash-and-session]].
+- **The owner's choice (2026-11-05, replaces the fade from the splash's colours; code on `feature/phase7`,
+  owneet-frontend 0.36.2, owneet-branding 0.0.5, demo updated):** the console's animation **starts from black**:
+  the logo fades in with the palette's colours, no desaturation, after 2.5 s of black for a slow screen. The
+  interface's loading screen is black. **The boot splash is all white:** the owner saw its grey as cream at start-up
+  and at restart, though the picture's grey is pure (176, 176, 176), so the screen tints it. **At power-off** the
+  screen went black with no logo: the logo now stays 3 s more (`plymouth-poweroff.service`), assuming the screen had no
+  time to show it. Checked in the test VM by real reboots: all white, black, the fade, the words, the pages.
+- **Left: the owner confirms on FrankenPC with owneet-frontend 0.36.2.**

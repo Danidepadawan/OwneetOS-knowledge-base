@@ -35,9 +35,9 @@ user installer, which has the boot check, should have the 5 s wait as well: to b
 
 ## Solution
 
-**Fixed:** the colours (`owneet-frontend` 0.36.1, code commit on `feature/phase7`): the animation and its
-sound wait 1.5 s on the splash's still picture. In the VM: black, the logo in white and grey, then the colours.
-To be confirmed on FrankenPC.
+**Around it (owner, 2026-11-05, `owneet-frontend` 0.36.2):** 1.5 s on the still logo (0.36.1) changed nothing on
+FrankenPC, so the animation no longer takes the splash's picture: after 2.5 s of black the logo fades in from black
+in the palette's colours ([[step-7.6-final-logo-and-brand]]). The black is now part of the start, and longer by those 2.5 s.
 
 **Open:** the black itself. Tried in the VM, all reverted:
 

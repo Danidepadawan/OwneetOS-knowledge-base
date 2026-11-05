@@ -24,8 +24,9 @@ tags: [decision, architecture, boot]
   change (owner: keep the OS light).
 - The live ISO boots with **`copytoram=n`**: no copy of the image to RAM, faster boot from USB
   (the stick must stay plugged in).
-- The interface takes over from the splash seamlessly ([[quick-menu-and-startup]]: the start-up
-  animation starts from the splash's own picture).
+- **Since 2026-11-05 (owner):** the splash is all white, with no grey; a black screen stands between it and the
+  session ([[black-screen-between-boot-splash-and-session]]), and the logo fades in from black in the palette's
+  colours ([[quick-menu-and-startup]]).
 
 Profile choices and their reasons are documented in the code repository (`iso/README.md`,
 "Choices"). Steps: [[step-1.4-boot-experience]].
@@ -43,3 +44,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-06 | Step 1.5 verified on real hardware (NiPoGi E3B AMD, owner's desktop RTX 4060). Live ISO boots with `copytoram=n` (no copy of the image to RAM: faster boot from USB). |
 | 2026-10-25 | systemd-boot stays on installed systems: rollback from the console and automatic fallback through its boot counting (step 6.3, option C). |
 | 2026-11-04 | The splash shows the final logo ([[step-7.6-final-logo-and-brand]]): the symbol above the word, in white and grey on black, in the middle, the spinner lower. |
+| 2026-11-05 | The splash all white; the start-up logo fades in from black in the palette's colours; the logo stays 3 s more at power-off. |
