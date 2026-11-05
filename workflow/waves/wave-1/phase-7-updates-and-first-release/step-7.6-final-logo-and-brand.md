@@ -109,7 +109,7 @@ Up: [[phase-7-updates-and-first-release]] · Status: **done**
   [[step-7.8i-website-final-logo]].
 - **Owner's test on FrankenPC (2026-11-05):** the passage from the splash to the colours is not seamless: the
   screen goes black, then the animation seems to start in colour; 1.5 s on the still logo (0.36.1) changed
-  nothing. The black stays: [[black-screen-between-boot-splash-and-session]].
+  nothing. The black stays.
 - **The owner's choice (2026-11-05, replaces the fade from the splash's colours; code on `feature/phase7`,
   owneet-frontend 0.36.2, owneet-branding 0.0.5, demo updated):** the console's animation **starts from black**:
   the logo fades in with the palette's colours, no desaturation, after 2.5 s of black for a slow screen. The

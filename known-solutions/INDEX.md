@@ -11,7 +11,6 @@ Read the lines here before investigating a problem: the symptom may already be k
 
 ## Notes
 
-- [[black-screen-between-boot-splash-and-session]] — A black screen of about 6 s between the boot splash and the interface, then the animation already in colour: what it is made of, and what was tried without success.
 - [[brave-extension-worker-cached]] — OPEN (fix in owneet-base 0.0.39, to verify on a real update): a used web app profile gets a changed extension worker only when the manifest's version AND the worker's file name both change; one alone keeps the old worker or leaves none.
 - [[brave-native-messaging-host-not-found]] — Brave never starts owneet-bridge: the native-messaging manifest in the web app's profile is ignored. Also the step-by-step path to see Brave's hidden errors.
 - [[brave-widevine-window-over-a-web-app]] — Brave shows its own window 'Restart browser to enable Google Widevine' (Block / Allow) over a web app; the controller cannot close it. Comes after every Widevine download.

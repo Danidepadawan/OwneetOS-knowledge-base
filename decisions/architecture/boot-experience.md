@@ -25,7 +25,7 @@ tags: [decision, architecture, boot]
 - The live ISO boots with **`copytoram=n`**: no copy of the image to RAM, faster boot from USB
   (the stick must stay plugged in).
 - **Since 2026-11-05 (owner):** a black screen stands between the splash and the
-  session ([[black-screen-between-boot-splash-and-session]]), and the logo fades in from black in the palette's
+  session, and the logo fades in from black in the palette's
   colours ([[quick-menu-and-startup]]).
 - **Since 2026-11-05 (owner):** the splash says "Starting" and "Shutting down" under the spinner, in the console's language
   (English while none is chosen), the only text on it in normal boots. Its grey is `#A0A0A0`. The cream seen on FrankenPC stayed: closed by the owner, who reopens it if needed

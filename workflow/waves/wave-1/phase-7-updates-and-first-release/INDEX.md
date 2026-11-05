@@ -39,3 +39,5 @@ Status comes from each step note (`status:`).
 - `done` [[step-7.8m-website-header|7.8m Website header: languages and theme]] — The website's header: the languages in a drop-down menu and a light / dark switch remembered in the browser; demo first.
 - `done` [[step-7.8n-website-simpler-home|7.8n Website simpler home]] — The website's home made much simpler: five sections (Home, Plug it., Play it., Own it!, Download), a carousel of real console screens, the slogan as the header's links. Demo first.
 - `in-progress` [[step-7.9-console-more-languages|7.9 Console in German, French and Spanish]] — The console's interface in German, French and Spanish too, for the first release: drafted, checked by people the authors know; after Danidepadawan's merge.
+- `needs-decision` [[step-7.10-donations-choice|7.10 The choice on donations]] — Whether OwneetOS takes donations and how: the owner's choice, before the SourceForge project and the legal review.
+- `todo` [[step-7.11-sourceforge-project|7.11 SourceForge project]] — The SourceForge account and project the ISO is published on: created by the owner, before the legal review.

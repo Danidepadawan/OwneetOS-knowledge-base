@@ -14,7 +14,7 @@ tags: [decision, distribution]
   limit on size or downloads, mirrors worldwide), with its source archive ([[legal-compliance]]).
   The project's **website** has its own `.org` domain on **GitHub Pages**; packages and updates
   stay on GitHub (decided 2026-10-11: with Steam the ISO is over GitHub's 2 GB limit per file).
-  The SourceForge project is created by the owner at roadmap step 7.2; the domain after the
+  The SourceForge project is created by the owner at [[step-7.11-sourceforge-project]]; the domain after the
   website's merge ([[step-7.8h-website-domain]], owner, 2026-10-23). The website itself:
   [[website]] (Angular, its own repository, download as a redirect).
   - **Steam is in the ISO** with the 32-bit graphics drivers of every GPU ([multilib]); Steam's

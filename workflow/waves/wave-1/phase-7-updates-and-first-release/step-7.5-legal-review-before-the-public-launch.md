@@ -82,6 +82,6 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   **If the lawyer agrees, the console moves to Chromium** ([[architecture-stack]]); [[legal]] holds it back until
   then. For the lawyer's comparison, tried in the test VM on 2026-11-05: Firefox 157, LibreWolf 157 and Zen 1.24b
   each download Widevine by themselves, the same file, into a new profile; playback was not tried.
-- **When (owner, 2026-11-05, final):** one document, one round of review, sent by the owner after Danidepadawan's
-  changes: he finishes phase 5 and tests everything on Chromium too. The Chromium and Widevine question goes in
-  that same document, not earlier.
+- **When (owner, 2026-11-05):** one document, one round of review, sent by the owner after [[step-7.11-sourceforge-project]] and before anything is published
+  ([[phase-7-updates-and-first-release]]). The document also covers what is planned for the following steps, the choice on donations ([[step-7.10-donations-choice]]), and the Chromium and Widevine
+  question. Any tests on Chromium are Danidepadawan's.
