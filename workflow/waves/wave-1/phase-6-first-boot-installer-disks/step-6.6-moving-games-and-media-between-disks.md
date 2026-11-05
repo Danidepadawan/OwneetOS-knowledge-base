@@ -72,4 +72,8 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
 - **Owner (2026-11-01):** Steam's games without their disk on the cover: fine. "Open Steam's
   storage" (`steam://settings/storage`) to be tried as soon as possible on the test hardware.
   **Approved by the owner (2026-11-01): step 6.6 done.**
-
+- **Steam's storage, checked (2026-11-05):** on FrankenPC "Open Steam's storage" showed Steam's home. In the test VM, with
+  the owner signed in to Steam, `steam://settings/storage` opens the Storage page when Steam is ready. FrankenPC's log shows
+  the address reaching Steam 1 s after its window, with its interface still starting, and no sign that Steam ran it. owneetd
+  0.24.2 waits 5 s after the window for its settings pages. That path runs in gamescope only, so it **waits for the
+  owner's test on FrankenPC**; the VM has no gamescope, and the login was wiped from it after the test. The button also plays the opening sound.
