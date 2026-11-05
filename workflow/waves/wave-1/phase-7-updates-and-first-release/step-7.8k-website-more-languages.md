@@ -28,3 +28,8 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in progress** · Part of 
   menu. The requirements' figures moved from the code into the message files ("4 Go" in French,
   "64 bit" in Italian). 11 tests pass. **Open:** the reviews by people the authors know (no
   review material asked for yet, owner 2026-10-26), then the merge.
+- **Review material (owner, 2026-11-05):** a spreadsheet per language for the people who check it, also English, not Italian (`tools/translation-review export`,
+  `out/translation-review/`): the instructions, each text beside the English, a yellow column for corrections, 217 texts (those identical in every language are left
+  out). `import` checks a returned file and writes it with `--apply`. Tried with a file saved by LibreOffice, on copies of the message files; not yet in Excel or Google Sheets.
+  The owner asked for this and [[step-7.9-console-more-languages]] together; the guard [[collaboration]] allows one step per prompt, so 7.9 comes next, in the same workbooks.
+  **Open:** the reviews, then their corrections.
