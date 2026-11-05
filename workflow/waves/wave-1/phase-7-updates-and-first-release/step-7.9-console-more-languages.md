@@ -27,3 +27,6 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
 - **Reviews (owner, 2026-10-29):** the picker lists the five languages from step 6.1 on, so the
   drafts may ship before the people the authors know have checked them; the checks may come after
   the first release, and are a way to ask the community to help improve OwneetOS ([[languages]]).
+- **Review material (owner, 2026-11-05):** a sheet Console in the same spreadsheets as the website ([[step-7.8k-website-more-languages]]), for English, German, French and
+  Spanish, not Italian: 819 texts (those identical in every language are left out), the screen each belongs to, one row per plural form. On import, a correction much longer
+  than the current text is pointed out, to be checked on screen. Tried with a file saved by LibreOffice, on copies; not yet in Excel or Google Sheets. **Open:** the reviews, then their corrections.
