@@ -32,7 +32,8 @@ The address takes about 4 s to go through the `steam` command on FrankenPC, whil
 
 **Being tried, `owneetd` 0.24.4:** the window stays hidden until that line appears in `logs/webhelper.txt` after the point where the log
 ended when Steam started; the page goes then, the window shows 3 checks later; `app.window` closes "Preparing Steam…" at that moment.
-At most 30 checks without the line, then Steam shows anyway. Only with an account and started from the console. **Not yet tried on gamescope.**
+At most 30 checks without the line, then Steam shows anyway. Only with an account and started from the console.
+**Owner's test on FrankenPC (2026-11-05):** line 15:33:47, address 15:33:49, window 15:33:53, 31 s from the press; Steam's start no longer shows; a flicker does, kept by the owner.
 
 ## How we found it
 
@@ -43,6 +44,6 @@ every Steam start in FrankenPC's `webhelper.txt`, with the time of that line: it
 ## Watch out
 
 - The line is Steam's own log, not a promise: a new Steam may change it. Then every start waits the full 30 s: check it first if Steam seems slow to open.
-- Not seen yet without internet: what Steam writes then is to be checked.
+- Not seen yet when Steam **starts** without internet (in the test of 2026-11-05 Steam was already running when the Wi-Fi went): at worst the 30 s.
 - An expired sign-in has no line either: the sign-in shows after the 30 s.
 - In the test VM: `vm/test.sh run` too early goes to the boot menu and edits the kernel's options (`Failed to mount '' on real root`): wait for the system.

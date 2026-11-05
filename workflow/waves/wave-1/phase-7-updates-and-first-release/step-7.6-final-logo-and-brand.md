@@ -129,4 +129,5 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   none is saved. A restart shows "Shutting down", then "Starting": no third message. At start the message comes as soon as the disk is
   there. In the test VM, by real reboots and a power-off: French and English read well, accents included; at start about 1 s after the logo.
 - **The cream, a try (owner, 2026-11-05):** the splash's grey goes one step darker, `#B0B0B0` to `#A0A0A0` (`tools/branding/make-logo`, demo 7.6).
-- **Left: the owner's test on FrankenPC (messages, the darker grey).**
+- **Owner's test on FrankenPC (2026-11-05):** the messages pass. The cream is still there with `#A0A0A0`, and the owner closes the matter: **not to be
+  brought up again, the owner reopens it if needed** after trying another screen. The grey stays `#A0A0A0`.
