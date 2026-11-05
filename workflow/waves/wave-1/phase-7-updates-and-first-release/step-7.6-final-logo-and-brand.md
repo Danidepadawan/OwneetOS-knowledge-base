@@ -113,8 +113,11 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
 - **The owner's choice (2026-11-05, replaces the fade from the splash's colours; code on `feature/phase7`,
   owneet-frontend 0.36.2, owneet-branding 0.0.5, demo updated):** the console's animation **starts from black**:
   the logo fades in with the palette's colours, no desaturation, after 2.5 s of black for a slow screen. The
-  interface's loading screen is black. **The boot splash is all white:** the owner saw its grey as cream at start-up
-  and at restart, though the picture's grey is pure (176, 176, 176), so the screen tints it. **At power-off** the
-  screen went black with no logo: the logo now stays 3 s more (`plymouth-poweroff.service`), assuming the screen had no
-  time to show it. Checked in the test VM by real reboots: all white, black, the fade, the words, the pages.
-- **Left: the owner confirms on FrankenPC with owneet-frontend 0.36.2.**
+  interface's loading screen is black. **At power-off** the screen went black with no logo: the logo now stays 3 s
+  more (`plymouth-poweroff.service`), assuming the screen had no time to show it. In the test VM, by real reboots:
+  the splash, black, the fade, the words, the pages. **Not yet tried on FrankenPC.**
+- **Open, the owner's report (2026-11-05):** the boot splash's white and grey look white and cream at start-up and at
+  restart. The picture's grey is pure (176, 176, 176), so the cause is not in the file. A splash all white was
+  built and **reverted at once: it was not the owner's decision** (owneet-branding 0.0.6 is white and grey). The
+  owner decides what to do.
+- **Left: the owner's test on FrankenPC (owneet-frontend 0.36.2, owneet-branding 0.0.6), and the cream.**
