@@ -27,6 +27,12 @@ Measured in the test VM (cage session, no sound, 2026-11-05):
 - **On a real screen,** the screen may also take a moment to show the session's first frames, and the
   fade (`OutCubic`) is nearly over after 1 s: this is why it seemed to start in colour.
 
+**On FrankenPC** (gamescope, NVIDIA; test log of 2026-11-05, kept in `out/test-logs/frankenpc-2026-11-05/`) the
+times differ. It was installed by the tester installer and has no boot check, so the login comes 0.1 s after the
+splash ends: no 5 s wait. Yet there are **3.5 s before gamescope starts** (14.9 to 18.45: `owneet-session`'s
+`vulkaninfo` check, or its wait for the OWNEETLOG stick, not told apart), then 1.2 s to the interface. A system from the
+user installer, which has the boot check, should have the 5 s wait as well: to be measured on real hardware.
+
 ## Solution
 
 **Fixed:** the colours (`owneet-frontend` 0.36.1, code commit on `feature/phase7`): the animation and its
@@ -44,6 +50,7 @@ To be confirmed on FrankenPC.
 
 What holds the login back when it starts during the boot check was **not found**. An idea not tried: keep Plymouth
 running until the compositor starts (the way display managers do), quitting it from the session.
+Next to look at, the cheapest: those 3.5 s before gamescope.
 
 ## How we found it
 
