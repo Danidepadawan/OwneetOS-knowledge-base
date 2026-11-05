@@ -30,3 +30,4 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
 - **Review material (owner, 2026-11-05):** a sheet Console in the same spreadsheets as the website ([[step-7.8k-website-more-languages]]), for English, German, French and
   Spanish, not Italian: 819 texts (those identical in every language are left out), the screen each belongs to, one row per plural form. On import, a correction much longer
   than the current text is pointed out, to be checked on screen. Tried with a file saved by LibreOffice, on copies; not yet in Excel or Google Sheets. **Open:** the reviews, then their corrections.
+- **Waiting for Danidepadawan (owner, 2026-11-05):** the workbooks are **not sent yet**: the apps page, Spotify and the local media ([[step-5.7-apps-page]], phase 5) are still to come, and their texts must be in the review. After that merge, every text in the five languages, `tools/translation-review export` again: the files made on 2026-11-05 are not to be used.

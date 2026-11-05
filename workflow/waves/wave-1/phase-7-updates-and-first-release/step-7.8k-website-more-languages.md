@@ -33,3 +33,4 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in progress** · Part of 
   out). `import` checks a returned file and writes it with `--apply`. Tried with a file saved by LibreOffice, on copies of the message files; not yet in Excel or Google Sheets.
   The owner asked for this and [[step-7.9-console-more-languages]] together; the guard [[collaboration]] allows one step per prompt, so 7.9 came next, in the same workbooks (done the same day).
   **Open:** the reviews, then their corrections.
+- **Waiting for Danidepadawan (owner, 2026-11-05):** the workbooks are **not sent yet**: the apps page, Spotify and the local media ([[step-5.7-apps-page]], phase 5) are still to come, and their texts must be in the review. After that merge, every text in the five languages, `tools/translation-review export` again: the files made on 2026-11-05 are not to be used.
