@@ -123,5 +123,10 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
 - **Owner's test on FrankenPC (2026-11-05):** the start-up: not as described, "but it is fine like this". At restart and at power-off
   the logo shows. With the Graphite palette the interface's greys are grey, so the cream is not simply the screen: the
   splash is drawn through the firmware's video mode (`simpledrm`), before the NVIDIA driver; the cause is not proved.
-- **The owner asks for messages on the splash only (2026-11-05):** "Starting" and "Shutting down". In demo 7.6, waiting for approval.
-- **Left: the demo of the messages, then their code; what to do about the cream (the owner's choice).**
+- **The owner asks for messages on the splash only (2026-11-05):** "Starting" and "Shutting down". Demo 7.6 approved by the owner (2026-11-05), with its size and place.
+- **Messages, code (owner's choices, 2026-11-05; `owneet-branding` 0.0.7, `owneet-frontend` 0.36.4):** from the message files in the five
+  languages (`splash.starting`, `splash.shutting_down`), in the language chosen in the console, read from its settings file; English while
+  none is saved. A restart shows "Shutting down", then "Starting": no third message. At start the message comes as soon as the disk is
+  there. In the test VM, by real reboots and a power-off: French and English read well, accents included; at start about 1 s after the logo.
+- **The cream, a try (owner, 2026-11-05):** the splash's grey goes one step darker, `#B0B0B0` to `#A0A0A0` (`tools/branding/make-logo`, demo 7.6).
+- **Left: the owner's test on FrankenPC (messages, the darker grey).**

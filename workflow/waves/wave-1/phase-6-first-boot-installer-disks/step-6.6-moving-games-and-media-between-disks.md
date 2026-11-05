@@ -79,3 +79,8 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
   the test. **Owner's test on FrankenPC (2026-11-05):** Storage opens, after passing by Steam's home, with Steam's logo and a
   flicker on screen for some seconds. owneetd 0.24.3: Steam's window stays hidden 8 s more when the console starts it with an account,
   and the page goes 3 s before it shows. The button also plays the opening sound. **Waits for the owner's next test.**
+
+- **The wait no longer depends on the computer (owner's question, 2026-11-05; owneetd 0.24.4):** the 8 s were fixed, so a slower computer would
+  have shown the logo again. Steam's window now waits for the line Steam writes when its interface has started, the page goes then, and the
+  window shows 3 s later, under "Preparing Steam…", with at most 30 s of waiting should the line never come
+  ([[steam-loses-the-address-while-its-interface-starts]]). Only unit tests so far: gamescope runs only on real hardware. **Waits for the owner's test.**
