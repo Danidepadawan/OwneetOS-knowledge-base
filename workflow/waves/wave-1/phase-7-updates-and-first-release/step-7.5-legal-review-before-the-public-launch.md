@@ -74,3 +74,11 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   registers (EUIPO, TMview, WIPO), classes 9, 28 and 42, which has not been done. The symbol stays as
   it is until then (owner, 2026-11-04); if the answer asks for a change, ways to move it away from both:
   two thumbsticks in place of the D-pad and the buttons, or small shoulder buttons on top.
+- **To include (owner, 2026-11-05):** whether OwneetOS can replace Brave, which is being sued over its
+  search and AI business (New York, 2026-11-02; News Corp in California, July), with **Chromium**, using
+  Widevine: Chromium does not include it, and is not known to download it by itself. The question: may the
+  console take Widevine from Google's own Chrome on the user's PC, with the user's consent and nothing
+  redistributed by the project, given Widevine's licence ("a separate license agreement with Google")?
+  **If the lawyer agrees, the console moves to Chromium** ([[architecture-stack]]); [[legal]] holds it back until
+  then. For the lawyer's comparison, tried in the test VM on 2026-11-05: Firefox 157, LibreWolf 157 and Zen 1.24b
+  each download Widevine by themselves, the same file, into a new profile; playback was not tried.
