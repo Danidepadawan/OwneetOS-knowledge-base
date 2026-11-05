@@ -32,7 +32,7 @@ Status comes from each step note (`status:`).
 - `done` [[step-7.8f-website-search-and-sharing|7.8f Website search engines and sharing]] — hreflang links between the languages, sitemap.xml, robots.txt and the picture shown when the site is shared. Before the merge.
 - `done` [[step-7.8g-website-lighter-fonts|7.8g Website lighter fonts]] — The site's fonts as WOFF2 instead of TTF, about a third of the size (optional, confirmed by the owner). Before the merge.
 - `done` [[step-7.8h-website-domain|7.8h Website domain]] — The website on its own domain owneetos.org: DNS at Hostinger, verified on GitHub, HTTPS on GitHub Pages; bought by the owner.
-- `in-progress` [[step-7.8i-website-final-logo|7.8i Website final logo]] — The website takes the final logo of step 7.6 in place of the provisional wordmark (one component). After the merge.
+- `done` [[step-7.8i-website-final-logo|7.8i Website final logo]] — The website takes the final logo of step 7.6 in place of the provisional wordmark (one component). After the merge.
 - `done` [[step-7.8j-website-console-picture|7.8j Website console picture]] — The console picture on the website's home redrawn from the real home screen after Danidepadawan's changes; without the "Local pictures" tile (Wave 2). After the merge.
 - `in-progress` [[step-7.8k-website-more-languages|7.8k Website in more languages]] — The website in German, French and Spanish: a JSON file and an address per language, checked by people the authors know before publishing.
 - `todo` [[step-7.8l-website-download-link|7.8l Website download link]] — The download button becomes the redirect to the signed ISO on SourceForge at the first release. At the release.

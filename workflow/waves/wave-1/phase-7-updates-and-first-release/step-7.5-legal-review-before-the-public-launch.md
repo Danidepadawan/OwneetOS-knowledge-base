@@ -82,3 +82,4 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   **If the lawyer agrees, the console moves to Chromium** ([[architecture-stack]]); [[legal]] holds it back until
   then. For the lawyer's comparison, tried in the test VM on 2026-11-05: Firefox 157, LibreWolf 157 and Zen 1.24b
   each download Widevine by themselves, the same file, into a new profile; playback was not tried.
+- **When (owner, 2026-11-05):** the document goes to the lawyer after Danidepadawan's phase 5: new dependencies may add questions.

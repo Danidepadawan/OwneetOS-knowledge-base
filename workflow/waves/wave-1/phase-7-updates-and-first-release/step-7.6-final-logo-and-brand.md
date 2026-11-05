@@ -103,4 +103,8 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   in Dusk and so on in every palette; the colour per palette is given up, in the console and in the demo.
   The first start's pairing note no longer speaks of the Xbox wireless adapter
   ([[step-1.7-xbox-wireless-dongle-xone]]). owneet-frontend 0.36.0.
-- **The owner confirms the whole after the tests on real hardware.**
+- **Documents (2026-11-05):** only `design/README.md` still described the old wordmark. No other document
+  shows a logo. Pegasus's logos are still in the imported source (`src/frontend/assets/logo.png`,
+  `etc/branding/`), but are neither built in nor installed ([[frontend-fork]]). The website took the logo in
+  [[step-7.8i-website-final-logo]].
+- **Left: the owner confirms the whole after the tests on real hardware.**

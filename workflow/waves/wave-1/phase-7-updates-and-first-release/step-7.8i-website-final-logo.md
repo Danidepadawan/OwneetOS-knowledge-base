@@ -3,12 +3,12 @@ type: step
 description: "The website takes the final logo of step 7.6 in place of the provisional wordmark (one component). After the merge."
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.8i"
-status: in-progress
+status: done
 tags: [step, phase-7, website]
 ---
 # 7.8i Website final logo *(added 2026-10-23)*
 
-Up: [[phase-7-updates-and-first-release]] · Status: **in-progress** · Part of the website: [[step-7.8-website]]
+Up: [[phase-7-updates-and-first-release]] · Status: **done** · Part of the website: [[step-7.8-website]]
 
 - **Deliverables:** the final logo and wordmark of [[step-7.6-final-logo-and-brand]] on the site
   (the `wordmark` component and its data, the favicon, the sharing picture).
@@ -21,4 +21,5 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress** · Part of 
   console: `layout` "left" (header, footer, console picture) or "above" (the start-up animation, in the
   demo's proportions, and the sharing picture, made again with `scripts/make-share-picture.mjs`). The
   favicon was already this symbol, unchanged. `ng test` (15 tests), `npm run build` (31 pages, no warning),
-  home, phone, animation and sharing picture looked at. Waiting for the owner's review.
+  home, phone, animation and sharing picture looked at.
+- **Approved by the owner (2026-11-05)**, on the published site.
