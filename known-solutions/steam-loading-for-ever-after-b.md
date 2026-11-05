@@ -28,9 +28,14 @@ reported as serious). Holding Guide still comes back to the console; closing Ste
 None yet. The likely cause (not proved): the first entry of Steam's own page history is its loading screen, and B goes back to it.
 **Next, the deciding test:** Steam started with no address at all, B on its home: if it loads for ever too, it is Steam's own behaviour and not ours.
 
+## The owner's idea (2026-11-05)
+
+Read the page Steam is on: if B on its home leads to a page that does not exist, that is the culprit, and the console can come back to its own home. Checked in FrankenPC's
+test: no log says the page, and the window's title stays "Big Picture" on every snapshot. The only way known is Steam's debugging port, which [[legal]] covers: not used unless the owner decides.
+
 ## What must not be tried
 
-Steam's remote debugging to rewrite its history (a modified client, [[legal]]); catching B while Steam is on screen ([[product-invariants]]: only Guide).
+Steam's debugging port, to read or rewrite its pages, without the owner's decision on [[legal]]: it would also leave a port through which any program on the console could drive the signed-in Steam; catching B while Steam is on screen ([[product-invariants]]: only Guide).
 
 ## Watch out
 

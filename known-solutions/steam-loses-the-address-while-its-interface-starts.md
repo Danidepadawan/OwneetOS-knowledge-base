@@ -1,7 +1,7 @@
 ---
 type: known-solution
 description: "Steam started from the console shows its logo, flickers, passes by its home or stays there, instead of the page asked for: its interface was not ready. How to know when it is, on any computer."
-status: open
+status: solved
 seen: 2026-11-05
 updated: 2026-11-05
 tags: [known-solution, steam, gamescope]
@@ -30,10 +30,10 @@ The address takes about 4 s to go through the `steam` command on FrankenPC, whil
 
 ## Solution
 
-**Being tried, `owneetd` 0.24.4:** the window stays hidden until that line appears in `logs/webhelper.txt` after the point where the log
+**`owneetd` 0.24.4:** the window stays hidden until that line appears in `logs/webhelper.txt` after the point where the log
 ended when Steam started; the page goes then, the window shows 3 checks later; `app.window` closes "Preparing Steam…" at that moment.
 At most 30 checks without the line, then Steam shows anyway. Only with an account and started from the console.
-**Owner's test on FrankenPC (2026-11-05):** line 15:33:47, address 15:33:49, window 15:33:53, 31 s from the press; Steam's start no longer shows; a flicker does, kept by the owner.
+**Owner's test on FrankenPC (2026-11-05):** line 15:33:47, address 15:33:49, window 15:33:53, 31 s from the press; Steam's start no longer shows; a flicker does, kept by the owner; Steam's home shows for about a second before Storage, accepted by the owner.
 
 ## How we found it
 

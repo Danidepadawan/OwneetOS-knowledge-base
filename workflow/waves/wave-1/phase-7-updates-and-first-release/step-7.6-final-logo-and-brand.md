@@ -3,13 +3,13 @@ type: step
 description: "The final OwneetOS logo and wordmark (the current wordmark is provisional), checked not to imitate others' logos; boot…"
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.6"
-status: in-progress
+status: done
 legacy: "ROADMAP.md 7.6"
 tags: [step, phase-7]
 ---
 # 7.6 Final logo and brand
 
-Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
+Up: [[phase-7-updates-and-first-release]] · Status: **done**
 
 - **Deliverables:** the final OwneetOS logo and wordmark (the current wordmark is provisional),
   checked not to imitate someone else's logo or a real controller's shape ([[legal-compliance]];
@@ -131,3 +131,4 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
 - **The cream, a try (owner, 2026-11-05):** the splash's grey goes one step darker, `#B0B0B0` to `#A0A0A0` (`tools/branding/make-logo`, demo 7.6).
 - **Owner's test on FrankenPC (2026-11-05):** the messages pass. The cream is still there with `#A0A0A0`, and the owner closes the matter: **not to be
   brought up again, the owner reopens it if needed** after trying another screen. The grey stays `#A0A0A0`.
+- **Approved and closed by the owner (2026-11-05).** Outcome: the final logo on the console, the boot and shutdown splash with their messages, the documents, and the website ([[step-7.8i-website-final-logo]]).
