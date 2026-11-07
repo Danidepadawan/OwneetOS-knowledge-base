@@ -24,5 +24,10 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   "Other disks" after the disk for OwneetOS, every other internal disk of any size, "Leave as it is" first; the warning and the final
   confirmation name every disk) and `design/demos/6.7-settings-disks.html` (on the approved 6.2: every disk but the console's own can be
   chosen, a disk the console cannot read listed as "Not ready for games", "Prepare {disk} for games?" with Cancel selected, Windows's warning
-  to switch on, A held three seconds, the wait and the notice; from the USB stick only a note). Proposed, not decided: the prepared disk
-  is named "Games" in the console's language.
+  to switch on, A held three seconds, the wait and the notice; from the USB stick only a note).
+- **Owner (2026-11-08):** both demos **approved**; the final confirmation must be held to the end (letting go stops it: the settings demo
+  went on after a mouse click, a slip of the demo, fixed). **The player names each disk** prepared for games, and two disks never share a
+  name: "Games" ("Games 2"…) offered in the console's language, up to 16 characters (ext4's label: accented letters count as two). In the
+  settings demo a step before the final confirmation; in the installer the screen "Name the disks for games" after "Other disks", and the
+  warning says each name. **The naming screens wait for the owner's look** before the code.
+
