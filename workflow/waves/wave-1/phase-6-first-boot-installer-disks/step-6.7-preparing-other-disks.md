@@ -20,3 +20,9 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   the disk); from Settings → Disks **internal and USB disks**, never the console's own disk, the stick it runs from or OWNEETLOG;
   in the installer **a screen of its own** after the system disk, each other internal disk "Leave as it is" (selected first) or
   "Erase and prepare for games"; **started from the USB stick, only the installer** prepares disks (the internal disks stay read only, [[step-6.5-automatic-disk-mounting]]).
+- **Demos (2026-11-07), waiting for the owner's approval:** `design/demos/6.7-installer-other-disks.html` (on the approved 6.4: the screen
+  "Other disks" after the disk for OwneetOS, every other internal disk of any size, "Leave as it is" first; the warning and the final
+  confirmation name every disk) and `design/demos/6.7-settings-disks.html` (on the approved 6.2: every disk but the console's own can be
+  chosen, a disk the console cannot read listed as "Not ready for games", "Prepare {disk} for games?" with Cancel selected, Windows's warning
+  to switch on, A held three seconds, the wait and the notice; from the USB stick only a note). Proposed, not decided: the prepared disk
+  is named "Games" in the console's language.
