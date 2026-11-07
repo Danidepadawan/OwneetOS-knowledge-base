@@ -10,3 +10,4 @@ tags: [phase]
 Up: [[wave-1]]
 
 Steps and their status: [[workflow/waves/wave-1/phase-6-first-boot-installer-disks/INDEX|steps of this phase]].
+- **Added on 2026-11-07 (owner):** [[step-6.7-preparing-other-disks]], erasing and preparing the other disks, in the installer and in Settings.

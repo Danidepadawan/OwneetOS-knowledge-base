@@ -13,6 +13,7 @@ Steps and their status: [[workflow/waves/wave-1/phase-7-updates-and-first-releas
 
 ## The order of what is left (owner, 2026-11-05)
 
+0. **First, now (owner, 2026-11-07):** [[step-6.7-preparing-other-disks]].
 1. The end of [[phase-5-streaming-apps-and-media]] (Danidepadawan; any tests on Chromium are his).
 2. [[step-7.3-user-guide]].
 3. [[step-7.8k-website-more-languages]] and [[step-7.9-console-more-languages]], one per prompt ([[collaboration]]).
