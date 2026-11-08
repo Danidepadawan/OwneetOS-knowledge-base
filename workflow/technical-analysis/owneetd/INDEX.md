@@ -13,6 +13,7 @@ tags: [index]
 - [[owneetd-api-audio]] — API for PipeWire volume, mute and output selection.
 - [[owneetd-api-bluetooth]] — API for BlueZ devices and automatic gamepad pairing, the pairing agent.
 - [[owneetd-api-controllers]] — API listing controllers; how the Guide button is detected.
+- [[owneetd-api-disks]] — API to list every disk and prepare one for games from Settings → Disks (erased, ext4, named by the player), and the installer's request for the other disks (step 6.7).
 - [[owneetd-api-display]] — API for the screen in use, modes, Keep this?, other cards turned off, brightness, keyboard layout.
 - [[owneetd-api-events]] — The event stream (/v1/events) and every event type.
 - [[owneetd-api-input]] — API for the virtual keyboard and mouse used by the on-screen keyboard; keyboard layouts.

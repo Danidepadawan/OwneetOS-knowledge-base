@@ -30,4 +30,14 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   name: "Games" ("Games 2"…) offered in the console's language, up to 16 characters (ext4's label: accented letters count as two). In the
   settings demo a step before the final confirmation; in the installer the screen "Name the disks for games" after "Other disks", and the
   warning says each name. **The naming screens wait for the owner's look** before the code.
-
+- **Built (2026-11-08, code commit d4f148d on `feature/phase7`):** `owneet-prepare-disk` in owneet-installer 0.0.4 (the disks, the
+  checks, the work: GPT, one ext4 file system with no space kept for root, the name as its label, the console user owning it, the Games
+  folder; `owneet-prepare-disk.service` started from Settings through polkit); `owneet-install` takes up to 8 other internal disks,
+  checked before anything is touched and prepared last (state `games`, error `games_failed`); owneet-mount (owneet-base 0.0.56)
+  leaves them alone meanwhile; owneetd 0.25.0 ([[owneetd-api-disks]]); owneet-frontend 0.37.0 (Settings → Storage, the installer's
+  two screens, the hold shared as `HoldButton`, texts in the five languages). Go tests for every refusal (names, disks, confirmations).
+  **Checked in the test VM:** Settings on an empty disk and on one with a Windows partition (a short press starts nothing; the name
+  another disk keeps is refused; ext4, the label, the Games folder, mounted read-write, the notice); the installer from a new ISO
+  (`out/owneetos-2026.11.08-x86_64.iso`) with a second disk for games, then the installed system writing on it.
+  Found on the way: the Settings list did not follow disks changing while it was open; it now does, and the question reads the disk again.
+  **Left:** the owner's test on real hardware.
