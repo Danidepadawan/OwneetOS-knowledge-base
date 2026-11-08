@@ -46,3 +46,6 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
     Now an installer gets a folder through a link without such characters, and owneetd checks Proton itself.
   - **Fixed (code commit 5c3125e):** owneetd 0.25.2, owneet-frontend 0.38.1; Go tests for both faults; the grid checked in the test VM
     (uninstall in "Local", the covers stay). OWNEETLOG updated. **Waits for the owner's test** (The Witcher 2 again).
+- **Owner's second test on FrankenPC (2026-11-08):** the library no longer looks empty after an uninstall; The Witcher 2 shows the GB
+  written, installs and starts. Its settings warning, made for a mouse, is answered with "Resume with the pointer" from the home
+  screen ([[step-4.7-controller-pointer]]). Waits for the owner's approval.
