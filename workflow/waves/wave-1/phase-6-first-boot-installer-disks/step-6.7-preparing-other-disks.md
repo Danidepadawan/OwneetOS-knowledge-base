@@ -41,3 +41,9 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   (`out/owneetos-2026.11.08-x86_64.iso`) with a second disk for games, then the installed system writing on it.
   Found on the way: the Settings list did not follow disks changing while it was open; it now does, and the question reads the disk again.
   **Left:** the owner's test on real hardware.
+- **Owner's test on FrankenPC (2026-11-08), first try:** no disk could be chosen: owneetd found no `owneet-prepare-disk` ("no such
+  file or directory"). It was in owneet-installer, which a console installed by the tester installer before step 6.3 never got (updates
+  from the stick only update packages already there). Moved into owneet-base 0.0.57 with its unit, its polkit rule
+  (`50-owneet-disks.rules`) and its folder; owneet-installer 0.0.5 depends on owneet-base (code commit da951de). Checked in the test VM
+  with and without owneet-installer. The version in Settings → System stays 2026.10.13 on FrankenPC: it is the image's date, which the
+  stick's updates do not change. **Waits for the owner's second try.**

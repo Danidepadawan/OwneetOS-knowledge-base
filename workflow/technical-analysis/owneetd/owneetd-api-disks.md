@@ -25,7 +25,7 @@ changed), `partition_failed`, `format_failed`, `installed_only`, `name_taken`, `
 
 **How:** the request goes to `/run/owneet-prepare/request` (the console user's folder, read by root key
 by key, never run) and polkit lets the console user start `owneet-prepare-disk.service`
-(`50-owneet-install.rules`), which checks everything again: the whole disk becomes one GPT partition
+(`50-owneet-disks.rules`; the script is in owneet-base, on every console), which checks everything again: the whole disk becomes one GPT partition
 with ext4 (no space kept for root), labelled with the name, the console user owning it, with the Games
 folder; meanwhile `owneet-mount` leaves it alone (`/run/owneet-mount/preparing`), then mounts it.
 
