@@ -11,3 +11,4 @@ Up: [[wave-1]]
 
 Steps and their status: [[workflow/waves/wave-1/phase-6-first-boot-installer-disks/INDEX|steps of this phase]].
 - **Added on 2026-11-07 (owner):** [[step-6.7-preparing-other-disks]], erasing and preparing the other disks, in the installer and in Settings.
+- **Added on 2026-11-08 (owner):** [[step-6.8-games-on-disk-delete-and-progress]], deleting games and installers from a disk, and the progress of Windows installs.
