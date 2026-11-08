@@ -3,12 +3,12 @@ type: step
 description: "Deleting a game or an installer from a disk with the controller, and a Windows installer that says how much it has written and when it seems stuck."
 phase: "[[phase-6-first-boot-installer-disks]]"
 step: "6.8"
-status: in-progress
+status: done
 tags: [step, phase-6]
 ---
 # 6.8 Games on disk: deleting them, and the progress of Windows installs *(added 2026-11-08)*
 
-Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
+Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
 
 - **Why (owner's test on FrankenPC, 2026-11-08):** after moving his games to the 2 TB disk he could not remove their installers:
   the console had no way to delete files from a disk (only Uninstall, which keeps the installer, [[step-4.6-installers]]). The
@@ -48,4 +48,10 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
     (uninstall in "Local", the covers stay). OWNEETLOG updated. **Waits for the owner's test** (The Witcher 2 again).
 - **Owner's second test on FrankenPC (2026-11-08):** the library no longer looks empty after an uninstall; The Witcher 2 shows the GB
   written, installs and starts. Its settings warning, made for a mouse, is answered with "Resume with the pointer" from the home
-  screen ([[step-4.7-controller-pointer]]). Waits for the owner's approval.
+  screen ([[step-4.7-controller-pointer]]).
+- **Outcome: approved by the owner on 2026-11-08.** Every game on a disk that is not Steam's can be uninstalled from Options, and an
+  installer deleted apart (each asks first, Cancel selected); a Windows install shows the GB written and says when it seems stuck;
+  left / right stay on the row in two-row windows; Windows installers work into folders whose name has a ":" (through a link); the
+  library keeps its covers while the games are read again. owneetd 0.25.2, owneet-frontend 0.38.1, owneet-base 0.0.57.
+  Reported at the approval, for later (owner, 2026-11-08): "Resume with the pointer" only on the home screen, not in the library;
+  `game-launch` not always heard when going back into a running game.
