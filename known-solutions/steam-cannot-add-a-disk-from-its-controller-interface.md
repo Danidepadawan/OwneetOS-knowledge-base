@@ -1,9 +1,9 @@
 ---
 type: known-solution
 description: "Steam's storage (controller interface) has no 'Add drive': a second disk cannot be chosen to install a Steam game. The system must hand the disk to Steam with steam://addlibraryfolder, as SteamOS does."
-status: solved
+status: open
 seen: 2026-11-08
-updated: 2026-11-08
+updated: 2026-11-09
 tags: [known-solution, steam, disks]
 ---
 # Steam cannot add a disk from its controller interface
@@ -28,6 +28,9 @@ As SteamOS does: owneetd hands every disk the console prepared for games to the 
 `steam steam://addlibraryfolder/<folder>`, every byte of the folder written as `%xx`; the folder is
 `<disk>/SteamLibrary` (made first) or the disk itself when it has Steam's `libraryfolder.vdf`. Only the
 disks the console prepared (owner, [[disks]]). owneetd 0.25.3, `daemon/internal/apps/steamdisks.go`.
+
+**Not enough (FrankenPC, 2026-11-09):** Steam logs `ExecuteSteamURL: "steam://addlibraryfolder/%2f…"` and does
+nothing more: no library, no log line, the disk still not offered. Outside SteamOS the address seems ignored.
 
 ## How we found it
 

@@ -57,3 +57,7 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in progress** (a fix wai
   once Steam's window is up or Steam has run a minute; once per disk while Steam runs, never a folder Steam lists already. Go tests.
   **Test VM (cage session, no Steam account):** after a minute the disk was handed and `SteamLibrary` made; Steam with nobody signed in
   showed nothing of it. **Waits for the owner's test on FrankenPC** (Steam signed in).
+- **Owner's test on FrankenPC (2026-11-09):** owneetd handed the disk (00:09:13, after Steam's window and the page asked for) and
+  Steam logged `ExecuteSteamURL: "steam://addlibraryfolder/…"`, then nothing: no library added (`libraryfolders.vdf` still one
+  library), the disk not in Storage nor among the places to install. **Not solved.** Also reported: one press of A confirmed two of
+  Steam's dialogs in a row (installing Batman: Arkham Knight); Steam's logs do not say which. Next: the owner decides the way.
