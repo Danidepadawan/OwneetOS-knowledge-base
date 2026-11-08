@@ -22,4 +22,16 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   **seems stuck** (Options: Stop installing). No new dependency (the percentage would need innoextract, given up on 2026-10-19).
   Also the owner's report: in a window whose buttons take two rows, left and right did not stay on the row.
 - **Recorded as one step** (both are about games on disks), asked by the owner together.
-- **Demo:** `design/demos/6.8-games-on-disk.html` (code commit on `feature/phase7`), waiting for the owner's approval.
+- **Demo:** `design/demos/6.8-games-on-disk.html`. **Owner (2026-11-08):** one label, **"Uninstall"**, for every game on a disk that is not
+  Steam's, games on the console's own disk included (the text says what goes: its folder, or the copy installed); **"Delete the installer"**
+  apart. Demo updated so, **approved**.
+- **Found on the way:** Uninstall was refused for a game installed and then moved to another disk (owneetd accepted only the home
+  folder's games folder): now any games folder of the home folder or of a disk the console mounted.
+- **Built (2026-11-08, code commit 06fede4):** owneetd 0.25.1 (`POST /v1/installs/delete`, `/v1/installs/delete-installer`, error
+  `installs.read_only`; a Windows install's `done` measured every 5 s, `stalled` and the event `install.stalled` after 10 minutes
+  without writing); owneet-frontend 0.38.0 (Options, the two windows with Cancel selected, the state line and the home notice with the GB
+  written, the notice when stuck, texts in the five languages; `rowsHold` in Dialog: left / right stay on the row). Go tests for
+  every refusal (outside a games folder, links, a running game, read only), both kinds of installers, and the stalled install.
+  **Checked in the test VM:** Options on two rows, the installer deleted in a folder of its own (the game stays, the mark forgets it), a
+  game ready to start uninstalled from its disk. Not checkable there: a real Windows install (FrankenPC, The Witcher 2).
+  OWNEETLOG updated. **Waits for the owner's test.**
