@@ -4,7 +4,7 @@ description: "Automatic mounting of every disk, read-only dirty NTFS, moving gam
 area: games
 status: active
 decided: 2026-10-03
-updated: 2026-11-01
+updated: 2026-11-08
 legacy: "PROJECT_RULES.md §6 (mounting, moving)"
 tags: [decision, games, disks]
 ---
@@ -35,6 +35,12 @@ Guard: [[user-data]]. Steps: [[step-6.5-automatic-disk-mounting]],
 [[step-6.6-moving-games-and-media-between-disks]].
 
 - **Other disks (owner, 2026-11-07):** erased and prepared for games with the controller, in the installer and in Settings → Disks, after a clear warning and the final confirmation ([[step-6.7-preparing-other-disks]]).
+- **Disks for games are Steam libraries too (owner, 2026-11-08):** Steam's interface for the controller has no way to
+  add a disk, so the console tells Steam, as SteamOS does: every disk **the console prepared for games**, mounted
+  read-write, is handed to the running Steam as `steam://addlibraryfolder/<disk>/SteamLibrary` (the address SteamOS's
+  own mounter uses; it is a Steam client address, not a store API, and the owner chose to use it, [[legal]]). Other
+  disks are not handed. A fix of [[step-6.7-preparing-other-disks]], not a new feature
+  ([[steam-cannot-add-a-disk-from-its-controller-interface]]).
 
 ## History
 
@@ -49,3 +55,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-26 | A copy that fails its check: removed, the original untouched, "The copy did not work" with Close (selected) and Try again; with several games the others go on, then a summary. |
 | 2026-11-01 | Step 6.5: OwneetOS's own mounter grows (no udisks2); Windows's own partition (C:) always read only; from the USB stick the internal disks read only, the installer unmounts the chosen disk first. |
 | 2026-11-07 | Other disks erased and prepared for games from the console: installer and Settings → Disks ([[step-6.7-preparing-other-disks]]). |
+| 2026-11-08 | Disks prepared for games by the console become Steam libraries: owneetd hands them to Steam with `steam://addlibraryfolder` (owner: use it; only the disks the console prepared; a fix of step 6.7). |

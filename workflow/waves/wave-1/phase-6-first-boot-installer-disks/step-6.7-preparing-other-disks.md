@@ -3,12 +3,12 @@ type: step
 description: "Erasing and preparing a disk other than the console's for games, with the controller: in the installer and in Settings → Disks, with a clear warning and the final confirmation."
 phase: "[[phase-6-first-boot-installer-disks]]"
 step: "6.7"
-status: done
+status: in-progress
 tags: [step, phase-6]
 ---
 # 6.7 Preparing other disks *(added 2026-11-07)*
 
-Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
+Up: [[phase-6-first-boot-installer-disks]] · Status: **in progress** (a fix waits for the owner's test)
 
 - **Why (owner, 2026-11-07, "gravissimo"):** the console could erase only the disk it is installed on. A new disk, one in a format the
   console cannot read, or one to turn into a better format for games needed another PC: the owner took it for granted, and no step had it.
@@ -48,3 +48,12 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
   with and without owneet-installer. The version in Settings → System stays 2026.10.13 on FrankenPC: it is the image's date, which the
   stick's updates do not change. **Waits for the owner's second try.**
 - **Owner's second try on FrankenPC (2026-11-08):** the 2 TB disk prepared from Settings ("2TB HDD SATA"); owner: "Tutto risolto". **Done.**
+- **Owner's test on FrankenPC (2026-11-08, later):** the prepared 2 TB disk could not be chosen in Steam to install Batman: Arkham
+  Knight: Steam's storage had no "Add drive" at all, no list and no message. Steam's interface for the controller cannot add a disk; on
+  SteamOS the system tells Steam ([[steam-cannot-add-a-disk-from-its-controller-interface]]). **Fix (owner: a fix, not a new
+  feature; use Steam's address; only the disks the console prepared):** owneetd 0.25.3 hands every disk prepared for games (ext4, its
+  top folder owned by the console's user, the Games folder), mounted read-write, to the running Steam as
+  `steam://addlibraryfolder/<disk>/SteamLibrary` (the folder made first; the disk itself when Steam already keeps a library at its top),
+  once Steam's window is up or Steam has run a minute; once per disk while Steam runs, never a folder Steam lists already. Go tests.
+  **Test VM (cage session, no Steam account):** after a minute the disk was handed and `SteamLibrary` made; Steam with nobody signed in
+  showed nothing of it. **Waits for the owner's test on FrankenPC** (Steam signed in).
