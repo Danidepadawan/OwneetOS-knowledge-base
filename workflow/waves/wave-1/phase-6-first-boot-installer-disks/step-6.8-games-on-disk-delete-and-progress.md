@@ -35,3 +35,14 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in-progress**
   **Checked in the test VM:** Options on two rows, the installer deleted in a folder of its own (the game stays, the mark forgets it), a
   game ready to start uninstalled from its disk. Not checkable there: a real Windows install (FrankenPC, The Witcher 2).
   OWNEETLOG updated. **Waits for the owner's test.**
+- **Owner's test on FrankenPC (2026-11-08, OWNEETLOG log `owneet-20261108-183027`):** (1) the installers deleted: done; (2) Uninstall
+  works, but after an uninstall in the filter "Local" the list looked empty for a moment; (3) The Witcher 2: no GB written, a banner
+  said to try again, then "Not installed" again.
+  - **(2)** Every reading of the games rebuilt every cover of the library's grid, and a new cover shows nothing until it is drawn. The
+    grid now keeps one row per game (by its key) and changes only the rows that change: the covers that stay are kept. The selection
+    goes to the first place as before.
+  - **(3)** Two faults, see [[windows-installer-folder-with-a-colon]]: the game's folder "The Witcher 2: Assassins of Kings…" has a
+    ":", which Windows refuses (Inno Setup ended at once with code 3), and owneetd took that 3 for "Windows games are not ready".
+    Now an installer gets a folder through a link without such characters, and owneetd checks Proton itself.
+  - **Fixed (code commit 5c3125e):** owneetd 0.25.2, owneet-frontend 0.38.1; Go tests for both faults; the grid checked in the test VM
+    (uninstall in "Local", the covers stay). OWNEETLOG updated. **Waits for the owner's test** (The Witcher 2 again).
