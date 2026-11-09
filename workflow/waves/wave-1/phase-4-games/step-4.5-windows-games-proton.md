@@ -200,3 +200,20 @@ Up: [[phase-4-games]] · Status: **done**
   1.4 s later with no "back to the app": its first window had not settled yet, and owneetd brings a just-started app to the
   front when the home screen is what was chosen last, which Guide also sets. The same gaps were in the 15:35 test (0.25.8,
   Steam closed); before 0.25.7 "on screen" was not logged. Waits for the owner's choice of the fix.
+- **Correction (2026-11-09):** the game coming back 1.4 s after Guide (19:57:49) was not owneetd: nothing in owneetd brought
+  it, so it was almost surely the home screen's Resume, which left no line in the log (it does now: "back to the app, asked
+  by the interface").
+- **Fix built (owner's terms, 2026-11-09: no flashes, no fixed times, the sound once; owneetd 0.25.11, code `ac772d9`):**
+  the owner turned down both a "Preparing {game}…" screen and a black screen in the gaps (both flash). gamescope 3.16.31's
+  source (`steamcompmgr.cpp`, `pick_primary_focus_and_override` and `determine_and_apply_focus`) shows that when
+  `GAMESCOPECTRL_BASELAYER_APPID` names only apps with no window, gamescope does not fall back to another window: it keeps
+  the window it showed while that window exists, and when it is gone it paints its last picture (`HELD_COMMIT_BASE`), with
+  `GAMESCOPE_FOCUSED_APP` empty. So a game started by the console now goes **alone** in that list (it was "game, home"):
+  before its first window the home screen ("Preparing {game}…") stays; between two of its windows the last picture of the
+  game stays, nothing is announced, no sound; Guide shows the home screen; at its end (its unit stopped) the home screen
+  comes back. Apps keep the home screen behind them (an app may go on without a window, e.g. Steam in the background);
+  Steam's games keep Steam behind them (its questions come in its window, as on SteamOS). Known effects: quitting from the
+  game's own menu, its last picture stays until its process has ended (280-400 ms with The Witcher 2), then the home
+  screen and the sound together; a game left running with no window at all keeps its last picture until Guide. Checked with
+  unit tests (the test double now keeps the shown window like gamescope); not seen on a screen yet: gamescope does not run
+  in the test VM without a 3D GPU. Waits for the owner's test on FrankenPC.
