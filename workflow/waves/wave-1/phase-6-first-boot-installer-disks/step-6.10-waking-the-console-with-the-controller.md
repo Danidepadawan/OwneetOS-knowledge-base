@@ -15,5 +15,6 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **needs decision**
   to (a Bluetooth adapter, the Xbox wireless adapter, a USB cable) to stay powered in sleep and to be allowed to wake the PC
   (USB remote wake-up); not every adapter can (FrankenPC uses a generic USB Bluetooth dongle). Waking from a full power-off is
   not possible with a controller on most PCs.
-- **To decide with the owner:** which button wakes (Guide, as on consoles, or any); from sleep only; what the console says when the
-  adapter cannot wake the PC; investigation on FrankenPC first (whether its dongle can wake it). Demo first for anything shown.
+- **Choices (owner, 2026-11-09):** **only Guide** wakes the console; the feature is **switched on and off in the settings, off by
+  default**. First a test on FrankenPC: whether its generic Bluetooth dongle can wake it from sleep.
+- **Still open:** what the console says when the adapter cannot wake the PC; the setting's place and text (demo first).

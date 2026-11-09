@@ -49,6 +49,10 @@ Profile choices and their reasons are documented in the code repository (`iso/RE
   saying it is shutting down; then the splash starts (57.83), the console session ends (58.18) and the system is down to unmounting
   in about 1.5 s. The re-sync is the screen going from gamescope to the splash (on NVIDIA a full mode set). Next: what the owner
   chooses (the console saying "Shutting down" at once covers the 6 s; the hand-over itself is likely to stay).
+  **Owner (2026-11-09): test it, demo first.** Demo `design/demos/7.6b-shutting-down.html` (on the approved 6.7 settings demo):
+  Shut down or Restart confirmed, the console shows at once the splash's own picture (`owneetos-splash.svg`, black, the spinner at
+  92% and `splash.shutting_down` under it) while it closes Steam and the games; then a moment of black (the hand-over) and the splash
+  itself; Restart ends on "Starting". Waits for the owner's approval.
 
 ## History
 
