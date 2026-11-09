@@ -38,7 +38,11 @@ Profile choices and their reasons are documented in the code repository (`iso/RE
   and disconnects before the splash shows. The console first closes the apps (Steam took 6 s: 11:09:19 to 11:09:25), the testers'
   logs are copied when OWNEETLOG is plugged in, then the interface ends and gives the screen up and the splash takes it again (the
   monitor re-syncs). Ways to look at, with the owner: the console showing "Shutting down" itself at once (as the splash looks), and
-  why the monitor re-syncs (a mode change between gamescope and the splash).
+  why the monitor re-syncs (a mode change between gamescope and the splash). **Owner: understand why first (2026-11-09).**
+  Lead: gamescope picks 1440x900 at 75 Hz on FrankenPC's monitor (ACI VK192), the kernel's console and the splash the monitor's
+  preferred mode (likely 60 Hz): going back to it makes the monitor re-sync. owneet-base 0.0.58 (code commit 74718ef) adds to the
+  testers' report the monitor's modes with the EDID's refresh, and the end of the previous start's journal (the power-off after the
+  stick's logs stop). Waits for a test: two power-offs with OWNEETLOG.
 
 ## History
 
