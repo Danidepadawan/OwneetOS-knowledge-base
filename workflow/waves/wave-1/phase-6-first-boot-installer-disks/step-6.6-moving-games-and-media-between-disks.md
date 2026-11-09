@@ -86,3 +86,9 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
   ([[steam-loses-the-address-while-its-interface-starts]]). Only unit tests so far: gamescope runs only on real hardware. **Owner's test on FrankenPC (2026-11-05):** Steam's start no longer shows; a flicker still does, and the owner keeps it, the notice before Steam covers it; about 31 s from the press (click 15:33:22, window 15:33:53), accepted; the sound back on the home passes. B from Steam's home goes to an endless loading: closed for Wave 1 by the owner, back in [[wave-2]] ([[steam-loading-for-ever-after-b]]).- **Reported by the owner (2026-11-08), open, recorded late (2026-11-09: it had been left out):** when a disk with games is
   plugged in, the question "Play from here / Copy to the console" gives no way to choose one game or all of them; "it must be
   looked at now". Needs a demo first (a change to the approved screen); waits for the owner's turn in the order of work.
+- **Demo 6.6b (2026-11-09, code `22f449a`):** `design/demos/6.6b-choose-games-to-copy.html`, on the approved 6.6 demo. After
+  "Copy to the console", a disk with more than one game asks "Which games to copy?": a switch per game with its size and
+  "All games" above, all on at first; A switches the selected row; the button copies the games that are on ("Copy 3 games
+  (5.85 GB)", "Copy Lantern Keep (1.2 GB)"), is dimmed with "Choose at least one game" when none is, and is selected at first
+  (one A copies them all, as before); then the disk; B goes back one window. A disk with one game skips the question.
+  Demo address: `#lang=it&open=plug` (the question at once). Waits for the owner's approval.
