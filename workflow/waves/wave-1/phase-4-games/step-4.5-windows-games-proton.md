@@ -217,3 +217,11 @@ Up: [[phase-4-games]] · Status: **done**
   screen and the sound together; a game left running with no window at all keeps its last picture until Guide. Checked with
   unit tests (the test double now keeps the shown window like gamescope); not seen on a screen yet: gamescope does not run
   in the test VM without a 3D GPU. Waits for the owner's test on FrankenPC.
+- **Owner's test of 0.25.11 (FrankenPC, 2026-11-09, 20:48-20:52; logs `out/test-logs/frankenpc-2026-11-09h`):** no more
+  flicker while The Witcher 2 starts, Guide and Resume right. **Open:** (1) the "back home" sound is late again when the game
+  is quit from its menu: the home screen now waits for the game's unit to end; Wine's log puts the end of `witcher2.exe` at
+  131.04 s and of the last Wine process at 131.28 s, about 2 s before the unit ended (20:50:17.02; Wine's clock aligned on
+  Proton's start line, ±1 s), so the game's last picture stayed about 2 s or more. The launcher (`Launcher.exe`) lived on
+  until 17 s after the game started, so during the start gaps the process that had shown a window was still alive.
+  (2) After Guide the game's sound goes on (the decision "silent behind the home screen" is not built yet). (3) Reported as
+  the most serious: pressing "Play" ("Gioca"), the game takes the A press; which button and when is being asked to the owner.
