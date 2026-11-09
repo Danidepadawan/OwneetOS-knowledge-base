@@ -60,3 +60,9 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
   pointer" in the library (demo first). New: the sound back on the home screen sometimes late after closing a game (The Witcher 2,
   2026-11-08 21:12): the interface mutes its sounds while a game counts as running, and a Windows game counts until Proton's
   processes have ended, a moment after its window has gone; to be confirmed and fixed.
+- **The late sound, fixed (2026-11-09, code commit after 8d3e276; owneetd 0.25.7):** the sound comes with "focus.changed" to
+  the home screen, which owneetd sent after its once-a-second look at gamescope (and, while Proton keeps a window, later). Now
+  gamescope's own notices (the focused app and the apps with windows changing on its root window, a window unmapped or destroyed)
+  make owneetd look at once; the regular check stays as a repeat interval. Each change of what is on screen is logged ("on
+  screen"), so a late sound left can be timed. Go test: the home announced on gamescope's notice alone. Not testable in the VM
+  (cage). **Waits for the owner's test on FrankenPC** (close a Windows game, e.g. The Witcher 2).
