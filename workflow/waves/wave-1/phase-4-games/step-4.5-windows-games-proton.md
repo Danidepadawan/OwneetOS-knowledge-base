@@ -225,3 +225,11 @@ Up: [[phase-4-games]] · Status: **done**
   until 17 s after the game started, so during the start gaps the process that had shown a window was still alive.
   (2) After Guide the game's sound goes on (the decision "silent behind the home screen" is not built yet). (3) Reported as
   the most serious: pressing "Play" ("Gioca"), the game takes the A press; which button and when is being asked to the owner.
+- **The A of "Resume" reaching the game, fixed (owner: the button is "Resume" on the home screen after Guide, 2026-11-09;
+  owneetd 0.25.12, code `ff9f792`):** the interface acts when A goes down, and the game came to the front with A still held,
+  so it read a new press (games read the controller's state whatever is on screen). owneetd now follows the buttons and
+  keys held on every controller and keyboard and brings an app back (Resume, Guide) only once none is held: an event, with
+  a 5 s safety limit for a release that never comes (a faulty controller). Guide's way back waits outside the controller's
+  reader. Also: Guide over a console game between two of its windows (gamescope names no app) showed nothing; it now shows
+  the home screen. Test VM: with A held, "back to Steam" was answered at A's release (2.0 s), with nothing held at once.
+  Not asked yet: whether the game also reacts to the buttons pressed in the console's menu while it runs behind.
