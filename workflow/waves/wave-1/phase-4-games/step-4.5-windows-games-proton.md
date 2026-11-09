@@ -171,3 +171,13 @@ Up: [[phase-4-games]] · Status: **done**
   prefix's winebus setting `DisableInput` = 1 (Wine's own default: controllers through SDL, which leaves out 28de:11ff). Not
   verified yet: Windows' controller panel (joy.cpl) did not start through owneet-windows-run in the test VM (the prefix was not
   made), and the VM's debug shell stopped answering. Waits for the owner's choice of how to verify.
+- **Remedy verified in the test VM (owner's choice, 2026-11-09 16:40-17:05):** Steam open with the test pad, so Steam's virtual
+  controller existed; two new prefixes, a program run through owneet-windows-run with Wine's controller log
+  (`WINEDEBUG=+hid,+plugplay`). Without the setting, Proton's own evdev reading "detected steam input virtual controller" and made
+  it a gamepad (`28de:11ff`), **enumerated before** the real pad, which SDL added second: the game's first controller is
+  Steam's silent one, as with The Witcher 2. With `DisableInput` = 1 in
+  `HKLM\System\CurrentControlSet\Services\winebus` (set with the prefix's `reg.exe`): "UDEV input devices disabled in
+  registry", no `28de:11ff`, the real pad through SDL is the only gamepad. Still to see on real hardware: a Bluetooth
+  controller through SDL alone in a game (The Witcher 2, Steam open). Found on the way: the test VM's `umu-shim` was empty, so
+  no Windows program had started there since 2026-11-08 ([[windows-games-quit-at-once-empty-umu-shim]]). Waits for the
+  owner's go-ahead to build it.
