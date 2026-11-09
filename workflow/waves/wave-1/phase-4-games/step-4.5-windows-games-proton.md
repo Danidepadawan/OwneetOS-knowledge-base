@@ -246,3 +246,13 @@ Up: [[phase-4-games]] · Status: **done**
 - **Owner's test of 0.25.13 (FrankenPC, 2026-11-09):** The Witcher 2 goes silent with Guide and its sound comes back with
   Resume. Netflix / YouTube behind the home screen: not silent yet; the owner leaves the web apps to Danidepadawan
   (phase 5, still in progress).
+- **Home screen at the end of the game's programs, built (owner's go-ahead, 2026-11-09; owneetd 0.25.14, code
+  `5c9e026`):** owneetd follows a console game's own programs, each with a pidfd (an event, no fixed time): the processes
+  that showed its windows and every Windows program of its unit outside `C:\windows` (Wine shows a Windows process's path as
+  its command line; test VM: `X:\Giochi\Exe Test\game.exe` next to `C:\windows\system32\services.exe`, `umu.exe`,
+  `explorer.exe` and the others). When none is left, no window of the game is on screen and the game is alone in front, the
+  home screen comes back at once ("the game's programs ended: home screen"), without waiting for Wine and the container
+  (about 2 s on FrankenPC; 61 ms in the test VM). A launcher ending after starting the game does not bring it (the game is
+  alive). The log names every followed program ("following a program of the game") and its end. Checked with unit tests (a
+  launcher that starts the game and ends; a real pidfd); not on a screen yet: the test VM has no gamescope. Waits for the
+  owner's test: quit The Witcher 2 from its menu.
