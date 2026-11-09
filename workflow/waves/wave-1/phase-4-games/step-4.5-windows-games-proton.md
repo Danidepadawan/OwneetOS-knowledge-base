@@ -160,3 +160,6 @@ Up: [[phase-4-games]] · Status: **done**
   started outside Steam reads Steam's virtual controller (which sends nothing) instead of the real one. The Proton log has no input
   channel. Asked to the owner: when the control was lost and what was on screen; whether the game should pause or go silent on the
   home screen; a run with Steam closed.
+- **Owner's answers (2026-11-09):** the control was lost right after the launcher: the splash and the intro film showed normally
+  but could not be skipped, the input ignored. **Decision:** a game left open on the home screen (Guide) goes **silent** (not
+  paused: not every game can be). Test now: The Witcher 2 started with Steam closed since the power-on (OWNEETLOG plugged in).
