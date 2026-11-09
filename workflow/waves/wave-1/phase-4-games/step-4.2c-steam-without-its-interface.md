@@ -197,3 +197,7 @@ The console keeps Steam's interface off the screen in everyday use ([[steam-inte
     picture: the duration tried with the owner).
   - Go tests (Steam's user question at once, a failed launch, the routine questions, downloads by the log, the pointer's shape
     by events, no keyboard after a move). Test VM: the interface starts without errors. **Waits for the owner's test on FrankenPC.**
+- **Time left in hours and minutes, fixed (2026-11-09; owneet-frontend 0.38.5):** from an hour up "about 1 h 56 min"; whole hours
+  "2 h" with no "about" (owner); under an hour as before. The same for how long a game or a web app has been open on the home
+  screen ("Playing for 1 h 56 min", "Open for 2 h"), which had the same fault. Five languages; checked with the message files
+  (it, en, de). **Waits for the owner's test on FrankenPC.**
