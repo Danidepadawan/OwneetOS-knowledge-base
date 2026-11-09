@@ -23,3 +23,9 @@ Up: [[phase-2-system-daemon]] · Status: **done**
   Controller (Bluetooth, passed to the test VM) is listed as brand `xbox`, connection `bluetooth`,
   Guide available; 3 presses of the Xbox button gave exactly 3 `guide.pressed` events, other
   buttons none. (In the VM the id is the virtio path: the Bluetooth address is not passed through.)
+- **Reported by the owner (FrankenPC, 2026-11-09), open:** Settings → Controllers and Bluetooth lists two controllers, "Xbox
+  Wireless Controller" and "Microsoft X-Box 360 pad 0", with one Xbox controller over Bluetooth (a generic USB dongle). Not the
+  dongle: the second is **Steam's virtual controller** (Steam Input), made with uinput about 20 s after Steam starts and gone when
+  it closes (`/devices/virtual/input/input20`; owneetd: "controller connected" id=event16, guide=true, 2026-11-09 00:09:05 and
+  09:30:00). owneetd takes it as a controller, Guide included. To fix: controllers made by a program through uinput (under
+  `/devices/virtual/input`) are not listed nor read; a Bluetooth controller (uhid, `/devices/virtual/misc/uhid/…`) stays.
