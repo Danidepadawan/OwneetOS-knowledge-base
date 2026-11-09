@@ -157,3 +157,6 @@ The console keeps Steam's interface off the screen in everyday use ([[steam-inte
   99.5% as Steam did; two A 31 ms apart: the second ignored, the notice stayed. Not seen in the VM: a long download's bytes
   growing between manifest writes (the VM downloaded at 66 MB/s). **Waits for the owner's test on FrankenPC** (Arkham Knight).
   "Preparing" with a percentage stays a nice-to-have (demo first).
+- **Reported by the owner (FrankenPC, 2026-11-09), open:** Details of Batman: Arkham Knight showed "Time left: about 116 min".
+  From an hour up it must read hours and minutes ("about 1 h 56 min"): `details.left.minutes` is used for every length
+  (`theme.qml`, the Details rows); a message with hours and minutes is added in the five languages.
