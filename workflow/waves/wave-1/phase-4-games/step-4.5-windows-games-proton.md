@@ -181,3 +181,10 @@ Up: [[phase-4-games]] · Status: **done**
   controller through SDL alone in a game (The Witcher 2, Steam open). Found on the way: the test VM's `umu-shim` was empty, so
   no Windows program had started there since 2026-11-08 ([[windows-games-quit-at-once-empty-umu-shim]]). Waits for the
   owner's go-ahead to build it.
+- **Fix built (owner's go-ahead, 2026-11-09; owneetd 0.25.9, code `bc68be7`):** while building it, Proton's own switch
+  `PROTON_NO_STEAMINPUT=1` was found (read by winebus; Proton's comment: "suppress the desktop virtual controller and leave
+  the game's native controller path active"). Tested in the test VM like `DisableInput`: "ignoring steam input virtual
+  controller", the real pad through SDL the only gamepad. It was chosen over `DisableInput` because it gives the same result
+  with no registry write and no extra Wine start at each launch, works for prefixes made before, and leaves Proton's other
+  input paths as Valve made them. `owneet-windows-run` exports it; checked again with the installed package (fresh prefix,
+  Steam open). Waits for the owner's test on FrankenPC: The Witcher 2 with Steam open.
