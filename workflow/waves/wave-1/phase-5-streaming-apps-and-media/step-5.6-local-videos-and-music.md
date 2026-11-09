@@ -176,7 +176,13 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
        `media-empty.txt`, with `@media` (an invented USB stick made with FFmpeg in
        `tools/frontend-preview`).
      - **Time per song (the tags):** 0.5–1.4 ms in the builder VM (`ffprobe`: 75 ms in the test
-       VM, sub-step 1); the owner's test VM gives the comparable figure.
+       VM, sub-step 1). **The owner's test (2026-11-09):** both pages work as in the demo; the
+       test VM read 5 songs in 390 ms, 78 ms a song, no quicker than `ffprobe`. Likely cause:
+       QSaveFile waits for the disk at every file of the cache (a song's own picture, the list),
+       slow on a VM's disk. owneet-frontend 0.24.1 writes the cache without waiting and logs the
+       time spent in the files alone; measured again by the owner. (The frontend's log file
+       keeps information lines in memory: the time is read from the journal, `journalctl -t
+       owneet-cage`.)
      - **While building:** the PC went to sleep twice during a package build
        ([[builder-vm-stops-after-the-host-sleeps]]).
   5. **Code, the player:** mpv's configuration shipped by OwneetOS (the bindings of sub-step 2,
