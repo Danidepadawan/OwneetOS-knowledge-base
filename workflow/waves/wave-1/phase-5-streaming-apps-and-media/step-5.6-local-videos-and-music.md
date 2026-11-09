@@ -151,6 +151,34 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
      the file's and the stream's tags; FFmpeg is already in the image and in `CREDITS.md`
      (GPL-3.0-only as packaged, which the frontend's GPLv3 allows); its time per song measured
      here.
+     **Implemented (2026-11-09), waiting for the owner's test:** owneet-frontend 0.24.0 (`ffmpeg`
+     now a dependency; `CREDITS.md`).
+     - **The reader** `owneet::Media` (`src/backend/owneet/Media.cpp`, `media` in QML): the
+       `Videos` / `Video` and `Music` / `Musica` folders at the top of every disk and in the home
+       folder; a folder is listed at once, its files' details (length, audio and subtitle
+       languages, tags, a song's own picture) read in a background thread, the folder on screen
+       first, and kept in `~/.cache/owneet/media.json` (the songs' pictures in
+       `~/.cache/owneet/media-pictures/`); subtitle files beside a video by their names; names in
+       a person's order, written in the reader (Qt's collator ignores numbers in the C locale);
+       a disk coming or going changes the pages quietly (Storage's signal).
+     - **Saved positions:** read from `~/.local/state/owneet/watch_later`, mpv's files named
+       after the MD5 of the video's path. The player (sub-step 5) writes there, with the video's
+       path on the first line (`--write-filename-in-watch-later-config`), which "Continue
+       watching" needs.
+     - **The theme:** `MediaPage.qml` (both pages), `MediaCard.qml`, `MediaRow.qml`, `MediaText`
+       (times, language names: `lang.*` messages, else the language's own name); the tiles open
+       the pages, B goes back up to the tile; Autoplay kept in the theme's memory. A on a video or
+       song says "later" until sub-step 5. `GameArt` fixed: a picture another art had loaded
+       first was drawn as art (Qt gives no signal for it).
+     - **Tests:** `test_Media` (the folders, the order of names, a season's picture, subtitle
+       files, saved positions and Continue watching, tags read from WAV files with FFmpeg,
+       artists and albums, the kept list). **Preview:** `tools/preview-steps/media.txt` and
+       `media-empty.txt`, with `@media` (an invented USB stick made with FFmpeg in
+       `tools/frontend-preview`).
+     - **Time per song (the tags):** 0.5–1.4 ms in the builder VM (`ffprobe`: 75 ms in the test
+       VM, sub-step 1); the owner's test VM gives the comparable figure.
+     - **While building:** the PC went to sleep twice during a package build
+       ([[builder-vm-stops-after-the-host-sleeps]]).
   5. **Code, the player:** mpv's configuration shipped by OwneetOS (the bindings of sub-step 2,
      mpv's defaults off; its on-screen display as a small Lua script given the palette tokens and
      the translated texts by the console; exact seeks; saved positions on the console's disk, a
