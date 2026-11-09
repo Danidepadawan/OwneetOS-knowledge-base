@@ -22,4 +22,5 @@ Plan and status legend: [[wave-1]]. Scope: [[wave-1-scope]].
 
 ## Notes
 
+- [[open-items]] — Every open item of Wave 1 in one list: the owner's reports not solved yet, decided work not built, postponed tests. Read it at the start of a session; update it in the same change as any report or fix.
 - [[wave-1]] — The Wave 1 plan: scope, status legend, phases.

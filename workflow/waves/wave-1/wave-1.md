@@ -8,7 +8,7 @@ tags: [wave]
 # Wave 1 — the plan, step by step
 
 Scope: [[wave-1-scope]] · What the user gets: [[wave-1-features]] · How steps are run:
-[[how-we-work]]. If a step note and a decision disagree, the decision wins and the step note gets
+[[how-we-work]] · Everything still open (reports, decided work, postponed tests): [[open-items]]. If a step note and a decision disagree, the decision wins and the step note gets
 fixed ([[kb-rules]]).
 
 Status: `done` · `in-progress` · `todo` · `needs-decision` (a decision is needed before it can
