@@ -145,3 +145,15 @@ The console keeps Steam's interface off the screen in everyday use ([[steam-inte
     opens" (NVIDIA) right after it (owner, 2026-11-09). Test VM (2026-11-09, owneetd made to report NVIDIA): with the keyboard each
     window takes its own press (Install → the first notice → the second, waiting). The interface acts on the press, ignores
     repeats, and gets the controller as one device; the cause is to be found on the hardware (a log of each A taken by a window).
+- **Fixes (owner's go, 2026-11-09; code commit 78390c0):** owneetd 0.25.5: a download's state comes from Steam's
+  `logs/content_log.txt` while Steam runs ("App update changed : …Downloading…" is downloading; None, Suspended, cancelled,
+  the game's preparation and its shader cache are not), and its bytes from the room Steam takes on its library disks since the
+  measures began (every 3 s, one statfs per disk), added to what the appmanifest said then: before a Windows game Steam writes
+  Proton, its runtime and common files into the main library, counted in the game's download (test VM: the game's own folders
+  stayed empty while 1.3 GB were written). owneet-frontend 0.38.2: a window (Dialog) ignores an A within 0.3 s of its opening and
+  logs each A it takes or ignores ("Window \"…\": A on button 0, 8419 ms after opening"; "A ignored, 31 ms after opening").
+  Go tests (state from the log, bytes from the disks, a resumed download, no step back after a deletion). **Test VM (owner signed
+  in):** Among Us onto "GamesVM Games": "downloading" from the first second (before: "queued"); paused at 99% it showed queued at
+  99.5% as Steam did; two A 31 ms apart: the second ignored, the notice stayed. Not seen in the VM: a long download's bytes
+  growing between manifest writes (the VM downloaded at 66 MB/s). **Waits for the owner's test on FrankenPC** (Arkham Knight).
+  "Preparing" with a percentage stays a nice-to-have (demo first).
