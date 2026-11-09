@@ -188,3 +188,6 @@ Up: [[phase-4-games]] · Status: **done**
   with no registry write and no extra Wine start at each launch, works for prefixes made before, and leaves Proton's other
   input paths as Valve made them. `owneet-windows-run` exports it; checked again with the installed package (fresh prefix,
   Steam open). Waits for the owner's test on FrankenPC: The Witcher 2 with Steam open.
+- **Broken umu-shim repaired by the console (owner's go-ahead, 2026-11-09; owneetd 0.25.10, code `77f35a7`):**
+  `owneet-windows-run` removes umu's shim when it would not start the game, and umu writes it again
+  ([[windows-games-quit-at-once-empty-umu-shim]]). Tested in the test VM (empty, cut short, intact).

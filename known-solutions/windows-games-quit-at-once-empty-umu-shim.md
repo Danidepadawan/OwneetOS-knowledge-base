@@ -1,7 +1,7 @@
 ---
 type: known-solution
-description: "OPEN: every Windows game (and owneet-windows-run) ends at once with exit 0, no error, and the prefix is never made (drive_c holds only users): umu's ~/.local/share/umu/umu-shim is a 0-byte file after a hard stop."
-status: open
+description: "Every Windows game (and owneet-windows-run) ends at once with exit 0, no error, and the prefix is never made (drive_c holds only users): umu's ~/.local/share/umu/umu-shim is a 0-byte file after a hard stop."
+status: solved
 seen: 2026-11-09
 updated: 2026-11-09
 tags: [known-solution, proton, umu, windows-games, vm]
@@ -28,9 +28,13 @@ stays broken for good.
 
 ## Solution
 
-Test VM (2026-11-09): `rm ~/.local/share/umu/umu-shim`; umu wrote it again at the next start, and
-the prefix was made. Open: a console stopped by a power cut during its first preparation of
-Windows games could end the same way; the console does not check it yet (to propose to the owner).
+By hand: `rm ~/.local/share/umu/umu-shim`; umu writes it again at the next start (test VM,
+2026-11-09). On every console since owneetd 0.25.10 (code `77f35a7`, owner's go-ahead
+2026-11-09): `owneet-windows-run` removes a shim that does not hold `exec "$@"` (empty, or cut
+short) before it starts umu, and says so in the game's log ("umu-shim was broken (N bytes):
+removed, umu writes it again"). Tested in the test VM with an empty shim, one cut to 150 bytes
+and an intact one: the first two were written again (402 bytes) and the prefix was made; the
+intact one was left alone.
 
 ## How we found it
 
@@ -44,4 +48,6 @@ Windows games could end the same way; the console does not check it yet (to prop
 ## Watch out
 
 After any hard stop of a machine (the test VM above all) while umu or Proton set themselves up:
-if Windows games end at once, look at `umu-shim`'s size first.
+if Windows games end at once, look at `umu-shim`'s size first. If umu ever changes its shim so
+that it no longer holds `exec "$@"`, the console removes it at every start and umu writes it
+again: harmless, but the log line appears at every launch, so update the check.
