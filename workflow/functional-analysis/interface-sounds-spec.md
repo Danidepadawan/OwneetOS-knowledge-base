@@ -50,7 +50,7 @@ coherent; a dedicated sound can be added later by adding a file.
 | `sheet-close.wav` | That window closes, also with B (mirror of `sheet-open`) | 100–200 ms |
 | `notify.wav` | A notification at the top right: news, an action completed (Wi-Fi connected, controller paired, update ready), a controller connects, and what needs attention (controller battery low or disconnected, Wi-Fi lost, game closed unexpectedly, an installation that failed) | 250–600 ms |
 | `error.wav` | Something you just did failed (wrong Wi-Fi password, game did not start, a setting could not change), or cannot be done now (the "No internet" window) | 300–600 ms |
-| `game-launch.wav` | A game or app starts, and the home screen comes back from a game or an app (Guide, or it closed; owner, 2026-11-05) | 0.5–1.5 s |
+| `game-launch.wav` | A game or app starts, and the home screen comes back from a game or an app (Guide, or it closed; owner, 2026-11-05). Not when going back into a game or app already running (Resume, Guide back: owner, 2026-11-09) | 0.5–1.5 s |
 | `startup.wav` | The interface appears after boot (short "console on" chime) | 1.5–3 s |
 
 Later wave: `screenshot.wav` (a screenshot is taken, 150–400 ms).

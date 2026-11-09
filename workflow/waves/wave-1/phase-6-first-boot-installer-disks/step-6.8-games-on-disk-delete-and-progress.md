@@ -55,3 +55,8 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
   library keeps its covers while the games are read again. owneetd 0.25.2, owneet-frontend 0.38.1, owneet-base 0.0.57.
   Reported at the approval, for later (owner, 2026-11-08): "Resume with the pointer" only on the home screen, not in the library;
   `game-launch` not always heard when going back into a running game.
+- **Reported items, updated (owner, 2026-11-09):** `game-launch` not heard going back into a running game: **not a fault**, the
+  sound is for starting and for coming back to the home screen ([[interface-sounds-spec]]); removed. Still open: "Resume with the
+  pointer" in the library (demo first). New: the sound back on the home screen sometimes late after closing a game (The Witcher 2,
+  2026-11-08 21:12): the interface mutes its sounds while a game counts as running, and a Windows game counts until Proton's
+  processes have ended, a moment after its window has gone; to be confirmed and fixed.

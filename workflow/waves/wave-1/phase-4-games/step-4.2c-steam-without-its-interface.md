@@ -132,3 +132,12 @@ The console keeps Steam's interface off the screen in everyday use ([[steam-inte
   (owneet-frontend 0.21.2). Go test `TestSteamStaysBehindAGameWithoutWindow`. **FrankenPC
   (owner, 2026-10-17): passed**: Silksong started from "Starting …" straight into the game,
   Steam's window never on screen (no repaint in the log).
+- **Reported by the owner (FrankenPC, 2026-11-09), open:**
+  - **Fault:** Batman: Arkham Knight (115 GB, on the 2 TB disk) showed "Waiting" on its cover while Steam was at 4%, until the
+    power-off. Cause found in the report's snapshots: Steam rewrites `appmanifest_208650.acf` only now and then while it
+    downloads (BytesDownloaded moved twice in 11 minutes, 09:36:33 and 09:37:02) and its StateFlags there never say "running",
+    so owneetd saw no bytes moving and said "queued". Steam's `content_log.txt` tells each state at once ("App update changed :
+    Running Update,Downloading,Staging"; "Suspended"; "None"), and the download folder (`steamapps/downloading/<appid>`) grows
+    as Steam writes. To be fixed.
+  - **Nice to have (Wave 1 if easy):** a percentage, or at least "Preparing", while Steam prepares a download before it starts
+    (reconfiguring, verifying, preallocating, the shader cache: more than a minute of "Waiting" for Arkham Knight).
