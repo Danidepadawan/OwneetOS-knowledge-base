@@ -116,6 +116,10 @@ project folder. No data collected keeps the site free of consent banners and GDP
   [[step-7.8k-website-more-languages]], [[step-7.8n-website-simpler-home]]; at the release
   [[step-7.8l-website-download-link]].
 
+- **The GitHub pages follow the site (owner, 2026-11-09):** every update of the website also updates what the repositories show
+  on GitHub: the README (written here and committed; the owner pushes) and the repository's description and topics (the text
+  prepared here, set by the owner on GitHub: acting on GitHub is the owner's, [[collaboration]]).
+
 ## History
 
 | Date | Decision |
@@ -141,3 +145,4 @@ project folder. No data collected keeps the site free of consent banners and GDP
 | 2026-11-04 | A much simpler home (7.8n, demo first): five sections following the slogan, Home with a carousel of the console's screens and a link to the credits, Plug it., Play it., Own it!, Download; no Download link in the header. |
 | 2026-11-04 | The simpler home's demo approved and built, in the five languages; the drawn console picture (7.8j) is no longer needed. |
 | 2026-11-04 | The guide and German, French and Spanish go online with the simpler home, before their planned moments (the guide after 5.7, the languages after their check); the guide's screens are made again and the languages checked afterwards. The owner sees no problem in naming the apps in a product not yet released; the names stay on the lawyer's list. |
+| 2026-11-09 | The GitHub pages follow the site: README updated with every website update; description and topics prepared here, set by the owner. |
