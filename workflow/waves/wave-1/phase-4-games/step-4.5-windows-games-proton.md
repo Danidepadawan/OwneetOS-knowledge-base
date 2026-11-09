@@ -191,3 +191,12 @@ Up: [[phase-4-games]] · Status: **done**
 - **Broken umu-shim repaired by the console (owner's go-ahead, 2026-11-09; owneetd 0.25.10, code `77f35a7`):**
   `owneet-windows-run` removes umu's shim when it would not start the game, and umu writes it again
   ([[windows-games-quit-at-once-empty-umu-shim]]). Tested in the test VM (empty, cut short, intact).
+- **Owner's test on FrankenPC (2026-11-09, 19:56-20:05; owneetd 0.25.10):** The Witcher 2 with Steam open: the controller
+  works. **New report, open:** while the game starts, the game and the home screen take the screen in turn and the "launch"
+  sound plays several times (on closing it now plays on time). Logs (`out/test-logs/frankenpc-2026-11-09g`), three starts:
+  in the first seconds gamescope's focus went game → home → game up to four times (gaps of 30-370 ms, while the launcher's
+  and the game's windows come and go): with no window of the game to show, gamescope shows the home screen, owneetd
+  announces "home" and the interface plays the "back home" sound. Also: after Guide (19:57:48) the game came back by itself
+  1.4 s later with no "back to the app": its first window had not settled yet, and owneetd brings a just-started app to the
+  front when the home screen is what was chosen last, which Guide also sets. The same gaps were in the 15:35 test (0.25.8,
+  Steam closed); before 0.25.7 "on screen" was not logged. Waits for the owner's choice of the fix.

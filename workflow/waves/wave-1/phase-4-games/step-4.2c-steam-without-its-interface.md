@@ -203,3 +203,6 @@ The console keeps Steam's interface off the screen in everyday use ([[steam-inte
   (it, en, de). **Waits for the owner's test on FrankenPC.**
 - **Owner's test on FrankenPC (2026-11-09, 13:06):** one controller listed with Steam open (step 2.3), the double A held, the
   download followed. Owner: drop "about" from the time left too ("1 h 56 min", "45 min"), for coherence: owneet-frontend 0.38.6.
+- **Owner's test on FrankenPC (2026-11-09, 19:56-20:05; owneetd 0.25.10, owneet-frontend 0.38.6):** the time left without
+  "about" is right. Cyberpunk 2077's licence agreement shows in Steam itself and the controller works there (the launch with
+  Steam's question still to test). "Playing for" over an hour is put off.
