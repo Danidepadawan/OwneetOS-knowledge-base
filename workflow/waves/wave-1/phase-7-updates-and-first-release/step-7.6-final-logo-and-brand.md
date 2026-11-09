@@ -132,3 +132,9 @@ Up: [[phase-7-updates-and-first-release]] · Status: **done**
 - **Owner's test on FrankenPC (2026-11-05):** the messages pass. The cream is still there with `#A0A0A0`, and the owner closes the matter: **not to be
   brought up again, the owner reopens it if needed** after trying another screen. The grey stays `#A0A0A0`.
 - **Approved and closed by the owner (2026-11-05).** Outcome: the final logo on the console, the boot and shutdown splash with their messages, the documents, and the website ([[step-7.8i-website-final-logo]]).
+- **Buttons during the start-up animation, fixed (owner, FrankenPC, 2026-11-09: "they must be ignored"; owneet-frontend
+  0.38.7, code `f4a4e51`):** buttons pressed while the animation played reached the page below it (the selection moved,
+  the interface's sounds played). While it plays, `Nav.action()` answers "ignored" for every button and `acceptBlocked()` is
+  true, so every screen drops them with no sound; clicks, the wheel and hovering stop on the animation. Test VM (interface
+  restarted with its once-per-boot mark removed): right, right, A, A pressed 0.9-4.2 s after the interface started did
+  nothing and launched nothing; right after the animation moved the selection.

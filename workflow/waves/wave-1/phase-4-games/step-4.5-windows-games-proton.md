@@ -233,3 +233,5 @@ Up: [[phase-4-games]] · Status: **done**
   reader. Also: Guide over a console game between two of its windows (gamescope names no app) showed nothing; it now shows
   the home screen. Test VM: with A held, "back to Steam" was answered at A's release (2.0 s), with nothing held at once.
   Not asked yet: whether the game also reacts to the buttons pressed in the console's menu while it runs behind.
+- **Owner's test of 0.25.12 (FrankenPC, 2026-11-09 21:07; logs `out/test-logs/frankenpc-2026-11-09i`):** the A of "Resume"
+  no longer reaches The Witcher 2; Guide to the home screen and back works.
