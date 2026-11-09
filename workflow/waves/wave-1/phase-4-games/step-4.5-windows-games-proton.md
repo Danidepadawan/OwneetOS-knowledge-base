@@ -235,3 +235,11 @@ Up: [[phase-4-games]] · Status: **done**
   Not asked yet: whether the game also reacts to the buttons pressed in the console's menu while it runs behind.
 - **Owner's test of 0.25.12 (FrankenPC, 2026-11-09 21:07; logs `out/test-logs/frankenpc-2026-11-09i`):** the A of "Resume"
   no longer reaches The Witcher 2; Guide to the home screen and back works.
+- **Silent behind the home screen, built (owner's choice 2026-11-09: games and video apps, music apps play on; owneetd
+  0.25.13 and owneet-base 0.0.59, code `d5edd64`):** owneetd follows the audio server's playback streams; the process that
+  plays a stream ("application.process.id") gives its app (its unit, Brave's main process for web apps, a Steam game's reaper
+  inside Steam). A game, or an app the catalogue marks `silentBehindHome` (Netflix, YouTube), that is not on screen has its
+  streams muted: at once when what is on screen changes and when a new stream starts; only the streams owneetd muted are
+  unmuted when it is back. The interface's own sounds and other programs are never touched. Test VM (`--audio`, cage
+  session): a looping sound started as a game was muted 1 ms after Steam came in front of it (new streams too), and heard
+  again when Steam closed (20:29:20.176 on screen, .177 sound back). Waits for the owner's test with The Witcher 2 and Guide.
