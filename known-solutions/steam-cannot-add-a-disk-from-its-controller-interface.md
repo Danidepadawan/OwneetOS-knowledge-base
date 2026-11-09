@@ -1,7 +1,7 @@
 ---
 type: known-solution
 description: "Steam's storage (controller interface) has no 'Add drive': a second disk cannot be chosen to install a Steam game. The system must hand the disk to Steam with steam://addlibraryfolder, as SteamOS does."
-status: open
+status: solved
 seen: 2026-11-08
 updated: 2026-11-09
 tags: [known-solution, steam, disks]
@@ -24,13 +24,15 @@ hides it) are about the desktop interface, which the console never shows.
 
 ## Solution
 
-As SteamOS does: owneetd hands every disk the console prepared for games to the running Steam with
-`steam steam://addlibraryfolder/<folder>`, every byte of the folder written as `%xx`; the folder is
-`<disk>/SteamLibrary` (made first) or the disk itself when it has Steam's `libraryfolder.vdf`. Only the
-disks the console prepared (owner, [[disks]]). owneetd 0.25.3, `daemon/internal/apps/steamdisks.go`.
+owneetd 0.25.4 (`daemon/internal/apps/steamdisks.go`): **while Steam is closed, right before the console starts it**, each
+disk the console prepared for games is written into Steam's list of libraries, as Steam writes it: a numbered block in
+`steamapps/libraryfolders.vdf` and in its copy `config/libraryfolders.vdf` (Steam keeps both; it reads `steamapps/` first),
+with `path` `<disk>/SteamLibrary`, `label` the disk's name (Steam shows the label instead of the folder), a random
+`contentid`; the folder gets `steamapps/` and `libraryfolder.vdf` with the same contentid and label. Steam loads it at
+start ("Loaded … (2 libraries)") and keeps it. Only the disks the console prepared (owner, [[disks]]).
 
-**Not enough (FrankenPC, 2026-11-09):** Steam logs `ExecuteSteamURL: "steam://addlibraryfolder/%2f…"` and does
-nothing more: no library, no log line, the disk still not offered. Outside SteamOS the address seems ignored.
+**What did not work:** `steam steam://addlibraryfolder/<folder, every byte as %xx>`, SteamOS's way (owneetd 0.25.3):
+Steam logs `ExecuteSteamURL: "steam://addlibraryfolder/%2f…"` and nothing more (FrankenPC, 2026-11-09).
 
 ## How we found it
 
@@ -41,8 +43,10 @@ nothing more: no library, no log line, the disk still not offered. Outside Steam
   `send_steam_url "addlibraryfolder" "${mount_point}/SteamLibrary"` after `mkdir -p` of that folder,
   `urlencode` turning every byte into `%xx`, sent only when a `steam` process runs.
 - Test VM: Steam with nobody signed in takes the address and shows nothing (no `libraryfolders.vdf`).
+- Test VM with the owner signed in (2026-11-09): the entry written while Steam was closed is loaded at start, the disk
+  shows in Storage (by its label) and among the places to install.
 
 ## Watch out
 
-Steam must be signed in to show the result. A disk not prepared by the console (any other ext4, exFAT,
+Steam writes its list itself while it runs: write it only while Steam is closed. Steam must be signed in to show the result. A disk not prepared by the console (any other ext4, exFAT,
 NTFS) is never handed: that is the owner's choice, not a limit of Steam.

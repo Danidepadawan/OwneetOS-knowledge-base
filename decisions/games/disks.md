@@ -4,7 +4,7 @@ description: "Automatic mounting of every disk, read-only dirty NTFS, moving gam
 area: games
 status: active
 decided: 2026-10-03
-updated: 2026-11-08
+updated: 2026-11-09
 legacy: "PROJECT_RULES.md §6 (mounting, moving)"
 tags: [decision, games, disks]
 ---
@@ -35,12 +35,13 @@ Guard: [[user-data]]. Steps: [[step-6.5-automatic-disk-mounting]],
 [[step-6.6-moving-games-and-media-between-disks]].
 
 - **Other disks (owner, 2026-11-07):** erased and prepared for games with the controller, in the installer and in Settings → Disks, after a clear warning and the final confirmation ([[step-6.7-preparing-other-disks]]).
-- **Disks for games are Steam libraries too (owner, 2026-11-08):** Steam's interface for the controller has no way to
-  add a disk, so the console tells Steam, as SteamOS does: every disk **the console prepared for games**, mounted
-  read-write, is handed to the running Steam as `steam://addlibraryfolder/<disk>/SteamLibrary` (the address SteamOS's
-  own mounter uses; it is a Steam client address, not a store API, and the owner chose to use it, [[legal]]). Other
-  disks are not handed. A fix of [[step-6.7-preparing-other-disks]], not a new feature
-  ([[steam-cannot-add-a-disk-from-its-controller-interface]]).
+- **Disks for games are Steam libraries too (owner, 2026-11-08; how, 2026-11-09):** Steam's interface for the controller
+  has no way to add a disk. Every disk **the console prepared for games**, mounted read-write, is written by owneetd into
+  Steam's own list of libraries (`libraryfolders.vdf`, both its copies) **while Steam is closed, right before the console
+  starts it**: the disk's `SteamLibrary` folder, labelled with the disk's name (Steam shows the label, not the folder). A
+  disk plugged in while Steam runs is added at Steam's next start. Other disks are not added. `steam://addlibraryfolder`
+  (SteamOS's way, first chosen on 2026-11-08) is ignored by Steam outside SteamOS. A fix of
+  [[step-6.7-preparing-other-disks]], not a new feature ([[steam-cannot-add-a-disk-from-its-controller-interface]]).
 
 ## History
 
@@ -56,3 +57,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-11-01 | Step 6.5: OwneetOS's own mounter grows (no udisks2); Windows's own partition (C:) always read only; from the USB stick the internal disks read only, the installer unmounts the chosen disk first. |
 | 2026-11-07 | Other disks erased and prepared for games from the console: installer and Settings → Disks ([[step-6.7-preparing-other-disks]]). |
 | 2026-11-08 | Disks prepared for games by the console become Steam libraries: owneetd hands them to Steam with `steam://addlibraryfolder` (owner: use it; only the disks the console prepared; a fix of step 6.7). |
+| 2026-11-09 | Disks for games in Steam: `steam://addlibraryfolder` is ignored outside SteamOS; owneetd writes them into Steam's `libraryfolders.vdf` (both copies) while Steam is closed, before starting it, labelled with the disk's name (owner chose this way). |

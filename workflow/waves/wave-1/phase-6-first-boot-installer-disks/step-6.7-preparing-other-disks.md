@@ -61,3 +61,11 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in progress** (a fix wai
   Steam logged `ExecuteSteamURL: "steam://addlibraryfolder/…"`, then nothing: no library added (`libraryfolders.vdf` still one
   library), the disk not in Storage nor among the places to install. **Not solved.** Also reported: one press of A confirmed two of
   Steam's dialogs in a row (installing Batman: Arkham Knight); Steam's logs do not say which. Next: the owner decides the way.
+- **Second fix (owner, 2026-11-09: the first way, Steam's own list):** owneetd 0.25.4
+  writes each disk prepared for games into Steam's `libraryfolders.vdf` (both copies, `steamapps/` and `config/`) while Steam is
+  closed, right before the console starts it: `<disk>/SteamLibrary` with its `libraryfolder.vdf` and `steamapps`, labelled with the
+  disk's name; never twice, never a folder Steam lists already; nothing when Steam has never run. The addlibraryfolder address is
+  gone. Go tests. **Test VM, the owner signed in (2026-11-09):** Steam loaded "2 libraries"; Storage shows "GamesVM Games, 31.3 GB
+  free of 31.3 GB" (before the label: the folder `/run/media/owneet/GamesVM Games`); Batman: Arkham Knight's install offers it (not
+  enough room in the VM), cancelled. Steam's own library shows as "/home" (Steam's label, not ours): asked to the owner.
+  **Waits for the owner's test on FrankenPC.** On the way: with `--gl` the VM's window stayed black on the host; without it, it shows.
