@@ -201,3 +201,5 @@ The console keeps Steam's interface off the screen in everyday use ([[steam-inte
   "2 h" with no "about" (owner); under an hour as before. The same for how long a game or a web app has been open on the home
   screen ("Playing for 1 h 56 min", "Open for 2 h"), which had the same fault. Five languages; checked with the message files
   (it, en, de). **Waits for the owner's test on FrankenPC.**
+- **Owner's test on FrankenPC (2026-11-09, 13:06):** one controller listed with Steam open (step 2.3), the double A held, the
+  download followed. Owner: drop "about" from the time left too ("1 h 56 min", "45 min"), for coherence: owneet-frontend 0.38.6.
