@@ -32,8 +32,9 @@ Up: [[owneetd-design]] · Conventions: [[owneetd-design#4. API v1 (draft)]]
 | POST | `/v1/steam` | One of `{"open": "library"}` / `{"open": "store"}`, `{"run": "480", "name": "…"}`, `{"install": "480"}`, `{"uninstall": "480"}` (also cancels a download; 4.2c), `{"ask": "480"}` (the next start of that game asks the user first, a licence agreement: Steam is shown at once for it; nothing starts), `{"windows": "399070", "name": "…"}` (its Linux version does not start: Steam closed, the game's version for Windows set, the game started again; 4.5), with `"language": "it"` (the console's language tag: Steam starts with `-language italian`) — Steam starts if needed (202); a game is listed in `/v1/apps` as `steam:480` once Steam has started it |
 
 Errors: `apps.unavailable` (503), `apps.invalid` (400), `apps.program_not_found` (400),
-`apps.no_session` (409), `apps.already_running` (409, same id), `apps.game_running` (409, one game
-or web app at a time, kinds `game` and `webapp`; other apps may run next to it), `apps.unknown_app` (404),
+`apps.no_session` (409), `apps.already_running` (409, same id), `apps.game_running` (409, one game,
+web app or player at a time, kinds `game`, `webapp` and `media`: the Videos and Music pages' player,
+[[owneetd-api-player]]; other apps may run next to it), `apps.unknown_app` (404),
 `apps.focus_unsupported` (409: no way to switch windows; not in cage since 0.12.2), `apps.no_window` (409), `apps.failed` (502),
 `steam.needs_install` (409: live system with too little memory for Steam's files), `webapps.unavailable` (503), `webapps.invalid` (400), `webapps.no_webapp` (409: no web app open),
 `webapps.keyboard_closed` (409).

@@ -195,5 +195,68 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
      player is on screen again); started through
      owneetd as an app that runs one at a time, like a game; package versions; tests (the launch,
      mpv's bindings never naming Guide).
+     **Implemented (2026-11-10), waiting for the owner's test:** owneetd 0.17.0 (`mpv` now a
+     dependency of it), owneet-frontend 0.25.0 ([[owneetd-api-player]]).
+     - **The player's files** (`daemon/player/`, installed in `/usr/share/owneet/player/`):
+       `mpv.conf` (mpv's own bindings, on-screen controller, scripts and `ytdl` off; exact seeks;
+       saved positions with the path line and the position only; each file with its own tracks;
+       songs' profile never resumes or saves), `input.conf` ("Inside the player", controller and
+       keyboard, never Guide, View, LB / RB or the sticks), `owneet.lua` (the buttons' meanings,
+       the map's repeat timing, the display drawn with libass from the console's texts, palette,
+       fonts and glyphs).
+     - **owneetd** (`daemon/internal/player/`, `GET` / `POST /v1/player`, event `player.changed`):
+       the player is the app `player` of kind `media`, one at a time with games and web apps;
+       owneetd writes the session file, builds the command, forgets a saved position for "Watch
+       from the start", closes a player already open before another starts, follows the script
+       through mpv's control socket and tells it when the console is on screen over it.
+     - **Found while building it:**
+       - mpv 0.41 saves no position at all with an empty `watch-later-options`: the list is
+         `start`.
+       - mpv uses a saved position up when the file opens (the file is deleted) and writes it
+         again on quit, SIGTERM included; moving on at a file's end writes nothing. RT on a video
+         left half-way writes its position (`write-watch-later-config`).
+       - **mpv acts on the controller while the console is over it:** it reads the controller
+         through SDL without an SDL window, and SDL then delivers controller events even when
+         another app is on screen. So the check planned here was settled in the design: owneetd
+         sends `owneet-focus` from `focus.changed`, and the script ignores the buttons while the
+         console is on screen (checked in the preview; the real check is in gamescope, below).
+       - libass sizes text by the font's whole height (OS/2 win metrics: 1.59 em Lexend, 1.56 em
+         Bricolage Grotesque); the console's fonts are now also installed on disk
+         (`/usr/share/fonts/owneet/`, owneet-frontend) for mpv.
+       - mpv's plain X11 output ignores the background colour: the song screen draws its own
+         background around the picture.
+     - **The interface:** A on a video or song starts the player with the rest of its folder or
+       album (Autoplay, the texts, the palette, the language names sent each time); what plays is
+       marked "Playing" on the pages (A brings the player back, no Menu on it; a video playing is
+       first in Continue watching, its progress live); the home screen's hero shows it with its
+       time, Resume and Close (Close at once, "{title} closed"), its tile a green dot; Autoplay
+       switched in the player follows on the page; when the player closes the console is back on
+       the list it was opened from, on what played last; a file that could not be played and a
+       USB disk removed while it plays are said (`player.failed`, `toast.usb`). New texts (en,
+       it): the player's prompts, states and messages, `media.playing`, `toast.closed`,
+       `toast.usb`, `error.player`. Beyond the demo: a file that cannot be played moves on to the
+       next with "{title} could not be played." (the last one: said by the console).
+     - **Tests:** Go (`player`: the command, the session file, refusals, moving the player,
+       following its socket and the focus; `bindings_test.go`: never Guide, View, LB / RB or the
+       sticks, every binding known to the script, mpv's defaults off; the API), `test_Media`
+       (language codes, files present).
+     - **Preview:** `tools/player-preview` runs the real mpv with these files in a container of
+       the builder VM (Xvfb, invented media made with FFmpeg), presses buttons through mpv's
+       control socket, and prints the script's state and the saved positions:
+       `player-video.txt`, `player-music.txt`, `player-autoplay.txt`. Checked there: resuming a
+       saved position, the display gone after 4 s, pause, ±10 s, audio tracks ("Audio: Italian (2
+       of 2)", never "no sound"), subtitles off then each, Autoplay on (the next episode, the end
+       not saved) and off (the player closes at the end, nothing saved), LT's 5 s, RT saving the
+       position, Escape saving it, the buttons ignored with the console over the player; songs
+       with the folder's `cover.jpg`, their own picture, drawn art, the last song, nothing saved.
+       The frontend preview (`media-player.txt`, `media-player-music.txt`; the pretend owneetd now
+       "plays") shows the pages and the hero with the player open, and Close.
+     - **Code:** `9150828` (owneetd), `85b0cbe` (the reader), `79a3c2a` (theme, texts), `9a49168`
+       (tools), `cbf1393` (packages, credits).
+     - **While building:** owneetd's `update` package has a flaky test (`TestCheckThenApply`:
+       its fake rewrites the state file while the manager polls it; 6 failures in 150 runs),
+       older than this step; reported to the owner.
   6. **Close:** known limits, the FrankenPC checks (hardware decoding, a Switch controller's buttons
-     in mpv, a real USB disk of media), outcome; the owner approves the step.
+     in mpv, a real USB disk of media; in gamescope, which the test VM does not have: Guide → the
+     console with the sound going on → Resume, and the player's buttons doing nothing while the
+     console is over it), outcome; the owner approves the step.

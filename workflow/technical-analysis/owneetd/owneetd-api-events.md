@@ -21,4 +21,5 @@ Events format). Event types (initial list):
 (implemented, 2.4), `display.changed`, `display.pending`, `display.confirmed`, `display.reverted`
 (implemented, 3.9), `update.changed` (implemented, 4.2b), `apps.catalog.changed` (implemented, 5.0.0),
 `apps.open_failed` (`id`, `code`: `apps.widevine_failed` or `apps.failed`, `error`: a web app's first opening failed, 5.4),
+`player.changed` (what the Videos and Music pages' player plays, 5.6, [[owneetd-api-player]]),
 `xone.firmware_needed` (later).
