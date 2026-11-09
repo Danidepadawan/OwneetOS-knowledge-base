@@ -92,3 +92,13 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
   (5.85 GB)", "Copy Lantern Keep (1.2 GB)"), is dimmed with "Choose at least one game" when none is, and is selected at first
   (one A copies them all, as before); then the disk; B goes back one window. A disk with one game skips the question.
   Demo address: `#lang=it&open=plug` (the question at once). Waits for the owner's approval.
+- **Demo 6.6b approved by the owner (2026-11-09); built (owneet-frontend 0.38.8, code `9b131b6`):** `MoveSheet.qml` asks
+  "Which games to copy?" after "Copy to the console" when the disk has more than one game: `SettingRow` switches (new
+  `aside`: the size after the title, on its line, as in the demo), "All games" above, all on at first; the button (Dialog's
+  new `dim`: dimmed but selectable, A gives the edge sound when no game is on) is selected first; many games scroll inside
+  the window (as VersionsSheet), the selection kept in sight; B goes back one window, the choice kept. Messages in the five
+  languages. **Also fixed, to match the approved demo 6.6:** after the disk, the copy of a plugged-in disk's games starts at
+  once with the originals kept; the code opened the one-game "Move … to …" confirmation (first game's name only, with the
+  remove switch). Checked in the interface preview (`tools/preview-steps/plug-copy.txt`, a disk with 12 games): switches,
+  "All games", none chosen, scrolling, the disk's title for 10 games, B back with the choice kept, two games copied
+  ("Copying Ashen Gate (1 of 2)", "2 games copied to Internal disk"). Waits for the owner's test on FrankenPC.

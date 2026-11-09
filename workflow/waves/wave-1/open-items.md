@@ -14,8 +14,8 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
 
 1. **Choosing the games of a plugged-in disk** (reported 2026-11-08, recorded late): the question
    "Play from here / Copy to the console" must let the user copy one game or all of them. Demo first.
-   [[step-6.6-moving-games-and-media-between-disks]] — **demo `design/demos/6.6b-choose-games-to-copy.html`
-   ready (2026-11-09), waits for the owner's approval**.
+   [[step-6.6-moving-games-and-media-between-disks]] — demo 6.6b approved (2026-11-09), **built in
+   owneet-frontend 0.38.8, waits for the owner's test on FrankenPC**.
 2. **"Resume with the pointer" in the library**: missing there. Demo first.
    [[step-6.8-games-on-disk-delete-and-progress]]
 3. **Netflix / YouTube not silent behind the home screen**: left to Danidepadawan with the web apps
