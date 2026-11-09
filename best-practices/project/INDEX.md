@@ -22,4 +22,5 @@ tags: [index]
 - [[testing-and-verification]] — How steps are verified: builder and test VMs, frontend-preview, fakes, real hardware batches, measurements.
 - [[ui-patterns]] — Recurring interface rules: pickers, overflow opens the full list, Cancel first, no news for the user's own actions, navigation groups.
 - [[ui-text-and-i18n]] — No literal UI text: Tr singleton, en.json + it.json in the same change, key naming, placeholders, error codes.
+- [[waiting-for-events]] — No hard-coded waits: wait for the event that says something happened, never a fixed time that stands for it; fixed times only as safety limits, repeat intervals or chosen durations, said so in the code.
 - [[writing-for-users]] — Interface wording: plain words for a TV seen from the sofa, no technical names, no error codes.

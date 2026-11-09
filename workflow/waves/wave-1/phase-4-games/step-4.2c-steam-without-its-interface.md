@@ -170,3 +170,15 @@ The console keeps Steam's interface off the screen in everyday use ([[steam-inte
   for 300 ms after a window opens; "A ignored, … ms after a window opened" in the log. Test VM: a game's Options and the quick menu
   with two A 22 and 33 ms apart (the second ignored, nothing started), a normal A after a second works. The on-screen keyboards and
   the hold button use the same check, not tried by hand in the VM.
+- **Audit of the fixed waits (2026-11-09, [[waiting-for-events]]), open:** waits where a fixed time stands for an event, to be
+  replaced by the event (code as of commit e7b0edb):
+  - owneetd: a window shown after it stays 3 checks (`settleChecks`, `steamPageChecks`, Steam's flicker); a hidden Steam shown when
+    no game came after 20 s (`steamAskAfter`); Steam's own questions taken as the user's after 3 s (`steamAnswerWait`); a download
+    "moving" when its bytes grew in the last 5 s (`steamMoving`, now only when Steam's log does not name it); the pointer's shape read
+    120 ms after a click (`textDelay`).
+  - Interface: Wi-Fi "searching" for 20 s (`scanTimer`); "last played" read again 3 s after a game is asked for (`refreshTimer`); the
+    text for a web app sent 400 ms after its window is back (`pointerSend`); "Add games" kept selected for 4 s while the disks come
+    (`addGamesHold`); the start-up animation waiting 2.5 s for the screen (`introHold`).
+  Kept as they are (limits, repeat intervals, chosen durations): the wait for apps before power-off (25 s at most), systemd's stop
+  limits, SIGKILL after 5 s, retries every 2 s, the checks every 0.25-3 s, the notices' and toasts' times, holds and repeats of
+  buttons, "stuck" after 10 minutes without writing, the display's 15 / 30 s confirmations.

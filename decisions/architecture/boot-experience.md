@@ -52,7 +52,8 @@ Profile choices and their reasons are documented in the code repository (`iso/RE
   **Owner (2026-11-09): test it, demo first.** Demo `design/demos/7.6b-shutting-down.html` (on the approved 6.7 settings demo):
   Shut down or Restart confirmed, the console shows at once the splash's own picture (`owneetos-splash.svg`, black, the spinner at
   92% and `splash.shutting_down` under it) while it closes Steam and the games; then a moment of black (the hand-over) and the splash
-  itself; Restart ends on "Starting". Waits for the owner's approval.
+  itself; Restart ends on "Starting". **Approved by the owner (2026-11-09).** In the console the screen lasts as long as the
+  apps take to close (no fixed time: the demo's 6 s only stand for FrankenPC's Steam, [[waiting-for-events]]).
 
 ## History
 
