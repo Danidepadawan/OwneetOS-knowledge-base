@@ -180,9 +180,11 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
        test VM read 5 songs in 390 ms, 78 ms a song, no quicker than `ffprobe`. Likely cause:
        QSaveFile waits for the disk at every file of the cache (a song's own picture, the list),
        slow on a VM's disk. owneet-frontend 0.24.1 writes the cache without waiting and logs the
-       time spent in the files alone; measured again by the owner. (The frontend's log file
-       keeps information lines in memory: the time is read from the journal, `journalctl -t
-       owneet-cage`.)
+       time spent in the files alone. **Measured again (owner, 2026-11-09): 1.6 ms a song, 1.0 ms
+       of it in the files** (5 songs in 8 ms; [[cache-files-slow-to-write-in-a-vm]]). (The
+       frontend's log file keeps information lines in memory: the time is read from the journal,
+       `journalctl -t owneet-cage`.)
+     **Sub-step 4 passed the owner's test (2026-11-09)** with owneet-frontend 0.24.1.
      - **While building:** the PC went to sleep twice during a package build
        ([[builder-vm-stops-after-the-host-sleeps]]).
   5. **Code, the player:** mpv's configuration shipped by OwneetOS (the bindings of sub-step 2,
