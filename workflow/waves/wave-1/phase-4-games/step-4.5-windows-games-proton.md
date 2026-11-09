@@ -243,3 +243,6 @@ Up: [[phase-4-games]] · Status: **done**
   unmuted when it is back. The interface's own sounds and other programs are never touched. Test VM (`--audio`, cage
   session): a looping sound started as a game was muted 1 ms after Steam came in front of it (new streams too), and heard
   again when Steam closed (20:29:20.176 on screen, .177 sound back). Waits for the owner's test with The Witcher 2 and Guide.
+- **Owner's test of 0.25.13 (FrankenPC, 2026-11-09):** The Witcher 2 goes silent with Guide and its sound comes back with
+  Resume. Netflix / YouTube behind the home screen: not silent yet; the owner leaves the web apps to Danidepadawan
+  (phase 5, still in progress).
