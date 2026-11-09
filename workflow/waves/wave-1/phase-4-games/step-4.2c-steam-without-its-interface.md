@@ -182,3 +182,18 @@ The console keeps Steam's interface off the screen in everyday use ([[steam-inte
   Kept as they are (limits, repeat intervals, chosen durations): the wait for apps before power-off (25 s at most), systemd's stop
   limits, SIGKILL after 5 s, retries every 2 s, the checks every 0.25-3 s, the notices' and toasts' times, holds and repeats of
   buttons, "stuck" after 10 minutes without writing, the display's 15 / 30 s confirmations.
+- **The fixed waits replaced (owner's go, 2026-11-09; code commit 8d3e276; owneetd 0.25.6, owneet-frontend 0.38.4):**
+  - By the event: a question for the user shows Steam as soon as its console log says "waiting for user response to …" (Steam's
+    own routine questions, ShowInterstitials and CreatingProcess, named from every launch in FrankenPC's logs; no 3 s); a launch
+    that ends without a game ("Completed" or a failure) shows Steam at once; a game without its window shows Steam behind it when
+    the log asks the user; a download moves when Steam's log says so (no 5 s rule; nothing moves while Steam is closed); the
+    pointer's shape follows the X server's cursor events (XFixes CursorNotify; a click asks the keyboard at once when the pointer
+    is the "I", or when the app makes it so before the pointer moves: no 120 ms); the recent games follow the games' own changes
+    (`dataChanged`); the text for a web app goes on "focus.changed"; "Add games" stays selected until the games are read
+    (`Internal.scanner.running`).
+  - Kept, commented: as safety limits, Steam's launch not named in its log after 20 s, a game without a window after 2 min, the
+    Wi-Fi search after 20 s (it ends on "wifi.scan_done"); as no event exists, Steam's window steadiness (3 checks: Steam logs
+    neither its flicker's end nor the page it shows) and the start-up animation's wait (nothing tells when the monitor shows the
+    picture: the duration tried with the owner).
+  - Go tests (Steam's user question at once, a failed launch, the routine questions, downloads by the log, the pointer's shape
+    by events, no keyboard after a move). Test VM: the interface starts without errors. **Waits for the owner's test on FrankenPC.**
