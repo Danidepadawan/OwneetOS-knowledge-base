@@ -27,5 +27,5 @@ Up: [[phase-2-system-daemon]] · Status: **done**
   Wireless Controller" and "Microsoft X-Box 360 pad 0", with one Xbox controller over Bluetooth (a generic USB dongle). Not the
   dongle: the second is **Steam's virtual controller** (Steam Input), made with uinput about 20 s after Steam starts and gone when
   it closes (`/devices/virtual/input/input20`; owneetd: "controller connected" id=event16, guide=true, 2026-11-09 00:09:05 and
-  09:30:00). owneetd takes it as a controller, Guide included. To fix: controllers made by a program through uinput (under
+  09:30:00). owneetd takes it as a controller, Guide included. To fix (accepted by the owner, 2026-11-09): controllers made by a program through uinput (under
   `/devices/virtual/input`) are not listed nor read; a Bluetooth controller (uhid, `/devices/virtual/misc/uhid/…`) stays.

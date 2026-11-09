@@ -151,3 +151,8 @@ Up: [[phase-3-frontend]] · Status: **done**
   window has a fixed width (the countdown no longer resizes it). Found and fixed meanwhile: a
   window opened right at the interface's start had no selected button (its buttons are created a
   moment later), so A did nothing there. owneet-frontend 0.10.2.
+- **The authors in the console's credits (owner, 2026-11-09):** Settings → System → Credits and licences opens with the authors,
+  Marco De Franco (fancy-dino) and Daniele De Padova (Danidepadawan), side by side at the same level, as on the website
+  ([[website]]). Demo first: `design/demos/3.9b-credits-authors.html` (on the approved 6.7 settings demo; only the two names with
+  their GitHub accounts above the projects). Waits for the owner's approval; the step is not reopened (one addition).
+  Also accepted the same day: Steam's virtual controller left out of the controllers ([[step-2.3-controller-input]]).
