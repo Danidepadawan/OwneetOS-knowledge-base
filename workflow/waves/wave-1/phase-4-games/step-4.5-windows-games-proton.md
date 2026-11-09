@@ -163,3 +163,11 @@ Up: [[phase-4-games]] · Status: **done**
 - **Owner's answers (2026-11-09):** the control was lost right after the launcher: the splash and the intro film showed normally
   but could not be skipped, the input ignored. **Decision:** a game left open on the home screen (Guide) goes **silent** (not
   paused: not every game can be). Test now: The Witcher 2 started with Steam closed since the power-on (OWNEETLOG plugged in).
+- **Cause confirmed (owner's test, FrankenPC, 2026-11-09 15:35):** with Steam never opened, The Witcher 2's controller works every
+  time. Facts gathered: Steam's virtual controller is `28de:11ff` (Valve's "Steam Virtual Gamepad"), bus USB, version 1, name
+  "Microsoft X-Box 360 pad 0", made through uinput (test VM, Steam with a test pad: `/sys/class/input/input9`); Steam's log: "Created
+  virtual controller at slot 0". Since Proton 11, Valve's patch makes Proton read every evdev device itself, past SDL's filter, so
+  `SDL_GAMECONTROLLER_IGNORE_DEVICES` alone would not hide it (a Bottles report, not verified here); the remedy reported is the
+  prefix's winebus setting `DisableInput` = 1 (Wine's own default: controllers through SDL, which leaves out 28de:11ff). Not
+  verified yet: Windows' controller panel (joy.cpl) did not start through owneet-windows-run in the test VM (the prefix was not
+  made), and the VM's debug shell stopped answering. Waits for the owner's choice of how to verify.
