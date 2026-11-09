@@ -34,6 +34,12 @@ tags: [decision, architecture, boot]
 Profile choices and their reasons are documented in the code repository (`iso/README.md`,
 "Choices"). Steps: [[step-1.4-boot-experience]].
 
+- **Reported (owner, FrankenPC, 2026-11-09), open:** from the home screen to "Shutting down" takes too long, and the screen goes off
+  and disconnects before the splash shows. The console first closes the apps (Steam took 6 s: 11:09:19 to 11:09:25), the testers'
+  logs are copied when OWNEETLOG is plugged in, then the interface ends and gives the screen up and the splash takes it again (the
+  monitor re-syncs). Ways to look at, with the owner: the console showing "Shutting down" itself at once (as the splash looks), and
+  why the monitor re-syncs (a mode change between gamescope and the splash).
+
 ## History
 
 Entries of the [[decision-log]] that shaped this note.

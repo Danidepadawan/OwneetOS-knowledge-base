@@ -160,3 +160,8 @@ The console keeps Steam's interface off the screen in everyday use ([[steam-inte
 - **Reported by the owner (FrankenPC, 2026-11-09), open:** Details of Batman: Arkham Knight showed "Time left: about 116 min".
   From an hour up it must read hours and minutes ("about 1 h 56 min"): `details.left.minutes` is used for every length
   (`theme.qml`, the Details rows); a message with hours and minutes is added in the five languages.
+- **Owner's test on FrankenPC (2026-11-09, 10:44-11:09):** Batman: Arkham Knight resumed: "downloading" from the first moment, the
+  bytes growing in every snapshot (4.97 GB at 10:44 to 22.3 GB at 11:09, about 15 MB/s); owner: apparently passed, to be confirmed by
+  finishing it and installing another game. The double A seen for real: `Window "Come tornare da Steam": A ignored, 47 ms after
+  opening` (10:44:47, Steam not running yet: not its virtual controller), the next A taken 2 s later: one press of the controller
+  can reach the interface twice about 50 ms apart; the guard holds it. Waits for the owner's last checks.

@@ -20,7 +20,7 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **to do**
 - **Demo first** ([[demo-before-code]]). Texts in the five languages ([[ui-text-and-i18n]]).
 - **Choices (owner, 2026-11-09):**
   - The pictures are read from a folder named **Images** in the disk's language: `Images`, `Immagini`, `Bilder`, `Imágenes`
-    (French: `Images`), at the top of the disk (its sub-folders too; to be confirmed with the demo).
+    (French: `Images`), in any case of letters as the Games folder, at the top of the disk (its sub-folders too; to be confirmed with the demo).
   - **Every disk but the console's own** in Wave 1 (USB sticks and disks, and the other internal disks).
   - **A preview** of the selected picture beside the list.
   - The cover is **copied into the game's folder** as `cover.<ext>`, where the console already looks for a game's cover
