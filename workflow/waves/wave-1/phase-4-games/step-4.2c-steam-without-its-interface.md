@@ -165,3 +165,8 @@ The console keeps Steam's interface off the screen in everyday use ([[steam-inte
   finishing it and installing another game. The double A seen for real: `Window "Come tornare da Steam": A ignored, 47 ms after
   opening` (10:44:47, Steam not running yet: not its virtual controller), the next A taken 2 s later: one press of the controller
   can reach the interface twice about 50 ms apart; the guard holds it. Waits for the owner's last checks.
+- **The guard in every window (owner, 2026-11-09: "no half solutions"):** owneet-frontend 0.38.3 (code commit after 78390c0) moves it
+  into `Nav`: Dialog, Sheet, the quick menu, the clock, both on-screen keyboards (a physical Enter too) and the hold button take no A
+  for 300 ms after a window opens; "A ignored, … ms after a window opened" in the log. Test VM: a game's Options and the quick menu
+  with two A 22 and 33 ms apart (the second ignored, nothing started), a normal A after a second works. The on-screen keyboards and
+  the hold button use the same check, not tried by hand in the VM.

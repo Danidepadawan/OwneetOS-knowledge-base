@@ -43,6 +43,12 @@ Profile choices and their reasons are documented in the code repository (`iso/RE
   preferred mode (likely 60 Hz): going back to it makes the monitor re-sync. owneet-base 0.0.58 (code commit 74718ef) adds to the
   testers' report the monitor's modes with the EDID's refresh, and the end of the previous start's journal (the power-off after the
   stick's logs stop). Waits for a test: two power-offs with OWNEETLOG.
+  **Found (FrankenPC, 2026-11-09, 11:25):** the monitor's preferred mode is 1440x900 at 74.57 Hz, the same as gamescope's: not
+  the refresh. The wait: 6.2 s from the choice (11:25:51.57) to the power-off request (57.75), owneetd closing Steam cleanly (Steam
+  must close while the console session runs, or it checks all its files at the next start), with the home screen still and nothing
+  saying it is shutting down; then the splash starts (57.83), the console session ends (58.18) and the system is down to unmounting
+  in about 1.5 s. The re-sync is the screen going from gamescope to the splash (on NVIDIA a full mode set). Next: what the owner
+  chooses (the console saying "Shutting down" at once covers the 6 s; the hand-over itself is likely to stay).
 
 ## History
 

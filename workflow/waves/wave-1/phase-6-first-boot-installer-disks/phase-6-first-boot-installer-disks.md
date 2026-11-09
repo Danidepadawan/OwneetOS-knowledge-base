@@ -13,3 +13,4 @@ Steps and their status: [[workflow/waves/wave-1/phase-6-first-boot-installer-dis
 - **Added on 2026-11-07 (owner):** [[step-6.7-preparing-other-disks]], erasing and preparing the other disks, in the installer and in Settings.
 - **Added on 2026-11-08 (owner):** [[step-6.8-games-on-disk-delete-and-progress]], deleting games and installers from a disk, and the progress of Windows installs.
 - **Added on 2026-11-09 (owner):** [[step-6.9-cover-images-from-a-disk]], a cover for a local game from a picture on a stick or disk.
+- **Added on 2026-11-09 (owner):** [[step-6.10-waking-the-console-with-the-controller]], waking the console from sleep with the controller.
