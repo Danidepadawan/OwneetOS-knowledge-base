@@ -21,6 +21,11 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
 3. **Netflix / YouTube not silent behind the home screen**: left to Danidepadawan with the web apps
    (owner, 2026-11-09). [[step-4.5-windows-games-proton]]
 
+3b. **Wine's own programs followed as the game's** (found in the owner's test log, 2026-11-09 21:50): the
+   home screen at the game's end waited for `C:\windows\system32\explorer.exe` too, because it owns a window;
+   there it ended before the game, but it could outlive it until Wine closes. Fix proposed: never count a
+   program under `C:\windows` as the game's, even with a window. [[step-4.5-windows-games-proton]]
+
 ## Decided, not built yet
 
 4. **"Shutting down" screen at once** (7.6b): demo `design/demos/7.6b-shutting-down.html` approved;

@@ -256,3 +256,7 @@ Up: [[phase-4-games]] · Status: **done**
   alive). The log names every followed program ("following a program of the game") and its end. Checked with unit tests (a
   launcher that starts the game and ends; a real pidfd); not on a screen yet: the test VM has no gamescope. Waits for the
   owner's test: quit The Witcher 2 from its menu.
+- **Owner's test of 0.25.14 (FrankenPC, 2026-11-09 21:48; logs `out/test-logs/frankenpc-2026-11-09l`):** "solved"; the log:
+  `witcher2.exe` ended at 21:50:03.469, the home screen at 03.474. Found there: Wine's `explorer.exe` was followed too (it
+  owns a window) and ended at 03.314, before the game; it could outlive the game elsewhere. Open item: count no program under
+  `C:\windows` as the game's, even with a window ([[open-items]]).
