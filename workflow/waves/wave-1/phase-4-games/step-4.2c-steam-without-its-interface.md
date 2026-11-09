@@ -141,3 +141,7 @@ The console keeps Steam's interface off the screen in everyday use ([[steam-inte
     as Steam writes. To be fixed.
   - **Nice to have (Wave 1 if easy):** a percentage, or at least "Preparing", while Steam prepares a download before it starts
     (reconfiguring, verifying, preallocating, the shader cache: more than a minute of "Waiting" for Arkham Knight).
+  - **Fault, not reproduced yet:** on FrankenPC one press of A on "How to come back from Steam" also confirmed "Before Steam
+    opens" (NVIDIA) right after it (owner, 2026-11-09). Test VM (2026-11-09, owneetd made to report NVIDIA): with the keyboard each
+    window takes its own press (Install → the first notice → the second, waiting). The interface acts on the press, ignores
+    repeats, and gets the controller as one device; the cause is to be found on the hardware (a log of each A taken by a window).
