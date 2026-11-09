@@ -29,3 +29,9 @@ Up: [[phase-2-system-daemon]] · Status: **done**
   it closes (`/devices/virtual/input/input20`; owneetd: "controller connected" id=event16, guide=true, 2026-11-09 00:09:05 and
   09:30:00). owneetd takes it as a controller, Guide included. To fix (accepted by the owner, 2026-11-09): controllers made by a program through uinput (under
   `/devices/virtual/input`) are not listed nor read; a Bluetooth controller (uhid, `/devices/virtual/misc/uhid/…`) stays.
+- **Fixed (2026-11-09; owneetd 0.25.8):** a device made by a program through uinput (`/sys/devices/virtual/input/…`) is neither
+  listed nor read: Steam's virtual controller, other programs' virtual keyboards (whose Super would be Guide), owneetd's own. A
+  Bluetooth controller (uhid) and USB controllers stay; so do the project's test devices (names starting "OwneetOS Test":
+  owneet-testpad, the uinput integration tests, which still pass). Go test with a fake sysfs (Steam's pad, a Bluetooth and a USB
+  controller, a test pad, owneetd's keyboard). **Waits for the owner's test on FrankenPC:** Settings → Controllers and
+  Bluetooth with Steam open shows one controller.
