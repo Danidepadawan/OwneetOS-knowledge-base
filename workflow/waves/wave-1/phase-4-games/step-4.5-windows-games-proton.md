@@ -151,3 +151,12 @@ Up: [[phase-4-games]] · Status: **done**
   download percentage). Left as known: a short black flash before Windows games (not a
   priority); one GPU fault (Xid 79) seen once, watched. Follow-up: the player's own
   compatibility layers, [[wave-2]] item 17.
+- **Reported by the owner (FrankenPC, 2026-11-09, 13:11-13:17), open, serious:** The Witcher 2 (GOG, Windows) lost the controller
+  and could not get it back; leaving it with Guide without closing it, the cutscene's sound went on. What the logs say: the game's
+  window ("The Witcher 2", pid 7863) was the one gamescope focused (GAMESCOPE_FOCUSED_WINDOW) whenever it was on screen; Steam was
+  running (opened at 13:07:20), so its virtual controller existed; Wine's invisible input-only window (1438x898, depth 0, override)
+  came with the game (the pointer's capture). "Resume with the pointer" was turned on over "The Witcher 2 Launcher" and off by
+  itself 4 s later when the game's own window replaced it (by design: the pointer holds for one window). Lead, not proved: a game
+  started outside Steam reads Steam's virtual controller (which sends nothing) instead of the real one. The Proton log has no input
+  channel. Asked to the owner: when the control was lost and what was on screen; whether the game should pause or go silent on the
+  home screen; a run with Steam closed.
