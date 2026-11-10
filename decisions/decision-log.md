@@ -310,3 +310,4 @@ Decisions by area: [[decisions/INDEX|decisions index]].
 | 2026-11-10 | Details window: a value too long for it (an installer's file name) is shortened in the middle with "…" (owner). Built in owneet-frontend 0.38.10. | [[step-4.6-installers]] |
 | 2026-11-10 | A moved or copied game keeps the file chosen to start it; a copied game (the original kept) gets a copy of the original's prefix and DOS data (owner). | [[step-6.6-moving-games-and-media-between-disks]] |
 | 2026-11-10 | Demo 6.6d corrected (owner): a progress for the removal of the original too; no step for the original when it is kept. | [[step-6.6-moving-games-and-media-between-disks]] |
+| 2026-11-10 | Copying several games, "Stop?" lets the user stop only the current game's copy or the whole copy (owner); demo 6.6d. | [[step-6.6-moving-games-and-media-between-disks]] |

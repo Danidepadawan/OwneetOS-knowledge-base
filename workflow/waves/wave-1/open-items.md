@@ -51,6 +51,10 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    (c) in the demo, Cancel did not cancel the copy (perhaps only the demo's fault: to check the same in the code).
    **Demo corrected (2026-11-10):** (a) and (b) done; (c) the demo drew its window again every 160 ms, so a click fell
    on a button already replaced: now only the numbers change (the interface's Cancel is never rebuilt during the copy).
+   **Owner (2026-11-10):** Cancel stops the copy of every chosen game: the "Stop?" window must let the user choose
+   to stop the whole copy or only the current game's. Demo first. **In demo 6.6d:** with games left after the current
+   one, "Keep going" (selected), "Stop this game" (its partial copy removed, the next games go on), "Stop all" (the
+   games already copied stay); the last or a single game keeps one "Stop"; the final notice counts the games copied.
    Waits for the owner's approval; then the code.
    [[step-6.6-moving-games-and-media-between-disks]]
 3i. **The details window's text out of the window** (owner, 2026-11-10 12:32, "the installer's description"): most likely
