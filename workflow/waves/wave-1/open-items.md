@@ -12,10 +12,6 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
 
 ## The owner's reports, not solved yet
 
-1. **Choosing the games of a plugged-in disk** (reported 2026-11-08, recorded late): the question
-   "Play from here / Copy to the console" must let the user copy one game or all of them. Demo first.
-   [[step-6.6-moving-games-and-media-between-disks]] — demo 6.6b approved (2026-11-09), **built in
-   owneet-frontend 0.38.8, waits for the owner's test on FrankenPC**.
 2. **"Resume with the pointer" in the library**: missing there. Demo first.
    [[step-6.8-games-on-disk-delete-and-progress]]
 3. **Netflix / YouTube not silent behind the home screen**: left to Danidepadawan with the web apps
@@ -26,21 +22,26 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    there it ended before the game, but it could outlive it until Wine closes. Fix proposed: never count a
    program under `C:\windows` as the game's, even with a window. [[step-4.5-windows-games-proton]]
 
-3c. **Removing the originals of single games** (asked 2026-11-10): "add the feature to remove single
-   games from the original", in the copy from a plugged-in disk (6.6b). What exactly was asked to
-   the owner; demo first. [[step-6.6-moving-games-and-media-between-disks]] — the owner: game by game
-   (2026-11-10); demo 6.6c approved; built (owneetd 0.25.15, owneet-frontend 0.38.9). Owner's test
-   (2026-11-10): the choice works; a copy done; whether the original went (if asked) to be
-   told; the read-only case to be checked in the test VM (no Windows disk at hand).
+3c. **Removing the originals of single games, the read-only case** (6.6c, confirmed by the owner on
+   2026-11-10: the original removed after a copy, with no error; the choice of
+   games, item 1 of 2026-11-09, confirmed too): left, a USB disk that Windows left read only, to check
+   in the test VM (the owner has no Windows disk). [[step-6.6-moving-games-and-media-between-disks]]
 
 3d. **The console's disk has less room** (owner, 2026-11-10): about 57 GB free, about 80 the day before.
-   Not explained by the logs (the report does not measure folders; Steam's Cyberpunk download is at
-   1.3 GB; a stick update is about 216 MB). To measure first. [[open-items]]
+   Not explained by the logs (the report did not measure folders; Steam's Cyberpunk download is at
+   1.3 GB; a stick update is about 216 MB). The owner installed The Witcher 2 the day before, perhaps on
+   this disk by mistake. The test report measures the console's disk from owneet-base 0.0.60 (testers
+   only, owner's condition): to read in the next logs. [[open-items]]
 3e. **A copy stuck at 29 %** (owner, 2026-11-10 11:01-11:13): a copy from the USB disk "GAMES-320" to
    "2TB HDD SATA" stayed at 29 % and the owner stopped it (the partial copy was
-   removed). No disk error in the log; the percentage counts bytes handed to the system, and each
-   file waits for its own sync at its end: a very large file can hold it still. To confirm and fix.
-   [[step-6.6-moving-games-and-media-between-disks]]
+   removed). **Diagnosis (no change made, owner's request):** the copy was never paused nor blocked
+   (Stop worked in 130 ms); the USB disk read about 12 MB/s until 11:07:15, then stayed almost idle
+   (0.2-2 s busy every 12 s, about 0.5 MB/s): the copy waited on its writes. The 2 TB disk is a
+   Seagate ST2000DM008, a drive-managed SMR model: after a few GB written at once it slows down to
+   well under 1 MB/s while it rewrites its tracks (about 3.7 GB had been written). The first guess (the
+   wait at each file's end) is ruled out by the data. To confirm with the next logs (each disk's
+   writes, the memory waiting to be written, /v1/moves: owneet-base 0.0.60); then what the console
+   does about such disks is the owner's choice. [[step-6.6-moving-games-and-media-between-disks]]
 
 ## Decided, not built yet
 

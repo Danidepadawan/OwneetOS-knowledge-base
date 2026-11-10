@@ -132,3 +132,11 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
   it stayed at 29 % and the owner stopped it at 11:13:18 (the partial copy removed). No disk
   error in the journal (only correctable PCIe messages). Open ([[open-items]] 3e). The read-only case is left to the test
   VM: the owner has no Windows disk.
+- **Owner (2026-11-10):** an original was removed from the USB disk after its copy, with no error: 6.6c
+  confirmed (and the choice of games, 6.6b). **Diagnosis of the copy at 29 %** (no change, owner's request), from the
+  report's snapshots (sectors read and ms reading per disk, every 12 s): no pause, no blocked task, Stop in 130 ms; the
+  source USB disk read about 12 MB/s until 11:07:15, then stayed almost idle (about 0.5 MB/s while busy, busy 0.2-2 s
+  every 12 s): the copy waited on its writes. The target "2TB HDD SATA" is a Seagate ST2000DM008 (boot log), a
+  drive-managed SMR disk, which slows down to well under 1 MB/s after a few GB written at once (about 3.7 GB here). The
+  first guess (each file's sync at its end) is ruled out. To confirm: owneet-base 0.0.60's report has each disk's writes,
+  the memory waiting to be written and /v1/moves.
