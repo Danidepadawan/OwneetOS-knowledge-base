@@ -24,7 +24,8 @@ tags: [decision, games, disks]
   install was made through (owner, 2026-11-10). The check of the copy will show its own progress, as the
   copy (demo 6.6d, owner 2026-11-10).
   A moved or copied game keeps the file chosen to start it; a **copied** game gets a copy of those
-  folders (owner, 2026-11-10). The removal of the original shows its progress too, and a copy that keeps
+  folders (owner, 2026-11-10). When those folders cannot be copied, the game's copy did not work: it is removed,
+  the original untouched (owner, 2026-11-10). The removal of the original shows its progress too, and a copy that keeps
   the original shows no step for it (demo 6.6d, owner's corrections).
   **A copy goes on behind its window** (demo 6.6e, approved 2026-11-10): Home on the copy's window closes
   it and shows the home screen (only there: elsewhere Guide keeps its meaning, e.g. back to the open app);
@@ -75,3 +76,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-11-10 | A moved game takes its own folders on the console's disk (Windows prefix, DOS data) and its install's link with it; the check of a copy gets its own progress, demo 6.6d first (owner). |
 | 2026-11-10 | A moved or copied game keeps its chosen file; a copy gets a copy of the prefix and DOS data; demo 6.6d: the removal with a progress, no step when the original is kept (owner). |
 | 2026-11-10 | Demo 6.6e approved with one correction (owner): Home closes only the copy's window, the copy goes on behind it (top bar, covers, A shows it again, one copy at a time); everywhere else Guide keeps its meaning. A shutdown or restart during a copy is confirmed first; the copy then stops and its partial copy is removed (also when owneetd stops). |
+| 2026-11-10 | A copy whose own folders (prefix, DOS data) cannot be copied did not work: removed, the original untouched (owner). |

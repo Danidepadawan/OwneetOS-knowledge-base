@@ -184,7 +184,7 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
   copy passed its check, the file chosen to start it (owneet-frontend's `disk-games.json`) is given to the new folder, and a
   moved game's old entry goes; a copy (the original kept) gets a copy of the original's own folders (Windows prefix, DOS
   data), which, like the check, only a shutdown stops; when the games go to the console's disk, the room needed counts
-  those folders too. **Built this way, to confirm with the owner:** when the own folders cannot be copied, the game's copy
+  those folders too. **Confirmed by the owner (2026-11-10):** when the own folders cannot be copied, the game's copy
   counts as "did not work" (removed with what was copied, the original untouched), since without its prefix a Windows game
   may not start (3j). Go tests; checked in the test VM: a game with two files to start and "Start B.exe" chosen, copied to
   the console's disk and moved back to a disk: the choice followed both times, the prefix was copied (files and links the
