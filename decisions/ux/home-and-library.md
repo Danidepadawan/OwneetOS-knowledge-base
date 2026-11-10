@@ -4,7 +4,7 @@ description: "Overflow rule, library disks summary and Disks window, offline ico
 area: ux
 status: active
 decided: 2026-10-09
-updated: 2026-10-11
+updated: 2026-11-10
 legacy: "PROJECT_RULES.md §9 (overflow), §13 (2026-10-09)"
 tags: [decision, ux]
 ---
@@ -18,6 +18,8 @@ tags: [decision, ux]
   space and notices (demo 3.7, review 2).
 - **Offline** is shown in the top bar with a crossed network icon (Wi-Fi, or cable on machines
   without Wi-Fi), not by hiding it.
+- **Details window:** a value too long for the window (an installer's file name) is shortened in the
+  middle with "…"; the window keeps its width (owner, 2026-11-10).
 - Library filters and "Add games": [[game-library]].
 
 Steps: [[step-3.6-home-screen]], [[step-3.7-library-screen]].
@@ -31,3 +33,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-09 | Overflow rule ([[design-direction]]): a list larger than its place opens the full list from its last place. Library: up to two disks shown, with three or more one summary; the disks are reached with up from the first row and A opens a window listing every disk with its free space and notices (demo 3.7, review 2). |
 | 2026-10-09 | Offline is shown in the top bar with a crossed network icon (Wi-Fi, or cable on machines without Wi-Fi), not by hiding it. |
 | 2026-10-09 | Offline icon approved; next: demo 3.9 (Settings). |
+| 2026-11-10 | Details window: a value too long for it is shortened in the middle with "…" (owner chose this over wrapping). |

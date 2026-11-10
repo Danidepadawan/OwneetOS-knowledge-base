@@ -148,3 +148,11 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
   original that fails is only logged, and the game still counts as moved; a Windows game's prefix (its saves, settings and
   what its installer wrote) is named after the game's folder, so a moved game gets a new, empty prefix and the old one stays
   on the console's disk.
+- **Owner (2026-11-10):** the prefix goes with the game; "Checking the copy" gets a progress, demo first; a long value in the
+  details window is shortened in the middle. **The logs** (`out/test-logs/frankenpc-20261110-115130`; the report had no
+  new diagnostics yet: owneet-base 0.0.60 was installed during that start): The Witcher 2's move (12:21) worked and removed
+  the original; the copy is "…(2)" on the 2 TB disk (the installer's folder has the plain name there); it closed at once
+  because its new, empty prefix lacks what the installer wrote (`MSVCP100.dll`). **Built:** owneetd 0.25.16 (a moved game's prefix and DOS data renamed to its new
+  place, its install's link pointed there; never over a folder already there; Go tests, the name checked against the
+  real prefix names in the log); owneet-frontend 0.38.10 (details window, [[step-4.6-installers]]); demo
+  `design/demos/6.6d-check-progress.html` waits for approval. Open: [[open-items]] 3h-3j.

@@ -4,7 +4,7 @@ description: "Automatic mounting of every disk, read-only dirty NTFS, moving gam
 area: games
 status: active
 decided: 2026-10-03
-updated: 2026-11-09
+updated: 2026-11-10
 legacy: "PROJECT_RULES.md §6 (mounting, moving)"
 tags: [decision, games, disks]
 ---
@@ -19,6 +19,10 @@ tags: [decision, games, disks]
   original is deleted only after the copy is checked. A copy that fails its check is removed and
   the original stays untouched: "The copy did not work" with Close (selected) and Try again; with
   several games the others go on and a summary comes at the end. Steam games are moved by Steam itself (its storage settings, opened from the console).
+  A **moved** game takes with it its own folders on the console's disk (a Windows game's prefix: saves,
+  settings, what its installer wrote; a DOS game's data), named after the game's folder, and the link its
+  install was made through (owner, 2026-11-10). The check of the copy will show its own progress, as the
+  copy (demo 6.6d, owner 2026-11-10).
 - The library shows the disks with their free space and notices ([[home-and-library]]).
 - **Until step 6.5** (owner, 2026-10-15): step 4.3 mounts external disks automatically, read only,
   just enough to read the games on them; the full mounting stays in step 6.5.
@@ -58,3 +62,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-11-07 | Other disks erased and prepared for games from the console: installer and Settings → Disks ([[step-6.7-preparing-other-disks]]). |
 | 2026-11-08 | Disks prepared for games by the console become Steam libraries: owneetd hands them to Steam with `steam://addlibraryfolder` (owner: use it; only the disks the console prepared; a fix of step 6.7). |
 | 2026-11-09 | Disks for games in Steam: `steam://addlibraryfolder` is ignored outside SteamOS; owneetd writes them into Steam's `libraryfolders.vdf` (both copies) while Steam is closed, before starting it, labelled with the disk's name (owner chose this way). |
+| 2026-11-10 | A moved game takes its own folders on the console's disk (Windows prefix, DOS data) and its install's link with it; the check of a copy gets its own progress, demo 6.6d first (owner). |
