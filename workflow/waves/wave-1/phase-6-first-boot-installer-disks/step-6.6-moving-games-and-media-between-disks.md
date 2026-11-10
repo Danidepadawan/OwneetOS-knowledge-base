@@ -102,3 +102,5 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
   remove switch). Checked in the interface preview (`tools/preview-steps/plug-copy.txt`, a disk with 12 games): switches,
   "All games", none chosen, scrolling, the disk's title for 10 games, B back with the choice kept, two games copied
   ("Copying Ashen Gate (1 of 2)", "2 games copied to Internal disk"). Waits for the owner's test on FrankenPC.
+- **Asked by the owner (2026-11-10), open:** "add the feature to remove single games from the original" (the copy from a
+  plugged-in disk); its exact meaning is being asked; demo first ([[open-items]] 3c).

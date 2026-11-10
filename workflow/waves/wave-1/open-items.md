@@ -26,6 +26,10 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    there it ended before the game, but it could outlive it until Wine closes. Fix proposed: never count a
    program under `C:\windows` as the game's, even with a window. [[step-4.5-windows-games-proton]]
 
+3c. **Removing the originals of single games** (asked 2026-11-10): "add the feature to remove single
+   games from the original", in the copy from a plugged-in disk (6.6b). What exactly is being asked to
+   the owner; demo first. [[step-6.6-moving-games-and-media-between-disks]]
+
 ## Decided, not built yet
 
 4. **"Shutting down" screen at once** (7.6b): demo `design/demos/7.6b-shutting-down.html` approved;
