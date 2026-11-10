@@ -46,7 +46,10 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
 3h. **"Checking the copy" says nothing while it works** (owner, 2026-11-10, moving The Witcher 2): it looked stuck, then
    ended. The check reads the original and the copy in full (SHA-256) with the percentage fixed at 100: as long as the
    copy, with no sign of life. Owner (2026-11-10): a demo first; **demo 6.6d** (`design/demos/6.6d-check-progress.html`:
-   the check's own percentage and bar, as the copy) waits for the owner's approval. [[step-6.6-moving-games-and-media-between-disks]]
+   the check's own percentage and bar, as the copy) waits for the owner's approval. **Owner's corrections (2026-11-10):**
+   (a) a progress for the removal of the original too; (b) when the original is kept, no step for it in the window;
+   (c) in the demo, Cancel did not cancel the copy (perhaps only the demo's fault: to check the same in the code).
+   [[step-6.6-moving-games-and-media-between-disks]]
 3i. **The details window's text out of the window** (owner, 2026-11-10 12:32, "the installer's description"): most likely
    the installer's long file name in the facts (The Witcher 2): the facts' grid has no width limit and the window does not
    widen for it. Owner (2026-11-10): shortened in the middle with "…". **Built** (owneet-frontend 0.38.10, checked in
@@ -62,7 +65,10 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    12:42-12:57 went to the console's disk, into the original prefix. **Fixed** (owner, 2026-11-10: the prefix goes with
    the game): owneetd 0.25.16 renames the game's own folders (Windows prefix, DOS data) to the new place and points the
    install's link there; Go tests; waits for the owner's test. Left: a failed removal of the original is only logged
-   (did not happen here); to propose to the owner. [[step-6.6-moving-games-and-media-between-disks]]
+   (did not happen here); to propose to the owner. **Owner (2026-11-10, after the fix's stick):** "neither copy
+   started" (the one moved to the 2 TB disk and the one reinstalled on the console's disk), so he uninstalled both;
+   "I moved everything, and the tests failed"; he downloads The Witcher 2 again, both its Windows and its Linux
+   version, to test both. The logs of that start to read. [[step-6.6-moving-games-and-media-between-disks]]
 3l. **Installing The Witcher 2 "on the SATA disk"** (owner, 2026-11-10): an installer on any disk installs on the console's
    own disk (by design, [[step-4.6-installers]]), so the install of 2026-11-09 went there by design, not by mistake (3d);
    told the owner on 2026-11-10. Installing straight on another disk would be a new decision, if he wants one.

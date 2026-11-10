@@ -23,6 +23,9 @@ tags: [decision, games, disks]
   settings, what its installer wrote; a DOS game's data), named after the game's folder, and the link its
   install was made through (owner, 2026-11-10). The check of the copy will show its own progress, as the
   copy (demo 6.6d, owner 2026-11-10).
+  A moved or copied game keeps the file chosen to start it; a **copied** game gets a copy of those
+  folders (owner, 2026-11-10). The removal of the original shows its progress too, and a copy that keeps
+  the original shows no step for it (demo 6.6d, owner's corrections).
 - The library shows the disks with their free space and notices ([[home-and-library]]).
 - **Until step 6.5** (owner, 2026-10-15): step 4.3 mounts external disks automatically, read only,
   just enough to read the games on them; the full mounting stays in step 6.5.
@@ -63,3 +66,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-11-08 | Disks prepared for games by the console become Steam libraries: owneetd hands them to Steam with `steam://addlibraryfolder` (owner: use it; only the disks the console prepared; a fix of step 6.7). |
 | 2026-11-09 | Disks for games in Steam: `steam://addlibraryfolder` is ignored outside SteamOS; owneetd writes them into Steam's `libraryfolders.vdf` (both copies) while Steam is closed, before starting it, labelled with the disk's name (owner chose this way). |
 | 2026-11-10 | A moved game takes its own folders on the console's disk (Windows prefix, DOS data) and its install's link with it; the check of a copy gets its own progress, demo 6.6d first (owner). |
+| 2026-11-10 | A moved or copied game keeps its chosen file; a copy gets a copy of the prefix and DOS data; demo 6.6d: the removal with a progress, no step when the original is kept (owner). |
