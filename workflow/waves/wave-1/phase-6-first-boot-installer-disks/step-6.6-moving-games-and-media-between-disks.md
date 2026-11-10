@@ -164,3 +164,9 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
 - **Owner's test of 6.6d (FrankenPC, 2026-11-10, log 16:21):** "Stop this game" works (its partial copy removed, the next
   game went on). **Reported:** during a copy Guide ("Home") does nothing and the window stays: the user cannot do anything
   else until it ends ([[open-items]] 3n, the owner's choice, demo first). **Owner:** the chosen file and the prefix's copy are built first, then he tests moving and copying The Witcher 2 (Windows and Linux).
+- **Demo 6.6e** (`design/demos/6.6e-copy-behind.html`, 2026-11-10, after the owner agreed with the proposal): Guide (Home)
+  closes the copy's window and shows the home screen, the copy goes on; Guide is Home from every window; the top bar shows the
+  copy (step, percentage, "2 of 3"), the covers of its games their state ("Copying · 45%", "Waiting to be copied"); A on one
+  shows the window again ("Show the copy"), so those games are never started meanwhile; one copy at a time ("A copy is already
+  running"); its end, or a failure, with the window closed in a notice; a failed game's cover and the top bar say it, A on the
+  cover shows Close / Try again. Waits for the owner's approval.

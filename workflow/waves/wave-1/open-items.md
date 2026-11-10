@@ -94,7 +94,11 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
 3n. **Home does nothing during a copy** (owner, 2026-11-10): while games are copied the window stays on screen and Guide
    ("Home") does nothing, so the user can do nothing else until the copy ends; the owner understands blocking some actions,
    not being stuck. The copy runs in owneetd, so it can go on behind the interface. What the user sees and may do meanwhile
-   is the owner's choice; demo first. [[step-6.6-moving-games-and-media-between-disks]]
+   is the owner's choice; demo first. **Owner (2026-11-10):** agreed with the proposal (Home closes the window, the copy goes
+   on, a sign shows it, only a second copy and starting the games being copied are blocked): **demo 6.6e**
+   (`design/demos/6.6e-copy-behind.html`) waits for his approval. In it Guide is Home from every window of the console (an
+   open window closes), as its prompt "Home" already says; a copy that fails with its window closed says it in a notice, on
+   its cover and in the top bar, and A on the cover shows Close / Try again. [[step-6.6-moving-games-and-media-between-disks]]
 
 ## Decided, not built yet
 
