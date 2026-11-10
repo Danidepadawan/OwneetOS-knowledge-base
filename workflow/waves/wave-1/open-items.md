@@ -43,6 +43,21 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    writes, the memory waiting to be written, /v1/moves: owneet-base 0.0.60); then what the console
    does about such disks is the owner's choice. [[step-6.6-moving-games-and-media-between-disks]]
 
+3h. **"Checking the copy" says nothing while it works** (owner, 2026-11-10, moving The Witcher 2): it looked stuck, then
+   ended. The check reads the original and the copy in full (SHA-256) with the percentage fixed at 100: as long as the
+   copy, with no sign of life. A progress for the check needs a demo first. [[step-6.6-moving-games-and-media-between-disks]]
+3i. **The details window's text out of the window** (owner, 2026-11-10 12:32, "the installer's description"): most likely
+   the installer's long file name in the facts (The Witcher 2): the facts' grid has no width limit and the window does not
+   widen for it. How it should look: the owner's choice. [[step-4.6-installers]]
+3j. **The Witcher 2 after its move** (owner, 2026-11-10): it closed at once; the copy on the console's disk "was not
+   removed" and does not start; "only the installer moved". Found in the code: a moved Windows game gets a new, empty prefix
+   (the prefix is named after the game's folder: saves, settings and the installer's registry stay behind, and the old
+   prefix keeps its room on the console's disk); a failed removal of the original is only logged, and the game counts as
+   moved. The rest from the logs. [[step-6.6-moving-games-and-media-between-disks]]
+3l. **Installing The Witcher 2 "on the SATA disk"** (owner, 2026-11-10): an installer on any disk installs on the console's
+   own disk (by design, [[step-4.6-installers]]), so the install of 2026-11-09 went there by design, not by mistake (3d);
+   to tell the owner. Installing straight on another disk would be a new decision.
+
 ## Decided, not built yet
 
 4. **"Shutting down" screen at once** (7.6b): demo `design/demos/7.6b-shutting-down.html` approved;

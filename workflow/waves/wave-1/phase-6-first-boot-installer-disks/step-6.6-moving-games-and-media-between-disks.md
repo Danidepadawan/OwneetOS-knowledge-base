@@ -140,3 +140,11 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
   drive-managed SMR disk, which slows down to well under 1 MB/s after a few GB written at once (about 3.7 GB here). The
   first guess (each file's sync at its end) is ruled out. To confirm: owneet-base 0.0.60's report has each disk's writes,
   the memory waiting to be written and /v1/moves.
+- **Owner's test (FrankenPC, 2026-11-10, around 12:30; logs not read yet: OWNEETLOG still in use):** a copy to
+  "2TB HDD SATA" finished; The Witcher 2 moved from the console's disk to it. Reports ([[open-items]] 3h-3j, 3l): (1) "Checking
+  the copy" shows nothing that says whether it works or is stuck; (2) after the move The Witcher 2 closed at once, and the
+  copy on the console's disk "was not removed" and does not start; only the installer seems to have moved. **Found in the code (no change yet):** the check reads the original and the copy in full
+  (SHA-256 of every file) with the percentage fixed at 100, so it lasts about as long as the copy; a removal of the
+  original that fails is only logged, and the game still counts as moved; a Windows game's prefix (its saves, settings and
+  what its installer wrote) is named after the game's folder, so a moved game gets a new, empty prefix and the old one stays
+  on the console's disk.
