@@ -127,3 +127,8 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
   removed from the stick, Alpha's kept, notice "2 games copied to Internal disk / Copy checked, the original of Beta removed
   from the USB disk". A disk with one game skips the choice (as approved); its original can go with Menu → Move to another
   disk. Waits for the owner's test on FrankenPC.
+- **Owner's test of 6.6c (FrankenPC, 2026-11-10; logs `out/test-logs/frankenpc-20261110-105950`):** the choice of games and
+  the switches work. A copy from "GAMES-320" (USB, ext4) to "2TB HDD SATA" started at 11:01:06;
+  it stayed at 29 % and the owner stopped it at 11:13:18 (the partial copy removed). No disk
+  error in the journal (only correctable PCIe messages). Open ([[open-items]] 3e). The read-only case is left to the test
+  VM: the owner has no Windows disk.

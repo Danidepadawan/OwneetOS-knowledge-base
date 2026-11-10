@@ -29,8 +29,18 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
 3c. **Removing the originals of single games** (asked 2026-11-10): "add the feature to remove single
    games from the original", in the copy from a plugged-in disk (6.6b). What exactly was asked to
    the owner; demo first. [[step-6.6-moving-games-and-media-between-disks]] — the owner: game by game
-   (2026-11-10); demo 6.6c approved; **built (owneetd 0.25.15, owneet-frontend 0.38.9), waits for the
-   owner's test on FrankenPC**.
+   (2026-11-10); demo 6.6c approved; built (owneetd 0.25.15, owneet-frontend 0.38.9). Owner's test
+   (2026-11-10): the choice works; a copy done; whether the original went (if asked) to be
+   told; the read-only case to be checked in the test VM (no Windows disk at hand).
+
+3d. **The console's disk has less room** (owner, 2026-11-10): about 57 GB free, about 80 the day before.
+   Not explained by the logs (the report does not measure folders; Steam's Cyberpunk download is at
+   1.3 GB; a stick update is about 216 MB). To measure first. [[open-items]]
+3e. **A copy stuck at 29 %** (owner, 2026-11-10 11:01-11:13): a copy from the USB disk "GAMES-320" to
+   "2TB HDD SATA" stayed at 29 % and the owner stopped it (the partial copy was
+   removed). No disk error in the log; the percentage counts bytes handed to the system, and each
+   file waits for its own sync at its end: a very large file can hold it still. To confirm and fix.
+   [[step-6.6-moving-games-and-media-between-disks]]
 
 ## Decided, not built yet
 
