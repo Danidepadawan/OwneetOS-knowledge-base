@@ -180,3 +180,13 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
   in the five languages. Checked in the interface previews (`move-behind.txt`, `move-behind-fail.txt`) and in the test VM
   (shutdown during the check of a 3 GB copy: the partial copy gone, the original's SHA-256 the same). Waits for the owner's
   test.
+- **The chosen file and the copy of the own folders built (2026-11-10):** owneetd 0.25.19. After a game's
+  copy passed its check, the file chosen to start it (owneet-frontend's `disk-games.json`) is given to the new folder, and a
+  moved game's old entry goes; a copy (the original kept) gets a copy of the original's own folders (Windows prefix, DOS
+  data), which, like the check, only a shutdown stops; when the games go to the console's disk, the room needed counts
+  those folders too. **Built this way, to confirm with the owner:** when the own folders cannot be copied, the game's copy
+  counts as "did not work" (removed with what was copied, the original untouched), since without its prefix a Windows game
+  may not start (3j). Go tests; checked in the test VM: a game with two files to start and "Start B.exe" chosen, copied to
+  the console's disk and moved back to a disk: the choice followed both times, the prefix was copied (files and links the
+  same) and then moved, and the interface, reading the games again, started both from `Start B.exe` without asking. Waits
+  for the owner's test (The Witcher 2, Windows and Linux).
