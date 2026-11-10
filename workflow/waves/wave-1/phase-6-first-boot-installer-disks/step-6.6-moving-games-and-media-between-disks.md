@@ -190,3 +190,10 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
   the console's disk and moved back to a disk: the choice followed both times, the prefix was copied (files and links the
   same) and then moved, and the interface, reading the games again, started both from `Start B.exe` without asking. Waits
   for the owner's test (The Witcher 2, Windows and Linux).
+- **Owner's test of 6.6e and the chosen file (FrankenPC, 2026-11-10 evening, logs `out/test-logs/frankenpc-20261110-203820`):** all
+  works (Home on the copy, top bar, covers, A, the shutdown's question; The Witcher 2 Windows installed, moved to the SATA
+  disk, started; a copy keeping the original starts with the same file); the Linux version's start is tested on
+  2026-11-11. **Reported:** after a move the console's free space showed the new value much later ([[open-items]] 3o).
+  **Fixed:** owneetd 0.25.20 (syncfs of the original's disk after its removal), owneet-frontend 0.38.15 (the library reads
+  the disks again with the games); Go tests, interface preview, test VM
+  ([[free-space-shown-late-after-removing-files]]). Waits for the owner's test.

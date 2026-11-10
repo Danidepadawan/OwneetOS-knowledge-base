@@ -103,7 +103,17 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    0.38.14 (the window closes on Home, the top bar and the covers, A shows it again, one copy at a time, the notices, the
    power windows say the copy stops). Checked: Go tests; interface previews `move-behind.txt`, `move-behind-fail.txt`;
    test VM: a shutdown during the check of a 3 GB copy removed the partial copy, the original intact (SHA-256). Waits for
-   the owner's test. [[step-6.6-moving-games-and-media-between-disks]]
+   the owner's test. **Owner's test (FrankenPC, 2026-11-10 evening):** works (Home, top bar, covers, A, the shutdown's
+   question). [[step-6.6-moving-games-and-media-between-disks]]
+3o. **The console's free space not updated after a move** (owner, FrankenPC, 2026-11-10 evening): the Windows version of
+   The Witcher 2 could not be installed (not enough room, with a warning); he moved the Linux version to the SATA disk
+   (original removed); the console's disk still showed 38 GB free, as before the move; much later it showed 50 GB ("very
+   late, not good"); then the install ended and the game started; moved to the SATA disk too, it started. **Cause** (logs
+   `out/test-logs/frankenpc-20261110-203820` and the test VM): btrfs frees the room of removed files only at its next
+   commit (up to 30 s), and the library read the disks only when shown again. **Fixed:** owneetd 0.25.20 syncs the
+   original's disk after removing it, owneet-frontend 0.38.15 reads the disks again with the games; checked in the test
+   VM; waits for the owner's test. [[free-space-shown-late-after-removing-files]],
+   [[step-6.6-moving-games-and-media-between-disks]]
 
 ## Decided, not built yet
 
