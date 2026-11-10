@@ -4,7 +4,7 @@ description: "Ten interface sounds, all the owner's (final since 2026-11-03), on
 area: ux
 status: active
 decided: 2026-10-08
-updated: 2026-11-03
+updated: 2026-11-10
 legacy: "PROJECT_RULES.md §13 (2026-10-08 – 2026-10-11)"
 tags: [decision, ux, sounds]
 ---
@@ -19,6 +19,9 @@ tags: [decision, ux, sounds]
 - **All ten are the owner's final sounds** (FL Studio, GPL-3.0-or-later; six delivered on
   2026-10-09, all ten final on 2026-11-03, [[step-7.7-final-interface-sounds]]). The CC0
   placeholders by Kenney used until then are gone, with their credit.
+- **The start-up sound plays alone** (owner, 2026-11-10): while the start-up animation or its sound
+  plays, no other interface sound plays (a notification such as a controller plugged in, or a
+  button). The notification itself still goes into the list.
 - Sound outputs never go to sleep, and the interface loops silence from its start, so the first
   sound is never late or cut.
 
@@ -37,3 +40,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-11 | Demo 3.11 (notifications) approved: banners at the top right, a bell in the top bar, the list on Y from the home screen ([[controller-input-map]]: page-level option); nothing drawn over a game. Notifications that need attention get a sound of their own, `notify-error` (eleven sounds, [[interface-sounds-spec]]); `error` stays for something just done that failed. |
 | 2026-10-11 | Step 3.12 (interface sounds) done; the first sound after boot needs the sound output running first (a looped silence). Demo 3.13 approved: animated start-up from the boot splash's wordmark; a **quick menu** (side panel from the right, as on SteamOS) with power options and a read-only "Controls and features" guide, opened by **B where there is nothing to go back to** (an accidental press only opens the menu). View stays reserved for screenshots in a later wave ([[controller-input-map]]). |
 | 2026-11-03 | The owner's final sounds for all ten files (7.7); Kenney's placeholders and their credit removed. `notify-error` dropped (owner): the notifications at the top right play `notify`, the "No internet" window plays `error`. |
+| 2026-11-10 | The start-up sound plays alone: no other interface sound while the start-up animation or its sound plays (owner, after a controller plugged in during the animation played `notify`). |

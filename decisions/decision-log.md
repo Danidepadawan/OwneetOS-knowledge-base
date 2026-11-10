@@ -311,3 +311,4 @@ Decisions by area: [[decisions/INDEX|decisions index]].
 | 2026-11-10 | A moved or copied game keeps the file chosen to start it; a copied game (the original kept) gets a copy of the original's prefix and DOS data (owner). | [[step-6.6-moving-games-and-media-between-disks]] |
 | 2026-11-10 | Demo 6.6d corrected (owner): a progress for the removal of the original too; no step for the original when it is kept. | [[step-6.6-moving-games-and-media-between-disks]] |
 | 2026-11-10 | Copying several games, "Stop?" lets the user stop only the current game's copy or the whole copy (owner); demo 6.6d. | [[step-6.6-moving-games-and-media-between-disks]] |
+| 2026-11-10 | The start-up sound plays alone: no other interface sound (notifications included) while the start-up animation or its sound plays (owner). Built in owneet-frontend 0.38.12. | [[interface-sounds]], [[step-7.6-final-logo-and-brand]] |

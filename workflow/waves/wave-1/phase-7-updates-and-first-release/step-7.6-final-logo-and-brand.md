@@ -138,3 +138,11 @@ Up: [[phase-7-updates-and-first-release]] · Status: **done**
   true, so every screen drops them with no sound; clicks, the wheel and hovering stop on the animation. Test VM (interface
   restarted with its once-per-boot mark removed): right, right, A, A pressed 0.9-4.2 s after the interface started did
   nothing and launched nothing; right after the animation moved the selection.
+- **A notification's sound during the start-up animation, fixed (owner, FrankenPC, 2026-11-10; owneet-frontend 0.38.12):** a
+  controller plugged in during the animation played `notify` over the start-up sound (log: interface at 16:21:39, controller at
+  16:21:46); the fix of 0.38.7 only stopped the buttons. Now no interface sound but `startup` plays while the animation is on
+  screen or the start-up sound is playing ([[interface-sounds]]). **Test VM** (the owner cannot repeat the case on purpose):
+  `vm/test.sh boot --disk --audio --audio-record` (new: the virtual cards' sound saved in WAV files), the console restarted,
+  the virtual controller `owneet-testpad` plugged in 6 s after the interface started and kept 30 s: the recording has the
+  start-up sound alone (compared with `startup.wav`: nothing added, largest difference 64 against about 250 for `notify`), then
+  one `notify` 30 s later, when the controller was removed.

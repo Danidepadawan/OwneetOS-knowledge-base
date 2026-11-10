@@ -58,7 +58,9 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    **Approved by the owner (2026-11-10). Built:** owneetd 0.25.17 (the check's percentage counts the bytes read of
    both copies, the removal's the files removed; `POST /v1/moves/skip` stops only the current game's copy, `skipped` in
    the status; Go tests), owneet-frontend 0.38.11 (the window as in the demo; texts in the five languages); checked in
-   the interface preview (`move-stop-one.txt`, `move-game.txt`). Waits for the owner's test.
+   the interface preview (`move-stop-one.txt`, `move-game.txt`). **Owner's test (2026-11-10, log 16:21):** "Stop this game"
+   done (16:24:34: its partial copy removed, the next game went on) and "Stop" on the last game; the move with the check's and
+   the removal's percentages not tried yet: the owner tests it after the chosen file and the prefix's copy are built (owner: build first, then test).
    [[step-6.6-moving-games-and-media-between-disks]]
 3i. **The details window's text out of the window** (owner, 2026-11-10 12:32, "the installer's description"): most likely
    the installer's long file name in the facts (The Witcher 2): the facts' grid has no width limit and the window does not
@@ -78,10 +80,21 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    (did not happen here); to propose to the owner. **Owner (2026-11-10, after the fix's stick):** "neither copy
    started" (the one moved to the 2 TB disk and the one reinstalled on the console's disk), so he uninstalled both;
    "I moved everything, and the tests failed"; he downloads The Witcher 2 again, both its Windows and its Linux
-   version, to test both. The logs of that start to read. [[step-6.6-moving-games-and-media-between-disks]]
+   version, to test both. The logs of that start to read. **Owner (2026-11-10, log 16:21):** both downloads on the disk, their
+   names differ now ("The Witcher 2: Assassin of kings", the Linux `.sh`; "The Witcher 2: Win", the Windows installer); in the
+   test before, with the same name, the second install got " (2)". The owner installs and moves them only after the chosen file and the prefix's copy
+   are built. [[step-6.6-moving-games-and-media-between-disks]]
 3l. **Installing The Witcher 2 "on the SATA disk"** (owner, 2026-11-10): an installer on any disk installs on the console's
    own disk (by design, [[step-4.6-installers]]), so the install of 2026-11-09 went there by design, not by mistake (3d);
    told the owner on 2026-11-10. Installing straight on another disk would be a new decision, if he wants one.
+3m. **The notification's sound during the start-up animation** (owner, FrankenPC, 2026-11-10): a controller plugged in while
+   the animation played made the `notify` sound, which the owner had asked never to happen ("the other sounds removed while
+   the start-up sound plays"); hard to repeat, so tested by the assistant in the test VM. **Fixed** (owneet-frontend 0.38.12,
+   checked in the test VM with the sound recorded). [[step-7.6-final-logo-and-brand]]
+3n. **Home does nothing during a copy** (owner, 2026-11-10): while games are copied the window stays on screen and Guide
+   ("Home") does nothing, so the user can do nothing else until the copy ends; the owner understands blocking some actions,
+   not being stuck. The copy runs in owneetd, so it can go on behind the interface. What the user sees and may do meanwhile
+   is the owner's choice; demo first. [[step-6.6-moving-games-and-media-between-disks]]
 
 ## Decided, not built yet
 

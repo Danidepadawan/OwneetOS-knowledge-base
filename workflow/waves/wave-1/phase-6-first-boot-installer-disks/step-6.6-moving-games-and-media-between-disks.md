@@ -161,3 +161,6 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
   "Stop all" while games are left after the current one. **Built:** owneetd 0.25.17 (`POST /v1/moves/skip`, `skipped` in
   `GET /v1/moves`; the percentage of the check counts the bytes read of both copies, the removal's the files removed),
   owneet-frontend 0.38.11; Go tests; checked in the interface preview. Waits for the owner's test.
+- **Owner's test of 6.6d (FrankenPC, 2026-11-10, log 16:21):** "Stop this game" works (its partial copy removed, the next
+  game went on). **Reported:** during a copy Guide ("Home") does nothing and the window stays: the user cannot do anything
+  else until it ends ([[open-items]] 3n, the owner's choice, demo first). **Owner:** the chosen file and the prefix's copy are built first, then he tests moving and copying The Witcher 2 (Windows and Linux).
