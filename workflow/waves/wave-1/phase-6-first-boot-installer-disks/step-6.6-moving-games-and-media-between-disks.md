@@ -104,3 +104,12 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
   ("Copying Ashen Gate (1 of 2)", "2 games copied to Internal disk"). Waits for the owner's test on FrankenPC.
 - **Asked by the owner (2026-11-10), open:** "add the feature to remove single games from the original" (the copy from a
   plugged-in disk); its exact meaning is being asked; demo first ([[open-items]] 3c).
+- **The owner's choice (2026-11-10): game by game.** Demo 6.6c (`design/demos/6.6c-move-single-games.html`, code
+  `bc627ba`), on the approved 6.6b: each row of "Which games to copy?" has two switches under two headings, "Copy" and
+  "Remove the original" (off at first; only for a copied game, so switching "Copy" off switches it off too; "All games"
+  switches a whole column); left / right move between them. A note under the list says what happens to the originals ("The
+  originals stay on the USB disk." / "After the check, the original of Cayne is removed…" / "…the originals of 2 games…");
+  the disk window says it again; in the steps each game says "Remove the original from …" or "Keep the original on …". An
+  original is removed only after its copy passed the check ([[user-data]]). A read-only USB disk (Windows not shut down
+  completely) keeps its originals: the second column is off, the note says why. The window is 720 px wide (620 in 6.6b) to
+  hold the two headings. Building it needs owneetd's moves to take "remove" game by game. Waits for the owner's approval.
