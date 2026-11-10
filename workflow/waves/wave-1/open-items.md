@@ -49,6 +49,9 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    the check's own percentage and bar, as the copy) waits for the owner's approval. **Owner's corrections (2026-11-10):**
    (a) a progress for the removal of the original too; (b) when the original is kept, no step for it in the window;
    (c) in the demo, Cancel did not cancel the copy (perhaps only the demo's fault: to check the same in the code).
+   **Demo corrected (2026-11-10):** (a) and (b) done; (c) the demo drew its window again every 160 ms, so a click fell
+   on a button already replaced: now only the numbers change (the interface's Cancel is never rebuilt during the copy).
+   Waits for the owner's approval; then the code.
    [[step-6.6-moving-games-and-media-between-disks]]
 3i. **The details window's text out of the window** (owner, 2026-11-10 12:32, "the installer's description"): most likely
    the installer's long file name in the facts (The Witcher 2): the facts' grid has no width limit and the window does not

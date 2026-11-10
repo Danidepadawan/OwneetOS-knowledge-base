@@ -29,7 +29,7 @@ Open them in a browser; they can be driven with the keyboard or a gamepad. Proce
 | `design/demos/6.6-moving-games.html` | Moving games between disks: the disks with their room, copy with Cancel, check, the original removed after; Steam's games moved by Steam; "Play from here / Copy to the console" | [[step-6.6-moving-games-and-media-between-disks]] |
 | `design/demos/6.6b-choose-games-to-copy.html` | A plugged-in disk: "Which games to copy?", a switch per game and "All games", then the disk (approved 2026-11-09) | [[step-6.6-moving-games-and-media-between-disks]] |
 | `design/demos/6.6c-move-single-games.html` | A plugged-in disk: "Copy" and "Remove the original" switches on each game, the originals removed only after the check; a read-only disk keeps them (approved 2026-11-10) | [[step-6.6-moving-games-and-media-between-disks]] |
-| `design/demos/6.6d-check-progress.html` | "Check the copy" with its own percentage and bar, as the copy (waits for the owner's approval) | [[step-6.6-moving-games-and-media-between-disks]] |
+| `design/demos/6.6d-check-progress.html` | "Check the copy" and the removal of the original with their own percentage and bar, as the copy; no step for a kept original (owner's corrections of 2026-11-10; waits for the owner's approval) | [[step-6.6-moving-games-and-media-between-disks]] |
 
 | `design/demos/7.8-website-home.html` | The website's home: one page whose sections snap (home, features carousel, requirements, open, info, download), English and Italian | [[step-7.8-website]] |
 
