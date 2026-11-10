@@ -29,7 +29,8 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
 3c. **Removing the originals of single games** (asked 2026-11-10): "add the feature to remove single
    games from the original", in the copy from a plugged-in disk (6.6b). What exactly was asked to
    the owner; demo first. [[step-6.6-moving-games-and-media-between-disks]] — the owner: game by game
-   (2026-11-10); **demo `design/demos/6.6c-move-single-games.html` ready, waits for the owner's approval**.
+   (2026-11-10); demo 6.6c approved; **built (owneetd 0.25.15, owneet-frontend 0.38.9), waits for the
+   owner's test on FrankenPC**.
 
 ## Decided, not built yet
 

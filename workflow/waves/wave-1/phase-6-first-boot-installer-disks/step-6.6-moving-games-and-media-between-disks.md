@@ -113,3 +113,17 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
   original is removed only after its copy passed the check ([[user-data]]). A read-only USB disk (Windows not shut down
   completely) keeps its originals: the second column is off, the note says why. The window is 720 px wide (620 in 6.6b) to
   hold the two headings. Building it needs owneetd's moves to take "remove" game by game. Waits for the owner's approval.
+- **Demo 6.6c approved by the owner (2026-11-10); built (owneetd 0.25.15, owneet-frontend 0.38.9, code `b281b0d`):**
+  `MoveSheet.qml` draws "Which games to copy?" as a table: headings "Copy" and "Remove the original", then a row per game
+  (and "All games") with two `SwitchCell`s (new: SettingRow's switch on its own, dimmed and skipped when not available);
+  `originalsNote()` under the list and in the disk window; the steps and the title follow the game being copied; the last
+  notice says which originals were removed. A read-only disk keeps its originals: "Read only: Windows was not shut down
+  completely. …" when that is the reason, "Read only: the originals stay on the USB disk." otherwise. owneetd: each game of
+  `POST /v1/moves` carries its own `remove` (the request's `remove` still means all of them); `Status.remove` is the current
+  game's. The demo's last notice was corrected to say what happened to the originals (it said "they stay" in every case).
+  Checked: Go tests (game by game: only the asked original removed, after its check); the interface preview (the pretend
+  disk is read only: the column off, the right reason); **the test VM** with a writable FAT stick holding Alpha and Beta,
+  unplugged and plugged in again: "Copy" both, "Remove the original" on Beta, Internal disk: both copied, Beta's original
+  removed from the stick, Alpha's kept, notice "2 games copied to Internal disk / Copy checked, the original of Beta removed
+  from the USB disk". A disk with one game skips the choice (as approved); its original can go with Menu → Move to another
+  disk. Waits for the owner's test on FrankenPC.
