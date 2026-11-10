@@ -26,6 +26,13 @@ tags: [decision, games, disks]
   A moved or copied game keeps the file chosen to start it; a **copied** game gets a copy of those
   folders (owner, 2026-11-10). The removal of the original shows its progress too, and a copy that keeps
   the original shows no step for it (demo 6.6d, owner's corrections).
+  **A copy goes on behind its window** (demo 6.6e, approved 2026-11-10): Home on the copy's window closes
+  it and shows the home screen (only there: elsewhere Guide keeps its meaning, e.g. back to the open app);
+  the top bar and the covers of its games show it, A on one of them shows the window again, so those games
+  are never started meanwhile; one copy at a time; its end or its failure with the window closed in a
+  notice. **A shutdown or a restart during a copy asks first** and says the copy stops (owner,
+  2026-11-10); then, and whenever owneetd stops, the copy and its check stop, the partial copy is removed
+  and the game stays where it was ([[user-data]]).
 - The library shows the disks with their free space and notices ([[home-and-library]]).
 - **Until step 6.5** (owner, 2026-10-15): step 4.3 mounts external disks automatically, read only,
   just enough to read the games on them; the full mounting stays in step 6.5.
@@ -67,3 +74,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-11-09 | Disks for games in Steam: `steam://addlibraryfolder` is ignored outside SteamOS; owneetd writes them into Steam's `libraryfolders.vdf` (both copies) while Steam is closed, before starting it, labelled with the disk's name (owner chose this way). |
 | 2026-11-10 | A moved game takes its own folders on the console's disk (Windows prefix, DOS data) and its install's link with it; the check of a copy gets its own progress, demo 6.6d first (owner). |
 | 2026-11-10 | A moved or copied game keeps its chosen file; a copy gets a copy of the prefix and DOS data; demo 6.6d: the removal with a progress, no step when the original is kept (owner). |
+| 2026-11-10 | Demo 6.6e approved with one correction (owner): Home closes only the copy's window, the copy goes on behind it (top bar, covers, A shows it again, one copy at a time); everywhere else Guide keeps its meaning. A shutdown or restart during a copy is confirmed first; the copy then stops and its partial copy is removed (also when owneetd stops). |

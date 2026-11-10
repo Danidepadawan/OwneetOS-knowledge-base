@@ -170,3 +170,13 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
   shows the window again ("Show the copy"), so those games are never started meanwhile; one copy at a time ("A copy is already
   running"); its end, or a failure, with the window closed in a notice; a failed game's cover and the top bar say it, A on the
   cover shows Close / Try again. Waits for the owner's approval.
+- **Demo 6.6e approved by the owner (2026-11-10)** with a correction: Home closes only the copy's window (Guide keeps its
+  meaning elsewhere: with an app open it goes back to it); a shutdown or restart during a copy asks first. **Built:** owneetd
+  0.25.18: Guide on the home screen with nothing to go back to sends `home.requested`; `Abort` stops the copy and its check
+  before a shutdown or restart (`/v1/power`, up to 60 s) and when owneetd stops (20 s), removing the partial copy, the original
+  untouched (an original whose copy passed its check is removed to the end first); Go tests. owneet-frontend 0.38.14: the
+  window closes on Home, the copy shown in the top bar and on its games' covers ("Show the copy" on A), one copy at a time
+  (a disk plugged in meanwhile gives its notice), its end or failure in a notice, the power windows say the copy stops; texts
+  in the five languages. Checked in the interface previews (`move-behind.txt`, `move-behind-fail.txt`) and in the test VM
+  (shutdown during the check of a 3 GB copy: the partial copy gone, the original's SHA-256 the same). Waits for the owner's
+  test.

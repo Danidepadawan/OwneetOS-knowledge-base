@@ -96,9 +96,14 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    not being stuck. The copy runs in owneetd, so it can go on behind the interface. What the user sees and may do meanwhile
    is the owner's choice; demo first. **Owner (2026-11-10):** agreed with the proposal (Home closes the window, the copy goes
    on, a sign shows it, only a second copy and starting the games being copied are blocked): **demo 6.6e**
-   (`design/demos/6.6e-copy-behind.html`) waits for his approval. In it Guide is Home from every window of the console (an
-   open window closes), as its prompt "Home" already says; a copy that fails with its window closed says it in a notice, on
-   its cover and in the top bar, and A on the cover shows Close / Try again. [[step-6.6-moving-games-and-media-between-disks]]
+   (`design/demos/6.6e-copy-behind.html`). **Approved (2026-11-10) with a correction:** Home only on the copy's window,
+   not on every window ("it would break the logic of the open apps"); and a shutdown or restart during a copy asks first.
+   **Built:** owneetd 0.25.18 (`home.requested` when Guide is pressed on the home screen with nothing to go back to; before
+   a shutdown or restart, and when owneetd stops, the copy and its check stop and the partial copy is removed), owneet-frontend
+   0.38.14 (the window closes on Home, the top bar and the covers, A shows it again, one copy at a time, the notices, the
+   power windows say the copy stops). Checked: Go tests; interface previews `move-behind.txt`, `move-behind-fail.txt`;
+   test VM: a shutdown during the check of a 3 GB copy removed the partial copy, the original intact (SHA-256). Waits for
+   the owner's test. [[step-6.6-moving-games-and-media-between-disks]]
 
 ## Decided, not built yet
 
