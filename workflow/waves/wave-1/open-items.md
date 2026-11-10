@@ -55,7 +55,10 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    to stop the whole copy or only the current game's. Demo first. **In demo 6.6d:** with games left after the current
    one, "Keep going" (selected), "Stop this game" (its partial copy removed, the next games go on), "Stop all" (the
    games already copied stay); the last or a single game keeps one "Stop"; the final notice counts the games copied.
-   Waits for the owner's approval; then the code.
+   **Approved by the owner (2026-11-10). Built:** owneetd 0.25.17 (the check's percentage counts the bytes read of
+   both copies, the removal's the files removed; `POST /v1/moves/skip` stops only the current game's copy, `skipped` in
+   the status; Go tests), owneet-frontend 0.38.11 (the window as in the demo; texts in the five languages); checked in
+   the interface preview (`move-stop-one.txt`, `move-game.txt`). Waits for the owner's test.
    [[step-6.6-moving-games-and-media-between-disks]]
 3i. **The details window's text out of the window** (owner, 2026-11-10 12:32, "the installer's description"): most likely
    the installer's long file name in the facts (The Witcher 2): the facts' grid has no width limit and the window does not

@@ -156,3 +156,8 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
   place, its install's link pointed there; never over a folder already there; Go tests, the name checked against the
   real prefix names in the log); owneet-frontend 0.38.10 (details window, [[step-4.6-installers]]); demo
   `design/demos/6.6d-check-progress.html` waits for approval. Open: [[open-items]] 3h-3j.
+- **Demo 6.6d approved by the owner (2026-11-10)**, after his corrections: the check and the removal of the original with
+  their own percentage and bar; no step for a kept original; copying several games, "Stop?" offers "Stop this game" or
+  "Stop all" while games are left after the current one. **Built:** owneetd 0.25.17 (`POST /v1/moves/skip`, `skipped` in
+  `GET /v1/moves`; the percentage of the check counts the bytes read of both copies, the removal's the files removed),
+  owneet-frontend 0.38.11; Go tests; checked in the interface preview. Waits for the owner's test.
