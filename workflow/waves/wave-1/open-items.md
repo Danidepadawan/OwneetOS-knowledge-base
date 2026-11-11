@@ -126,13 +126,29 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    `out/test-logs/frankenpc-20261111-101928`):** cut: the console was switched off about 90 s after its start and the
    listing wrote straight to the stick (mounted "sync", very slow): only the system's listing whole, `/home` cut, the
    SATA disk missing. **Fixed:** owneet-base 0.0.62 makes each listing in memory and copies it whole (about 3 s in the
-   test VM instead of 2 minutes), and writes `complete.txt` at the end.
+   test VM instead of 2 minutes), and writes `complete.txt` at the end. **First whole listing (2026-11-11 10:49,
+   `frankenpc-20261111-104856`), found:** (a) the console's disk: 13 Windows prefixes (about 4.9 GB) and 3 DOS folders
+   of games that are no longer on any disk seen (kept on uninstall by design, for the saves; also left by deleting a game
+   or by a game on a disk not plugged in); (b) Proton's logs of the testers' option `owneet.debug.windows_log`, 1.3 GB
+   (1.09 GB for one game), never removed; (c) the packages' cache: 150 files, 0.51 GB (43 versions of owneetd, 39 of
+   owneet-frontend), growing with every update; (d) Steam's own, on the SATA disk: an unfinished download of Batman:
+   Arkham Knight (208650, 24.1 GB, 2026-11-09) and its shader cache (2.9 GB), Cyberpunk 2077's (1091500, 0.5 GB); on the
+   console's disk: an unfinished download of Steamworks Shared (228980, 0.24 GB), the folders and shader caches of six
+   games no longer installed, Proton 5.13 (1.8 GB) and `ubuntu12_32/steam-runtime.old` (0.19 GB). Nothing deleted: the
+   owner decides what to clean and how (Steam's content only through Steam, [[user-data]]).
 3q. **The Witcher 2 Linux version does not install** (owner, FrankenPC, 2026-11-11): "the game could not be installed",
    twice (the second time with OWNEETLOG plugged in while the console ran: the logs start only with a stick in at the
    start, so neither attempt is on the stick; the console still ran yesterday's versions, the update comes from the
    stick at the start). Its journal is on the console's disk: owneet-base 0.0.62 copies the whole journals of the three
    previous starts to the stick, so the next start with the stick brings it (if no more than two starts come first).
-   Not diagnosed yet. [[step-4.6-installers]]
+   **Owner's retry with the stick (2026-11-11 10:51, `frankenpc-20261111-104856`):** A on Install at 10:51:39, no install
+   in owneetd's log: the check of the installer (`/v1/installs/inspect`) failed, and its error was not logged (the
+   0.0.62 test log missed this start: the update installed it one second after the log started). **Cause:** a GOG Linux
+   installer over 4 GB has a ZIP64 archive after its script, whose ZIP64 records do not count the script; Go's
+   `archive/zip` cannot follow them ("zip: not a valid zip file"; reproduced with 70 000 entries and with a 4.3 GB
+   archive). **Fixed:** owneetd 0.25.22 reads such an archive from where it really starts (`zipStart`), and logs an
+   installer that cannot be read; Go tests (`TestZip64AfterTheScript`, and a one-off 4.3 GB check). Waits for the owner's
+   test. [[step-4.6-installers]]
 3r. **Owner's tests of 2026-11-11 (logs `frankenpc-20261111-101811`, `-101928`):** (2) he moved The Witcher 2's installer
    to the SATA disk: the change of free space is too small to see on screen; in the session without the stick, so not
    logged yet (3q's journals). (3) a deletion on the SATA disk (10:18:46, owneetd 0.25.21, "game deleted from
@@ -141,7 +157,8 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
 3s. **Long texts scroll instead of "…"** (owner, 2026-11-11): where a text is cut with "…", make it scroll so it can be
    read whole, everywhere in the project (28 places in the theme, 12 files, `elide`). A change of look and behaviour:
    demo first ([[demo-before-code]]); open questions for the demo: when it scrolls (only the selected item, or every cut
-   text), speed and pauses.
+   text), speed and pauses. **Owner (2026-11-11):** only the highlighted texts scroll ([[design-direction]]). Open: the
+   texts never highlighted (e.g. the details window's long installer name, shortened in the middle since 2026-11-10).
 
 ## Decided, not built yet
 
