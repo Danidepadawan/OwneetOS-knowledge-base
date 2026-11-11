@@ -4,7 +4,7 @@ description: "The binding meaning of every button on every screen, keyboard fall
 area: ux
 status: active
 decided: 2026-10-03
-updated: 2026-11-04
+updated: 2026-11-11
 legacy: "PROJECT_RULES.md §9.1"
 tags: [decision, ux, input]
 ---
@@ -108,13 +108,14 @@ map's direction timing. **LT / RT = the previous / next video or song** (the vid
 folder; music: the folder or album that is playing), repeating with this map's LT / RT timing;
 **LT goes back to the start first:** in the first 5 s of a video or song (before 0:05) it goes to
 the previous one, from 0:05 on to the start of the one playing (owner, 2026-11-04); on the first
-one it goes to its start. **Menu switches Autoplay** for videos (the display says whether it is on;
-[[local-media]]; Y in the Videos page switches it too).
-**X = the next audio track** (videos with more than one; it never goes through "no sound"). **Y =
-subtitles:** off, then each track in turn. **B leaves the player** and goes back to the list it was
-opened from (a video's position is saved). Every press shows the on-screen display for a moment
-(the title, the progress, the time); D-pad up / down and L3 / R3 only show it, and so do X, Y and
-Menu for a song. The sticks do nothing (a held stick sends bursts of presses); **View** (reserved)
+one it goes to its start. **Y switches Autoplay** for videos, as Y in the Videos page (the display
+says whether it is on; [[local-media]]; owner, 2026-11-11, in place of Menu).
+**X = the next audio track** (videos with more than one; it never goes through "no sound").
+**Menu = subtitles:** off, then each track in turn (owner, 2026-11-11, in place of Y: Menu is the
+options of what is selected or playing, on the page and in the player). **B leaves the player** and
+goes back to the list it was opened from (a video's position is saved). Every press shows the
+on-screen display for a moment (the title, the progress, the time); D-pad up / down and L3 / R3
+only show it, and so do X, Y and Menu for a song. The sticks do nothing (a held stick sends bursts of presses); **View** (reserved)
 and **LB / RB** are not bound at all. **Guide stays owneetd's:** mpv never binds it (its name in
 mpv is `GAMEPAD_MENU`, [[step-5.6-local-videos-and-music]]), and mpv's own default bindings are
 off. The keyboard fallback keys have the same meanings; Q / E and the Super key are not bound in
@@ -181,3 +182,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-29 | Inside Spotify: **R3 folds or opens Spotify's right panel** (its own Alt+Shift+R), replacing the automatic folding (owner: Spotify opens it when a song starts, the user closes it). |
 | 2026-11-04 | Inside the player (step 5.6, mpv): A pause / play, D-pad left / right −10 / +10 s (exact), LT / RT the previous / next video or song (owner: in place of the proposed LT / RT seeking), X the next audio track (never "no sound"), Y subtitles, B leaves the player (a video's position saved); every press shows the on-screen display; View and LB / RB not bound, Guide never bound by mpv. Music's two views are the Music page's filters on LT / RT. |
 | 2026-11-04 | Inside the player: **LT goes back to the start first** (in the first 5 s to the previous video or song, from 0:05 on to the start of the one playing); **Menu switches Autoplay** for videos, and so does **Y in the Videos page** ([[local-media]]). |
+| 2026-11-11 | Inside the player (owner, after testing it): **Y switches Autoplay**, as in the Videos page, and **Menu cycles the subtitles** (off, then each track); X stays the audio track. Keyboard: Y Autoplay, M subtitles. |

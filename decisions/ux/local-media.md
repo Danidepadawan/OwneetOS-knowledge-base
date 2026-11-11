@@ -4,7 +4,7 @@ description: "Videos and Music: the media folders on every disk, Music's two vie
 area: ux
 status: active
 decided: 2026-11-02
-updated: 2026-11-04
+updated: 2026-11-11
 tags: [decision, ux, media]
 ---
 # Local videos and music
@@ -29,8 +29,9 @@ tags: [decision, ux, media]
 - **Autoplay for videos** (owner, 2026-11-04): a switch, **on** on a new console and remembered on
   the console's disk. On: when a video ends, the next video of the same folder starts (after the
   last one, back to the list). Off: the video stops at its end and the player goes back to the
-  list. It is switched with **Y in the Videos page** ("Autoplay: On / Off") and **Menu in the
-  player** ([[controller-input-map]]). Music is not affected.
+  list. It is switched with **Y**, in the Videos page ("Autoplay: On / Off") and in the player
+  (owner, 2026-11-11: the same button in both; Menu cycles the player's subtitles,
+  [[controller-input-map]]). Music is not affected.
 - **Previous goes back to the start first** (owner, 2026-11-04): LT in the first 5 s of a video or
   song goes to the previous one; from 0:05 on, to the start of the one playing.
 - **The pages and the player** (demo 5.6, approved 2026-11-04;
@@ -87,3 +88,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-11-04 | Step 5.6 sub-step 2: the player's bindings ([[controller-input-map]], "Inside the player"); music starts from the beginning and the rest of its folder or album follows; only a video's position is kept; the songs' tags read with FFmpeg's library inside the frontend in place of `ffprobe` (plan change, sub-step 4). |
 | 2026-11-04 | Autoplay for videos: a switch, on by default and remembered (on: the next video of the folder starts; off: back to the list at the end), Y in the Videos page and Menu in the player; LT goes back to the start first (the previous one only in the first 5 s). |
 | 2026-11-04 | Demo 5.6 approved: Continue watching, a folder as a list beside its picture, Artists → albums → songs, untagged songs under "Unknown artist", another item moves the player to it, Guide shows the console where it was with the item marked "Playing", mpv's own saved positions and subtitles, the player's display and music's screen, a USB disk removed stops the player. |
+| 2026-11-11 | Autoplay on Y in the player too, as in the Videos page; the player's subtitles on Menu (owner, after testing sub-step 5). |

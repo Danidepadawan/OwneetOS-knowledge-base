@@ -262,6 +262,12 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
        logged at every press.
        **Confirmed by the owner (2026-11-11):** with owneetd 0.17.1 holding Guide closes the
        player.
+     - **The rest of the owner's test passed (2026-11-11):** the display and every button, resuming
+       and "Watch from the start", Autoplay on and off, songs and their pictures, Continue
+       watching after Guide held. **One change asked (owner, 2026-11-11):** Autoplay on the same
+       button inside and outside the player: **Y switches Autoplay in the player too, Menu cycles
+       the subtitles** (X stays audio; [[controller-input-map]], [[local-media]],
+       [[decision-log]]); the approved demo is updated to match.
      - **While building:** owneetd's `update` package has a flaky test (`TestCheckThenApply`:
        its fake rewrites the state file while the manager polls it; 6 failures in 150 runs),
        older than this step; reported to the owner.
