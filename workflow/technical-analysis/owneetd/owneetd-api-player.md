@@ -61,7 +61,9 @@ at its end); its end is also `app.exited` with id `player`.
   quit (SIGTERM included); moving on at a file's end writes nothing.
 - `input.conf`: the controller's and keyboard's keys of "Inside the player", each to a
   `script-binding owneet/…`; never Guide (`GAMEPAD_MENU`), View, LB / RB or the sticks
-  (`bindings_test.go` checks it).
+  (`bindings_test.go` checks it); `CLOSE_WIN quit` (owneetd's close and the window's). mpv's
+  terminal input stays on: its SIGTERM handler belongs to it, and without it SDL swallows the
+  signal ([[mpv-ignores-sigterm-with-a-controller]]).
 - `owneet.lua`: the buttons' meanings (LT's 5 s, Autoplay through `keep-open`, audio never "no
   sound", subtitles off then each track, RT writing the position of a video left half-way, B
   quitting), the held-button repeat of [[controller-input-map]] (mpv's own repeat is one for every

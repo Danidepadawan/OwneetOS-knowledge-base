@@ -253,6 +253,13 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
        "plays") shows the pages and the hero with the player open, and Close.
      - **Code:** `9150828` (owneetd), `85b0cbe` (the reader), `79a3c2a` (theme, texts), `9a49168`
        (tools), `cbf1393` (packages, credits).
+     - **The owner's test (2026-11-11), first finding:** holding Guide did not close the player
+       (owneetd's close, then `result=timeout` 10 s later): mpv ignored SIGTERM, because
+       `input-terminal=no` removed its handler and SDL, started for the controller, took the
+       signal ([[mpv-ignores-sigterm-with-a-controller]]); a video also lost its position. Fixed in
+       **owneetd 0.17.1** (mpv's terminal input on, `CLOSE_WIN quit` bound, a test and
+       `player-close.txt`); mpv's warnings for the buttons left unbound (Guide, View) no longer
+       logged at every press.
      - **While building:** owneetd's `update` package has a flaky test (`TestCheckThenApply`:
        its fake rewrites the state file while the manager polls it; 6 failures in 150 runs),
        older than this step; reported to the owner.
