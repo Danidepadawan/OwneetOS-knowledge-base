@@ -153,6 +153,17 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    discuss with the owner once that is known: add the needed 32-bit libraries; start Linux games with Steam's runtime
    already on the console; start the game's own program instead of GOG's launcher. No decision yet.
    **Disk check (11:07 listing):** nothing new since 10:49 but the packages' cache (+12 MB, owneetd 0.25.22, 3p (c)).
+   **The libraries (owneet-base 0.0.63, `frankenpc-20261111-113345`):** all the game's programs are 32-bit. `witcher2`
+   (the game) misses only `libSDL2-2.0` and `libSDL2_image-2.0` (`libopenal-eon` is in its folder); `tenfoot-launcher`
+   (the game's own launcher for the TV and the controller) misses `libSDL2`, `libSDL2_image`, `libSDL2_ttf`; GTK 2 is
+   needed only by GOG's `desktop-launcher` (a desktop window), the `configurator` and the crash reporter. The console
+   has SDL2 and SDL2_image in 64-bit only. Arch's multilib (snapshot 2026-10-03) has `lib32-sdl3` only (3.5 MB): no
+   32-bit SDL2, SDL2_image, SDL2_ttf or GTK 2. Steam's own runtime on the console (`ubuntu12_32/steam-runtime`) has all
+   of them in 32-bit, but Steam downloads it at its first start (internet, [[hard-constraints]] C9). Options for the
+   owner: (A) OwneetOS builds 32-bit SDL2 (sdl2-compat over Arch's lib32-sdl3), SDL2_image and SDL2_ttf from source,
+   as DOSBox Staging; (B) 32-bit Linux games start with Steam's runtime; (C) no 32-bit Linux games (the Windows version
+   through Proton). And which file starts this game (GOG's `start.sh` runs the desktop launcher): the TV launcher or the
+   game. **Disk check (11:33 listing):** +24.1 GB, the installed game; nothing else.
 3q. **The Witcher 2 Linux version does not install** (owner, FrankenPC, 2026-11-11): "the game could not be installed",
    twice (the second time with OWNEETLOG plugged in while the console ran: the logs start only with a stick in at the
    start, so neither attempt is on the stick; the console still ran yesterday's versions, the update comes from the
