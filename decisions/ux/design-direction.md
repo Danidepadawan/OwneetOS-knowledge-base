@@ -47,4 +47,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-15 | The boot splash is neutral (white on black) for every palette; the start-up animation brings the palette's colours ([[boot-experience]]). |
 | 2026-10-08 | Demo 3.3 feedback: wordmark/logo provisional (final logo before the launch, roadmap 7.6); about twenty palettes (Tide in vivid "minty" cyan; new Ember, Espresso, Harbor and more) in a picker with live preview; language chosen from a list; the Guide prompt reads "Home" ([[design-direction]]). |
 | 2026-10-08 | Step 3.3 approved. Button prompts also have a Nintendo-style set (chosen automatically for Switch controllers). Small hardware checks are batched with the next larger test instead of a new USB stick each. |
-| 2026-11-11 | Long texts: the highlighted one scrolls to be read whole instead of "…", everywhere; demo first (owner). |
+| 2026-11-11 | Long texts: the highlighted one scrolls to be read whole instead of "…", everywhere; texts never highlighted keep "…"; demo first (owner). |

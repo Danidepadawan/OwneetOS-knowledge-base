@@ -136,6 +136,11 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    console's disk: an unfinished download of Steamworks Shared (228980, 0.24 GB), the folders and shader caches of six
    games no longer installed, Proton 5.13 (1.8 GB) and `ubuntu12_32/steam-runtime.old` (0.19 GB). Nothing deleted: the
    owner decides what to clean and how (Steam's content only through Steam, [[user-data]]).
+3t. **Junk on the disks: a new phase or step** (owner, 2026-11-11, from 3p's findings (a)-(d)): the system cannot find
+   out by itself whether a save is still needed; so either a simplified file manager (needed anyway in wave 2) or a
+   simple, elegant solution thought out together. A critical point just found: it gets a phase (or step) of its own.
+   **Owner:** first he ends today's tests, then this is planned with him (where it goes in the plan and how it is
+   built). Nothing is cleaned meanwhile. [[open-items]] 3p
 3q. **The Witcher 2 Linux version does not install** (owner, FrankenPC, 2026-11-11): "the game could not be installed",
    twice (the second time with OWNEETLOG plugged in while the console ran: the logs start only with a stick in at the
    start, so neither attempt is on the stick; the console still ran yesterday's versions, the update comes from the
@@ -154,11 +159,15 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    logged yet (3q's journals). (3) a deletion on the SATA disk (10:18:46, owneetd 0.25.21, "game deleted from
    its disk"): the library shows 1.9 TB before and after (rounded to 0.1 TB); the SATA disk is ext4 (frees at once);
    owneet-base 0.0.62 writes every disk's room in bytes in each report, to read such changes. (4) the restart done.
+   **Owner (2026-11-11), on (2):** he had moved the Linux installer to the SATA disk for lack of room, and moved it back
+   to the console's disk this morning (deleting the Windows version for that) to install it from there: so it is right
+   that the 10:49 listing shows it on the console's disk.
 3s. **Long texts scroll instead of "…"** (owner, 2026-11-11): where a text is cut with "…", make it scroll so it can be
    read whole, everywhere in the project (28 places in the theme, 12 files, `elide`). A change of look and behaviour:
    demo first ([[demo-before-code]]); open questions for the demo: when it scrolls (only the selected item, or every cut
    text), speed and pauses. **Owner (2026-11-11):** only the highlighted texts scroll ([[design-direction]]). Open: the
    texts never highlighted (e.g. the details window's long installer name, shortened in the middle since 2026-11-10).
+   **Owner (2026-11-11):** texts never highlighted keep "…". Next: the demo.
 
 ## Decided, not built yet
 
