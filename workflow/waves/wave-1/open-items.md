@@ -193,6 +193,22 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    ([[gog-linux-game-files-left-in-parts]]); Go tests; test VM (3 GB in three parts: same SHA-256, 9 s, no space used
    twice). Waits for the owner's test: uninstall The Witcher 2 (Linux) and install it again, then start it with
    `tenfoot-launcher`.
+   **Owner's test (2026-11-11):** after uninstalling and installing again, "exactly what I saw before" (black screen,
+   then it closes). The owner offers a copy of The Witcher 2 to test in the VM instead of blind tests on the console.
+   **In the test VM (2026-11-11, the owner's copy of the installer, installed by owneetd 0.25.23; the host's copy
+   deleted after the transfer, checked by SHA-256):** three faults found. (1) `tenfoot-launcher` reads its language files
+   (`game/bin/config/lang/*.ini`, GLib key files) and builds a C++ string from every value: `IK_Backslash=\ (Backslash)`
+   is an escape today's GLib (2.88) refuses, `g_key_file_get_string` returns NULL and the launcher aborts (found with
+   gdb: group `[InputEditor]`, key `IK_Backslash`); with the backslashes escaped it runs, writes `User.ini`, and A starts
+   `witcher2`; then the launcher itself crashes (segfault, a recursion out of stack). (2) `witcher2` stops at once with
+   "eON failed to initialise!": eON's log (`~/.local/share/cdprojektred/witcher2/eon.txt`) says it cannot load ICU's
+   data (`icudt52l.dat`, error 4) from the game's folder: ICU takes ":" as the separator of its data folders, and the
+   folder is "The Witcher 2**:** Assassin of kings". In a folder without ":" eON starts (OpenGL 4.2 through the VM's
+   virgl), sound and Direct3D 9 over OpenGL start, then the game crashes after about 8 s (BREAKPAD; maybe the VM's GPU:
+   to be seen on the console). (3) `witcher2` needs its own folder in `LD_LIBRARY_PATH` (`libopenal-eon.so.1`), as GOG's
+   `start.sh` sets it; started directly without the launcher it makes its own settings and reaches the same point.
+   Decisions for the owner: the folder's ":" (the console's install folder without ":"), how this game starts (directly,
+   or the TV launcher with its language files fixed).
 3q. **The Witcher 2 Linux version does not install** (owner, FrankenPC, 2026-11-11): "the game could not be installed",
    twice (the second time with OWNEETLOG plugged in while the console ran: the logs start only with a stick in at the
    start, so neither attempt is on the stick; the console still ran yesterday's versions, the update comes from the
