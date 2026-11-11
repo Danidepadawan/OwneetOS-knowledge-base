@@ -186,6 +186,13 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    owner one start was enough), so no scripts yet: one more start is needed. The libraries report: `witcher2` now finds
    SDL2 and SDL2_image (only `libopenal-eon`, in its own folder, is not found by ldd); `tenfoot-launcher` misses nothing.
    The launcher made `~/.local/share/cdprojektred/witcher2/GameDocuments/Witcher 2/config` and left it empty.
+   **Start of 12:42 (`frankenpc-20261111-124235`, the scripts collected):** `game/launcher` runs `./saferun.sh
+   ./desktop-launcher`; GOG's `support/postinst.sh` joins the files listed in `support/split_files`, and the console
+   never runs it: the game's main data `game/CookedPC/pack0.dzip` (10.5 GB) stayed in three parts (`.split00`-`.split02`),
+   most likely why the launcher aborted. **Fixed:** owneetd 0.25.23 joins them after the extraction
+   ([[gog-linux-game-files-left-in-parts]]); Go tests; test VM (3 GB in three parts: same SHA-256, 9 s, no space used
+   twice). Waits for the owner's test: uninstall The Witcher 2 (Linux) and install it again, then start it with
+   `tenfoot-launcher`.
 3q. **The Witcher 2 Linux version does not install** (owner, FrankenPC, 2026-11-11): "the game could not be installed",
    twice (the second time with OWNEETLOG plugged in while the console ran: the logs start only with a stick in at the
    start, so neither attempt is on the stick; the console still ran yesterday's versions, the update comes from the
