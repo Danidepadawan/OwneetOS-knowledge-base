@@ -260,6 +260,8 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
        **owneetd 0.17.1** (mpv's terminal input on, `CLOSE_WIN quit` bound, a test and
        `player-close.txt`); mpv's warnings for the buttons left unbound (Guide, View) no longer
        logged at every press.
+       **Confirmed by the owner (2026-11-11):** with owneetd 0.17.1 holding Guide closes the
+       player.
      - **While building:** owneetd's `update` package has a flaky test (`TestCheckThenApply`:
        its fake rewrites the state file while the manager polls it; 6 failures in 150 runs),
        older than this step; reported to the owner.
