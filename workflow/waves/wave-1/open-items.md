@@ -170,6 +170,15 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    signatures, the same SHA-512 as Arch's recipes), each checked by starting a 32-bit program; owneet-base 0.0.64
    depends on them (about 0.3 MB, plus 3.5 MB for lib32-sdl3); installed through the stick's update in the test VM, the
    libraries all resolve. Waits for the owner's test: Options → the file to start → `game/tenfoot-launcher`.
+   **Owner's test (2026-11-11):** with `game/tenfoot-launcher` chosen, a black screen for a couple of seconds, then it
+   closes with no message. **From the logs** (`frankenpc-20261111-122626`): the 32-bit SDL2 works (the launcher starts and
+   shows its window, the black screen), then it aborts: `std::logic_error: basic_string::_S_construct null not valid`
+   (a text made from a value that is not there), right after "reading .../cdprojektred/witcher2/GameDocuments/Witcher
+   2/config/User.ini failed" (never made yet); or an environment variable it expects from Steam (Big Picture). Not
+   enough to tell: owneet-base 0.0.65 copies each Linux game's small scripts and the variable-like names inside its
+   launchers to the stick, and its test log now starts after the update (no second start needed). OWNEETLOG cleaned
+   (2026-11-11): its 17 logs checked identical to `out/test-logs` (six of 2026-11-09 copied then) and removed;
+   `owneet-debug.txt` kept (`owneet.debug.windows_log=on`, the source of 3p (b)).
 3q. **The Witcher 2 Linux version does not install** (owner, FrankenPC, 2026-11-11): "the game could not be installed",
    twice (the second time with OWNEETLOG plugged in while the console ran: the logs start only with a stick in at the
    start, so neither attempt is on the stick; the console still ran yesterday's versions, the update comes from the
