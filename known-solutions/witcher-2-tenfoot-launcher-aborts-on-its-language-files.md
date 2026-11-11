@@ -1,6 +1,6 @@
 ---
 type: known-solution
-description: "The Witcher 2's Linux tenfoot-launcher shows a black screen and closes (basic_string::_S_construct null not valid): its language files have escapes today's GLib refuses. The console starts the game itself instead."
+description: "The Witcher 2's Linux tenfoot-launcher shows a black screen and closes (basic_string::_S_construct null not valid): its language files have escapes today's GLib refuses. The console fixes them."
 status: solved
 seen: 2026-11-11
 updated: 2026-11-11
@@ -25,9 +25,15 @@ out of stack). GOG's other launcher, `desktop-launcher`, needs 32-bit GTK 2, whi
 
 ## Solution
 
-Owner, 2026-11-11 ([[games-on-disk]]): the console starts the game's own program, `game/witcher2`, with its folder in
-`LD_LIBRARY_PATH`, as GOG's `start.sh` does: the list of known games (`frontend/known-games/known-games.json`, by the GOG
-id in `gameinfo`) names it; owneet-frontend 0.38.16. The game's files are never changed.
+Owner, 2026-11-11 ([[games-on-disk]]): first the console started the game's own program, `game/witcher2`, with its
+folder in `LD_LIBRARY_PATH` (owneet-frontend 0.38.16); the game ran on the FrankenPC, but its language could not be
+changed (only the launchers write it, in `User.ini`, `[linux] Language=`, `Speech=`). Then the launcher again
+(owneet-frontend 0.38.17): the list of known games (`frontend/known-games/known-games.json`, by the GOG id in
+`gameinfo`) names `game/tenfoot-launcher` and `fix-key-files: game/bin/config/lang/*.ini`; when the interface reads
+the game on the console's disk it writes each lone backslash twice (`\ (Backslash)` → `\\ (Backslash)`, `「\」` →
+`「\\」`), only that line in the 14 files changing. In the test VM the launcher then stays open (no abort). Not
+seen yet on the console: whether it crashes after starting the game (it did once in the VM), and its language
+choice.
 
 ## How we found it
 
@@ -40,5 +46,6 @@ id in `gameinfo`) names it; owneet-frontend 0.38.16. The game's files are never 
 
 - Other old Linux games that read GLib key files written for an older GLib can fail the same way: look for a NULL from
   `g_key_file_get_*` and backslashes in their `.ini` files.
-- A game with a launcher that does not work: add it to `known-games.json` with the game's own program
-  (`frontend/known-games/README.md`).
+- A game with a launcher that does not work: add it to `known-games.json` (`frontend/known-games/README.md`).
+- Only the copy the launcher reads counts: `GameDocuments/Witcher 2/config/lang` in the home folder holds copies,
+  fixing them alone changed nothing.

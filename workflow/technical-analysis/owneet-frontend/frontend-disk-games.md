@@ -67,9 +67,12 @@ a game.
   installed earlier; `fake-owneetd.py` installs in a few seconds).
 - **The file to start**: the user's saved choice → `game.txt`'s `start` → a known game's file
   (`/usr/share/owneet-frontend/known-games.json`, from `frontend/known-games/`, by the GOG id on
-  the 5th line of GOG's `gameinfo`; owner 2026-11-11) → `start.sh` at the top of the folder (GOG) →
+  the 5th line of GOG's `gameinfo`; owner 2026-11-11; its `fix-key-files`, GLib key files with a
+  lone backslash, are fixed when the game is read on the console's disk) → `start.sh` at the top of the folder (GOG) →
   the only file found → none (the theme asks). An ELF program starts through `/usr/bin/env
   LD_LIBRARY_PATH=<its folder>`, as GOG's `start.sh` does (not when the folder's name has ":").
+  Starting it shows the full-screen "Starting {game}…" (`Preparing`, `diskGame`) until the game's
+  window is on screen (`focus.changed`) or it ends (`app.exited`) (owner, 2026-11-11).
 - **`game.txt`** (optional; format agreed with the owner, [[games-on-disk]]): `key: value` lines,
   keys `title`, `start` (relative path), `description`; `#` starts a comment.
 - **The game**: collection "Games on disks" (local, not Steam), its file is the game's folder (play

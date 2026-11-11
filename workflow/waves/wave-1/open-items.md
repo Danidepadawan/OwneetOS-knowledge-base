@@ -223,6 +223,35 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    (the VM's GPU, to be seen on the console). The owner's choice of `tenfoot-launcher` in Options is saved under the
    old folder name, so it no longer applies (a stale line in `disk-games.json`, see 3t). Waits for the owner's test:
    uninstall The Witcher 2 (Linux), install it again (its folder is renamed), start it.
+   **Owner's test (2026-11-11, `frankenpc-20261111-165318`): the game starts.** Three new reports: (1) without the
+   launcher the game's language cannot be changed, not even from its settings; (2) after Guide, the game's sound is
+   heard on the home screen; (3) the game had to be selected a couple of times: no full-screen "starting" screen, only
+   the banner, gone after a second (maybe the first start was a long load). **From the logs:** uninstall, the folder
+   renamed, install 16:54-17:02 (8 min), the library shows the title with ":" and starts `game/witcher2` through
+   `env LD_LIBRARY_PATH=…`; one launch only (17:06:10), the game's window on screen 13 s later; Guide at 17:07:14,
+   back to the game, home again, closed 17:07:43. (3) Linux games show only the banner "Starting {title}…"
+   (`toast.launch`); the full-screen "Preparing {game}…" until the first picture is for Windows and Steam games
+   only, so for 13 s nothing showed the game was starting; the other presses of A found it running (no second
+   launch). (2) The game keeps running behind the home screen ([[guide-button]], 2026-10-07), its sound with it.
+   (1) The game keeps its languages in `~/.local/share/cdprojektred/witcher2/GameDocuments/Witcher 2/config/User.ini`,
+   section `[linux]`, `Language=EN` (texts) and `Speech=EN`, written by its launchers; the owner's copy has texts in
+   CZ DE EN ES FR HU IT JP PL RU TR ZH and speech in DE EN FR PL RU (no Italian speech). Choices for the owner.
+   **Disk check (17:03 listing):** the listing ran during the install (the game's folder half written, with
+   `.owneet-installing`), not junk; new: two core dumps of `tenfoot-launcher` from the morning (23.6 MB each, 3p (e))
+   and owneetd 0.25.23 in the packages' cache (3p (c)). The 2 TB disk unchanged.
+   **Owner (2026-11-11):** (1) the launcher comes back ("the cleanest"); (2) the game's sound off while the home screen
+   is shown; (3) the full-screen "Starting {game}…" for Linux games too. (2) was already decided on 2026-11-09 and
+   built: it failed because the game's sound stream has no process id, only its client
+   ([[game-sound-heard-behind-the-home-screen]]). **Built:** owneetd 0.25.25 (the client's process id), owneet-frontend
+   0.38.17 (`known-games.json`: The Witcher 2 → `game/tenfoot-launcher` and `fix-key-files` for its language files;
+   "Starting {game}…" for games on a disk until their first picture or their end). **Test VM:** the 14 language files
+   fixed when the library was read (only the `IK_Backslash` line), the library starts `game/tenfoot-launcher`, the
+   launcher stays open (no abort); its screen cannot be seen in the VM (3D, no screenshot) and neither the virtual pad
+   nor the keyboard reached it, so its language choice, the start of the game from it, and the silence after Guide
+   (the VM's cage session ignores a short Guide) wait for the console. Seen in the VM: after the game crashed, its
+   `CrashReporter` kept running for 26 minutes, so owneetd kept the game "running" (to watch on the console).
+   OWNEETLOG: the test's logs copied and checked identical, but their removal from the stick was blocked by a safety
+   check (files at the top of a drive): left on the stick.
 3q. **The Witcher 2 Linux version does not install** (owner, FrankenPC, 2026-11-11): "the game could not be installed",
    twice (the second time with OWNEETLOG plugged in while the console ran: the logs start only with a stick in at the
    start, so neither attempt is on the stick; the console still ran yesterday's versions, the update comes from the
