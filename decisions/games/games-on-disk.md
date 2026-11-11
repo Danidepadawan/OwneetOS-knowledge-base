@@ -32,8 +32,18 @@ tags: [decision, games]
   Arch's `lib32-sdl3`), SDL2_image and SDL2_ttf from source, as DOSBox Staging ([[supply-chain-security]]): Arch's
   multilib has no 32-bit SDL2 any more, and SDL2 is what most Linux games use (first case: The Witcher 2's GOG Linux
   version). Not Steam's runtime (it comes with Steam's first start: internet, [[hard-constraints]] C9); no 32-bit GTK 2
-  (only desktop launchers, configurators and crash reporters use it). The Witcher 2 is tried with its own launcher for
-  the TV and the controller, `tenfoot-launcher`, chosen in Options (owner: "let's try").
+  (only desktop launchers, configurators and crash reporters use it). The Witcher 2 was tried with its own launcher for
+  the TV and the controller, `tenfoot-launcher` (owner: "let's try"); it aborts on its own language files
+  ([[witcher-2-tenfoot-launcher-aborts-on-its-language-files]]), so the game starts directly (below).
+- **No ":" in an install folder** (owner, 2026-11-11, [[open-items]] 3u): Linux uses ":" to separate the folders of a
+  list (ICU's data, `LD_LIBRARY_PATH`), and The Witcher 2 cannot start in "The Witcher 2: Assassin of kings"
+  ([[linux-game-fails-in-a-folder-with-a-colon]]). The console installs a game into its folder name with ": " written
+  " - "; a game folder on the console's disk whose installer is installed in place is **renamed** first (owner's
+  choice, rather than a new folder next to it). The title shown keeps the ":" (kept with the installed game).
+- **Games OwneetOS knows** (owner, 2026-11-11): a small list in the console
+  (`frontend/known-games/known-games.json`, by GOG id) names the file to start when GOG's `start.sh` does not start
+  the game itself; first entry The Witcher 2 → `game/witcher2`. The user's choice in Options and `game.txt` win over
+  it. A Linux program started directly gets its own folder in `LD_LIBRARY_PATH`, as GOG's `start.sh` does.
 - **GOG's DOS games** (owner, 2026-10-16): GOG ships them with its own DOSBox for Windows; the
   console starts them with **DOSBox Staging**, built by OwneetOS from source
   ([[supply-chain-security]]), never with Proton (no download needed for them). *(The same day,
@@ -53,7 +63,7 @@ tags: [decision, games]
     installing you accept the game's licence" [Read] [Install] (the user is informed, the project
     is covered).
   - **How (owner, 2026-10-19, [[step-4.6-installers]]):** games are installed on the console's
-    disk, in its games folder, under the same folder name (USB disks stay read only until
+    disk, in its games folder, under the same folder name (without ":", owner 2026-11-11, below) (USB disks stay read only until
     [[step-6.5-automatic-disk-mounting]]). GOG's Linux `.sh` (MojoSetup) are **extracted**, never
     run: their `data/noarch` is the installed game (no installer code runs; no desktop shortcuts);
     Windows installers (Inno Setup, e.g. GOG's `setup_*.exe`; NSIS; MSI) **run silently under
@@ -96,4 +106,5 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-16 | The download's texts say "about 650 MB" (the measured size), not "about 1 GB". |
 | 2026-10-16 | Demo 4.5 proposal: Proton is downloaded only once a Windows game is in the library; its progress in the home notices and Settings → System; GOG's `goggame-*.info` says which file starts a Windows game; games on a USB disk do not save in their own folder until step 6.5 (option B). |
 | 2026-10-11 | Proton and its runtime are downloaded once, in the background, the first time the console is online ("a necessary evil": the only exception to C9, for Windows games before the first connection). Installing a game from an installer first shows "By installing you accept the game's licence" [Read] [Install] (the user is informed, the project is covered). Step 4.1 approved. |
+| 2026-11-11 | No ":" in an install folder (": " → " - "); a game folder on the console's disk is renamed before installing in place; the title keeps the ":". A list of known games names the file to start (The Witcher 2: `game/witcher2`, not its launchers); a Linux program started directly gets its folder in `LD_LIBRARY_PATH` (owner). |
 | 2026-11-11 | 32-bit Linux games: OwneetOS builds 32-bit SDL2 (sdl2-compat over lib32-sdl3), SDL2_image and SDL2_ttf from source; not Steam's runtime (internet), no 32-bit GTK 2. The Witcher 2 is tried with its `tenfoot-launcher` (owner). |

@@ -65,15 +65,21 @@ a game.
   Uninstall on the running game (owneetd answers 409 `installs.in_use` anyway). Preview: `tools/preview-steps/installers.txt` and
   `installers-windows.txt` (`@disk` has GOG `.sh`, Inno Setup, too big, Galaxy, unknown, and a game
   installed earlier; `fake-owneetd.py` installs in a few seconds).
-- **The file to start**: the user's saved choice → `game.txt`'s `start` → `start.sh` at the top of
-  the folder (GOG) → the only file found → none (the theme asks).
+- **The file to start**: the user's saved choice → `game.txt`'s `start` → a known game's file
+  (`/usr/share/owneet-frontend/known-games.json`, from `frontend/known-games/`, by the GOG id on
+  the 5th line of GOG's `gameinfo`; owner 2026-11-11) → `start.sh` at the top of the folder (GOG) →
+  the only file found → none (the theme asks). An ELF program starts through `/usr/bin/env
+  LD_LIBRARY_PATH=<its folder>`, as GOG's `start.sh` does (not when the folder's name has ":").
 - **`game.txt`** (optional; format agreed with the owner, [[games-on-disk]]): `key: value` lines,
   keys `title`, `start` (relative path), `description`; `#` starts a comment.
 - **The game**: collection "Games on disks" (local, not Steam), its file is the game's folder (play
-  time and owneetd's app id stay the same when the chosen file changes); title = `game.txt`'s or
+  time and owneetd's app id stay the same when the chosen file changes); title = `game.txt`'s, else
+  the `title` in `.owneet-installed` (a game the console installed: its folder has no ":"), else
   the folder's name as written; cover = `cover.jpg` / `.png` / `.jpeg` / `.webp` at the top
   (asset `boxFront`). Extras: `disk.dir`, `disk.root` (mount folder or "internal"), `disk.files`
-  (relative paths, top-level first), `disk.start`.
+  (relative paths, top-level first), `disk.start`; a folder with only an installer also has
+  `disk.install.folder`, the folder it is installed into (`DiskGames::installFolderName`: ": " →
+  " - ", the same rule as owneetd's `installs.FolderName`), which `GameInfo.install` matches.
 
 ## Windows games (step 4.5)
 

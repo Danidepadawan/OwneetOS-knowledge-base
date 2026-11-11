@@ -209,6 +209,20 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    `start.sh` sets it; started directly without the launcher it makes its own settings and reaches the same point.
    Decisions for the owner: the folder's ":" (the console's install folder without ":"), how this game starts (directly,
    or the TV launcher with its language files fixed).
+   **Owner (2026-11-11):** install folders without ":" (": " → " - "); for a game folder on the console's disk (an
+   install in place, as on the FrankenPC), the folder is **renamed** first (not a new folder next to it); the game starts
+   directly, named by a **list of known games** (by GOG id), with its folder in `LD_LIBRARY_PATH` ([[games-on-disk]],
+   [[linux-game-fails-in-a-folder-with-a-colon]], [[witcher-2-tenfoot-launcher-aborts-on-its-language-files]]).
+   **Built:** owneetd 0.25.24 (`installs.FolderName`; a name with ":" refused; the in-place folder renamed when the
+   request names it without ":"; the title in `.owneet-installed`; Go tests), owneet-frontend 0.38.16 (the install folder
+   without ":", `disk.install.folder` for the progress, the title from the mark, `known-games.json` with The Witcher 2 →
+   `game/witcher2`, `LD_LIBRARY_PATH` for ELF programs). **Test VM:** uninstalled, the folder named back with ":", the
+   interface's new request (dest without ":"): owneetd renamed the folder, installed the game in 9 min 2 s, the mark
+   holds the title; the interface shows "The Witcher 2: Assassin of kings" and starts `game/witcher2`; launched through
+   owneetd with that command, eON starts (OpenGL 4.2, D3D9 over OpenGL), then the same crash after about 9 s as before
+   (the VM's GPU, to be seen on the console). The owner's choice of `tenfoot-launcher` in Options is saved under the
+   old folder name, so it no longer applies (a stale line in `disk-games.json`, see 3t). Waits for the owner's test:
+   uninstall The Witcher 2 (Linux), install it again (its folder is renamed), start it.
 3q. **The Witcher 2 Linux version does not install** (owner, FrankenPC, 2026-11-11): "the game could not be installed",
    twice (the second time with OWNEETLOG plugged in while the console ran: the logs start only with a stick in at the
    start, so neither attempt is on the stick; the console still ran yesterday's versions, the update comes from the
