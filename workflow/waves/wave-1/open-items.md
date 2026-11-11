@@ -164,6 +164,12 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    as DOSBox Staging; (B) 32-bit Linux games start with Steam's runtime; (C) no 32-bit Linux games (the Windows version
    through Proton). And which file starts this game (GOG's `start.sh` runs the desktop launcher): the TV launcher or the
    game. **Disk check (11:33 listing):** +24.1 GB, the installed game; nothing else.
+   **Owner (2026-11-11): option A** (32-bit SDL2, SDL2_image, SDL2_ttf built by OwneetOS), and The Witcher 2 tried with
+   its `tenfoot-launcher` ([[games-on-disk]]). **Built:** packages `lib32-sdl2-compat` 2.32.72 (over Arch's `lib32-sdl3`),
+   `lib32-sdl2_image` 2.8.12 (PNG and JPEG with stb_image) and `lib32-sdl2_ttf` 2.24.0, from the signed releases (good
+   signatures, the same SHA-512 as Arch's recipes), each checked by starting a 32-bit program; owneet-base 0.0.64
+   depends on them (about 0.3 MB, plus 3.5 MB for lib32-sdl3); installed through the stick's update in the test VM, the
+   libraries all resolve. Waits for the owner's test: Options → the file to start → `game/tenfoot-launcher`.
 3q. **The Witcher 2 Linux version does not install** (owner, FrankenPC, 2026-11-11): "the game could not be installed",
    twice (the second time with OWNEETLOG plugged in while the console ran: the logs start only with a stick in at the
    start, so neither attempt is on the stick; the console still ran yesterday's versions, the update comes from the

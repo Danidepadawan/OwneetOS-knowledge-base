@@ -4,7 +4,7 @@ description: "The Games folder convention, Windows games through hidden Proton, 
 area: games
 status: active
 decided: 2026-10-11
-updated: 2026-10-19
+updated: 2026-11-11
 legacy: "PROJECT_RULES.md §6 (Games on a disk), §10, §13 (2026-10-11)"
 tags: [decision, games]
 ---
@@ -28,6 +28,12 @@ tags: [decision, games]
     texts give the real size, "about 650 MB" (owner, 2026-10-16: be precise).
   - **Which file starts a Windows game:** GOG's `goggame-<id>.info` (its primary play task: file,
     arguments, working folder), else the same choice as for Linux games ([[step-4.5-windows-games-proton]]).
+- **32-bit Linux games** (owner, 2026-11-11, [[open-items]] 3u): OwneetOS builds 32-bit SDL2 (sdl2-compat over
+  Arch's `lib32-sdl3`), SDL2_image and SDL2_ttf from source, as DOSBox Staging ([[supply-chain-security]]): Arch's
+  multilib has no 32-bit SDL2 any more, and SDL2 is what most Linux games use (first case: The Witcher 2's GOG Linux
+  version). Not Steam's runtime (it comes with Steam's first start: internet, [[hard-constraints]] C9); no 32-bit GTK 2
+  (only desktop launchers, configurators and crash reporters use it). The Witcher 2 is tried with its own launcher for
+  the TV and the controller, `tenfoot-launcher`, chosen in Options (owner: "let's try").
 - **GOG's DOS games** (owner, 2026-10-16): GOG ships them with its own DOSBox for Windows; the
   console starts them with **DOSBox Staging**, built by OwneetOS from source
   ([[supply-chain-security]]), never with Proton (no download needed for them). *(The same day,
@@ -90,3 +96,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-16 | The download's texts say "about 650 MB" (the measured size), not "about 1 GB". |
 | 2026-10-16 | Demo 4.5 proposal: Proton is downloaded only once a Windows game is in the library; its progress in the home notices and Settings → System; GOG's `goggame-*.info` says which file starts a Windows game; games on a USB disk do not save in their own folder until step 6.5 (option B). |
 | 2026-10-11 | Proton and its runtime are downloaded once, in the background, the first time the console is online ("a necessary evil": the only exception to C9, for Windows games before the first connection). Installing a game from an installer first shows "By installing you accept the game's licence" [Read] [Install] (the user is informed, the project is covered). Step 4.1 approved. |
+| 2026-11-11 | 32-bit Linux games: OwneetOS builds 32-bit SDL2 (sdl2-compat over lib32-sdl3), SDL2_image and SDL2_ttf from source; not Steam's runtime (internet), no 32-bit GTK 2. The Witcher 2 is tried with its `tenfoot-launcher` (owner). |
