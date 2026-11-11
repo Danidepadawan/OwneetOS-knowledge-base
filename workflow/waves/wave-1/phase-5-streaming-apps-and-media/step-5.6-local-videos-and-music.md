@@ -267,7 +267,10 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
        watching after Guide held. **One change asked (owner, 2026-11-11):** Autoplay on the same
        button inside and outside the player: **Y switches Autoplay in the player too, Menu cycles
        the subtitles** (X stays audio; [[controller-input-map]], [[local-media]],
-       [[decision-log]]); the approved demo is updated to match.
+       [[decision-log]]); the approved demo is updated to match. owneetd 0.17.2 (code `adb95dd`): confirmed
+       by the owner (2026-11-11).
+     **Sub-step 5 passed the owner's test (2026-11-11)** with owneetd 0.17.2 and owneet-frontend
+     0.25.0.
      - **While building:** owneetd's `update` package has a flaky test (`TestCheckThenApply`:
        its fake rewrites the state file while the manager polls it; 6 failures in 150 runs),
        older than this step; reported to the owner.
