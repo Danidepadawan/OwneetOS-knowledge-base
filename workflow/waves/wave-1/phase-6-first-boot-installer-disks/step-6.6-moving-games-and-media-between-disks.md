@@ -197,3 +197,6 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
   **Fixed:** owneetd 0.25.20 (syncfs of the original's disk after its removal), owneet-frontend 0.38.15 (the library reads
   the disks again with the games); Go tests, interface preview, test VM
   ([[free-space-shown-late-after-removing-files]]). Waits for the owner's test.
+- **Owner (2026-11-11):** the same fix for uninstalling. **Built:** owneetd 0.25.21 (`syncdisk` after uninstalling,
+  deleting a game, deleting an installer), checked in the test VM. The owner also asked that the whole content of both
+  disks be checked for junk after every test ([[open-items]] 3p): owneet-base 0.0.61 lists every disk in the test logs.

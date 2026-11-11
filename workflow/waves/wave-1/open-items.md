@@ -114,6 +114,15 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    original's disk after removing it, owneet-frontend 0.38.15 reads the disks again with the games; checked in the test
    VM; waits for the owner's test. [[free-space-shown-late-after-removing-files]],
    [[step-6.6-moving-games-and-media-between-disks]]
+   **Owner (2026-11-11):** add the same fix to uninstalling, then he tests. **Built:** owneetd 0.25.21 syncs the disk
+   after uninstalling, deleting a game and deleting an installer; checked in the test VM (the free space right at once).
+3p. **No junk on the disks** (owner, 2026-11-11): from the next test, the whole content of both disks (the console's
+   SSD and the 2 TB SATA disk) is checked: no junk files of any kind may stay (leftovers of old downloads, traces of
+   deleted things no longer needed); the disks must not fill up needlessly over time. Needs a full listing of each disk
+   in the test logs (owneet-testlog), then a check after every test. **Built:** owneet-base 0.0.61: once per start
+   owneet-testlog writes `<log>.files/`, one compressed listing per disk (type, bytes, date, path of every file, folder
+   and link; the console's disk subvolume by subvolume, its snapshots only measured), at the lowest priority; checked in
+   the test VM (about 2 minutes for 200 000 entries). The check follows each new log.
 
 ## Decided, not built yet
 

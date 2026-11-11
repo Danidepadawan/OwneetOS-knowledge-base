@@ -3,7 +3,7 @@ type: known-solution
 description: "The console's free space does not grow after a game is moved away (or files are removed), and changes only much later: btrfs frees the room at its next commit, and the library read the disks only when shown again."
 status: solved
 seen: 2026-11-10
-updated: 2026-11-10
+updated: 2026-11-11
 tags: [known-solution, disks, btrfs]
 ---
 # Free space shown late after removing files
@@ -36,6 +36,11 @@ Two things together:
 Checked in the test VM: a 3 GB game moved from `/home` (btrfs) to another disk, the free space
 right as soon as owneetd told the move done (52 067 → 54 928 MB).
 
+- owneetd 0.25.21 (2026-11-11, owner: "the same fix there too"): the sync moved to
+  `daemon/internal/syncdisk`, used after uninstalling a game, deleting a game from its disk and
+  deleting a game's installer. Checked in the test VM: 3 GB uninstalled, then 3 GB deleted, the
+  free space right as soon as owneetd answered (49 179 → 52 040 → 54 901 MB).
+
 ## How we found it
 
 - The owner's logs (`out/test-logs/frankenpc-20261110-203820`): the move of 20:39 ended at about
@@ -46,6 +51,6 @@ right as soon as owneetd told the move done (52 067 → 54 928 MB).
 
 ## Watch out
 
-Anything that removes files on the console's disk and then shows or checks its free space at once
-(uninstall, deleting an installer, clearing caches) meets the same btrfs delay: sync the disk
-(syncfs) first, then read the space.
+Anything new that removes files on the console's disk and then shows or checks its free space at
+once (e.g. clearing caches) meets the same btrfs delay: call `syncdisk.Dir` first, then read the
+space.
