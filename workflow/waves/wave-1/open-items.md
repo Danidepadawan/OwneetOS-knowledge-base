@@ -141,6 +141,18 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    simple, elegant solution thought out together. A critical point just found: it gets a phase (or step) of its own.
    **Owner:** first he ends today's tests, then this is planned with him (where it goes in the plan and how it is
    built). Nothing is cleaned meanwhile. [[open-items]] 3p
+3u. **The Witcher 2 (Linux) does not start** (owner, FrankenPC, 2026-11-11, after installing it with owneetd 0.25.22):
+   four tries, only "Starting The Witcher 2: Assassin..." on screen; the last two showed a change of screen for a split
+   second (maybe a window, too quick to tell). **From the logs** (`out/test-logs/frankenpc-20261111-110726`): the install
+   worked (11:10-11:17, the ZIP64 fix of 3q works). The console starts GOG's `start.sh`, which runs the game's
+   `desktop-launcher` (a 32-bit GTK 2 window); the system has no 32-bit GTK 2 (`libgtk-x11-2.0`, `libgdk-x11-2.0`,
+   `libcairo`, `libgdk_pixbuf` not found, only 32-bit OpenGL and Vulkan), so the launcher ends at once, `start.sh`
+   with it, and owneetd sees the game end "with success" (nothing tells the user). The launcher is also a desktop window
+   (it needs the pointer). Whether the game's own program (`witcher2`) misses libraries too is not known yet:
+   owneet-base 0.0.63 lists, once per start, every program of the Linux games and the libraries it misses. Options to
+   discuss with the owner once that is known: add the needed 32-bit libraries; start Linux games with Steam's runtime
+   already on the console; start the game's own program instead of GOG's launcher. No decision yet.
+   **Disk check (11:07 listing):** nothing new since 10:49 but the packages' cache (+12 MB, owneetd 0.25.22, 3p (c)).
 3q. **The Witcher 2 Linux version does not install** (owner, FrankenPC, 2026-11-11): "the game could not be installed",
    twice (the second time with OWNEETLOG plugged in while the console ran: the logs start only with a stick in at the
    start, so neither attempt is on the stick; the console still ran yesterday's versions, the update comes from the
