@@ -135,7 +135,9 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    Arkham Knight (208650, 24.1 GB, 2026-11-09) and its shader cache (2.9 GB), Cyberpunk 2077's (1091500, 0.5 GB); on the
    console's disk: an unfinished download of Steamworks Shared (228980, 0.24 GB), the folders and shader caches of six
    games no longer installed, Proton 5.13 (1.8 GB) and `ubuntu12_32/steam-runtime.old` (0.19 GB). Nothing deleted: the
-   owner decides what to clean and how (Steam's content only through Steam, [[user-data]]).
+   owner decides what to clean and how (Steam's content only through Steam, [[user-data]]). (e) (2026-11-11, 12:36 listing)
+   systemd's core dumps: `tenfoot-launcher`'s crash left a 26.8 MB core in `/var/lib/systemd/coredump`; systemd keeps
+   them up to two weeks and up to 10% of the disk, so a game that crashes often fills the disk with them.
 3t. **Junk on the disks: a new phase or step** (owner, 2026-11-11, from 3p's findings (a)-(d)): the system cannot find
    out by itself whether a save is still needed; so either a simplified file manager (needed anyway in wave 2) or a
    simple, elegant solution thought out together. A critical point just found: it gets a phase (or step) of its own.
@@ -179,6 +181,11 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    launchers to the stick, and its test log now starts after the update (no second start needed). OWNEETLOG cleaned
    (2026-11-11): its 17 logs checked identical to `out/test-logs` (six of 2026-11-09 copied then) and removed;
    `owneet-debug.txt` kept (`owneet.debug.windows_log=on`, the source of 3p (b)).
+   **Start of 12:36 (`frankenpc-20261111-123623`):** the update installed owneet-base 0.0.65 at that start, after its
+   old test log had started (the new order holds only from the start after it is installed: my mistake, I told the
+   owner one start was enough), so no scripts yet: one more start is needed. The libraries report: `witcher2` now finds
+   SDL2 and SDL2_image (only `libopenal-eon`, in its own folder, is not found by ldd); `tenfoot-launcher` misses nothing.
+   The launcher made `~/.local/share/cdprojektred/witcher2/GameDocuments/Witcher 2/config` and left it empty.
 3q. **The Witcher 2 Linux version does not install** (owner, FrankenPC, 2026-11-11): "the game could not be installed",
    twice (the second time with OWNEETLOG plugged in while the console ran: the logs start only with a stick in at the
    start, so neither attempt is on the stick; the console still ran yesterday's versions, the update comes from the
