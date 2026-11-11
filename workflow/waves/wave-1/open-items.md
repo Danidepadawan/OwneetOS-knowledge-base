@@ -122,7 +122,26 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    in the test logs (owneet-testlog), then a check after every test. **Built:** owneet-base 0.0.61: once per start
    owneet-testlog writes `<log>.files/`, one compressed listing per disk (type, bytes, date, path of every file, folder
    and link; the console's disk subvolume by subvolume, its snapshots only measured), at the lowest priority; checked in
-   the test VM (about 2 minutes for 200 000 entries). The check follows each new log.
+   the test VM (about 2 minutes for 200 000 entries). The check follows each new log. **First real log (2026-11-11,
+   `out/test-logs/frankenpc-20261111-101928`):** cut: the console was switched off about 90 s after its start and the
+   listing wrote straight to the stick (mounted "sync", very slow): only the system's listing whole, `/home` cut, the
+   SATA disk missing. **Fixed:** owneet-base 0.0.62 makes each listing in memory and copies it whole (about 3 s in the
+   test VM instead of 2 minutes), and writes `complete.txt` at the end.
+3q. **The Witcher 2 Linux version does not install** (owner, FrankenPC, 2026-11-11): "the game could not be installed",
+   twice (the second time with OWNEETLOG plugged in while the console ran: the logs start only with a stick in at the
+   start, so neither attempt is on the stick; the console still ran yesterday's versions, the update comes from the
+   stick at the start). Its journal is on the console's disk: owneet-base 0.0.62 copies the whole journals of the three
+   previous starts to the stick, so the next start with the stick brings it (if no more than two starts come first).
+   Not diagnosed yet. [[step-4.6-installers]]
+3r. **Owner's tests of 2026-11-11 (logs `frankenpc-20261111-101811`, `-101928`):** (2) he moved The Witcher 2's installer
+   to the SATA disk: the change of free space is too small to see on screen; in the session without the stick, so not
+   logged yet (3q's journals). (3) a deletion on the SATA disk (10:18:46, owneetd 0.25.21, "game deleted from
+   its disk"): the library shows 1.9 TB before and after (rounded to 0.1 TB); the SATA disk is ext4 (frees at once);
+   owneet-base 0.0.62 writes every disk's room in bytes in each report, to read such changes. (4) the restart done.
+3s. **Long texts scroll instead of "…"** (owner, 2026-11-11): where a text is cut with "…", make it scroll so it can be
+   read whole, everywhere in the project (28 places in the theme, 12 files, `elide`). A change of look and behaviour:
+   demo first ([[demo-before-code]]); open questions for the demo: when it scrolls (only the selected item, or every cut
+   text), speed and pauses.
 
 ## Decided, not built yet
 
