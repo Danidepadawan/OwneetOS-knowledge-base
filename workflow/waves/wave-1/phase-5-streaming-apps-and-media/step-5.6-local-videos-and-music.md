@@ -278,3 +278,53 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
      in mpv, a real USB disk of media; in gamescope, which the test VM does not have: Guide → the
      console with the sound going on → Resume, and the player's buttons doing nothing while the
      console is over it), outcome; the owner approves the step.
+     **Written (2026-11-12), waiting for the owner's approval:**
+     - **Licences and terms** ([[legal-compliance]]): mpv (GPL-2.0-or-later and LGPL-2.1-or-later)
+       and FFmpeg (GPL-3.0-only as Arch packages it; its library linked into the frontend, whose
+       GPL-3.0-or-later allows it) are in `CREDITS.md`; the console's fonts installed on disk for the
+       player are OFL-1.1, their licences installed. Nothing uses the internet, a service or
+       anyone's content: the media are the user's own files, the test media are generated.
+       **Proposed for [[step-7.5-legal-review-before-the-public-launch]]:** the patents on the
+       formats FFmpeg decodes (H.264, HEVC, AAC…) in a console that is distributed (Arch ships
+       FFmpeg with them; whether that is enough for OwneetOS, and in which countries).
+     - **Known limits of 5.6:**
+       - Only the `Videos` / `Music` folders (and their name in the console's language) at the top
+         of a disk; nothing else on the disks is searched.
+       - The player's texts, colours and button glyphs are those of the moment it starts: a
+         language, palette or text size changed while it plays shows from the next start.
+       - Each file starts with its own tracks: Italian audio chosen in one episode is not kept for
+         the next. Embedded subtitles turned on show from their next line (mpv).
+       - A video left at any point counts as started, also a few seconds in (Continue watching).
+       - No seeking beyond ±10 s at a time, no speed, chapters, shuffle or repeat; no search.
+       - A folder or album of more than 5,000 files does not open in the player ("The player could
+         not start.").
+       - In cage (the reduced session) the console is never shown over the player: the volume is
+         set before or after (the quick menu), and holding Guide closes the player.
+       - A USB disk removed while it plays: the console stops the player and keeps the position,
+         unless mpv reached the missing part of the file first (the position is then not saved).
+       - Hardware decoding, 4K and HDR are not checked yet (the test VM decodes in software).
+     - **To check at the next hardware test** (FrankenPC: gamescope, the GTX 1660 Super, a TV; with
+       the open checks of [[step-5.1-brave-in-the-os]] to [[step-5.5-spotify]]): hardware decoding
+       (`hwdec-current` in the player's journal: H.264, HEVC and VP9 on NVIDIA, AV1 in software on
+       that card) and a 4K file; Guide → the console with the sound going on, the item marked
+       "Playing", the hero's time, Resume and Close; the player's buttons doing nothing while the
+       console is over it; another video while one plays moves the player to it; a Switch
+       controller's buttons and the Nintendo-style glyphs in the player; a real USB disk of media,
+       plugged in and pulled out while a video plays (the toast, the position kept); the display's
+       size and fonts on the TV.
+     - **Outcome:** the **Videos** and **Music** tiles open their pages: the `Videos` / `Music`
+       folders of every disk together, Continue watching, a folder as a list beside its picture,
+       Music by folder or by artist and album (the tags read once, 1.6 ms a song in the test VM).
+       A plays in **mpv with OwneetOS's own configuration** (none of mpv's bindings, never Guide),
+       one app at a time like a game, with the console's display drawn by a script (the texts,
+       palette, fonts and glyphs sent at each start): A pause, D-pad ±10 s exact, LT / RT previous /
+       next (LT's 5 s), X audio, Menu subtitles, **Y Autoplay** as in the Videos page, B back to the
+       list; only a video's position is kept (mpv's own files, on the console's disk); the home
+       screen's hero and the pages show what plays. Packages: owneetd 0.17.2, owneet-frontend
+       0.25.0. Verified in the test VM (cage, a Nacon GC-100) and with the real mpv in the builder
+       VM (`tools/player-preview`). Probe: `vm/run/probe-5.6/`, never shipped. Known solutions
+       written: [[builder-vm-stops-after-the-host-sleeps]], [[cache-files-slow-to-write-in-a-vm]],
+       [[mpv-ignores-sigterm-with-a-controller]].
+     - **Outside the step, for the owner:** owneetd's flaky `update` test (`TestCheckThenApply`,
+       step 4.2b); the guard hook blocking actions that only name the package build script (a
+       read-only look at it, twice, and this note's edit), without building anything.
