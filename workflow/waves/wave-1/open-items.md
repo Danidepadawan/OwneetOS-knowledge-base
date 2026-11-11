@@ -252,6 +252,9 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    `CrashReporter` kept running for 26 minutes, so owneetd kept the game "running" (to watch on the console).
    OWNEETLOG: the test's logs copied and checked identical, but their removal from the stick was blocked by a safety
    check (files at the top of a drive): left on the stick.
+   **Owner's test (2026-11-11, owneet-frontend 0.38.17):** "Starting …" was shown (step 2's first part fine), then a
+   black screen; the launcher never showed; closing it from the home screen was not immediate; a second start changed
+   nothing. Being looked at in the logs.
 3q. **The Witcher 2 Linux version does not install** (owner, FrankenPC, 2026-11-11): "the game could not be installed",
    twice (the second time with OWNEETLOG plugged in while the console ran: the logs start only with a stick in at the
    start, so neither attempt is on the stick; the console still ran yesterday's versions, the update comes from the
