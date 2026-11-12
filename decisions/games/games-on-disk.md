@@ -81,6 +81,10 @@ tags: [decision, games]
     a silent install accepts the game's licence for the user, the console first shows "By
     installing you accept the game's licence" [Read] [Install] (the user is informed, the project
     is covered).
+  - **Installing straight on another disk (owner, 2026-11-12, priority, a fault to fix):** a game
+    must be installable directly on the SATA disk (the console's other disks), not only on the
+    console's own disk; to be built right after the owner's current test, how the disk is chosen
+    agreed with the owner first ([[open-items]] 3l). The paragraph below is the behaviour until then.
   - **How (owner, 2026-10-19, [[step-4.6-installers]]):** games are installed on the console's
     disk, in its games folder, under the same folder name (without ":", owner 2026-11-11, below) (USB disks stay read only until
     [[step-6.5-automatic-disk-mounting]]). GOG's Linux `.sh` (MojoSetup) are **extracted**, never
@@ -126,6 +130,7 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-16 | Demo 4.5 proposal: Proton is downloaded only once a Windows game is in the library; its progress in the home notices and Settings → System; GOG's `goggame-*.info` says which file starts a Windows game; games on a USB disk do not save in their own folder until step 6.5 (option B). |
 | 2026-10-11 | Proton and its runtime are downloaded once, in the background, the first time the console is online ("a necessary evil": the only exception to C9, for Windows games before the first connection). Installing a game from an installer first shows "By installing you accept the game's licence" [Read] [Install] (the user is informed, the project is covered). Step 4.1 approved. |
 | 2026-11-11 | No ":" in an install folder (": " → " - "); a game folder on the console's disk is renamed before installing in place; the title keeps the ":". A list of known games names the file to start (The Witcher 2: `game/witcher2`, not its launchers); a Linux program started directly gets its folder in `LD_LIBRARY_PATH` (owner). |
+| 2026-11-12 | Games must be installable straight on the SATA disk (the console's other disks), not only on its own disk: a fault, priority, built right after the current test; how the disk is chosen agreed first (owner). |
 | 2026-11-12 | A known game's own crash reporter is not started (a second OwneetOS library, only in the games the list names): The Witcher 2's 2015 reporter cannot start and showed a desktop window after its crash on quitting (owner). |
 | 2026-11-12 | The Witcher 2's TV launcher always stays; it ignores the mouse, so the library turns the controller into its keys (D-pad and left stick = arrows, A = Enter, B = Esc) and hides the controller from its own broken handling (owner). |
 | 2026-11-12 | A small OwneetOS library for old SDL2 launchers, only for the files the known games name (The Witcher 2's TV launcher: menu shown, no crash after Start Game, closes at once); a game whose launcher hands over stays open while any of its programs runs, only for the games the list names (owner). |
