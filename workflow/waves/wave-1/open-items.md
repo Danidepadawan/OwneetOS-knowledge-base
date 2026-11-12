@@ -296,6 +296,9 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    Waits for the owner's test: the language in Options, Start Game, the game's sound behind the home screen (Guide).
    Seen while building: the guard hook blocked a shell command that only wrote a PKGBUILD's text (a false positive,
    reported to the owner; the files were written with the editor instead).
+   **Owner's test (2026-11-12):** the launcher shows, but it is clearly broken: navigating works badly; after changing the
+   text language a couple of times the console went back to the home screen (no crash); it is not clear how to apply or
+   cancel the changes. Start Game not tried. Being looked at in the logs.
 3v. **Steam's shader compiling shows the library with no notice** (owner, FrankenPC, 2026-11-12): after installing
    Batman: Arkham Knight (Steam), at its first start, while Proton compiled its shaders, the console went back to the
    library's page with nothing saying the game was still being prepared; the owner had to open Steam again to see that
