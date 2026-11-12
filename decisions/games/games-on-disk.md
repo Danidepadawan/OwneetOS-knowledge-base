@@ -53,6 +53,9 @@ tags: [decision, games]
   game (its own clean-up crashes) and when the console asks it to close (it ignored the request). A game whose
   launcher hands over to the game and ends stays open **while any of its programs runs**; **only for the games the
   list names** (today The Witcher 2's launcher): the owner checks over his ~90 games whether others need it.
+  **The launcher always stays** (owner, 2026-11-12, "it MUST be there"). Its own controller handling is broken under
+  SDL3 and it ignores the mouse (so the controller pointer cannot drive it); the library hides the controller from it
+  and **turns the controller into its keys** (owner: "let's try"): D-pad and left stick = arrows, A = Enter, B = Esc.
 - **Starting a game on a disk** (owner, 2026-11-11): Linux and DOS games on a disk show the same full-screen
   "Starting {game}…" as Windows games until the game's first picture or its end (The Witcher 2 took 13 s, and the
   banner alone was gone after a second).
@@ -119,6 +122,7 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-16 | Demo 4.5 proposal: Proton is downloaded only once a Windows game is in the library; its progress in the home notices and Settings → System; GOG's `goggame-*.info` says which file starts a Windows game; games on a USB disk do not save in their own folder until step 6.5 (option B). |
 | 2026-10-11 | Proton and its runtime are downloaded once, in the background, the first time the console is online ("a necessary evil": the only exception to C9, for Windows games before the first connection). Installing a game from an installer first shows "By installing you accept the game's licence" [Read] [Install] (the user is informed, the project is covered). Step 4.1 approved. |
 | 2026-11-11 | No ":" in an install folder (": " → " - "); a game folder on the console's disk is renamed before installing in place; the title keeps the ":". A list of known games names the file to start (The Witcher 2: `game/witcher2`, not its launchers); a Linux program started directly gets its folder in `LD_LIBRARY_PATH` (owner). |
+| 2026-11-12 | The Witcher 2's TV launcher always stays; it ignores the mouse, so the library turns the controller into its keys (D-pad and left stick = arrows, A = Enter, B = Esc) and hides the controller from its own broken handling (owner). |
 | 2026-11-12 | A small OwneetOS library for old SDL2 launchers, only for the files the known games name (The Witcher 2's TV launcher: menu shown, no crash after Start Game, closes at once); a game whose launcher hands over stays open while any of its programs runs, only for the games the list names (owner). |
 | 2026-11-11 | After the console test: The Witcher 2 starts its TV launcher again (its language cannot be changed without it), its language files fixed by the console (`fix-key-files`); Linux and DOS games on a disk show the full-screen "Starting {game}…" until their first picture (owner). |
 | 2026-11-11 | 32-bit Linux games: OwneetOS builds 32-bit SDL2 (sdl2-compat over lib32-sdl3), SDL2_image and SDL2_ttf from source; not Steam's runtime (internet), no 32-bit GTK 2. The Witcher 2 is tried with its `tenfoot-launcher` (owner). |
