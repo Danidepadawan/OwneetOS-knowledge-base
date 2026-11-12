@@ -368,6 +368,11 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    anything; **owner: remove it**, brightness comes back in Wave 2 ([[settings-screens]], [[wave-2]]). Not built yet.
 3y. **"Show TV safe area" does nothing** (owner, 2026-11-12): Settings → Appearance → "Show TV safe area" seems to have
    no effect, or works wrongly. To be reviewed (what it should show, and on which screens). [[settings-screens]]
+   **Looked at (test VM, 2026-11-12):** it draws a 1 px solid outline in the muted colour at 70 % (`theme.qml`, Theme.safeX
+   64 px at the sides), barely visible on a TV, on the very edge of the content (the logo starts on it, the clock touches
+   it, the focus ring goes past it on the right); it only shows the area, it changes nothing in the layout. The approved
+   demo 3.3 (`design/demos/3.3-theme-foundations.html`) has it **dashed** with the label "safe area 5%" at the top right:
+   the code does not match the demo. Screenshot sent to the owner; what it should do asked.
 3q. **The Witcher 2 Linux version does not install** (owner, FrankenPC, 2026-11-11): "the game could not be installed",
    twice (the second time with OWNEETLOG plugged in while the console ran: the logs start only with a stick in at the
    start, so neither attempt is on the stick; the console still ran yesterday's versions, the update comes from the
