@@ -39,7 +39,8 @@ start, again; soft edges while it moves. Texts on two or more lines (covers' tit
 
 **A prompt bar that does not fit** (owner, 2026-11-12, [[open-items]] 3w b; e.g. the library in Italian with text size
 XL): only then, the prompts on the right (Sections, Home: the same on every screen) show their buttons without their
-words; the screen's own prompts keep theirs. Demo first.
+words; the screen's own prompts keep theirs. Demo `design/demos/3.3c-prompt-bar-fit.html` approved (owner,
+2026-11-12): the bar does not fit when less than twice the gap between prompts would stay between the two groups.
 
 ## History
 
@@ -55,3 +56,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-08 | Step 3.3 approved. Button prompts also have a Nintendo-style set (chosen automatically for Switch controllers). Small hardware checks are batched with the next larger test instead of a new USB stick each. |
 | 2026-11-11 | Long texts: the highlighted one scrolls to be read whole instead of "…", everywhere; texts never highlighted keep "…"; demo first (owner). |
 | 2026-11-12 | Demo 3.3b (long texts that scroll) approved; a prompt bar that does not fit drops the words of the prompts on the right (Sections, Home) and keeps their buttons (owner: option 1). Demo first. |
+| 2026-11-12 | Demo 3.3c (a prompt bar that does not fit) approved (owner). |

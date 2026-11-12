@@ -377,7 +377,13 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    (a) with 3s's demo; (b) the prompt bar: asked to be explained better (what gives way when it does not fit).
    **Owner (2026-11-12):** option 1, only when the bar does not fit, the prompts on the right (Sections, Home) keep
    their buttons and lose their words ([[design-direction]]); demo first: `design/demos/3.3c-prompt-bar-fit.html`
-   waits for the owner's approval. (c) and (d) still to fix.
+   **approved** (owner, 2026-11-12). **Built** (owneet-frontend 0.38.24, `PromptBar`; checked with `tools/frontend-preview`,
+   `prompt-bar-fit.txt`: the library in English with text size XL keeps only [LB][RB] and Home on the right).
+   (c) and (d): the owner asked to fix them (2026-11-12), no change of look. **(c) built** (0.38.24): windows (`Sheet`)
+   leave 22 px at the sides and 14 px above and below their content for the ring and the lift, the rows where they
+   were; the language picker's first row now shows its ring whole. **(d) cause:** with text size XL and a title on two
+   lines, the hero card's text is taller than the card, so its label goes above the card's top; how to make room is
+   a change of look: asked the owner (title on one line with "…" only then, or less space between its lines).
    **Screenshot every 30 seconds built** (owneet-base 0.0.67): `owneet-testlog` asks gamescope
    (`gamescopectl screenshot`) and keeps the last 240 in `owneet-<start>.screens/HHMMSS.png` on the stick; checked in
    the test VM (one every 31-32 s; the VM's pictures are black, it has no graphics card).
