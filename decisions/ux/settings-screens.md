@@ -4,7 +4,7 @@ description: "Settings review outcomes: controllers off/forget, brightness where
 area: ux
 status: active
 decided: 2026-10-09
-updated: 2026-10-10
+updated: 2026-11-12
 legacy: "PROJECT_RULES.md §13 (2026-10-09, 2026-10-10); ROADMAP 3.9"
 tags: [decision, ux, settings]
 ---
@@ -12,7 +12,8 @@ tags: [decision, ux, settings]
 
 - Demo 3.9 review (2026-10-09): pairing drawings mark the real buttons ([[controllers-and-pairing]]);
   connected Bluetooth controllers can be turned off or forgotten; Display gets a brightness
-  setting, **shown only on screens that allow it** ([[screens-and-display]]); the keyboard layout
+  setting, **shown only on screens that allow it** ([[screens-and-display]]) (**removed from Wave 1,
+  owner 2026-11-12**: on the FrankenPC it does nothing; brightness is looked at again in Wave 2); the keyboard layout
   is chosen separately from the language ([[languages]]); the right stick scrolls the page and
   windows ([[controller-input-map]]).
 - **Sound:** "Mute" comes first and, while it is on, hides output, volume and interface sounds.
@@ -32,3 +33,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-09 | Held LB / RB / LT / RT repeat after 0.72 s, then every 0.36 s (directions: 0.36 s, then 0.14 s) ([[controller-input-map]]). Demo 3.9 approved; the brightness setting is shown only on screens that allow it. |
 | 2026-10-10 | Settings → Sound: "Mute" comes first and, while it is on, hides output, volume and interface sounds. The Wi-Fi password window has a "Show password" switch (owner's NiPoGi test). |
 | 2026-10-10 | Step 3.9 (Settings) approved after the owner's tests on the NiPoGi and the desktop (two graphics cards). Picture dimming for screens without a brightness control stays a proposal for Wave 2 (not confirmed). Next: demo 3.10 (on-screen keyboard). |
+| 2026-11-12 | The brightness slider in Settings → Display is removed from Wave 1: it does nothing on the FrankenPC; brightness is looked at again in Wave 2 (owner). |

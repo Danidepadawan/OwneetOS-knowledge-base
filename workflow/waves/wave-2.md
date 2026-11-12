@@ -40,7 +40,9 @@ Scope agreed so far: [[wave-1-scope]] (later waves).
 - **13. Custom accent colour** with automatic contrast checking.
 - **14. Other screens (optional choice):** Settings → Display "Other screens: show the OwneetOS
   logo / turn off" (decided 2026-10-10: Wave 1 turns them off).
-- **15. Picture dimming (proposal, not confirmed, owner 2026-10-10):** for screens without a real
+- **15. Brightness (owner, 2026-11-12):** the Wave 1 slider is removed (it did nothing on the FrankenPC);
+  brightness is looked at again here, with picture dimming below.
+- **15b. Picture dimming (proposal, not confirmed, owner 2026-10-10):** for screens without a real
   brightness control (no backlight, no DDC/CI), an optional "Dim the picture" setting done by
   gamescope's colour pipeline: darker pixels, same backlight (no energy saved, lower contrast);
   it would apply to games too. Needs a demo and the owner's approval.
