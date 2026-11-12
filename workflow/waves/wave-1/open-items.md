@@ -289,6 +289,8 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    Batman: Arkham Knight (Steam), at its first start, while Proton compiled its shaders, the console went back to the
    library's page with nothing saying the game was still being prepared; the owner had to open Steam again to see that
    the process had not ended. Not looked at yet (no logs of that start read). [[step-4.2c-steam-without-its-interface]]
+3w. **Parts of the interface cut off** (owner, 2026-11-12): the final "S" of the logo, and in some cases the library's
+   filter bar. Not looked at yet (which screens and screen sizes to find out). [[design-tokens]]
 3q. **The Witcher 2 Linux version does not install** (owner, FrankenPC, 2026-11-11): "the game could not be installed",
    twice (the second time with OWNEETLOG plugged in while the console ran: the logs start only with a stick in at the
    start, so neither attempt is on the stick; the console still ran yesterday's versions, the update comes from the
