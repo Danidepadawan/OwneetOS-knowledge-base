@@ -332,3 +332,4 @@ Decisions by area: [[decisions/INDEX|decisions index]].
 | 2026-11-12 | Demos 3.9c (the display area) and 3.3b (long texts that scroll) approved (owner). | [[screens-and-display]], [[settings-screens]], [[controller-input-map]], [[design-direction]] |
 | 2026-11-12 | A prompt bar that does not fit: only then, the prompts on the right (Sections, Home) show their buttons without their words; the screen's own prompts keep theirs (owner: option 1). Demo first. | [[design-direction]] |
 | 2026-11-12 | Demo 3.3c (a prompt bar that does not fit: the prompts on the right keep only their buttons when less than twice the gap between prompts would stay between the two groups) approved (owner). | [[design-direction]] |
+| 2026-11-12 | The home's big card: when its rows do not fit (text size XL, a title on two lines), the space between them shrinks from 12 px down to 4 px; the title stays whole (owner). | [[home-and-library]] |

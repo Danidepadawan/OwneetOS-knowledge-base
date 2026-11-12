@@ -4,7 +4,7 @@ description: "Overflow rule, library disks summary and Disks window, offline ico
 area: ux
 status: active
 decided: 2026-10-09
-updated: 2026-11-10
+updated: 2026-11-12
 legacy: "PROJECT_RULES.md §9 (overflow), §13 (2026-10-09)"
 tags: [decision, ux]
 ---
@@ -34,3 +34,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-09 | Offline is shown in the top bar with a crossed network icon (Wi-Fi, or cable on machines without Wi-Fi), not by hiding it. |
 | 2026-10-09 | Offline icon approved; next: demo 3.9 (Settings). |
 | 2026-11-10 | Details window: a value too long for it is shortened in the middle with "…" (owner chose this over wrapping). |
+| 2026-11-12 | The home's big card: when its rows do not fit (text size XL, a title on two lines), the space between them shrinks from 12 px down to 4 px; the title stays whole (owner, option 2 of 3w d). |

@@ -384,6 +384,10 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    were; the language picker's first row now shows its ring whole. **(d) cause:** with text size XL and a title on two
    lines, the hero card's text is taller than the card, so its label goes above the card's top; how to make room is
    a change of look: asked the owner (title on one line with "…" only then, or less space between its lines).
+   **Owner (2026-11-12): less space between the card's rows. Built** (owneet-frontend 0.38.25): 12 px between them,
+   down to 4 px only when they do not fit with 30 px above and below; checked with `tools/frontend-preview`
+   (`home-long-title.txt`, `@longtitle`): at text size XL with a two-line title the label stays inside the card,
+   about 8 px from its top edge on the 1280×720 grid (4 px is the least space between rows). Waits for the owner's look.
    **Screenshot every 30 seconds built** (owneet-base 0.0.67): `owneet-testlog` asks gamescope
    (`gamescopectl screenshot`) and keeps the last 240 in `owneet-<start>.screens/HHMMSS.png` on the stick; checked in
    the test VM (one every 31-32 s; the VM's pictures are black, it has no graphics card).
