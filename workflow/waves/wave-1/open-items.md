@@ -91,6 +91,16 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    by default: a fault, priority, built right after the current test** (The Witcher 2 moved to the SATA disk). How the
    disk is chosen (the installer's own disk, a choice, …) to agree with him first ([[games-on-disk]]).
    **Owner (2026-11-12): the user chooses where the installer goes; the game is installed where its installer is.**
+   Texts approved by the owner (2026-11-12): "La console lo installa su {disk} (circa {size})…", "{title} richiede circa
+   {size} su {disk}… oppure sposta l’installer su un altro disco.", "Su {disk} c’è già un gioco con questo nome.",
+   "{disk} è pieno: …", in the five languages. **Built:** owneetd 0.25.27 (a games folder at the top of a mounted disk as
+   the destination; free space of the installer's disk; read-only disk refused; installs cut short on an unplugged disk
+   kept; Go test), owneet-frontend 0.38.20 (in place on the installer's disk unless read only; known games' key files
+   fixed on any writable disk; the four texts). **Test VM:** an installer in "Disk Install: Test" on the second disk
+   ("GamesVM Games", ext4): the question said "installs it on GamesVM Games (about 31 MB)"; the folder renamed without
+   ":", the game installed there (nothing in the home folder), listed as "Disk Install: Test" on GamesVM Games, installed;
+   uninstalled there (only the installer left). Waits for the owner's test: The Witcher 2 installed straight on the SATA
+   disk.
 3m. **The notification's sound during the start-up animation** (owner, FrankenPC, 2026-11-10): a controller plugged in while
    the animation played made the `notify` sound, which the owner had asked never to happen ("the other sounds removed while
    the start-up sound plays"); hard to repeat, so tested by the assistant in the test VM. **Fixed** (owneet-frontend 0.38.12,

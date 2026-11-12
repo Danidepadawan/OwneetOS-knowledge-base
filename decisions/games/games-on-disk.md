@@ -86,7 +86,9 @@ tags: [decision, games]
     console's own disk; to be built right after the owner's current test ([[open-items]] 3l).
     **The game is installed on the disk where its installer is** (owner, 2026-11-12): the user
     chooses where the installer goes (it can be moved between disks, [[disks]]); no new choice at
-    install time. The paragraph below is the behaviour until then.
+    install time; from a disk mounted read only it goes to the console's own disk. Built 2026-11-12
+    (owneetd 0.25.27, owneet-frontend 0.38.20); the install texts name the disk (owner's wording).
+    The paragraph below describes the rest.
   - **How (owner, 2026-10-19, [[step-4.6-installers]]):** games are installed on the console's
     disk, in its games folder, under the same folder name (without ":", owner 2026-11-11, below) (USB disks stay read only until
     [[step-6.5-automatic-disk-mounting]]). GOG's Linux `.sh` (MojoSetup) are **extracted**, never
