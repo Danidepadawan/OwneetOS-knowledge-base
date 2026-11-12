@@ -364,8 +364,19 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    the process had not ended. Not looked at yet (no logs of that start read). [[step-4.2c-steam-without-its-interface]]
 3w. **Parts of the interface cut off** (owner, 2026-11-12): the final "S" of the logo, and in some cases the library's
    filter bar. Not looked at yet (which screens and screen sizes to find out). [[design-tokens]]
+   **Looked at (test VM, 2026-11-12, 1280×800 and 1920×1080 with `OWNEET_VM_RES`, English and Italian, text M and XL):**
+   neither cut reproduced (the S measured whole; the filter bar whole, "Giocati di recente" on its right). The logo's
+   canvas was a fractional width (e.g. 209.6 px) with the word ending exactly at its edge: owneet-frontend 0.38.22
+   gives it whole pixels and 2 more (no visible change). **Other cuts found with text XL:** (a) the settings' side list:
+   "Controllers and Bluetooth" overflows its row when highlighted and is cut without "…" when not (3s's rule:
+   highlighted texts scroll, the others end with "…"); (b) the prompt bar: "Menu" runs into "LB" in Italian; (c) a
+   list's highlighted row (the language picker) grows and its ring is cut at the top by the list's edge; (d) the home's
+   "CONTINUA A GIOCARE" label touches the hero card. Asked the owner: a photo of his cuts (logo, filter bar) with the
+   TV's resolution and the text size, and whether (a)-(d) are fixed now (a with 3s).
 3x. **The brightness slider does nothing** (owner, 2026-11-12): Settings → Display's brightness does not change
-   anything; **owner: remove it**, brightness comes back in Wave 2 ([[settings-screens]], [[wave-2]]). Not built yet.
+   anything; **owner: remove it**, brightness comes back in Wave 2 ([[settings-screens]], [[wave-2]]). **Built**
+   (owneet-frontend 0.38.21, 2026-11-12): the slider removed from Settings → Display; owneetd keeps
+   `/v1/display/brightness` for Wave 2. Waits for the owner's look on the console.
 3y. **"Show TV safe area" does nothing** (owner, 2026-11-12): Settings → Appearance → "Show TV safe area" seems to have
    no effect, or works wrongly. To be reviewed (what it should show, and on which screens). [[settings-screens]]
    **Looked at (test VM, 2026-11-12):** it draws a 1 px solid outline in the muted colour at 70 % (`theme.qml`, Theme.safeX
