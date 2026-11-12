@@ -276,7 +276,15 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    normally. (3) **the game closed with the launcher:** the launcher ends after starting the game; owneetd's unit
    (`Type=exec`, `KillMode=control-group`) ends with its main program and stops `witcher2` at once (eON: "Log system
    shutdown"). (4) **slow close:** the launcher logs `SDL_QUIT` and ignores it, so it is killed after the 10 s limit.
-   Choices asked to the owner.
+   **Correction (6 runs, 2026-11-12):** the crash does not depend on address randomisation (2 crashes in 3 runs with it,
+   2 in 3 without): it happens in the launcher's own clean-up **after** it has started the game (the game started in all 6
+   runs); the game seemed not to start because owneetd's unit stopped it with the launcher. Address randomisation stays
+   on. **Prototype 2** (one small 32-bit library, `LD_PRELOAD`, game files untouched): the old 10 ms wait; the launcher
+   ends at once (`_exit`) once it has started the game, skipping its crashing clean-up (its settings are saved before);
+   `SDL_QUIT` ends it at once. 3 runs: no crash; closed from its menu in 37 ms (10 s before). With the launcher in a unit
+   kept while any of its programs runs (`ExitType=cgroup`), the game goes on after the launcher ends (eON reaches sound
+   init; in the VM it then crashes, the VM's GPU, and its `CrashReporter` keeps the unit alive). Owner asked for a
+   fuller explanation before choosing.
 3v. **Steam's shader compiling shows the library with no notice** (owner, FrankenPC, 2026-11-12): after installing
    Batman: Arkham Knight (Steam), at its first start, while Proton compiled its shaders, the console went back to the
    library's page with nothing saying the game was still being prepared; the owner had to open Steam again to see that
