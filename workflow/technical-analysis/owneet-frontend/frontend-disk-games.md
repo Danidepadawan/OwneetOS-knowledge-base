@@ -71,6 +71,9 @@ a game.
   lone backslash, are fixed when the game is read on the console's disk) → `start.sh` at the top of the folder (GOG) →
   the only file found → none (the theme asks). An ELF program starts through `/usr/bin/env
   LD_LIBRARY_PATH=<its folder>`, as GOG's `start.sh` does (not when the folder's name has ":").
+  A known game's `launchers` (owner, 2026-11-12) add, for that file, `LD_PRELOAD` of an OwneetOS
+  library (`DiskGames::compatLibrary`, `/usr/lib32/owneet/libowneet-<name>.so`) and `disk.handover`,
+  which `ProcessLauncher` sends to owneetd as `handover` (the app lasts while any program runs).
   Starting it shows the full-screen "Starting {game}…" (`Preparing`, `diskGame`) until the game's
   window is on screen (`focus.changed`) or it ends (`app.exited`) (owner, 2026-11-11).
 - **`game.txt`** (optional; format agreed with the owner, [[games-on-disk]]): `key: value` lines,

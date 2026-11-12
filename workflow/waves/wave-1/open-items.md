@@ -285,6 +285,17 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    kept while any of its programs runs (`ExitType=cgroup`), the game goes on after the launcher ends (eON reaches sound
    init; in the VM it then crashes, the VM's GPU, and its `CrashReporter` keeps the unit alive). Owner asked for a
    fuller explanation before choosing.
+   **Owner (2026-11-12):** the library is built; the "while any program runs" rule only for this game, to be reviewed
+   over his ~90 games ([[games-on-disk]]). **Built:** `lib32-owneet-compat` 0.1.0 (`compat/old-sdl2-launcher`, with
+   its own checks), owneetd 0.25.26 (`handover` in the launch request: `ExitType=cgroup`; no home screen while the
+   unit has a process; Go test), owneet-frontend 0.38.18 (`launchers` in `known-games.json`: The Witcher 2's
+   `game/tenfoot-launcher` with `old-sdl2-launcher`, hands over), owneet-base 0.0.66 (depends on the library). **Test
+   VM, started from the library with the virtual pad:** the command carries the library, the unit `ExitType=cgroup`;
+   the launcher's menu shows; A on Start Game: the launcher ends with 0 (no crash, no core dump), the app stays,
+   `./witcher2` runs in its unit (it draws, even in the VM without 3D); closed from the API in 96 ms, home screen back.
+   Waits for the owner's test: the language in Options, Start Game, the game's sound behind the home screen (Guide).
+   Seen while building: the guard hook blocked a shell command that only wrote a PKGBUILD's text (a false positive,
+   reported to the owner; the files were written with the editor instead).
 3v. **Steam's shader compiling shows the library with no notice** (owner, FrankenPC, 2026-11-12): after installing
    Batman: Arkham Knight (Steam), at its first start, while Proton compiled its shaders, the console went back to the
    library's page with nothing saying the game was still being prepared; the owner had to open Steam again to see that
