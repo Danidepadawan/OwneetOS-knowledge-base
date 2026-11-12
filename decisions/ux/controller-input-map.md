@@ -4,7 +4,7 @@ description: "The binding meaning of every button on every screen, keyboard fall
 area: ux
 status: active
 decided: 2026-10-03
-updated: 2026-11-10
+updated: 2026-11-12
 legacy: "PROJECT_RULES.md §9.1"
 tags: [decision, ux, input]
 ---
@@ -32,6 +32,11 @@ types the selected key, X deletes, Y types a space, **LB / RB change the page of
 symbols, accented letters), **LT held = capital letters while it is held** (as on Steam's
 keyboard), RT does nothing, Menu = Done, B closes the keyboard; the selection wraps around at
 every edge. These meanings hold only inside the keyboard; Guide and the right stick keep theirs.
+
+**Display area** (Settings → Display, [[screens-and-display]]; approved demo 3.9c-display-area,
+owner 2026-11-12): while the adjustment is open, **D-pad / left stick left / right** make the area
+narrower / wider, **up / down** taller / shorter (held, they repeat with this map's timing), **X** goes
+back to the whole screen, **A** confirms, **B** cancels. Guide keeps its meaning.
 
 **Lists that go round:** the library's grid (left / right within a row, down / up between the
 last and the first row, [[game-library]]) and the list of Settings' sections (up on the first
@@ -131,3 +136,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-19 | Inside YouTube: LT / RT stay unused (no key of the TV interface seeks by exactly 10 s; seeking the video directly from the extension rejected); seeking is done with YouTube's own progress bar ([[controller-input-map]]). |
 | 2026-10-22 | Inside Netflix (step 5.4): Netflix's own navigation on its browsing pages (rows and tiles, rows sliding on, A into the title window), the title window (B back to the tile) and the player (any button shows the controls, D-pad between them, A presses or pauses, LT / RT ±10 s, B closes a menu or leaves); other pages keep the web-app bindings ([[controller-input-map]]). |
 | 2026-11-10 | Guide on the home screen with nothing to go back to (it did nothing): owneetd sends `home.requested` and only the copy of games' window closes, the copy going on behind it (demo 6.6e). Not Home from every window: with an app open Guide goes back to it (owner). |
+| 2026-11-12 | The display area's adjustment (Settings → Display): D-pad left / right narrower / wider, up / down taller / shorter, X whole screen, A confirm, B cancel (owner: demo 3.9c approved). |

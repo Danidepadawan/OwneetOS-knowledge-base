@@ -28,7 +28,8 @@ tags: [decision, hardware, display]
   wider (left / right) and shorter or taller (up / down) until the arrows' tips touch the screen's
   edges, X goes back to the whole screen, A confirms, B cancels. The console's screens are then drawn
   inside that area. It replaces "Show TV safe area" in Settings → Appearance (open item 3y). Demo
-  `design/demos/3.9c-display-area.html`, waiting for the owner's approval ([[demo-before-code]]).
+  `design/demos/3.9c-display-area.html`, **approved** by the owner on 2026-11-12. Only the console's
+  own screens: games and Steam use the whole screen with their own settings.
 - **Picture dimming** for screens without a brightness control: a proposal for Wave 2, not
   confirmed ([[wave-2]]).
 
@@ -46,3 +47,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-10 | Moving the console to another screen waits **30 seconds** for "Keep" (from the moment the console is up there: a monitor waking from standby may stay black for a while); resolution and refresh rate keep 15 seconds. Before moving, a window warns that the new screen may stay black for up to 30 seconds. |
 | 2026-10-10 | Step 3.9 (Settings) approved after the owner's tests on the NiPoGi and the desktop (two graphics cards). Picture dimming for screens without a brightness control stays a proposal for Wave 2 (not confirmed). Next: demo 3.10 (on-screen keyboard). |
 | 2026-11-12 | The TV safe area works as on common devices: a display-area adjustment (arrows in the corners, the D-pad until they touch the screen's edges) and the console's screens drawn inside it, instead of the "Show TV safe area" outline, which did not help, in the demo either (owner). Demo first. |
+| 2026-11-12 | Demo 3.9c (the display area) approved (owner). |

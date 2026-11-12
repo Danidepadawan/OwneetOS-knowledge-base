@@ -375,6 +375,14 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    TV's resolution and the text size, and whether (a)-(d) are fixed now (a with 3s).
    **Owner (2026-11-12):** a screenshot in the next tests: **the test log takes one every 30 seconds** ([[test-pcs]]);
    (a) with 3s's demo; (b) the prompt bar: asked to be explained better (what gives way when it does not fit).
+   **Owner (2026-11-12):** option 1, only when the bar does not fit, the prompts on the right (Sections, Home) keep
+   their buttons and lose their words ([[design-direction]]); demo first: `design/demos/3.3c-prompt-bar-fit.html`
+   waits for the owner's approval. (c) and (d) still to fix.
+   **Screenshot every 30 seconds built** (owneet-base 0.0.67): `owneet-testlog` asks gamescope
+   (`gamescopectl screenshot`) and keeps the last 240 in `owneet-<start>.screens/HHMMSS.png` on the stick; checked in
+   the test VM (one every 31-32 s; the VM's pictures are black, it has no graphics card).
+   `tools/frontend-preview` waited a fixed 7 s at the start, shorter than the start-up animation since 2026-11-05 (the
+   first buttons were ignored): it now waits for the theme's "The start-up animation is over".
 3x. **The brightness slider does nothing** (owner, 2026-11-12): Settings → Display's brightness does not change
    anything; **owner: remove it**, brightness comes back in Wave 2 ([[settings-screens]], [[wave-2]]). **Built**
    (owneet-frontend 0.38.21, 2026-11-12): the slider removed from Settings → Display; owneetd keeps
@@ -390,8 +398,11 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    too, so not that way. **Decided:** Settings → Display → "Display area", a full-screen adjustment (an arrow in
    each corner, the D-pad until their tips touch the screen's edges, X whole screen, A confirm, B cancel), the
    console's screens drawn inside the area; "Show TV safe area" leaves Appearance ([[screens-and-display]]).
-   **Demo** `design/demos/3.9c-display-area.html` (on a simulated TV that cuts its edges): waits for the
-   owner's approval.
+   **Demo** `design/demos/3.9c-display-area.html` (on a simulated TV that cuts its edges): **approved** (owner,
+   2026-11-12). **Built** (owneet-frontend 0.38.23): Settings → Display → "Display area" (`DisplayArea.qml`), the
+   theme drawn inside the area (`Theme.areaX` / `areaY`, saved; the frontend's `main.qml` places the theme, the
+   background painted to the screen's edges), "Show TV safe area" removed; checked with `tools/frontend-preview`
+   (`tools/preview-steps/display-area.txt`). Waits for the owner's look on the TV.
 3q. **The Witcher 2 Linux version does not install** (owner, FrankenPC, 2026-11-11): "the game could not be installed",
    twice (the second time with OWNEETLOG plugged in while the console ran: the logs start only with a stick in at the
    start, so neither attempt is on the stick; the console still ran yesterday's versions, the update comes from the
@@ -422,7 +433,10 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    **Demo** `design/demos/3.3b-scrolling-text.html` (2026-11-12, Settings with text size XL, also 3w (a)): the
    highlighted text that does not fit waits 1.5 s, scrolls at 45 px/s on the 1280×720 grid, waits 1.5 s at its end,
    fades back to the start and repeats; soft edges while it moves; speed and pauses can be changed in the demo.
-   Waits for the owner's approval.
+   **Approved** (owner, 2026-11-12), with these values. **Built** (owneet-frontend 0.38.23): `foundation/FitText.qml`
+   in every one-line text that was cut with "…" and in Settings' list of sections (3w a); it scrolls while the
+   selectable item around it is highlighted. Checked with `tools/frontend-preview` (`long-texts.txt`). Texts on two
+   or more lines (e.g. covers' titles) keep "…" for now: asked the owner. Waits for the owner's look on the TV.
 
 ## Decided, not built yet
 

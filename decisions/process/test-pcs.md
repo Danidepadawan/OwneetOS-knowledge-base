@@ -26,7 +26,8 @@ tags: [decision, process, testing]
 
 - **The test log takes a screenshot every 30 seconds** (owner, 2026-11-12): `owneet-testlog` saves
   what the screen shows to the OWNEETLOG stick every 30 seconds while the stick is in, so faults of the
-  look (parts cut off, open item 3w) can be seen as the tester saw them; only on test PCs.
+  look (parts cut off, open item 3w) can be seen as the tester saw them; only on test PCs. Built in
+  owneet-base 0.0.67: gamescope's own screenshot, the last 240 kept in `owneet-<start>.screens/`.
 
 Guide for testers: `docs/tester-install.md` (code repository).
 

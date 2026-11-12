@@ -18,7 +18,7 @@ tags: [decision, ux, settings]
   windows ([[controller-input-map]]).
 - **Display area** (owner, 2026-11-12): Settings → Display gets "Display area", the adjustment for TVs
   that cut the edges ([[screens-and-display]]); "Show TV safe area" leaves Settings → Appearance.
-  Demo `design/demos/3.9c-display-area.html` waits for approval.
+  Demo `design/demos/3.9c-display-area.html` approved (owner, 2026-11-12).
 - **Sound:** "Mute" comes first and, while it is on, hides output, volume and interface sounds.
 - **Wi-Fi password window:** a "Show password" switch.
 - **Confirmations** (Sleep / Restart / Shut down, forget, disconnect) have Cancel selected first
@@ -38,3 +38,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-10 | Step 3.9 (Settings) approved after the owner's tests on the NiPoGi and the desktop (two graphics cards). Picture dimming for screens without a brightness control stays a proposal for Wave 2 (not confirmed). Next: demo 3.10 (on-screen keyboard). |
 | 2026-11-12 | The brightness slider in Settings → Display is removed from Wave 1: it does nothing on the FrankenPC; brightness is looked at again in Wave 2 (owner). |
 | 2026-11-12 | The TV safe area works as on common devices: Settings → Display → "Display area" (a full-screen adjustment) replaces the "Show TV safe area" outline in Settings → Appearance (owner). Demo first. |
+| 2026-11-12 | Demo 3.9c (the display area) approved (owner). |
