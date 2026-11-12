@@ -45,7 +45,9 @@ The crash also came while its options were changed: **valgrind** (Arch's debugin
 reading a `std::map` node right after deleting it; the library keeps deleted memory (`operator delete` does nothing).
 It **ignores the mouse** and its own controller handling is broken under SDL3 (B changed values): the library turns
 the controller into its keys (D-pad and left stick = arrows, A = Enter, B = Esc) and hides the controller from it
-(`lib32-owneet-compat` 0.3.0).
+(`lib32-owneet-compat` 0.3.0). The game itself crashes when quit from its menu; its 2015 crash reporter cannot start
+and its script showed a zenity window: `compat/no-crash-reporter` ends it at once (0.4.0). Owner's test 2026-11-12: all
+passed, the game is playable.
 
 ## How we found it
 

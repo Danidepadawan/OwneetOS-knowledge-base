@@ -148,7 +148,7 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    prefix already left on the FrankenPC's disk by a game deleted before this rule is removed once, apart. (b) the
    testers' option `owneet.debug.windows_log=on` stays on for the tests; its old logs are part of this cleaning. Not built
    yet: it goes with this step's plan.
-3u. **The Witcher 2 (Linux) does not start** (owner, FrankenPC, 2026-11-11, after installing it with owneetd 0.25.22):
+3u. **The Witcher 2 (Linux) does not start** (solved 2026-11-12) (owner, FrankenPC, 2026-11-11, after installing it with owneetd 0.25.22):
    four tries, only "Starting The Witcher 2: Assassin..." on screen; the last two showed a change of screen for a split
    second (maybe a window, too quick to tell). **From the logs** (`out/test-logs/frankenpc-20261111-110726`): the install
    worked (11:10-11:17, the ZIP64 fix of 3q works). The console starts GOG's `start.sh`, which runs the game's
@@ -330,6 +330,11 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    itself), owneet-frontend 0.38.19 (`game-compat` in `known-games.json`). **Test VM (gamescope, headless):** the game
    had only the new library in `LD_PRELOAD`; a crash (SIGSEGV) → `BREAKPAD CRASH`, no reporter, no zenity, the app
    ended in about 1 s and the home screen came back. Waits for the owner's test (quit from the game's menu).
+   **Owner's test (2026-11-12, `owneet-20261112-124235`): all passed, "finally playable".** The game crashed again when
+   quit from its menu (`BREAKPAD CRASH`): no reporter, no window, the app ended (success), home screen back. **Solved.**
+   **Disk check (that log's listings, read on the stick):** cut (no `complete.txt`: the console was switched off before
+   they ended; `/home`'s listing stops after ~100 000 lines, the SATA disk and `/var/log` missing); readable part: the
+   packages' cache 0.58 GB in 173 files (was 0.51 GB, 3p (c)), 5 core dumps, 0.11 GB (3p (e)).
 3v. **Steam's shader compiling shows the library with no notice** (owner, FrankenPC, 2026-11-12): after installing
    Batman: Arkham Knight (Steam), at its first start, while Proton compiled its shaders, the console went back to the
    library's page with nothing saying the game was still being prepared; the owner had to open Steam again to see that
