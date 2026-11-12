@@ -4,7 +4,7 @@ description: "Videos and Music: the media folders on every disk, Music's two vie
 area: ux
 status: active
 decided: 2026-11-02
-updated: 2026-11-11
+updated: 2026-11-12
 tags: [decision, ux, media]
 ---
 # Local videos and music
@@ -24,6 +24,12 @@ tags: [decision, ux, media]
 - **Videos remember where they stopped:** a started video shows its progress, A resumes, and Menu
   has "Watch from the start". The positions are kept on the console's disk; the media disks are
   never written for this. Only the position is kept (never a track choice such as "no sound").
+- **One preferred language for videos** (owner, 2026-11-12): the audio track last chosen with X
+  and the subtitles last chosen with Menu (a language, or off) become the console's preferred audio
+  and subtitle language, remembered on the console's disk, for every video in every folder: a video
+  starts with its track in that language, or with its own default when it has none (subtitles off
+  stay off, also for a `.srt` beside the video). Until a choice is made, each video starts with its
+  own tracks. Never "no sound" (X goes only through the audio tracks).
 - **Music starts from the beginning** (owner, 2026-11-04): a song never resumes, and the rest of
   its folder or album plays after it.
 - **Autoplay for videos** (owner, 2026-11-04): a switch, **on** on a new console and remembered on
@@ -48,7 +54,8 @@ tags: [decision, ux, media]
     resumes it), the home screen's hero with Resume and Close.
   - **Positions and tracks:** mpv's own behaviour (a saved position used up when the video opens,
     saved again when it is left; watched to the end, shown as not started; previous / next resume
-    a started video). A `.srt` beside the video shows by itself; embedded subtitles start off.
+    a started video). A `.srt` beside the video shows by itself; embedded subtitles start off
+    (both before a preferred language is chosen, above).
   - **The display:** the folder and the title, the progress and the times, the Audio / Subtitles
     / Autoplay states with their buttons, the prompts, short messages at the top; music's screen
     shows the picture, title, artist, album, progress and the next song.
@@ -89,3 +96,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-11-04 | Autoplay for videos: a switch, on by default and remembered (on: the next video of the folder starts; off: back to the list at the end), Y in the Videos page and Menu in the player; LT goes back to the start first (the previous one only in the first 5 s). |
 | 2026-11-04 | Demo 5.6 approved: Continue watching, a folder as a list beside its picture, Artists → albums → songs, untagged songs under "Unknown artist", another item moves the player to it, Guide shows the console where it was with the item marked "Playing", mpv's own saved positions and subtitles, the player's display and music's screen, a USB disk removed stops the player. |
 | 2026-11-11 | Autoplay on Y in the player too, as in the Videos page; the player's subtitles on Menu (owner, after testing sub-step 5). |
+| 2026-11-12 | One preferred audio and subtitle language for every video: the last chosen with X and Menu (subtitles also "off"), remembered on the console; a video without it keeps its own default (owner, closing step 5.6). |

@@ -4,7 +4,7 @@ description: "The binding meaning of every button on every screen, keyboard fall
 area: ux
 status: active
 decided: 2026-10-03
-updated: 2026-11-11
+updated: 2026-11-12
 legacy: "PROJECT_RULES.md §9.1"
 tags: [decision, ux, input]
 ---
@@ -112,7 +112,9 @@ one it goes to its start. **Y switches Autoplay** for videos, as Y in the Videos
 says whether it is on; [[local-media]]; owner, 2026-11-11, in place of Menu).
 **X = the next audio track** (videos with more than one; it never goes through "no sound").
 **Menu = subtitles:** off, then each track in turn (owner, 2026-11-11, in place of Y: Menu is the
-options of what is selected or playing, on the page and in the player). **B leaves the player** and
+options of what is selected or playing, on the page and in the player). What X and Menu choose
+becomes the preferred audio and subtitle language of every video (owner, 2026-11-12,
+[[local-media]]). **B leaves the player** and
 goes back to the list it was opened from (a video's position is saved). Every press shows the
 on-screen display for a moment (the title, the progress, the time); D-pad up / down and L3 / R3
 only show it, and so do X, Y and Menu for a song. The sticks do nothing (a held stick sends bursts of presses); **View** (reserved)
@@ -183,3 +185,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-11-04 | Inside the player (step 5.6, mpv): A pause / play, D-pad left / right −10 / +10 s (exact), LT / RT the previous / next video or song (owner: in place of the proposed LT / RT seeking), X the next audio track (never "no sound"), Y subtitles, B leaves the player (a video's position saved); every press shows the on-screen display; View and LB / RB not bound, Guide never bound by mpv. Music's two views are the Music page's filters on LT / RT. |
 | 2026-11-04 | Inside the player: **LT goes back to the start first** (in the first 5 s to the previous video or song, from 0:05 on to the start of the one playing); **Menu switches Autoplay** for videos, and so does **Y in the Videos page** ([[local-media]]). |
 | 2026-11-11 | Inside the player (owner, after testing it): **Y switches Autoplay**, as in the Videos page, and **Menu cycles the subtitles** (off, then each track); X stays the audio track. Keyboard: Y Autoplay, M subtitles. |
+| 2026-11-12 | Inside the player: the audio track chosen with X and the subtitles chosen with Menu (a language, or off) become the preferred language of every video ([[local-media]]). |

@@ -278,6 +278,17 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
      in mpv, a real USB disk of media; in gamescope, which the test VM does not have: Guide → the
      console with the sound going on → Resume, and the player's buttons doing nothing while the
      console is over it), outcome; the owner approves the step.
+     **The owner's review of the close (2026-11-12):** three of the known limits below were not
+     told before (the assistant's wording, the demo's tracks reset per file, its own cap); the owner
+     asked to fix them:
+     - the media folders stay as agreed (everything inside `Videos` / `Music` is already searched,
+       sub-folders included): only the note's wording changes;
+     - **one preferred audio and subtitle language for every video** (owner's choice among: per
+       folder, only while the player is open, one preference): the last chosen with X and Menu,
+       remembered by the console ([[local-media]], [[controller-input-map]], [[decision-log]]);
+     - **no cap on the list's length:** owneetd gives mpv a playlist file in place of the files on
+       its command line (the cap of 5,000 was set in sub-step 5 to keep the command and the
+       request small).
      **Written (2026-11-12), waiting for the owner's approval:**
      - **Licences and terms** ([[legal-compliance]]): mpv (GPL-2.0-or-later and LGPL-2.1-or-later)
        and FFmpeg (GPL-3.0-only as Arch packages it; its library linked into the frontend, whose
