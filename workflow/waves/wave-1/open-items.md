@@ -265,7 +265,18 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    (screenshots possible; window caught with `xwd`): the launcher's window is all black there too, so not gamescope's
    fault; under gdb it loads its font (`linux/tenfoot/mplus-2m-medium.ttf`) and makes its renderer, but in 25 s it loads
    no image and never presents a frame (`SDL_RenderPresent` never called): it waits for something before drawing.
-   Being looked at.
+   **Found (test VM, 2026-11-12; reproduced under gamescope, headless):** (1) **black screen:** the launcher's main loop
+   updates only when one turn lasts more than 10 ms (`now - last > 10`, else `last = now`), and each turn waits with
+   `SDL_WaitEventTimeout(NULL, 1)`; old SDL2 polled every 10 ms, so a turn lasted at least 10 ms; SDL3 (through
+   sdl2-compat) waits 1 ms, so the update never runs (a pause, as gdb's, unblocks it). A prototype library restoring
+   the old wait (10 ms when nothing comes, `LD_PRELOAD`, game files untouched) shows the menu at once; the pad moves
+   through it; Options has "Text Language" and "Voice-over Language". (2) **crash on Start Game:** a recursive tree
+   walk (a `std::map` being destroyed) runs out of stack before the game starts; it depends on the memory addresses:
+   with address randomisation off (`setarch -R`, as under gdb) the launcher saves, starts `./witcher2` and ends
+   normally. (3) **the game closed with the launcher:** the launcher ends after starting the game; owneetd's unit
+   (`Type=exec`, `KillMode=control-group`) ends with its main program and stops `witcher2` at once (eON: "Log system
+   shutdown"). (4) **slow close:** the launcher logs `SDL_QUIT` and ignores it, so it is killed after the 10 s limit.
+   Choices asked to the owner.
 3v. **Steam's shader compiling shows the library with no notice** (owner, FrankenPC, 2026-11-12): after installing
    Batman: Arkham Knight (Steam), at its first start, while Proton compiled its shaders, the console went back to the
    library's page with nothing saying the game was still being prepared; the owner had to open Steam again to see that
