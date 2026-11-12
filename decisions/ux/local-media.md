@@ -29,7 +29,8 @@ tags: [decision, ux, media]
   and subtitle language, remembered on the console's disk, for every video in every folder: a video
   starts with its track in that language, or with its own default when it has none (subtitles off
   stay off, also for a `.srt` beside the video). Until a choice is made, each video starts with its
-  own tracks. Never "no sound" (X goes only through the audio tracks).
+  own tracks; a track chosen without a language (a subtitle file named only after the video) leaves
+  no preference. Never "no sound" (X goes only through the audio tracks).
 - **Music starts from the beginning** (owner, 2026-11-04): a song never resumes, and the rest of
   its folder or album plays after it.
 - **Autoplay for videos** (owner, 2026-11-04): a switch, **on** on a new console and remembered on
