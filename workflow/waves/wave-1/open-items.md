@@ -321,7 +321,15 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    **Owner's test (2026-11-12): all checks passed** (launcher, language, Start Game, the game, Guide) **until he quit the
    game**: a window on a black background titled "CrashReporter": "CrashReporter.x86_64 failed to start due to the
    following dependancy problems: Inconsistency detected by ld.so: dl-version.c: 204: _dl_check_map_versions: Assertion
-   `needed != NULL' failed!"; closed from the home screen. Being looked at.
+   `needed != NULL' failed!"; closed from the home screen. **From the logs (`owneet-20261112-122336`):** the game crashed
+   while quitting (`BREAKPAD CRASH`, 12:25:47); its crash handler ran `CrashReporter` (a script: its 64-bit
+   `CrashReporter.x86_64` from 2015 cannot load on today's glibc), whose script showed the error with **zenity** (a
+   desktop window). Closing from the home screen stops the game cleanly (no crash). **Owner (2026-11-12): a second
+   library** ([[games-on-disk]]). **Built:** `lib32-owneet-compat` 0.4.0 (`compat/no-crash-reporter`: `execv` of
+   `CrashReporter` ends at once; the launcher's library hands it to the game through `OWNEET_GAME_PRELOAD` in place of
+   itself), owneet-frontend 0.38.19 (`game-compat` in `known-games.json`). **Test VM (gamescope, headless):** the game
+   had only the new library in `LD_PRELOAD`; a crash (SIGSEGV) → `BREAKPAD CRASH`, no reporter, no zenity, the app
+   ended in about 1 s and the home screen came back. Waits for the owner's test (quit from the game's menu).
 3v. **Steam's shader compiling shows the library with no notice** (owner, FrankenPC, 2026-11-12): after installing
    Batman: Arkham Knight (Steam), at its first start, while Proton compiled its shaders, the console went back to the
    library's page with nothing saying the game was still being prepared; the owner had to open Steam again to see that
