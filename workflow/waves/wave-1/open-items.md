@@ -143,6 +143,11 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    simple, elegant solution thought out together. A critical point just found: it gets a phase (or step) of its own.
    **Owner:** first he ends today's tests, then this is planned with him (where it goes in the plan and how it is
    built). Nothing is cleaned meanwhile. [[open-items]] 3p
+   **Owner (2026-11-12):** (a) a Windows game on an internal disk removed through the console with its installer takes
+   its prefix with it, saves included; on external disks prefix and saves stay, for the file manager ([[disks]]); the
+   prefix already left on the FrankenPC's disk by a game deleted before this rule is removed once, apart. (b) the
+   testers' option `owneet.debug.windows_log=on` stays on for the tests; its old logs are part of this cleaning. Not built
+   yet: it goes with this step's plan.
 3u. **The Witcher 2 (Linux) does not start** (owner, FrankenPC, 2026-11-11, after installing it with owneetd 0.25.22):
    four tries, only "Starting The Witcher 2: Assassin..." on screen; the last two showed a change of screen for a split
    second (maybe a window, too quick to tell). **From the logs** (`out/test-logs/frankenpc-20261111-110726`): the install
