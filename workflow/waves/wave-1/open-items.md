@@ -337,6 +337,8 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    **Owner's test (2026-11-12, `owneet-20261112-124235`): all passed, "finally playable".** The game crashed again when
    quit from its menu (`BREAKPAD CRASH`): no reporter, no window, the app ended (success), home screen back. **Solved**
    with the game on the console's own disk (owner: not tried yet with the game on the SATA disk).
+   **Owner's test (2026-11-12):** moved to the SATA disk, started fine from there, then uninstalled. Next: installing it
+   straight on the SATA disk (3l), once built.
    **Disk check (that log's listings, read on the stick):** cut (no `complete.txt`: the console was switched off before
    they ended; `/home`'s listing stops after ~100 000 lines, the SATA disk and `/var/log` missing); readable part: the
    packages' cache 0.58 GB in 173 files (was 0.51 GB, 3p (c)), 5 core dumps, 0.11 GB (3p (e)).
