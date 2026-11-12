@@ -318,6 +318,10 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    virtual pad):** down + A opened Options, right twice set the text language to German at once, B went back to the
    main menu (in German), A on Start Game saved `Language=DE` in `User.ini`, the launcher ended with 0 and `./witcher2`
    ran in its unit. Waits for the owner's test with his controller.
+   **Owner's test (2026-11-12): all checks passed** (launcher, language, Start Game, the game, Guide) **until he quit the
+   game**: a window on a black background titled "CrashReporter": "CrashReporter.x86_64 failed to start due to the
+   following dependancy problems: Inconsistency detected by ld.so: dl-version.c: 204: _dl_check_map_versions: Assertion
+   `needed != NULL' failed!"; closed from the home screen. Being looked at.
 3v. **Steam's shader compiling shows the library with no notice** (owner, FrankenPC, 2026-11-12): after installing
    Batman: Arkham Knight (Steam), at its first start, while Proton compiled its shaders, the console went back to the
    library's page with nothing saying the game was still being prepared; the owner had to open Steam again to see that
