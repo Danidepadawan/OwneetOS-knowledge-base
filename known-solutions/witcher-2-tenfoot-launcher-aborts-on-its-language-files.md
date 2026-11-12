@@ -41,6 +41,11 @@ randomisation: 2 crashes in 3 runs with it and without), and it **ignored `SDL_Q
 limit). Fixed by OwneetOS's `compat/old-sdl2-launcher` library (`lib32-owneet-compat`, `LD_PRELOAD` only for this file,
 named by `known-games.json`'s `launchers`): the old 10 ms wait, `_exit` once the game is started and on `SDL_QUIT`;
 and owneetd keeps the app while the game the launcher started runs (`handover`, `ExitType=cgroup`).
+The crash also came while its options were changed: **valgrind** (Arch's debuginfod for the 32-bit glibc) showed it
+reading a `std::map` node right after deleting it; the library keeps deleted memory (`operator delete` does nothing).
+It **ignores the mouse** and its own controller handling is broken under SDL3 (B changed values): the library turns
+the controller into its keys (D-pad and left stick = arrows, A = Enter, B = Esc) and hides the controller from it
+(`lib32-owneet-compat` 0.3.0).
 
 ## How we found it
 

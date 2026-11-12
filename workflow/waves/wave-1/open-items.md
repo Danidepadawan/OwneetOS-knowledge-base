@@ -312,6 +312,12 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    (xdotool) on its buttons does **nothing**: the TV launcher ignores the mouse; the **keyboard works well** (arrows move
    and change values at once, Enter opens, Esc goes back keeping the choices; the settings are written at Start Game).
    Asked to the owner: the controller turned into the launcher's keys by the library, since the pointer cannot work.
+   **Owner: "let's try".** **Built:** `lib32-owneet-compat` 0.3.0 (the library opens the controllers itself and hands the
+   launcher key events: D-pad and left stick = arrows, A = Enter, B = Esc; joystick and controller events hidden; the
+   cursor left as the launcher wants it; checks for buttons, stick, hidden events). **Test VM (gamescope, headless, the
+   virtual pad):** down + A opened Options, right twice set the text language to German at once, B went back to the
+   main menu (in German), A on Start Game saved `Language=DE` in `User.ini`, the launcher ended with 0 and `./witcher2`
+   ran in its unit. Waits for the owner's test with his controller.
 3v. **Steam's shader compiling shows the library with no notice** (owner, FrankenPC, 2026-11-12): after installing
    Batman: Arkham Knight (Steam), at its first start, while Proton compiled its shaders, the console went back to the
    library's page with nothing saying the game was still being prepared; the owner had to open Steam again to see that
