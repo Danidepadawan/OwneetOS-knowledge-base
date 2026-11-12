@@ -282,13 +282,22 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
      told before (the assistant's wording, the demo's tracks reset per file, its own cap); the owner
      asked to fix them:
      - the media folders stay as agreed (everything inside `Videos` / `Music` is already searched,
-       sub-folders included): only the note's wording changes;
+       sub-folders included): only the note's wording changes (the limit is gone from the list);
      - **one preferred audio and subtitle language for every video** (owner's choice among: per
        folder, only while the player is open, one preference): the last chosen with X and Menu,
        remembered by the console ([[local-media]], [[controller-input-map]], [[decision-log]]);
      - **no cap on the list's length:** owneetd gives mpv a playlist file in place of the files on
        its command line (the cap of 5,000 was set in sub-step 5 to keep the command and the
        request small).
+     **Implemented (2026-11-12), waiting for the owner's test:** owneetd 0.18.0 (the request and
+     state carry `audio_language` and `subtitles`; the list in `player.m3u`, the request up to 64
+     MiB), owneet-frontend 0.26.0 (the preferences kept with Autoplay, sent at each start, updated
+     from the player), owneet.lua (the preferences applied in mpv's `on_preloaded` hook, before mpv
+     chooses a video's tracks; X and Menu set them); the demo keeps them too. Checked in the
+     player preview (`player-languages.txt`: Italian audio and subtitles off preferred, the episode
+     opens so; English subtitles chosen, the next episode shows its subtitle file; resuming and
+     closing unchanged with the playlist file) and the Go tests (a list of 10,000 songs, a request
+     of 30,000).
      **Written (2026-11-12), waiting for the owner's approval:**
      - **Licences and terms** ([[legal-compliance]]): mpv (GPL-2.0-or-later and LGPL-2.1-or-later)
        and FFmpeg (GPL-3.0-only as Arch packages it; its library linked into the frontend, whose
@@ -299,16 +308,12 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
        formats FFmpeg decodes (H.264, HEVC, AAC…) in a console that is distributed (Arch ships
        FFmpeg with them; whether that is enough for OwneetOS, and in which countries).
      - **Known limits of 5.6:**
-       - Only the `Videos` / `Music` folders (and their name in the console's language) at the top
-         of a disk; nothing else on the disks is searched.
        - The player's texts, colours and button glyphs are those of the moment it starts: a
          language, palette or text size changed while it plays shows from the next start.
-       - Each file starts with its own tracks: Italian audio chosen in one episode is not kept for
-         the next. Embedded subtitles turned on show from their next line (mpv).
+       - The preferred language is one for every video (not per series); a video without it starts
+         with its own tracks. Embedded subtitles turned on show from their next line (mpv).
        - A video left at any point counts as started, also a few seconds in (Continue watching).
        - No seeking beyond ±10 s at a time, no speed, chapters, shuffle or repeat; no search.
-       - A folder or album of more than 5,000 files does not open in the player ("The player could
-         not start.").
        - In cage (the reduced session) the console is never shown over the player: the volume is
          set before or after (the quick menu), and holding Guide closes the player.
        - A USB disk removed while it plays: the console stops the player and keeps the position,
@@ -324,15 +329,16 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
        plugged in and pulled out while a video plays (the toast, the position kept); the display's
        size and fonts on the TV.
      - **Outcome:** the **Videos** and **Music** tiles open their pages: the `Videos` / `Music`
-       folders of every disk together, Continue watching, a folder as a list beside its picture,
+       folders at the top of every disk together, with everything inside them (sub-folders too),
+       Continue watching, a folder as a list beside its picture,
        Music by folder or by artist and album (the tags read once, 1.6 ms a song in the test VM).
        A plays in **mpv with OwneetOS's own configuration** (none of mpv's bindings, never Guide),
        one app at a time like a game, with the console's display drawn by a script (the texts,
        palette, fonts and glyphs sent at each start): A pause, D-pad ±10 s exact, LT / RT previous /
        next (LT's 5 s), X audio, Menu subtitles, **Y Autoplay** as in the Videos page, B back to the
-       list; only a video's position is kept (mpv's own files, on the console's disk); the home
-       screen's hero and the pages show what plays. Packages: owneetd 0.17.2, owneet-frontend
-       0.25.0. Verified in the test VM (cage, a Nacon GC-100) and with the real mpv in the builder
+       list; one preferred audio and subtitle language for every video; lists of any length; only a
+       video's position is kept (mpv's own files, on the console's disk); the home screen's hero and
+       the pages show what plays. Packages: owneetd 0.18.0, owneet-frontend 0.26.0. Verified in the test VM (cage, a Nacon GC-100) and with the real mpv in the builder
        VM (`tools/player-preview`). Probe: `vm/run/probe-5.6/`, never shipped. Known solutions
        written: [[builder-vm-stops-after-the-host-sleeps]], [[cache-files-slow-to-write-in-a-vm]],
        [[mpv-ignores-sigterm-with-a-controller]].

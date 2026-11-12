@@ -13,8 +13,8 @@ player"), [[step-5.6-local-videos-and-music]] · Code: `daemon/internal/player/`
 
 | Method | Path | What |
 |---|---|---|
-| GET | `/v1/player` | What plays: `{open, kind, index, count, path, title, folder, artist, album, position, duration, paused, autoplay, error}` (`kind` `videos` / `music`; `error`: a file that could not be played). After the player has quit, the last state with `open` false |
-| POST | `/v1/player` | Start the player: `{kind, items: [{path, title, folder, artist, album, hue}], index, from_start, autoplay, texts, languages, codes, look: {bg, surface, raised, line, fg, muted, accent, onAccent, displayFont, textFont, textScale, glyphs}}` → 201 with the state. A player already open closes first (another video or song moves the player to it). Errors `player.invalid` (400), `player.not_found` (404: the file to play is gone), `apps.game_running` (409: a game or web app is open), `apps.no_session` (409), `player.failed` (502), `player.unavailable` (503) |
+| GET | `/v1/player` | What plays: `{open, kind, index, count, path, title, folder, artist, album, position, duration, paused, autoplay, audio_language, subtitles, error}` (`kind` `videos` / `music`; `audio_language` / `subtitles`: the preferred languages as the player last chose them, `subtitles` also `off`; `error`: a file that could not be played). After the player has quit, the last state with `open` false |
+| POST | `/v1/player` | Start the player: `{kind, items: [{path, title, folder, artist, album, hue}], index, from_start, autoplay, audio_language, subtitles, texts, languages, codes, look: {bg, surface, raised, line, fg, muted, accent, onAccent, displayFont, textFont, textScale, glyphs}}` → 201 with the state; a list of any length (the body up to 64 MiB). A player already open closes first (another video or song moves the player to it). Errors `player.invalid` (400), `player.not_found` (404: the file to play is gone), `apps.game_running` (409: a game or web app is open), `apps.no_session` (409), `player.failed` (502), `player.unavailable` (503) |
 
 Events: `player.changed` (the state above, at the start, at every change the player reports and
 at its end); its end is also `app.exited` with id `player`.
@@ -30,8 +30,10 @@ at its end); its end is also `app.exited` with id `player`.
   `--script-opts=owneet-session=$XDG_RUNTIME_DIR/owneet/player.json`
   `--watch-later-dir=~/.local/state/owneet/watch_later`, `--profile=owneet-music` for songs, the
   session's output (as owneet-placeholder: `gpu-next,gpu,x11` under gamescope, `gpu-next,gpu,wlshm`
-  with Wayland under cage), `--playlist-start=N -- FILES…`. The request's files, as given (at most
-  5,000, clean absolute paths, the first one must exist; the others mpv skips if they are gone).
+  with Wayland under cage), `--playlist=$XDG_RUNTIME_DIR/owneet/player.m3u --playlist-start=N`.
+  The request's files, as given (clean absolute paths without line breaks, the first one must
+  exist; the others mpv skips if they are gone), go to mpv in that playlist file: a list of any
+  length (sub-step 5 had them on the command line and a cap of 5,000).
 - **The session file** (`player.json`, 0600): the request's kind, files, texts, languages and look,
   with the session's mode (Guide's prompt: "Home" or "Hold: close"). The interface sends the texts
   already translated (placeholders such as `{t}` left for the script), the palette's tokens as
@@ -65,7 +67,8 @@ at its end); its end is also `app.exited` with id `player`.
   terminal input stays on: its SIGTERM handler belongs to it, and without it SDL swallows the
   signal ([[mpv-ignores-sigterm-with-a-controller]]).
 - `owneet.lua`: the buttons' meanings (LT's 5 s, Autoplay through `keep-open`, audio never "no
-  sound", subtitles off then each track, RT writing the position of a video left half-way, B
+  sound", subtitles off then each track, the preferred languages applied in mpv's `on_preloaded`
+  hook before mpv chooses a video's tracks and reported in `owneet-state`, RT writing the position of a video left half-way, B
   quitting), the held-button repeat of [[controller-input-map]] (mpv's own repeat is one for every
   key), and the display drawn with libass on the console's 1280 × 720 grid. Text sizes allow for
   libass sizing fonts by their whole height (the OS/2 table's win metrics: 1.59 em for Lexend, 1.56
