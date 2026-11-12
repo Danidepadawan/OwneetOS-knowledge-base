@@ -90,6 +90,7 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    **Owner (2026-11-12): "obviously the game must be installable straight on the SATA disk"; it should have been there
    by default: a fault, priority, built right after the current test** (The Witcher 2 moved to the SATA disk). How the
    disk is chosen (the installer's own disk, a choice, …) to agree with him first ([[games-on-disk]]).
+   **Owner (2026-11-12): the user chooses where the installer goes; the game is installed where its installer is.**
 3m. **The notification's sound during the start-up animation** (owner, FrankenPC, 2026-11-10): a controller plugged in while
    the animation played made the `notify` sound, which the owner had asked never to happen ("the other sounds removed while
    the start-up sound plays"); hard to repeat, so tested by the assistant in the test VM. **Fixed** (owneet-frontend 0.38.12,
