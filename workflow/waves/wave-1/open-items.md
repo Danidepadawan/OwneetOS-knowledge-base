@@ -299,6 +299,19 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    **Owner's test (2026-11-12):** the launcher shows, but it is clearly broken: navigating works badly; after changing the
    text language a couple of times the console went back to the home screen (no crash); it is not clear how to apply or
    cancel the changes. Start Game not tried. Being looked at in the logs.
+   **From the logs (`owneet-20261112-113319`, read on the stick):** the "home screen" was the launcher crashing twice while
+   the options were changed (same tree walk, stack overflow), not only after Start Game. **valgrind (test VM, 32-bit,
+   Arch's debuginfod):** the launcher reads a `std::map` node right after deleting it (use after free in its own code);
+   old glibc left freed blocks intact, today's writes into them at once. `GLIBC_TUNABLES=glibc.malloc.tcache_count=0`
+   does not help (6 crashes in 6 runs with or without it); keeping deleted memory (`operator delete` does nothing in the
+   library) does: 0 crashes in 3 runs of ~20 language changes. **Controller:** B changed values instead of going back
+   (its own 2014 mapping list, `SDLGamepad.config`). **Owner (2026-11-12): the launcher MUST stay; drive it with the
+   controller pointer**, turned on by hand as today. Built in `lib32-owneet-compat` 0.2.0: deleted memory kept, the
+   controller hidden from the launcher (one meaning per button), its cursor shown. **Test VM (gamescope, headless):** the
+   pad no longer acts on it; the pointer cannot be tried there (headless gamescope gets no virtual mouse); a mouse click
+   (xdotool) on its buttons does **nothing**: the TV launcher ignores the mouse; the **keyboard works well** (arrows move
+   and change values at once, Enter opens, Esc goes back keeping the choices; the settings are written at Start Game).
+   Asked to the owner: the controller turned into the launcher's keys by the library, since the pointer cannot work.
 3v. **Steam's shader compiling shows the library with no notice** (owner, FrankenPC, 2026-11-12): after installing
    Batman: Arkham Knight (Steam), at its first start, while Proton compiled its shaders, the console went back to the
    library's page with nothing saying the game was still being prepared; the owner had to open Steam again to see that
