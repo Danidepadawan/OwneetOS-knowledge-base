@@ -18,3 +18,9 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **needs decision**
 - **Choices (owner, 2026-11-09):** **only Guide** wakes the console; the feature is **switched on and off in the settings, off by
   default**. First a test on FrankenPC: whether its generic Bluetooth dongle can wake it from sleep.
 - **Still open:** what the console says when the adapter cannot wake the PC; the setting's place and text (demo first).
+- **Feasibility (2026-11-13):** Linux can do it: the USB Bluetooth adapter (and the USB devices above it) allowed to
+  wake the PC (`power/wakeup`), and the paired controllers allowed to wake it through BlueZ (`WakeAllowed`); an Xbox
+  controller turns on again with Guide only. It depends on the adapter staying powered in sleep. **The owner agreed
+  to a test first:** owneet-base 0.0.72's test log does both with the switch `owneet.debug.bt_wake=on` in
+  `owneet-debug.txt` (on OWNEETLOG) and writes `<log>.wake.txt`; the owner puts the console to sleep and presses
+  Guide. If it works: the demo of the setting (off by default) and of the message when the adapter cannot.

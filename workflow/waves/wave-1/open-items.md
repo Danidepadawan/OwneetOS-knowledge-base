@@ -19,15 +19,15 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 2 | "Resume with the pointer" (and "Close game") in the library | Demo 3.7c approved; its second round with "Close game": to approve |
+| 2 | "Resume with the pointer" and "Close game" in the library | Built (owneet-frontend 0.38.30), on OWNEETLOG: to look at |
+| 3b | Wine's own programs (`C:\windows\…`) never counted as the game's | Built (owneetd 0.25.31), on OWNEETLOG: seen with the next Windows games |
+| 7 | Waking the console with the controller (step 6.10) | Test ready on OWNEETLOG (`owneet.debug.bt_wake=on`): sleep, then Guide |
 
 ### Waits for the owner's decision
 
 | # | What | Where it stands |
 |---|---|---|
-| 3b | Wine's own programs (`C:\windows\…`) counted as the game's | Fix proposed |
-| 3t, 3p | Junk on the disks: a simplified file manager in Settings → Advanced (owner, 2026-11-13) | How it is shown, which folders, where in the plan: proposal to the owner |
-| 7 | Waking the console with the controller (step 6.10, `needs-decision`) | "Let's try": the test with the dongle to prepare |
+| 3t, 3p | Junk on the disks: step 6.11, a simplified file manager in Settings → Advanced | Steam's leftovers: the owner's choice, then the demo |
 
 ### To build or prepare (assistant)
 
@@ -37,6 +37,7 @@ owner's.
 | 6 | Cover pictures from a disk (step 6.9) | Demo to make |
 | 8 | "Preparing" with a percentage for Steam downloads | Nice to have: demo first |
 | 3c | Removing the original on a USB disk Windows left read only | To check in the test VM |
+| 3af | A test of owneetd that failed once (`TestStopAndSourceGone`) | Its cause to find |
 | 9 | GitHub pages with every website update | Text to prepare; the owner publishes |
 
 ### Others
@@ -57,6 +58,7 @@ owner's.
 | [[step-5.7-apps-page\|5.7]] | Apps page | todo |
 | [[step-6.9-cover-images-from-a-disk\|6.9]] | Cover images from a disk (item 6) | todo |
 | [[step-6.10-waking-the-console-with-the-controller\|6.10]] | Waking the console with the controller (item 7) | needs-decision |
+| [[step-6.11-simplified-file-manager\|6.11]] | A simplified file manager (items 3t, 3p) | todo |
 | [[step-7.3-user-guide\|7.3]] | User guide | in-progress |
 | [[step-7.4-hardware-testing-and-v0.1.0\|7.4]] | Hardware testing and v0.1.0 | todo |
 | [[step-7.5-legal-review-before-the-public-launch\|7.5]] | Legal review before the public launch | in-progress |
@@ -82,12 +84,19 @@ status is kept in their own notes; this table follows them.
    **Owner (2026-11-13): approved; "Close game" added too (with the home screen's question, Cancel selected); the
    cover's badge and A = "Resume" dropped.** Second round of the demo (the same file): Options on the running game
    offer "Resume", "Resume with the pointer", "Close game", then the usual options. Waits for the owner's approval.
+   **Owner (2026-11-13): second round approved. Built** (owneet-frontend 0.38.30, `theme.qml` `showOptions`; checked with
+   `tools/frontend-preview`, `library-running-options.txt`: Resume, Resume with the pointer, Close game with its
+   question, then the usual options; another game keeps Play). The window lays its buttons out as every Options
+   window does (in rows that fill its width). On OWNEETLOG; waits for the owner's look.
 3. **Netflix / YouTube not silent behind the home screen**: left to Danidepadawan with the web apps
    (owner, 2026-11-09). [[step-4.5-windows-games-proton]]
 3b. **Wine's own programs followed as the game's** (found in the owner's test log, 2026-11-09 21:50): the
    home screen at the game's end waited for `C:\windows\system32\explorer.exe` too, because it owns a window;
    there it ended before the game, but it could outlive it until Wine closes. Fix proposed: never count a
    program under `C:\windows` as the game's, even with a window. [[step-4.5-windows-games-proton]]
+   **Owner (2026-11-13): apply it. Built** (owneetd 0.25.31, `closing.go` `wineProgram`: a window of a program in
+   `C:\windows` no longer makes it the game's; test in `TestHomeWhenTheGamesProgramsEnd`). On OWNEETLOG; it shows only
+   when such a program outlives the game, so it is checked with the next Windows games.
 3c. **Removing the originals of single games, the read-only case** (6.6c, confirmed by the owner on
    2026-11-10: the original removed after a copy, with no error; the choice of
    games, item 1 of 2026-11-09, confirmed too): left, a USB disk that Windows left read only, to check
@@ -142,6 +151,15 @@ status is kept in their own notes; this table follows them.
    the folders and delete; Wave 2 adds downloading from the browser, moving the downloaded files, extracting zip
    archives and renaming folders ([[wave-2]] 21). To agree next: how it is shown (proposal to the owner, then a demo),
    which folders it shows, and where it goes in the plan.
+   **Owner (2026-11-13):** the proposal (places, a list, Delete with a question) is right; the console cleans its own
+   system leftovers by itself (packages' cache: the last 2 versions kept; core dumps); a new step, 6.11, at the end of
+   phase 6: [[step-6.11-simplified-file-manager]]. Asked by the owner first: what about Steam's leftovers? (answered
+   the same day, waits for his choice).
+3af. **A test of owneetd failed once** (2026-11-13, while building owneetd 0.25.31): `TestStopAndSourceGone`
+   (`daemon/internal/installs`) timed out (5 s) waiting for an event during the package's build; the next build
+   passed, and 80 more runs (with and without the race detector) did not fail. A test that fails by chance: its
+   cause to be found (assistant).
+
 ## Decided, not built yet
 
 4. **"Shutting down" screen at once** (7.6b): demo `design/demos/7.6b-shutting-down.html` approved;
@@ -150,6 +168,9 @@ status is kept in their own notes; this table follows them.
 7. **Waking the console with Guide** (6.10): the owner said "let's try"; the test with the dongle to
    prepare. [[step-6.10-waking-the-console-with-the-controller]]
    **Owner (2026-11-13):** see whether it is feasible without too much work: assessment given to the owner the same day.
+   **Owner (2026-11-13): prepare the test.** owneet-base 0.0.72's test log with `owneet.debug.bt_wake=on` (added to
+   `owneet-debug.txt` on OWNEETLOG) ([[step-6.10-waking-the-console-with-the-controller]]). Waits for the owner's test:
+   sleep, then Guide.
 8. **"Preparing" with a percentage for Steam downloads**: nice to have in Wave 1 if easy; demo first.
    [[step-4.2c-steam-without-its-interface]]
 9. **GitHub pages with every website update**: README, the repositories' description and topics; the
@@ -159,4 +180,5 @@ status is kept in their own notes; this table follows them.
 
 10. Cyberpunk 2077: Steam's question at launch shown at once. [[step-4.2c-steam-without-its-interface]]
 12. "Playing for" over an hour on the home screen ("1 h 5 min", "2 h"). [[step-4.2c-steam-without-its-interface]]
+
 
