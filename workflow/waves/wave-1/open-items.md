@@ -19,6 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
+| — | Nothing at the moment | — |
 
 ### Waits for the owner's decision
 
