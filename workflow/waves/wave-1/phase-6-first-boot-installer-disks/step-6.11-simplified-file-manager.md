@@ -24,5 +24,11 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **to do**
     of each package kept) and the core dumps left by programs that crash (3p (c), (e)).
   - A Windows game removed from an internal disk takes its prefix with it ([[disks]], 2026-11-12): built with
     this step.
-- **Open:** Steam's leftovers (shader caches, `compatdata`, unfinished downloads of games no longer installed;
-  an old Proton, `steam-runtime.old`): how they are shown, asked to the owner on 2026-11-13. Then the demo.
+- **Steam's leftovers (owner, 2026-11-13):** a place "Steam's leftovers": the shader caches, Windows data
+  (`compatdata`) and orphan unfinished downloads of games no longer installed, each with its game's name; installed
+  games never shown; deleted only with Steam closed (Steam may be writing there). Downloads still in Steam's queue
+  are cancelled from the console as today; an old Proton and Steam's old runtime are left to Steam.
+- **Windows data (owner, 2026-11-13):** before deleting them (the console's prefixes and Steam's `compatdata`), a
+  first question: they may hold saves and settings of the game, and cannot come back (Continue, Cancel selected).
+- **Demo** `design/demos/6.11-file-manager.html` (2026-11-13): Settings → Advanced → File manager; places; a
+  game's folder; Options → Delete; the saves question; Steam open or closed. Waits for the owner's approval.

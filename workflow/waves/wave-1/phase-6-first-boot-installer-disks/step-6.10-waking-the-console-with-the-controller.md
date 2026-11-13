@@ -24,3 +24,7 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **needs decision**
   to a test first:** owneet-base 0.0.72's test log does both with the switch `owneet.debug.bt_wake=on` in
   `owneet-debug.txt` (on OWNEETLOG) and writes `<log>.wake.txt`; the owner puts the console to sleep and presses
   Guide. If it works: the demo of the setting (off by default) and of the message when the adapter cannot.
+- **First try (2026-11-13 15:23): not woken, but nothing had been set** (the test log tried before BlueZ answered and
+  again only after its first report, the console already asleep). owneet-base 0.0.73 runs the test on its own as
+  soon as BlueZ has its adapter (at most a minute); the FrankenPC's adapter is a Realtek RTL8761BU (USB). To try
+  again, a minute after the start.

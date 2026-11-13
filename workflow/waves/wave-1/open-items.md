@@ -21,13 +21,13 @@ owner's.
 |---|---|---|
 | 2 | "Resume with the pointer" and "Close game" in the library | Built (owneet-frontend 0.38.30), on OWNEETLOG: to look at |
 | 3b | Wine's own programs (`C:\windows\…`) never counted as the game's | Built (owneetd 0.25.31), on OWNEETLOG: seen with the next Windows games |
-| 7 | Waking the console with the controller (step 6.10) | Test ready on OWNEETLOG (`owneet.debug.bt_wake=on`): sleep, then Guide |
+| 7 | Waking the console with the controller (step 6.10) | First try set nothing (test log too late); owneet-base 0.0.73 on OWNEETLOG: wait a minute, sleep, Guide |
 
 ### Waits for the owner's decision
 
 | # | What | Where it stands |
 |---|---|---|
-| 3t, 3p | Junk on the disks: step 6.11, a simplified file manager in Settings → Advanced | Steam's leftovers: the owner's choice, then the demo |
+| 3t, 3p | Junk on the disks: step 6.11, a simplified file manager in Settings → Advanced | Demo `6.11-file-manager.html`: to approve |
 
 ### To build or prepare (assistant)
 
@@ -155,6 +155,11 @@ status is kept in their own notes; this table follows them.
    system leftovers by itself (packages' cache: the last 2 versions kept; core dumps); a new step, 6.11, at the end of
    phase 6: [[step-6.11-simplified-file-manager]]. Asked by the owner first: what about Steam's leftovers? (answered
    the same day, waits for his choice).
+   **Owner (2026-11-13): all approved** (Steam's leftovers as proposed: a place "Steam's leftovers" with the shader
+   caches, Windows data and orphan unfinished downloads of games no longer installed, deleted only with Steam closed;
+   downloads still queued cancelled from the console as today; old Proton and runtime left to Steam), **plus a first
+   question before deleting Windows data: they may hold saves.** **Demo** `design/demos/6.11-file-manager.html`
+   waits for the owner's approval ([[step-6.11-simplified-file-manager]]).
 3af. **A test of owneetd failed once** (2026-11-13, while building owneetd 0.25.31): `TestStopAndSourceGone`
    (`daemon/internal/installs`) timed out (5 s) waiting for an event during the package's build; the next build
    passed, and 80 more runs (with and without the race detector) did not fail. A test that fails by chance: its
@@ -171,6 +176,12 @@ status is kept in their own notes; this table follows them.
    **Owner (2026-11-13): prepare the test.** owneet-base 0.0.72's test log with `owneet.debug.bt_wake=on` (added to
    `owneet-debug.txt` on OWNEETLOG) ([[step-6.10-waking-the-console-with-the-controller]]). Waits for the owner's test:
    sleep, then Guide.
+   **Owner's test (2026-11-13 15:23, log `owneet-20261113-152306`): it did not wake.** But the test had set nothing: no
+   `.wake.txt`; the test log tried once at its start, when BlueZ did not answer yet, and would have tried again only
+   after its first report (about two minutes), while the console went to sleep 25 s after the start (sleep 15:23:33,
+   woken 15:24:24 by other means). **owneet-base 0.0.73:** the test runs on its own as soon as BlueZ has its
+   adapter (at most a minute) and writes what it did or why not; checked in the test VM (no adapter there: the
+   message written after a minute). On OWNEETLOG; to try again: wait a minute on the home screen before sleep.
 8. **"Preparing" with a percentage for Steam downloads**: nice to have in Wave 1 if easy; demo first.
    [[step-4.2c-steam-without-its-interface]]
 9. **GitHub pages with every website update**: README, the repositories' description and topics; the
