@@ -439,6 +439,24 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    then, once the tests are over, find a fix for the doubled folder. **owneet-base 0.0.69** (checked in the test VM):
    the report also lists everything named after The Witcher 2 on every disk (each folder: size, files, date, top, the
    console's own files; each file with "witcher" in its name). On OWNEETLOG.
+   **Cause found (owner's start of 2026-11-13 10:10, `owneet-20261113-101059`, journal of 2026-11-12 18:44):** not a
+   download. At 18:44 the owner plugged in the USB disk SSD-256GB-D, whose `Giochi` had "The Witcher 2: Assassin of
+   kings" (the Linux installer) and "The Witcher 2: Win" (the Windows one); the console offered to copy them ("Disco USB
+   collegato: 2 giochi") and copied both to the SATA disk (owneetd `moves`, 18:44:59). The copy keeps the source
+   folder's name (`filepath.Base`, ":" included) and only adds " (2)" when the same name is there: it did not see that
+   the SATA disk already had the same game as "The Witcher 2 - Assassin of kings" (the name the console gives it,
+   `installs.FolderName`, 3u). The library now shows three local games. The test log's search for "witcher" did not
+   enter the disks (`find -xdev` from `/run/media/owneet`): fixed in the next owneet-base. Fix to agree with the owner.
+3ab. **The home's big card with text size XL: buttons out of the card** (owner, FrankenPC 1366×768, 2026-11-13,
+   screenshot 10:21): with a game running, "Riprendi", "Riprendi col puntatore", "Chiudi il gioco" go past the card's
+   right edge. **Owner:** clip them and make them scroll; the same for the game's title. A change of look: demo first.
+   **Demo** `design/demos/3.6c-hero-card-fit.html` (2026-11-13): only when the card's content does not fit (after its
+   rows came closer, 3w d): the buttons are clipped at the card's edge with a soft edge where one is cut, and slide so
+   that the selected one is whole; the title goes on one line, ends with "…" and scrolls (3.3b's rule) while a button
+   of the card is selected. Waits for the owner's approval.
+3ac. **Owner's test of 2026-11-13:** the Steam game started and came to the front (3z works); next, a game whose shaders
+   take long the first time (as Batman: Arkham Knight, 3v). The display area: all right. Text size XL: all right apart
+   from 3ab. The Witcher 2 on the SATA disk: after 3aa's fix.
 3q. **The Witcher 2 Linux version does not install** (owner, FrankenPC, 2026-11-11): "the game could not be installed",
    twice (the second time with OWNEETLOG plugged in while the console ran: the logs start only with a stick in at the
    start, so neither attempt is on the stick; the console still ran yesterday's versions, the update comes from the
