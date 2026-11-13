@@ -37,3 +37,8 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **needs decision**
 - **Correction (owner, 2026-11-13): nobody pressed Guide, and the controller turns off when the console sleeps:** the
   PC woke by itself once USB devices were allowed to wake it. owneet-base 0.0.75's test tells which device wakes it
   (USB wake counts, the last wake's IRQ, the wake sources) after every sleep.
+- **Fourth try (2026-11-13 16:24):** the PC woke the instant it reached S3 (the "restart" the owner saw: fans stopped,
+  then back to the home screen); nothing counted as its cause. Two adapters were allowed to wake it: the TP-Link
+  UB500 with the controller and the FrankenPC's unused Intel adapter, which failed a command while going to sleep.
+  owneet-base 0.0.76 allows only the adapters with a paired device. **For the product:** only the adapter the
+  controllers are paired with may wake the console.

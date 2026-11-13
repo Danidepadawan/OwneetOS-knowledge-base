@@ -21,7 +21,7 @@ owner's.
 |---|---|---|
 | 2 | "Resume with the pointer" and "Close game" in the library | Built (owneet-frontend 0.38.30), on OWNEETLOG: to look at |
 | 3b | Wine's own programs (`C:\windows\…`) never counted as the game's | Built (owneetd 0.25.31), on OWNEETLOG: seen with the next Windows games |
-| 7 | Waking the console with the controller (step 6.10) | Third try: the PC woke by itself; owneet-base 0.0.75 tells what wakes it: to try again |
+| 7 | Waking the console with the controller (step 6.10) | It wakes at once by itself (the unused Intel adapter, most likely); owneet-base 0.0.76: only the adapter in use may wake it: to try again |
 
 ### Waits for the owner's decision
 
@@ -212,6 +212,15 @@ status is kept in their own notes; this table follows them.
    the USB devices allowed to wake the PC with their wake counts, the last wake's IRQ and the wake sources (checked in
    the test VM). On OWNEETLOG. Next: a start with the stick (it also brings the console's journal of the 16:13 start,
    for the "restart"), a minute, sleep without touching anything, then Guide if it stays asleep.
+   **Owner's fourth try (2026-11-13 16:24, log `owneet-20261113-162428`, owneet-base 0.0.75):** the screen went off,
+   about ten seconds later the fans and disks stopped, and a fraction of a second later the console came back to the
+   home screen as after a normal sleep; the controller had turned off and he turned it on by hand. **From the logs:**
+   S3 entered and left in the same instant (16:26:58); no USB device counted the wake, no IRQ, no wake source. The
+   FrankenPC has two Bluetooth adapters: the TP-Link UB500 (USB 1-1, RTL8761BU, the paired controller's) and an
+   unused Intel one (USB 1-10, 8087:0a2a, with its Wi-Fi card), which failed a command as the console went to sleep
+   (`hci1: Opcode 0x0c24 failed: -112`); the test had allowed both to wake the PC. **owneet-base 0.0.76:** only the
+   adapters with a paired device (and the USB devices above them) may wake the PC; the others are kept from it. On
+   OWNEETLOG. **Disk check (16:24 listings):** nothing new (packages' cache 192 files).
 8. **"Preparing" with a percentage for Steam downloads**: nice to have in Wave 1 if easy; demo first.
    [[step-4.2c-steam-without-its-interface]]
 9. **GitHub pages with every website update**: README, the repositories' description and topics; the
