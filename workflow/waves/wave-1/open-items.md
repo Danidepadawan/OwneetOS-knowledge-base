@@ -137,6 +137,9 @@ status is kept in their own notes; this table follows them.
    Windows game takes its prefix with it) is not built yet; it joins the junk to clean in 3t. Otherwise nothing new:
    14 prefixes 7.6 GB, Proton's logs 1.5 GB, packages' cache 189 files, 5 core dumps; on the SATA disk only The Witcher
    2's Linux version and Steam's library (its wanted downloads grew by about 13 GB).
+   **Disk check (2026-11-13 15:23 listings):** cut (no `complete.txt`, the home folder's listing ends early: the
+   console went to sleep and was switched off before they ended); the readable part has nothing new (packages' cache
+   189 files, 5 core dumps).
 3t. **Junk on the disks: a new phase or step** (owner, 2026-11-11, from 3p's findings (a)-(d)): the system cannot find
    out by itself whether a save is still needed; so either a simplified file manager (needed anyway in wave 2) or a
    simple, elegant solution thought out together. A critical point just found: it gets a phase (or step) of its own.
