@@ -21,7 +21,7 @@ owner's.
 |---|---|---|
 | 2 | "Resume with the pointer" and "Close game" in the library | Built (owneet-frontend 0.38.30), on OWNEETLOG: to look at |
 | 3b | Wine's own programs (`C:\windows\…`) never counted as the game's | Built (owneetd 0.25.31), on OWNEETLOG: seen with the next Windows games |
-| 7 | Waking the console with the controller (step 6.10) | It wakes at once by itself (the unused Intel adapter, most likely); owneet-base 0.0.76: only the adapter in use may wake it: to try again |
+| 7 | Waking the console with the controller (step 6.10) | Still woken at once by itself; owneet-base 0.0.77 tries three stages, one per sleep: to try |
 
 ### Waits for the owner's decision
 
@@ -221,6 +221,13 @@ status is kept in their own notes; this table follows them.
    (`hci1: Opcode 0x0c24 failed: -112`); the test had allowed both to wake the PC. **owneet-base 0.0.76:** only the
    adapters with a paired device (and the USB devices above them) may wake the PC; the others are kept from it. On
    OWNEETLOG. **Disk check (16:24 listings):** nothing new (packages' cache 192 files).
+   **Owner's fifth try (2026-11-13 16:33, log `owneet-20261113-163350`, owneet-base 0.0.76): no change**, woken the
+   instant it slept (16:36:11), with only the TP-Link adapter (1-1), its hub and XHC allowed and the Intel adapter
+   (1-10) kept from waking it; the Intel adapter still failed its command as the console went to sleep. Left: the
+   Intel adapter dropping off the bus (a change the hub wakes for), or the TP-Link adapter waking at once (known of
+   some Realtek adapters). **owneet-base 0.0.77, in stages, one per wake:** stage 1 the unused adapters switched off
+   in BlueZ; stage 2 their USB devices taken off the bus; stage 3 the adapter in use kept from waking too (if it still
+   wakes, the cause is not Bluetooth). On OWNEETLOG. **Disk check (16:33 listings):** nothing new (193 packages).
 8. **"Preparing" with a percentage for Steam downloads**: nice to have in Wave 1 if easy; demo first.
    [[step-4.2c-steam-without-its-interface]]
 9. **GitHub pages with every website update**: README, the repositories' description and topics; the

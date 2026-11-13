@@ -42,3 +42,6 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **needs decision**
   UB500 with the controller and the FrankenPC's unused Intel adapter, which failed a command while going to sleep.
   owneet-base 0.0.76 allows only the adapters with a paired device. **For the product:** only the adapter the
   controllers are paired with may wake the console.
+- **Fifth try (2026-11-13 16:33): no change** with only the adapter in use allowed. owneet-base 0.0.77 tries stages
+  after each wake: the unused adapters switched off, then taken off the bus, then the adapter in use kept from
+  waking too.
