@@ -19,7 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| — | Nothing at the moment | — |
+| 2 | "Resume with the pointer" in the library | Demo `3.7c-library-resume-pointer.html`: to approve, and the two extras to choose |
 
 ### Waits for the owner's decision
 
@@ -35,7 +35,6 @@ owner's.
 | # | What | Where it stands |
 |---|---|---|
 | 4 | "Shutting down" screen at once (7.6b) | Demo approved: code to write |
-| 2 | "Resume with the pointer" in the library | Demo to make |
 | 6 | Cover pictures from a disk (step 6.9) | Demo to make |
 | 8 | "Preparing" with a percentage for Steam downloads | Nice to have: demo first |
 | 3c | Removing the original on a USB disk Windows left read only | To check in the test VM |
@@ -75,6 +74,12 @@ status is kept in their own notes; this table follows them.
 
 2. **"Resume with the pointer" in the library**: missing there. Demo first.
    [[step-6.8-games-on-disk-delete-and-progress]]
+   **Demo** `design/demos/3.7c-library-resume-pointer.html` (2026-11-13; today the library's Options on the running
+   game offer "Play, Details, Move, Favorite"): Options on the running game offer what the home screen's card offers,
+   "Resume" first (instead of "Play"), then "Resume with the pointer" ("Turn the pointer off" while it is on), then the
+   usual options; the pointer's help the first time, as from the home screen. Two extras, off unless the owner wants
+   them: "Close game" in Options too; on the library's cover the "Running" badge and A = "Resume" in the prompt bar, as
+   on the home screen. Waits for the owner's approval.
 3. **Netflix / YouTube not silent behind the home screen**: left to Danidepadawan with the web apps
    (owner, 2026-11-09). [[step-4.5-windows-games-proton]]
 3b. **Wine's own programs followed as the game's** (found in the owner's test log, 2026-11-09 21:50): the
