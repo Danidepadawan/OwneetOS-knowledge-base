@@ -428,6 +428,13 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    (3p a, b), the packages' cache 0.60 GB in 176 files (3 more, 3p c), 5 core dumps 0.11 GB (3p e); on the SATA disk
    Steam's wanted downloads (42.5 GB), shader caches 5.0 GB, the new game's prefix (Steam's `compatdata`), The Witcher
    2's installer.
+3aa. **The Witcher 2's folder doubled** (owner, FrankenPC, 2026-11-13): the Linux version is now in two folders, one
+   whose name has ":" and one with " - ", by mistake. Not in the logs yet: on 2026-11-12 at 18:06 the SATA disk had
+   only "The Witcher 2 - Assassin of kings" with its installer. **owneet-base 0.0.68** (checked in the test VM with two
+   such folders): once per start the test log writes in its report each games folder as its name really is, its size,
+   its top and the console's own files in it (install marks, game.txt, gameinfo), the user's start choices
+   (`disk-games.json`) and owneetd's installs; the journals of the five previous starts (were three), to find when it
+   happened. On OWNEETLOG; waits for the owner's start with the stick, before his tests of The Witcher 2.
 3q. **The Witcher 2 Linux version does not install** (owner, FrankenPC, 2026-11-11): "the game could not be installed",
    twice (the second time with OWNEETLOG plugged in while the console ran: the logs start only with a stick in at the
    start, so neither attempt is on the stick; the console still ran yesterday's versions, the update comes from the
