@@ -35,4 +35,4 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **to do**
 - **Its look (owner, 2026-11-13):** like Windows' or Linux's file managers: folder-shaped icons in a grid, in the
   console's colours (the first round's list was not wanted). Second round of the demo: folders in the accent colour
   (the places with a small emblem), documents with their kind, a bar under the grid with the selected item's size
-  and date.
+  and date. **Approved** (owner, 2026-11-13).

@@ -21,13 +21,13 @@ owner's.
 |---|---|---|
 | 2 | "Resume with the pointer" and "Close game" in the library | Built (owneet-frontend 0.38.30), on OWNEETLOG: to look at |
 | 3b | Wine's own programs (`C:\windows\…`) never counted as the game's | Built (owneetd 0.25.31), on OWNEETLOG: seen with the next Windows games |
-| 7 | Waking the console with the controller (step 6.10) | Two tries set nothing (the test came too late); owneet-base 0.0.74 on OWNEETLOG: to try again |
+| 7 | Waking the console with the controller (step 6.10) | Third try: woken after Guide, then the PC restarted; one more start with the stick for the console's journal |
 
 ### Waits for the owner's decision
 
 | # | What | Where it stands |
 |---|---|---|
-| 3t, 3p | Junk on the disks: step 6.11, a simplified file manager in Settings → Advanced | Demo `6.11-file-manager.html`, second round (a grid of folders): to approve |
+| 3t, 3p | Junk on the disks: step 6.11, a simplified file manager in Settings → Advanced | Demo 6.11 approved: building it waits for the owner's go |
 
 ### To build or prepare (assistant)
 
@@ -169,6 +169,8 @@ status is kept in their own notes; this table follows them.
    icons in a grid, in the console's colours; the functions are right. **Second round** of the demo (the same file):
    folders in the console's accent, documents with their kind, a grid, a bar under it with the selected item's size
    and date. Waits for the owner's approval.
+   **Owner (2026-11-13): the second round of the demo is approved** ("perfect"). Building it is step 6.11's work:
+   waits for the owner's go.
 3af. **A test of owneetd failed once** (2026-11-13, while building owneetd 0.25.31): `TestStopAndSourceGone`
    (`daemon/internal/installs`) timed out (5 s) waiting for an event during the package's build; the next build
    passed, and 80 more runs (with and without the race detector) did not fail. A test that fails by chance: its
@@ -196,6 +198,13 @@ status is kept in their own notes; this table follows them.
    wait), minutes on the FrankenPC, and the console slept at 15:51:21. Reproduced in the test VM with a real restart.
    **owneet-base 0.0.74:** the test right after the journal starts; checked in the test VM with a real restart (the
    file at once). On OWNEETLOG. The adapter has not been tried yet.
+   **Owner's third try (2026-11-13 16:13, log `owneet-20261113-161302`, owneet-base 0.0.74): "the PC restarted by
+   itself".** This time the test set everything at 16:13:02 (`.wake.txt`): wakeup enabled on the Bluetooth adapter's
+   USB device, its hub and the USB controller (XHC enabled in `/proc/acpi/wakeup`), `WakeAllowed` true on the paired
+   Xbox Wireless Controller. Sleep at 16:15:05, **woken at 16:15:16** (11 s later: the owner's Guide, most likely),
+   the controller connected again at 16:15:31; the log on the stick stops at 16:15:34 with no shutdown in it. What
+   happened then is only in the console's own journal: one more start with the stick (nothing else) brings it
+   (`.previous`). Asked the owner what he saw.
 8. **"Preparing" with a percentage for Steam downloads**: nice to have in Wave 1 if easy; demo first.
    [[step-4.2c-steam-without-its-interface]]
 9. **GitHub pages with every website update**: README, the repositories' description and topics; the

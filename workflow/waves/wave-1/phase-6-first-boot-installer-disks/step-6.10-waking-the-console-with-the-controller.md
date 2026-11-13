@@ -30,3 +30,7 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **needs decision**
   again, a minute after the start.
 - **Second try (2026-11-13 15:49): nothing set again** (the test came after the start's other work, minutes on the
   FrankenPC). owneet-base 0.0.74 runs it right after the journal starts (checked with a real restart in the test VM).
+- **Third try (2026-11-13 16:13): everything set** (wakeup on the adapter, its hub and XHC; `WakeAllowed` on the Xbox
+  controller); slept at 16:15:05, **woken at 16:15:16** (the owner's Guide, most likely), the controller back at
+  16:15:31; then "the PC restarted by itself": the stick's log stops at 16:15:34 with no shutdown. The console's own
+  journal of that start is needed (one more start with the stick).
