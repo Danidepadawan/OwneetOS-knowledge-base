@@ -34,3 +34,6 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **needs decision**
   controller); slept at 16:15:05, **woken at 16:15:16** (the owner's Guide, most likely), the controller back at
   16:15:31; then "the PC restarted by itself": the stick's log stops at 16:15:34 with no shutdown. The console's own
   journal of that start is needed (one more start with the stick).
+- **Correction (owner, 2026-11-13): nobody pressed Guide, and the controller turns off when the console sleeps:** the
+  PC woke by itself once USB devices were allowed to wake it. owneet-base 0.0.75's test tells which device wakes it
+  (USB wake counts, the last wake's IRQ, the wake sources) after every sleep.

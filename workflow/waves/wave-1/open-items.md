@@ -21,7 +21,7 @@ owner's.
 |---|---|---|
 | 2 | "Resume with the pointer" and "Close game" in the library | Built (owneet-frontend 0.38.30), on OWNEETLOG: to look at |
 | 3b | Wine's own programs (`C:\windows\…`) never counted as the game's | Built (owneetd 0.25.31), on OWNEETLOG: seen with the next Windows games |
-| 7 | Waking the console with the controller (step 6.10) | Third try: woken after Guide, then the PC restarted; one more start with the stick for the console's journal |
+| 7 | Waking the console with the controller (step 6.10) | Third try: the PC woke by itself; owneet-base 0.0.75 tells what wakes it: to try again |
 
 ### Waits for the owner's decision
 
@@ -205,6 +205,13 @@ status is kept in their own notes; this table follows them.
    the controller connected again at 16:15:31; the log on the stick stops at 16:15:34 with no shutdown in it. What
    happened then is only in the console's own journal: one more start with the stick (nothing else) brings it
    (`.previous`). Asked the owner what he saw.
+   **Owner (2026-11-13): he did not press Guide, and the controller turns off when the console sleeps.** So the PC
+   woke by itself 11 s after sleeping, once the test had allowed USB devices to wake it (the first two tries, with
+   nothing set, stayed asleep): which device is not known (the FrankenPC has two Bluetooth adapters, on USB ports 1
+   and 10, and a USB Wi-Fi stick). **owneet-base 0.0.75:** the test also writes, at the start and after every sleep,
+   the USB devices allowed to wake the PC with their wake counts, the last wake's IRQ and the wake sources (checked in
+   the test VM). On OWNEETLOG. Next: a start with the stick (it also brings the console's journal of the 16:13 start,
+   for the "restart"), a minute, sleep without touching anything, then Guide if it stays asleep.
 8. **"Preparing" with a percentage for Steam downloads**: nice to have in Wave 1 if easy; demo first.
    [[step-4.2c-steam-without-its-interface]]
 9. **GitHub pages with every website update**: README, the repositories' description and topics; the
