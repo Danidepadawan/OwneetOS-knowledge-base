@@ -35,3 +35,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-09 | Offline icon approved; next: demo 3.9 (Settings). |
 | 2026-11-10 | Details window: a value too long for it is shortened in the middle with "…" (owner chose this over wrapping). |
 | 2026-11-12 | The home's big card: when its rows do not fit (text size XL, a title on two lines), the space between them shrinks from 12 px down to 4 px; the title stays whole (owner, option 2 of 3w d). |
+| 2026-11-13 | The home's big card when its rows do not fit even 4 px apart (text size XL, a long title): the title on one line, "…", scrolling while a button of the card is selected; the buttons clipped at the card's edge, sliding to the selected one (owner's idea; demo 3.6c approved). |

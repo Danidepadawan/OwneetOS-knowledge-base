@@ -453,7 +453,12 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    **Demo** `design/demos/3.6c-hero-card-fit.html` (2026-11-13): only when the card's content does not fit (after its
    rows came closer, 3w d): the buttons are clipped at the card's edge with a soft edge where one is cut, and slide so
    that the selected one is whole; the title goes on one line, ends with "…" and scrolls (3.3b's rule) while a button
-   of the card is selected. Waits for the owner's approval.
+   of the card is selected. **Approved** (owner, 2026-11-13). **Built** (owneet-frontend 0.38.27, `HomePage.qml`; checked
+   with `tools/frontend-preview`, `home-card-fit.txt`: text size XL, a running game with a long title; with text size M the
+   card is as before). On OWNEETLOG with owneet-base 0.0.70 (the "witcher" search now enters every disk).
+   **Owner (2026-11-13), 3aa:** he deletes both copies of The Witcher 2 on the SATA disk and copies them again from the
+   USB disk with OWNEETLOG in; corrections are weighed after that test. Next tests: that copy, then Batman: Arkham
+   Knight's first start (3v). The logs on the stick name games not allowed: read, not kept; the owner cleans the stick.
 3ac. **Owner's test of 2026-11-13:** the Steam game started and came to the front (3z works); next, a game whose shaders
    take long the first time (as Batman: Arkham Knight, 3v). The display area: all right. Text size XL: all right apart
    from 3ab. The Witcher 2 on the SATA disk: after 3aa's fix.
