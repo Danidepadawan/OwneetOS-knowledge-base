@@ -78,3 +78,6 @@ Scope agreed so far: [[wave-1-scope]] (later waves).
 - **21. The file manager grows (owner, 2026-11-13):** Wave 1 has a very simplified file manager in Settings →
   Advanced (going through folders, deleting: [[open-items]] 3t); Wave 2 adds downloading from the browser, moving
   the downloaded files, extracting zip archives and renaming folders.
+- **22. Waking the console with the controller (owner, 2026-11-13):** [[step-6.10-waking-the-console-with-the-controller]],
+  moved from Wave 1: only Guide wakes it, a setting off by default; the Wave 1 tests found that it depends on the
+  Bluetooth adapter (the FrankenPC's woke the PC the instant it slept whenever allowed to).

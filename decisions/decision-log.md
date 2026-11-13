@@ -344,3 +344,4 @@ Decisions by area: [[decisions/INDEX|decisions index]].
 | 2026-11-13 | Steam's leftovers in the file manager (shader caches, Windows data, orphan downloads of games no longer installed; only with Steam closed); before deleting Windows data, a first question: they may hold saves (owner). | [[disks]], [[step-6.11-simplified-file-manager]] |
 | 2026-11-13 | The file manager looks like Windows' or Linux's: folder-shaped icons in a grid, in the console's colours (owner; the list of the first demo not wanted). | [[step-6.11-simplified-file-manager]] |
 | 2026-11-13 | Demo 6.11 (the simplified file manager, second round: a grid of folders) approved (owner). | [[step-6.11-simplified-file-manager]] |
+| 2026-11-13 | Plan: step 6.10 (waking with the controller) moved to Wave 2; what its test left in BlueZ is restored (owner). Item 4 (7.6b) built; step 6.11 next (owner). | [[step-6.10-waking-the-console-with-the-controller]], [[wave-2]], [[boot-experience]] |

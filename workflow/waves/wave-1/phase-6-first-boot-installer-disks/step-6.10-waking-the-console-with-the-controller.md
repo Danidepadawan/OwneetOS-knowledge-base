@@ -1,14 +1,14 @@
 ---
 type: step
-description: "Waking the console from sleep with the controller (a feature many players want): what the hardware allows, the Bluetooth adapter and the Xbox wireless adapter, and how the console asks for it."
+description: "Moved to Wave 2 (owner, 2026-11-13): waking the console from sleep with the controller; on the FrankenPC its Bluetooth adapter woke the PC the instant it slept whenever allowed to."
 phase: "[[phase-6-first-boot-installer-disks]]"
 step: "6.10"
-status: needs-decision
+status: todo
 tags: [step, phase-6]
 ---
-# 6.10 Waking the console with the controller *(added 2026-11-09)*
+# 6.10 Waking the console with the controller: moved to Wave 2 *(added 2026-11-09)*
 
-Up: [[phase-6-first-boot-installer-disks]] · Status: **needs decision**
+Up: [[phase-6-first-boot-installer-disks]] · Status: **todo** (Wave 2)
 
 - **Why (owner, 2026-11-09):** many players want to wake the console with the controller; in Wave 1.
 - **What is known:** the console has Sleep (Power options: Sleep, Restart, Shut down). Waking needs the device the controller talks
@@ -49,3 +49,8 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **needs decision**
   could not either). The FrankenPC's TP-Link UB500 (Realtek RTL8761BU) wakes the PC the instant it sleeps whenever it
   may; the Intel adapter is not the cause. Not feasible with little work on this adapter; how to go on is the owner's
   choice (another adapter, more investigation, or Wave 2).
+- **Moved to Wave 2 (owner, 2026-11-13)**, after six tries on the FrankenPC: it can be done (BlueZ `WakeAllowed`, the
+  adapter's USB wakeup), but its TP-Link UB500 (Realtek RTL8761BU) woke the PC the instant it slept whenever allowed
+  to; whether it works depends on the adapter, not on the console ([[wave-2]] 22). What the test left in BlueZ (the
+  Intel adapter switched off, `WakeAllowed` on the controller) is undone by owneet-base 0.0.78's
+  `owneet.debug.bt_wake=restore` at the next start with the stick; the test's code stays in the test log for Wave 2.

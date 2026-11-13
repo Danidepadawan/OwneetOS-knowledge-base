@@ -524,3 +524,62 @@ found here. Newest closings are added at the end.
    writes, the memory waiting to be written, /v1/moves: owneet-base 0.0.60); then what the console
    does about such disks is the owner's choice. [[step-6.6-moving-games-and-media-between-disks]]
    **Closed** (2026-11-13): the owner's choice: nothing to do, a slow disk stays slow.
+7. **Waking the console with Guide** (6.10): the owner said "let's try"; the test with the dongle to
+   prepare. [[step-6.10-waking-the-console-with-the-controller]]
+   **Owner (2026-11-13):** see whether it is feasible without too much work: assessment given to the owner the same day.
+   **Owner (2026-11-13): prepare the test.** owneet-base 0.0.72's test log with `owneet.debug.bt_wake=on` (added to
+   `owneet-debug.txt` on OWNEETLOG) ([[step-6.10-waking-the-console-with-the-controller]]). Waits for the owner's test:
+   sleep, then Guide.
+   **Owner's test (2026-11-13 15:23, log `owneet-20261113-152306`): it did not wake.** But the test had set nothing: no
+   `.wake.txt`; the test log tried once at its start, when BlueZ did not answer yet, and would have tried again only
+   after its first report (about two minutes), while the console went to sleep 25 s after the start (sleep 15:23:33,
+   woken 15:24:24 by other means). **owneet-base 0.0.73:** the test runs on its own as soon as BlueZ has its
+   adapter (at most a minute) and writes what it did or why not; checked in the test VM (no adapter there: the
+   message written after a minute). On OWNEETLOG; to try again: wait a minute on the home screen before sleep.
+   **Owner's second try (2026-11-13 15:49, log `owneet-20261113-154908`, owneet-base 0.0.73): not woken; again nothing
+   set** (no `.wake.txt`): the test came after the start's other work (the previous starts' journals, the minute's
+   wait), minutes on the FrankenPC, and the console slept at 15:51:21. Reproduced in the test VM with a real restart.
+   **owneet-base 0.0.74:** the test right after the journal starts; checked in the test VM with a real restart (the
+   file at once). On OWNEETLOG. The adapter has not been tried yet.
+   **Owner's third try (2026-11-13 16:13, log `owneet-20261113-161302`, owneet-base 0.0.74): "the PC restarted by
+   itself".** This time the test set everything at 16:13:02 (`.wake.txt`): wakeup enabled on the Bluetooth adapter's
+   USB device, its hub and the USB controller (XHC enabled in `/proc/acpi/wakeup`), `WakeAllowed` true on the paired
+   Xbox Wireless Controller. Sleep at 16:15:05, **woken at 16:15:16** (11 s later: the owner's Guide, most likely),
+   the controller connected again at 16:15:31; the log on the stick stops at 16:15:34 with no shutdown in it. What
+   happened then is only in the console's own journal: one more start with the stick (nothing else) brings it
+   (`.previous`). Asked the owner what he saw.
+   **Owner (2026-11-13): he did not press Guide, and the controller turns off when the console sleeps.** So the PC
+   woke by itself 11 s after sleeping, once the test had allowed USB devices to wake it (the first two tries, with
+   nothing set, stayed asleep): which device is not known (the FrankenPC has two Bluetooth adapters, on USB ports 1
+   and 10, and a USB Wi-Fi stick). **owneet-base 0.0.75:** the test also writes, at the start and after every sleep,
+   the USB devices allowed to wake the PC with their wake counts, the last wake's IRQ and the wake sources (checked in
+   the test VM). On OWNEETLOG. Next: a start with the stick (it also brings the console's journal of the 16:13 start,
+   for the "restart"), a minute, sleep without touching anything, then Guide if it stays asleep.
+   **Owner's fourth try (2026-11-13 16:24, log `owneet-20261113-162428`, owneet-base 0.0.75):** the screen went off,
+   about ten seconds later the fans and disks stopped, and a fraction of a second later the console came back to the
+   home screen as after a normal sleep; the controller had turned off and he turned it on by hand. **From the logs:**
+   S3 entered and left in the same instant (16:26:58); no USB device counted the wake, no IRQ, no wake source. The
+   FrankenPC has two Bluetooth adapters: the TP-Link UB500 (USB 1-1, RTL8761BU, the paired controller's) and an
+   unused Intel one (USB 1-10, 8087:0a2a, with its Wi-Fi card), which failed a command as the console went to sleep
+   (`hci1: Opcode 0x0c24 failed: -112`); the test had allowed both to wake the PC. **owneet-base 0.0.76:** only the
+   adapters with a paired device (and the USB devices above them) may wake the PC; the others are kept from it. On
+   OWNEETLOG. **Disk check (16:24 listings):** nothing new (packages' cache 192 files).
+   **Owner's fifth try (2026-11-13 16:33, log `owneet-20261113-163350`, owneet-base 0.0.76): no change**, woken the
+   instant it slept (16:36:11), with only the TP-Link adapter (1-1), its hub and XHC allowed and the Intel adapter
+   (1-10) kept from waking it; the Intel adapter still failed its command as the console went to sleep. Left: the
+   Intel adapter dropping off the bus (a change the hub wakes for), or the TP-Link adapter waking at once (known of
+   some Realtek adapters). **owneet-base 0.0.77, in stages, one per wake:** stage 1 the unused adapters switched off
+   in BlueZ; stage 2 their USB devices taken off the bus; stage 3 the adapter in use kept from waking too (if it still
+   wakes, the cause is not Bluetooth). On OWNEETLOG. **Disk check (16:33 listings):** nothing new (193 packages).
+   **Owner's sixth try (2026-11-13 16:51, log `owneet-20261113-165112`, owneet-base 0.0.77): it stayed asleep only at
+   stage 3, and then the controller could not wake it** (as expected). Stage 1 (the Intel adapter off) and stage 2
+   (taken off the bus) still woke at once (16:53:35, 16:54:02); stage 3 (the TP-Link adapter kept from waking) slept
+   until the power button (16:56:03). **Found:** the TP-Link UB500 (Realtek RTL8761BU) wakes the PC the instant it
+   sleeps whenever it is allowed to; no wake source records it. Feasibility on this hardware: not with little work
+   (the adapter's own behaviour). The test left the Intel adapter switched off in BlueZ (stage 1, kept by BlueZ) and
+   `WakeAllowed` on the controller. **Disk check (16:51 listings):** nothing new. The owner decides how to go on.
+   **Owner (2026-11-13): moved to Wave 2** ([[wave-2]] 22); restore what the test left (the controller, BlueZ, the
+   built-in adapter): owneet-base 0.0.78 with `owneet.debug.bt_wake=restore` (set on OWNEETLOG) switches every adapter
+   on and allows no paired device to wake the PC, at the next start with the stick (checked in the test VM).
+   **Closed** (2026-11-13): moved to Wave 2; the restore waits for the next start with the stick (then the switch is
+   taken off the stick).

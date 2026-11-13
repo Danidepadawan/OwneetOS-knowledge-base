@@ -54,6 +54,8 @@ Profile choices and their reasons are documented in the code repository (`iso/RE
   92% and `splash.shutting_down` under it) while it closes Steam and the games; then a moment of black (the hand-over) and the splash
   itself; Restart ends on "Starting". **Approved by the owner (2026-11-09).** In the console the screen lasts as long as the
   apps take to close (no fixed time: the demo's 6 s only stand for FrankenPC's Steam, [[waiting-for-events]]).
+  **Built (2026-11-13):** owneet-frontend 0.38.31 (`PoweringOff.qml`): every shutdown and restart, from the power options,
+  Settings and the updates.
 
 ## History
 
