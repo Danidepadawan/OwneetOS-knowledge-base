@@ -21,13 +21,13 @@ owner's.
 |---|---|---|
 | 2 | "Resume with the pointer" and "Close game" in the library | Built (owneet-frontend 0.38.30), on OWNEETLOG: to look at |
 | 3b | Wine's own programs (`C:\windows\…`) never counted as the game's | Built (owneetd 0.25.31), on OWNEETLOG: seen with the next Windows games |
-| 7 | Waking the console with the controller (step 6.10) | First try set nothing (test log too late); owneet-base 0.0.73 on OWNEETLOG: wait a minute, sleep, Guide |
+| 7 | Waking the console with the controller (step 6.10) | Two tries set nothing (the test came too late); owneet-base 0.0.74 on OWNEETLOG: to try again |
 
 ### Waits for the owner's decision
 
 | # | What | Where it stands |
 |---|---|---|
-| 3t, 3p | Junk on the disks: step 6.11, a simplified file manager in Settings → Advanced | Demo `6.11-file-manager.html`: to approve |
+| 3t, 3p | Junk on the disks: step 6.11, a simplified file manager in Settings → Advanced | Demo `6.11-file-manager.html`, second round (a grid of folders): to approve |
 
 ### To build or prepare (assistant)
 
@@ -140,6 +140,8 @@ status is kept in their own notes; this table follows them.
    **Disk check (2026-11-13 15:23 listings):** cut (no `complete.txt`, the home folder's listing ends early: the
    console went to sleep and was switched off before they ended); the readable part has nothing new (packages' cache
    189 files, 5 core dumps).
+   **Disk check (2026-11-13 15:49 listings, the console's disk whole, the SATA disk's not made: the console slept
+   first):** nothing new: 14 prefixes 7.6 GB, Proton's logs 1.5 GB, packages' cache 190 files, 5 core dumps.
 3t. **Junk on the disks: a new phase or step** (owner, 2026-11-11, from 3p's findings (a)-(d)): the system cannot find
    out by itself whether a save is still needed; so either a simplified file manager (needed anyway in wave 2) or a
    simple, elegant solution thought out together. A critical point just found: it gets a phase (or step) of its own.
@@ -163,6 +165,10 @@ status is kept in their own notes; this table follows them.
    downloads still queued cancelled from the console as today; old Proton and runtime left to Steam), **plus a first
    question before deleting Windows data: they may hold saves.** **Demo** `design/demos/6.11-file-manager.html`
    waits for the owner's approval ([[step-6.11-simplified-file-manager]]).
+   **Owner (2026-11-13), on the demo: not like that** (a list): a file manager like Windows' or Linux's, folder-shaped
+   icons in a grid, in the console's colours; the functions are right. **Second round** of the demo (the same file):
+   folders in the console's accent, documents with their kind, a grid, a bar under it with the selected item's size
+   and date. Waits for the owner's approval.
 3af. **A test of owneetd failed once** (2026-11-13, while building owneetd 0.25.31): `TestStopAndSourceGone`
    (`daemon/internal/installs`) timed out (5 s) waiting for an event during the package's build; the next build
    passed, and 80 more runs (with and without the race detector) did not fail. A test that fails by chance: its
@@ -185,6 +191,11 @@ status is kept in their own notes; this table follows them.
    woken 15:24:24 by other means). **owneet-base 0.0.73:** the test runs on its own as soon as BlueZ has its
    adapter (at most a minute) and writes what it did or why not; checked in the test VM (no adapter there: the
    message written after a minute). On OWNEETLOG; to try again: wait a minute on the home screen before sleep.
+   **Owner's second try (2026-11-13 15:49, log `owneet-20261113-154908`, owneet-base 0.0.73): not woken; again nothing
+   set** (no `.wake.txt`): the test came after the start's other work (the previous starts' journals, the minute's
+   wait), minutes on the FrankenPC, and the console slept at 15:51:21. Reproduced in the test VM with a real restart.
+   **owneet-base 0.0.74:** the test right after the journal starts; checked in the test VM with a real restart (the
+   file at once). On OWNEETLOG. The adapter has not been tried yet.
 8. **"Preparing" with a percentage for Steam downloads**: nice to have in Wave 1 if easy; demo first.
    [[step-4.2c-steam-without-its-interface]]
 9. **GitHub pages with every website update**: README, the repositories' description and topics; the

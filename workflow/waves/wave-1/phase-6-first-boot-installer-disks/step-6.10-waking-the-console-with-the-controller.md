@@ -28,3 +28,5 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **needs decision**
   again only after its first report, the console already asleep). owneet-base 0.0.73 runs the test on its own as
   soon as BlueZ has its adapter (at most a minute); the FrankenPC's adapter is a Realtek RTL8761BU (USB). To try
   again, a minute after the start.
+- **Second try (2026-11-13 15:49): nothing set again** (the test came after the start's other work, minutes on the
+  FrankenPC). owneet-base 0.0.74 runs it right after the journal starts (checked with a real restart in the test VM).
