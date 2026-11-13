@@ -19,8 +19,6 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 3m | No notification sound during the start-up animation | Fixed in the test VM: to check if it happens again |
-| 3x | Brightness slider removed from Settings → Display | Built: to look at |
 | 5 | The authors at the top of the console's Credits (3.9b) | Not shown on the console: CREDITS.md was in an old owneet-base; owneet-base 0.0.71 on OWNEETLOG: to look at |
 
 ### Waits for the owner's decision
@@ -97,10 +95,6 @@ status is kept in their own notes; this table follows them.
    wait at each file's end) is ruled out by the data. To confirm with the next logs (each disk's
    writes, the memory waiting to be written, /v1/moves: owneet-base 0.0.60); then what the console
    does about such disks is the owner's choice. [[step-6.6-moving-games-and-media-between-disks]]
-3m. **The notification's sound during the start-up animation** (owner, FrankenPC, 2026-11-10): a controller plugged in while
-   the animation played made the `notify` sound, which the owner had asked never to happen ("the other sounds removed while
-   the start-up sound plays"); hard to repeat, so tested by the assistant in the test VM. **Fixed** (owneet-frontend 0.38.12,
-   checked in the test VM with the sound recorded). [[step-7.6-final-logo-and-brand]]
 3p. **No junk on the disks** (owner, 2026-11-11): from the next test, the whole content of both disks (the console's
    SSD and the 2 TB SATA disk) is checked: no junk files of any kind may stay (leftovers of old downloads, traces of
    deleted things no longer needed); the disks must not fill up needlessly over time. Needs a full listing of each disk
@@ -143,10 +137,6 @@ status is kept in their own notes; this table follows them.
    prefix already left on the FrankenPC's disk by a game deleted before this rule is removed once, apart. (b) the
    testers' option `owneet.debug.windows_log=on` stays on for the tests; its old logs are part of this cleaning. Not built
    yet: it goes with this step's plan.
-3x. **The brightness slider does nothing** (owner, 2026-11-12): Settings → Display's brightness does not change
-   anything; **owner: remove it**, brightness comes back in Wave 2 ([[settings-screens]], [[wave-2]]). **Built**
-   (owneet-frontend 0.38.21, 2026-11-12): the slider removed from Settings → Display; owneetd keeps
-   `/v1/display/brightness` for Wave 2. Waits for the owner's look on the console.
 ## Decided, not built yet
 
 4. **"Shutting down" screen at once** (7.6b): demo `design/demos/7.6b-shutting-down.html` approved;

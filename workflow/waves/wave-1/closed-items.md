@@ -494,3 +494,13 @@ found here. Newest closings are added at the end.
    core dumps (3p e); on the SATA disk The Witcher 2's two folders (installers kept by design), Steam's games and its
    wanted downloads.
    **Closed** (2026-11-13): the owner's test (2026-11-13, log `owneet-20261113-132101`): Batman: Arkham Knight started from the console with Steam closed (Steam shown at 13:55:21 while it waited, the game at 13:55:42, in front at 13:55:54), Guide and Resume, Steam left: all passed.
+3m. **The notification's sound during the start-up animation** (owner, FrankenPC, 2026-11-10): a controller plugged in while
+   the animation played made the `notify` sound, which the owner had asked never to happen ("the other sounds removed while
+   the start-up sound plays"); hard to repeat, so tested by the assistant in the test VM. **Fixed** (owneet-frontend 0.38.12,
+   checked in the test VM with the sound recorded). [[step-7.6-final-logo-and-brand]]
+   **Closed** (2026-11-13): the owner (2026-11-13): it has not happened again in his tests.
+3x. **The brightness slider does nothing** (owner, 2026-11-12): Settings → Display's brightness does not change
+   anything; **owner: remove it**, brightness comes back in Wave 2 ([[settings-screens]], [[wave-2]]). **Built**
+   (owneet-frontend 0.38.21, 2026-11-12): the slider removed from Settings → Display; owneetd keeps
+   `/v1/display/brightness` for Wave 2. Waits for the owner's look on the console.
+   **Closed** (2026-11-13): the owner's look (2026-11-13): the slider is gone from Settings → Display.
