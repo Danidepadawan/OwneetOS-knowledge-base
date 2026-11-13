@@ -19,18 +19,16 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 3ad | A game installed in place keeps its cover while it installs | Built (owneetd 0.25.29, owneet-frontend 0.38.28), on OWNEETLOG: to test |
-| 3ad | Covers' titles on one line, scrolling when highlighted | Demo `3.7b-cover-title-scroll.html`: to approve |
-| 3ab | Home's big card with text size XL: buttons and title scroll | Built (owneet-frontend 0.38.27): to look at on the TV |
-| 3l | Games installed straight on their installer's disk (The Witcher 2 on the SATA disk) | Linux version installed there on 2026-11-13: to start it; the Windows one was installing |
-| 3v | Steam's shader preparation at a game's first start (Batman: Arkham Knight) | To test |
+| 3ae | Batman: Arkham Knight closed at its first start, then paused behind the home screen; the sound twice | Causes found, fixed (owneetd 0.25.30), on OWNEETLOG: to test |
+| 3v | Steam's shader preparation at a game's first start (Batman: Arkham Knight) | Cause found with 3ae, fixed (owneetd 0.25.30): to test |
+| 3ad | Covers' titles on one line, scrolling when highlighted | Demo 3.7b approved, built (owneet-frontend 0.38.29), on OWNEETLOG: to look at |
 | 3h | The copy's check and the original's removal with their percentages | Built: to test with a move |
 | 3o | Free space shown at once after a move, an uninstall, a deletion | Built: to test |
 | 3i | The details window: a long installer name shortened in the middle | Built: to look at |
 | 3m | No notification sound during the start-up animation | Fixed in the test VM: to check if it happens again |
 | 3x | Brightness slider removed from Settings → Display | Built: to look at |
-| 3d | Less room on the console's disk (2026-11-10) | Explained by 3l (the install went there by design): to close? |
-| 5 | The authors at the top of the console's Credits (3.9b) | Demo `3.9b-credits-authors.html`: to approve |
+| 3d | Less room on the console's disk (2026-11-10) | Explained (the install of 2026-11-09 went there by design, 3l): to close? |
+| 5 | The authors at the top of the console's Credits (3.9b) | Demo approved, built (owneet-frontend 0.38.29), on OWNEETLOG: to look at |
 
 ### Waits for the owner's decision
 
@@ -153,23 +151,6 @@ status is kept in their own notes; this table follows them.
    names differ now ("The Witcher 2: Assassin of kings", the Linux `.sh`; "The Witcher 2: Win", the Windows installer); in the
    test before, with the same name, the second install got " (2)". The owner installs and moves them only after the chosen file and the prefix's copy
    are built. [[step-6.6-moving-games-and-media-between-disks]]
-3l. **Installing The Witcher 2 "on the SATA disk"** (owner, 2026-11-10): an installer on any disk installs on the console's
-   own disk (by design, [[step-4.6-installers]]), so the install of 2026-11-09 went there by design, not by mistake (3d);
-   told the owner on 2026-11-10. Installing straight on another disk would be a new decision, if he wants one.
-   **Owner (2026-11-12): "obviously the game must be installable straight on the SATA disk"; it should have been there
-   by default: a fault, priority, built right after the current test** (The Witcher 2 moved to the SATA disk). How the
-   disk is chosen (the installer's own disk, a choice, …) to agree with him first ([[games-on-disk]]).
-   **Owner (2026-11-12): the user chooses where the installer goes; the game is installed where its installer is.**
-   Texts approved by the owner (2026-11-12): "La console lo installa su {disk} (circa {size})…", "{title} richiede circa
-   {size} su {disk}… oppure sposta l’installer su un altro disco.", "Su {disk} c’è già un gioco con questo nome.",
-   "{disk} è pieno: …", in the five languages. **Built:** owneetd 0.25.27 (a games folder at the top of a mounted disk as
-   the destination; free space of the installer's disk; read-only disk refused; installs cut short on an unplugged disk
-   kept; Go test), owneet-frontend 0.38.20 (in place on the installer's disk unless read only; known games' key files
-   fixed on any writable disk; the four texts). **Test VM:** an installer in "Disk Install: Test" on the second disk
-   ("GamesVM Games", ext4): the question said "installs it on GamesVM Games (about 31 MB)"; the folder renamed without
-   ":", the game installed there (nothing in the home folder), listed as "Disk Install: Test" on GamesVM Games, installed;
-   uninstalled there (only the installer left). Waits for the owner's test: The Witcher 2 installed straight on the SATA
-   disk.
 3m. **The notification's sound during the start-up animation** (owner, FrankenPC, 2026-11-10): a controller plugged in while
    the animation played made the `notify` sound, which the owner had asked never to happen ("the other sounds removed while
    the start-up sound plays"); hard to repeat, so tested by the assistant in the test VM. **Fixed** (owneet-frontend 0.38.12,
@@ -227,22 +208,16 @@ status is kept in their own notes; this table follows them.
    Batman: Arkham Knight (Steam), at its first start, while Proton compiled its shaders, the console went back to the
    library's page with nothing saying the game was still being prepared; the owner had to open Steam again to see that
    the process had not ended. Not looked at yet (no logs of that start read). [[step-4.2c-steam-without-its-interface]]
+   **Cause found (2026-11-13, 3ae):** at a game's first start Steam runs its install script with a launcher of the
+   game's id (`reaper SteamLaunch AppId=N Install=1`); owneetd took it for the game, stopped watching Steam's launch,
+   and when the script ended counted the game as closed (home screen), while Steam, hidden, went on to its shader
+   cache ("waiting for user response to ProcessingShaderCache"). **Fixed** in owneetd 0.25.30: the install script is
+   not a game, so Steam's launch is still watched and Steam (its shader page) is shown when it waits
+   ([[steam-game-loses-the-screen-at-its-first-start]]). Waits for the owner's test.
 3x. **The brightness slider does nothing** (owner, 2026-11-12): Settings → Display's brightness does not change
    anything; **owner: remove it**, brightness comes back in Wave 2 ([[settings-screens]], [[wave-2]]). **Built**
    (owneet-frontend 0.38.21, 2026-11-12): the slider removed from Settings → Display; owneetd keeps
    `/v1/display/brightness` for Wave 2. Waits for the owner's look on the console.
-3ab. **The home's big card with text size XL: buttons out of the card** (owner, FrankenPC 1366×768, 2026-11-13,
-   screenshot 10:21): with a game running, "Riprendi", "Riprendi col puntatore", "Chiudi il gioco" go past the card's
-   right edge. **Owner:** clip them and make them scroll; the same for the game's title. A change of look: demo first.
-   **Demo** `design/demos/3.6c-hero-card-fit.html` (2026-11-13): only when the card's content does not fit (after its
-   rows came closer, 3w d): the buttons are clipped at the card's edge with a soft edge where one is cut, and slide so
-   that the selected one is whole; the title goes on one line, ends with "…" and scrolls (3.3b's rule) while a button
-   of the card is selected. **Approved** (owner, 2026-11-13). **Built** (owneet-frontend 0.38.27, `HomePage.qml`; checked
-   with `tools/frontend-preview`, `home-card-fit.txt`: text size XL, a running game with a long title; with text size M the
-   card is as before). On OWNEETLOG with owneet-base 0.0.70 (the "witcher" search now enters every disk).
-   **Owner (2026-11-13), 3aa:** he deletes both copies of The Witcher 2 on the SATA disk and copies them again from the
-   USB disk with OWNEETLOG in; corrections are weighed after that test. Next tests: that copy, then Batman: Arkham
-   Knight's first start (3v). The logs on the stick name games not allowed: read, not kept; the owner cleans the stick.
 3ad. **The Windows version vanished from the library while it installs** (owner, FrankenPC, 2026-11-13 12:12; log
    `owneet-20261113-111127`): at 11:12 he deleted the three Witcher 2 folders on the SATA disk, at 11:12:36 copied both
    from the USB disk (two folders with ":"), at 12:04 asked to install both. owneetd renamed each folder to " - "
@@ -264,13 +239,40 @@ status is kept in their own notes; this table follows them.
    **scrolls**: one line, "…" when it does not fit, scrolling while the cover is highlighted (3.3b's rule), so the
    badge never sits over it; a change of look: **demo** `design/demos/3.7b-cover-title-scroll.html` waits for the
    owner's approval.
+   **Owner (2026-11-13):** every test of The Witcher 2 passed, (1) included (the Windows version installed in place on
+   the SATA disk, its cover kept): (1) closed. Demo 3.7b **approved**. **Built** (owneet-frontend 0.38.29,
+   `foundation/Cover.qml`: the title is a `FitText`; checked with `tools/frontend-preview`, `cover-titles.txt`: titles
+   end with "…", the highlighted one scrolls). On OWNEETLOG; waits for the owner's look.
 
+3ae. **Batman: Arkham Knight at its first start** (owner, FrankenPC, 2026-11-13; log `owneet-20261113-124039`): (a) started
+   with Steam closed, it "closed unexpectedly"; (b) started again with Steam open, it paused and could not be opened,
+   neither from the console nor from Steam; (c) leaving Steam (still running), the start sound played twice.
+   **From the logs:** (a) 12:59:25 owneetd logged "Steam game started" for Steam's install script (`reaper SteamLaunch
+   AppId=208650 Install=1 … iscriptevaluator.exe`), its window came at 12:59:39 and went at once, owneetd counted the
+   game as ended (12:59:40) and showed the home screen, while Steam, hidden, went on to "ProcessingShaderCache" and
+   waited: the game itself never started (3v). (b) 13:00:25 the game's window came, gamescope focused it, and 35 ms
+   later the home screen: Steam had written what gamescope shows using the ids it read back from the windows, which
+   owneetd sets (`STEAM_GAME`: 2124305299, the game, not 208650); owneetd did not know them, left the game out and
+   kept only Steam (hidden) and the home screen; the game paused without focus, and Steam's "resume" used the same
+   unknown id. (c) 13:01:34, after Guide held over Steam: Steam took the screen back for 6 ms before owneetd put the
+   home screen back; each "on screen" change was announced and the interface plays its sound on each return home.
+   **Fixed** (owneetd 0.25.30, Go tests): the install script is not a game; Steam's requests in owneetd's own ids are
+   understood, and a Steam game in front stays in front unless Steam names it; a focus gamescope shows for a moment
+   after someone else's write is not announced; Steam's requests are logged
+   ([[steam-game-loses-the-screen-at-its-first-start]]). On OWNEETLOG; waits for the owner's test (Batman: Arkham
+   Knight from the console, Steam closed first).
+   **Disk check (12:42 listing, during the Windows install):** nothing new: 14 Windows prefixes 7.9 GB (the 14th is The
+   Witcher 2's Windows version, in use), Proton's logs 1.4 GB (3p b), packages' cache 0.63 GB in 186 files (3p c), 5
+   core dumps (3p e); on the SATA disk The Witcher 2's two folders (installers kept by design), Steam's games and its
+   wanted downloads.
 ## Decided, not built yet
 
 4. **"Shutting down" screen at once** (7.6b): demo `design/demos/7.6b-shutting-down.html` approved;
    the code is missing. [[boot-experience]]
 5. **The authors at the top of the console's Credits** (3.9b): demo
-   `design/demos/3.9b-credits-authors.html` waits for the owner's approval. [[step-3.9-settings]]
+   `design/demos/3.9b-credits-authors.html` **approved** (owner, 2026-11-13). **Built** (owneet-frontend 0.38.29: the
+   new "Authors" table of `CREDITS.md`, `SystemInfo::authors()`, `CreditsSheet.qml`; checked with
+   `tools/frontend-preview`, `credits-authors.txt`). On OWNEETLOG; waits for the owner's look. [[step-3.9-settings]]
 6. **Cover pictures from a disk** (6.9): demo to do. [[step-6.9-cover-images-from-a-disk]]
 7. **Waking the console with Guide** (6.10): the owner said "let's try"; the test with the dongle to
    prepare. [[step-6.10-waking-the-console-with-the-controller]]

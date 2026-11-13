@@ -154,5 +154,6 @@ Up: [[phase-3-frontend]] · Status: **done**
 - **The authors in the console's credits (owner, 2026-11-09):** Settings → System → Credits and licences opens with the authors,
   Marco De Franco (fancy-dino) and Daniele De Padova (Danidepadawan), side by side at the same level, as on the website
   ([[website]]). Demo first: `design/demos/3.9b-credits-authors.html` (on the approved 6.7 settings demo; only the two names with
-  their GitHub accounts above the projects). Waits for the owner's approval; the step is not reopened (one addition).
+  their GitHub accounts above the projects). **Approved** (owner, 2026-11-13) and built (owneet-frontend 0.38.29: the
+  "Authors" table of `CREDITS.md`, read by `SystemInfo::authors()`); the step is not reopened (one addition).
   Also accepted the same day: Steam's virtual controller left out of the controllers ([[step-2.3-controller-input]]).

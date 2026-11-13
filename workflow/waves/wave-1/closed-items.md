@@ -342,3 +342,34 @@ found here. Newest closings are added at the end.
    selectable item around it is highlighted. Checked with `tools/frontend-preview` (`long-texts.txt`). Texts on two
    or more lines (e.g. covers' titles) keep "…" for now: asked the owner. Waits for the owner's look on the TV.
    **Closed** (2026-11-13): the owner's test (2026-11-12 18:06): the texts that scroll work. Texts on more lines (covers' titles): 3ad (2).
+3l. **Installing The Witcher 2 "on the SATA disk"** (owner, 2026-11-10): an installer on any disk installs on the console's
+   own disk (by design, [[step-4.6-installers]]), so the install of 2026-11-09 went there by design, not by mistake (3d);
+   told the owner on 2026-11-10. Installing straight on another disk would be a new decision, if he wants one.
+   **Owner (2026-11-12): "obviously the game must be installable straight on the SATA disk"; it should have been there
+   by default: a fault, priority, built right after the current test** (The Witcher 2 moved to the SATA disk). How the
+   disk is chosen (the installer's own disk, a choice, …) to agree with him first ([[games-on-disk]]).
+   **Owner (2026-11-12): the user chooses where the installer goes; the game is installed where its installer is.**
+   Texts approved by the owner (2026-11-12): "La console lo installa su {disk} (circa {size})…", "{title} richiede circa
+   {size} su {disk}… oppure sposta l’installer su un altro disco.", "Su {disk} c’è già un gioco con questo nome.",
+   "{disk} è pieno: …", in the five languages. **Built:** owneetd 0.25.27 (a games folder at the top of a mounted disk as
+   the destination; free space of the installer's disk; read-only disk refused; installs cut short on an unplugged disk
+   kept; Go test), owneet-frontend 0.38.20 (in place on the installer's disk unless read only; known games' key files
+   fixed on any writable disk; the four texts). **Test VM:** an installer in "Disk Install: Test" on the second disk
+   ("GamesVM Games", ext4): the question said "installs it on GamesVM Games (about 31 MB)"; the folder renamed without
+   ":", the game installed there (nothing in the home folder), listed as "Disk Install: Test" on GamesVM Games, installed;
+   uninstalled there (only the installer left). Waits for the owner's test: The Witcher 2 installed straight on the SATA
+   disk.
+   **Closed** (2026-11-13): the owner's test (2026-11-13): every test of The Witcher 2 passed, both versions installed straight on the SATA disk and started.
+3ab. **The home's big card with text size XL: buttons out of the card** (owner, FrankenPC 1366×768, 2026-11-13,
+   screenshot 10:21): with a game running, "Riprendi", "Riprendi col puntatore", "Chiudi il gioco" go past the card's
+   right edge. **Owner:** clip them and make them scroll; the same for the game's title. A change of look: demo first.
+   **Demo** `design/demos/3.6c-hero-card-fit.html` (2026-11-13): only when the card's content does not fit (after its
+   rows came closer, 3w d): the buttons are clipped at the card's edge with a soft edge where one is cut, and slide so
+   that the selected one is whole; the title goes on one line, ends with "…" and scrolls (3.3b's rule) while a button
+   of the card is selected. **Approved** (owner, 2026-11-13). **Built** (owneet-frontend 0.38.27, `HomePage.qml`; checked
+   with `tools/frontend-preview`, `home-card-fit.txt`: text size XL, a running game with a long title; with text size M the
+   card is as before). On OWNEETLOG with owneet-base 0.0.70 (the "witcher" search now enters every disk).
+   **Owner (2026-11-13), 3aa:** he deletes both copies of The Witcher 2 on the SATA disk and copies them again from the
+   USB disk with OWNEETLOG in; corrections are weighed after that test. Next tests: that copy, then Batman: Arkham
+   Knight's first start (3v). The logs on the stick name games not allowed: read, not kept; the owner cleans the stick.
+   **Closed** (2026-11-13): the owner's test (2026-11-13): the home's card at text size XL (buttons and title that scroll) solved.

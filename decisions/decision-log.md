@@ -336,3 +336,4 @@ Decisions by area: [[decisions/INDEX|decisions index]].
 | 2026-11-13 | The home's big card when its rows do not fit even 4 px apart: the title on one line, "…", scrolling while a button of the card is selected; the buttons clipped at the card's edge, sliding to the selected one (owner; demo 3.6c approved). | [[home-and-library]] |
 | 2026-11-13 | Covers' titles on one line: "…" when they do not fit, scrolling while the cover is highlighted, so the badge never sits over them (owner). Demo 3.7b first. | [[home-and-library]] |
 | 2026-11-13 | Open items: only the open ones stay in [[open-items]], with a table at the top of everything left before the first release (roadmap steps included); closed items move to [[closed-items]] (owner). | [[knowledge-base]] |
+| 2026-11-13 | Demos 3.7b (covers' titles on one line, scrolling when highlighted) and 3.9b (the authors first in the console's credits) approved (owner). | [[home-and-library]], [[step-3.9-settings]] |
