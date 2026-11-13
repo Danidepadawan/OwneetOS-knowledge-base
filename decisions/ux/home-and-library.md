@@ -42,3 +42,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-11-13 | The home's big card when its rows do not fit even 4 px apart (text size XL, a long title): the title on one line, "…", scrolling while a button of the card is selected; the buttons clipped at the card's edge, sliding to the selected one (owner's idea; demo 3.6c approved). |
 | 2026-11-13 | Covers' titles on one line, "…" when they do not fit, scrolling while the cover is highlighted (owner, after the badge was seen over a three-line title); demo 3.7b to approve. |
 | 2026-11-13 | Demo 3.7b (covers' titles on one line, scrolling when highlighted) approved. |
+| 2026-11-13 | The library's Options on the running game: "Resume", "Resume with the pointer", "Close game", then the usual options (demo 3.7c approved; the cover's badge and A = "Resume" not wanted). |

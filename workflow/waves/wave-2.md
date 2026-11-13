@@ -75,3 +75,6 @@ Scope agreed so far: [[wave-1-scope]] (later waves).
 - **20. Local pictures (owner, 2026-11-04):** looking at one's own pictures from a disk or a USB stick,
   next to the local videos and music of [[step-5.6-local-videos-and-music]]. Details and demo when it is
   planned.
+- **21. The file manager grows (owner, 2026-11-13):** Wave 1 has a very simplified file manager in Settings →
+  Advanced (going through folders, deleting: [[open-items]] 3t); Wave 2 adds downloading from the browser, moving
+  the downloaded files, extracting zip archives and renaming folders.

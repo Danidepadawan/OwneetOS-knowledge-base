@@ -4,7 +4,7 @@ description: "Automatic mounting of every disk, read-only dirty NTFS, moving gam
 area: games
 status: active
 decided: 2026-10-03
-updated: 2026-11-12
+updated: 2026-11-13
 legacy: "PROJECT_RULES.md §6 (mounting, moving)"
 tags: [decision, games, disks]
 ---
@@ -83,3 +83,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-11-10 | Demo 6.6e approved with one correction (owner): Home closes only the copy's window, the copy goes on behind it (top bar, covers, A shows it again, one copy at a time); everywhere else Guide keeps its meaning. A shutdown or restart during a copy is confirmed first; the copy then stops and its partial copy is removed (also when owneetd stops). |
 | 2026-11-10 | A copy whose own folders (prefix, DOS data) cannot be copied did not work: removed, the original untouched (owner). |
 | 2026-11-12 | A Windows game on an internal disk removed through the console with its installer: its prefix goes too, saves included; games on external disks keep prefix and saves, removed by the user with the file manager (owner). |
+| 2026-11-13 | Junk on the disks: a very simplified file manager in Settings → Advanced (folders, delete) in Wave 1, more in Wave 2 (download, move, unzip, rename); a slow disk stays slow, nothing to do for it (owner). |

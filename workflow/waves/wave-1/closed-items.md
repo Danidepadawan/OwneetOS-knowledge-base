@@ -513,3 +513,14 @@ found here. Newest closings are added at the end.
    table (the preview reads the repository's). **owneet-base 0.0.71** (the new `CREDITS.md` checked inside the
    package), on OWNEETLOG; waits for the owner's look. Watch: a change of `CREDITS.md` needs a new owneet-base.
    **Closed** (2026-11-13): the owner's look: the two authors shown at the top of the console's credits (owneet-base 0.0.71).
+3e. **A copy stuck at 29 %** (owner, 2026-11-10 11:01-11:13): a copy from the USB disk "GAMES-320" to
+   "2TB HDD SATA" stayed at 29 % and the owner stopped it (the partial copy was
+   removed). **Diagnosis (no change made, owner's request):** the copy was never paused nor blocked
+   (Stop worked in 130 ms); the USB disk read about 12 MB/s until 11:07:15, then stayed almost idle
+   (0.2-2 s busy every 12 s, about 0.5 MB/s): the copy waited on its writes. The 2 TB disk is a
+   Seagate ST2000DM008, a drive-managed SMR model: after a few GB written at once it slows down to
+   well under 1 MB/s while it rewrites its tracks (about 3.7 GB had been written). The first guess (the
+   wait at each file's end) is ruled out by the data. To confirm with the next logs (each disk's
+   writes, the memory waiting to be written, /v1/moves: owneet-base 0.0.60); then what the console
+   does about such disks is the owner's choice. [[step-6.6-moving-games-and-media-between-disks]]
+   **Closed** (2026-11-13): the owner's choice: nothing to do, a slow disk stays slow.

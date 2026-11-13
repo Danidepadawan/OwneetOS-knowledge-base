@@ -19,15 +19,14 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 2 | "Resume with the pointer" in the library | Demo `3.7c-library-resume-pointer.html`: to approve, and the two extras to choose |
+| 2 | "Resume with the pointer" (and "Close game") in the library | Demo 3.7c approved; its second round with "Close game": to approve |
 
 ### Waits for the owner's decision
 
 | # | What | Where it stands |
 |---|---|---|
 | 3b | Wine's own programs (`C:\windows\…`) counted as the game's | Fix proposed |
-| 3e | A copy to a slow SMR disk looks stuck | Diagnosis done: what the console does about such disks |
-| 3t, 3p | Junk on the disks (old prefixes, logs, packages' cache, core dumps) | A phase or step to plan together; nothing cleaned meanwhile |
+| 3t, 3p | Junk on the disks: a simplified file manager in Settings → Advanced (owner, 2026-11-13) | How it is shown, which folders, where in the plan: proposal to the owner |
 | 7 | Waking the console with the controller (step 6.10, `needs-decision`) | "Let's try": the test with the dongle to prepare |
 
 ### To build or prepare (assistant)
@@ -80,6 +79,9 @@ status is kept in their own notes; this table follows them.
    usual options; the pointer's help the first time, as from the home screen. Two extras, off unless the owner wants
    them: "Close game" in Options too; on the library's cover the "Running" badge and A = "Resume" in the prompt bar, as
    on the home screen. Waits for the owner's approval.
+   **Owner (2026-11-13): approved; "Close game" added too (with the home screen's question, Cancel selected); the
+   cover's badge and A = "Resume" dropped.** Second round of the demo (the same file): Options on the running game
+   offer "Resume", "Resume with the pointer", "Close game", then the usual options. Waits for the owner's approval.
 3. **Netflix / YouTube not silent behind the home screen**: left to Danidepadawan with the web apps
    (owner, 2026-11-09). [[step-4.5-windows-games-proton]]
 3b. **Wine's own programs followed as the game's** (found in the owner's test log, 2026-11-09 21:50): the
@@ -90,16 +92,6 @@ status is kept in their own notes; this table follows them.
    2026-11-10: the original removed after a copy, with no error; the choice of
    games, item 1 of 2026-11-09, confirmed too): left, a USB disk that Windows left read only, to check
    in the test VM (the owner has no Windows disk). [[step-6.6-moving-games-and-media-between-disks]]
-3e. **A copy stuck at 29 %** (owner, 2026-11-10 11:01-11:13): a copy from the USB disk "GAMES-320" to
-   "2TB HDD SATA" stayed at 29 % and the owner stopped it (the partial copy was
-   removed). **Diagnosis (no change made, owner's request):** the copy was never paused nor blocked
-   (Stop worked in 130 ms); the USB disk read about 12 MB/s until 11:07:15, then stayed almost idle
-   (0.2-2 s busy every 12 s, about 0.5 MB/s): the copy waited on its writes. The 2 TB disk is a
-   Seagate ST2000DM008, a drive-managed SMR model: after a few GB written at once it slows down to
-   well under 1 MB/s while it rewrites its tracks (about 3.7 GB had been written). The first guess (the
-   wait at each file's end) is ruled out by the data. To confirm with the next logs (each disk's
-   writes, the memory waiting to be written, /v1/moves: owneet-base 0.0.60); then what the console
-   does about such disks is the owner's choice. [[step-6.6-moving-games-and-media-between-disks]]
 3p. **No junk on the disks** (owner, 2026-11-11): from the next test, the whole content of both disks (the console's
    SSD and the 2 TB SATA disk) is checked: no junk files of any kind may stay (leftovers of old downloads, traces of
    deleted things no longer needed); the disks must not fill up needlessly over time. Needs a full listing of each disk
@@ -146,6 +138,10 @@ status is kept in their own notes; this table follows them.
    prefix already left on the FrankenPC's disk by a game deleted before this rule is removed once, apart. (b) the
    testers' option `owneet.debug.windows_log=on` stays on for the tests; its old logs are part of this cleaning. Not built
    yet: it goes with this step's plan.
+   **Owner (2026-11-13):** a new entry in Settings → "Advanced": a **very simplified file manager**, only to go through
+   the folders and delete; Wave 2 adds downloading from the browser, moving the downloaded files, extracting zip
+   archives and renaming folders ([[wave-2]] 21). To agree next: how it is shown (proposal to the owner, then a demo),
+   which folders it shows, and where it goes in the plan.
 ## Decided, not built yet
 
 4. **"Shutting down" screen at once** (7.6b): demo `design/demos/7.6b-shutting-down.html` approved;
@@ -153,6 +149,7 @@ status is kept in their own notes; this table follows them.
 6. **Cover pictures from a disk** (6.9): demo to do. [[step-6.9-cover-images-from-a-disk]]
 7. **Waking the console with Guide** (6.10): the owner said "let's try"; the test with the dongle to
    prepare. [[step-6.10-waking-the-console-with-the-controller]]
+   **Owner (2026-11-13):** see whether it is feasible without too much work: assessment given to the owner the same day.
 8. **"Preparing" with a percentage for Steam downloads**: nice to have in Wave 1 if easy; demo first.
    [[step-4.2c-steam-without-its-interface]]
 9. **GitHub pages with every website update**: README, the repositories' description and topics; the
