@@ -462,6 +462,18 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
 3ac. **Owner's test of 2026-11-13:** the Steam game started and came to the front (3z works); next, a game whose shaders
    take long the first time (as Batman: Arkham Knight, 3v). The display area: all right. Text size XL: all right apart
    from 3ab. The Witcher 2 on the SATA disk: after 3aa's fix.
+3ad. **The Windows version vanished from the library while it installs** (owner, FrankenPC, 2026-11-13 12:12; log
+   `owneet-20261113-111127`): at 11:12 he deleted the three Witcher 2 folders on the SATA disk, at 11:12:36 copied both
+   from the USB disk (two folders with ":"), at 12:04 asked to install both. owneetd renamed each folder to " - "
+   (`game folder renamed`) and queued them; the Linux one was installed at 12:12:20, then the Windows installer started
+   (`/VERYSILENT`, 21 GB). The games list is read again only on `installs.changed`: at 12:12:20 the Windows folder
+   already had `.owneet-installing`, which the disk games provider never lists, so its card ("In attesa" until then)
+   vanished. Not lost: the folder and its installer are there, and the card comes back when the install ends. Cause:
+   the rule "a folder being installed is not listed, its installer shows the progress" ([[owneetd-api-installs]])
+   dates from installs into the home folder; since 2026-11-12 games install in place, the installer is inside that
+   folder, so nothing shows the progress. Also seen (screenshot 12:11:57): on the first card the "Locale" badge sits
+   over the three-line title "The Witcher 2: Assassin of kings". The 3aa cause confirmed: a copy keeps ":", the
+   install renames to " - ". Fix to agree with the owner.
 3q. **The Witcher 2 Linux version does not install** (owner, FrankenPC, 2026-11-11): "the game could not be installed",
    twice (the second time with OWNEETLOG plugged in while the console ran: the logs start only with a stick in at the
    start, so neither attempt is on the stick; the console still ran yesterday's versions, the update comes from the
