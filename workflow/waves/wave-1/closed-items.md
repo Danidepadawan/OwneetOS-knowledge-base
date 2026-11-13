@@ -504,3 +504,12 @@ found here. Newest closings are added at the end.
    (owneet-frontend 0.38.21, 2026-11-12): the slider removed from Settings → Display; owneetd keeps
    `/v1/display/brightness` for Wave 2. Waits for the owner's look on the console.
    **Closed** (2026-11-13): the owner's look (2026-11-13): the slider is gone from Settings → Display.
+5. **The authors at the top of the console's Credits** (3.9b): demo
+   `design/demos/3.9b-credits-authors.html` **approved** (owner, 2026-11-13). **Built** (owneet-frontend 0.38.29: the
+   new "Authors" table of `CREDITS.md`, `SystemInfo::authors()`, `CreditsSheet.qml`; checked with
+   `tools/frontend-preview`, `credits-authors.txt`). On OWNEETLOG; waits for the owner's look. [[step-3.9-settings]]
+   **Owner's test (2026-11-13): the names are not shown.** Cause: `CREDITS.md` reaches the console in **owneet-base**
+   (`/usr/share/doc/owneetos/CREDITS.md`), which was not built again, so the console had the file without the Authors
+   table (the preview reads the repository's). **owneet-base 0.0.71** (the new `CREDITS.md` checked inside the
+   package), on OWNEETLOG; waits for the owner's look. Watch: a change of `CREDITS.md` needs a new owneet-base.
+   **Closed** (2026-11-13): the owner's look: the two authors shown at the top of the console's credits (owneet-base 0.0.71).

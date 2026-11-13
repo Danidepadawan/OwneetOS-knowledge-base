@@ -19,7 +19,6 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 5 | The authors at the top of the console's Credits (3.9b) | Not shown on the console: CREDITS.md was in an old owneet-base; owneet-base 0.0.71 on OWNEETLOG: to look at |
 
 ### Waits for the owner's decision
 
@@ -127,6 +126,10 @@ status is kept in their own notes; this table follows them.
    cache 188 files, 5 core dumps; Steam's wanted downloads and its shader caches. At 14:06 the owner uninstalled The
    Witcher 2's Windows version and deleted its folder (SATA disk): whether its prefix (`the-witcher-2-win-b264e729e7`)
    went with it (3t (a)) is seen in the next listing.
+   **Disk check (2026-11-13 14:41 listings):** that prefix stayed (2.06 GB): expected, 3t (a) (an internal disk's
+   Windows game takes its prefix with it) is not built yet; it joins the junk to clean in 3t. Otherwise nothing new:
+   14 prefixes 7.6 GB, Proton's logs 1.5 GB, packages' cache 189 files, 5 core dumps; on the SATA disk only The Witcher
+   2's Linux version and Steam's library (its wanted downloads grew by about 13 GB).
 3t. **Junk on the disks: a new phase or step** (owner, 2026-11-11, from 3p's findings (a)-(d)): the system cannot find
    out by itself whether a save is still needed; so either a simplified file manager (needed anyway in wave 2) or a
    simple, elegant solution thought out together. A critical point just found: it gets a phase (or step) of its own.
@@ -141,14 +144,6 @@ status is kept in their own notes; this table follows them.
 
 4. **"Shutting down" screen at once** (7.6b): demo `design/demos/7.6b-shutting-down.html` approved;
    the code is missing. [[boot-experience]]
-5. **The authors at the top of the console's Credits** (3.9b): demo
-   `design/demos/3.9b-credits-authors.html` **approved** (owner, 2026-11-13). **Built** (owneet-frontend 0.38.29: the
-   new "Authors" table of `CREDITS.md`, `SystemInfo::authors()`, `CreditsSheet.qml`; checked with
-   `tools/frontend-preview`, `credits-authors.txt`). On OWNEETLOG; waits for the owner's look. [[step-3.9-settings]]
-   **Owner's test (2026-11-13): the names are not shown.** Cause: `CREDITS.md` reaches the console in **owneet-base**
-   (`/usr/share/doc/owneetos/CREDITS.md`), which was not built again, so the console had the file without the Authors
-   table (the preview reads the repository's). **owneet-base 0.0.71** (the new `CREDITS.md` checked inside the
-   package), on OWNEETLOG; waits for the owner's look. Watch: a change of `CREDITS.md` needs a new owneet-base.
 6. **Cover pictures from a disk** (6.9): demo to do. [[step-6.9-cover-images-from-a-disk]]
 7. **Waking the console with Guide** (6.10): the owner said "let's try"; the test with the dongle to
    prepare. [[step-6.10-waking-the-console-with-the-controller]]
