@@ -435,6 +435,10 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    its top and the console's own files in it (install marks, game.txt, gameinfo), the user's start choices
    (`disk-games.json`) and owneetd's installs; the journals of the five previous starts (were three), to find when it
    happened. On OWNEETLOG; waits for the owner's start with the stick, before his tests of The Witcher 2.
+   **Owner (2026-11-13):** he downloaded it last night, without the stick; check every folder about The Witcher 2,
+   then, once the tests are over, find a fix for the doubled folder. **owneet-base 0.0.69** (checked in the test VM):
+   the report also lists everything named after The Witcher 2 on every disk (each folder: size, files, date, top, the
+   console's own files; each file with "witcher" in its name). On OWNEETLOG.
 3q. **The Witcher 2 Linux version does not install** (owner, FrankenPC, 2026-11-11): "the game could not be installed",
    twice (the second time with OWNEETLOG plugged in while the console ran: the logs start only with a stick in at the
    start, so neither attempt is on the stick; the console still ran yesterday's versions, the update comes from the
