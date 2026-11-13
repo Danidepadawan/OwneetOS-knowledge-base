@@ -388,6 +388,12 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    down to 4 px only when they do not fit with 30 px above and below; checked with `tools/frontend-preview`
    (`home-long-title.txt`, `@longtitle`): at text size XL with a two-line title the label stays inside the card,
    about 8 px from its top edge on the 1280×720 grid (4 px is the least space between rows). Waits for the owner's look.
+   **Owner's test (2026-11-12 18:06, `owneet-20261112-180643`, FrankenPC, 1366×768):** the long texts that scroll and
+   the prompt bar work; the screenshots every 30 s work (seven saved, 31 to 82 s apart while the log's other work ran);
+   the home's card not checked (the Steam game he started did not come to the front: 3z); the display area at the next
+   test. **New cut, from his screenshots:** in the library, with the grid scrolled down, the covers scrolled up cut the
+   bottom edge of the filters: the grid started 2 px over the filter bar. **Fixed** (owneet-frontend 0.38.26): the grid
+   starts right under the filters, the covers 16 px below as before (no change of look).
    **Screenshot every 30 seconds built** (owneet-base 0.0.67): `owneet-testlog` asks gamescope
    (`gamescopectl screenshot`) and keeps the last 240 in `owneet-<start>.screens/HHMMSS.png` on the stick; checked in
    the test VM (one every 31-32 s; the VM's pictures are black, it has no graphics card).
@@ -413,6 +419,15 @@ it (or dropped it), and its step note says so. Order of work: the owner's.
    theme drawn inside the area (`Theme.areaX` / `areaY`, saved; the frontend's `main.qml` places the theme, the
    background painted to the screen's edges), "Show TV safe area" removed; checked with `tools/frontend-preview`
    (`tools/preview-steps/display-area.txt`). Waits for the owner's look on the TV.
+3z. **A Steam game started, never shown** (owner, FrankenPC, 2026-11-12 18:09): My Little Puppy (Steam, on the SATA
+   disk) "did not start". **From the logs:** it did start and ran almost 4 minutes, its window behind Steam's page;
+   Steam's new client starts games in a systemd scope of their own, out of Steam's unit, so owneetd never noticed the
+   game ([[steam-game-runs-hidden-behind-steam]]). **Fixed** in owneetd 0.25.28 (`unitOfCgroup`). Waits for the
+   owner's check. May also explain 3v.
+   **Disk check (2026-11-12 18:06 listings):** nothing new since 12:48: the same 13 Windows prefixes and Proton logs
+   (3p a, b), the packages' cache 0.60 GB in 176 files (3 more, 3p c), 5 core dumps 0.11 GB (3p e); on the SATA disk
+   Steam's wanted downloads (42.5 GB), shader caches 5.0 GB, the new game's prefix (Steam's `compatdata`), The Witcher
+   2's installer.
 3q. **The Witcher 2 Linux version does not install** (owner, FrankenPC, 2026-11-11): "the game could not be installed",
    twice (the second time with OWNEETLOG plugged in while the console ran: the logs start only with a stick in at the
    start, so neither attempt is on the stick; the console still ran yesterday's versions, the update comes from the
