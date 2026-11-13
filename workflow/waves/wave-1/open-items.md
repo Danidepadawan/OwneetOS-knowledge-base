@@ -19,16 +19,13 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 2 | "Resume with the pointer" and "Close game" in the library | Built (owneet-frontend 0.38.30), on OWNEETLOG: to look at |
-| 4 | "Shutting down" at once (7.6b) | Built (owneet-frontend 0.38.31), on OWNEETLOG: to look at |
-| 7 | Bluetooth restored after the wake test (6.10 moved to Wave 2) | owneet-base 0.0.78 on OWNEETLOG: one start with the stick |
+| 3t, 3p | Step 6.11: the simplified file manager, the console cleaning its own leftovers | Built (owneet-frontend 0.38.32, owneet-base 0.0.79), on OWNEETLOG: to test; the prefix rule left |
 | 3b | Wine's own programs (`C:\windows\…`) never counted as the game's | Built (owneetd 0.25.31), on OWNEETLOG: seen with the next Windows games |
 
 ### Waits for the owner's decision
 
 | # | What | Where it stands |
 |---|---|---|
-| 3t, 3p | Junk on the disks: step 6.11, a simplified file manager in Settings → Advanced | Demo 6.11 approved: building it waits for the owner's go |
 
 ### To build or prepare (assistant)
 
@@ -57,7 +54,7 @@ owner's.
 | [[step-5.6-local-videos-and-music\|5.6]] | Local videos and music | todo |
 | [[step-5.7-apps-page\|5.7]] | Apps page | todo |
 | [[step-6.9-cover-images-from-a-disk\|6.9]] | Cover images from a disk (item 6) | todo |
-| [[step-6.11-simplified-file-manager\|6.11]] | A simplified file manager (items 3t, 3p) | todo |
+| [[step-6.11-simplified-file-manager\|6.11]] | A simplified file manager (items 3t, 3p) | in-progress |
 | [[step-7.3-user-guide\|7.3]] | User guide | in-progress |
 | [[step-7.4-hardware-testing-and-v0.1.0\|7.4]] | Hardware testing and v0.1.0 | todo |
 | [[step-7.5-legal-review-before-the-public-launch\|7.5]] | Legal review before the public launch | in-progress |
@@ -72,21 +69,6 @@ status is kept in their own notes; this table follows them.
 
 ## The owner's reports, in detail
 
-2. **"Resume with the pointer" in the library**: missing there. Demo first.
-   [[step-6.8-games-on-disk-delete-and-progress]]
-   **Demo** `design/demos/3.7c-library-resume-pointer.html` (2026-11-13; today the library's Options on the running
-   game offer "Play, Details, Move, Favorite"): Options on the running game offer what the home screen's card offers,
-   "Resume" first (instead of "Play"), then "Resume with the pointer" ("Turn the pointer off" while it is on), then the
-   usual options; the pointer's help the first time, as from the home screen. Two extras, off unless the owner wants
-   them: "Close game" in Options too; on the library's cover the "Running" badge and A = "Resume" in the prompt bar, as
-   on the home screen. Waits for the owner's approval.
-   **Owner (2026-11-13): approved; "Close game" added too (with the home screen's question, Cancel selected); the
-   cover's badge and A = "Resume" dropped.** Second round of the demo (the same file): Options on the running game
-   offer "Resume", "Resume with the pointer", "Close game", then the usual options. Waits for the owner's approval.
-   **Owner (2026-11-13): second round approved. Built** (owneet-frontend 0.38.30, `theme.qml` `showOptions`; checked with
-   `tools/frontend-preview`, `library-running-options.txt`: Resume, Resume with the pointer, Close game with its
-   question, then the usual options; another game keeps Play). The window lays its buttons out as every Options
-   window does (in rows that fill its width). On OWNEETLOG; waits for the owner's look.
 3. **Netflix / YouTube not silent behind the home screen**: left to Danidepadawan with the web apps
    (owner, 2026-11-09). [[step-4.5-windows-games-proton]]
 3b. **Wine's own programs followed as the game's** (found in the owner's test log, 2026-11-09 21:50): the
@@ -139,6 +121,8 @@ status is kept in their own notes; this table follows them.
    **Disk check (2026-11-13 15:23 listings):** cut (no `complete.txt`, the home folder's listing ends early: the
    console went to sleep and was switched off before they ended); the readable part has nothing new (packages' cache
    189 files, 5 core dumps).
+   **Disk check (2026-11-13 17:23 listings):** nothing new (packages' cache 196 files: from owneet-base 0.0.79 the
+   console keeps two versions of each).
    **Disk check (2026-11-13 15:49 listings, the console's disk whole, the SATA disk's not made: the console slept
    first):** nothing new: 14 prefixes 7.6 GB, Proton's logs 1.5 GB, packages' cache 190 files, 5 core dumps.
 3t. **Junk on the disks: a new phase or step** (owner, 2026-11-11, from 3p's findings (a)-(d)): the system cannot find
@@ -170,6 +154,10 @@ status is kept in their own notes; this table follows them.
    and date. Waits for the owner's approval.
    **Owner (2026-11-13): the second round of the demo is approved** ("perfect"). Building it is step 6.11's work:
    waits for the owner's go.
+   **Owner (2026-11-13): build it after item 4.** Built in owneet-frontend 0.38.32 (the file manager) and owneet-base
+   0.0.79 (the packages' cache and crash dumps cleaned by the console), details in
+   [[step-6.11-simplified-file-manager]]; on OWNEETLOG; waits for the owner's test. Left: the prefix removed with a
+   Windows game on an internal disk (3t (a)).
 3af. **A test of owneetd failed once** (2026-11-13, while building owneetd 0.25.31): `TestStopAndSourceGone`
    (`daemon/internal/installs`) timed out (5 s) waiting for an event during the package's build; the next build
    passed, and 80 more runs (with and without the race detector) did not fail. A test that fails by chance: its
@@ -177,11 +165,6 @@ status is kept in their own notes; this table follows them.
 
 ## Decided, not built yet
 
-4. **"Shutting down" screen at once** (7.6b): demo `design/demos/7.6b-shutting-down.html` approved;
-   the code is missing. [[boot-experience]]
-   **Owner (2026-11-13): go. Built** (owneet-frontend 0.38.31: `PoweringOff.qml`, `powerNow` in `theme.qml` for every
-   shutdown and restart, the splash's colours as tokens `Theme.splashLogo` / `splashInk`; checked with
-   `tools/frontend-preview`, `shutting-down.txt`). On OWNEETLOG; waits for the owner's look (a shutdown and a restart).
 6. **Cover pictures from a disk** (6.9): demo to do. [[step-6.9-cover-images-from-a-disk]]
 8. **"Preparing" with a percentage for Steam downloads**: nice to have in Wave 1 if easy; demo first.
    [[step-4.2c-steam-without-its-interface]]

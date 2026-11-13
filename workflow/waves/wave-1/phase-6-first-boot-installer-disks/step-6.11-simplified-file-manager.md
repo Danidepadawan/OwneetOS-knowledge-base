@@ -3,12 +3,12 @@ type: step
 description: "Junk on the disks: a very simplified file manager in Settings → Advanced (places named for the user, going through folders, deleting), and the console cleaning its own system leftovers by itself."
 phase: "[[phase-6-first-boot-installer-disks]]"
 step: "6.11"
-status: todo
+status: in-progress
 tags: [step, phase-6]
 ---
 # 6.11 A simplified file manager *(added 2026-11-13)*
 
-Up: [[phase-6-first-boot-installer-disks]] · Status: **to do**
+Up: [[phase-6-first-boot-installer-disks]] · Status: **in progress**
 
 - **Why (owner, 2026-11-11 / 2026-11-13):** no junk may stay on the disks ([[open-items]] 3p, 3t); the system
   cannot tell by itself whether a save is still needed, so the user decides, with a simple tool.
@@ -36,3 +36,21 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **to do**
   console's colours (the first round's list was not wanted). Second round of the demo: folders in the accent colour
   (the places with a small emblem), documents with their kind, a bar under the grid with the selected item's size
   and date. **Approved** (owner, 2026-11-13).
+- **Started (owner, 2026-11-13: after item 4).** **Built:**
+  - owneet-frontend 0.38.32: Settings → **Advanced** (a ninth section, icon `sliders`) → **File manager**
+    (`FileManager.qml`): the places, a grid of folder icons in the accent (the places with an emblem), documents with
+    their kind, a bar with the selected item's name, kind, size and date; A opens only a games folder's folders, B
+    goes up (closes on the places), Options → Delete; Delete asks with the room it frees and the item's own disk
+    (Cancel selected); Windows data (the console's prefixes and Steam's `compatdata`) first ask "It may hold saves";
+    Steam's leftovers only with Steam closed; nothing on a read-only disk; a deletion in a games folder reads the games
+    again. The Windows data and logs are named after their game (`files.windowsPrefix` of every Windows game), else
+    after their folder ("Game no longer here"); Steam's leftovers after the owned game, else "Steam app {id}".
+    `owneet::FileManager` (`files` in QML): `places()`, `list()` and `remove()` on a thread of their own, only inside
+    the places (never a place itself, links not followed), the disk synced after a deletion. Texts in five languages.
+    Checked with `tools/frontend-preview` (`file-manager.txt` with `@files`; `settings-advanced-xl.txt`: the nine
+    sections fit at text size XL on the 1280×720 grid, the last one close to the prompt bar).
+  - owneet-base 0.0.79: a pacman hook keeps the newest two versions of each package in the cache
+    (`owneet-clean-cache`, checked in the builder VM with versions, releases and epochs); crash dumps at most 100 MB
+    (`coredump.conf.d`).
+  - **Left in this step:** a Windows game removed from an internal disk takes its prefix with it ([[disks]],
+    2026-11-12; owneetd); and the owner's test on the FrankenPC.

@@ -54,3 +54,5 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **todo** (Wave 2)
   to; whether it works depends on the adapter, not on the console ([[wave-2]] 22). What the test left in BlueZ (the
   Intel adapter switched off, `WakeAllowed` on the controller) is undone by owneet-base 0.0.78's
   `owneet.debug.bt_wake=restore` at the next start with the stick; the test's code stays in the test log for Wave 2.
+- **Restored (2026-11-13 17:23, `owneet-20261113-172345.wake.txt`):** both adapters switched on, `WakeAllowed` false on
+  the controller; the switch taken off the stick.

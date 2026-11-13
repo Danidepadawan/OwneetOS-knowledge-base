@@ -583,3 +583,25 @@ found here. Newest closings are added at the end.
    on and allows no paired device to wake the PC, at the next start with the stick (checked in the test VM).
    **Closed** (2026-11-13): moved to Wave 2; the restore waits for the next start with the stick (then the switch is
    taken off the stick).
+2. **"Resume with the pointer" in the library**: missing there. Demo first.
+   [[step-6.8-games-on-disk-delete-and-progress]]
+   **Demo** `design/demos/3.7c-library-resume-pointer.html` (2026-11-13; today the library's Options on the running
+   game offer "Play, Details, Move, Favorite"): Options on the running game offer what the home screen's card offers,
+   "Resume" first (instead of "Play"), then "Resume with the pointer" ("Turn the pointer off" while it is on), then the
+   usual options; the pointer's help the first time, as from the home screen. Two extras, off unless the owner wants
+   them: "Close game" in Options too; on the library's cover the "Running" badge and A = "Resume" in the prompt bar, as
+   on the home screen. Waits for the owner's approval.
+   **Owner (2026-11-13): approved; "Close game" added too (with the home screen's question, Cancel selected); the
+   cover's badge and A = "Resume" dropped.** Second round of the demo (the same file): Options on the running game
+   offer "Resume", "Resume with the pointer", "Close game", then the usual options. Waits for the owner's approval.
+   **Owner (2026-11-13): second round approved. Built** (owneet-frontend 0.38.30, `theme.qml` `showOptions`; checked with
+   `tools/frontend-preview`, `library-running-options.txt`: Resume, Resume with the pointer, Close game with its
+   question, then the usual options; another game keeps Play). The window lays its buttons out as every Options
+   window does (in rows that fill its width). On OWNEETLOG; waits for the owner's look.
+   **Closed** (2026-11-13): the owner's test (2026-11-13): Resume, Resume with the pointer and Close game in the library's Options.
+4. **"Shutting down" screen at once** (7.6b): demo `design/demos/7.6b-shutting-down.html` approved;
+   the code is missing. [[boot-experience]]
+   **Owner (2026-11-13): go. Built** (owneet-frontend 0.38.31: `PoweringOff.qml`, `powerNow` in `theme.qml` for every
+   shutdown and restart, the splash's colours as tokens `Theme.splashLogo` / `splashInk`; checked with
+   `tools/frontend-preview`, `shutting-down.txt`). On OWNEETLOG; waits for the owner's look (a shutdown and a restart).
+   **Closed** (2026-11-13): the owner's test (2026-11-13): "Shutting down" at once, shutdown and restart.
