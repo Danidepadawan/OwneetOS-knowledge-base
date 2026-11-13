@@ -22,5 +22,6 @@ Plan and status legend: [[wave-1]]. Scope: [[wave-1-scope]].
 
 ## Notes
 
-- [[open-items]] — Every open item of Wave 1 in one list: the owner's reports not solved yet, decided work not built, postponed tests. Read it at the start of a session; update it in the same change as any report or fix.
+- [[closed-items]] — The Wave 1 open items that are closed: the owner's reports solved and confirmed, with their whole history. Read it when an old item number (e.g. 3u) is named; the open ones are in open-items.
+- [[open-items]] — Everything left before the first release (v0.1.0): the owner's open reports, agreed work not built, put-off tests and the roadmap steps not done, at a glance and then in detail. Read it at the start of a session; update it in the same change as any report or fix.
 - [[wave-1]] — The Wave 1 plan: scope, status legend, phases.

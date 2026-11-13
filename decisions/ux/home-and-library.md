@@ -4,7 +4,7 @@ description: "Overflow rule, library disks summary and Disks window, offline ico
 area: ux
 status: active
 decided: 2026-10-09
-updated: 2026-11-12
+updated: 2026-11-13
 legacy: "PROJECT_RULES.md §9 (overflow), §13 (2026-10-09)"
 tags: [decision, ux]
 ---
@@ -20,6 +20,10 @@ tags: [decision, ux]
   without Wi-Fi), not by hiding it.
 - **Details window:** a value too long for the window (an installer's file name) is shortened in the
   middle with "…"; the window keeps its width (owner, 2026-11-10).
+- **Covers' titles** (owner, 2026-11-13, open item 3ad): one line; a title that does not fit ends
+  with "…" and scrolls while its cover is highlighted (the rule of [[design-direction]] for long
+  texts), so the source badge never sits over it. A change of look: demo
+  `design/demos/3.7b-cover-title-scroll.html`, waiting for the owner's approval; not built yet.
 - Library filters and "Add games": [[game-library]].
 
 Steps: [[step-3.6-home-screen]], [[step-3.7-library-screen]].
@@ -36,3 +40,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-11-10 | Details window: a value too long for it is shortened in the middle with "…" (owner chose this over wrapping). |
 | 2026-11-12 | The home's big card: when its rows do not fit (text size XL, a title on two lines), the space between them shrinks from 12 px down to 4 px; the title stays whole (owner, option 2 of 3w d). |
 | 2026-11-13 | The home's big card when its rows do not fit even 4 px apart (text size XL, a long title): the title on one line, "…", scrolling while a button of the card is selected; the buttons clipped at the card's edge, sliding to the selected one (owner's idea; demo 3.6c approved). |
+| 2026-11-13 | Covers' titles on one line, "…" when they do not fit, scrolling while the cover is highlighted (owner, after the badge was seen over a three-line title); demo 3.7b to approve. |

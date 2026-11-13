@@ -45,8 +45,9 @@ a game.
   `disk.installer.kind`: `sh` (a makeself / MojoSetup script whose ZIP list, in its last 4 MiB,
   names `data/noarch/`; other scripts `unknown`), `inno` / `nsis` (an `.exe` named setup /
   install, not unins, whose first 4 MiB say "Inno Setup" / "Nullsoft"; else `unknown`), `msi`,
-  `galaxy` (`GOG_Galaxy_*.exe`, never a Windows game's file). Folders marked `.owneet-installing`
-  are not listed; a game folder marked `.owneet-installed` has `disk.installed` and
+  `galaxy` (`GOG_Galaxy_*.exe`, never a Windows game's file). A folder marked `.owneet-installing`
+  is listed as its installer (title and kind from the mark) when that installer is in the folder
+  (an install in place), and not listed otherwise (owneet-frontend 0.38.28, 3ad); a game folder marked `.owneet-installed` has `disk.installed` and
   `disk.installed.from` (its installer), and hides installers of the same folder name on other
   disks. `DiskGames::installRequest(game, language)` gives owneetd's request
   ([[owneetd-api-installs]]): `dest` in the home folder's games folder (made as `Giochi` / `Games`

@@ -53,8 +53,11 @@ Events: `installs.changed` (the status above; at most twice a second while bytes
 
 ## Marks and restarts
 
-- `.owneet-installing` (JSON: installer, kept entries) while the install works: the frontend does
-  not list that folder (its installer shows the progress instead).
+- `.owneet-installing` (JSON: installer, kind, title, kept entries; kind and title since owneetd
+  0.25.29) while the install works: when the installer is in that folder (installed in place) the
+  frontend lists the folder as that installer, with the title and kind of the mark, so its cover
+  shows the progress; otherwise it does not list the folder (its installer elsewhere shows the
+  progress) ([[open-items]] 3ad).
 - `.owneet-installed` (JSON: installer, kind, kept entries, link, date) once done: the frontend
   lists the game with `disk.installed` (Uninstall) and hides its installer elsewhere.
 - `~/.config/owneet/installs.json` lists the folders being installed; when owneetd starts, those
