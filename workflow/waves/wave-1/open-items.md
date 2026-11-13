@@ -21,7 +21,7 @@ owner's.
 |---|---|---|
 | 2 | "Resume with the pointer" and "Close game" in the library | Built (owneet-frontend 0.38.30), on OWNEETLOG: to look at |
 | 3b | Wine's own programs (`C:\windows\…`) never counted as the game's | Built (owneetd 0.25.31), on OWNEETLOG: seen with the next Windows games |
-| 7 | Waking the console with the controller (step 6.10) | Still woken at once by itself; owneet-base 0.0.77 tries three stages, one per sleep: to try |
+| 7 | Waking the console with the controller (step 6.10) | The TP-Link adapter wakes the PC at once whenever allowed: how to go on, the owner's choice |
 
 ### Waits for the owner's decision
 
@@ -228,6 +228,13 @@ status is kept in their own notes; this table follows them.
    some Realtek adapters). **owneet-base 0.0.77, in stages, one per wake:** stage 1 the unused adapters switched off
    in BlueZ; stage 2 their USB devices taken off the bus; stage 3 the adapter in use kept from waking too (if it still
    wakes, the cause is not Bluetooth). On OWNEETLOG. **Disk check (16:33 listings):** nothing new (193 packages).
+   **Owner's sixth try (2026-11-13 16:51, log `owneet-20261113-165112`, owneet-base 0.0.77): it stayed asleep only at
+   stage 3, and then the controller could not wake it** (as expected). Stage 1 (the Intel adapter off) and stage 2
+   (taken off the bus) still woke at once (16:53:35, 16:54:02); stage 3 (the TP-Link adapter kept from waking) slept
+   until the power button (16:56:03). **Found:** the TP-Link UB500 (Realtek RTL8761BU) wakes the PC the instant it
+   sleeps whenever it is allowed to; no wake source records it. Feasibility on this hardware: not with little work
+   (the adapter's own behaviour). The test left the Intel adapter switched off in BlueZ (stage 1, kept by BlueZ) and
+   `WakeAllowed` on the controller. **Disk check (16:51 listings):** nothing new. The owner decides how to go on.
 8. **"Preparing" with a percentage for Steam downloads**: nice to have in Wave 1 if easy; demo first.
    [[step-4.2c-steam-without-its-interface]]
 9. **GitHub pages with every website update**: README, the repositories' description and topics; the

@@ -45,3 +45,7 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **needs decision**
 - **Fifth try (2026-11-13 16:33): no change** with only the adapter in use allowed. owneet-base 0.0.77 tries stages
   after each wake: the unused adapters switched off, then taken off the bus, then the adapter in use kept from
   waking too.
+- **Sixth try (2026-11-13 16:51): asleep only at stage 3** (no Bluetooth adapter allowed to wake it, so the controller
+  could not either). The FrankenPC's TP-Link UB500 (Realtek RTL8761BU) wakes the PC the instant it sleeps whenever it
+  may; the Intel adapter is not the cause. Not feasible with little work on this adapter; how to go on is the owner's
+  choice (another adapter, more investigation, or Wave 2).
