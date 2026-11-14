@@ -54,3 +54,4 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in progress**
     (`coredump.conf.d`).
   - **Left in this step:** a Windows game removed from an internal disk takes its prefix with it ([[disks]],
     2026-11-12; owneetd); and the owner's test on the FrankenPC.
+- **Owner's test (2026-11-14): all passed.**

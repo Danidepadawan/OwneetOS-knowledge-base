@@ -19,7 +19,8 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 3t, 3p | Step 6.11: the simplified file manager, the console cleaning its own leftovers | Built (owneet-frontend 0.38.32, owneet-base 0.0.79), on OWNEETLOG: to test; the prefix rule left |
+| 3t, 3p | Step 6.11: the simplified file manager, the console cleaning its own leftovers | Tested, all passed; the prefix rule left (assistant) |
+| 3ag | Guide with nothing running goes back to the home screen; the Home prompt only while nothing runs | Built (owneet-frontend 0.38.33), on OWNEETLOG: to test |
 | 3b | Wine's own programs (`C:\windows\…`) never counted as the game's | Built (owneetd 0.25.31), on OWNEETLOG: seen with the next Windows games |
 
 ### Waits for the owner's decision
@@ -158,10 +159,19 @@ status is kept in their own notes; this table follows them.
    0.0.79 (the packages' cache and crash dumps cleaned by the console), details in
    [[step-6.11-simplified-file-manager]]; on OWNEETLOG; waits for the owner's test. Left: the prefix removed with a
    Windows game on an internal disk (3t (a)).
+   **Owner's test (2026-11-14): all passed** (the file manager, the places, the deletions). Left in step 6.11: the
+   prefix removed with a Windows game on an internal disk.
 3af. **A test of owneetd failed once** (2026-11-13, while building owneetd 0.25.31): `TestStopAndSourceGone`
    (`daemon/internal/installs`) timed out (5 s) waiting for an event during the package's build; the next build
    passed, and 80 more runs (with and without the race detector) did not fail. A test that fails by chance: its
    cause to be found (assistant).
+
+3ag. **Guide does nothing while nothing runs** (owner, FrankenPC, 2026-11-14): the Home button does nothing unless Steam
+   is open. **Owner's fix (2026-11-14, no demo):** while Steam, a media app or a game runs, the Home prompt leaves the
+   prompt bar; otherwise Guide really goes back to the home screen. **Built** (owneet-frontend 0.38.33: `guideHome()`
+   on owneetd's `home.requested` closes the windows over the pages and goes to the Home section; `Nav.homePrompt` follows
+   the running apps; [[controller-input-map]]); checked with `tools/frontend-preview` (`guide-home.txt`). On OWNEETLOG;
+   waits for the owner's test.
 
 ## Decided, not built yet
 
