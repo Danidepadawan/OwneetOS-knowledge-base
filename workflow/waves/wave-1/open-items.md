@@ -32,6 +32,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
+| 3ah | A cut cover in the library after RT RT LT, and the navigation goes wrong | **First fix**; start after the owner's next message |
 | 6 | Cover pictures from a disk (step 6.9) | Demo to make |
 | 8 | "Preparing" with a percentage for Steam downloads | Nice to have: demo first |
 | 3c | Removing the original on a USB disk Windows left read only | To check in the test VM |
@@ -175,6 +176,12 @@ status is kept in their own notes; this table follows them.
    on owneetd's `home.requested` closes the windows over the pages and goes to the Home section; `Nav.homePrompt` follows
    the running apps; [[controller-input-map]]); checked with `tools/frontend-preview` (`guide-home.txt`). On OWNEETLOG;
    waits for the owner's test.
+
+3ah. **A cut cover in the library's grid, and the navigation goes wrong** (owner, FrankenPC, 2026-11-14): left of
+   Borderlands 2 a game's cover is cut (the screen left on for more than 30 s: in the test log's screenshots); while
+   the covers sit like that, moving between them goes wrong. **To reproduce (owner):** filter "All", the first game
+   selected, RT twice, then LT back to "All". **Owner (2026-11-14): first in the list of fixes; not to be started
+   before his next message.**
 
 ## Decided, not built yet
 
