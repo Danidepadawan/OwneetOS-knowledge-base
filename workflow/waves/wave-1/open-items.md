@@ -124,6 +124,9 @@ status is kept in their own notes; this table follows them.
    189 files, 5 core dumps).
    **Disk check (2026-11-13 17:23 listings):** nothing new (packages' cache 196 files: from owneet-base 0.0.79 the
    console keeps two versions of each).
+   **Disk check (2026-11-13 19:59 listings, owneet-base 0.0.79):** the packages' cache went from 196 files to 55 (two
+   versions of each package: the hook works); 14 prefixes 7.6 GB, Proton's logs 1.4 GB, 5 core dumps; on the SATA disk
+   Steam's wanted downloads 39.4 GB, shader caches 6.1 GB, `compatdata` 2.1 GB.
    **Disk check (2026-11-13 15:49 listings, the console's disk whole, the SATA disk's not made: the console slept
    first):** nothing new: 14 prefixes 7.6 GB, Proton's logs 1.5 GB, packages' cache 190 files, 5 core dumps.
 3t. **Junk on the disks: a new phase or step** (owner, 2026-11-11, from 3p's findings (a)-(d)): the system cannot find
