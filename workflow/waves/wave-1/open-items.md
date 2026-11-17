@@ -22,17 +22,18 @@ owner's.
 | 3t, 3p | Step 6.11 all built (the prefix rule: owneetd 0.25.32, owneet-frontend 0.38.36), on OWNEETLOG | To test, then the step's approval |
 | 3ai | No Home prompt on the home screen itself (owner, 2026-11-17) | Built (owneet-frontend 0.38.35), on OWNEETLOG: to look at |
 | 3b | Wine's own programs (`C:\windows\…`) never counted as the game's | Built (owneetd 0.25.31), on OWNEETLOG: seen with the next Windows games |
+| 6 | Cover pictures from a disk (step 6.9) | Built (owneet-frontend 0.38.37), on OWNEETLOG: to test, then the step's approval |
 
 ### Waits for the owner's decision
 
 | # | What | Where it stands |
 |---|---|---|
+| 6 | WebP pictures need Qt's image formats plugin (`qt5-imageformats`), not installed today | Add the package, or PNG and JPEG only |
 
 ### To build or prepare (assistant)
 
 | # | What | Where it stands |
 |---|---|---|
-| 6 | Cover pictures from a disk (step 6.9) | Demo to approve |
 | 8 | "Preparing" with a percentage for Steam downloads | Nice to have: demo first |
 | 3af | A test of owneetd that failed once (`TestStopAndSourceGone`) | Closed if it does not come back by the end of the tests (owner) |
 | 9 | GitHub pages with every website update | Text to prepare; the owner publishes |
@@ -185,6 +186,11 @@ status is kept in their own notes; this table follows them.
 
 6. **Cover pictures from a disk** (6.9): demo to do. [[step-6.9-cover-images-from-a-disk]]
    **Demo (2026-11-17):** `design/demos/6.9-cover-images.html`, waits for the owner's approval.
+   **Owner (2026-11-17): demo approved** (the sub-folders, the preview as the cover, not on a read-only disk),
+   on the condition that moving down in the Options window goes down on the console (it does: the
+   console's windows move by place, `Nav.find`; only the demo moved along the list). **Built** in
+   owneet-frontend 0.38.37, checked in the preview (`tools/preview-steps/cover-images.txt`); on
+   OWNEETLOG, waits for the owner's test. Open: WebP needs `qt5-imageformats` (owner's decision).
 8. **"Preparing" with a percentage for Steam downloads**: nice to have in Wave 1 if easy; demo first.
    [[step-4.2c-steam-without-its-interface]]
 9. **GitHub pages with every website update**: README, the repositories' description and topics; the

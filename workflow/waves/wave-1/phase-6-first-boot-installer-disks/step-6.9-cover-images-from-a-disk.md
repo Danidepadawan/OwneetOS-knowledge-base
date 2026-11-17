@@ -34,3 +34,16 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in progress**
   folder's and its sub-folders', a sub-folder's name in front of the file's) and the selected one on the right as the cover
   will look (its middle, cut to the cover's shape); A uses it (the cover changes at once, a short notice), B cancels.
   Waits for the owner's approval.
+- **Demo approved (owner, 2026-11-17):** the sub-folders' pictures too (their names in front); the preview as the cover;
+  **not offered for a game on a read-only disk** (confirmed). Approved on the condition that down in the Options window
+  goes down on the console: it does (the console's windows move by place, `Nav.find`; the demo moved along the list).
+- **Built (2026-11-17, owneet-frontend 0.38.37):** `coverImages` (`src/backend/owneet/CoverImages.cpp`) reads the
+  pictures of every disk but the console's own (at the start and whenever a disk comes or goes; hidden files and links
+  left out; sorted as people read them, 2 before 10) and copies the chosen one as `cover.<ext>`, written apart first and
+  then renamed, an earlier `cover.*` removed; `CoverSheet.qml` is the window (the preview is read at the cover's size,
+  so a big photo never loads whole). A cover's address carries the file's time, so a cover replaced by one of the same
+  name shows at once. Pictures on more than one disk: the disks' names in the line under the title and in front of
+  the folders. A picture that cannot be used says so ("This picture could not be used."). Preview steps:
+  `tools/preview-steps/cover-images.txt` (`@pictures`). On OWNEETLOG: waits for the owner's test.
+- **Open (owner's decision):** WebP needs Qt's image formats plugin (`qt5-imageformats`), which nothing installs today;
+  until then the console offers PNG and JPEG only (it lists only what it can read).
