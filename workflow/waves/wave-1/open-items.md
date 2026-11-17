@@ -19,7 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 3b | Wine's own programs (`C:\windows\…`) never counted as the game's | Built (owneetd 0.25.31): the owner's test with The Witcher 2 (Windows) |
+| 3b | Wine's own programs (`C:\windows\…`) never counted as the game's | Works in the log of 2026-11-17 16:06: closed on the owner's word |
 
 ### Waits for the owner's decision
 
@@ -73,6 +73,10 @@ status is kept in their own notes; this table follows them.
    **Owner (2026-11-13): apply it. Built** (owneetd 0.25.31, `closing.go` `wineProgram`: a window of a program in
    `C:\windows` no longer makes it the game's; test in `TestHomeWhenTheGamesProgramsEnd`). On OWNEETLOG; it shows only
    when such a program outlives the game, so it is checked with the next Windows games.
+   **Owner's test (2026-11-17 16:04-16:06, The Witcher 2 for Windows, newly installed on the SATA disk; log
+   `owneet-20261117-154734`):** owneetd followed only the game's own programs (`Launcher.exe`, `bin\Configurator.EXE`,
+   `bin\witcher2.EXE`), never Wine's `C:\windows` ones (its `explorer.exe` was running); `witcher2.EXE` ended at
+   16:06:52.674 and the home screen came at .678. Works: closed on the owner's word.
 3af. **A test of owneetd failed once** (2026-11-13, while building owneetd 0.25.31): `TestStopAndSourceGone`
    (`daemon/internal/installs`) timed out (5 s) waiting for an event during the package's build; the next build
    passed, and 80 more runs (with and without the race detector) did not fail. A test that fails by chance: its
