@@ -90,7 +90,8 @@ status is kept in their own notes; this table follows them.
    `@steamprepare`; and the change to "Downloading · %"). On OWNEETLOG: waits for the owner's test (a Steam game
    installed: "Preparing…" for the first seconds, then "Downloading · %"). Found on the way: the update test
    `TestCheckThenApply` failed once (its fake wrote the state file in place; it now writes it as owneet-update does,
-   300 runs passed); the preview steps `library-steam.txt` stop at the notice "Before Steam opens", added after them.
+   300 runs passed); the preview steps `library-steam.txt` stopped at the notice "Before Steam opens", added after them: rewritten
+   for today's interface (owner, 2026-11-17), every shot checked.
 9. **GitHub pages with every website update**: README, the repositories' description and topics; the
    text is prepared here, the owner publishes it. [[website]]
 
