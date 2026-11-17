@@ -20,8 +20,7 @@ owner's.
 | # | What | Where it stands |
 |---|---|---|
 | 3t, 3p | Step 6.11: the simplified file manager, the console cleaning its own leftovers | Tested, all passed; the prefix rule left (assistant) |
-| 3ah | A cut cover in the library after RT RT LT LT, and the navigation goes wrong | Not reproduced here; fixed at its most likely cause (owneet-frontend 0.38.34), on OWNEETLOG: to test |
-| 3ag | Guide with nothing running goes back to the home screen; the Home prompt only while nothing runs | Built (owneet-frontend 0.38.33), on OWNEETLOG: to test |
+| 3ai | No Home prompt on the home screen itself (owner, 2026-11-17) | Built (owneet-frontend 0.38.35), on OWNEETLOG: to look at |
 | 3b | Wine's own programs (`C:\windows\…`) never counted as the game's | Built (owneetd 0.25.31), on OWNEETLOG: seen with the next Windows games |
 
 ### Waits for the owner's decision
@@ -172,26 +171,11 @@ status is kept in their own notes; this table follows them.
    passed, and 80 more runs (with and without the race detector) did not fail. A test that fails by chance: its
    cause to be found (assistant).
 
-3ag. **Guide does nothing while nothing runs** (owner, FrankenPC, 2026-11-14): the Home button does nothing unless Steam
-   is open. **Owner's fix (2026-11-14, no demo):** while Steam, a media app or a game runs, the Home prompt leaves the
-   prompt bar; otherwise Guide really goes back to the home screen. **Built** (owneet-frontend 0.38.33: `guideHome()`
-   on owneetd's `home.requested` closes the windows over the pages and goes to the Home section; `Nav.homePrompt` follows
-   the running apps; [[controller-input-map]]); checked with `tools/frontend-preview` (`guide-home.txt`). On OWNEETLOG;
-   waits for the owner's test.
+3ai. **The Home prompt on the home screen** (owner, 2026-11-17): there Guide does nothing, so the prompt is to go.
+   **Built** (owneet-frontend 0.38.35: `Nav.homePrompt` also false on the home screen while no window is over it;
+   [[controller-input-map]]); checked with `tools/frontend-preview` (`guide-home.txt`). On OWNEETLOG. The log of
+   2026-11-17 10:09 on the stick lasts 37 s (no disk listings): the disk check waits for the next one.
 
-3ah. **A cut cover in the library's grid, and the navigation goes wrong** (owner, FrankenPC, 2026-11-14): left of
-   Borderlands 2 a game's cover is cut (the screen left on for more than 30 s: in the test log's screenshots); while
-   the covers sit like that, moving between them goes wrong. **To reproduce (owner):** filter "All", the first game
-   selected, RT twice, then LT back to "All". **Owner (2026-11-14): first in the list of fixes; not to be started
-   before his next message.**
-   **Looked at (2026-11-17, log `owneet-20261114-134014`):** library sorted by name, 89 games, 4 favourites; the
-   screenshots show the selected cover drawn at the left of a row, one column before the first, one row below its
-   place (the game before Borderlands 2), and the grid scrolling around it. Not reproduced in `tools/frontend-preview`
-   (new `@manygames`: about ninety invented Steam games, four favourites; `library-filter-shift.txt`; also at
-   1366×768 and with the buttons pressed at once). Most likely cause: the grid followed a filter change row by row
-   (dozens of moves at once), and GridView misplaces an item there. **Fixed** in owneet-frontend 0.38.34: a new filter
-   or sort fills the grid again; only the same list changing is followed row by row (the covers kept after an
-   uninstall, 2026-11-08). On OWNEETLOG; waits for the owner's test (the same steps).
 ## Decided, not built yet
 
 6. **Cover pictures from a disk** (6.9): demo to do. [[step-6.9-cover-images-from-a-disk]]

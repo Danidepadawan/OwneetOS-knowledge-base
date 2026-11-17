@@ -605,3 +605,24 @@ found here. Newest closings are added at the end.
    shutdown and restart, the splash's colours as tokens `Theme.splashLogo` / `splashInk`; checked with
    `tools/frontend-preview`, `shutting-down.txt`). On OWNEETLOG; waits for the owner's look (a shutdown and a restart).
    **Closed** (2026-11-13): the owner's test (2026-11-13): "Shutting down" at once, shutdown and restart.
+3ag. **Guide does nothing while nothing runs** (owner, FrankenPC, 2026-11-14): the Home button does nothing unless Steam
+   is open. **Owner's fix (2026-11-14, no demo):** while Steam, a media app or a game runs, the Home prompt leaves the
+   prompt bar; otherwise Guide really goes back to the home screen. **Built** (owneet-frontend 0.38.33: `guideHome()`
+   on owneetd's `home.requested` closes the windows over the pages and goes to the Home section; `Nav.homePrompt` follows
+   the running apps; [[controller-input-map]]); checked with `tools/frontend-preview` (`guide-home.txt`). On OWNEETLOG;
+   waits for the owner's test.
+   **Closed** (2026-11-17): the owner's test (2026-11-17): Guide goes back to the home screen; and, asked by the owner, no Home prompt on the home screen itself (owneet-frontend 0.38.35).
+3ah. **A cut cover in the library's grid, and the navigation goes wrong** (owner, FrankenPC, 2026-11-14): left of
+   Borderlands 2 a game's cover is cut (the screen left on for more than 30 s: in the test log's screenshots); while
+   the covers sit like that, moving between them goes wrong. **To reproduce (owner):** filter "All", the first game
+   selected, RT twice, then LT back to "All". **Owner (2026-11-14): first in the list of fixes; not to be started
+   before his next message.**
+   **Looked at (2026-11-17, log `owneet-20261114-134014`):** library sorted by name, 89 games, 4 favourites; the
+   screenshots show the selected cover drawn at the left of a row, one column before the first, one row below its
+   place (the game before Borderlands 2), and the grid scrolling around it. Not reproduced in `tools/frontend-preview`
+   (new `@manygames`: about ninety invented Steam games, four favourites; `library-filter-shift.txt`; also at
+   1366×768 and with the buttons pressed at once). Most likely cause: the grid followed a filter change row by row
+   (dozens of moves at once), and GridView misplaces an item there. **Fixed** in owneet-frontend 0.38.34: a new filter
+   or sort fills the grid again; only the same list changing is followed row by row (the covers kept after an
+   uninstall, 2026-11-08). On OWNEETLOG; waits for the owner's test (the same steps).
+   **Closed** (2026-11-17): the owner's test (2026-11-17): the grid stays right after RT, RT, LT, LT (owneet-frontend 0.38.34).
