@@ -55,3 +55,7 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in progress**
   - **Left in this step:** a Windows game removed from an internal disk takes its prefix with it ([[disks]],
     2026-11-12; owneetd); and the owner's test on the FrankenPC.
 - **Owner's test (2026-11-14): all passed.**
+- **The prefix rule built (2026-11-17, owneetd 0.25.32):** a game that leaves an internal disk with its installer takes
+  its own folders (prefix with saves, DOS data, Windows logs) with it; checked with Go tests and in the test VM. One
+  question's text waits for the owner (the uninstall when the installer is gone does not say the saves go). Then
+  the step waits for the owner's approval to close.

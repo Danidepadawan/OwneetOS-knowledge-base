@@ -19,7 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 3t, 3p | Step 6.11: the simplified file manager, the console cleaning its own leftovers | Tested, all passed; the prefix rule left (assistant) |
+| 3t, 3p | Step 6.11: the prefix rule built (owneetd 0.25.32) | One text to approve, then on OWNEETLOG; then the step closes |
 | 3c | Removing originals from a USB disk Windows left read only | Checked in the test VM: originals kept, copies right: to close? |
 | 3ai | No Home prompt on the home screen itself (owner, 2026-11-17) | Built (owneet-frontend 0.38.35), on OWNEETLOG: to look at |
 | 3b | Wine's own programs (`C:\windows\…`) never counted as the game's | Built (owneetd 0.25.31), on OWNEETLOG: seen with the next Windows games |
@@ -35,7 +35,7 @@ owner's.
 |---|---|---|
 | 6 | Cover pictures from a disk (step 6.9) | Demo to make |
 | 8 | "Preparing" with a percentage for Steam downloads | Nice to have: demo first |
-| 3af | A test of owneetd that failed once (`TestStopAndSourceGone`) | Its cause to find |
+| 3af | A test of owneetd that failed once (`TestStopAndSourceGone`) | Closed if it does not come back by the end of the tests (owner) |
 | 9 | GitHub pages with every website update | Text to prepare; the owner publishes |
 
 ### Others
@@ -171,11 +171,18 @@ status is kept in their own notes; this table follows them.
    Windows game on an internal disk (3t (a)).
    **Owner's test (2026-11-14): all passed** (the file manager, the places, the deletions). Left in step 6.11: the
    prefix removed with a Windows game on an internal disk.
+   **3t (a) built (2026-11-17, owneetd 0.25.32):** a game and its installer both gone through the console (its folder
+   deleted, or uninstalled once its installer was deleted) take their own folders on the console's disk with them:
+   prefix with its saves, DOS data, Windows logs; not while the installer stays, never on a USB disk. Go tests; test
+   VM: a game on the VM's internal disk deleted, its three folders gone; the USB stick seen as external (`/sys` path
+   through `usb2`). **Asked the owner:** the uninstall question when the installer is gone does not say the saves go
+   too (text proposal). Not on OWNEETLOG yet (waits for the text). The prefixes already left on the FrankenPC by
+   games deleted before: removed with the file manager ("Game no longer here").
 3af. **A test of owneetd failed once** (2026-11-13, while building owneetd 0.25.31): `TestStopAndSourceGone`
    (`daemon/internal/installs`) timed out (5 s) waiting for an event during the package's build; the next build
    passed, and 80 more runs (with and without the race detector) did not fail. A test that fails by chance: its
    cause to be found (assistant).
-
+   **Owner (2026-11-17):** if it does not come back by the end of the tests, it is closed (users would open a ticket).
 3ai. **The Home prompt on the home screen** (owner, 2026-11-17): there Guide does nothing, so the prompt is to go.
    **Built** (owneet-frontend 0.38.35: `Nav.homePrompt` also false on the home screen while no window is over it;
    [[controller-input-map]]); checked with `tools/frontend-preview` (`guide-home.txt`). On OWNEETLOG. The log of
