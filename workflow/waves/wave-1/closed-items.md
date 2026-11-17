@@ -739,3 +739,18 @@ found here. Newest closings are added at the end.
    [[controller-input-map]]); checked with `tools/frontend-preview` (`guide-home.txt`). On OWNEETLOG. The log of
    2026-11-17 10:09 on the stick lasts 37 s (no disk listings): the disk check waits for the next one.
    **Closed** (2026-11-17): the owner's test (FrankenPC, owneet-frontend 0.38.35).
+6. **Cover pictures from a disk** (6.9): demo to do. [[step-6.9-cover-images-from-a-disk]]
+   **Demo (2026-11-17):** `design/demos/6.9-cover-images.html`, waits for the owner's approval.
+   **Owner (2026-11-17): demo approved** (the sub-folders, the preview as the cover, not on a read-only disk),
+   on the condition that moving down in the Options window goes down on the console (it does: the
+   console's windows move by place, `Nav.find`; only the demo moved along the list). **Built** in
+   owneet-frontend 0.38.37, checked in the preview (`tools/preview-steps/cover-images.txt`); on
+   OWNEETLOG, waits for the owner's test. Open: WebP needs `qt5-imageformats` (owner's decision).
+   **Owner (2026-11-17): WebP left out; covers at most 1200 px on their longest side** (a bigger picture saved
+   smaller). Built in owneet-frontend 0.38.38, on OWNEETLOG; waits for the owner's test.
+   **Owner's test (2026-11-17): the option did not show** (two pictures in `Images` on OWNEETLOG). Cause: the testers'
+   stick is never one of the user's disks (the disks' udev rule and owneet-mount leave it alone; owneet-testlog mounts
+   it at `/run/owneet-testlog`), so the console finds no pictures there, as built; the test instructions were wrong to
+   name it. One of the two files also has no extension (a JPEG): only `.png`, `.jpg` and `.jpeg` are listed. To test
+   again with another stick or disk, together with 3b (owner).
+   **Owner's test (2026-11-17), again: passed.** **Closed** (2026-11-17) with step 6.9.

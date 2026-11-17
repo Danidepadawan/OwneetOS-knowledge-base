@@ -3,12 +3,12 @@ type: step
 description: "Adding or changing the cover of a local game with an image from a USB stick or disk: Options on the game, a list of the images by name, the chosen one kept by the console."
 phase: "[[phase-6-first-boot-installer-disks]]"
 step: "6.9"
-status: in-progress
+status: done
 tags: [step, phase-6]
 ---
 # 6.9 Cover images from a disk *(added 2026-11-09)*
 
-Up: [[phase-6-first-boot-installer-disks]] · Status: **in progress**
+Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
 
 - **Why (owner, 2026-11-09):** games on disks often have no cover; picture albums come in a later wave, so Wave 1 takes a cover
   from a stick or disk the player plugs in.
@@ -54,3 +54,4 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in progress**
   user's disks (the disks' udev rule and owneet-mount leave it alone; owneet-testlog mounts it apart), so the console
   found none, as built: the test instructions were wrong. One file had no extension: only `.png`, `.jpg` and `.jpeg`
   are listed. To test again with another stick or disk ([[open-items]] 6).
+- **Owner's test again (2026-11-17): passed. Approved and closed.**

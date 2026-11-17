@@ -353,3 +353,4 @@ Decisions by area: [[decisions/INDEX|decisions index]].
 | 2026-11-17 | Step 6.9 demo approved (owner): the Images folder's sub-folders too, their names in front; the preview as the cover; not offered for a game on a read-only disk. Built (owneet-frontend 0.38.37). Open: WebP needs `qt5-imageformats`. | [[step-6.9-cover-images-from-a-disk]] |
 | 2026-11-17 | Step 6.9 (owner): WebP left out (PNG and JPEG only); a cover is at most 1200 px on its longest side, a bigger picture saved smaller. | [[step-6.9-cover-images-from-a-disk]] |
 | 2026-11-17 | Step 6.11 approved and closed (owner); 3ai closed after the owner's test. Step 6.9's test to do again: the pictures were on OWNEETLOG, which is never one of the user's disks. 3b tested with it (owner). | [[step-6.11-simplified-file-manager]], [[step-6.9-cover-images-from-a-disk]] |
+| 2026-11-17 | Step 6.9 approved and closed after the owner's second test (item 6 closed). | [[step-6.9-cover-images-from-a-disk]] |

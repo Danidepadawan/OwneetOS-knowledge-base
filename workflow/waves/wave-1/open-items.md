@@ -19,8 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 3b | Wine's own programs (`C:\windows\…`) never counted as the game's | Built (owneetd 0.25.31): tested with step 6.9's new try (owner) |
-| 6 | Cover pictures from a disk (step 6.9) | Built (owneet-frontend 0.38.38): to test again with pictures on a stick or disk that is not OWNEETLOG |
+| 3b | Wine's own programs (`C:\windows\…`) never counted as the game's | Built (owneetd 0.25.31): the owner's test with The Witcher 2 (Windows) |
 
 ### Waits for the owner's decision
 
@@ -51,7 +50,6 @@ owner's.
 | [[step-5.5-spotify\|5.5]] | Spotify | todo |
 | [[step-5.6-local-videos-and-music\|5.6]] | Local videos and music | todo |
 | [[step-5.7-apps-page\|5.7]] | Apps page | todo |
-| [[step-6.9-cover-images-from-a-disk\|6.9]] | Cover images from a disk (item 6) | in-progress |
 | [[step-7.3-user-guide\|7.3]] | User guide | in-progress |
 | [[step-7.4-hardware-testing-and-v0.1.0\|7.4]] | Hardware testing and v0.1.0 | todo |
 | [[step-7.5-legal-review-before-the-public-launch\|7.5]] | Legal review before the public launch | in-progress |
@@ -82,20 +80,6 @@ status is kept in their own notes; this table follows them.
    **Owner (2026-11-17):** if it does not come back by the end of the tests, it is closed (users would open a ticket).
 ## Decided, not built yet
 
-6. **Cover pictures from a disk** (6.9): demo to do. [[step-6.9-cover-images-from-a-disk]]
-   **Demo (2026-11-17):** `design/demos/6.9-cover-images.html`, waits for the owner's approval.
-   **Owner (2026-11-17): demo approved** (the sub-folders, the preview as the cover, not on a read-only disk),
-   on the condition that moving down in the Options window goes down on the console (it does: the
-   console's windows move by place, `Nav.find`; only the demo moved along the list). **Built** in
-   owneet-frontend 0.38.37, checked in the preview (`tools/preview-steps/cover-images.txt`); on
-   OWNEETLOG, waits for the owner's test. Open: WebP needs `qt5-imageformats` (owner's decision).
-   **Owner (2026-11-17): WebP left out; covers at most 1200 px on their longest side** (a bigger picture saved
-   smaller). Built in owneet-frontend 0.38.38, on OWNEETLOG; waits for the owner's test.
-   **Owner's test (2026-11-17): the option did not show** (two pictures in `Images` on OWNEETLOG). Cause: the testers'
-   stick is never one of the user's disks (the disks' udev rule and owneet-mount leave it alone; owneet-testlog mounts
-   it at `/run/owneet-testlog`), so the console finds no pictures there, as built; the test instructions were wrong to
-   name it. One of the two files also has no extension (a JPEG): only `.png`, `.jpg` and `.jpeg` are listed. To test
-   again with another stick or disk, together with 3b (owner).
 8. **"Preparing" with a percentage for Steam downloads**: nice to have in Wave 1 if easy; demo first.
    [[step-4.2c-steam-without-its-interface]]
 9. **GitHub pages with every website update**: README, the repositories' description and topics; the
