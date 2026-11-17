@@ -19,6 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
+| 8 | "Preparing" while Steam prepares a download (no percentage: Steam does not give one) | Demo `4.2c-steam-preparing.html`: waits for the owner's approval |
 
 ### Waits for the owner's decision
 
@@ -29,7 +30,6 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 8 | "Preparing" with a percentage for Steam downloads | Nice to have: demo first |
 | 3af | A test of owneetd that failed once (`TestStopAndSourceGone`) | Closed if it does not come back by the end of the tests (owner) |
 | 9 | GitHub pages with every website update | Text to prepare; the owner publishes |
 
@@ -74,6 +74,15 @@ status is kept in their own notes; this table follows them.
 
 8. **"Preparing" with a percentage for Steam downloads**: nice to have in Wave 1 if easy; demo first.
    [[step-4.2c-steam-without-its-interface]]
+   **Found (2026-11-17):** Steam's content log names each phase before a download (Reconfiguring, Verifying Installed,
+   Preallocating, the shader cache) but never how far it is; the sizes come only when the download begins. Another way
+   would be Steam's internal state or undocumented APIs ([[legal]]: no). On FrankenPC these phases lasted 1-17 s (Arkham
+   Knight: 13 s + 1 s); the minute of "Waiting" seen on 2026-11-09 was almost surely the fault fixed in owneetd 0.25.5. Left:
+   while Steam prepares, owneetd says "queued", so the cover reads "Waiting" as for a game in line.
+   **Owner (2026-11-17): proposal agreed:** a state "preparing" in owneetd; the cover "Preparing…" with the moving bar of
+   Windows installers (no percentage); Details the same bar, without downloaded, speed and time left; "Waiting" only for
+   a game in line or a download Steam paused. **Demo** `design/demos/4.2c-steam-preparing.html` (also Home's notice,
+   "Preparing {title}…" instead of "Downloading {title} · 0%"): waits for the owner's approval.
 9. **GitHub pages with every website update**: README, the repositories' description and topics; the
    text is prepared here, the owner publishes it. [[website]]
 

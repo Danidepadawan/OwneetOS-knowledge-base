@@ -206,3 +206,9 @@ The console keeps Steam's interface off the screen in everyday use ([[steam-inte
 - **Owner's test on FrankenPC (2026-11-09, 19:56-20:05; owneetd 0.25.10, owneet-frontend 0.38.6):** the time left without
   "about" is right. Cyberpunk 2077's licence agreement shows in Steam itself and the controller works there (the launch with
   Steam's question still to test). "Playing for" over an hour is put off.
+- **"Preparing" before a download ([[open-items]] 8, owner 2026-11-17):** no percentage can be shown: Steam's content log
+  names the phase (Reconfiguring, Verifying Installed, Preallocating, the shader cache) but not how far it is, and other
+  ways are Steam's internal state or undocumented APIs ([[legal]]). Agreed: owneetd tells "preparing" (today "queued");
+  the cover reads "Preparing…" with a moving bar (as Windows installers), Details the same bar without downloaded, speed
+  and time left; "Waiting" stays for a game in line and a download Steam paused. Demo
+  `design/demos/4.2c-steam-preparing.html` waits for the owner's approval.
