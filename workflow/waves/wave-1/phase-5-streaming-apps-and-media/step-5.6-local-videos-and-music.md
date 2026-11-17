@@ -3,13 +3,13 @@ type: step
 description: "Mpv with gamepad bindings, Videos and Music browsing in the frontend from mounted disks."
 phase: "[[phase-5-streaming-apps-and-media]]"
 step: "5.6"
-status: in-progress
+status: done
 legacy: "ROADMAP.md 5.6"
 tags: [step, phase-5]
 ---
 # 5.6 Local videos and music
 
-Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 2026-11-02)
+Up: [[phase-5-streaming-apps-and-media]] · Status: **done** (owner, 2026-11-17; started 2026-11-02)
 
 - **Deliverables:** mpv with gamepad bindings, Videos and Music browsing in the frontend from mounted disks.
 - **What is there at the start (2026-11-02):**
@@ -302,7 +302,7 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
      **Passed the owner's test (2026-11-17)** with owneetd 0.18.0 and owneet-frontend 0.26.0: the
      languages kept from video to video, subtitles off kept also for a subtitle file beside a
      video, a subtitle file without a language clearing the preference.
-     **Written (2026-11-12), waiting for the owner's approval:**
+     **Written (2026-11-12), approved by the owner (2026-11-17):**
      - **Licences and terms** ([[legal-compliance]]): mpv (GPL-2.0-or-later and LGPL-2.1-or-later)
        and FFmpeg (GPL-3.0-only as Arch packages it; its library linked into the frontend, whose
        GPL-3.0-or-later allows it) are in `CREDITS.md`; the console's fonts installed on disk for the
@@ -349,3 +349,6 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
      - **Outside the step, for the owner:** owneetd's flaky `update` test (`TestCheckThenApply`,
        step 4.2b); the guard hook blocking actions that only name the package build script (a
        read-only look at it, twice, and this note's edit), without building anything.
+- **Step closed by the owner on 2026-11-17**, with the hardware checks above as a follow-up; the
+  patents on the formats FFmpeg decodes added to
+  [[step-7.5-legal-review-before-the-public-launch]]. Next in the wave: [[step-5.6a-command-legend]].

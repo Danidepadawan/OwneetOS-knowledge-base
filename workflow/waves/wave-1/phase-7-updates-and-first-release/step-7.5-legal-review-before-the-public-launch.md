@@ -63,3 +63,8 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   with Google"): whether Brave's agreement with Google covers its users on OwneetOS; Brave's help
   page says that turning Widevine on means agreeing to Google's Terms of Use and that Brave is not
   liable for it.
+- **To include (2026-11-17):** the patents on the audio and video formats FFmpeg decodes (H.264,
+  HEVC, AAC…) in a console that is distributed: Arch ships FFmpeg and mpv with these decoders, the
+  console plays the user's own files with them (the Videos and Music pages,
+  [[step-5.6-local-videos-and-music]]); whether that is enough for OwneetOS, and in which
+  countries ([[legal-compliance]]).
