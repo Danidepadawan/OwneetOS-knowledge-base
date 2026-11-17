@@ -19,7 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 8 | "Preparing" while Steam prepares a download (no percentage: Steam does not give one) | Demo `4.2c-steam-preparing.html`: waits for the owner's approval |
+| 8 | "Preparing" while Steam prepares a download (no percentage: Steam does not give one) | Built (owneetd 0.25.33, owneet-frontend 0.38.39), on OWNEETLOG: to test with a Steam download |
 
 ### Waits for the owner's decision
 
@@ -83,6 +83,14 @@ status is kept in their own notes; this table follows them.
    Windows installers (no percentage); Details the same bar, without downloaded, speed and time left; "Waiting" only for
    a game in line or a download Steam paused. **Demo** `design/demos/4.2c-steam-preparing.html` (also Home's notice,
    "Preparing {title}…" instead of "Downloading {title} · 0%"): waits for the owner's approval.
+   **Owner (2026-11-17): demo approved, Home's notice included. Built:** owneetd 0.25.33 tells "preparing" for a new
+   game Steam prepares (`steamlib.go`; "Stopping" no longer read as preparing, `steamprogress.go`; Go tests);
+   owneet-frontend 0.38.39: the cover, Details (moving bar, no downloaded / speed / time left), Home's notice, Options
+   can cancel it; texts in five languages. Checked with `tools/frontend-preview` (`steam-preparing.txt`, with
+   `@steamprepare`; and the change to "Downloading · %"). On OWNEETLOG: waits for the owner's test (a Steam game
+   installed: "Preparing…" for the first seconds, then "Downloading · %"). Found on the way: the update test
+   `TestCheckThenApply` failed once (its fake wrote the state file in place; it now writes it as owneet-update does,
+   300 runs passed); the preview steps `library-steam.txt` stop at the notice "Before Steam opens", added after them.
 9. **GitHub pages with every website update**: README, the repositories' description and topics; the
    text is prepared here, the owner publishes it. [[website]]
 

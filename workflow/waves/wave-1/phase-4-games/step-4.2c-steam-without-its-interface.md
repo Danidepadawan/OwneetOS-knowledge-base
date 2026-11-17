@@ -212,3 +212,5 @@ The console keeps Steam's interface off the screen in everyday use ([[steam-inte
   the cover reads "Preparing…" with a moving bar (as Windows installers), Details the same bar without downloaded, speed
   and time left; "Waiting" stays for a game in line and a download Steam paused. Demo
   `design/demos/4.2c-steam-preparing.html` waits for the owner's approval.
+- **Demo approved (owner, 2026-11-17), Home's notice included ("Preparing {title}…"). Built:** owneetd 0.25.33,
+  owneet-frontend 0.38.39 ([[open-items]] 8); on OWNEETLOG, waits for the owner's test.

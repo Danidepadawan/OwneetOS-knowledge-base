@@ -356,3 +356,4 @@ Decisions by area: [[decisions/INDEX|decisions index]].
 | 2026-11-17 | Step 6.9 approved and closed after the owner's second test (item 6 closed). | [[step-6.9-cover-images-from-a-disk]] |
 | 2026-11-17 | 3b closed after the owner's test with The Witcher 2 for Windows (only the game's own programs followed). | [[step-4.5-windows-games-proton]] |
 | 2026-11-17 | Item 8 (owner): no percentage while Steam prepares a download (Steam does not give one); a state "preparing": the cover "Preparing…" with a moving bar, Details the same bar without downloaded / speed / time left; "Waiting" only for a game in line or paused. Demo first. | [[step-4.2c-steam-without-its-interface]] |
+| 2026-11-17 | Demo 4.2c-steam-preparing approved (owner), Home's notice "Preparing {title}…" included; built (owneetd 0.25.33, owneet-frontend 0.38.39). | [[step-4.2c-steam-without-its-interface]] |
