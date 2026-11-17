@@ -32,7 +32,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 6 | Cover pictures from a disk (step 6.9) | Demo to make |
+| 6 | Cover pictures from a disk (step 6.9) | Demo to approve |
 | 8 | "Preparing" with a percentage for Steam downloads | Nice to have: demo first |
 | 3af | A test of owneetd that failed once (`TestStopAndSourceGone`) | Closed if it does not come back by the end of the tests (owner) |
 | 9 | GitHub pages with every website update | Text to prepare; the owner publishes |
@@ -53,7 +53,7 @@ owner's.
 | [[step-5.5-spotify\|5.5]] | Spotify | todo |
 | [[step-5.6-local-videos-and-music\|5.6]] | Local videos and music | todo |
 | [[step-5.7-apps-page\|5.7]] | Apps page | todo |
-| [[step-6.9-cover-images-from-a-disk\|6.9]] | Cover images from a disk (item 6) | todo |
+| [[step-6.9-cover-images-from-a-disk\|6.9]] | Cover images from a disk (item 6) | in-progress |
 | [[step-6.11-simplified-file-manager\|6.11]] | A simplified file manager (items 3t, 3p) | in-progress |
 | [[step-7.3-user-guide\|7.3]] | User guide | in-progress |
 | [[step-7.4-hardware-testing-and-v0.1.0\|7.4]] | Hardware testing and v0.1.0 | todo |
@@ -184,6 +184,7 @@ status is kept in their own notes; this table follows them.
 ## Decided, not built yet
 
 6. **Cover pictures from a disk** (6.9): demo to do. [[step-6.9-cover-images-from-a-disk]]
+   **Demo (2026-11-17):** `design/demos/6.9-cover-images.html`, waits for the owner's approval.
 8. **"Preparing" with a percentage for Steam downloads**: nice to have in Wave 1 if easy; demo first.
    [[step-4.2c-steam-without-its-interface]]
 9. **GitHub pages with every website update**: README, the repositories' description and topics; the
