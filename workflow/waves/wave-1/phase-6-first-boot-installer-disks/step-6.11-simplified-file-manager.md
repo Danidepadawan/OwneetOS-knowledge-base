@@ -3,12 +3,12 @@ type: step
 description: "Junk on the disks: a very simplified file manager in Settings → Advanced (places named for the user, going through folders, deleting), and the console cleaning its own system leftovers by itself."
 phase: "[[phase-6-first-boot-installer-disks]]"
 step: "6.11"
-status: in-progress
+status: done
 tags: [step, phase-6]
 ---
 # 6.11 A simplified file manager *(added 2026-11-13)*
 
-Up: [[phase-6-first-boot-installer-disks]] · Status: **in progress**
+Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
 
 - **Why (owner, 2026-11-11 / 2026-11-13):** no junk may stay on the disks ([[open-items]] 3p, 3t); the system
   cannot tell by itself whether a save is still needed, so the user decides, with a simple tool.
@@ -61,3 +61,4 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in progress**
   the step waits for the owner's approval to close.
 - **Text approved (owner, 2026-11-17)**, built in owneet-frontend 0.38.36; on OWNEETLOG with owneetd 0.25.32. **The step
   is all built: it waits for the owner's test and approval.**
+- **Approved and closed (owner, 2026-11-17).** The disk check of the same day found nothing new ([[closed-items]] 3p).

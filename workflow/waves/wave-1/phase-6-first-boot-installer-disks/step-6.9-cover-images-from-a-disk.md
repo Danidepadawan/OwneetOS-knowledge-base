@@ -50,3 +50,7 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in progress**
   side:** a bigger picture is saved smaller (read at that size, so a big JPEG is never decoded whole), and one turned
   by its camera is saved upright; a smaller one is copied as it is. Built in owneet-frontend 0.38.38, checked in the
   preview (1600 x 900 saved at 1200 x 675); on OWNEETLOG, waits for the owner's test.
+- **Owner's test (2026-11-17): the option did not show.** The pictures were on OWNEETLOG, which is never one of the
+  user's disks (the disks' udev rule and owneet-mount leave it alone; owneet-testlog mounts it apart), so the console
+  found none, as built: the test instructions were wrong. One file had no extension: only `.png`, `.jpg` and `.jpeg`
+  are listed. To test again with another stick or disk ([[open-items]] 6).

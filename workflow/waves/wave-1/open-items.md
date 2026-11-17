@@ -19,10 +19,8 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 3t, 3p | Step 6.11 all built (the prefix rule: owneetd 0.25.32, owneet-frontend 0.38.36), on OWNEETLOG | To test, then the step's approval |
-| 3ai | No Home prompt on the home screen itself (owner, 2026-11-17) | Built (owneet-frontend 0.38.35), on OWNEETLOG: to look at |
-| 3b | Wine's own programs (`C:\windows\…`) never counted as the game's | Built (owneetd 0.25.31), on OWNEETLOG: seen with the next Windows games |
-| 6 | Cover pictures from a disk (step 6.9) | Built (owneet-frontend 0.38.38), on OWNEETLOG: to test, then the step's approval |
+| 3b | Wine's own programs (`C:\windows\…`) never counted as the game's | Built (owneetd 0.25.31): tested with step 6.9's new try (owner) |
+| 6 | Cover pictures from a disk (step 6.9) | Built (owneet-frontend 0.38.38): to test again with pictures on a stick or disk that is not OWNEETLOG |
 
 ### Waits for the owner's decision
 
@@ -54,7 +52,6 @@ owner's.
 | [[step-5.6-local-videos-and-music\|5.6]] | Local videos and music | todo |
 | [[step-5.7-apps-page\|5.7]] | Apps page | todo |
 | [[step-6.9-cover-images-from-a-disk\|6.9]] | Cover images from a disk (item 6) | in-progress |
-| [[step-6.11-simplified-file-manager\|6.11]] | A simplified file manager (items 3t, 3p) | in-progress |
 | [[step-7.3-user-guide\|7.3]] | User guide | in-progress |
 | [[step-7.4-hardware-testing-and-v0.1.0\|7.4]] | Hardware testing and v0.1.0 | todo |
 | [[step-7.5-legal-review-before-the-public-launch\|7.5]] | Legal review before the public launch | in-progress |
@@ -78,109 +75,11 @@ status is kept in their own notes; this table follows them.
    **Owner (2026-11-13): apply it. Built** (owneetd 0.25.31, `closing.go` `wineProgram`: a window of a program in
    `C:\windows` no longer makes it the game's; test in `TestHomeWhenTheGamesProgramsEnd`). On OWNEETLOG; it shows only
    when such a program outlives the game, so it is checked with the next Windows games.
-3p. **No junk on the disks** (owner, 2026-11-11): from the next test, the whole content of both disks (the console's
-   SSD and the 2 TB SATA disk) is checked: no junk files of any kind may stay (leftovers of old downloads, traces of
-   deleted things no longer needed); the disks must not fill up needlessly over time. Needs a full listing of each disk
-   in the test logs (owneet-testlog), then a check after every test. **Built:** owneet-base 0.0.61: once per start
-   owneet-testlog writes `<log>.files/`, one compressed listing per disk (type, bytes, date, path of every file, folder
-   and link; the console's disk subvolume by subvolume, its snapshots only measured), at the lowest priority; checked in
-   the test VM (about 2 minutes for 200 000 entries). The check follows each new log. **First real log (2026-11-11,
-   `out/test-logs/frankenpc-20261111-101928`):** cut: the console was switched off about 90 s after its start and the
-   listing wrote straight to the stick (mounted "sync", very slow): only the system's listing whole, `/home` cut, the
-   SATA disk missing. **Fixed:** owneet-base 0.0.62 makes each listing in memory and copies it whole (about 3 s in the
-   test VM instead of 2 minutes), and writes `complete.txt` at the end. **First whole listing (2026-11-11 10:49,
-   `frankenpc-20261111-104856`), found:** (a) the console's disk: 13 Windows prefixes (about 4.9 GB) and 3 DOS folders
-   of games that are no longer on any disk seen (kept on uninstall by design, for the saves; also left by deleting a game
-   or by a game on a disk not plugged in); (b) Proton's logs of the testers' option `owneet.debug.windows_log`, 1.3 GB
-   (1.09 GB for one game), never removed; (c) the packages' cache: 150 files, 0.51 GB (43 versions of owneetd, 39 of
-   owneet-frontend), growing with every update; (d) Steam's own, on the SATA disk: an unfinished download of Batman:
-   Arkham Knight (208650, 24.1 GB, 2026-11-09) and its shader cache (2.9 GB), Cyberpunk 2077's (1091500, 0.5 GB); on the
-   console's disk: an unfinished download of Steamworks Shared (228980, 0.24 GB), the folders and shader caches of six
-   games no longer installed, Proton 5.13 (1.8 GB) and `ubuntu12_32/steam-runtime.old` (0.19 GB). Nothing deleted: the
-   owner decides what to clean and how (Steam's content only through Steam, [[user-data]]). (e) (2026-11-11, 12:36 listing)
-   systemd's core dumps: `tenfoot-launcher`'s crash left a 26.8 MB core in `/var/lib/systemd/coredump`; systemd keeps
-   them up to two weeks and up to 10% of the disk, so a game that crashes often fills the disk with them.
-   **Disk check (2026-11-12 12:48, whole listings, read on the stick):** Steam's unfinished downloads (`steamapps/
-   downloading`): BioShock Infinite (8870) 23.3 GB, Lies of P (1627720) 18.5 GB, STAR WARS Jedi: Fallen Order (1172380)
-   0.6 GB, small leftovers of Steamworks Shared (228980), Dishonored 2 (403640), ELDEN RING (1245620) and 31 `state_*.patch`
-   files; Steam's shader caches 5.2 GB; 13 Windows prefixes 5.5 GB (3p (a)); packages' cache 0.58 GB (173 files);
-   core dumps 0.11 GB; the journal 0.30 GB (bounded). The Witcher 2's folder on the SATA disk was the move in progress
-   when the listing was made. **Owner:** those Steam downloads are wanted (games he is installing to test them).
-   **Disk check (2026-11-13 13:21 listings):** nothing new: 14 Windows prefixes 7.6 GB, Proton's logs 1.5 GB (12), packages'
-   cache 188 files, 5 core dumps; Steam's wanted downloads and its shader caches. At 14:06 the owner uninstalled The
-   Witcher 2's Windows version and deleted its folder (SATA disk): whether its prefix (`the-witcher-2-win-b264e729e7`)
-   went with it (3t (a)) is seen in the next listing.
-   **Disk check (2026-11-13 14:41 listings):** that prefix stayed (2.06 GB): expected, 3t (a) (an internal disk's
-   Windows game takes its prefix with it) is not built yet; it joins the junk to clean in 3t. Otherwise nothing new:
-   14 prefixes 7.6 GB, Proton's logs 1.5 GB, packages' cache 189 files, 5 core dumps; on the SATA disk only The Witcher
-   2's Linux version and Steam's library (its wanted downloads grew by about 13 GB).
-   **Disk check (2026-11-13 15:23 listings):** cut (no `complete.txt`, the home folder's listing ends early: the
-   console went to sleep and was switched off before they ended); the readable part has nothing new (packages' cache
-   189 files, 5 core dumps).
-   **Disk check (2026-11-13 17:23 listings):** nothing new (packages' cache 196 files: from owneet-base 0.0.79 the
-   console keeps two versions of each).
-   **Disk check (2026-11-13 19:59 listings, owneet-base 0.0.79):** the packages' cache went from 196 files to 55 (two
-   versions of each package: the hook works); 14 prefixes 7.6 GB, Proton's logs 1.4 GB, 5 core dumps; on the SATA disk
-   Steam's wanted downloads 39.4 GB, shader caches 6.1 GB, `compatdata` 2.1 GB.
-   **Disk check (2026-11-14 13:40 listings):** 13 prefixes 7.3 GB and no Proton logs (the owner deleted them with the
-   file manager), packages' cache 55 files, 5 core dumps; SATA disk as before (downloads 40.0 GB).
-   **Disk check (2026-11-13 15:49 listings, the console's disk whole, the SATA disk's not made: the console slept
-   first):** nothing new: 14 prefixes 7.6 GB, Proton's logs 1.5 GB, packages' cache 190 files, 5 core dumps.
-3t. **Junk on the disks: a new phase or step** (owner, 2026-11-11, from 3p's findings (a)-(d)): the system cannot find
-   out by itself whether a save is still needed; so either a simplified file manager (needed anyway in wave 2) or a
-   simple, elegant solution thought out together. A critical point just found: it gets a phase (or step) of its own.
-   **Owner:** first he ends today's tests, then this is planned with him (where it goes in the plan and how it is
-   built). Nothing is cleaned meanwhile. [[open-items]] 3p
-   **Owner (2026-11-12):** (a) a Windows game on an internal disk removed through the console with its installer takes
-   its prefix with it, saves included; on external disks prefix and saves stay, for the file manager ([[disks]]); the
-   prefix already left on the FrankenPC's disk by a game deleted before this rule is removed once, apart. (b) the
-   testers' option `owneet.debug.windows_log=on` stays on for the tests; its old logs are part of this cleaning. Not built
-   yet: it goes with this step's plan.
-   **Owner (2026-11-13):** a new entry in Settings → "Advanced": a **very simplified file manager**, only to go through
-   the folders and delete; Wave 2 adds downloading from the browser, moving the downloaded files, extracting zip
-   archives and renaming folders ([[wave-2]] 21). To agree next: how it is shown (proposal to the owner, then a demo),
-   which folders it shows, and where it goes in the plan.
-   **Owner (2026-11-13):** the proposal (places, a list, Delete with a question) is right; the console cleans its own
-   system leftovers by itself (packages' cache: the last 2 versions kept; core dumps); a new step, 6.11, at the end of
-   phase 6: [[step-6.11-simplified-file-manager]]. Asked by the owner first: what about Steam's leftovers? (answered
-   the same day, waits for his choice).
-   **Owner (2026-11-13): all approved** (Steam's leftovers as proposed: a place "Steam's leftovers" with the shader
-   caches, Windows data and orphan unfinished downloads of games no longer installed, deleted only with Steam closed;
-   downloads still queued cancelled from the console as today; old Proton and runtime left to Steam), **plus a first
-   question before deleting Windows data: they may hold saves.** **Demo** `design/demos/6.11-file-manager.html`
-   waits for the owner's approval ([[step-6.11-simplified-file-manager]]).
-   **Owner (2026-11-13), on the demo: not like that** (a list): a file manager like Windows' or Linux's, folder-shaped
-   icons in a grid, in the console's colours; the functions are right. **Second round** of the demo (the same file):
-   folders in the console's accent, documents with their kind, a grid, a bar under it with the selected item's size
-   and date. Waits for the owner's approval.
-   **Owner (2026-11-13): the second round of the demo is approved** ("perfect"). Building it is step 6.11's work:
-   waits for the owner's go.
-   **Owner (2026-11-13): build it after item 4.** Built in owneet-frontend 0.38.32 (the file manager) and owneet-base
-   0.0.79 (the packages' cache and crash dumps cleaned by the console), details in
-   [[step-6.11-simplified-file-manager]]; on OWNEETLOG; waits for the owner's test. Left: the prefix removed with a
-   Windows game on an internal disk (3t (a)).
-   **Owner's test (2026-11-14): all passed** (the file manager, the places, the deletions). Left in step 6.11: the
-   prefix removed with a Windows game on an internal disk.
-   **3t (a) built (2026-11-17, owneetd 0.25.32):** a game and its installer both gone through the console (its folder
-   deleted, or uninstalled once its installer was deleted) take their own folders on the console's disk with them:
-   prefix with its saves, DOS data, Windows logs; not while the installer stays, never on a USB disk. Go tests; test
-   VM: a game on the VM's internal disk deleted, its three folders gone; the USB stick seen as external (`/sys` path
-   through `usb2`). **Asked the owner:** the uninstall question when the installer is gone does not say the saves go
-   too (text proposal). Not on OWNEETLOG yet (waits for the text). The prefixes already left on the FrankenPC by
-   games deleted before: removed with the file manager ("Game no longer here").
-   **Owner (2026-11-17): text approved.** owneet-frontend 0.38.36: uninstalling a Windows or DOS game whose installer
-   is gone, on a disk inside the console, says "…, with its saves and settings" (five languages); Storage's volumes
-   tell a USB disk (`usb`). On OWNEETLOG with owneetd 0.25.32. Step 6.11 all built: waits for the owner's approval.
 3af. **A test of owneetd failed once** (2026-11-13, while building owneetd 0.25.31): `TestStopAndSourceGone`
    (`daemon/internal/installs`) timed out (5 s) waiting for an event during the package's build; the next build
    passed, and 80 more runs (with and without the race detector) did not fail. A test that fails by chance: its
    cause to be found (assistant).
    **Owner (2026-11-17):** if it does not come back by the end of the tests, it is closed (users would open a ticket).
-3ai. **The Home prompt on the home screen** (owner, 2026-11-17): there Guide does nothing, so the prompt is to go.
-   **Built** (owneet-frontend 0.38.35: `Nav.homePrompt` also false on the home screen while no window is over it;
-   [[controller-input-map]]); checked with `tools/frontend-preview` (`guide-home.txt`). On OWNEETLOG. The log of
-   2026-11-17 10:09 on the stick lasts 37 s (no disk listings): the disk check waits for the next one.
-
 ## Decided, not built yet
 
 6. **Cover pictures from a disk** (6.9): demo to do. [[step-6.9-cover-images-from-a-disk]]
@@ -192,6 +91,11 @@ status is kept in their own notes; this table follows them.
    OWNEETLOG, waits for the owner's test. Open: WebP needs `qt5-imageformats` (owner's decision).
    **Owner (2026-11-17): WebP left out; covers at most 1200 px on their longest side** (a bigger picture saved
    smaller). Built in owneet-frontend 0.38.38, on OWNEETLOG; waits for the owner's test.
+   **Owner's test (2026-11-17): the option did not show** (two pictures in `Images` on OWNEETLOG). Cause: the testers'
+   stick is never one of the user's disks (the disks' udev rule and owneet-mount leave it alone; owneet-testlog mounts
+   it at `/run/owneet-testlog`), so the console finds no pictures there, as built; the test instructions were wrong to
+   name it. One of the two files also has no extension (a JPEG): only `.png`, `.jpg` and `.jpeg` are listed. To test
+   again with another stick or disk, together with 3b (owner).
 8. **"Preparing" with a percentage for Steam downloads**: nice to have in Wave 1 if easy; demo first.
    [[step-4.2c-steam-without-its-interface]]
 9. **GitHub pages with every website update**: README, the repositories' description and topics; the
