@@ -298,6 +298,10 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
      opens so; English subtitles chosen, the next episode shows its subtitle file; resuming and
      closing unchanged with the playlist file) and the Go tests (a list of 10,000 songs, a request
      of 30,000).
+     A track chosen without a language then leaves no preference (code `b2e51e4`, [[local-media]]).
+     **Passed the owner's test (2026-11-17)** with owneetd 0.18.0 and owneet-frontend 0.26.0: the
+     languages kept from video to video, subtitles off kept also for a subtitle file beside a
+     video, a subtitle file without a language clearing the preference.
      **Written (2026-11-12), waiting for the owner's approval:**
      - **Licences and terms** ([[legal-compliance]]): mpv (GPL-2.0-or-later and LGPL-2.1-or-later)
        and FFmpeg (GPL-3.0-only as Arch packages it; its library linked into the frontend, whose
