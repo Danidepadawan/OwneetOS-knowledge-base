@@ -20,6 +20,7 @@ owner's.
 | # | What | Where it stands |
 |---|---|---|
 | 3t, 3p | Step 6.11: the simplified file manager, the console cleaning its own leftovers | Tested, all passed; the prefix rule left (assistant) |
+| 3ah | A cut cover in the library after RT RT LT LT, and the navigation goes wrong | Not reproduced here; fixed at its most likely cause (owneet-frontend 0.38.34), on OWNEETLOG: to test |
 | 3ag | Guide with nothing running goes back to the home screen; the Home prompt only while nothing runs | Built (owneet-frontend 0.38.33), on OWNEETLOG: to test |
 | 3b | Wine's own programs (`C:\windows\…`) never counted as the game's | Built (owneetd 0.25.31), on OWNEETLOG: seen with the next Windows games |
 
@@ -32,7 +33,6 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 3ah | A cut cover in the library after RT RT LT, and the navigation goes wrong | **First fix**; start after the owner's next message |
 | 6 | Cover pictures from a disk (step 6.9) | Demo to make |
 | 8 | "Preparing" with a percentage for Steam downloads | Nice to have: demo first |
 | 3c | Removing the original on a USB disk Windows left read only | To check in the test VM |
@@ -128,6 +128,8 @@ status is kept in their own notes; this table follows them.
    **Disk check (2026-11-13 19:59 listings, owneet-base 0.0.79):** the packages' cache went from 196 files to 55 (two
    versions of each package: the hook works); 14 prefixes 7.6 GB, Proton's logs 1.4 GB, 5 core dumps; on the SATA disk
    Steam's wanted downloads 39.4 GB, shader caches 6.1 GB, `compatdata` 2.1 GB.
+   **Disk check (2026-11-14 13:40 listings):** 13 prefixes 7.3 GB and no Proton logs (the owner deleted them with the
+   file manager), packages' cache 55 files, 5 core dumps; SATA disk as before (downloads 40.0 GB).
    **Disk check (2026-11-13 15:49 listings, the console's disk whole, the SATA disk's not made: the console slept
    first):** nothing new: 14 prefixes 7.6 GB, Proton's logs 1.5 GB, packages' cache 190 files, 5 core dumps.
 3t. **Junk on the disks: a new phase or step** (owner, 2026-11-11, from 3p's findings (a)-(d)): the system cannot find
@@ -182,7 +184,14 @@ status is kept in their own notes; this table follows them.
    the covers sit like that, moving between them goes wrong. **To reproduce (owner):** filter "All", the first game
    selected, RT twice, then LT back to "All". **Owner (2026-11-14): first in the list of fixes; not to be started
    before his next message.**
-
+   **Looked at (2026-11-17, log `owneet-20261114-134014`):** library sorted by name, 89 games, 4 favourites; the
+   screenshots show the selected cover drawn at the left of a row, one column before the first, one row below its
+   place (the game before Borderlands 2), and the grid scrolling around it. Not reproduced in `tools/frontend-preview`
+   (new `@manygames`: about ninety invented Steam games, four favourites; `library-filter-shift.txt`; also at
+   1366×768 and with the buttons pressed at once). Most likely cause: the grid followed a filter change row by row
+   (dozens of moves at once), and GridView misplaces an item there. **Fixed** in owneet-frontend 0.38.34: a new filter
+   or sort fills the grid again; only the same list changing is followed row by row (the covers kept after an
+   uninstall, 2026-11-08). On OWNEETLOG; waits for the owner's test (the same steps).
 ## Decided, not built yet
 
 6. **Cover pictures from a disk** (6.9): demo to do. [[step-6.9-cover-images-from-a-disk]]
