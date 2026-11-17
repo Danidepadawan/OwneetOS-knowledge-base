@@ -26,7 +26,8 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in progress**
   - The cover is **copied into the game's folder** as `cover.<ext>`, where the console already looks for a game's cover
     (`cover.jpg` / `cover.png` / `cover.jpeg` / `cover.webp`); an earlier `cover.*` is replaced. Proposed, to be confirmed with
     the demo: not offered for a game on a read-only disk (as deleting, [[step-6.8-games-on-disk-delete-and-progress]]).
-  - Formats: PNG, JPEG, WebP.
+  - Formats: PNG, JPEG, WebP. **WebP left out (owner, 2026-11-17):** it was a nice to have and needs a plugin
+    (`qt5-imageformats`) the console does not have.
   - **When:** after the fixes already open (the late sound, Steam's virtual controller, the time left, the authors in the credits).
 - **Started (owner, 2026-11-17):** the demo first.
 - **Demo (2026-11-17):** `design/demos/6.9-cover-images.html`: Options on a local game, "Add / Change cover image" only with
@@ -45,5 +46,7 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in progress**
   name shows at once. Pictures on more than one disk: the disks' names in the line under the title and in front of
   the folders. A picture that cannot be used says so ("This picture could not be used."). Preview steps:
   `tools/preview-steps/cover-images.txt` (`@pictures`). On OWNEETLOG: waits for the owner's test.
-- **Open (owner's decision):** WebP needs Qt's image formats plugin (`qt5-imageformats`), which nothing installs today;
-  until then the console offers PNG and JPEG only (it lists only what it can read).
+- **Decided (owner, 2026-11-17):** WebP left out (PNG and JPEG only). **A cover is at most 1200 px on its longest
+  side:** a bigger picture is saved smaller (read at that size, so a big JPEG is never decoded whole), and one turned
+  by its camera is saved upright; a smaller one is copied as it is. Built in owneet-frontend 0.38.38, checked in the
+  preview (1600 x 900 saved at 1200 x 675); on OWNEETLOG, waits for the owner's test.
