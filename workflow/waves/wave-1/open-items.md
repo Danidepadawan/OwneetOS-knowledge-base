@@ -19,8 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 3t, 3p | Step 6.11: the prefix rule built (owneetd 0.25.32) | One text to approve, then on OWNEETLOG; then the step closes |
-| 3c | Removing originals from a USB disk Windows left read only | Checked in the test VM: originals kept, copies right: to close? |
+| 3t, 3p | Step 6.11 all built (the prefix rule: owneetd 0.25.32, owneet-frontend 0.38.36), on OWNEETLOG | To test, then the step's approval |
 | 3ai | No Home prompt on the home screen itself (owner, 2026-11-17) | Built (owneet-frontend 0.38.35), on OWNEETLOG: to look at |
 | 3b | Wine's own programs (`C:\windows\…`) never counted as the game's | Built (owneetd 0.25.31), on OWNEETLOG: seen with the next Windows games |
 
@@ -79,15 +78,6 @@ status is kept in their own notes; this table follows them.
    **Owner (2026-11-13): apply it. Built** (owneetd 0.25.31, `closing.go` `wineProgram`: a window of a program in
    `C:\windows` no longer makes it the game's; test in `TestHomeWhenTheGamesProgramsEnd`). On OWNEETLOG; it shows only
    when such a program outlives the game, so it is checked with the next Windows games.
-3c. **Removing the originals of single games, the read-only case** (6.6c, confirmed by the owner on
-   2026-11-10: the original removed after a copy, with no error; the choice of
-   games, item 1 of 2026-11-09, confirmed too): left, a USB disk that Windows left read only, to check
-   in the test VM (the owner has no Windows disk). [[step-6.6-moving-games-and-media-between-disks]]
-   **Checked in the test VM (2026-11-17):** a USB disk "WINUSB", NTFS with Windows' Fast Startup left on (`hiberfil.sys`
-   starting with "hibr"), two games: owneet-mount mounted it read only, reason `windows`. owneetd asked on purpose to
-   copy Alpha to the console's disk **and** remove its original (the interface never asks: the column is off): the copy
-   done and identical (same SHA-256), the original untouched, owneetd only warned "the original could not be removed
-   … read-only file system". Ready to close (the owner's word).
 3p. **No junk on the disks** (owner, 2026-11-11): from the next test, the whole content of both disks (the console's
    SSD and the 2 TB SATA disk) is checked: no junk files of any kind may stay (leftovers of old downloads, traces of
    deleted things no longer needed); the disks must not fill up needlessly over time. Needs a full listing of each disk
@@ -178,6 +168,9 @@ status is kept in their own notes; this table follows them.
    through `usb2`). **Asked the owner:** the uninstall question when the installer is gone does not say the saves go
    too (text proposal). Not on OWNEETLOG yet (waits for the text). The prefixes already left on the FrankenPC by
    games deleted before: removed with the file manager ("Game no longer here").
+   **Owner (2026-11-17): text approved.** owneet-frontend 0.38.36: uninstalling a Windows or DOS game whose installer
+   is gone, on a disk inside the console, says "…, with its saves and settings" (five languages); Storage's volumes
+   tell a USB disk (`usb`). On OWNEETLOG with owneetd 0.25.32. Step 6.11 all built: waits for the owner's approval.
 3af. **A test of owneetd failed once** (2026-11-13, while building owneetd 0.25.31): `TestStopAndSourceGone`
    (`daemon/internal/installs`) timed out (5 s) waiting for an event during the package's build; the next build
    passed, and 80 more runs (with and without the race detector) did not fail. A test that fails by chance: its

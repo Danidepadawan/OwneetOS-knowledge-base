@@ -59,3 +59,5 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **in progress**
   its own folders (prefix with saves, DOS data, Windows logs) with it; checked with Go tests and in the test VM. One
   question's text waits for the owner (the uninstall when the installer is gone does not say the saves go). Then
   the step waits for the owner's approval to close.
+- **Text approved (owner, 2026-11-17)**, built in owneet-frontend 0.38.36; on OWNEETLOG with owneetd 0.25.32. **The step
+  is all built: it waits for the owner's test and approval.**

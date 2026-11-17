@@ -626,3 +626,13 @@ found here. Newest closings are added at the end.
    or sort fills the grid again; only the same list changing is followed row by row (the covers kept after an
    uninstall, 2026-11-08). On OWNEETLOG; waits for the owner's test (the same steps).
    **Closed** (2026-11-17): the owner's test (2026-11-17): the grid stays right after RT, RT, LT, LT (owneet-frontend 0.38.34).
+3c. **Removing the originals of single games, the read-only case** (6.6c, confirmed by the owner on
+   2026-11-10: the original removed after a copy, with no error; the choice of
+   games, item 1 of 2026-11-09, confirmed too): left, a USB disk that Windows left read only, to check
+   in the test VM (the owner has no Windows disk). [[step-6.6-moving-games-and-media-between-disks]]
+   **Checked in the test VM (2026-11-17):** a USB disk "WINUSB", NTFS with Windows' Fast Startup left on (`hiberfil.sys`
+   starting with "hibr"), two games: owneet-mount mounted it read only, reason `windows`. owneetd asked on purpose to
+   copy Alpha to the console's disk **and** remove its original (the interface never asks: the column is off): the copy
+   done and identical (same SHA-256), the original untouched, owneetd only warned "the original could not be removed
+   … read-only file system". Ready to close (the owner's word).
+   **Closed** (2026-11-17): the owner's word, after the check in the test VM.
