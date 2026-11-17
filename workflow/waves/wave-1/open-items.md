@@ -20,6 +20,7 @@ owner's.
 | # | What | Where it stands |
 |---|---|---|
 | 3t, 3p | Step 6.11: the simplified file manager, the console cleaning its own leftovers | Tested, all passed; the prefix rule left (assistant) |
+| 3c | Removing originals from a USB disk Windows left read only | Checked in the test VM: originals kept, copies right: to close? |
 | 3ai | No Home prompt on the home screen itself (owner, 2026-11-17) | Built (owneet-frontend 0.38.35), on OWNEETLOG: to look at |
 | 3b | Wine's own programs (`C:\windows\…`) never counted as the game's | Built (owneetd 0.25.31), on OWNEETLOG: seen with the next Windows games |
 
@@ -34,7 +35,6 @@ owner's.
 |---|---|---|
 | 6 | Cover pictures from a disk (step 6.9) | Demo to make |
 | 8 | "Preparing" with a percentage for Steam downloads | Nice to have: demo first |
-| 3c | Removing the original on a USB disk Windows left read only | To check in the test VM |
 | 3af | A test of owneetd that failed once (`TestStopAndSourceGone`) | Its cause to find |
 | 9 | GitHub pages with every website update | Text to prepare; the owner publishes |
 
@@ -83,6 +83,11 @@ status is kept in their own notes; this table follows them.
    2026-11-10: the original removed after a copy, with no error; the choice of
    games, item 1 of 2026-11-09, confirmed too): left, a USB disk that Windows left read only, to check
    in the test VM (the owner has no Windows disk). [[step-6.6-moving-games-and-media-between-disks]]
+   **Checked in the test VM (2026-11-17):** a USB disk "WINUSB", NTFS with Windows' Fast Startup left on (`hiberfil.sys`
+   starting with "hibr"), two games: owneet-mount mounted it read only, reason `windows`. owneetd asked on purpose to
+   copy Alpha to the console's disk **and** remove its original (the interface never asks: the column is off): the copy
+   done and identical (same SHA-256), the original untouched, owneetd only warned "the original could not be removed
+   … read-only file system". Ready to close (the owner's word).
 3p. **No junk on the disks** (owner, 2026-11-11): from the next test, the whole content of both disks (the console's
    SSD and the 2 TB SATA disk) is checked: no junk files of any kind may stay (leftovers of old downloads, traces of
    deleted things no longer needed); the disks must not fill up needlessly over time. Needs a full listing of each disk

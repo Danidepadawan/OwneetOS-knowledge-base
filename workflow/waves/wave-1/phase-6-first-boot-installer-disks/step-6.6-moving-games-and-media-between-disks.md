@@ -200,3 +200,6 @@ Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
 - **Owner (2026-11-11):** the same fix for uninstalling. **Built:** owneetd 0.25.21 (`syncdisk` after uninstalling,
   deleting a game, deleting an installer), checked in the test VM. The owner also asked that the whole content of both
   disks be checked for junk after every test ([[open-items]] 3p): owneet-base 0.0.61 lists every disk in the test logs.
+- **The read-only case, in the test VM (2026-11-17, [[open-items]] 3c):** an NTFS USB disk with Windows' Fast Startup
+  left on was mounted read only (`windows`); a copy asked with its original's removal copied the game identically and
+  left the original untouched (owneetd warns, the move counts as done).
