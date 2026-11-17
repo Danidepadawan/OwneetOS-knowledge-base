@@ -754,3 +754,16 @@ found here. Newest closings are added at the end.
    name it. One of the two files also has no extension (a JPEG): only `.png`, `.jpg` and `.jpeg` are listed. To test
    again with another stick or disk, together with 3b (owner).
    **Owner's test (2026-11-17), again: passed.** **Closed** (2026-11-17) with step 6.9.
+3b. **Wine's own programs followed as the game's** (found in the owner's test log, 2026-11-09 21:50): the
+   home screen at the game's end waited for `C:\windows\system32\explorer.exe` too, because it owns a window;
+   there it ended before the game, but it could outlive it until Wine closes. Fix proposed: never count a
+   program under `C:\windows` as the game's, even with a window. [[step-4.5-windows-games-proton]]
+   **Owner (2026-11-13): apply it. Built** (owneetd 0.25.31, `closing.go` `wineProgram`: a window of a program in
+   `C:\windows` no longer makes it the game's; test in `TestHomeWhenTheGamesProgramsEnd`). On OWNEETLOG; it shows only
+   when such a program outlives the game, so it is checked with the next Windows games.
+   **Owner's test (2026-11-17 16:04-16:06, The Witcher 2 for Windows, newly installed on the SATA disk; log
+   `owneet-20261117-154734`):** owneetd followed only the game's own programs (`Launcher.exe`, `bin\Configurator.EXE`,
+   `bin\witcher2.EXE`), never Wine's `C:\windows` ones (its `explorer.exe` was running); `witcher2.EXE` ended at
+   16:06:52.674 and the home screen came at .678. Works: closed on the owner's word.
+   **Closed** (2026-11-17): the owner's word, after the test (the Linux version's short start at 15:48 was opened by
+   mistake).

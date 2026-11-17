@@ -354,3 +354,4 @@ Decisions by area: [[decisions/INDEX|decisions index]].
 | 2026-11-17 | Step 6.9 (owner): WebP left out (PNG and JPEG only); a cover is at most 1200 px on its longest side, a bigger picture saved smaller. | [[step-6.9-cover-images-from-a-disk]] |
 | 2026-11-17 | Step 6.11 approved and closed (owner); 3ai closed after the owner's test. Step 6.9's test to do again: the pictures were on OWNEETLOG, which is never one of the user's disks. 3b tested with it (owner). | [[step-6.11-simplified-file-manager]], [[step-6.9-cover-images-from-a-disk]] |
 | 2026-11-17 | Step 6.9 approved and closed after the owner's second test (item 6 closed). | [[step-6.9-cover-images-from-a-disk]] |
+| 2026-11-17 | 3b closed after the owner's test with The Witcher 2 for Windows (only the game's own programs followed). | [[step-4.5-windows-games-proton]] |
