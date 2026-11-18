@@ -132,6 +132,12 @@ status is kept in their own notes; this table follows them.
    (3) **(a) approved, built:** owneetd 0.25.35 shows Steam at once when a window of a game's install script
    (`reaper SteamLaunch AppId=N Install=1`) comes on screen while Steam is hidden (Go tests). (b) (the install
    script's log on the stick) not approved: not built.
+   **Owner (2026-11-18): when does the fix come out? Without a date we rely on chance.** Checked: NVIDIA gives no date
+   (its forum thread has no NVIDIA reply; bug 7014466 named only in vkd3d-proton's issue). Linux drivers out: 615.78.08,
+   620.70.06 (in Arch since 2026-11-13; still reported broken), 620.73.04 (2026-11-17, "minor bug fixes", not in Arch
+   yet, unknown whether it holds the fix). Our pinned packages: nvidia 615.71.09 (snapshot 2026-10-13). Ways that do
+   not depend on chance, told to the owner: Steam's beta 2.31 now; each new NVIDIA driver tried on the FrankenPC
+   through the update stick; or a fix of our own (the console repairs the failing shader on the PC itself), heavy.
 
 ## Tests the owner put off
 
