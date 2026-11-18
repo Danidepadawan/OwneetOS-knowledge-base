@@ -19,7 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | Step 1 built (owneetd 0.25.36, Steam shown during a launch), on OWNEETLOG: to test |
+| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | Step 1 tried with Jedi (EA window and shaders seen; then a black screen with the game's sound, a crash): logs to read |
 | 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk: NVIDIA's fix awaited (beta 2.31 meanwhile); demo `4.2c-steam-shaders` to approve; install-script window shown (owneetd 0.25.35, to test with Jedi) |
 | 9 | GitHub pages with every website update | READMEs written, description and topics prepared ([[website]]): the owner looks, then pushes and sets them |
 
@@ -168,6 +168,12 @@ status is kept in their own notes; this table follows them.
    page, install scripts, publishers' launchers and questions on screen, as on SteamOS); from the game's start Steam
    stays behind it until the game's own window (no bare home screen in between). The old way with the testers'
    switch `owneet.debug.steam_launch=hidden`, to compare. Go tests. On OWNEETLOG: waits for the owner's test.
+   **Owner's test (2026-11-18, owneetd 0.25.36), STAR WARS Jedi: Fallen Order:** Steam's interface on screen; after a
+   few seconds EA's window asked to go on ("Let's go"), then back to Steam's home; about 30 s later Steam's notice on
+   the game's input handling, then the shader preparation (until 20:40). Then several screens shown for a few seconds
+   each; the game menu's sound heard but **the screen black**, and Steam's notification sounds. 20:43: Steam's popup
+   "Jedi: Fallen Order has crashed"; holding Guide brought the console's home; 20:44 "Close game" closed it; Steam
+   opened again with no glitch (store). Logs on OWNEETLOG: to read.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
