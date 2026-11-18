@@ -19,7 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | Quitting a Steam game brings the console's home (owneetd 0.25.37), on OWNEETLOG: to test with Jedi |
+| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | Step 1 and the return home passed with Jedi; more games' first starts to test |
 | 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk: NVIDIA's fix awaited (beta 2.31 meanwhile); demo `4.2c-steam-shaders` to approve; install-script window shown (owneetd 0.25.35, to test with Jedi) |
 | 9 | GitHub pages with every website update | READMEs written, description and topics prepared ([[website]]): the owner looks, then pushes and sets them |
 
@@ -204,6 +204,9 @@ status is kept in their own notes; this table follows them.
    itself in front. **Fixed** in owneetd 0.25.37: a Steam game's end also brings the home screen with Steam in front,
    unless Steam was chosen during the game (test `TestSteamGameEndBringsHomeOverSteam`). The default stays the new way
    (Steam shown during a launch); the testers' switch removed from the stick. On OWNEETLOG: to test.
+   **Owner's test (2026-11-18 22:01-22:08): passed** (quitting Jedi brought the console's home, 22:05:33 and 22:08:06).
+   Launched from Steam itself it also comes back to the console's home: not a big problem, **left as it is** (owner: do
+   not risk breaking something else). Disk check: nothing new. Next: more games for step 1 (first starts).
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
