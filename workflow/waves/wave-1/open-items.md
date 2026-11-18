@@ -19,7 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk 2077 and Jedi: Fallen Order fail (2026-11-18, details below): logs to read |
+| 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk: NVIDIA driver bug (not ours); Steam's long preparation and Jedi's install-script window hidden: proposals to the owner |
 | 9 | GitHub pages with every website update | READMEs written, description and topics prepared ([[website]]): the owner looks, then pushes and sets them |
 
 ### Waits for the owner's decision
@@ -107,6 +107,20 @@ status is kept in their own notes; this table follows them.
    the owner can try now): the same as Cyberpunk at its first try; back on the home screen, Steam opened again asked to
    choose a folder or a file, for what the owner could not tell (the EA app's install?); he closed Steam and switched the
    console off. Logs on OWNEETLOG: to read.
+   **From the log (`owneet-20261118-182054`):** one launch of Cyberpunk, not two (the owner opened Steam meanwhile).
+   (1) **Cyberpunk 2077 closing: not ours.** Proton's log: exception 0xc000001d in NVIDIA's shader compiler
+   (`libnvidia-gpucomp.so.615.71.09`, `vkCreateComputePipelines`), a known bug of NVIDIA's driver on Turing cards with
+   this game: [[nvidia-turing-shader-compiler-crash-in-vkd3d-games]] (open: a fix waits in vkd3d-proton, it comes with
+   a Proton update). (2) **Steam's long preparation shown only as "Starting …":** Steam prepared Cyberpunk's Vulkan
+   shaders from 18:22:20 to 18:29:56 (7.5 min) and owneetd kept Steam hidden ("preparing the game's shaders: still
+   hidden"), as built for Silksong's 45 s ([[step-4.2c-steam-without-its-interface]]); no progress on screen, so it
+   looked stuck. Steam's `shader_log.txt` gives the percentage ("Still replaying 1091500 (69%, 1022/11995)").
+   (3) **Jedi: Fallen Order's install script hidden while it waits for the user:** from 18:32:00 Steam ran the game's
+   install script (EA's, 4 steps) hidden ("preparing the game: still hidden"); its window, a Windows "Open" file
+   dialog on `C:\Program Files` (a Steam window, appid 769), was on screen only when the owner opened Steam
+   (18:36). What it asks for is not in the logs: Steam's `installscriptevalutor_log.txt` is not copied by the test
+   log, and the game's `__Installer` folder holds only `vc/` and `LOC/` (no EA app installer seen). Proposals to the
+   owner.
 
 ## Tests the owner put off
 
