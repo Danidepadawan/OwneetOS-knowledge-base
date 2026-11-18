@@ -767,3 +767,27 @@ found here. Newest closings are added at the end.
    16:06:52.674 and the home screen came at .678. Works: closed on the owner's word.
    **Closed** (2026-11-17): the owner's word, after the test (the Linux version's short start at 15:48 was opened by
    mistake).
+8. **"Preparing" with a percentage for Steam downloads**: nice to have in Wave 1 if easy; demo first.
+   [[step-4.2c-steam-without-its-interface]]
+   **Found (2026-11-17):** Steam's content log names each phase before a download (Reconfiguring, Verifying Installed,
+   Preallocating, the shader cache) but never how far it is; the sizes come only when the download begins. Another way
+   would be Steam's internal state or undocumented APIs ([[legal]]: no). On FrankenPC these phases lasted 1-17 s (Arkham
+   Knight: 13 s + 1 s); the minute of "Waiting" seen on 2026-11-09 was almost surely the fault fixed in owneetd 0.25.5. Left:
+   while Steam prepares, owneetd says "queued", so the cover reads "Waiting" as for a game in line.
+   **Owner (2026-11-17): proposal agreed:** a state "preparing" in owneetd; the cover "Preparing…" with the moving bar of
+   Windows installers (no percentage); Details the same bar, without downloaded, speed and time left; "Waiting" only for
+   a game in line or a download Steam paused. **Demo** `design/demos/4.2c-steam-preparing.html` (also Home's notice,
+   "Preparing {title}…" instead of "Downloading {title} · 0%"): waits for the owner's approval.
+   **Owner (2026-11-17): demo approved, Home's notice included. Built:** owneetd 0.25.33 tells "preparing" for a new
+   game Steam prepares (`steamlib.go`; "Stopping" no longer read as preparing, `steamprogress.go`; Go tests);
+   owneet-frontend 0.38.39: the cover, Details (moving bar, no downloaded / speed / time left), Home's notice, Options
+   can cancel it; texts in five languages. Checked with `tools/frontend-preview` (`steam-preparing.txt`, with
+   `@steamprepare`; and the change to "Downloading · %"). On OWNEETLOG: waits for the owner's test (a Steam game
+   installed: "Preparing…" for the first seconds, then "Downloading · %"). Found on the way: the update test
+   `TestCheckThenApply` failed once (its fake wrote the state file in place; it now writes it as owneet-update does,
+   300 runs passed); the preview steps `library-steam.txt` stopped at the notice "Before Steam opens", added after them: rewritten
+   for today's interface (owner, 2026-11-17), every shot checked.
+   **Owner's test (2026-11-17 18:22, FrankenPC): passed.** Steam's log: Silksong (1030300) prepared from 18:25:43 to
+   18:25:50, then downloaded. Disk check of the same log: nothing new (no Windows data left, packages' cache 55 files,
+   the 5 old core dumps, Steam's wanted downloads).
+   **Closed** (2026-11-18): the owner's test.
