@@ -19,7 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk 2077 never starts past its launcher (2026-11-18): logs to read |
+| 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk 2077 dies within a second of starting (2026-11-18): Proton's log needed, proposal to the owner |
 | 9 | GitHub pages with every website update | READMEs written, description and topics prepared ([[website]]): the owner looks, then pushes and sets them |
 
 ### Waits for the owner's decision
@@ -86,7 +86,15 @@ status is kept in their own notes; this table follows them.
    Launchers made for a mouse are driven with the controller pointer ([[controller-input-map]]). What fails is
    recorded here per game after the test. [[step-4.2c-steam-without-its-interface]]
    **Owner's test (2026-11-18), Cyberpunk 2077: failed.** No Steam question at launch this time; the game never
-   started, not once: only its launcher (REDlauncher) was seen. Logs on OWNEETLOG: to read.
+   started, not once: only its launcher (REDlauncher) was seen. **From the log** (`owneet-20261118-175931`, FrankenPC,
+   GeForce GTX 1660 SUPER, NVIDIA driver): two starts (18:03:34, 18:05:04), both through `REDprelauncher.exe`. First:
+   the prelauncher's window at 18:04:02; between it and the launcher's window (18:04:28) Steam's own window was on screen
+   for 14 s (no game window: owneetd shows Steam); at 18:04:47 a shader of the game itself was being compiled
+   (vkd3d-proton's "Unsupported: … extractelement" from Steam's children), and at 18:04:48 every process of the game
+   ended, Steam saying "success". Second: launcher at 18:05:12, game at 18:05:22, all ended at 18:05:24. So the game
+   itself most likely starts and dies within a second. Not in the log: why. Proton's own log is written only for the
+   console's Windows games (`owneet.debug.windows_log`), not for Steam's: proposal to the owner, the same testers' switch
+   for Steam's games too.
 
 ## Tests the owner put off
 
