@@ -1,6 +1,6 @@
 ---
 type: decision
-description: "PROPOSED: how OwneetOS makes games work as a whole instead of one game at a time: what mature open source projects already do is reused, never re-invented (Steam's own way for Steam games, umu's per-game fixes and runtimes for the others, a tested NVIDIA driver channel, tests by technology with free games)."
+description: "How OwneetOS makes games work as a whole instead of one game at a time: what mature open source projects already do is reused, never re-invented (Steam's own way for Steam games, umu's per-game fixes and runtimes for the others, a tested NVIDIA driver channel, tests by technology with free games)."
 area: games
 status: active
 decided: 2026-11-18

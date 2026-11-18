@@ -10,7 +10,7 @@ tags: [index]
 ## Notes
 
 - [[disks]] — Automatic mounting of every disk, read-only dirty NTFS, moving games and media between disks.
-- [[game-compatibility-method]] — PROPOSED: how OwneetOS makes games work as a whole instead of one game at a time: what mature open source projects already do is reused, never re-invented (Steam's own way for Steam games, umu's per-game fixes and runtimes for the others, a tested NVIDIA driver channel, tests by technology with free games).
+- [[game-compatibility-method]] — How OwneetOS makes games work as a whole instead of one game at a time: what mature open source projects already do is reused, never re-invented (Steam's own way for Steam games, umu's per-game fixes and runtimes for the others, a tested NVIDIA driver channel, tests by technology with free games).
 - [[game-library]] — One library for Steam and local games; every owned Steam game, installed or not; filters and the Add games tile.
 - [[games-on-disk]] — The Games folder convention, Windows games through hidden Proton, background installers, licence prompt.
 - [[steam-integration]] — Steam in the ISO, controller-only Steam, its screens shown automatically, 12 GB RAM in the live session.
