@@ -19,7 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | The owner's batch test, with 10 |
+| 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk 2077 never starts past its launcher (2026-11-18): logs to read |
 | 9 | GitHub pages with every website update | READMEs written, description and topics prepared ([[website]]): the owner looks, then pushes and sets them |
 
 ### Waits for the owner's decision
@@ -85,6 +85,8 @@ status is kept in their own notes; this table follows them.
    Redemption 2), CD Projekt Red (Cyberpunk 2077, with item 10) and Ubisoft (Assassin's Creed Unity, not bought yet: later).
    Launchers made for a mouse are driven with the controller pointer ([[controller-input-map]]). What fails is
    recorded here per game after the test. [[step-4.2c-steam-without-its-interface]]
+   **Owner's test (2026-11-18), Cyberpunk 2077: failed.** No Steam question at launch this time; the game never
+   started, not once: only its launcher (REDlauncher) was seen. Logs on OWNEETLOG: to read.
 
 ## Tests the owner put off
 
