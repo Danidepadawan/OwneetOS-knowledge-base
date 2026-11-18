@@ -2,14 +2,17 @@
 type: decision
 description: "PROPOSED: how OwneetOS makes games work as a whole instead of one game at a time: what mature open source projects already do is reused, never re-invented (Steam's own way for Steam games, umu's per-game fixes and runtimes for the others, a tested NVIDIA driver channel, tests by technology with free games)."
 area: games
-status: proposed
-decided: ""
+status: active
+decided: 2026-11-18
 updated: 2026-11-18
-tags: [decision, games, proposed]
+tags: [decision, games]
 ---
 # Making games work: a method, not one game at a time
 
-> [!warning] Proposed to the owner on 2026-11-18 ([[open-items]] 14). Nothing below is decided yet.
+> [!note] **Direction approved by the owner on 2026-11-18** ([[open-items]] 14): research first, point by point.
+> Point 2 (Steam's own windows shown): to be tried ("Steam's interface has not flickered for a while"); if Steam's own
+> shader page is shown, the console's percentage (demo `4.2c-steam-shaders`, approved) may not be needed: not built
+> until then.
 
 ## Why
 
@@ -60,3 +63,4 @@ run with the console's kernel) to tell the driver from the card.
 | Date | Change |
 |---|---|
 | 2026-11-18 | Proposed to the owner ([[open-items]] 14). |
+| 2026-11-18 | Direction approved; research first; point 2 to be tried; the shader percentage waits for it. |

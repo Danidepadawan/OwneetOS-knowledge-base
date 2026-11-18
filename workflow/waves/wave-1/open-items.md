@@ -19,7 +19,6 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 14 | Games: prevent whole classes of problems, not one game at a time (owner, serious) | Proposal [[game-compatibility-method]]: waits for the owner |
 | 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk: NVIDIA's fix awaited (beta 2.31 meanwhile); demo `4.2c-steam-shaders` to approve; install-script window shown (owneetd 0.25.35, to test with Jedi) |
 | 9 | GitHub pages with every website update | READMEs written, description and topics prepared ([[website]]): the owner looks, then pushes and sets them |
 
@@ -32,6 +31,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
+| 14 | Games: prevent whole classes of problems, not one game at a time (owner, serious) | Direction approved ([[game-compatibility-method]]): research point by point |
 | 3af | A test of owneetd that failed once (`TestStopAndSourceGone`) | Closed if it does not come back by the end of the tests (owner) |
 
 ### Others
@@ -158,6 +158,8 @@ status is kept in their own notes; this table follows them.
    owner: [[game-compatibility-method]] (the four classes of problems seen, who already solved each, the method).
    Found on the way: the console's Windows games start with `GAMEID=umu-default` and no store
    (`owneet-windows-run`), so umu-protonfixes' per-game fixes never apply to them.
+   **Owner (2026-11-18): direction approved; research first.** Point 2 to be tried (Steam's windows shown); the shader
+   percentage (approved demo) waits: Steam's own page may make it unneeded.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
