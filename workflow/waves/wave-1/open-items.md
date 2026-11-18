@@ -19,7 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | Step 1 and the return home passed with Jedi; more games' first starts to test |
+| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | Dishonored 2, BioShock Infinite passed; ELDEN RING stuck once on Steam's closing screen; "recently played" not updated: logs to read |
 | 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk: NVIDIA's fix awaited (beta 2.31 meanwhile); demo `4.2c-steam-shaders` to approve; install-script window shown (owneetd 0.25.35, to test with Jedi) |
 | 9 | GitHub pages with every website update | READMEs written, description and topics prepared ([[website]]): the owner looks, then pushes and sets them |
 
@@ -207,6 +207,14 @@ status is kept in their own notes; this table follows them.
    **Owner's test (2026-11-18 22:01-22:08): passed** (quitting Jedi brought the console's home, 22:05:33 and 22:08:06).
    Launched from Steam itself it also comes back to the console's home: not a big problem, **left as it is** (owner: do
    not risk breaking something else). Disk check: nothing new. Next: more games for step 1 (first starts).
+   **Owner's tests (2026-11-18, evening):** Dishonored 2 and BioShock Infinite: Steam's interface during the start, the
+   main menu reached, the controller works, quitting brings the console's home: **passed**. ELDEN RING: Steam's interface,
+   main menu, controller fine; **at the first quit, stuck on Steam's closing screen** (its prompts: force quit, or back);
+   force quit ignored; holding Guide brought the console's home. Second try (after force-closing it): started as before,
+   a saved game resumed fine, "Quit to desktop" brought the console's home. **The home's "recently played": Jedi still
+   shown as the last game played**, though other games were played after it. Logs on OWNEETLOG: to read.
+   **Still to test (owner, being installed):** Batman: Arkham City GOTY (queued after Red Dead Redemption 2), DARK SOULS
+   III, BioShock, Red Dead Redemption 2 (Rockstar launcher), Assassin's Creed Unity (Ubisoft, not bought yet).
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
