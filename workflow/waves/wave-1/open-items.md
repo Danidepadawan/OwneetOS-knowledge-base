@@ -215,6 +215,14 @@ status is kept in their own notes; this table follows them.
    shown as the last game played**, though other games were played after it. Logs on OWNEETLOG: to read.
    **Still to test (owner, being installed):** Batman: Arkham City GOTY (queued after Red Dead Redemption 2), DARK SOULS
    III, BioShock, Red Dead Redemption 2 (Rockstar launcher), Assassin's Creed Unity (Ubisoft, not bought yet).
+   **From the log (`owneet-20261118-221153`):** ELDEN RING's first run: the game's processes stayed after its window
+   went; Steam showed its closing screen; the console's "Close game" (22:25:39) ended them in 3 s. Why Steam's own force
+   quit did nothing is not in the logs: Proton's log is written again at each start, so the second run replaced the
+   first (the test log should keep one per start). Proton's log of a long ELDEN RING session was 155 MB, in `/tmp`, in
+   memory (testers only; to cap). **"Recently played":** the interface reads a Steam game's last-played time only from
+   Steam's own files when it reads the games, and Steam writes them when it closes: a game played in this session is
+   not seen as played until Steam closed. Fix proposed: the console marks a Steam game as played when it ends (owneetd
+   knows it). Disk check: nothing new.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
