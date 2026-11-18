@@ -57,7 +57,14 @@ classes; for each, a mature open source project already solved it and OwneetOS d
 - Point 2: [[steam-the-steamos-way]]. Point 3: [[umu-fixes-and-runtime]]. Point 4: [[nvidia-driver-channel]].
   Points 5 and 6: [[game-test-matrix]].
 
-## Order (to agree)
+## Order (owner, 2026-11-18)
+
+1. Steam no longer hidden during a launch (then SteamOS's options, one at a time); 2. umu with the game's id and
+store for the console's Windows games; 3. native Linux games in the Steam Linux Runtime. Points 4 (driver channel)
+and 5 (free games table): decided along the way. **The Steam Linux Runtime for native games is downloaded with the
+one-time Windows-games download** (owner).
+
+## Order (as first proposed)
 
 Research first (one note per point, with sources), then a demo where the look changes, then the work in the plan's
 usual steps. Cyberpunk 2077 meanwhile: the FrankenPC tried with the driver of the development PC (595, if it can
@@ -69,3 +76,4 @@ run with the console's kernel) to tell the driver from the card.
 |---|---|
 | 2026-11-18 | Proposed to the owner ([[open-items]] 14). |
 | 2026-11-18 | Direction approved; research first; point 2 to be tried; the shader percentage waits for it. |
+| 2026-11-18 | Order approved for the first three points; 4 and 5 along the way; the runtime with the Windows-games download. |
