@@ -263,3 +263,4 @@ Up: [[phase-4-games]] · Status: **done**
 - **Testers: Proton's log for Steam's games too (owner, 2026-11-18, [[open-items]] 13):** with `owneet.debug.windows_log=on`,
   owneetd 0.25.34 starts Steam with `PROTON_LOG=1`, `PROTON_LOG_DIR=/tmp/owneet-proton-logs` (in memory); owneet-base 0.0.80's
   test log copies each `steam-APPID.log` to the OWNEETLOG stick.
+- **The testers' Proton log for Steam games, lighter and one per start (2026-11-18):** owneetd 0.25.38 sets `WINEDEBUG=+timestamp,+pid,+tid,+threadname,+debugstr,+loaddll,+mscoree,warn+seh` (ELDEN RING made 155 MB in memory before); owneet-base 0.0.81's test log keeps a copy per start (`proton-steam-APPID-N.log`).

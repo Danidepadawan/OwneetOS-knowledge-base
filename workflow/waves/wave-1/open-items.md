@@ -19,7 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | Dishonored 2, BioShock Infinite passed; ELDEN RING stuck once on Steam's closing screen; "recently played" not updated: logs to read |
+| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | Recently played fixed (owneet-frontend 0.38.40), logs per start; on OWNEETLOG: ELDEN RING again, then umu |
 | 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk: NVIDIA's fix awaited (beta 2.31 meanwhile); demo `4.2c-steam-shaders` to approve; install-script window shown (owneetd 0.25.35, to test with Jedi) |
 | 9 | GitHub pages with every website update | READMEs written, description and topics prepared ([[website]]): the owner looks, then pushes and sets them |
 
@@ -223,6 +223,11 @@ status is kept in their own notes; this table follows them.
    Steam's own files when it reads the games, and Steam writes them when it closes: a game played in this session is
    not seen as played until Steam closed. Fix proposed: the console marks a Steam game as played when it ends (owneetd
    knows it). Disk check: nothing new.
+   **Owner (2026-11-18): first the recently-played fix, then ELDEN RING again, then umu.** Built: owneet-frontend 0.38.40
+   (a Steam game started from the console is marked as played when it ends, in memory; Steam's own files say the same
+   once Steam closes); owneetd 0.25.38 (the testers' Proton log for Steam games lighter: no trace of every exception);
+   owneet-base 0.0.81 (the test log keeps one Proton log per start: `proton-steam-APPID-N.log`). On OWNEETLOG: to test
+   (ELDEN RING, then the home's recently played).
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
