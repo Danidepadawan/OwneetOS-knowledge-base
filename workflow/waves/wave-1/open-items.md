@@ -19,6 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
+| 14 | Games: prevent whole classes of problems, not one game at a time (owner, serious) | A plan proposed to the owner |
 | 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk: NVIDIA's fix awaited (beta 2.31 meanwhile); demo `4.2c-steam-shaders` to approve; install-script window shown (owneetd 0.25.35, to test with Jedi) |
 | 9 | GitHub pages with every website update | READMEs written, description and topics prepared ([[website]]): the owner looks, then pushes and sets them |
 
@@ -138,6 +139,16 @@ status is kept in their own notes; this table follows them.
    yet, unknown whether it holds the fix). Our pinned packages: nvidia 615.71.09 (snapshot 2026-10-13). Ways that do
    not depend on chance, told to the owner: Steam's beta 2.31 now; each new NVIDIA driver tried on the FrankenPC
    through the update stick; or a fix of our own (the console repairs the failing shader on the PC itself), heavy.
+   **Owner (2026-11-18): demo `4.2c-steam-shaders` approved; 3(a) confirmed.** The approach to Cyberpunk is not
+   accepted: see item 14.
+
+14. **Games: prevent, do not chase them one by one** (owner, 2026-11-18, serious): almost every game tested gives a
+   problem; fixing them one at a time is not how a product for the public is made. The owner cannot buy games to test
+   them (few on Steam, fewer on GOG, other kinds unknown); a user does not care whose fault it is, they want to play.
+   Cyberpunk 2077 ran at high settings on the same PC and graphics card under Windows (the card was bought for it).
+   Wanted: best practices that prevent whole classes of problems, using what open source projects already do
+   (internet, other projects: recompilation, emulation, optimisation). The games' phase cannot be taken as done.
+   [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
 
