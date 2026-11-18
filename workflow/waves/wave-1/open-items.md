@@ -19,7 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | Step 1 works (EA window, Steam's shader page); Jedi then hung: the same test with the old way, to compare |
+| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | Old way: Jedi runs; quitting it brings Steam's home, not the console's: logs to read |
 | 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk: NVIDIA's fix awaited (beta 2.31 meanwhile); demo `4.2c-steam-shaders` to approve; install-script window shown (owneetd 0.25.35, to test with Jedi) |
 | 9 | GitHub pages with every website update | READMEs written, description and topics prepared ([[website]]): the owner looks, then pushes and sets them |
 
@@ -192,6 +192,10 @@ status is kept in their own notes; this table follows them.
    composition, explicit sync, our Xwayland): ours to fix. Order of the tests: (A) the old way; if it still hangs, (B)
    the existing testers' switches of that chain, one at a time (`owneet.debug.nv_explicit_sync=off`, then
    `owneet.debug.gamescope_explicit_sync=off`); ProtonDB: the game is "gold" (613 reports), so it runs elsewhere.
+   **Owner's test A (2026-11-18 21:37, the old way):** Jedi started with Steam closed: the console's home, a loading
+   screen, Steam's home, then the game's splash screens; **21:39 the game ran**. 21:41 "Quit to desktop" in the game
+   brought **Steam's home, not the console's**. Owner: a very narrow pass; everything else can be tolerated, but
+   **quitting a game must bring the console's home**. Logs on OWNEETLOG: to read.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
