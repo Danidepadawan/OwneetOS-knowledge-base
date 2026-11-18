@@ -29,9 +29,13 @@ and 620; other games are hit too.
 
 ## Solution
 
-**Open.** A fix is proposed in vkd3d-proton's shader translator (dxil-spirv pull request 344: the bit-reversal
-written as a native bit-reverse); it reaches us with a Proton (Experimental) update, nothing to change in OwneetOS.
-Then start the game again. The workaround people use (dump the shader, re-optimise it with `spirv-opt`, load it
+**Open.** The fix is NVIDIA's: the change proposed in vkd3d-proton's shader translator (dxil-spirv pull request 344)
+was closed unmerged on 2026-11-02 by its maintainer ("This will be fixed in NV driver where it belongs"); the same day
+an NVIDIA engineer said they have a fix (NVIDIA bug 7014466). So the cure is a newer NVIDIA driver: OwneetOS ships it
+with an update of its pinned packages as soon as a driver with the fix is out (615.78.08 and 620.70.06 were still
+reported broken). Meanwhile, for Cyberpunk 2077: Steam's own beta "2.31" of the game (Steam → the game's properties →
+Betas, with the controller) is reported to avoid the crash, but an older version of the game may not open saves made
+with a newer one. The workaround people use (dump the shader, re-optimise it with `spirv-opt`, load it
 with `VKD3D_SHADER_OVERRIDE` in the game's launch options) needs a terminal and files per game: not for the
 console.
 

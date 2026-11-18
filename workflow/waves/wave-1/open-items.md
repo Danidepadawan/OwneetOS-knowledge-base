@@ -19,7 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk: NVIDIA driver bug (not ours); Steam's long preparation and Jedi's install-script window hidden: proposals to the owner |
+| 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk: NVIDIA's fix awaited (beta 2.31 meanwhile); demo `4.2c-steam-shaders` to approve; install-script window shown (owneetd 0.25.35, to test with Jedi) |
 | 9 | GitHub pages with every website update | READMEs written, description and topics prepared ([[website]]): the owner looks, then pushes and sets them |
 
 ### Waits for the owner's decision
@@ -121,6 +121,17 @@ status is kept in their own notes; this table follows them.
    (18:36). What it asks for is not in the logs: Steam's `installscriptevalutor_log.txt` is not copied by the test
    log, and the game's `__Installer` folder holds only `vc/` and `LOC/` (no EA app installer seen). Proposals to the
    owner.
+   **Owner (2026-11-18):** (1) Cyberpunk must not stay without a solution. Found: the fix is NVIDIA's (the vkd3d change
+   was refused on 2026-11-02; NVIDIA has a fix, bug 7014466): OwneetOS ships the fixed driver in an update as soon as it
+   is out; meanwhile Steam's beta "2.31" of the game is reported to work (saves of a newer version may not open):
+   [[nvidia-turing-shader-compiler-crash-in-vkd3d-games]]; told to the owner. (2) **Demo** of the percentage:
+   `design/demos/4.2c-steam-shaders.html` ("Steam is preparing the game's graphics: 69%", a bar, "The first time, or
+   after an update, it can take a few minutes"; "shaders" never named), waits for the owner's approval. Found on the
+   way: item 3v's fix (Steam's own shader page shown when Steam waits on ProcessingShaderCache) no longer happens:
+   owneetd keeps Steam hidden while `fossilize_replay` runs (Silksong's rule), so the demo's percentage replaces it.
+   (3) **(a) approved, built:** owneetd 0.25.35 shows Steam at once when a window of a game's install script
+   (`reaper SteamLaunch AppId=N Install=1`) comes on screen while Steam is hidden (Go tests). (b) (the install
+   script's log on the stick) not approved: not built.
 
 ## Tests the owner put off
 
