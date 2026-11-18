@@ -148,6 +148,11 @@ status is kept in their own notes; this table follows them.
    Cyberpunk 2077 ran at high settings on the same PC and graphics card under Windows (the card was bought for it).
    Wanted: best practices that prevent whole classes of problems, using what open source projects already do
    (internet, other projects: recompilation, emulation, optimisation). The games' phase cannot be taken as done.
+   **Owner (2026-11-18):** Cyberpunk 2077 runs without problems on the development PC (Linux Mint). Read there (read
+   only): GeForce RTX 4060 (Ada), NVIDIA driver 595.99.02 (open kernel module), Intel i5-13500, Steam as a Flatpak;
+   the game is not on the disks mounted now (a library on `/media/derf/Volume1`, not mounted) and its last trace in
+   Steam's logs there is 2026-07-22. Two differences that matter for the crash: the card's family (Turing on the
+   FrankenPC) and the driver (615.71.09 there). Asked the owner when it last ran there and in which game version.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
