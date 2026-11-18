@@ -19,7 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | Old way: Jedi runs; quitting it brings Steam's home, not the console's: logs to read |
+| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | Quitting a Steam game brings the console's home (owneetd 0.25.37), on OWNEETLOG: to test with Jedi |
 | 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk: NVIDIA's fix awaited (beta 2.31 meanwhile); demo `4.2c-steam-shaders` to approve; install-script window shown (owneetd 0.25.35, to test with Jedi) |
 | 9 | GitHub pages with every website update | READMEs written, description and topics prepared ([[website]]): the owner looks, then pushes and sets them |
 
@@ -196,6 +196,14 @@ status is kept in their own notes; this table follows them.
    screen, Steam's home, then the game's splash screens; **21:39 the game ran**. 21:41 "Quit to desktop" in the game
    brought **Steam's home, not the console's**. Owner: a very narrow pass; everything else can be tolerated, but
    **quitting a game must bring the console's home**. Logs on OWNEETLOG: to read.
+   **From the log (`owneet-20261118-213653`):** the install-script window brought Steam (owneetd 0.25.35, 21:37:48);
+   the game in front at 21:37:56; Steam in front for 13 s between two of the game's windows (21:38:12-25) **and the game
+   did not hang**: so Steam coming in front was not what hung it on the first try (that hang stays to be watched, maybe
+   the very first start after the shader preparation). At 21:41:34 the game's window went, Steam (behind it) came in
+   front, and the game ended only at 21:41:44 (EA closing after it): owneetd brought the home screen only with the game
+   itself in front. **Fixed** in owneetd 0.25.37: a Steam game's end also brings the home screen with Steam in front,
+   unless Steam was chosen during the game (test `TestSteamGameEndBringsHomeOverSteam`). The default stays the new way
+   (Steam shown during a launch); the testers' switch removed from the stick. On OWNEETLOG: to test.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
