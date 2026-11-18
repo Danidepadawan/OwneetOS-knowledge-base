@@ -55,7 +55,7 @@ Added by the owner on 2026-10-31, after [[step-5.6-local-videos-and-music]] and 
      over a web app in general, YouTube, Netflix (browsing, title window, player), Spotify and the
      player (a video, a song) in gamescope, View opening and closing it while the app keeps
      working; the full-screen page in cage, B or View back to the app; texts (en, it), glyph sets.
-     **Written (2026-11-18), waiting for the owner's approval:** `design/demos/5.6a-command-legend.html`
+     **Written and approved by the owner (2026-11-18):** `design/demos/5.6a-command-legend.html`
      (code `693376c`; its flows checked with scripted key presses: Netflix's legend following the
      browsing pages, the title window and the player; B in the app with the legend open; Guide;
      the cage page). What it adds beyond the decisions:

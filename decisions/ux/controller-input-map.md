@@ -131,7 +131,8 @@ web app or the player, opens a legend of what each button does there, for the sc
 (e.g. Netflix's browsing pages, its title window or its player; a video or a song in the player). The
 app's own integration catches View (the console's extension, the player's script): the console still
 intercepts only Guide. **gamescope:** the legend floats over the app, which keeps working under it
-(every button but View goes on to the app); **only View closes it**. **cage** (one window at a
+(every button but View goes on to the app); **only View closes it**, and Guide closes it on the way
+to the home screen (demo 5.6a, approved 2026-11-18). **cage** (one window at a
 time): a full-screen page of the console; **B or View closes it**, back to the app. Games get no
 legend (the console cannot know their buttons). The console's own buttons stay in the quick menu's
 "Controls and features".

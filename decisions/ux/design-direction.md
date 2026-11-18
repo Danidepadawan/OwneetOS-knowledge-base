@@ -4,7 +4,7 @@ description: "Approved look: deep navy and coral, Bricolage Grotesque + Lexend, 
 area: ux
 status: active
 decided: 2026-10-03
-updated: 2026-10-15
+updated: 2026-11-18
 legacy: "PROJECT_RULES.md §9"
 tags: [decision, ux, design]
 ---
@@ -27,7 +27,10 @@ tags: [decision, ux, design]
   in the accent; the boot splash's copy is all white on black (2026-10-15, [[boot-experience]]),
   generated as outlines by `tools/branding/make-wordmark` (`packages/owneet-branding/owneetos-wordmark.svg`).
 - Button prompts: Xbox, PlayStation and Nintendo-style glyph sets, drawn for OwneetOS (no
-  third-party logos), chosen automatically from the connected controller.
+  third-party logos), chosen automatically from the connected controller. **View** (demo 5.6a,
+  approved 2026-11-18): two overlapping squares (Xbox-style), a "CREATE" pill (PlayStation-style),
+  a minus (Nintendo-style); the right stick pressed as a pill ("RS", or "R3" PlayStation-style).
+  Texts never name a button's letter (they read wrong with another controller).
 
 Practices: [[design-tokens]], [[ui-patterns]]. Approval process: [[demo-before-code]].
 
@@ -43,3 +46,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-15 | The boot splash is neutral (white on black) for every palette; the start-up animation brings the palette's colours ([[boot-experience]]). |
 | 2026-10-08 | Demo 3.3 feedback: wordmark/logo provisional (final logo before the launch, roadmap 7.6); about twenty palettes (Tide in vivid "minty" cyan; new Ember, Espresso, Harbor and more) in a picker with live preview; language chosen from a list; the Guide prompt reads "Home" ([[design-direction]]). |
 | 2026-10-08 | Step 3.3 approved. Button prompts also have a Nintendo-style set (chosen automatically for Switch controllers). Small hardware checks are batched with the next larger test instead of a new USB stick each. |
+| 2026-11-18 | View's glyph in the three sets, R3 as a pill; texts without button letters (demo 5.6a). |
