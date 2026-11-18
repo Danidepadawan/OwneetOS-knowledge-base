@@ -260,3 +260,6 @@ Up: [[phase-4-games]] · Status: **done**
   `witcher2.exe` ended at 21:50:03.469, the home screen at 03.474. Found there: Wine's `explorer.exe` was followed too (it
   owns a window) and ended at 03.314, before the game; it could outlive the game elsewhere. Open item: count no program under
   `C:\windows` as the game's, even with a window ([[open-items]]).
+- **Testers: Proton's log for Steam's games too (owner, 2026-11-18, [[open-items]] 13):** with `owneet.debug.windows_log=on`,
+  owneetd 0.25.34 starts Steam with `PROTON_LOG=1`, `PROTON_LOG_DIR=/tmp/owneet-proton-logs` (in memory); owneet-base 0.0.80's
+  test log copies each `steam-APPID.log` to the OWNEETLOG stick.
