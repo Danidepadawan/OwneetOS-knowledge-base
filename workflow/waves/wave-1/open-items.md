@@ -19,7 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk 2077 dies within a second of starting: Proton's log for Steam's games built (owneetd 0.25.34, owneet-base 0.0.80), on OWNEETLOG: start it again |
+| 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk 2077 and Jedi: Fallen Order fail (2026-11-18, details below): logs to read |
 | 9 | GitHub pages with every website update | READMEs written, description and topics prepared ([[website]]): the owner looks, then pushes and sets them |
 
 ### Waits for the owner's decision
@@ -99,6 +99,14 @@ status is kept in their own notes; this table follows them.
    Steam with `PROTON_LOG=1` and `PROTON_LOG_DIR=/tmp/owneet-proton-logs` when `owneet.debug.windows_log=on` (in memory:
    nothing stays on the disk); owneet-base 0.0.80's test log copies each `steam-APPID.log` to the stick
    (`<log>.games/proton-steam-APPID.log`). On OWNEETLOG: Cyberpunk 2077 to start again, then its log.
+   **Owner's test (2026-11-18, owneetd 0.25.34):** (a) Cyberpunk 2077 started from the console with Steam closed: it
+   stayed on the console's "Starting …" screen; it seemed Steam's Vulkan shader processing had not even begun (owner not
+   sure). (b) Started again from Steam itself: the Vulkan shaders were processed, starting at once at 89% (maybe begun the
+   first time and cut off); then an abrupt return to the console's home screen; then the launcher came, "Play" pressed
+   with the controller; the game started and closed after a few seconds. (c) STAR WARS Jedi: Fallen Order (the only one
+   the owner can try now): the same as Cyberpunk at its first try; back on the home screen, Steam opened again asked to
+   choose a folder or a file, for what the owner could not tell (the EA app's install?); he closed Steam and switched the
+   console off. Logs on OWNEETLOG: to read.
 
 ## Tests the owner put off
 
