@@ -19,7 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk 2077 dies within a second of starting (2026-11-18): Proton's log needed, proposal to the owner |
+| 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk 2077 dies within a second of starting: Proton's log for Steam's games built (owneetd 0.25.34, owneet-base 0.0.80), on OWNEETLOG: start it again |
 | 9 | GitHub pages with every website update | READMEs written, description and topics prepared ([[website]]): the owner looks, then pushes and sets them |
 
 ### Waits for the owner's decision
@@ -95,6 +95,10 @@ status is kept in their own notes; this table follows them.
    itself most likely starts and dies within a second. Not in the log: why. Proton's own log is written only for the
    console's Windows games (`owneet.debug.windows_log`), not for Steam's: proposal to the owner, the same testers' switch
    for Steam's games too.
+   **Owner (2026-11-18): approved; he pressed "Play" in the launcher with the controller.** Built: owneetd 0.25.34 starts
+   Steam with `PROTON_LOG=1` and `PROTON_LOG_DIR=/tmp/owneet-proton-logs` when `owneet.debug.windows_log=on` (in memory:
+   nothing stays on the disk); owneet-base 0.0.80's test log copies each `steam-APPID.log` to the stick
+   (`<log>.games/proton-steam-APPID.log`). On OWNEETLOG: Cyberpunk 2077 to start again, then its log.
 
 ## Tests the owner put off
 
