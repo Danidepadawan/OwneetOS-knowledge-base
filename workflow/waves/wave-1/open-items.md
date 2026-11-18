@@ -26,12 +26,12 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
+| 14 | Games: prevent whole classes of problems, not one game at a time (owner, serious) | Research done ([[game-compatibility-method]]): the order of work and two choices wait for the owner |
 
 ### To build or prepare (assistant)
 
 | # | What | Where it stands |
 |---|---|---|
-| 14 | Games: prevent whole classes of problems, not one game at a time (owner, serious) | Direction approved ([[game-compatibility-method]]): research point by point |
 | 3af | A test of owneetd that failed once (`TestStopAndSourceGone`) | Closed if it does not come back by the end of the tests (owner) |
 
 ### Others
@@ -160,6 +160,8 @@ status is kept in their own notes; this table follows them.
    (`owneet-windows-run`), so umu-protonfixes' per-game fixes never apply to them.
    **Owner (2026-11-18): direction approved; research first.** Point 2 to be tried (Steam's windows shown); the shader
    percentage (approved demo) waits: Steam's own page may make it unneeded.
+   **Research done (2026-11-18):** [[steam-the-steamos-way]], [[umu-fixes-and-runtime]], [[nvidia-driver-channel]],
+   [[game-test-matrix]]; an order of work proposed to the owner.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off

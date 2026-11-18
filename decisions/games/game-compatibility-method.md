@@ -52,6 +52,11 @@ classes; for each, a mature open source project already solved it and OwneetOS d
 6. **What cannot work, said honestly.** Games whose anti-cheat refuses Linux (e.g. Valorant, Battlefield 6) never
    run on any Linux system: the console says so instead of failing (ProtonDB and Steam Deck data).
 
+## Research (2026-11-18)
+
+- Point 2: [[steam-the-steamos-way]]. Point 3: [[umu-fixes-and-runtime]]. Point 4: [[nvidia-driver-channel]].
+  Points 5 and 6: [[game-test-matrix]].
+
 ## Order (to agree)
 
 Research first (one note per point, with sources), then a demo where the look changes, then the work in the plan's
