@@ -55,6 +55,22 @@ Added by the owner on 2026-10-31, after [[step-5.6-local-videos-and-music]] and 
      over a web app in general, YouTube, Netflix (browsing, title window, player), Spotify and the
      player (a video, a song) in gamescope, View opening and closing it while the app keeps
      working; the full-screen page in cage, B or View back to the app; texts (en, it), glyph sets.
+     **Written (2026-11-18), waiting for the owner's approval:** `design/demos/5.6a-command-legend.html`
+     (code `693376c`; its flows checked with scripted key presses: Netflix's legend following the
+     browsing pages, the title window and the player; B in the app with the legend open; Guide;
+     the cage page). What it adds beyond the decisions:
+     - **the floating legend:** a panel at the top right (the palette's background, 90 %, a border),
+       its title "Controls", the app's name and the screen (e.g. "The player"); the rows, then View
+       "Close the legend" and Guide "Home"; when a legend does not fit (large text, a long legend),
+       the panel widens to two columns;
+     - **Guide closes it** on the way to the home screen (an overlay is drawn over whatever is on
+       screen, so it would float over the console too);
+     - **the cage page:** "Controls · {app}" and the screen, the rows in two cards, the prompts
+       B / View "Back to {app}" and Guide "Hold: close {app}"; other buttons do nothing there;
+     - **View's glyph**, new in the console: two overlapping squares (Xbox-style), a "CREATE" pill
+       (PlayStation-style), a minus (Nintendo-style); R3 as a pill ("RS", "R3");
+     - **texts without button names** (they read wrong with another controller): "the same button
+       or Back: return", "after 0:05, previous goes back to the start".
   2. **Code:** the legends' data file and its texts (en, it); owneetd's legend state (`/v1/legend`,
      event `legend.changed`: toggled by the bridge and by the player's script; in cage the console
      shown and the app brought back, the player told to ignore its buttons meanwhile); the
