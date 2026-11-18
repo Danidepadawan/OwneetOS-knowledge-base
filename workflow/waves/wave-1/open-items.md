@@ -19,6 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
+| 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | The owner's batch test, with 10 |
 | 9 | GitHub pages with every website update | READMEs written, description and topics prepared ([[website]]): the owner looks, then pushes and sets them |
 
 ### Waits for the owner's decision
@@ -37,7 +38,7 @@ owner's.
 | # | What | Where it stands |
 |---|---|---|
 | 3 | Netflix / YouTube not silent behind the home screen | Danidepadawan, with the web apps |
-| 10 | Cyberpunk 2077: Steam's question at launch shown at once | Test put off by the owner |
+| 10 | Cyberpunk 2077: Steam's question at launch shown at once | The owner's batch test, with 13 (nothing to build: owneetd 0.25.6) |
 | 12 | "Playing for" over an hour on the home screen | Test put off by the owner |
 
 ### Roadmap steps left before the first release
@@ -79,9 +80,17 @@ status is kept in their own notes; this table follows them.
    today's components (play-tour, guide-drawing, rich-text; no console-screen), not committed yet (which branch: the
    owner's). Both repositories' description and topics: in [[website]]. Waits for the owner.
 
+13. **Steam games with their publisher's launcher** (owner, 2026-11-18): the owner installs games for a batch of tests
+   and expects problems above all with external launchers: EA (STAR WARS Jedi: Fallen Order), Rockstar (Red Dead
+   Redemption 2), CD Projekt Red (Cyberpunk 2077, with item 10) and Ubisoft (Assassin's Creed Unity, not bought yet: later).
+   Launchers made for a mouse are driven with the controller pointer ([[controller-input-map]]). What fails is
+   recorded here per game after the test. [[step-4.2c-steam-without-its-interface]]
+
 ## Tests the owner put off
 
 10. Cyberpunk 2077: Steam's question at launch shown at once. [[step-4.2c-steam-without-its-interface]]
+    **Owner (2026-11-18):** tested in the batch with 13; nothing to build (owneetd 0.25.6 shows Steam as soon as its log
+    says it waits for the user).
 12. "Playing for" over an hour on the home screen ("1 h 5 min", "2 h"). [[step-4.2c-steam-without-its-interface]]
 
 

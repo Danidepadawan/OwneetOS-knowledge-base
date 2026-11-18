@@ -359,3 +359,4 @@ Decisions by area: [[decisions/INDEX|decisions index]].
 | 2026-11-17 | Demo 4.2c-steam-preparing approved (owner), Home's notice "Preparing {title}…" included; built (owneetd 0.25.33, owneet-frontend 0.38.39). | [[step-4.2c-steam-without-its-interface]] |
 | 2026-11-18 | Item 8 closed after the owner's test ("Preparing" before a Steam download). Next: item 9 (owner's order: 8, 9, then 10 and 12). | [[step-4.2c-steam-without-its-interface]] |
 | 2026-11-18 | Item 9: the code's README follows the website; the website's README names today's components; both repositories' description and topics prepared, set by the owner on GitHub. | [[website]] |
+| 2026-11-18 | Item 13 (owner): a batch test of Steam games with their publisher's launcher (EA, Rockstar, CD Projekt Red; Ubisoft later), item 10 with it. | [[step-4.2c-steam-without-its-interface]] |
