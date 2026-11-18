@@ -185,6 +185,13 @@ status is kept in their own notes; this table follows them.
    shown again) or the driver / DXVK would hang anyway. **Test proposed:** the same game with the testers' switch
    `owneet.debug.steam_launch=hidden` (the old way: Steam never behind a game before its window). Disk check: nothing
    new (packages' cache 55, the same 5 old core dumps).
+   **Owner (2026-11-18):** the switch written on OWNEETLOG (`owneet-debug.txt`: `owneet.debug.steam_launch=hidden`, to be
+   removed after the test). **Nothing is left to the driver point (4), not approved: no "wait for a fix".** Found: no
+   GPU fault in the kernel's log (no NVIDIA Xid), so the game's frames stopped in the handover between the game and the
+   screen (DXVK's swapchain on gamescope's Xwayland), which is OwneetOS's own display chain (NVIDIA: forced
+   composition, explicit sync, our Xwayland): ours to fix. Order of the tests: (A) the old way; if it still hangs, (B)
+   the existing testers' switches of that chain, one at a time (`owneet.debug.nv_explicit_sync=off`, then
+   `owneet.debug.gamescope_explicit_sync=off`); ProtonDB: the game is "gold" (613 reports), so it runs elsewhere.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
