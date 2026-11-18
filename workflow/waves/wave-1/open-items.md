@@ -19,6 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
+| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | Step 1 built (owneetd 0.25.36, Steam shown during a launch), on OWNEETLOG: to test |
 | 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk: NVIDIA's fix awaited (beta 2.31 meanwhile); demo `4.2c-steam-shaders` to approve; install-script window shown (owneetd 0.25.35, to test with Jedi) |
 | 9 | GitHub pages with every website update | READMEs written, description and topics prepared ([[website]]): the owner looks, then pushes and sets them |
 
@@ -31,7 +32,6 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 14 | Games: prevent whole classes of problems, not one game at a time (owner, serious) | Order approved ([[game-compatibility-method]]): first, Steam no longer hidden during a launch |
 | 3af | A test of owneetd that failed once (`TestStopAndSourceGone`) | Closed if it does not come back by the end of the tests (owner) |
 
 ### Others
@@ -164,6 +164,10 @@ status is kept in their own notes; this table follows them.
    [[game-test-matrix]]; an order of work proposed to the owner.
    **Owner (2026-11-18): order approved for points 1-3** (Steam not hidden; umu with id and store; native games in the
    Steam Linux Runtime); 4 and 5 along the way; the runtime comes with the Windows-games download.
+   **First step built (2026-11-18, owneetd 0.25.36):** Steam is no longer hidden while it launches a game (its shader
+   page, install scripts, publishers' launchers and questions on screen, as on SteamOS); from the game's start Steam
+   stays behind it until the game's own window (no bare home screen in between). The old way with the testers'
+   switch `owneet.debug.steam_launch=hidden`, to compare. Go tests. On OWNEETLOG: waits for the owner's test.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off

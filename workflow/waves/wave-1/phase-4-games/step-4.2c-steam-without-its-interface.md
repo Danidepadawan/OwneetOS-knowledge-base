@@ -215,3 +215,6 @@ The console keeps Steam's interface off the screen in everyday use ([[steam-inte
 - **Demo approved (owner, 2026-11-17), Home's notice included ("Preparing {title}…"). Built:** owneetd 0.25.33,
   owneet-frontend 0.38.39 ([[open-items]] 8); on OWNEETLOG, waits for the owner's test.
 - **Owner's test (2026-11-17): "Preparing" passed** ([[closed-items]] 8).
+- **Revised (owner, 2026-11-18, [[game-compatibility-method]]):** Steam is no longer hidden while it launches a game,
+  nor kept out until the game's window (the Silksong rule of 2026-10-17): its own windows are shown, as on SteamOS
+  (owneetd 0.25.36). The old way stays behind the testers' switch `owneet.debug.steam_launch=hidden`.

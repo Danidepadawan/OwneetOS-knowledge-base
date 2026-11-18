@@ -35,6 +35,8 @@ the base of several distributions:
 
 ## To try on the FrankenPC (one change at a time, each in its own test)
 
+> Try 1 built on 2026-11-18 (owneetd 0.25.36); the old way: `owneet.debug.steam_launch=hidden`.
+
 1. owneetd stops hiding Steam during a launch: while nothing of the game is on screen, Steam's own window is what
    gamescope shows (its shader page, an install script's window, a question). The console's "Starting …" screen only
    until Steam's window appears. Check: Steam's flicker ([[steam-loses-the-address-while-its-interface-starts]]),
