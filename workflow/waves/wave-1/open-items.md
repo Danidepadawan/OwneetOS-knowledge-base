@@ -39,7 +39,7 @@ owner's.
 |---|---|---|
 | 3 | Netflix / YouTube not silent behind the home screen | Danidepadawan, with the web apps |
 | 10 | Cyberpunk 2077: Steam's question at launch shown at once | The owner's batch test, with 13 (nothing to build: owneetd 0.25.6) |
-| 12 | "Playing for" over an hour on the home screen | Test put off by the owner |
+| 12 | "Playing for" over an hour on the home screen | The owner's batch test, with 10 and 13 (a game left open over an hour) |
 
 ### Roadmap steps left before the first release
 
@@ -92,5 +92,6 @@ status is kept in their own notes; this table follows them.
     **Owner (2026-11-18):** tested in the batch with 13; nothing to build (owneetd 0.25.6 shows Steam as soon as its log
     says it waits for the user).
 12. "Playing for" over an hour on the home screen ("1 h 5 min", "2 h"). [[step-4.2c-steam-without-its-interface]]
+    **Owner (2026-11-18):** tested in the batch with 10 and 13: a game left open over an hour, then Guide.
 
 
