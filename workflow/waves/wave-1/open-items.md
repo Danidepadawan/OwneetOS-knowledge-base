@@ -19,7 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | Step 1 tried with Jedi (EA window and shaders seen; then a black screen with the game's sound, a crash): logs to read |
+| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | Step 1 works (EA window, Steam's shader page); Jedi then hung: the same test with the old way, to compare |
 | 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk: NVIDIA's fix awaited (beta 2.31 meanwhile); demo `4.2c-steam-shaders` to approve; install-script window shown (owneetd 0.25.35, to test with Jedi) |
 | 9 | GitHub pages with every website update | READMEs written, description and topics prepared ([[website]]): the owner looks, then pushes and sets them |
 
@@ -174,6 +174,17 @@ status is kept in their own notes; this table follows them.
    each; the game menu's sound heard but **the screen black**, and Steam's notification sounds. 20:43: Steam's popup
    "Jedi: Fallen Order has crashed"; holding Guide brought the console's home; 20:44 "Close game" closed it; Steam
    opened again with no glitch (store). Logs on OWNEETLOG: to read.
+   **From the log (`owneet-20261118-202516`):** step 1 did what it should: Steam's controller page, then "Processing
+   Vulkan shaders" with its Skip button were on screen (gamescope's screenshots 20:28-20:40); EA's window was seen and
+   answered. The game (Unreal 4.21, DirectX 11 through DXVK 3.1.1, "Binding model: Descriptor heap", NVIDIA 615.71.09)
+   started at 20:40:32, its window on screen at 20:40:39; at **20:41:03 Steam's window came in front for 5 s** (the
+   game between two of its windows; Steam is now behind the game), back to the game at 20:41:08; right after, DXVK
+   "Got VK_SUBOPTIMAL_KHR, recreating swapchain" and nothing more: the game's render thread hung ("LowLevelFatalError
+   … GameThread timed out waiting for RenderThread after 120.00 secs", 20:43:16), black also in gamescope's own
+   screenshots (the game drew nothing). Not known yet: whether Steam coming in front caused it (a game shown, hidden,
+   shown again) or the driver / DXVK would hang anyway. **Test proposed:** the same game with the testers' switch
+   `owneet.debug.steam_launch=hidden` (the old way: Steam never behind a game before its window). Disk check: nothing
+   new (packages' cache 55, the same 5 old core dumps).
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
