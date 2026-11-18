@@ -119,6 +119,13 @@ project folder. No data collected keeps the site free of consent banners and GDP
 - **The GitHub pages follow the site (owner, 2026-11-09):** every update of the website also updates what the repositories show
   on GitHub: the README (written here and committed; the owner pushes) and the repository's description and topics (the text
   prepared here, set by the owner on GitHub: acting on GitHub is the owner's, [[collaboration]]).
+  **Prepared (2026-11-18, item 9; waits for the owner):**
+  - `OwneetOS`: description "A free and open source system that turns your PC into a game console. You only need a
+    controller."; website `https://owneetos.org`; topics `linux`, `linux-distribution`, `archlinux`, `gaming`,
+    `game-console`, `gamepad`, `controller`, `steam`, `gamescope`, `htpc`, `couch-gaming`, `open-source`.
+  - `OwneetOS-website`: description "The website of OwneetOS, a free system that turns your PC into a game console: a
+    static Angular site that collects no data."; website `https://owneetos.org`; topics `angular`, `static-site`,
+    `github-pages`, `website`, `i18n`, `owneetos`.
 
 ## History
 

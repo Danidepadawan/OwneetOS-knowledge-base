@@ -19,6 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
+| 9 | GitHub pages with every website update | READMEs written, description and topics prepared ([[website]]): the owner looks, then pushes and sets them |
 
 ### Waits for the owner's decision
 
@@ -30,7 +31,6 @@ owner's.
 | # | What | Where it stands |
 |---|---|---|
 | 3af | A test of owneetd that failed once (`TestStopAndSourceGone`) | Closed if it does not come back by the end of the tests (owner) |
-| 9 | GitHub pages with every website update | Text to prepare; the owner publishes |
 
 ### Others
 
@@ -73,6 +73,11 @@ status is kept in their own notes; this table follows them.
 
 9. **GitHub pages with every website update**: README, the repositories' description and topics; the
    text is prepared here, the owner publishes it. [[website]]
+   **Prepared (2026-11-18):** the code's README follows the website (its description, slogan, features and
+   requirements; status "almost here"; the website's address; no vault link, which does not work on GitHub; the folders
+   as they are; the trademark note), committed on `feature/phase7`. The website's README: its Structure section names
+   today's components (play-tour, guide-drawing, rich-text; no console-screen), not committed yet (which branch: the
+   owner's). Both repositories' description and topics: in [[website]]. Waits for the owner.
 
 ## Tests the owner put off
 
