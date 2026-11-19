@@ -358,6 +358,8 @@ status is kept in their own notes; this table follows them.
    reads the controller as a joystick and its own `User.ini` binds the joystick's buttons to its menu (ProtonDB users
    fixed BioShock's controls in that file). Asked the owner: verify it (the test log copies the Steam games' `.ini`
    files changed in the session), or put BioShock aside and go on with The Witcher 2 (umu) and step 3.
+   **Owner: verify it.** Built: owneet-base 0.0.82, the test log copies the `.ini` files (under 256 KB) of the users'
+   folders in Steam's Windows prefixes (`<log>.games/ini/APPID/…`), only read. On OWNEETLOG: BioShock once more.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
