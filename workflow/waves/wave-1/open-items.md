@@ -301,6 +301,18 @@ status is kept in their own notes; this table follows them.
    code is split into one box per digit that moves to the next box by itself, and the console's keyboard sends the
    whole text at once, faster than the boxes move on. Workaround told: one digit at a time (Y, one digit, confirm).
    **Fix to build:** the console's keyboard types into a window one character at a time, at a person's pace.
+   **Owner (correction):** the console's keyboard had every digit; after "Done" the launcher's field received only the
+   last 3. **Cause:** the interface sends the text as soon as the window is on screen again (`focus.changed`), before
+   the window has the keyboard, and the keys came 2 ms apart: the first ones were lost. **Fixed** in owneetd 0.25.43:
+   with the pointer on, the text waits until the X server's keyboard focus is on the window on screen (checked every
+   10 ms, at most 2 s), then is typed at a person's pace (key down 15 ms, 50 ms between keys). **Owner: no fix may
+   break other games.** Checked: only the pointer's Send uses `/v1/input/text`; games never get typed text, web apps
+   use `/v1/webapps/text`. Test `TestWaitKeyboard`. On OWNEETLOG: to test.
+   **Also from the log (`owneet-20261119-172907`):** the pointer for the install script turned on and off by itself
+   (17:30:01-17:32:25): fixed behaviour confirmed. With `-steamdeck` alone Steam also started itself twice (17:29:37,
+   17:29:43); BioShock was not started in this session. The Rockstar launcher went into the game's own Windows folder
+   (Proton's prefix, `compatdata/1174180` on the console's disk), where Proton puts it: not a choice of the console.
+   The `steam_os` line removed from OWNEETLOG (17:5x). Disk check: nothing new.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
