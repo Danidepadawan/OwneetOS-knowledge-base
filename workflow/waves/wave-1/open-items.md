@@ -346,6 +346,13 @@ status is kept in their own notes; this table follows them.
    **Owner's test (2026-11-19, BioShock with Steam's "Keyboard (WASD) and Mouse" and other layouts):** it started only
    at the 4th try; the right stick moves the cursor, but every button pressed opens the game's "Quit to Windows?"
    popup, and confirming it does not let him play either. Logs on OWNEETLOG: to read.
+   **From the log (`owneet-20261119-184228`):** Steam applied the template (`controller_xboxone_wasd.vdf`, 19:01:42);
+   Proton started Xalia with the game too (it loads SDL3: it reads the controller): likely the source of the Esc on
+   every button. The install script (DirectX and the others) kept a window up from 18:44:53 to 18:55:14 (pointer on,
+   Xalia paused): the slow starts. **Test switch built:** owneetd 0.25.45 `owneet.debug.steam_xalia=off`
+   (PROTON_USE_XALIA=0 for Steam's games; nothing changes without the line); on OWNEETLOG for the BioShock test only
+   (no game with a launcher meanwhile), to be removed after. If confirmed, the fix proposed to the owner: Xalia kept out
+   of a game's own window, left on launchers.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
