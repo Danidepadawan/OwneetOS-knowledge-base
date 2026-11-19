@@ -326,6 +326,10 @@ status is kept in their own notes; this table follows them.
    and lets them go on (SIGCONT) when it goes off; Xalia untouched with the pointer off. Test
    `TestXaliaPausedWhileThePointerIsOn`. Other games: only while the pointer is on (never on a game itself). To put on
    OWNEETLOG (2026-11-19): to test.
+   **Owner's test (2026-11-19): passed.** The tick stays; Red Dead Redemption 2 starts, works with the controller, and
+   quitting it brings the console's home. **BioShock next (owner):** told to try a Steam layout by hand first (Steam →
+   BioShock → controller settings → "Keyboard (WASD) and Mouse" template, or a community layout): if Steam's layouts
+   make it playable, the console could set such a layout by itself, only for games without controller support.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
