@@ -279,6 +279,8 @@ status is kept in their own notes; this table follows them.
    **Owner (2026-11-19): prepare the `-steamdeck` test** (while he tests Red Dead Redemption 2). Nothing to build
    (`steam_os=deck` exists); the line goes on OWNEETLOG when it is back. Known risk told: `SteamDeck=1` for every game
    ([[steam-the-steamos-way]]).
+   **Owner's report (2026-11-19, Red Dead Redemption 2's installer):** he opened Windows' file window to look at the
+   launcher's install folder and closed it at once: the pointer vanished and cannot be turned on again. Logs: to read.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
