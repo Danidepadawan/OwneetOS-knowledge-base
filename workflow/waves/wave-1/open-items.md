@@ -264,6 +264,10 @@ status is kept in their own notes; this table follows them.
    **Owner (2026-11-19): option B** (the pointer by itself for an install script's window). Built: owneetd 0.25.41
    ([[controller-input-map]] updated; test extended). On OWNEETLOG with the SteamOS options switch: to test with Red
    Dead Redemption 2 (the installer's "Language select") and BioShock.
+   **Owner's test (2026-11-19, owneetd 0.25.41, `steam_os=all`), Red Dead Redemption 2:** started with Steam closed: it
+   took him into "SteamOS" (Steam's own SteamOS interface); he chose the game again and the console's screen came back
+   with "Steam is downloading what the game needs" (owner, angry: "wasn't it removed?"). Started from Steam itself: the
+   pointer works on the installer. He stopped the process, to try again once this is fixed. Logs: to read.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
