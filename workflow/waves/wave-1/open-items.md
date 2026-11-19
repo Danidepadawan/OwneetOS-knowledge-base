@@ -376,6 +376,13 @@ status is kept in their own notes; this table follows them.
    only that case changes, nothing for games); owneet-frontend 0.38.42: every Steam game's end (`app.exited`
    `steam:<appid>`, wherever it was started) marks it as played, in memory (the console's own launches unchanged). On
    OWNEETLOG: to test (BioShock with its controller on; a game started from Steam's page, then the home).
+   **Owner (2026-11-19):** BioShock's controller turned on in its options with a real mouse: **the game now works
+   perfectly with the controller**. The console's pointer could not click there. **From the code:** the pointer's click
+   is the button down and up in the same instant (`uinput.Press`, zero ms held), where a real mouse or Steam's trigger
+   holds it while the finger presses. Hypothesis (not verified; the 16:23 log is on the stick): the game reads the
+   button's state once per frame and never sees a click that short. **Proposal:** the mouse button follows A (down while
+   A is held, up when released; X the same for the right button), no fixed time; released if the pointer goes off.
+   Changes [[controller-input-map]] (A = click becomes A = the left button, held while A is held): waits for the owner.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
