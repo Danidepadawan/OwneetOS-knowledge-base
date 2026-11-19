@@ -80,6 +80,14 @@ nearest box; the page's order with geometry as a check; the version below). Code
   "Close {name}?" dialog; Cancel brings the web app back.
 - **Right stick:** scrolls the focused element's scrolling container, else the page.
 - X, Y, Menu, LB / RB, LT / RT: nothing in 5.2 (per-site meanings may come in 5.3–5.5).
+- **View** (step 5.6a, [[step-5.6a-command-legend]], [[owneetd-api-legend]]): the console's command
+  legend for the screen on show. The extension sends `{"type": "legend", "action": "toggle",
+  "context"}` (each site's navigation names its legend with `legend()`, otherwise `web`) and,
+  while the legend floats over the page (gamescope), `screen` when the screen changes (checked
+  every 250 ms); under the console's page (cage) it stops reading the controller until the bridge
+  says the legend closed (`{"type": "legend", "open": false}`), then ignores the buttons still
+  held. The legends themselves are the theme's `legends.js`, checked against the navigations by
+  `test/legend.test.js`.
 
 ## Keyboard for web forms
 

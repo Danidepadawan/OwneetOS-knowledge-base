@@ -17,6 +17,7 @@ tags: [index]
 - [[owneetd-api-events]] — The event stream (/v1/events) and every event type.
 - [[owneetd-api-input]] — API for the virtual keyboard and mouse used by the on-screen keyboard; keyboard layouts.
 - [[owneetd-api-installs]] — API and design of game installs in owneetd (step 4.6): GOG's .sh extracted, Windows installers run silently under Proton, the queue, the marks in a game's folder, stopping and uninstalling.
+- [[owneetd-api-legend]] — API and design of the command legend in owneetd (step 5.6a): View in a web app or the player, the legend's state, over the app in gamescope, a page in cage, its one data file.
 - [[owneetd-api-network]] — API for NetworkManager status, Wi-Fi scan, connect, forget, saved networks.
 - [[owneetd-api-player]] — API and design of the Videos and Music pages' player in owneetd (step 5.6): mpv with OwneetOS's configuration, one at a time like a game, the session file of its display, its control socket, the console over it.
 - [[owneetd-api-pointer]] — API and design of the controller pointer in owneetd (step 4.7): one window, the controllers read without a grab, the virtual mouse, gamescope's focused window and the text cursor.

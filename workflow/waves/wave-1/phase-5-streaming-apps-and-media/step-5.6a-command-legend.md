@@ -77,5 +77,34 @@ Added by the owner on 2026-10-31, after [[step-5.6-local-videos-and-music]] and 
      extension (View, the screen on show, the pause in cage); the player (`GAMEPAD_BACK`); the
      interface (the overlay in gamescope, the page in cage); tests (Go, the extension's, the
      frontend's, the data against the bindings); package versions.
+     **Implemented (2026-11-19), waiting for the owner's test:** owneetd 0.19.0, owneet-frontend
+     0.27.0, owneet-base 0.0.57 (the extension) ([[owneetd-api-legend]]).
+     - **owneetd** (`daemon/internal/legend/`, `GET` / `POST /v1/legend`, event `legend.changed`):
+       View toggles the legend of the app on screen for the screen on show; a web app's screen
+       follows while it is open. gamescope: owneetd closes it when something else takes the screen
+       (Guide) or the app exits. cage: owneetd shows the console for the page and brings the app back
+       when it closes. owneet-bridge passes `legend` both ways; the player's script sends
+       `owneet-legend` (`GAMEPAD_BACK` bound in `input.conf`).
+     - **The extension:** View (button 8) sends the toggle with the screen's legend (each site's
+       `legend()`: Netflix's player, title window or browsing rows, Spotify on its player pages,
+       YouTube, otherwise `web`), sends the screen again when it changes while the legend floats
+       over the page, waits under the console's page in cage and then ignores the buttons still
+       held.
+     - **The interface:** `Legend.qml`. gamescope: a panel at the top right in an external overlay
+       window that never takes the controller, two columns when it does not fit. cage: a page in
+       front, B or View (`Nav.isView`, the controller's SELECT) closes it. `foundation/legends.js`
+       is the one source of the legends; View's glyph and R3's pill in `Glyph.qml`; texts (en, it).
+     - **Tests:** Go (`legend`: over the app, the page, refusals, closing with the app; the API; the
+       bridge's events; the player passing View on; `TestLegendMatchesBindings`: the player's legends
+       against `input.conf`, skipped in the owneetd package build); the extension's
+       `test/legend.test.js` (the legends a navigation names exist, Netflix's follow its screens,
+       each app's legends name the buttons its navigation takes and only those); the frontend's
+       suite and theme check (package build). Lint passes but for owneetd's old flaky `update`
+       test, which passed when run again.
+     - **Preview:** `tools/preview-steps/legend.txt` (gamescope: the panel for Netflix's player,
+       Spotify's long legend, a song; closed) and `legend-cage.txt` (the page; X does nothing; B
+       closes it), with the pretend owneetd's legend.
+     - **Code:** `2c73d9f` (owneetd), `e8dd6bb` (extension), `f722794` (theme, texts), `5ac57e2`
+       (tools), `49c2fdc` (packages).
   3. **Close:** known limits, the hardware checks (the floating legend over Brave and mpv in
      gamescope on FrankenPC: the test VM runs cage only), outcome; the owner approves.
