@@ -321,6 +321,11 @@ status is kept in their own notes; this table follows them.
    acts too). Workaround told: pointer off, Xalia alone (D-pad, A). **Proposal:** while the console's pointer is on
    for an app, owneetd pauses that app's Xalia (SIGSTOP) and resumes it when the pointer goes off; Xalia untouched
    otherwise (it got Jedi's EA window through). Waits for the owner. Disk check: nothing new.
+   **Owner (2026-11-19): with Xalia alone the checkbox cannot be reached; go ahead.** Built: owneetd 0.25.44 pauses
+   (SIGSTOP) the `xalia.exe` programs in Steam's unit while the console's pointer is on (one started meanwhile too)
+   and lets them go on (SIGCONT) when it goes off; Xalia untouched with the pointer off. Test
+   `TestXaliaPausedWhileThePointerIsOn`. Other games: only while the pointer is on (never on a game itself). To put on
+   OWNEETLOG (the stick is in the FrankenPC).
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off

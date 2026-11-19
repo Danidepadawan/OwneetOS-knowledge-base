@@ -100,7 +100,8 @@ launchers made for a mouse (e.g. a Steam game's EA app or Ubisoft Connect, a gam
 options window), **never left on a game** itself. **One case turns it on by itself (owner, 2026-11-19):** a window
 of a game's install script that Steam runs before the game's first start (a publisher's installer, made for a mouse,
 e.g. the Rockstar Games Launcher's), for every window of that script (its own file windows too) until the script
-ends (owneetd 0.25.42). Otherwise the user turns it on by hand from the console
+ends (owneetd 0.25.42). While the pointer is on, Proton's Xalia (its own controller navigation for launchers) is paused, so the
+same buttons do not act twice (owner, 2026-11-19; owneetd 0.25.44). Otherwise the user turns it on by hand from the console
 (Guide, then "Resume with the pointer" on the running game or app: launchers belong to their
 game, so it is offered there too), and off the same way; it holds for **one window**: it turns off
 by itself when another window takes the screen (e.g. the game after its launcher) and when the
