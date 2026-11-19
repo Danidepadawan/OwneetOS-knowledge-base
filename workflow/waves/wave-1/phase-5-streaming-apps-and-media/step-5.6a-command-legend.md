@@ -114,3 +114,63 @@ Added by the owner on 2026-10-31, after [[step-5.6-local-videos-and-music]] and 
      press (a press may need repeating), not the console's doing (owner: ignored for now).
   3. **Close:** known limits, the hardware checks (the floating legend over Brave and mpv in
      gamescope on FrankenPC: the test VM runs cage only), outcome; the owner approves.
+     **Written (2026-11-20), waiting for the owner's approval:**
+     - **Checked for the close:** the floating legend at the largest text size (XL) in Italian, the
+       longest legend (Spotify): two columns, the panel ends well above the bottom of a 720p screen
+       (frontend preview, gamescope design).
+     - **A problem found while writing the close (to fix before approving, the owner decides):**
+       gamescope draws **one external overlay at a time** (its source, `src/steamcompmgr.cpp`
+       3.16.14: the most opaque one; [[gamescope-overlay-window-not-drawn-or-left-on-screen]]).
+       The floating legend and the console's keyboard over a web page are both external overlays:
+       with the legend open, A on a text field (Netflix's search) opens the keyboard, which takes
+       the controller but may not be drawn (the legend stays in its place). **Proposed fix:**
+       owneetd closes the legend when the console's keyboard opens (`webapp.keyboard`); a Go test.
+       Not seen in the test VM (cage has no overlays; the keyboard is a page there).
+     - **Licences and terms** ([[legal-compliance]]): nothing new. No component, service or
+       content added; View's glyphs are drawn for the console (shapes, no logo); the texts are the
+       console's (en, it).
+     - **Known limits of 5.6a** (agreed: the first three; the others not told before):
+       - Only web apps and the player have a legend: not games, nor Steam (View is Steam's there).
+         On the console's own screens View stays reserved; the quick menu's "Controls and features"
+         covers the console's buttons.
+       - gamescope: the panel covers the app's top-right corner until View closes it; it cannot
+         be moved or scrolled (two columns when it is too tall).
+       - The legend is the screen's as far as the app's navigation knows it: Netflix's browsing
+         pages, title window and player; Spotify's player pages (elsewhere, sign-in for example,
+         the general legend); one legend for YouTube. If Netflix changes its pages, the legend
+         falls back to the general one, as its navigation would stop working too. A screen change
+         reaches the open legend within a quarter of a second.
+       - cage: the app keeps playing behind the page (a video or song goes on with its sound),
+         unless it was paused before View.
+       - PlayStation-style glyphs: View's pill reads "CREATE" (the DualSense's name); a
+         DualShock 4 calls that button SHARE.
+     - **To check at the next hardware test** (FrankenPC: gamescope, NVIDIA, a TV; with the open
+       checks of [[step-5.1-brave-in-the-os]] to [[step-5.6-local-videos-and-music]]):
+       - View in YouTube, Netflix (browsing, a title window, the player), Spotify and the player
+         shows the panel at the top right; the app keeps working under it (moving, A, B, seeking;
+         a video and its sound go on); the panel follows Netflix's screen while open; View closes
+         it and it disappears completely (no last picture left);
+       - Guide closes it on the way to the home screen; holding Guide closes the app and the panel;
+       - with the fix: A on Netflix's search field with the legend open, the keyboard drawn;
+       - View on a DualSense and a Switch controller (Brave's button 8 and mpv's `GAMEPAD_BACK`),
+         with their glyph styles;
+       - the panel over the player's own display and over the apps' top-right items; its size on
+         the TV, and at XL;
+       - in Steam and a game, View does nothing of the console's.
+     - **Outcome:** **View, in a web app or the player, opens a legend of that app's buttons for
+       the screen on show** (Netflix's browsing, title window and player; Spotify; YouTube; a video
+       or a song; the general legend elsewhere). In gamescope it floats at the top right over the
+       app, which keeps working under it (a window of the console that gamescope draws as an
+       external overlay, never focused): only View closes it, Guide on the way home, and it closes
+       with the app. In cage it is a page of the console, B or View back to the app. The app's own
+       integration catches View (the console's extension; the player's script), so the console
+       still intercepts only Guide. One data file holds the legends, drawn by the console and
+       checked by tests against the extension's navigations and the player's bindings; texts in
+       English and Italian; View's glyph in each style. Packages: owneetd 0.19.0, owneet-frontend
+       0.27.0, owneet-base 0.0.57 (to update with the fix). Verified in the test VM (cage, a Nacon
+       GC-100) and in the frontend preview (both designs, the largest text size); the floating
+       panel waits for FrankenPC.
+     - **Outside the step, for the owner:** at XL the settings' section list cuts "Controllers
+       and Bluetooth" ("Controller e Bluetooth"), seen in this close's preview; owneetd's flaky
+       `update` test (`TestCheckThenApply`, step 4.2b); the guard hook blocking actions that only
+       name the package build script (from step 5.6).
