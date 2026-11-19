@@ -19,6 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
+| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | Step 2 built (umu ids for GOG games: owneetd 0.25.39, owneet-frontend 0.38.41), on OWNEETLOG: to test with The Witcher 2 (Windows) |
 | 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk: NVIDIA's fix awaited (beta 2.31 meanwhile); demo `4.2c-steam-shaders` to approve; install-script window shown (owneetd 0.25.35, to test with Jedi) |
 | 9 | GitHub pages with every website update | READMEs written, description and topics prepared ([[website]]): the owner looks, then pushes and sets them |
 
@@ -31,7 +32,6 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | Step 1 and the fixes passed (2026-11-19); step 2, umu with the game's id and store: building |
 | 3af | A test of owneetd that failed once (`TestStopAndSourceGone`) | Closed if it does not come back by the end of the tests (owner) |
 
 ### Others
@@ -233,6 +233,16 @@ status is kept in their own notes; this table follows them.
    ELDEN RING (was 155 MB), one per start. Seen: at power-off Steam took over 20 s to close and was ended by the
    console ("result=timeout", 09:22:25): Steam killed then checks its files at the next start; to watch. Disk check:
    nothing new. **Next: umu (step 2).** RetroArch: moved to Wave 2 (owner).
+   **Step 2 built (2026-11-19):** protonfixes (in GE-Proton) carries the umu database (`protonfixes/umu-database.csv`,
+   seen on the FrankenPC's disk listing in GE-Proton11-9) and needs no internet, but umu passes `GAMEID` on as the id, so
+   the console looks the game up itself: owneet-frontend 0.38.41 reads a GOG game's product id (`goggame-<id>.info`,
+   extra `disk.gog.id`) and starts it with `OWNEET_GOG_ID`; owneetd 0.25.39's `owneet-windows-run` finds its umu id in
+   that file and gives umu `GAMEID=<umu id>` and `STORE=gog`; unknown games stay `umu-default`. Testers' switch
+   `owneet.debug.umu_ids=off`. Checked: the lookup on the public database (The Witcher 2 GOG 1207658930 is
+   `umu-20920`; its fix exists but is empty). On OWNEETLOG: to test with The Witcher 2 for Windows (its log line
+   "GOG 1207658930 is umu-20920"). Also done: the project's build output cleaned (21 GB to 7.9 GB: old ISOs, old test
+   logs, old build logs, old previews and demo scratch; the newest ISO, the release test, the VM images and the
+   update repositories kept).
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off

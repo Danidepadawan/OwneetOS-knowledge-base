@@ -368,3 +368,4 @@ Decisions by area: [[decisions/INDEX|decisions index]].
 | 2026-11-18 | Games method, step 1 built: Steam shown while it launches a game (owneetd 0.25.36); step 4.2c's hiding only with the testers' switch `owneet.debug.steam_launch=hidden`. | [[game-compatibility-method]], [[step-4.2c-steam-without-its-interface]] |
 | 2026-11-18 | Quitting a game always brings the console's home (owner); built in owneetd 0.25.37 for Steam games whose window goes before their end. | [[game-compatibility-method]] |
 | 2026-11-19 | Emulation (RetroArch) out of the nice-to-haves: a Wave 2 item, very important there (owner). Owner's tests of the recently-played fix and ELDEN RING passed. | [[wave-1-scope]], [[wave-2]] |
+| 2026-11-19 | Games method step 2 built: GOG Windows games start with their umu id and store (found offline in GE-Proton's umu database), so the community's fixes apply. | [[game-compatibility-method]], [[umu-fixes-and-runtime]] |

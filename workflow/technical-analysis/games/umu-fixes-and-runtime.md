@@ -45,3 +45,13 @@ installed), which solved missing libraries such as a native game's old `libssl` 
 - [[legal]]: the runtime is Valve's: downloaded by the user's console, never shipped by OwneetOS.
 - Old 32-bit native games need the old runtime ("scout"); Proton's runtime is "sniper": which one umu uses with
   `UMU_NO_PROTON`, and whether 32-bit games run in it, to try with The Witcher 2 (Linux).
+
+## Built (2026-11-19, step 2)
+
+- The umu database travels with GE-Proton (`<GE-Proton>/protonfixes/umu-database.csv`), and protonfixes reads it
+  offline; but umu sets `UMU_ID` from `GAMEID` (default `umu-default`), so protonfixes' own lookup by store and
+  codename never runs: the console looks the game up itself in that file (`owneet-windows-run`, Python's csv) and
+  passes `GAMEID=<umu id>` and `STORE=gog`. No internet: the constraint C9 holds.
+- The GOG product id comes from `goggame-<id>.info` (owneet-frontend, extra `disk.gog.id`, `OWNEET_GOG_ID`).
+- A game with an umu id `umu-<Steam app id>` also gets that number as `SteamAppId`, so Proton's own per-game settings
+  for the Steam version apply too.
