@@ -316,6 +316,11 @@ status is kept in their own notes; this table follows them.
    **Owner's report (2026-11-19, Rockstar launcher):** the code went in; then a checkbox: he ticks it, moves the pointer
    over "Next" and the tick disappears, every time. Suspect (to confirm in the log): Proton's Xalia (controller
    navigation for launchers, run by Proton in Steam games) acting on the same A as the console's pointer.
+   **Confirmed (`owneet-20261119-174521`, process list):** `xalia.exe` (Proton Experimental's) runs next to the Rockstar
+   `Launcher.exe`: two things act on the same controller over that window (the console's pointer ticks, Xalia's A
+   acts too). Workaround told: pointer off, Xalia alone (D-pad, A). **Proposal:** while the console's pointer is on
+   for an app, owneetd pauses that app's Xalia (SIGSTOP) and resumes it when the pointer goes off; Xalia untouched
+   otherwise (it got Jedi's EA window through). Waits for the owner. Disk check: nothing new.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
