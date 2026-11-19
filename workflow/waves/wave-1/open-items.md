@@ -290,6 +290,10 @@ status is kept in their own notes; this table follows them.
    **Owner (2026-11-19): test everything in one go** (the launcher installs once; the pointer does not depend on
    `-steamdeck`): `steam_os=deck` goes on OWNEETLOG now, for RDR2 and BioShock together; RDR2 may pick Steam Deck
    settings at its first start (to change after, once the line is removed).
+   **Owner's test (2026-11-19, in progress):** the Rockstar launcher installed, but it had to go on the console's main
+   disk (no choice). Red Dead Redemption 2 then stayed on the console's "Starting …" screen for over a minute: told to
+   press B (hide) to see what is behind, wait up to about 5 minutes (launcher update, sign-in, first graphics
+   preparation), and note the time if nothing comes. Logs: to read.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
