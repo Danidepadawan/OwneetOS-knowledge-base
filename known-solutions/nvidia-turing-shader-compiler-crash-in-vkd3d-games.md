@@ -3,7 +3,7 @@ type: known-solution
 description: "A DirectX 12 Steam game (Cyberpunk 2077) closes a few seconds after starting on an NVIDIA Turing card (GTX 16xx, RTX 20xx): NVIDIA's shader compiler stops on \"Unsupported: extractelement <8 x i4>\" (exception 0xc000001d in libnvidia-gpucomp). Not ours: a fix waits in vkd3d-proton's shader translator."
 status: open
 seen: 2026-11-18
-updated: 2026-11-18
+updated: 2026-11-19
 tags: [known-solution, steam, proton, nvidia]
 ---
 # A DirectX 12 game closes at once on an NVIDIA Turing card
@@ -38,6 +38,19 @@ Betas, with the controller) is reported to avoid the crash, but an older version
 with a newer one. The workaround people use (dump the shader, re-optimise it with `spirv-opt`, load it
 with `VKD3D_SHADER_OVERRIDE` in the game's launch options) needs a terminal and files per game: not for the
 console.
+
+## Research of 2026-11-19
+
+- No NVIDIA driver with the fix yet: 620.70.06 (2026-11-04, the R620 branch's first) lists no such fix, and users
+  report Cyberpunk 2077 still closing with it ([NVIDIA's 620 thread](https://forums.developer.nvidia.com/t/620-release-feedback-discussion/388030)).
+- The bug is wider than Turing: vkd3d-proton issue 3405 has it on 615.71.09, 615.78.08, 620.70.06 and on an RTX 5090
+  with 595.112.07; Proton issue 4450 on an RTX 4060 (Ada, 595.99.02) with Proton Experimental 20261112 only
+  (proton-11.0-2e works there). Proton 9.0-4 still crashes on an RTX 2060 (2026-10-31).
+- dxil-spirv pull request 344 (the translator's rewrite of the 4-bit bit reversal) made pipeline creation work on a
+  Turing card (RTX 2070, 615.78.08); it is not merged. The shader override works for users (2026-11-15) but needs a
+  copy of the game's own shader: OwneetOS cannot ship it ([[legal]]: no game content redistributed).
+- Ways in OwneetOS's hands, for the owner to choose ([[game-compatibility-method]]: no waiting on upstream): to be
+  proposed (2026-11-19).
 
 ## How we found it
 
