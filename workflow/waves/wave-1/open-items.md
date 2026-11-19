@@ -294,6 +294,9 @@ status is kept in their own notes; this table follows them.
    disk (no choice). Red Dead Redemption 2 then stayed on the console's "Starting …" screen for over a minute: told to
    press B (hide) to see what is behind, wait up to about 5 minutes (launcher update, sign-in, first graphics
    preparation), and note the time if nothing comes. Logs: to read.
+   **Owner (same test):** behind the "Starting …" screen there was only the console's home; started again from Steam it
+   went on, then the Rockstar launcher asked for a verification code and he could not open a keyboard. Told: Guide →
+   "Resume with the pointer" on the game, A on the field (or Y) opens the console's keyboard.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
