@@ -371,3 +371,4 @@ Decisions by area: [[decisions/INDEX|decisions index]].
 | 2026-11-19 | Games method step 2 built: GOG Windows games start with their umu id and store (found offline in GE-Proton's umu database), so the community's fixes apply. | [[game-compatibility-method]], [[umu-fixes-and-runtime]] |
 | 2026-11-19 | The controller pointer turns on by itself for a window of a game's install script (owner, option B). | [[controller-input-map]] |
 | 2026-11-19 | While the console's pointer is on, Proton's Xalia is paused (owner): the pointer and Xalia acted on the same buttons over a launcher. | [[controller-input-map]] |
+| 2026-11-19 | Controller pointer: A and X hold the mouse's left and right buttons as long as they are held (owner), instead of an instant click. | [[controller-input-map]] |

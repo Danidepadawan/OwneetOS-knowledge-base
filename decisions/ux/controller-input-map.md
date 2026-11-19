@@ -4,7 +4,7 @@ description: "The binding meaning of every button on every screen, keyboard fall
 area: ux
 status: active
 decided: 2026-10-03
-updated: 2026-11-17
+updated: 2026-11-19
 legacy: "PROJECT_RULES.md §9.1"
 tags: [decision, ux, input]
 ---
@@ -106,8 +106,10 @@ same buttons do not act twice (owner, 2026-11-19; owneetd 0.25.44). Otherwise th
 game, so it is offered there too), and off the same way; it holds for **one window**: it turns off
 by itself when another window takes the screen (e.g. the game after its launcher) and when the
 app closes. While it is on:
-**left stick** moves the pointer, **D-pad** moves it in small steps, **A** = click, **X** = right
-click, **right stick** = wheel (scroll), **Y** = type: the console's on-screen keyboard, then the
+**left stick** moves the pointer, **D-pad** moves it in small steps, **A** = the mouse's left button, **X** = its
+right button, each held down as long as the controller's button is (owner, 2026-11-19: a click with no time between
+down and up was never seen by BioShock's menu; holding A drags, as with a real mouse; let go when the pointer goes off
+or its window leaves the screen; the keyboard for a text field once A is let go), **right stick** = wheel (scroll), **Y** = type: the console's on-screen keyboard, then the
 text goes to the window (a fallback: **A on a text field opens the keyboard by itself**, owner
 2026-10-19, when the pointer has the text "I" shape after the click); Guide keeps its meaning. It intercepts nothing: the app still receives
 every input (no grab), the pointer only adds a virtual mouse's movements and clicks (owner,
@@ -144,3 +146,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-11-14 | Guide while nothing runs (`home.requested`): back to the interface's Home section, its windows closed; the Home prompt shown only while nothing runs (with a game, a media app or Steam, Guide goes back to it). Owner, no demo needed. |
 | 2026-11-17 | No Home prompt on the home screen itself while no window is over it: there Guide does nothing (owner). |
 | 2026-11-19 | The controller pointer turns on by itself for a window of a game's install script (a publisher's installer made for a mouse), for that window only (owner, option B; owneetd 0.25.41). |
+| 2026-11-19 | Pointer: A and X are the mouse's left and right buttons, held down as long as A / X are (owner; owneetd 0.25.47): the click with no time between down and up was lost in BioShock's menu. |

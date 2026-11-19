@@ -382,7 +382,11 @@ status is kept in their own notes; this table follows them.
    holds it while the finger presses. Hypothesis (not verified; the 16:23 log is on the stick): the game reads the
    button's state once per frame and never sees a click that short. **Proposal:** the mouse button follows A (down while
    A is held, up when released; X the same for the right button), no fixed time; released if the pointer goes off.
-   Changes [[controller-input-map]] (A = click becomes A = the left button, held while A is held): waits for the owner.
+   Changes [[controller-input-map]] (A = click becomes A = the left button, held while A is held). **Owner: go
+   (2026-11-19).** Built: owneetd 0.25.47 (vinput `Button`, the pointer presses on A / X down and lets go on their
+   release, or when it goes off; the keyboard for a text field after the release); tests `TestButtonHeldAsLongAsA`.
+   Other users: only the controller pointer (launchers, installers, apps; never games); `/v1/input/click` unchanged.
+   On OWNEETLOG: to test (BioShock's menu with the console's pointer; a launcher's buttons and a text field).
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
