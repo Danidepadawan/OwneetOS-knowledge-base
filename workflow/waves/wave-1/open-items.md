@@ -19,7 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | On OWNEETLOG (owneetd 0.25.46, frontend 0.38.42): BioShock with its own controller option, recently played from Steam's pages, Steam reopened while closing, umu ids (The Witcher 2): to test |
+| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a). To test: recently played from Steam's pages, Steam reopened while closing (owneetd 0.25.46, frontend 0.38.42), The Witcher 2 (Windows) with its umu id; then step 3 |
 | 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk: NVIDIA's fix awaited (beta 2.31 meanwhile); demo `4.2c-steam-shaders` to approve; install-script window shown (owneetd 0.25.35, to test with Jedi) |
 | 9 | GitHub pages with every website update | READMEs written, description and topics prepared ([[website]]): the owner looks, then pushes and sets them |
 
@@ -387,6 +387,8 @@ status is kept in their own notes; this table follows them.
    release, or when it goes off; the keyboard for a text field after the release); tests `TestButtonHeldAsLongAsA`.
    Other users: only the controller pointer (launchers, installers, apps; never games); `/v1/input/click` unchanged.
    On OWNEETLOG: to test (BioShock's menu with the console's pointer; a launcher's buttons and a text field).
+   **Owner's test (2026-11-19): it works.** BioShock and the pointer's click closed: [[closed-items]] 14a. Left in 14:
+   The Witcher 2 (Windows) with its umu id, step 3 (native games in the Steam Linux Runtime).
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off

@@ -791,3 +791,12 @@ found here. Newest closings are added at the end.
    18:25:50, then downloaded. Disk check of the same log: nothing new (no Windows data left, packages' cache 55 files,
    the 5 old core dumps, Steam's wanted downloads).
    **Closed** (2026-11-18): the owner's test.
+14a. **BioShock's controls and the controller pointer's click** (part of [[open-items]] 14, owner, 2026-11-19): BioShock
+   (Steam) did not take the controller, Steam's keyboard-and-mouse layouts made every button open its quit menu, and the
+   console's pointer could move but not click in it. **Causes:** the game's own controller option was off
+   (`Bioshock.ini`: `UseController=False`, `UseJoystick=False`; it supports the Xbox 360 controller once turned on in its
+   options); the pointer's click was the button down and up in the same instant, never seen by the game's menu. The
+   owner turned the option on with a real mouse: the game works perfectly with the controller. **Built:** owneetd 0.25.47,
+   A and X hold the mouse's buttons as long as they are held ([[controller-input-map]]). Proton's Xalia was ruled out
+   (switch `steam_xalia=off`, no change). History in [[open-items]] 14.
+   **Closed** (2026-11-19): the owner's test, the pointer clicks in BioShock's menu.
