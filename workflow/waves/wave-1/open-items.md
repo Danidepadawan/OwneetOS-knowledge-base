@@ -276,6 +276,9 @@ status is kept in their own notes; this table follows them.
    17:12:37, 17:12:46): option B works. **The switch was removed from OWNEETLOG** (2026-11-19). `-steamos3` is not for
    OwneetOS as it is (Steam takes over the session); `-steamdeck` alone, for BioShock's layouts, only with the owner's
    go.
+   **Owner (2026-11-19): prepare the `-steamdeck` test** (while he tests Red Dead Redemption 2). Nothing to build
+   (`steam_os=deck` exists); the line goes on OWNEETLOG when it is back. Known risk told: `SteamDeck=1` for every game
+   ([[steam-the-steamos-way]]).
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off

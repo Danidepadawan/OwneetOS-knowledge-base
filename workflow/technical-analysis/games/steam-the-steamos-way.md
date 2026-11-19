@@ -59,3 +59,12 @@ the base of several distributions:
 through HIDAPI (it disconnected from the console), ran SteamOS's polkit helpers; meanwhile the console showed its
 "Starting …" screen for a minute. Not usable as it is. Left to try, one at a time and only with the owner's go:
 `-steamdeck` alone (Steam's Steam Deck layouts for games without controller support, e.g. BioShock).
+
+## `-steamdeck` alone (2026-11-19, before trying it)
+
+Already in owneetd 0.25.40+ (`owneet.debug.steam_os=deck`). Known effect: Steam then sets `SteamDeck=1` for every game
+it starts, and some games act as on a Steam Deck (locked to 30 fps or low graphics settings, Steam Deck button
+prompts) ([steam-for-linux #11947](https://github.com/ValveSoftware/steam-for-linux/issues/11947)): not for every game
+on a PC console. Tried only with BioShock, to learn whether Steam then gives games without controller support its
+keyboard-and-mouse layouts; if it does, the console would set such a layout itself, only for those games (Steam's own
+per-game controller settings), instead of `-steamdeck`: the owner's choice.
