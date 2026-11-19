@@ -106,5 +106,11 @@ Added by the owner on 2026-10-31, after [[step-5.6-local-videos-and-music]] and 
        closes it), with the pretend owneetd's legend.
      - **Code:** `2c73d9f` (owneetd), `e8dd6bb` (extension), `f722794` (theme, texts), `5ac57e2`
        (tools), `49c2fdc` (packages).
+     **Sub-step 2 passed the owner's test (2026-11-20)** in the test VM (cage, a Nacon GC-100):
+     the legend's page for the player, Netflix's screens, YouTube and Spotify; B or View back to the
+     app. Notes from the test: owneet-base 0.0.57 went in with `pacman -Udd` (the test VM has no
+     `umu-launcher` or `dosbox-staging`, owneet-base's dependencies since step 4.5, and no package
+     databases; its 0.0.56 ran without them too); the VM's controller passthrough sometimes drops a
+     press (a press may need repeating), not the console's doing (owner: ignored for now).
   3. **Close:** known limits, the hardware checks (the floating legend over Brave and mpv in
      gamescope on FrankenPC: the test VM runs cage only), outcome; the owner approves.
