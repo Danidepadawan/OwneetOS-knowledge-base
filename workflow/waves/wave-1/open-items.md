@@ -297,6 +297,10 @@ status is kept in their own notes; this table follows them.
    **Owner (same test):** behind the "Starting …" screen there was only the console's home; started again from Steam it
    went on, then the Rockstar launcher asked for a verification code and he could not open a keyboard. Told: Guide →
    "Resume with the pointer" on the game, A on the field (or Y) opens the console's keyboard.
+   **Owner:** the keyboard works but the code field takes only the last digits. Cause (to confirm in the log): the
+   code is split into one box per digit that moves to the next box by itself, and the console's keyboard sends the
+   whole text at once, faster than the boxes move on. Workaround told: one digit at a time (Y, one digit, confirm).
+   **Fix to build:** the console's keyboard types into a window one character at a time, at a person's pace.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
