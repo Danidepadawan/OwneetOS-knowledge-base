@@ -337,6 +337,12 @@ status is kept in their own notes; this table follows them.
    the game does not take the mouse it is given under Proton, whichever moves it. No known fix online for this exact
    sign (ProtonDB 7670, Proton issue 388: input settings, Proton versions). Asked the owner: the layout used, whether
    clicks work, where the game's own pointer is; the test again with the stick in the FrankenPC throughout.
+   **Owner's correction:** BioShock was not started: on BioShock's page in Steam the controller-settings button did not
+   light up when reached with the gamepad (no pointer), so he could not use it. **From the screenshots:** at 18:34:38
+   Steam's game menu was open (Menu: favourites, Manage, Properties, Cancel); at 18:35:20 the page showed no focused
+   element at all (Play not lit, no "A Select" in Steam's prompt bar), while owneetd was keeping gamescope composing
+   (the picture was not stale). Most likely Steam's own interface losing its focus when that menu closed; to watch
+   whether it happens without the menu. Workaround told: Menu → Manage → controller layout, or B and back into the page.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
