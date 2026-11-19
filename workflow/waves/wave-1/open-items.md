@@ -353,6 +353,11 @@ status is kept in their own notes; this table follows them.
    (PROTON_USE_XALIA=0 for Steam's games; nothing changes without the line); on OWNEETLOG for the BioShock test only
    (no game with a launcher meanwhile), to be removed after. If confirmed, the fix proposed to the owner: Xalia kept out
    of a game's own window, left on launchers.
+   **Owner's test (2026-11-19 19:15, Xalia off): nothing changed** (the popup still on every button): Xalia is not the
+   cause. The switch line removed from OWNEETLOG. Next hypothesis (not verified): BioShock (Unreal Engine 2.5) also
+   reads the controller as a joystick and its own `User.ini` binds the joystick's buttons to its menu (ProtonDB users
+   fixed BioShock's controls in that file). Asked the owner: verify it (the test log copies the Steam games' `.ini`
+   files changed in the session), or put BioShock aside and go on with The Witcher 2 (umu) and step 3.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
