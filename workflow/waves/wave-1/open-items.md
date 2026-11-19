@@ -313,6 +313,9 @@ status is kept in their own notes; this table follows them.
    17:29:43); BioShock was not started in this session. The Rockstar launcher went into the game's own Windows folder
    (Proton's prefix, `compatdata/1174180` on the console's disk), where Proton puts it: not a choice of the console.
    The `steam_os` line removed from OWNEETLOG (17:5x). Disk check: nothing new.
+   **Owner's report (2026-11-19, Rockstar launcher):** the code went in; then a checkbox: he ticks it, moves the pointer
+   over "Next" and the tick disappears, every time. Suspect (to confirm in the log): Proton's Xalia (controller
+   navigation for launchers, run by Proton in Steam games) acting on the same A as the console's pointer.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
