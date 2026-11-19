@@ -330,6 +330,8 @@ status is kept in their own notes; this table follows them.
    quitting it brings the console's home. **BioShock next (owner):** told to try a Steam layout by hand first (Steam →
    BioShock → controller settings → "Keyboard (WASD) and Mouse" template, or a community layout): if Steam's layouts
    make it playable, the console could set such a layout by itself, only for games without controller support.
+   **Owner's report (2026-11-19, BioShock):** the buttons of the settings do not light up when the mouse pointer goes
+   over them (hover). Logs on OWNEETLOG: to read.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
