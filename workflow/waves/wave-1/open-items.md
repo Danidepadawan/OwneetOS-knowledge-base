@@ -19,7 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | On OWNEETLOG: SteamOS options (BioShock), pointer by itself for installers (RDR2, owneetd 0.25.41), umu ids (The Witcher 2): to test |
+| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | On OWNEETLOG (owneetd 0.25.46, frontend 0.38.42): BioShock with its own controller option, recently played from Steam's pages, Steam reopened while closing, umu ids (The Witcher 2): to test |
 | 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk: NVIDIA's fix awaited (beta 2.31 meanwhile); demo `4.2c-steam-shaders` to approve; install-script window shown (owneetd 0.25.35, to test with Jedi) |
 | 9 | GitHub pages with every website update | READMEs written, description and topics prepared ([[website]]): the owner looks, then pushes and sets them |
 
@@ -360,6 +360,22 @@ status is kept in their own notes; this table follows them.
    files changed in the session), or put BioShock aside and go on with The Witcher 2 (umu) and step 3.
    **Owner: verify it.** Built: owneet-base 0.0.82, the test log copies the `.ini` files (under 256 KB) of the users'
    folders in Steam's Windows prefixes (`<log>.games/ini/APPID/…`), only read. On OWNEETLOG: BioShock once more.
+   **Owner's report (2026-11-19 evening):** Steam sometimes does not behave (updates?); recently played did not follow
+   My Little Puppy started from Steam's own page (first only after the console restarted); BioShock started this time
+   and the click came from the right trigger; the owner checked online: the Xbox 360 controller is supported. **Owner,
+   serious: research online and read the logs before stating anything about a game, Steam or a tool** (my earlier
+   "BioShock has no controller support" was wrong). **From the research and the log (`.ini` copies):** BioShock
+   supports the Xbox 360 controller, turned on in its own Options → Controls; its `Bioshock.ini` had
+   `UseController=False` and `UseJoystick=False`. Told: Steam's layout back to "Gamepad", then the controller turned
+   on in the game's options. Steam: the `steamdeck_stable` client beta, joined by itself during the `-steamdeck` try,
+   went back to the public client at 19:27:13; the restarts and updates before were that try's (the `steam_os` switch
+   is not used again). At 19:27:02 Steam was closed from the console and at 19:27:06, while it was still closing,
+   opened again: owneetd gave the address to the closing Steam, which started a second Steam of its own without
+   `-gamepadui`. **Built (2026-11-19):** owneetd 0.25.46: Steam asked for while it closes waits for its end (an event,
+   at most 25 s) and starts again with the console's options (test `TestSteamAskedForWhileClosingStartsAgainAfter`;
+   only that case changes, nothing for games); owneet-frontend 0.38.42: every Steam game's end (`app.exited`
+   `steam:<appid>`, wherever it was started) marks it as played, in memory (the console's own launches unchanged). On
+   OWNEETLOG: to test (BioShock with its controller on; a game started from Steam's page, then the home).
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
