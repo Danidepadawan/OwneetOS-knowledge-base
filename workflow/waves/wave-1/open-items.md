@@ -343,6 +343,9 @@ status is kept in their own notes; this table follows them.
    element at all (Play not lit, no "A Select" in Steam's prompt bar), while owneetd was keeping gamescope composing
    (the picture was not stale). Most likely Steam's own interface losing its focus when that menu closed; to watch
    whether it happens without the menu. Workaround told: Menu → Manage → controller layout, or B and back into the page.
+   **Owner's test (2026-11-19, BioShock with Steam's "Keyboard (WASD) and Mouse" and other layouts):** it started only
+   at the 4th try; the right stick moves the cursor, but every button pressed opens the game's "Quit to Windows?"
+   popup, and confirming it does not let him play either. Logs on OWNEETLOG: to read.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
