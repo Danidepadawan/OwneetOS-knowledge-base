@@ -56,6 +56,22 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
      (title, the grid and its states, A opening or installing with its confirmation and progress,
      Menu → Remove, Videos and back, B back to the home on "All apps", the prompt bar); texts (en,
      it), glyph sets.
+     **Written (2026-11-20), waiting for the owner's approval:** `design/demos/5.7-apps-page.html`
+     (code `212dca0`; its flows checked with scripted button presses: "All apps" selected on the
+     home, the page's grid going round, Videos and back to the page, B back to the home on "All
+     apps", Menu → options, Italian at XL). What it shows beyond the decisions:
+     - **the page:** a page of Home (the Home tab stays lit), its title "Apps" and the number of
+       apps, the tiles in five columns, larger than the home's (the icon, the name, the marks);
+     - **"All apps"** in the home's sixth place, outlined like "All games", A Open;
+     - **with nine apps** (two invented installed web apps and one missing): the home shows the
+       first five installed (Netflix, Spotify, Film Club, Podcasts, Videos): with four installed web
+       apps, **Music and the store leave the home** and are on the page only; the missing ones
+       (YouTube, Radio) come last on the page;
+     - **with six apps:** a switch between installed first (YouTube, missing, after the store) and
+       today's order (YouTube in its place, dimmed), for the owner to choose;
+     - an app installed from the page moves to its place among the installed ones, the selection
+       following it; an open web app shows the green dot on its tile and the home's hero (Resume,
+       Close).
   2. **Code:** the theme (one ordered list for the home and the page, `AppTile.qml` out of
      `HomePage.qml`, the "All apps" tile, `AppsPage.qml` as a page of Home, B from Videos / Music
      back to where they were opened, texts); the pretend owneetd with a larger catalogue and
