@@ -258,6 +258,9 @@ status is kept in their own notes; this table follows them.
    Steam's own windows: nothing could drive it. **Proposal:** the pointer for Steam's windows too (either offered on
    Steam's card, or turned on by itself for a window of an install script): the owner's choice. Disk check: nothing
    new.
+   **Built for the BioShock test (step 1, part two, already approved):** owneetd 0.25.40, testers' switch
+   `owneet.debug.steam_os=os|pal|deck|all` (`-steamos3`, `-steampal`, `-steamdeck`, or the three as ChimeraOS);
+   `all` written on OWNEETLOG for the first try, then one at a time.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
