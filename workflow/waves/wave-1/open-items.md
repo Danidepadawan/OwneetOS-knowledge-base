@@ -19,7 +19,6 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | Recently played fixed (owneet-frontend 0.38.40), logs per start; on OWNEETLOG: ELDEN RING again, then umu |
 | 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk: NVIDIA's fix awaited (beta 2.31 meanwhile); demo `4.2c-steam-shaders` to approve; install-script window shown (owneetd 0.25.35, to test with Jedi) |
 | 9 | GitHub pages with every website update | READMEs written, description and topics prepared ([[website]]): the owner looks, then pushes and sets them |
 
@@ -32,6 +31,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
+| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | Step 1 and the fixes passed (2026-11-19); step 2, umu with the game's id and store: building |
 | 3af | A test of owneetd that failed once (`TestStopAndSourceGone`) | Closed if it does not come back by the end of the tests (owner) |
 
 ### Others
@@ -228,6 +228,11 @@ status is kept in their own notes; this table follows them.
    once Steam closes); owneetd 0.25.38 (the testers' Proton log for Steam games lighter: no trace of every exception);
    owneet-base 0.0.81 (the test log keeps one Proton log per start: `proton-steam-APPID-N.log`). On OWNEETLOG: to test
    (ELDEN RING, then the home's recently played).
+   **Owner's tests (2026-11-19 08:52, log `owneet-20261119-085237`): all passed** (ELDEN RING quit to the console's home,
+   08:59:39; the recently played follow at once; Batman: Arkham Knight too, 09:20-09:22). Proton's logs now 5 MB for
+   ELDEN RING (was 155 MB), one per start. Seen: at power-off Steam took over 20 s to close and was ended by the
+   console ("result=timeout", 09:22:25): Steam killed then checks its files at the next start; to watch. Disk check:
+   nothing new. **Next: umu (step 2).** RetroArch: moved to Wave 2 (owner).
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off

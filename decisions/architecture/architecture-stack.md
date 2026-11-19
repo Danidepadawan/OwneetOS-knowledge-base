@@ -24,7 +24,7 @@ tags: [decision, architecture]
 | Steam | System package (multilib, in the image with 32-bit drivers), launched with `-gamepadui` for login/store | [[steam-integration]] |
 | Other stores (later) | **legendary** (Epic), **gogdl** / lgogdownloader (GOG) | Heroic rejected (Electron, heavy). |
 | Windows games (Wave 1: DRM-free games on disk; stores later) | **umu-launcher** + GE-Proton | [[games-on-disk]] |
-| Emulation (later, nice-to-have) | **RetroArch** | |
+| Emulation (Wave 2, very important there: owner 2026-11-19) | **RetroArch** | Cores with free licences only (no NonCommercial cores, [[legal]]); ROMs and BIOS files are the user's own, never shipped |
 
 ## History
 
@@ -38,3 +38,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-16 | The bridge's native-messaging manifest is one static file installed system-wide by the owneetd package (`/etc/opt/chrome/native-messaging-hosts/`): Brave does not read hosts from the web apps' profiles. A per-user file in Brave's default folder rejected. |
 | 2026-10-19 | Widevine: the console asks for the user's consent to Google's terms (once, and again at every new Widevine version) instead of turning it on silently; in step 5.4. Brave's own Widevine question is turned off. |
 | 2026-11-05 | After the lawsuits against Brave (owner): **Brave stays, and Danidepadawan goes on with it. If the legal review agrees ([[step-7.5-legal-review-before-the-public-launch]]), the console moves to Chromium.** Helium was set aside for having no Widevine support. |
+| 2026-11-19 | RetroArch moves from nice-to-have to Wave 2, very important there (owner). |

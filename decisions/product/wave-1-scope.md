@@ -31,7 +31,8 @@ The step-by-step plan is in [[wave-1]]; the user's view of it in [[wave-1-featur
 
 - Overlay / quick menu over games, chat modules (Discord first), a stable live boot (OwneetOS
   fully usable from the USB stick, 2026-10-19), dual boot, Epic/GOG stores
-  (their Windows games through the same Proton as Wave 1), emulation, user profiles,
+  (their Windows games through the same Proton as Wave 1), emulation (RetroArch: very important for Wave 2,
+  owner 2026-11-19), user profiles,
   screenshots/recording, play-time stats, parental controls, quick suspend/resume, Qt 6 port of
   the frontend. Detailed in [[wave-2]].
 
@@ -39,7 +40,6 @@ The step-by-step plan is in [[wave-1]]; the user's view of it in [[wave-1-featur
 
 - Screen reader / TTS for menus (espeak-ng or Piper, offline) — evaluate if feasible early.
 - Crash reporting **only with explicit opt-in consent**. No telemetry otherwise.
-- Emulation (RetroArch).
 - Support for other OSes is **out of scope** for now.
 
 See [[backlog]].
@@ -54,3 +54,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-11 | **Wave 1 scope grows** ([[disks]] and 10): DRM-free games on a disk play whatever their form (ready to run or installer, Linux or Windows through umu-launcher + GE-Proton, hidden from the user); installers run by themselves in the background; moving games and media between disks (new step 6.6). Games folder: `Games` or its translated name, one folder per game with any sub-folders, searched recursively. "Add games" also offers "From a USB stick or disk". |
 | 2026-10-13 | **Optional apps** (new step 5.0): the user installs only the apps they want (at installation and later, from the apps page, installed and missing ones shown differently); the ISO becomes slim when 5.0 arrives (apps downloaded when chosen; option b). |
 | 2026-10-19 | **New Wave 2 step 10a, Stable live boot**, before dual boot (now step 10b): OwneetOS fully usable from the USB stick (the user chooses the disks where games are saved, the game library is cached, faster boot, RAM saved wherever possible). |
+| 2026-11-19 | Emulation (RetroArch) is no longer a nice-to-have: a Wave 2 item, very important there; not brought forward to Wave 1 (owner). |
