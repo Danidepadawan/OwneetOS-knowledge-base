@@ -19,6 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
+| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | On OWNEETLOG: SteamOS options (BioShock), pointer by itself for installers (RDR2, owneetd 0.25.41), umu ids (The Witcher 2): to test |
 | 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk: NVIDIA's fix awaited (beta 2.31 meanwhile); demo `4.2c-steam-shaders` to approve; install-script window shown (owneetd 0.25.35, to test with Jedi) |
 | 9 | GitHub pages with every website update | READMEs written, description and topics prepared ([[website]]): the owner looks, then pushes and sets them |
 
@@ -26,7 +27,6 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock: try SteamOS's options; RDR2: the pointer for Steam's windows (how: owner); step 2 (Witcher 2) to test |
 
 ### To build or prepare (assistant)
 
@@ -261,6 +261,9 @@ status is kept in their own notes; this table follows them.
    **Built for the BioShock test (step 1, part two, already approved):** owneetd 0.25.40, testers' switch
    `owneet.debug.steam_os=os|pal|deck|all` (`-steamos3`, `-steampal`, `-steamdeck`, or the three as ChimeraOS);
    `all` written on OWNEETLOG for the first try, then one at a time.
+   **Owner (2026-11-19): option B** (the pointer by itself for an install script's window). Built: owneetd 0.25.41
+   ([[controller-input-map]] updated; test extended). On OWNEETLOG with the SteamOS options switch: to test with Red
+   Dead Redemption 2 (the installer's "Language select") and BioShock.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off

@@ -97,7 +97,9 @@ repeat after 720 ms, then every 360 ms; analog triggers count as pressed above h
 
 **Controller pointer** ([[step-4.7-controller-pointer]], owner 2026-10-19): for apps and
 launchers made for a mouse (e.g. a Steam game's EA app or Ubisoft Connect, a game's start or
-options window), **never left on a game** itself. The user turns it on by hand from the console
+options window), **never left on a game** itself. **One case turns it on by itself (owner, 2026-11-19):** a window
+of a game's install script that Steam runs before the game's first start (a publisher's installer, made for a mouse,
+e.g. the Rockstar Games Launcher's), for that window only. Otherwise the user turns it on by hand from the console
 (Guide, then "Resume with the pointer" on the running game or app: launchers belong to their
 game, so it is offered there too), and off the same way; it holds for **one window**: it turns off
 by itself when another window takes the screen (e.g. the game after its launcher) and when the
@@ -139,3 +141,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-11-12 | The display area's adjustment (Settings → Display): D-pad left / right narrower / wider, up / down taller / shorter, X whole screen, A confirm, B cancel (owner: demo 3.9c approved). |
 | 2026-11-14 | Guide while nothing runs (`home.requested`): back to the interface's Home section, its windows closed; the Home prompt shown only while nothing runs (with a game, a media app or Steam, Guide goes back to it). Owner, no demo needed. |
 | 2026-11-17 | No Home prompt on the home screen itself while no window is over it: there Guide does nothing (owner). |
+| 2026-11-19 | The controller pointer turns on by itself for a window of a game's install script (a publisher's installer made for a mouse), for that window only (owner, option B; owneetd 0.25.41). |
