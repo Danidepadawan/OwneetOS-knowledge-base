@@ -325,7 +325,7 @@ status is kept in their own notes; this table follows them.
    (SIGSTOP) the `xalia.exe` programs in Steam's unit while the console's pointer is on (one started meanwhile too)
    and lets them go on (SIGCONT) when it goes off; Xalia untouched with the pointer off. Test
    `TestXaliaPausedWhileThePointerIsOn`. Other games: only while the pointer is on (never on a game itself). To put on
-   OWNEETLOG (the stick is in the FrankenPC).
+   OWNEETLOG (2026-11-19): to test.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
