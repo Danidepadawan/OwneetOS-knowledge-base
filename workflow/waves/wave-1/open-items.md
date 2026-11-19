@@ -287,6 +287,9 @@ status is kept in their own notes; this table follows them.
    window of it and goes off once none of the script's programs is left, whoever started it (tests). On OWNEETLOG: to
    test (Red Dead Redemption 2 again; then BioShock with `steam_os=deck`, written only after RDR2, so that RDR2 does not
    run with `SteamDeck=1`).
+   **Owner (2026-11-19): test everything in one go** (the launcher installs once; the pointer does not depend on
+   `-steamdeck`): `steam_os=deck` goes on OWNEETLOG now, for RDR2 and BioShock together; RDR2 may pick Steam Deck
+   settings at its first start (to change after, once the line is removed).
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
