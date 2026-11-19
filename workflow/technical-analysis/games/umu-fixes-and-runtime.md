@@ -38,10 +38,9 @@ installed), which solved missing libraries such as a native game's old `libssl` 
 
 ## Constraints to respect
 
-- [[hard-constraints]] C9: no internet needed for local or DRM-free games. The umu id is looked up **once, when
-  the game is added** (with internet), stored with the game; without internet the game runs as today and the id is
-  looked up later. The Steam Linux Runtime arrives with the one-time Windows-games download (already allowed) or
-  must be asked for the same way: to decide with the owner.
+- [[hard-constraints]] C9: no internet needed for local or DRM-free games. The umu id is looked up offline, in the
+  copy of the database GE-Proton carries (see "Built" below). The Steam Linux Runtime for native games arrives with
+  the one-time Windows-games download (owner, 2026-11-18); without it a native game runs as today.
 - [[legal]]: the runtime is Valve's: downloaded by the user's console, never shipped by OwneetOS.
 - Old 32-bit native games need the old runtime ("scout"); Proton's runtime is "sniper": which one umu uses with
   `UMU_NO_PROTON`, and whether 32-bit games run in it, to try with The Witcher 2 (Linux).
