@@ -332,6 +332,11 @@ status is kept in their own notes; this table follows them.
    make it playable, the console could set such a layout by itself, only for games without controller support.
    **Owner's report (2026-11-19, BioShock):** the buttons of the settings do not light up when the mouse pointer goes
    over them (hover). Logs on OWNEETLOG: to read.
+   **From the log (`owneet-20261119-180115`):** it ends at 18:35:20 on Steam's BioShock page (the stick was taken out
+   before the game ran): no data on the game. Earlier (16:23) the console's pointer could not click in BioShock either:
+   the game does not take the mouse it is given under Proton, whichever moves it. No known fix online for this exact
+   sign (ProtonDB 7670, Proton issue 388: input settings, Proton versions). Asked the owner: the layout used, whether
+   clicks work, where the game's own pointer is; the test again with the stick in the FrankenPC throughout.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
