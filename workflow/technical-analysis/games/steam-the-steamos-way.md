@@ -52,3 +52,10 @@ the base of several distributions:
 - Whether Steam's own shader page is enough (then demo `4.2c-steam-shaders` is not built) or the console's
   percentage is still wanted: the owner, after the try.
 - Steam's own power handling with `-steamos3` against owneetd's: to check before keeping it.
+
+## Try 2 result (2026-11-19, FrankenPC)
+
+`-steamos3` (with the two others): Steam acts as the operating system: it restarted itself twice, took the controller
+through HIDAPI (it disconnected from the console), ran SteamOS's polkit helpers; meanwhile the console showed its
+"Starting …" screen for a minute. Not usable as it is. Left to try, one at a time and only with the owner's go:
+`-steamdeck` alone (Steam's Steam Deck layouts for games without controller support, e.g. BioShock).

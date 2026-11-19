@@ -268,6 +268,14 @@ status is kept in their own notes; this table follows them.
    took him into "SteamOS" (Steam's own SteamOS interface); he chose the game again and the console's screen came back
    with "Steam is downloading what the game needs" (owner, angry: "wasn't it removed?"). Started from Steam itself: the
    pointer works on the installer. He stopped the process, to try again once this is fixed. Logs: to read.
+   **From the log (`owneet-20261119-170849`):** the cause was the testers' switch `steam_os=all`: with `-steamos3` Steam
+   behaves as the operating system: it closed and started itself again twice (17:10:31, 17:10:36), took the
+   controller through HIDAPI (disconnected at 17:10:37), ran SteamOS's own helpers; while it had no window the
+   console's "Starting …" screen stayed (17:11-17:12, with the approved download line of demo 4.5 at 0%), until
+   Steam's window came back (17:12:17). The pointer turned on by itself for the installer's windows (17:11:22,
+   17:12:37, 17:12:46): option B works. **The switch was removed from OWNEETLOG** (2026-11-19). `-steamos3` is not for
+   OwneetOS as it is (Steam takes over the session); `-steamdeck` alone, for BioShock's layouts, only with the owner's
+   go.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
