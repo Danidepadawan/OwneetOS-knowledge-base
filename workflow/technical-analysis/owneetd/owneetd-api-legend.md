@@ -36,8 +36,10 @@ Event: `legend.changed` (the state above; closed: `open` false with the app).
 - **gamescope** (`Layered`): the interface draws the legend in a window of its own made a gamescope
   external overlay (as the web keyboard, `overlay.makeOverlay` / `showOverlay` / `hideOverlay`),
   never focused and never given the controller: the app keeps working under it. owneetd closes it
-  when `focus.changed` names something else (Guide: an overlay would float over the console too)
-  and when its app exits.
+  when `focus.changed` names something else (Guide: an overlay would float over the console too),
+  when its app exits, and when the console's keyboard opens over the page (`webapp.keyboard`:
+  gamescope draws one external overlay at a time, the most opaque, so the keyboard might not be
+  drawn; [[gamescope-overlay-window-not-drawn-or-left-on-screen]]; owneetd 0.19.1).
 - **cage:** opening shows the console (`ShowHome`); the interface shows the page, where B or View
   (`Nav.isView`, the controller's SELECT key) sends `close`; owneetd brings the app back
   (`FocusApp`). The player is told to ignore its buttons meanwhile (owneetd's `focus.changed` →

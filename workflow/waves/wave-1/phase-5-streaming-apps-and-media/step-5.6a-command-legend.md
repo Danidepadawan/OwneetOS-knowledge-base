@@ -3,12 +3,12 @@ type: step
 description: "A legend of what each controller button does in the app on screen, opened by the user: a window over the app in gamescope, a full-screen page in cage."
 phase: "[[phase-5-streaming-apps-and-media]]"
 step: "5.6a"
-status: in-progress
+status: done
 tags: [step, phase-5]
 ---
 # 5.6a Command legend *(owner, 2026-10-31)*
 
-Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 2026-11-18)
+Up: [[phase-5-streaming-apps-and-media]] · Status: **done** (owner, 2026-11-20; started 2026-11-18)
 
 Added by the owner on 2026-10-31, after [[step-5.6-local-videos-and-music]] and before
 [[step-5.7-apps-page]] (numbered like 4.2a–4.2c, so that no step is renumbered).
@@ -114,18 +114,20 @@ Added by the owner on 2026-10-31, after [[step-5.6-local-videos-and-music]] and 
      press (a press may need repeating), not the console's doing (owner: ignored for now).
   3. **Close:** known limits, the hardware checks (the floating legend over Brave and mpv in
      gamescope on FrankenPC: the test VM runs cage only), outcome; the owner approves.
-     **Written (2026-11-20), waiting for the owner's approval:**
+     **Written (2026-11-20), approved by the owner (2026-11-20):**
      - **Checked for the close:** the floating legend at the largest text size (XL) in Italian, the
        longest legend (Spotify): two columns, the panel ends well above the bottom of a 720p screen
        (frontend preview, gamescope design).
-     - **A problem found while writing the close (to fix before approving, the owner decides):**
+     - **A problem found while writing the close, fixed (owner: "fix it", 2026-11-20):**
        gamescope draws **one external overlay at a time** (its source, `src/steamcompmgr.cpp`
        3.16.14: the most opaque one; [[gamescope-overlay-window-not-drawn-or-left-on-screen]]).
        The floating legend and the console's keyboard over a web page are both external overlays:
        with the legend open, A on a text field (Netflix's search) opens the keyboard, which takes
-       the controller but may not be drawn (the legend stays in its place). **Proposed fix:**
-       owneetd closes the legend when the console's keyboard opens (`webapp.keyboard`); a Go test.
-       Not seen in the test VM (cage has no overlays; the keyboard is a page there).
+       the controller but may not be drawn (the legend stays in its place). **Fixed in owneetd
+       0.19.1:** owneetd closes the floating legend when the console's keyboard opens
+       (`webapp.keyboard`; not the cage page, under which the extension waits); Go test
+       `TestClosesForTheKeyboard` (code `d3bad58`, `6c057b8`). Not seen in the test VM (cage has no
+       overlays; the keyboard is a page there): checked at the next hardware test.
      - **Licences and terms** ([[legal-compliance]]): nothing new. No component, service or
        content added; View's glyphs are drawn for the console (shapes, no logo); the texts are the
        console's (en, it).
@@ -151,7 +153,7 @@ Added by the owner on 2026-10-31, after [[step-5.6-local-videos-and-music]] and 
          a video and its sound go on); the panel follows Netflix's screen while open; View closes
          it and it disappears completely (no last picture left);
        - Guide closes it on the way to the home screen; holding Guide closes the app and the panel;
-       - with the fix: A on Netflix's search field with the legend open, the keyboard drawn;
+       - A on Netflix's search field with the legend open: the legend closes, the keyboard is drawn;
        - View on a DualSense and a Switch controller (Brave's button 8 and mpv's `GAMEPAD_BACK`),
          with their glyph styles;
        - the panel over the player's own display and over the apps' top-right items; its size on
@@ -162,15 +164,21 @@ Added by the owner on 2026-10-31, after [[step-5.6-local-videos-and-music]] and 
        or a song; the general legend elsewhere). In gamescope it floats at the top right over the
        app, which keeps working under it (a window of the console that gamescope draws as an
        external overlay, never focused): only View closes it, Guide on the way home, and it closes
-       with the app. In cage it is a page of the console, B or View back to the app. The app's own
+       with the app and when the console's keyboard opens over the page. In cage it is a page of the console, B or View back to the app. The app's own
        integration catches View (the console's extension; the player's script), so the console
        still intercepts only Guide. One data file holds the legends, drawn by the console and
        checked by tests against the extension's navigations and the player's bindings; texts in
-       English and Italian; View's glyph in each style. Packages: owneetd 0.19.0, owneet-frontend
-       0.27.0, owneet-base 0.0.57 (to update with the fix). Verified in the test VM (cage, a Nacon
+       English and Italian; View's glyph in each style. Packages: owneetd 0.19.1, owneet-frontend
+       0.27.0, owneet-base 0.0.57. Verified in the test VM (cage, a Nacon
        GC-100) and in the frontend preview (both designs, the largest text size); the floating
        panel waits for FrankenPC.
      - **Outside the step, for the owner:** at XL the settings' section list cuts "Controllers
        and Bluetooth" ("Controller e Bluetooth"), seen in this close's preview; owneetd's flaky
-       `update` test (`TestCheckThenApply`, step 4.2b); the guard hook blocking actions that only
-       name the package build script (from step 5.6).
+       `update` test (`TestCheckThenApply`, step 4.2b: it failed owneetd 0.19.1's first build, the
+       second passed); the guard hook blocking actions that only name the package build script
+       (from step 5.6; twice on 2026-11-20: a read-only search in it, and a command that only
+       rewrote a line of a note naming the packaging tool, then made with the Edit tool); the builder VM's build
+       chroot emptied by the system's cleaning of `/var/tmp`
+       ([[build-chroot-emptied-by-tmpfiles]]: made again; a lasting fix proposed).
+- **Step closed by the owner on 2026-11-20**, with the fix above (owneetd 0.19.1) and the hardware
+  checks above as a follow-up. Next in the wave: [[step-5.7-apps-page]].
