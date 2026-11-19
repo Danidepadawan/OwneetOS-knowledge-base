@@ -4,7 +4,7 @@ description: "The binding meaning of every button on every screen, keyboard fall
 area: ux
 status: active
 decided: 2026-10-03
-updated: 2026-11-18
+updated: 2026-11-20
 legacy: "PROJECT_RULES.md §9.1"
 tags: [decision, ux, input]
 ---
@@ -33,9 +33,17 @@ symbols, accented letters), **LT held = capital letters while it is held** (as o
 keyboard), RT does nothing, Menu = Done, B closes the keyboard; the selection wraps around at
 every edge. These meanings hold only inside the keyboard; Guide and the right stick keep theirs.
 
-**Lists that go round:** the library's grid (left / right within a row, down / up between the
-last and the first row, [[game-library]]) and the list of Settings' sections (up on the first
+**Lists that go round:** the library's grid and the Apps page's grid (left / right within a row,
+down / up between the last and the first row, [[game-library]], [[step-5.7-apps-page]]) and the
+list of Settings' sections (up on the first
 section goes to the last, down on the last to the first; owner, 2026-10-16).
+
+**The Apps page** (step 5.7, owner 2026-11-20, [[step-5.7-apps-page]]; "All apps" on the home with
+more than six apps): the same buttons as the home's Apps grid. **A** opens the selected app, or
+installs a missing one (its confirmation, then progress on the tile); **Menu** opens its options
+(Remove; on Steam's tile, close Steam while it runs); **B** goes back to the home, the selection on
+"All apps"; the right stick scrolls; LB / RB switch sections; X, Y and LT / RT do nothing (no
+filters).
 
 While a game or app is running, the system intercepts **only** the Guide button; every other input
 goes to the game.
@@ -199,3 +207,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-11-11 | Inside the player (owner, after testing it): **Y switches Autoplay**, as in the Videos page, and **Menu cycles the subtitles** (off, then each track); X stays the audio track. Keyboard: Y Autoplay, M subtitles. |
 | 2026-11-12 | Inside the player: the audio track chosen with X and the subtitles chosen with Menu (a language, or off) become the preferred language of every video ([[local-media]]). |
 | 2026-11-18 | **The command legend** (step 5.6a): **View** in a web app or the player opens a legend of that app's buttons for the screen on show; in gamescope it floats over the app, which keeps working, and only View closes it; in cage a full-screen page, B or View closes it; no legend for games. View stays reserved on the console's own screens (screenshots later take another gesture). |
+| 2026-11-20 | **The Apps page** (step 5.7): the home's Apps grid buttons (A opens or installs, Menu options, B back to the home on "All apps", the right stick scrolls); X, Y and LT / RT do nothing; its grid goes round like the library's. |
