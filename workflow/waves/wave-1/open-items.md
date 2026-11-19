@@ -20,7 +20,7 @@ owner's.
 | # | What | Where it stands |
 |---|---|---|
 | 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids confirmed (The Witcher 2). To test: recently played from Steam's pages, Steam reopened while closing (owneetd 0.25.46, frontend 0.38.42); next step 3 |
-| 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk: NVIDIA's fix awaited (beta 2.31 meanwhile); demo `4.2c-steam-shaders` to approve; install-script window shown (owneetd 0.25.35, to test with Jedi) |
+| 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk: no NVIDIA fix yet (research 2026-11-19); our own ways proposed, the owner keeps it open for now (2026-11-19) |
 | 15 | The library's disks not updated when a disk is taken out | Built (owneet-frontend 0.38.43): to test |
 | 9 | GitHub pages with every website update | READMEs written, description and topics prepared ([[website]]): the owner looks, then pushes and sets them |
 
