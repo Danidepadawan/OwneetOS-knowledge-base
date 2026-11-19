@@ -19,7 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | Step 2 built (umu ids for GOG games: owneetd 0.25.39, owneet-frontend 0.38.41), on OWNEETLOG: to test with The Witcher 2 (Windows) |
+| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock: no controller, no pointer click; RDR2: Rockstar launcher not usable; step 2 (Witcher 2) to test: logs to read |
 | 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk: NVIDIA's fix awaited (beta 2.31 meanwhile); demo `4.2c-steam-shaders` to approve; install-script window shown (owneetd 0.25.35, to test with Jedi) |
 | 9 | GitHub pages with every website update | READMEs written, description and topics prepared ([[website]]): the owner looks, then pushes and sets them |
 
@@ -243,6 +243,10 @@ status is kept in their own notes; this table follows them.
    "GOG 1207658930 is umu-20920"). Also done: the project's build output cleaned (21 GB to 7.9 GB: old ISOs, old test
    logs, old build logs, old previews and demo scratch; the newest ISO, the release test, the VM images and the
    update repositories kept).
+   **Owner's tests (2026-11-19):** **BioShock** (the original, not Remastered) starts, but neither the controller nor the
+   pointer's click works. **Batman: Arkham City GOTY** starts and works with the controller: passed. **DARK SOULS III**
+   starts and works with the controller: passed. **Red Dead Redemption 2:** cannot be opened, the Rockstar launcher
+   does not respond to the controller. The Witcher 2 (step 2's test) left for last. Logs on OWNEETLOG: to read.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
