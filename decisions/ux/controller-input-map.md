@@ -99,7 +99,8 @@ repeat after 720 ms, then every 360 ms; analog triggers count as pressed above h
 launchers made for a mouse (e.g. a Steam game's EA app or Ubisoft Connect, a game's start or
 options window), **never left on a game** itself. **One case turns it on by itself (owner, 2026-11-19):** a window
 of a game's install script that Steam runs before the game's first start (a publisher's installer, made for a mouse,
-e.g. the Rockstar Games Launcher's), for that window only. Otherwise the user turns it on by hand from the console
+e.g. the Rockstar Games Launcher's), for every window of that script (its own file windows too) until the script
+ends (owneetd 0.25.42). Otherwise the user turns it on by hand from the console
 (Guide, then "Resume with the pointer" on the running game or app: launchers belong to their
 game, so it is offered there too), and off the same way; it holds for **one window**: it turns off
 by itself when another window takes the screen (e.g. the game after its launcher) and when the

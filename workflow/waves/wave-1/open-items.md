@@ -281,6 +281,12 @@ status is kept in their own notes; this table follows them.
    ([[steam-the-steamos-way]]).
    **Owner's report (2026-11-19, Red Dead Redemption 2's installer):** he opened Windows' file window to look at the
    launcher's install folder and closed it at once: the pointer vanished and cannot be turned on again. Logs: to read.
+   **From the log (`owneet-20261119-171727`):** the pointer moved to the file window (17:19:17) and went off when it
+   closed (17:19:21: it held for one window); the installer coming back opened no new window, and the pointer by hand
+   is offered only for a running game. **Fixed** in owneetd 0.25.42: for an install script the pointer holds for every
+   window of it and goes off once none of the script's programs is left, whoever started it (tests). On OWNEETLOG: to
+   test (Red Dead Redemption 2 again; then BioShock with `steam_os=deck`, written only after RDR2, so that RDR2 does not
+   run with `SteamDeck=1`).
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
