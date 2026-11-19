@@ -19,7 +19,6 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock: no controller, no pointer click; RDR2: Rockstar launcher not usable; step 2 (Witcher 2) to test: logs to read |
 | 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk: NVIDIA's fix awaited (beta 2.31 meanwhile); demo `4.2c-steam-shaders` to approve; install-script window shown (owneetd 0.25.35, to test with Jedi) |
 | 9 | GitHub pages with every website update | READMEs written, description and topics prepared ([[website]]): the owner looks, then pushes and sets them |
 
@@ -27,6 +26,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
+| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock: try SteamOS's options; RDR2: the pointer for Steam's windows (how: owner); step 2 (Witcher 2) to test |
 
 ### To build or prepare (assistant)
 
@@ -247,6 +247,17 @@ status is kept in their own notes; this table follows them.
    pointer's click works. **Batman: Arkham City GOTY** starts and works with the controller: passed. **DARK SOULS III**
    starts and works with the controller: passed. **Red Dead Redemption 2:** cannot be opened, the Rockstar launcher
    does not respond to the controller. The Witcher 2 (step 2's test) left for last. Logs on OWNEETLOG: to read.
+   **From the log (`owneet-20261119-161814`):** BioShock (7670) ran and was on screen (16:23:31); Steam gave it its
+   default gamepad layout (`controller_xboxone_gamepad_joystick`); the original BioShock has no controller support of
+   its own, so a gamepad layout does nothing: Steam's keyboard-and-mouse layouts (what a Steam Deck uses for such games)
+   were not applied. The console's pointer was turned on (16:24:30) but is not made for games. **Proposal:** try
+   SteamOS's options next (step 1, part two: `-steamdeck` first), so that Steam applies the layouts it uses on SteamOS
+   for games without controller support. Red Dead Redemption 2 (1174180): Steam ran its install script (16:57:34,
+   the Rockstar Games Launcher's installer) and its window ("Language select") **was shown** (step 1 works), but it
+   does not take the controller, and the console's pointer is offered only for a running game or web app, not for
+   Steam's own windows: nothing could drive it. **Proposal:** the pointer for Steam's windows too (either offered on
+   Steam's card, or turned on by itself for a window of an install script): the owner's choice. Disk check: nothing
+   new.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
