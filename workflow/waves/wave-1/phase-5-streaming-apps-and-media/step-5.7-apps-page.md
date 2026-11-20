@@ -45,7 +45,7 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
   - **What follows (to confirm in the demo):** one order everywhere: the home shows the page's
     list, all of it with six apps or fewer, the first five plus "All apps" beyond (so with six or
     fewer a missing web app moves after the store, where today it keeps its place dimmed; the demo
-    shows both). "All apps" looks like "All games". Videos and Music opened from the page: B comes
+    shows both; **not kept**: the owner chose to keep it in its place, see the demo's review). "All apps" looks like "All games". Videos and Music opened from the page: B comes
     back to the page, on their tile. The page's grid goes round like the Library's. No owneetd
     change: the catalogue and install / remove exist since 5.0.0. Reused: the home's app tile (one
     component for both places), the theme's app handlers, the page-of-Home pattern of the Videos /
