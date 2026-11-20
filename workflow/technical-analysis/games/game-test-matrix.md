@@ -39,7 +39,7 @@ cell, result, log). A cell that fails is a class to fix, not a single game.
   Steam Deck compatibility (verified, playable, unsupported) and Proton's anti-cheat status is public
   (Are We Anti-Cheat Yet).
 - The console could say "This game does not run on OwneetOS" instead of a launch that fails (games whose anti-cheat
-  refuses Linux, e.g. Valorant, Battlefield 6). Look and words: a demo first.
+  refuses Linux, e.g. Battlefield 6). Look and words: a demo first.
 
 ## Proposed list (2026-11-20, for the owner to choose)
 

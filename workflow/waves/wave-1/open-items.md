@@ -27,7 +27,6 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 14 | A game neither on Steam nor on GOG named in the vault and in the guide's / website's demo texts (local guard) | Remove it, keep Battlefield 6? |
 
 ### To build or prepare (assistant)
 
@@ -366,4 +365,6 @@ status is kept in their own notes; this table follows them.
    BattlEye allowed on Linux nor for a Windows OpenGL game: those cells stay empty. **Waits for the owner's decision:**
    a game that is neither on Steam nor on GOG (local guard) is named, next to Battlefield 6, in three vault notes and
    in the approved demos' texts of the guide and the website (`7.3-user-guide`, `7.8b`, `7.8d`, `7.8m`): remove it?
+   **Owner (2026-11-20): removed, Battlefield 6 kept** (the vault's three notes, the four demos, the website's five
+   languages).
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]

@@ -34,7 +34,7 @@ tags: [decision, distribution, installer]
   - Handle RTC (UTC vs local time) automatically.
   - Settings: default OS selection and a **"Restart into Windows"** button.
 - **Secure Boot is always disabled** — explained in the user guide. The guide and the installer
-  must **warn** that some Windows games with anti-cheat (e.g. Battlefield 6, Valorant) require
+  must **warn** that some Windows games with anti-cheat (e.g. Battlefield 6) require
   Secure Boot.
 - Firmware must be UEFI ([[system-requirements]]).
 

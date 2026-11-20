@@ -50,7 +50,7 @@ classes; for each, a mature open source project already solved it and OwneetOS d
    OpenGL; Unreal, Unity, other engines; 32-bit; anti-cheat EAC / BattlEye; EA, Ubisoft, Rockstar launchers; GOG
    Windows and Linux installers, DOS), one free game per cell (free-to-play, demos, GOG's free games), run on every
    release and every driver change. No game bought.
-6. **What cannot work, said honestly.** Games whose anti-cheat refuses Linux (e.g. Valorant, Battlefield 6) never
+6. **What cannot work, said honestly.** Games whose anti-cheat refuses Linux (e.g. Battlefield 6) never
    run on any Linux system: the console says so instead of failing (ProtonDB and Steam Deck data).
 
 ## Research (2026-11-18)
