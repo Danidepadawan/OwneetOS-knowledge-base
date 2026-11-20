@@ -3,7 +3,7 @@ type: known-solution
 description: "A DirectX 12 Steam game (Cyberpunk 2077) closes a few seconds after starting on an NVIDIA Turing card (GTX 16xx, RTX 20xx): NVIDIA's shader compiler stops on \"Unsupported: extractelement <8 x i4>\" (exception 0xc000001d in libnvidia-gpucomp). Not ours: a fix waits in vkd3d-proton's shader translator."
 status: open
 seen: 2026-11-18
-updated: 2026-11-19
+updated: 2026-11-20
 tags: [known-solution, steam, proton, nvidia]
 ---
 # A DirectX 12 game closes at once on an NVIDIA Turing card
@@ -49,8 +49,9 @@ console.
 - dxil-spirv pull request 344 (the translator's rewrite of the 4-bit bit reversal) made pipeline creation work on a
   Turing card (RTX 2070, 615.78.08); it is not merged. The shader override works for users (2026-11-15) but needs a
   copy of the game's own shader: OwneetOS cannot ship it ([[legal]]: no game content redistributed).
-- Ways in OwneetOS's hands, for the owner to choose ([[game-compatibility-method]]: no waiting on upstream): to be
-  proposed (2026-11-19).
+- Ways in OwneetOS's hands were proposed (2026-11-19); **the owner dropped the matter (2026-11-20): a fault of NVIDIA's
+  driver on that card, not of OwneetOS.** Nothing is built for it; a newer NVIDIA driver in a pinned-packages update
+  may fix it.
 
 ## How we found it
 

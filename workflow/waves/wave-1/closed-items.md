@@ -808,3 +808,78 @@ found here. Newest closings are added at the end.
    Seen in the log: the SSD was taken out while mounted, and the kernel reported writes it could not finish
    (21:18:52, "device offline error … WRITE", ext4 journal aborted). On OWNEETLOG: to test.
    **Closed** (2026-11-20): the owner's test passed.
+3af. **A test of owneetd failed once** (2026-11-13, while building owneetd 0.25.31): `TestStopAndSourceGone`
+   (`daemon/internal/installs`) timed out (5 s) waiting for an event during the package's build; the next build
+   passed, and 80 more runs (with and without the race detector) did not fail. A test that fails by chance: its
+   cause to be found (assistant).
+   **Owner (2026-11-17):** if it does not come back by the end of the tests, it is closed (users would open a ticket).
+   **Closed** (2026-11-20): dropped by the owner (it never came back).
+13a. **Cyberpunk 2077 (from item 13: Steam games with their publisher's launcher)** (owner, 2026-11-18): the owner installs games for a batch of tests
+   and expects problems above all with external launchers: EA (STAR WARS Jedi: Fallen Order), Rockstar (Red Dead
+   Redemption 2), CD Projekt Red (Cyberpunk 2077, with item 10) and Ubisoft (Assassin's Creed Unity, not bought yet: later).
+   Launchers made for a mouse are driven with the controller pointer ([[controller-input-map]]). What fails is
+   recorded here per game after the test. [[step-4.2c-steam-without-its-interface]]
+   **Owner's test (2026-11-18), Cyberpunk 2077: failed.** No Steam question at launch this time; the game never
+   started, not once: only its launcher (REDlauncher) was seen. **From the log** (`owneet-20261118-175931`, FrankenPC,
+   GeForce GTX 1660 SUPER, NVIDIA driver): two starts (18:03:34, 18:05:04), both through `REDprelauncher.exe`. First:
+   the prelauncher's window at 18:04:02; between it and the launcher's window (18:04:28) Steam's own window was on screen
+   for 14 s (no game window: owneetd shows Steam); at 18:04:47 a shader of the game itself was being compiled
+   (vkd3d-proton's "Unsupported: … extractelement" from Steam's children), and at 18:04:48 every process of the game
+   ended, Steam saying "success". Second: launcher at 18:05:12, game at 18:05:22, all ended at 18:05:24. So the game
+   itself most likely starts and dies within a second. Not in the log: why. Proton's own log is written only for the
+   console's Windows games (`owneet.debug.windows_log`), not for Steam's: proposal to the owner, the same testers' switch
+   for Steam's games too.
+   **Owner (2026-11-18): approved; he pressed "Play" in the launcher with the controller.** Built: owneetd 0.25.34 starts
+   Steam with `PROTON_LOG=1` and `PROTON_LOG_DIR=/tmp/owneet-proton-logs` when `owneet.debug.windows_log=on` (in memory:
+   nothing stays on the disk); owneet-base 0.0.80's test log copies each `steam-APPID.log` to the stick
+   (`<log>.games/proton-steam-APPID.log`). On OWNEETLOG: Cyberpunk 2077 to start again, then its log.
+   **Owner's test (2026-11-18, owneetd 0.25.34):** (a) Cyberpunk 2077 started from the console with Steam closed: it
+   stayed on the console's "Starting …" screen; it seemed Steam's Vulkan shader processing had not even begun (owner not
+   sure). (b) Started again from Steam itself: the Vulkan shaders were processed, starting at once at 89% (maybe begun the
+   first time and cut off); then an abrupt return to the console's home screen; then the launcher came, "Play" pressed
+   with the controller; the game started and closed after a few seconds. (c) STAR WARS Jedi: Fallen Order (the only one
+   the owner can try now): the same as Cyberpunk at its first try; back on the home screen, Steam opened again asked to
+   choose a folder or a file, for what the owner could not tell (the EA app's install?); he closed Steam and switched the
+   console off. Logs on OWNEETLOG: to read.
+   **From the log (`owneet-20261118-182054`):** one launch of Cyberpunk, not two (the owner opened Steam meanwhile).
+   (1) **Cyberpunk 2077 closing: not ours.** Proton's log: exception 0xc000001d in NVIDIA's shader compiler
+   (`libnvidia-gpucomp.so.615.71.09`, `vkCreateComputePipelines`), a known bug of NVIDIA's driver on Turing cards with
+   this game: [[nvidia-turing-shader-compiler-crash-in-vkd3d-games]] (open: a fix waits in vkd3d-proton, it comes with
+   a Proton update). (2) **Steam's long preparation shown only as "Starting …":** Steam prepared Cyberpunk's Vulkan
+   shaders from 18:22:20 to 18:29:56 (7.5 min) and owneetd kept Steam hidden ("preparing the game's shaders: still
+   hidden"), as built for Silksong's 45 s ([[step-4.2c-steam-without-its-interface]]); no progress on screen, so it
+   looked stuck. Steam's `shader_log.txt` gives the percentage ("Still replaying 1091500 (69%, 1022/11995)").
+   (3) **Jedi: Fallen Order's install script hidden while it waits for the user:** from 18:32:00 Steam ran the game's
+   install script (EA's, 4 steps) hidden ("preparing the game: still hidden"); its window, a Windows "Open" file
+   dialog on `C:\Program Files` (a Steam window, appid 769), was on screen only when the owner opened Steam
+   (18:36). What it asks for is not in the logs: Steam's `installscriptevalutor_log.txt` is not copied by the test
+   log, and the game's `__Installer` folder holds only `vc/` and `LOC/` (no EA app installer seen). Proposals to the
+   owner.
+   **Owner (2026-11-18):** (1) Cyberpunk must not stay without a solution. Found: the fix is NVIDIA's (the vkd3d change
+   was refused on 2026-11-02; NVIDIA has a fix, bug 7014466): OwneetOS ships the fixed driver in an update as soon as it
+   is out; meanwhile Steam's beta "2.31" of the game is reported to work (saves of a newer version may not open):
+   [[nvidia-turing-shader-compiler-crash-in-vkd3d-games]]; told to the owner. (2) **Demo** of the percentage:
+   `design/demos/4.2c-steam-shaders.html` ("Steam is preparing the game's graphics: 69%", a bar, "The first time, or
+   after an update, it can take a few minutes"; "shaders" never named), waits for the owner's approval. Found on the
+   way: item 3v's fix (Steam's own shader page shown when Steam waits on ProcessingShaderCache) no longer happens:
+   owneetd keeps Steam hidden while `fossilize_replay` runs (Silksong's rule), so the demo's percentage replaces it.
+   (3) **(a) approved, built:** owneetd 0.25.35 shows Steam at once when a window of a game's install script
+   (`reaper SteamLaunch AppId=N Install=1`) comes on screen while Steam is hidden (Go tests). (b) (the install
+   script's log on the stick) not approved: not built.
+   **Owner (2026-11-18): when does the fix come out? Without a date we rely on chance.** Checked: NVIDIA gives no date
+   (its forum thread has no NVIDIA reply; bug 7014466 named only in vkd3d-proton's issue). Linux drivers out: 615.78.08,
+   620.70.06 (in Arch since 2026-11-13; still reported broken), 620.73.04 (2026-11-17, "minor bug fixes", not in Arch
+   yet, unknown whether it holds the fix). Our pinned packages: nvidia 615.71.09 (snapshot 2026-10-13). Ways that do
+   not depend on chance, told to the owner: Steam's beta 2.31 now; each new NVIDIA driver tried on the FrankenPC
+   through the update stick; or a fix of our own (the console repairs the failing shader on the PC itself), heavy.
+   **Owner (2026-11-18): demo `4.2c-steam-shaders` approved; 3(a) confirmed.** The approach to Cyberpunk is not
+   accepted: see item 14.
+   **Closed** (2026-11-20): dropped by the owner: a fault of NVIDIA's driver on that card (Turing), not of OwneetOS
+   ([[nvidia-turing-shader-compiler-crash-in-vkd3d-games]]); the rest of item 13 stays open.
+10. Cyberpunk 2077: Steam's question at launch shown at once. [[step-4.2c-steam-without-its-interface]]
+    **Owner (2026-11-18):** tested in the batch with 13; nothing to build (owneetd 0.25.6 shows Steam as soon as its log
+    says it waits for the user).
+    **Closed** (2026-11-20): dropped by the owner with Cyberpunk 2077's tests.
+12. "Playing for" over an hour on the home screen ("1 h 5 min", "2 h"). [[step-4.2c-steam-without-its-interface]]
+    **Owner (2026-11-18):** tested in the batch with 10 and 13: a game left open over an hour, then Guide.
+    **Closed** (2026-11-20): the owner's test passed (a game open over an hour).

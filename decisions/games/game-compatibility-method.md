@@ -4,7 +4,7 @@ description: "How OwneetOS makes games work as a whole instead of one game at a 
 area: games
 status: active
 decided: 2026-11-18
-updated: 2026-11-18
+updated: 2026-11-20
 tags: [decision, games]
 ---
 # Making games work: a method, not one game at a time
@@ -77,3 +77,4 @@ run with the console's kernel) to tell the driver from the card.
 | 2026-11-18 | Proposed to the owner ([[open-items]] 14). |
 | 2026-11-18 | Direction approved; research first; point 2 to be tried; the shader percentage waits for it. |
 | 2026-11-18 | Order approved for the first three points; 4 and 5 along the way; the runtime with the Windows-games download. |
+| 2026-11-20 | Point 3's way approved: native games outside Steam in Valve's Steam Linux Runtime 1.0 (scout) through umu (`umu-scout`), as Heroic does ([[umu-fixes-and-runtime]]); as today when it is missing. Cyberpunk 2077 dropped: NVIDIA's driver, not OwneetOS (owner). |
