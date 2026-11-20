@@ -79,3 +79,19 @@ installed), which solved missing libraries such as a native game's old `libssl` 
   does so for Windows games): to check offline.
 - **Legal:** Valve's runtimes are downloaded by the user's console, never shipped by OwneetOS ([[legal]]).
 
+## Built (2026-11-20, step 3)
+
+- **Download:** once Windows games are ready, owneetd runs `umu-run true` with `PROTONPATH=umu-scout`
+  (`daemon/internal/windows/native.go`): umu downloads umu-scout (224 MB unpacked) and the soldier runtime (666 MB
+  unpacked), runs `true` in it, and owneetd writes the tool's folder in `~/.local/share/owneet/windows/native`. A
+  failure leaves Windows games as they are; tried again after a network change or 10 minutes.
+- **Start:** `owneet-native-run GAME_FOLDER PROGRAM …` (owneet-frontend for `.sh` scripts and programs; AppImages,
+  Windows and DOS games unchanged): `umu-run` with the tool's fixed folder (no lookup online), `GAMEID=umu-0`,
+  `UMU_RUNTIME_UPDATE=0`, the game's folder shared (`STEAM_COMPAT_INSTALL_PATH`); inside, the program's folder goes
+  first in `LD_LIBRARY_PATH` and the console's fixes for a known launcher are loaded from `/run/host/usr/…` (umu
+  clears `LD_PRELOAD` in a gamescope session, so it is passed in by the script itself).
+- **Builder VM check:** the game sees its folder, then the runtime's 32-bit and 64-bit SDL2 and OpenAL; the preload
+  reaches it; without the runtime the old way. umu still connects to 1.1.1.1 and asks `repo.steampowered.com` for the
+  runtime's latest version (updates off: nothing downloaded), as for Windows games; offline it goes on with the one it
+  has.
+

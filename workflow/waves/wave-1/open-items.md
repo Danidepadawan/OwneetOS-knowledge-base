@@ -19,7 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Step 3 (native games in the Steam Linux Runtime) approved 2026-11-20: being built |
+| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Step 3 (native games in the Steam Linux Runtime) built (owneetd 0.25.48, frontend 0.38.44): to test with The Witcher 2 (Linux) |
 | 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft when the owner has the game |
 | 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
 
@@ -339,4 +339,9 @@ status is kept in their own notes; this table follows them.
    **Step 3 researched** ([[umu-fixes-and-runtime]], 2026-11-20): native games outside Steam in Valve's "Steam Linux
    Runtime 1.0 (scout)" through umu (`umu-scout`), as Heroic does; downloaded with the Windows-games download; as today
    when it is missing; testers' switch `owneet.debug.native_runtime=off`. **Owner (2026-11-20): approved, build it.**
+   **Built (2026-11-20):** owneetd 0.25.48 (once Windows games are ready, umu downloads umu-scout and the soldier
+   runtime, about 0.9 GB unpacked; `owneet-native-run`), owneet-frontend 0.38.44 (native disk games start through it).
+   The Witcher 2's launcher keeps the console's fixes (its preload passed in through `/run/host`). Checked in the
+   builder VM: download, the libraries a game sees (32-bit SDL2, OpenAL), the preload, the fallback. To test on the
+   FrankenPC: the download (Windows games already ready there), then The Witcher 2 (Linux), its launcher and the game.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
