@@ -800,3 +800,11 @@ found here. Newest closings are added at the end.
    A and X hold the mouse's buttons as long as they are held ([[controller-input-map]]). Proton's Xalia was ruled out
    (switch `steam_xalia=off`, no change). History in [[open-items]] 14.
    **Closed** (2026-11-19): the owner's test, the pointer clicks in BioShock's menu.
+15. **The library's disks not updated when a disk is taken out** (owner, 2026-11-19): after taking the external SSD out,
+   the library still showed 3 disks until he went to Home and back. **Cause (code):** the disks in the library's header
+   are read when the library is shown (`LibraryPage.refreshVolumes`); a disk plugged in or out read the games again
+   (`checkDisks`, "Disks changed: reading the games again, quietly" at 21:18:53) but not the header. **Built:**
+   owneet-frontend 0.38.43, the header read again on every change of the disks too. Other users: only that header.
+   Seen in the log: the SSD was taken out while mounted, and the kernel reported writes it could not finish
+   (21:18:52, "device offline error … WRITE", ext4 journal aborted). On OWNEETLOG: to test.
+   **Closed** (2026-11-20): the owner's test passed.

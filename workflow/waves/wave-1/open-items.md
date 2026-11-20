@@ -19,10 +19,9 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids confirmed (The Witcher 2). To test: recently played from Steam's pages, Steam reopened while closing (owneetd 0.25.46, frontend 0.38.42); next step 3 |
+| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Next: step 3 (native games in the Steam Linux Runtime) |
 | 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk: no NVIDIA fix yet (research 2026-11-19); our own ways proposed, the owner keeps it open for now (2026-11-19) |
-| 15 | The library's disks not updated when a disk is taken out | Built (owneet-frontend 0.38.43): to test |
-| 9 | GitHub pages with every website update | READMEs written, description and topics prepared ([[website]]): the owner looks, then pushes and sets them |
+| 9 | GitHub pages with every website update | READMEs pushed (2026-11-20: the code's README is on `feature/phase7`, shown on GitHub once on `main`); description, website and topics not set yet on GitHub (read 2026-11-20): the owner sets them |
 
 ### Waits for the owner's decision
 
@@ -72,14 +71,6 @@ status is kept in their own notes; this table follows them.
    passed, and 80 more runs (with and without the race detector) did not fail. A test that fails by chance: its
    cause to be found (assistant).
    **Owner (2026-11-17):** if it does not come back by the end of the tests, it is closed (users would open a ticket).
-15. **The library's disks not updated when a disk is taken out** (owner, 2026-11-19): after taking the external SSD out,
-   the library still showed 3 disks until he went to Home and back. **Cause (code):** the disks in the library's header
-   are read when the library is shown (`LibraryPage.refreshVolumes`); a disk plugged in or out read the games again
-   (`checkDisks`, "Disks changed: reading the games again, quietly" at 21:18:53) but not the header. **Built:**
-   owneet-frontend 0.38.43, the header read again on every change of the disks too. Other users: only that header.
-   Seen in the log: the SSD was taken out while mounted, and the kernel reported writes it could not finish
-   (21:18:52, "device offline error … WRITE", ext4 journal aborted). On OWNEETLOG: to test.
-
 ## Decided, not built yet
 
 9. **GitHub pages with every website update**: README, the repositories' description and topics; the
@@ -403,6 +394,9 @@ status is kept in their own notes; this table follows them.
    2: Assassins of Kings Enhanced Edition (umu-20920)", "GOG store specified, using GOG database", its global fix
    applied (`OPENSSL_ia32cap=~0x20000000`). **Step 2 of the method confirmed.** (The game's own fix file is empty.) The
    launcher driven with the pointer (21:37:30-41). Next: step 3.
+   **Owner (2026-11-20): every test passed** (recently played for a game started from Steam's page, Steam reopened while
+   closing): owneetd 0.25.46 and owneet-frontend 0.38.42 work. Left in 14: step 3.
+   [[step-4.2c-steam-without-its-interface]]
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
 
 ## Tests the owner put off
