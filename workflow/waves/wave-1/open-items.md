@@ -20,7 +20,7 @@ owner's.
 | # | What | Where it stands |
 |---|---|---|
 | 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Steps 1-3 done; point 4 rejected; next: point 5's list of free games (to propose), point 6 = step 4.8 (demo first) |
-| 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft when the owner has the game |
+| 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft: South Park: The Fractured But Whole, when the owner has it |
 | 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
 
 ### Waits for the owner's decision
@@ -82,6 +82,8 @@ status is kept in their own notes; this table follows them.
    **Owner (2026-11-20):** South Park: The Stick of Truth instead of Assassin's Creed Unity? Checked: its Steam version
    does not use Ubisoft Connect (Ubisoft's support and PCGamingWiki: only non-Steam copies need it), so it would not
    test Ubisoft's launcher; South Park: The Fractured But Whole on Steam does use it. Answer given to the owner.
+   **Owner (2026-11-20):** The Fractured But Whole replaces Assassin's Creed Unity for the Ubisoft Connect test (a
+   Ubisoft account is needed).
    [[step-4.2c-steam-without-its-interface]]
 
 14. **Games: prevent, do not chase them one by one** (owner, 2026-11-18, serious): almost every game tested gives a
