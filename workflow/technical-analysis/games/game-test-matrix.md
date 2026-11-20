@@ -40,3 +40,31 @@ cell, result, log). A cell that fails is a class to fix, not a single game.
   (Are We Anti-Cheat Yet).
 - The console could say "This game does not run on OwneetOS" instead of a launch that fails (games whose anti-cheat
   refuses Linux, e.g. Valorant, Battlefield 6). Look and words: a demo first.
+
+## Proposed list (2026-11-20, for the owner to choose)
+
+Cells already covered by the owner's games: Unreal 4 + DirectX 11 + EA app (STAR WARS Jedi: Fallen Order), Vulkan / DirectX
+12 + Rockstar launcher (Red Dead Redemption 2), DirectX 12 (ELDEN RING), 32-bit Windows + DirectX 9 + Unreal 2.5
+(BioShock), Unreal 3 (BioShock Infinite, Batman: Arkham City), Unity (Hollow Knight: Silksong), Ubisoft Connect
+(South Park: The Fractured But Whole), a game's own launcher + GOG Windows installer + GOG Linux installer + old 32-bit
+native (The Witcher 2, both versions).
+
+Free games for the cells left (checked online 2026-11-20; status can change with any update):
+
+| Cell | Free game | Source, what was found |
+|---|---|---|
+| Source 2, native Linux, Vulkan | Dota 2 (Steam) | native Linux, free |
+| Easy Anti-Cheat allowed on Linux | Paladins (Steam) | anti-cheat "works" on GamingOnLinux (last updated 2025-11-26) |
+| Anti-cheat that refuses Linux (step 4.8) | Apex Legends (Steam) | EA blocked Linux and Steam Deck in October 2024; no reversal found |
+| Unreal 5 + Easy Anti-Cheat | THE FINALS (Steam) | runs through Proton, but broke on Linux after several updates; Denuvo Anti-Cheat added in 2026: unreliable |
+| DOS (DOSBox), GOG | Tyrian 2000 (GOG) | GOG's page shows it free |
+| ScummVM, GOG Linux | Beneath a Steel Sky (GOG) | free on GOG with a Linux version (ScummVM) |
+| BattlEye allowed on Linux | none found yet | |
+| OpenGL (Windows) | none found yet | |
+
+Sources: [GamingOnLinux, Paladins](https://www.gamingonlinux.com/itemdb/app/40486/paladins/),
+[PC Gamer, Apex Legends](https://pcgamer.com/games/battle-royale/apex-legends-ditches-steam-deck-support-ea-says-linux-is-a-path-for-a-variety-of-impactful-exploits-and-cheats),
+[GamingOnLinux, THE FINALS](https://www.gamingonlinux.com/2025/08/the-finals-broken-on-linux-again/),
+[GOG, Tyrian 2000](https://www.gog.com/en/game/tyrian_2000),
+[GamingOnLinux, Beneath a Steel Sky](https://gamingonlinux.com/2020/07/cult-classic-beneath-a-steel-sky-is-finally-available-free-on-steam).
+
