@@ -19,7 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Steps 1-3 done; point 4 rejected; next: point 5's list of free games (to propose), point 6 = step 4.8 (demo first) |
+| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Steps 1-3 done; point 4 rejected; point 5: the owner is downloading the free games proposed (2026-11-20); point 6 = step 4.8 (demo first) |
 | 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft: South Park: The Fractured But Whole, when the owner has it |
 | 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
 
@@ -27,6 +27,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
+| 14 | A game neither on Steam nor on GOG named in the vault and in the guide's / website's demo texts (local guard) | Remove it, keep Battlefield 6? |
 
 ### To build or prepare (assistant)
 
@@ -359,5 +360,10 @@ status is kept in their own notes; this table follows them.
    Disk check: nothing new but the runtime. **Step 3 done.** Left in 14: points 4 and 5 of the method (to discuss).
    **Owner (2026-11-20):** point 4 rejected (too much upkeep); point 5: GOG's games may be named and used; point 6 in
    Wave 1 ([[step-4.8-games-that-cannot-run]], demo first). Next for 5: the list of free games per cell, proposed to
-   the owner.
+   the owner ([[game-test-matrix]]).
+   **Owner (2026-11-20):** downloading every game proposed (Dota 2, Paladins, Apex Legends, THE FINALS on Steam; Tyrian
+   2000, GOG's offline installer, not Galaxy's; Beneath a Steel Sky, GOG's Linux version). No free game found yet for
+   BattlEye allowed on Linux nor for a Windows OpenGL game: those cells stay empty. **Waits for the owner's decision:**
+   a game that is neither on Steam nor on GOG (local guard) is named, next to Battlefield 6, in three vault notes and
+   in the approved demos' texts of the guide and the website (`7.3-user-guide`, `7.8b`, `7.8d`, `7.8m`): remove it?
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
