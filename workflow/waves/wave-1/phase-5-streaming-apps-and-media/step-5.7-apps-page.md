@@ -34,7 +34,9 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
   - **Which five stay on the home: installed first, in a fixed order:** the catalogue's order (web
     apps, then Videos, Music, the store), installed apps before missing ones; the rest only on the
     page. The tiles do not move as they are used. (Not chosen: the most recently opened; chosen by
-    the user.)
+    the user.) **Changed by the owner after the demo (2026-11-20): the built-in apps first**
+    (Videos, Music, the store), then the web apps; **with six apps or fewer a missing app keeps its
+    place** (see the demo's review below).
   - **Buttons: the same as the home's grid** ([[controller-input-map]], "The Apps page"): A opens,
     or installs a missing app (its confirmation, then progress on the tile); Menu → options
     (Remove; on Steam's tile, close Steam while it runs); B back to the home, the selection on
@@ -72,6 +74,15 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
      - an app installed from the page moves to its place among the installed ones, the selection
        following it; an open web app shows the green dot on its tile and the home's hero (Resume,
        Close).
+     **The owner's review (2026-11-20):** (1) **the built-in apps first** (Videos, Music, the store),
+     then the web apps in the catalogue's order, so that Music and the store never leave the home;
+     (2) **with six apps or fewer a missing app keeps its place**, dimmed (as today; the demo's
+     switch R acted only with six apps and showed nothing with the nine it starts with: removed).
+     With more than six, the installed apps still come before the missing ones on the page, and
+     the home shows its first five. The demo is updated (code `d59e582`): with nine apps the home
+     shows Videos, Music, Steam Store, Netflix, Spotify and "All apps"; with six, Videos, Music,
+     Steam Store, Netflix, YouTube (missing, in its place), Spotify. Waiting for the owner's
+     approval.
   2. **Code:** the theme (one ordered list for the home and the page, `AppTile.qml` out of
      `HomePage.qml`, the "All apps" tile, `AppsPage.qml` as a page of Home, B from Videos / Music
      back to where they were opened, texts); the pretend owneetd with a larger catalogue and
