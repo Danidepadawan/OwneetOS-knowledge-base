@@ -36,7 +36,7 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
     page. The tiles do not move as they are used. (Not chosen: the most recently opened; chosen by
     the user.) **Changed by the owner after the demo (2026-11-20): the built-in apps first**
     (Videos, Music, the store), then the web apps; **with six apps or fewer a missing app keeps its
-    place** (see the demo's review below).
+    place**; **from the seventh installed app, the five most used** (see the demo's review below).
   - **Buttons: the same as the home's grid** ([[controller-input-map]], "The Apps page"): A opens,
     or installs a missing app (its confirmation, then progress on the tile); Menu → options
     (Remove; on Steam's tile, close Steam while it runs); B back to the home, the selection on
@@ -81,8 +81,21 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
      With more than six, the installed apps still come before the missing ones on the page, and
      the home shows its first five. The demo is updated (code `d59e582`): with nine apps the home
      shows Videos, Music, Steam Store, Netflix, Spotify and "All apps"; with six, Videos, Music,
-     Steam Store, Netflix, YouTube (missing, in its place), Spotify. Waiting for the owner's
-     approval.
+     Steam Store, Netflix, YouTube (missing, in its place), Spotify.
+     **Then (owner, 2026-11-20): the home's five follow use once many apps are installed.** With
+     six installed apps or fewer, the home's places are fixed (the order above); **from the
+     seventh installed app, the home shows the five most used apps, the most used first**, and "All
+     apps". The Apps page keeps the fixed order. Asked and answered: with six installed and one
+     missing (seven in all) the home shows the first five of the fixed order, the sixth installed
+     only on the page (not chosen: the most used as soon as the installed apps do not all fit); the
+     uses are **every opening from the console, all time** (not chosen: the last 30 days); removing
+     an app clears its count; equal counts follow the fixed order; Resume (bringing back the open
+     app) is not an opening. The demo is updated (code `0388d2e`): with nine apps (seven installed)
+     the home shows the five most used (invented counts listed under the demo, never shown on the
+     console); opening an app counts and moves it, the selection following; removing one goes
+     back to the fixed order; `#installed=` sets the web apps installed. Checked with scripted
+     presses: six installed (fixed), eight installed (most used), the store opened up to Music's
+     count (after Music, the fixed order). Waiting for the owner's approval.
   2. **Code:** the theme (one ordered list for the home and the page, `AppTile.qml` out of
      `HomePage.qml`, the "All apps" tile, `AppsPage.qml` as a page of Home, B from Videos / Music
      back to where they were opened, texts); the pretend owneetd with a larger catalogue and
