@@ -42,7 +42,8 @@ classes; for each, a mature open source project already solved it and OwneetOS d
    `GAMEID` from the umu database) so the community's per-game fixes apply; native Linux games in the Steam
    Runtime (umu-scout) instead of the system's libraries, which makes OwneetOS's own compatibility libraries
    (`lib32-owneet-compat`) the exception, not the rule.
-4. **A tried NVIDIA driver.** A new NVIDIA driver reaches the console only after it passed the test games on the
+4. ~~**A tried NVIDIA driver.**~~ (rejected by the owner, 2026-11-20: more upkeep than he can give; the driver keeps
+   following the pinned packages.) A new NVIDIA driver reaches the console only after it passed the test games on the
    test hardware (FrankenPC, Turing; others when available); the previous one kept to go back to; known regressions
    (NVIDIA's forum, vkd3d-proton, Proton) read before choosing. Same for Proton's version chosen by the console.
 5. **Tests by technology, with free games.** A table of what makes games break (DirectX 9 / 11 / 12, Vulkan,
@@ -78,3 +79,4 @@ run with the console's kernel) to tell the driver from the card.
 | 2026-11-18 | Direction approved; research first; point 2 to be tried; the shader percentage waits for it. |
 | 2026-11-18 | Order approved for the first three points; 4 and 5 along the way; the runtime with the Windows-games download. |
 | 2026-11-20 | Point 3's way approved: native games outside Steam in Valve's Steam Linux Runtime 1.0 (scout) through umu (`umu-scout`), as Heroic does ([[umu-fixes-and-runtime]]); as today when it is missing. Cyberpunk 2077 dropped: NVIDIA's driver, not OwneetOS (owner). |
+| 2026-11-20 | Point 4 (a tried NVIDIA driver channel) **rejected** by the owner: more upkeep than he can give. Point 5: games from GOG may be named and used (legal; the local guard on game names is the owner's to edit). Point 6 put in Wave 1 as [[step-4.8-games-that-cannot-run]] (demo first). |

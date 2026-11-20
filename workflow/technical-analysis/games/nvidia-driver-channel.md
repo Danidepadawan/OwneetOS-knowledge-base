@@ -6,6 +6,9 @@ tags: [technical-analysis, games, nvidia]
 ---
 # A tried NVIDIA driver (research, 2026-11-18)
 
+> [!warning] **Rejected by the owner (2026-11-20):** more upkeep than he can give. The driver keeps following the
+> pinned packages; nothing of the proposal below is built.
+
 Point 4 of [[game-compatibility-method]].
 
 ## Today

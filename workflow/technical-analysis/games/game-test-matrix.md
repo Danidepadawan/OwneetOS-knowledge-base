@@ -24,7 +24,8 @@ Points 5 and 6 of [[game-compatibility-method]]. The owner buys no game for test
 
 - Steam: free-to-play games and demos (Steam Next Fest), chosen with SteamDB's public technology pages (engine,
   SDKs, anti-cheat, launcher) read by a person ([[legal]]: no scraping).
-- GOG: its free games and giveaways (names to ask the owner before writing them: local guard on game names).
+- GOG: its free games and giveaways (owner, 2026-11-20: GOG's games are legal and may be named; the local guard on
+  game names is the owner's to update).
 - The owner's own library where a cell is already covered.
 
 ## Run

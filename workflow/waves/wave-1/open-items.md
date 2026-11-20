@@ -19,7 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Steps 1-3 of the method done (step 3 confirmed in the log, 2026-11-20). Next: points 4 (NVIDIA driver) and 5 (free games' tests), to discuss |
+| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Steps 1-3 done; point 4 rejected; next: point 5's list of free games (to propose), point 6 = step 4.8 (demo first) |
 | 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft when the owner has the game |
 | 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
 
@@ -79,6 +79,9 @@ status is kept in their own notes; this table follows them.
    (2026-11-20)**, a fault of NVIDIA's driver on that card, not of OwneetOS ([[closed-items]] 13a,
    [[nvidia-turing-shader-compiler-crash-in-vkd3d-games]]); Ubisoft (Assassin's Creed Unity): when the owner has it.
    Demo `4.2c-steam-shaders` approved, not built (Steam's own shader page is shown now).
+   **Owner (2026-11-20):** South Park: The Stick of Truth instead of Assassin's Creed Unity? Checked: its Steam version
+   does not use Ubisoft Connect (Ubisoft's support and PCGamingWiki: only non-Steam copies need it), so it would not
+   test Ubisoft's launcher; South Park: The Fractured But Whole on Steam does use it. Answer given to the owner.
    [[step-4.2c-steam-without-its-interface]]
 
 14. **Games: prevent, do not chase them one by one** (owner, 2026-11-18, serious): almost every game tested gives a
@@ -350,4 +353,7 @@ status is kept in their own notes; this table follows them.
    The Witcher 2 (Linux) started in it at 11:10:41, its launcher with the console's fixes, until 11:13:34. Only a
    harmless line: bash (64-bit) cannot load the launcher's 32-bit preload before passing it on ("wrong ELF class").
    Disk check: nothing new but the runtime. **Step 3 done.** Left in 14: points 4 and 5 of the method (to discuss).
+   **Owner (2026-11-20):** point 4 rejected (too much upkeep); point 5: GOG's games may be named and used; point 6 in
+   Wave 1 ([[step-4.8-games-that-cannot-run]], demo first). Next for 5: the list of free games per cell, proposed to
+   the owner.
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
