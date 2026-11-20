@@ -54,3 +54,28 @@ installed), which solved missing libraries such as a native game's old `libssl` 
 - The GOG product id comes from `goggame-<id>.info` (owneet-frontend, extra `disk.gog.id`, `OWNEET_GOG_ID`).
 - A game with an umu id `umu-<Steam app id>` also gets that number as `SteamAppId`, so Proton's own per-game settings
   for the Steam version apply too.
+
+## Step 3: native games in the Steam Runtime (research, 2026-11-20)
+
+- **What Steam does for native games:** the "Steam Linux Runtime 1.0 (scout)" tool (Steam app 1070560) runs a native
+  game inside the soldier container (`require_tool_appid 1391110`, entry point `scout-on-soldier-entry-point-v2`) with
+  the scout libraries on top (`LD_LIBRARY_PATH`); its README: "used by default for native Linux games on Steam Deck".
+  Its `steam-runtime/` has **i386 and amd64** libraries (read on the development PC's Steam, read only: SDL2 2.32,
+  OpenAL, libstdc++, GLU, Vorbis for i386). The host's graphics driver (32-bit too) is still needed: the container
+  imports it.
+- **What Heroic does** (v2.22.2+, [releases](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases)):
+  every native GOG game, at install or import, gets the runtime `umu-scout`; it runs `umu-run` with
+  `PROTONPATH=umu-scout`, `GAMEID=umu-0`, `STORE=gog` (no `UMU_NO_PROTON`). Its dropdown also offers soldier, sniper,
+  4.0 and none. 2.22.3 and 2.22.4 fixed umu being nested or used for games that did not ask for it.
+- **umu-scout** ([loathingKernel/umu-scout](https://github.com/loathingKernel/umu-scout), Unlicense packaging, about
+  60 MB): Valve's app 1070560 and the scout `steam-runtime` image (`repo.steampowered.com/steamrt1`), repacked as a
+  umu compatibility tool, rebuilt when Valve's change (latest 2026-11-10). umu ties it to the soldier runtime
+  (`umu_run.py`, `resolve_runtime`), which umu downloads from `repo.steampowered.com` (`SteamLinuxRuntime_soldier`).
+- **`UMU_NO_PROTON=1`** (umu 1.4.0+) would run the game in the bare runtime of the tool (soldier, sniper or 4.0),
+  without scout's libraries: not what old native games need; Heroic does not use it.
+- **To check when building:** a named `PROTONPATH=umu-scout` makes umu look for its latest release online; an absolute
+  path to the installed tool should not (to verify, [[hard-constraints]] C9). umu also asks
+  `repo.steampowered.com` for the runtime's latest version at every start even with `UMU_RUNTIME_UPDATE=0` (it already
+  does so for Windows games): to check offline.
+- **Legal:** Valve's runtimes are downloaded by the user's console, never shipped by OwneetOS ([[legal]]).
+
