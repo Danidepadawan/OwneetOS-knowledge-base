@@ -21,7 +21,7 @@ owner's.
 |---|---|---|
 | 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Next: step 3 (native games in the Steam Linux Runtime) |
 | 13 | Steam games with their publisher's launcher (EA app, Rockstar, CD Projekt Red, Ubisoft Connect) | Cyberpunk: no NVIDIA fix yet (research 2026-11-19); our own ways proposed, the owner keeps it open for now (2026-11-19) |
-| 9 | GitHub pages with every website update | READMEs pushed (2026-11-20: the code's README is on `feature/phase7`, shown on GitHub once on `main`); description, website and topics not set yet on GitHub (read 2026-11-20): the owner sets them |
+| 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
 
 ### Waits for the owner's decision
 

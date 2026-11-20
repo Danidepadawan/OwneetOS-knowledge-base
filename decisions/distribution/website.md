@@ -126,6 +126,13 @@ project folder. No data collected keeps the site free of consent banners and GDP
   - `OwneetOS-website`: description "The website of OwneetOS, a free system that turns your PC into a game console: a
     static Angular site that collects no data."; website `https://owneetos.org`; topics `angular`, `static-site`,
     `github-pages`, `website`, `i18n`, `owneetos`.
+  **Set by the owner (2026-11-20), his own text (it wins over the prepared one):** `OwneetOS`: "A free and open source
+  OS that turns your PC into a game console. You can play Steam AND DRM-Free games, watch movies and TV shows via a
+  streaming app (…), Youtube and a very famous app to stream your music. You can also play your local videos and music.
+  All while using a controller, no keyvoard and mouse needed!"; `OwneetOS-website`: the prepared text plus "We ACTUALLY
+  care about your privacy!"; website `https://owneetos.org` on both. Topics: none shown by GitHub's public API
+  (2026-11-20). The code's README is on `main` too (commit `3e359e9`, from `feature/phase7`; its `compat/` link is empty
+  on `main` until phase 7 is merged).
 
 ## History
 
