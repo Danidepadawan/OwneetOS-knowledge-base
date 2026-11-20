@@ -77,7 +77,8 @@ status is kept in their own notes; this table follows them.
 13. **Steam games with their publisher's launcher** (owner, 2026-11-18): EA (STAR WARS Jedi: Fallen Order) and Rockstar
    (Red Dead Redemption 2) work (their tests in item 14); CD Projekt Red (Cyberpunk 2077): **dropped by the owner
    (2026-11-20)**, a fault of NVIDIA's driver on that card, not of OwneetOS ([[closed-items]] 13a,
-   [[nvidia-turing-shader-compiler-crash-in-vkd3d-games]]); Ubisoft (Assassin's Creed Unity): when the owner has it.
+   [[nvidia-turing-shader-compiler-crash-in-vkd3d-games]]); Ubisoft: South Park: The Fractured But Whole (in place of Assassin's Creed Unity, owner 2026-11-20), when the owner
+   has it.
    Demo `4.2c-steam-shaders` approved, not built (Steam's own shader page is shown now).
    **Owner (2026-11-20):** South Park: The Stick of Truth instead of Assassin's Creed Unity? Checked: its Steam version
    does not use Ubisoft Connect (Ubisoft's support and PCGamingWiki: only non-Steam copies need it), so it would not
@@ -158,7 +159,8 @@ status is kept in their own notes; this table follows them.
    a saved game resumed fine, "Quit to desktop" brought the console's home. **The home's "recently played": Jedi still
    shown as the last game played**, though other games were played after it. Logs on OWNEETLOG: to read.
    **Still to test (owner, being installed):** Batman: Arkham City GOTY (queued after Red Dead Redemption 2), DARK SOULS
-   III, BioShock, Red Dead Redemption 2 (Rockstar launcher), Assassin's Creed Unity (Ubisoft, not bought yet).
+   III, BioShock, Red Dead Redemption 2 (Rockstar launcher), South Park: The Fractured But Whole (Ubisoft Connect, not bought yet; in
+   place of Assassin's Creed Unity, owner 2026-11-20).
    **From the log (`owneet-20261118-221153`):** ELDEN RING's first run: the game's processes stayed after its window
    went; Steam showed its closing screen; the console's "Close game" (22:25:39) ended them in 3 s. Why Steam's own force
    quit did nothing is not in the logs: Proton's log is written again at each start, so the second run replaced the
