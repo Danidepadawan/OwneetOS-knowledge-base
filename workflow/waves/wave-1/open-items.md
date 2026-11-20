@@ -19,7 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Step 3 built and passed by the owner (2026-11-20); the log to read (in the runtime?) |
+| 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Steps 1-3 of the method done (step 3 confirmed in the log, 2026-11-20). Next: points 4 (NVIDIA driver) and 5 (free games' tests), to discuss |
 | 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft when the owner has the game |
 | 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
 
@@ -346,5 +346,8 @@ status is kept in their own notes; this table follows them.
    FrankenPC: the download (Windows games already ready there), then The Witcher 2 (Linux), its launcher and the game.
    **Owner's test (2026-11-20): every test passed, The Witcher 2 (Linux) works perfectly.** To confirm in the log (stick
    still in the FrankenPC) that it ran in the runtime ("owneet-native-run: in the Steam Runtime (scout)"), not the old
-   way.
+   way. **Confirmed (`owneet-20261120-105501`):** the runtime downloaded by itself in a minute (10:55:09-10:56:12);
+   The Witcher 2 (Linux) started in it at 11:10:41, its launcher with the console's fixes, until 11:13:34. Only a
+   harmless line: bash (64-bit) cannot load the launcher's 32-bit preload before passing it on ("wrong ELF class").
+   Disk check: nothing new but the runtime. **Step 3 done.** Left in 14: points 4 and 5 of the method (to discuss).
    [[step-4.2c-steam-without-its-interface]], [[step-4.5-windows-games-proton]]
