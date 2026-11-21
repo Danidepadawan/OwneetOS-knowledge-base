@@ -21,7 +21,7 @@ owner's.
 |---|---|---|
 | 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Steps 1-3 done; point 4 rejected; point 5: the owner is downloading the free games proposed (2026-11-20); point 6 = step 4.8 (demo first) |
 | 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft: South Park: The Fractured But Whole, when the owner has it |
-| 16 | Dota 2 not in the console's library while it downloads | Built (owneet-frontend 0.39.1): to test with the merged packages |
+| 16 | Dota 2 not in the console's library while it downloads | Built (owneet-frontend 0.39.1); the update stick waits for archive.archlinux.org (unreachable 2026-11-21), needed for phase 5's new packages |
 | 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
 
 ### Waits for the owner's decision
