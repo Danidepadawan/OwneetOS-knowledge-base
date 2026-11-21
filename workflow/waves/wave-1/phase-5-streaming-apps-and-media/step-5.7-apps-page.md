@@ -130,5 +130,10 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
        built-in apps first, the missing ones dimmed in place); `web-apps.txt` again (install and
        remove on the home). The previews that walk the home's tiles follow the new order.
      - **Code:** `b20c0ce` (theme, texts, tests), `99f634f` (tools), `aa1bc9f` (package).
+     **Sub-step 2 passed the owner's test (2026-11-21)** in the test VM (cage, a Nacon GC-100),
+     owner: "Everything works smoothly": today's six apps in the new order; with three invented web
+     apps added to the VM's catalogue for the test (`/usr/share/owneet/apps.json`, its copy kept
+     and put back afterwards) the home's five and "All apps", the Apps page, an app installed from
+     it, the five most used from the seventh installed app, Videos / Music back to the page.
   3. **Close:** known limits, the hardware checks (batched with FrankenPC's), outcome; the owner
      approves.
