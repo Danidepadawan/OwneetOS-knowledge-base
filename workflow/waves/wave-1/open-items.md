@@ -21,7 +21,7 @@ owner's.
 |---|---|---|
 | 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Steps 1-3 done; point 4 rejected; point 5: the owner is downloading the free games proposed (2026-11-20); point 6 = step 4.8 (demo first) |
 | 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft: South Park: The Fractured But Whole, when the owner has it |
-| 16 | Dota 2 not in the console's library while it downloads | OWNEETLOG prepared for the log |
+| 16 | Dota 2 not in the console's library while it downloads | Cause found (package 0 left out on purpose); proposal waits for the owner |
 | 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
 
 ### Waits for the owner's decision
@@ -63,6 +63,12 @@ status is kept in their own notes; this table follows them.
    (owner, 2026-11-09). [[step-4.5-windows-games-proton]]
 16. **Dota 2 not in the console's library while it downloads** (owner, 2026-11-21): Steam's library shows it, its download
    has begun (not "preparing"), but the console's library does not list it. Test log on OWNEETLOG to read.
+   **From the logs already on the stick (`owneet-20261120-195103`) and the code:** owneetd sees the download (app 570,
+   queued, 1.18 of 114 GB); the interface found "93 games owned (400 apps in the licences)" without it. Dota 2 is in
+   package 0, the package every account gets (with Spacewar and Team Fortress 2), which the library leaves out on
+   purpose (decided 2026-10-14, [[steam-integration]]: `SteamOwned.cpp`); an installed game comes from Steam's
+   manifests, so Dota 2 should show once its download is complete. **Proposal to the owner:** a game of package 0 is
+   listed as soon as Steam downloads it or has it installed (never the others of package 0). No new log needed.
 
 ## Decided, not built yet
 
