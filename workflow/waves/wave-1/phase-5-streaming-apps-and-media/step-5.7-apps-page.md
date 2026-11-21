@@ -101,5 +101,34 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
      `HomePage.qml`, the "All apps" tile, `AppsPage.qml` as a page of Home, B from Videos / Music
      back to where they were opened, texts); the pretend owneetd with a larger catalogue and
      preview steps; the frontend's tests and theme check; owneet-frontend 0.28.0.
+     **Implemented (2026-11-21), waiting for the owner's test:** owneet-frontend 0.28.0 (no
+     owneetd change: the catalogue and install / remove exist since 5.0.0).
+     - **The order:** `foundation/apps.js` (plain functions, imported by the theme and tested with
+       Node): the fixed order (`videos`, `music`, `store`, then `web:<id>` in the catalogue's order),
+       the Apps page's (installed before missing), the home's six places (every app with six or
+       fewer; beyond, the first five of the page's order while six or fewer are installed, the five
+       most used from the seventh, then "All apps"), and the counts of removed apps cleared.
+     - **The uses:** the shell counts an opening of a web app (owneetd's answer to the opening, not
+       when it is brought back), of the Videos or Music page, of Steam's store (also from the
+       welcome card and the library's "Add games"); kept in the theme's memory (`appUses`);
+       cleared for apps no longer installed once the catalogue is known.
+     - **The interface:** `AppTile.qml` (the home's tile, moved out of `HomePage.qml`, and "All
+       apps"; larger on the page), `AppsPage.qml` (a page of Home: title and number of apps, five
+       columns, the grid going round, the home grid's buttons, B back to the home on "All apps"),
+       `HomePage.qml` (its places from `apps.js`, kept while an app is installed or removed; when
+       they move the selection follows its app), `theme.qml` (`appsOpen`, Videos and Music back to
+       where their tile was, also after the player). Texts (en, it): `home.all_apps`,
+       `apps.title`, `apps.count`.
+     - **Tests:** `frontend/owneet-frontend/tests/theme/apps.test.js` (six cases: the fixed order,
+       six apps in place, the page, six installed with one missing, the five most used and their
+       ties, removed counts), run by `tools/lint`; the frontend's suite and theme check (package
+       build); the translations check.
+     - **Preview:** the pretend owneetd's `@manyapps` (three invented web apps, seven installed):
+       `tools/preview-steps/apps-page.txt` (the home's five and "All apps", the page, the row going
+       round, YouTube installed and moved with the selection, options, Music opened from the page
+       and back, Music opened four times first on the home) and `apps-six.txt` (today's six: the
+       built-in apps first, the missing ones dimmed in place); `web-apps.txt` again (install and
+       remove on the home). The previews that walk the home's tiles follow the new order.
+     - **Code:** `b20c0ce` (theme, texts, tests), `99f634f` (tools), `aa1bc9f` (package).
   3. **Close:** known limits, the hardware checks (batched with FrankenPC's), outcome; the owner
      approves.
