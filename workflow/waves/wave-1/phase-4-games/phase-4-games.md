@@ -9,6 +9,8 @@ tags: [phase]
 
 Up: [[wave-1]]
 
+- **Step 4.9 added (owner, 2026-11-21):** retro games with RetroArch, moved from Wave 2, at the end of the games'
+  tests and before the legal review ([[step-4.9-retro-games-with-retroarch]]).
 - **Step 4.8 added (owner, 2026-11-20):** games that cannot run, said honestly ([[step-4.8-games-that-cannot-run]],
   point 6 of [[game-compatibility-method]]).
 

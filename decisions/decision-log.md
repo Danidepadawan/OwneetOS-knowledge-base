@@ -410,3 +410,4 @@ Decisions by area: [[decisions/INDEX|decisions index]].
 | 2026-11-21 | Danidepadawan's phase 5 (5.0.0-5.7) and phases 6-7 merged into `main` in the code and the vault; work goes on on `main`. Step 5.0.1 is left to the owner (owner). | [[repository]], [[step-5.0.1-optional-gaming-apps]] |
 | 2026-11-21 | Guide while nothing runs, on the Videos, Music or Apps page: back to the home page (owner). | [[controller-input-map]] |
 | 2026-11-21 | Steam's package 0 games are listed once Steam downloads or installs them (Dota 2), the others still left out (owner). | [[steam-integration]] |
+| 2026-11-21 | Emulation with RetroArch moved from Wave 2 into Wave 1 as step 4.9, at the end of the games' tests and before the legal review (owner: "ownership" must come across, as Batocera does). Open: Batocera's NonCommercial cores against [[legal]]; the owner's idea of copying his own discs, to study. | [[wave-1-scope]], [[step-4.9-retro-games-with-retroarch]] |

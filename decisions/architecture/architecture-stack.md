@@ -4,7 +4,7 @@ description: "The chosen component for each layer: boot, session, frontend, daem
 area: architecture
 status: active
 decided: 2026-10-03
-updated: 2026-10-29
+updated: 2026-11-21
 legacy: "PROJECT_RULES.md §4"
 tags: [decision, architecture]
 ---
@@ -24,7 +24,7 @@ tags: [decision, architecture]
 | Steam | System package (multilib, in the image with 32-bit drivers), launched with `-gamepadui` for login/store | [[steam-integration]] |
 | Other stores (later) | **legendary** (Epic), **gogdl** / lgogdownloader (GOG) | Heroic rejected (Electron, heavy). |
 | Windows games (Wave 1: DRM-free games on disk; stores later) | **umu-launcher** + GE-Proton | [[games-on-disk]] |
-| Emulation (Wave 2, very important there: owner 2026-11-19) | **RetroArch** | Cores with free licences only (no NonCommercial cores, [[legal]]); ROMs and BIOS files are the user's own, never shipped |
+| Emulation (Wave 1, step 4.9: owner 2026-11-21) | **RetroArch** | Cores with free licences only (no NonCommercial cores, [[legal]]); ROMs and BIOS files are the user's own, never shipped |
 
 ## History
 
@@ -42,3 +42,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-29 | Brave's reading views are off for the web apps: Chromium's Reading mode (`ReadAnything` in owneetd's `--disable-features`) and Brave's Speedreader (managed policy `BraveSpeedreaderEnabled` = false). |
 | 2026-11-05 | After the lawsuits against Brave (owner): **Brave stays, and Danidepadawan goes on with it. If the legal review agrees ([[step-7.5-legal-review-before-the-public-launch]]), the console moves to Chromium.** Helium was set aside for having no Widevine support. |
 | 2026-11-19 | RetroArch moves from nice-to-have to Wave 2, very important there (owner). |
+| 2026-11-21 | RetroArch moves into Wave 1 (step 4.9, before the legal review), as Batocera does (owner). |
