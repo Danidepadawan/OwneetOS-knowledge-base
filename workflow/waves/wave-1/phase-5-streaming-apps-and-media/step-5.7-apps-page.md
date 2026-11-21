@@ -137,3 +137,60 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
      it, the five most used from the seventh installed app, Videos / Music back to the page.
   3. **Close:** known limits, the hardware checks (batched with FrankenPC's), outcome; the owner
      approves.
+     **Written (2026-11-21), waiting for the owner's approval:**
+     - **Checked for the close:** the home's "All apps" ("Tutte le app") and the Apps page in
+       Italian at the largest text size (XL): the names whole, the grid in two rows for nine apps
+       (frontend preview, `@manyapps`).
+     - **Licences and terms** ([[legal-compliance]]): nothing new. No component, service or
+       content added; the tiles are generic letters (no logo); the invented web apps (Film Club,
+       Podcasts, Radio) exist only in the demo, the pretend owneetd and the test VM's catalogue
+       for the owner's test (put back afterwards), never shipped. The uses are counted on the
+       console and never sent anywhere ([[product-invariants]]: no telemetry).
+     - **Known limits of 5.7** (agreed: the first four; the others not told before):
+       - The page appears only from the seventh app: with today's catalogue (Netflix, YouTube,
+         Spotify) no console shows it, until more web apps or the programs of
+         [[step-5.0.1-optional-gaming-apps]] come.
+       - From the seventh installed app the home's tiles move as the apps are used; with six
+         installed and some missing, the sixth installed app is only on the page.
+       - The uses are counted for all time; removing an app clears its count; there is no other way
+         to reset the order.
+       - The page has no filters, sorting or search.
+       - **Installed apps include Videos, Music and the store** (always there): the five most used
+         take over the home when **four web apps** are installed (seven in all).
+       - **What counts as a use:** a web app opened (not brought back with Resume; its first
+         opening counts when owneetd accepts it, also if the user then leaves while Widevine is
+         downloaded), the Videos or Music page opened, Steam's store opened from anywhere in the
+         console (its tile, the welcome card, the library's "Add games"). Games never count.
+       - The uses are kept by the interface on the console (its memory, with the other settings):
+         a new installation of OwneetOS starts from zero.
+       - **Guide shows the console where it was**, as for the Videos page (5.6): an app opened from
+         the Apps page comes back to the Apps page (its tile with the green dot, A Resume), not to
+         the home screen; B then goes to the home.
+       - At the start, until owneetd answers (a moment), the home shows today's six; on a console
+         with more apps it then changes to five and "All apps".
+       - More apps than fit (three rows, fifteen apps; two rows at XL, ten): the grid scrolls with
+         the selection and the right stick, not seen yet (nine apps at most in the preview).
+       - When Steam becomes optional ([[step-5.0.1-optional-gaming-apps]]), the store's tile will
+         have to follow its installed state (today it is always installed).
+     - **To check at the next hardware test** (FrankenPC: gamescope, NVIDIA, a TV; with the open
+       checks of [[step-5.1-brave-in-the-os]] to [[step-5.6a-command-legend]]): the home's tiles in
+       the new order and the Apps page on the TV (sizes, text); in gamescope, an app opened from
+       the page, Guide back to the page with the green dot, Resume; the order following real use
+       (with a test catalogue of more web apps, as in the owner's test).
+     - **Outcome:** the home's apps in a **fixed order, the built-in apps first** (Videos, Music,
+       the store) then the web apps, a missing app dimmed in its place. **With more than six
+       apps the home shows five and "All apps"**: the first five of the fixed order while six or
+       fewer are installed (installed before missing), **the five most used from the seventh
+       installed app** (each opening from the console counts, for all time; equal counts in the
+       fixed order). **"All apps" opens the Apps page**, a page of Home: every app in a grid of
+       larger tiles, five to a row, the installed ones before the missing ones, the grid going
+       round; the home grid's buttons (A opens or installs, Menu its options, B back to the home
+       on "All apps"); Videos and Music back to where they were opened. No owneetd change.
+       Package: owneet-frontend 0.28.0. Verified with the Node tests of the order, the frontend's
+       tests and theme check, the frontend preview (nine and six apps, XL in Italian) and in the
+       test VM (cage, a Nacon GC-100) with a test catalogue of nine apps; the hardware checks wait
+       for FrankenPC.
+     - **Outside the step, for the owner:** at XL the settings' section list cuts "Controllers and
+       Bluetooth" (from the close of 5.6a); owneetd's flaky `update` test (`TestCheckThenApply`);
+       the guard hook blocking actions that only name the package build script; the lasting fix
+       proposed for the builder VM's chroot in `/var/tmp` ([[build-chroot-emptied-by-tmpfiles]]).
