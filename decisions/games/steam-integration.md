@@ -4,7 +4,7 @@ description: "Steam in the ISO, controller-only Steam, its screens shown automat
 area: games
 status: active
 decided: 2026-10-11
-updated: 2026-11-05
+updated: 2026-11-21
 legacy: "PROJECT_RULES.md §8 (Steam), §13 (2026-10-11, 2026-10-12)"
 tags: [decision, games, steam]
 ---
@@ -113,3 +113,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-18 | The Proton a game works with stays (not moved to newer versions automatically); another version is offered only if problems come after an update of the game. |
 | 2026-10-14 | Licence agreements at a game's first start: the console's window with a QR code of the official address and "press Left and then A to accept"; the console does not move Steam's selection. |
 | 2026-11-05 | The endless loading after B on Steam's home is left as it is for Wave 1, with "How to come back from Steam" as the way out; looked at again in Wave 2. |
+| 2026-11-21 | Package 0's games (given to every account: Dota 2, Team Fortress 2…) stay out of the library, except the ones Steam is downloading or has installed (a manifest in one of its libraries): Dota 2 was missing while it downloaded ([[open-items]] 16, owner). |

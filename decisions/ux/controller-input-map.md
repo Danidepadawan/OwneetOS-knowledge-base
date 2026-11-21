@@ -4,7 +4,7 @@ description: "The binding meaning of every button on every screen, keyboard fall
 area: ux
 status: active
 decided: 2026-10-03
-updated: 2026-11-20
+updated: 2026-11-21
 legacy: "PROJECT_RULES.md §9.1"
 tags: [decision, ux, input]
 ---
@@ -225,3 +225,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-11-19 | The controller pointer turns on by itself for a window of a game's install script (a publisher's installer made for a mouse), for that window only (owner, option B; owneetd 0.25.41). |
 | 2026-11-19 | Pointer: A and X are the mouse's left and right buttons, held down as long as A / X are (owner; owneetd 0.25.47): the click with no time between down and up was lost in BioShock's menu. |
 | 2026-11-20 | **The Apps page** (step 5.7): the home's Apps grid buttons (A opens or installs, Menu options, B back to the home on "All apps", the right stick scrolls); X, Y and LT / RT do nothing; its grid goes round like the library's. |
+| 2026-11-21 | Guide while nothing runs, on the Videos, Music or Apps page: back to the home page of the Home section, as from its windows (owner, after the merge of phase 5). |
