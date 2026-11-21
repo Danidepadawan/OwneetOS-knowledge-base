@@ -57,3 +57,31 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   with Google"): whether Brave's agreement with Google covers its users on OwneetOS; Brave's help
   page says that turning Widevine on means agreeing to Google's Terms of Use and that Brave is not
   liable for it.
+- **To include (owner, 2026-11-04):** whether the names of third-party products may appear in the
+  console and in the pictures of the website and the user guide, with no logos and no sign of
+  endorsement ([[legal-compliance]]):
+  - the names of the apps, "Netflix", "YouTube", "Spotify" and so on, on the console's tiles (a letter
+    in place of the logo) and in the screens shown by the guide and the site: the owner would like to
+    keep them;
+  - the disks' makers and models, "Samsung SSD 980", "Crucial MX500", "Kingston SSD", invented
+    examples of the preview in the installer's screens of the guide: kept or replaced with invented names
+    according to the answer ([[step-7.3-user-guide]]).
+- **To include (2026-11-04):** whether the logo's symbol ([[step-7.6-final-logo-and-brand]], demo
+  `design/demos/7.6-logo.html`) can be used: a disc with a generic gamepad cut out of it, a D-pad and four
+  buttons. Two resemblances found in a first search, not by a professional: the Super Famicom / Super Nintendo
+  controller (Nintendo filed its image and its four-button layout as trademarks) and Discord's "Clyde"
+  (a registered trademark, a rounded form that suggests a gamepad). Also a search by image in the
+  registers (EUIPO, TMview, WIPO), classes 9, 28 and 42, which has not been done. The symbol stays as
+  it is until then (owner, 2026-11-04); if the answer asks for a change, ways to move it away from both:
+  two thumbsticks in place of the D-pad and the buttons, or small shoulder buttons on top.
+- **To include (owner, 2026-11-05):** whether OwneetOS can replace Brave, which is being sued over its
+  search and AI business (New York, 2026-11-02; News Corp in California, July), with **Chromium**, using
+  Widevine: Chromium does not include it, and is not known to download it by itself. The question: may the
+  console take Widevine from Google's own Chrome on the user's PC, with the user's consent and nothing
+  redistributed by the project, given Widevine's licence ("a separate license agreement with Google")?
+  **If the lawyer agrees, the console moves to Chromium** ([[architecture-stack]]); [[legal]] holds it back until
+  then. For the lawyer's comparison, tried in the test VM on 2026-11-05: Firefox 157, LibreWolf 157 and Zen 1.24b
+  each download Widevine by themselves, the same file, into a new profile; playback was not tried.
+- **When (owner, 2026-11-05):** one document, one round of review, sent by the owner after [[step-7.11-sourceforge-project]] and before anything is published
+  ([[phase-7-updates-and-first-release]]). The document also covers what is planned for the following steps, the choice on donations ([[step-7.10-donations-choice]]), and the Chromium and Widevine
+  question. Any tests on Chromium are Danidepadawan's.

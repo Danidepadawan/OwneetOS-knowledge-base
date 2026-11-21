@@ -15,15 +15,15 @@ tags: [index]
 
 Status comes from each step note (`status:`).
 
-- `todo` [[step-7.0-update-stick-image-for-the-test-vm|7.0 Update stick image for the test VM]] — An OWNEETLOG stick image for the test VM (tools/make-update-stick --image), so the installed VM is upgraded in place with the packages just built instead of reinstalled.
-- `in-progress` [[step-7.1-updates|7.1 Updates]] — Update check and install from Settings, snapshot before every update, rollback path (decided in 6.3, option C: from Settings with the controller and automatic after
-- `todo` [[step-7.1b-going-back-to-any-version|7.1b Going back to any version]] — Going back to any published version of OwneetOS from Settings: the list of versions, the download in reverse, the warning; split from 7.1.
+- `done` [[step-7.0-update-stick-image-for-the-test-vm|7.0 Update stick image for the test VM]] — An OWNEETLOG stick image for the test VM (tools/make-update-stick --image), so the installed VM is upgraded in place with the packages just built instead of reinstalled.
+- `done` [[step-7.1-updates|7.1 Updates]] — Update check and install from Settings, snapshot before every update, rollback path (decided in 6.3, option C: from Settings with the controller and automatic after
+- `done` [[step-7.1b-going-back-to-any-version|7.1b Going back to any version]] — Going back to any published version of OwneetOS from Settings: the list of versions, the download in reverse, the warning; split from 7.1.
 - `done` [[step-7.2-release-pipeline|7.2 Release pipeline]] — Tagged release builds the ISO in CI, signs, writes checksums and release notes, publishes the ISO (and its source archive) to…
-- `todo` [[step-7.3-user-guide|7.3 User guide]] — Illustrated guide: download, write the USB stick (balenaEtcher / Ventoy), disable Secure Boot (per-brand pointers), anti-cheat warning…
+- `in-progress` [[step-7.3-user-guide|7.3 User guide]] — Illustrated guide: download, write the USB stick (balenaEtcher / Ventoy), disable Secure Boot (per-brand pointers), anti-cheat warning…
 - `todo` [[step-7.4-hardware-testing-and-v0.1.0|7.4 Hardware testing and v0.1.0]] — Test matrix (Intel / AMD / NVIDIA, old iGPU fallback, 4 GB RAM machine), bug fixing, RAM and boot-time measurements against the targets,…
 - `in-progress` [[step-7.5-legal-review-before-the-public-launch|7.5 Legal review before the public launch]] — Licence notices in the UI ('About → Licences'), review of licences, third-party terms and privacy; the name's search done, no trademark registered.
-- `todo` [[step-7.6-final-logo-and-brand|7.6 Final logo and brand]] — The final OwneetOS logo and wordmark (the current wordmark is provisional), checked not to imitate others' logos; boot…
-- `todo` [[step-7.7-final-interface-sounds|7.7 Final interface sounds]] — The owner's final sounds (interface-sounds-spec: names, format, lengths, licences) replace the placeholders of `frontend/sounds/`;…
+- `done` [[step-7.6-final-logo-and-brand|7.6 Final logo and brand]] — The final OwneetOS logo and wordmark (the current wordmark is provisional), checked not to imitate others' logos; boot…
+- `done` [[step-7.7-final-interface-sounds|7.7 Final interface sounds]] — The owner's final sounds (interface-sounds-spec: names, format, lengths, licences) replace the placeholders of `frontend/sounds/`;…
 - `done` [[step-7.8-website|7.8 Website]] — The project's website (Angular, static on GitHub Pages, English and Italian, no data collected): demo of the pages first, then the code in its own repository.
 - `done` [[step-7.8b-website-pages|7.8b Website pages]] — The website's other pages: installation guide, FAQ, credits and licences, privacy, contributing and translating; each with its demo approved first. Before the merge.
 - `done` [[step-7.8c-website-publishing|7.8c Website publishing on GitHub Pages]] — A GitHub Actions workflow publishes the prerendered site to GitHub Pages; the owner turns Pages on. Before the merge.
@@ -32,8 +32,12 @@ Status comes from each step note (`status:`).
 - `done` [[step-7.8f-website-search-and-sharing|7.8f Website search engines and sharing]] — hreflang links between the languages, sitemap.xml, robots.txt and the picture shown when the site is shared. Before the merge.
 - `done` [[step-7.8g-website-lighter-fonts|7.8g Website lighter fonts]] — The site's fonts as WOFF2 instead of TTF, about a third of the size (optional, confirmed by the owner). Before the merge.
 - `done` [[step-7.8h-website-domain|7.8h Website domain]] — The website on its own domain owneetos.org: DNS at Hostinger, verified on GitHub, HTTPS on GitHub Pages; bought by the owner.
-- `todo` [[step-7.8i-website-final-logo|7.8i Website final logo]] — The website takes the final logo of step 7.6 in place of the provisional wordmark (one component). After the merge.
-- `todo` [[step-7.8j-website-console-picture|7.8j Website console picture]] — The console picture on the website's home redrawn from the real home screen after Danidepadawan's changes; and "Local pictures": added to the plan or removed. After the merge.
-- `todo` [[step-7.8k-website-more-languages|7.8k Website in more languages]] — The website in German, French and Spanish: a JSON file and an address per language, checked by people the authors know before publishing.
+- `done` [[step-7.8i-website-final-logo|7.8i Website final logo]] — The website takes the final logo of step 7.6 in place of the provisional wordmark (one component). After the merge.
+- `done` [[step-7.8j-website-console-picture|7.8j Website console picture]] — The console picture on the website's home redrawn from the real home screen after Danidepadawan's changes; without the "Local pictures" tile (Wave 2). After the merge.
+- `in-progress` [[step-7.8k-website-more-languages|7.8k Website in more languages]] — The website in German, French and Spanish: a JSON file and an address per language, checked by people the authors know before publishing.
 - `todo` [[step-7.8l-website-download-link|7.8l Website download link]] — The download button becomes the redirect to the signed ISO on SourceForge at the first release. At the release.
-- `todo` [[step-7.9-console-more-languages|7.9 Console in German, French and Spanish]] — The console's interface in German, French and Spanish too, for the first release: drafted, checked by people the authors know; after Danidepadawan's merge.
+- `done` [[step-7.8m-website-header|7.8m Website header: languages and theme]] — The website's header: the languages in a drop-down menu and a light / dark switch remembered in the browser; demo first.
+- `done` [[step-7.8n-website-simpler-home|7.8n Website simpler home]] — The website's home made much simpler: five sections (Home, Plug it., Play it., Own it!, Download), a carousel of real console screens, the slogan as the header's links. Demo first.
+- `in-progress` [[step-7.9-console-more-languages|7.9 Console in German, French and Spanish]] — The console's interface in German, French and Spanish too, for the first release: drafted, checked by people the authors know; after Danidepadawan's merge.
+- `needs-decision` [[step-7.10-donations-choice|7.10 The choice on donations]] — Whether OwneetOS takes donations and how: the owner's choice, before the SourceForge project and the legal review.
+- `todo` [[step-7.11-sourceforge-project|7.11 SourceForge project]] — The SourceForge account and project the ISO is published on: created by the owner, before the legal review.

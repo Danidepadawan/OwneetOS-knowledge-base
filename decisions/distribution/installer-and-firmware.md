@@ -34,11 +34,13 @@ tags: [decision, distribution, installer]
   - Handle RTC (UTC vs local time) automatically.
   - Settings: default OS selection and a **"Restart into Windows"** button.
 - **Secure Boot is always disabled** — explained in the user guide. The guide and the installer
-  must **warn** that some Windows games with anti-cheat (e.g. Battlefield 6, Valorant) require
+  must **warn** that some Windows games with anti-cheat (e.g. Battlefield 6) require
   Secure Boot.
 - Firmware must be UEFI ([[system-requirements]]).
 
 Guards: [[user-data]], [[host-safety]].
+
+- **Other disks (owner, 2026-11-07):** erased and prepared for games with the controller, in the installer and in Settings → Disks, after a clear warning and the final confirmation ([[step-6.7-preparing-other-disks]]).
 
 ## History
 
@@ -50,3 +52,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-03 | Secure Boot always disabled; anti-cheat warning in guide. |
 | 2026-10-04 | Dual boot: considered in the design, **not required** ([[disks]]). |
 | 2026-10-25 | Installer (6.3): internal disks only (external ones in Wave 2); a disk with Windows or BitLocker erased only after a specific warning and the final confirmation; the console's name editable (default "OwneetOS"; Wave 2 if it becomes a problem). |
+| 2026-11-07 | Other disks erased and prepared for games from the console: installer and Settings → Disks ([[step-6.7-preparing-other-disks]]). |

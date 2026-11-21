@@ -151,3 +151,116 @@ Up: [[phase-4-games]] · Status: **done**
   download percentage). Left as known: a short black flash before Windows games (not a
   priority); one GPU fault (Xid 79) seen once, watched. Follow-up: the player's own
   compatibility layers, [[wave-2]] item 17.
+- **Reported by the owner (FrankenPC, 2026-11-09, 13:11-13:17), open, serious:** The Witcher 2 (GOG, Windows) lost the controller
+  and could not get it back; leaving it with Guide without closing it, the cutscene's sound went on. What the logs say: the game's
+  window ("The Witcher 2", pid 7863) was the one gamescope focused (GAMESCOPE_FOCUSED_WINDOW) whenever it was on screen; Steam was
+  running (opened at 13:07:20), so its virtual controller existed; Wine's invisible input-only window (1438x898, depth 0, override)
+  came with the game (the pointer's capture). "Resume with the pointer" was turned on over "The Witcher 2 Launcher" and off by
+  itself 4 s later when the game's own window replaced it (by design: the pointer holds for one window). Lead, not proved: a game
+  started outside Steam reads Steam's virtual controller (which sends nothing) instead of the real one. The Proton log has no input
+  channel. Asked to the owner: when the control was lost and what was on screen; whether the game should pause or go silent on the
+  home screen; a run with Steam closed.
+- **Owner's answers (2026-11-09):** the control was lost right after the launcher: the splash and the intro film showed normally
+  but could not be skipped, the input ignored. **Decision:** a game left open on the home screen (Guide) goes **silent** (not
+  paused: not every game can be). Test now: The Witcher 2 started with Steam closed since the power-on (OWNEETLOG plugged in).
+- **Cause confirmed (owner's test, FrankenPC, 2026-11-09 15:35):** with Steam never opened, The Witcher 2's controller works every
+  time. Facts gathered: Steam's virtual controller is `28de:11ff` (Valve's "Steam Virtual Gamepad"), bus USB, version 1, name
+  "Microsoft X-Box 360 pad 0", made through uinput (test VM, Steam with a test pad: `/sys/class/input/input9`); Steam's log: "Created
+  virtual controller at slot 0". Since Proton 11, Valve's patch makes Proton read every evdev device itself, past SDL's filter, so
+  `SDL_GAMECONTROLLER_IGNORE_DEVICES` alone would not hide it (a Bottles report, not verified here); the remedy reported is the
+  prefix's winebus setting `DisableInput` = 1 (Wine's own default: controllers through SDL, which leaves out 28de:11ff). Not
+  verified yet: Windows' controller panel (joy.cpl) did not start through owneet-windows-run in the test VM (the prefix was not
+  made), and the VM's debug shell stopped answering. Waits for the owner's choice of how to verify.
+- **Remedy verified in the test VM (owner's choice, 2026-11-09 16:40-17:05):** Steam open with the test pad, so Steam's virtual
+  controller existed; two new prefixes, a program run through owneet-windows-run with Wine's controller log
+  (`WINEDEBUG=+hid,+plugplay`). Without the setting, Proton's own evdev reading "detected steam input virtual controller" and made
+  it a gamepad (`28de:11ff`), **enumerated before** the real pad, which SDL added second: the game's first controller is
+  Steam's silent one, as with The Witcher 2. With `DisableInput` = 1 in
+  `HKLM\System\CurrentControlSet\Services\winebus` (set with the prefix's `reg.exe`): "UDEV input devices disabled in
+  registry", no `28de:11ff`, the real pad through SDL is the only gamepad. Still to see on real hardware: a Bluetooth
+  controller through SDL alone in a game (The Witcher 2, Steam open). Found on the way: the test VM's `umu-shim` was empty, so
+  no Windows program had started there since 2026-11-08 ([[windows-games-quit-at-once-empty-umu-shim]]). Waits for the
+  owner's go-ahead to build it.
+- **Fix built (owner's go-ahead, 2026-11-09; owneetd 0.25.9, code `bc68be7`):** while building it, Proton's own switch
+  `PROTON_NO_STEAMINPUT=1` was found (read by winebus; Proton's comment: "suppress the desktop virtual controller and leave
+  the game's native controller path active"). Tested in the test VM like `DisableInput`: "ignoring steam input virtual
+  controller", the real pad through SDL the only gamepad. It was chosen over `DisableInput` because it gives the same result
+  with no registry write and no extra Wine start at each launch, works for prefixes made before, and leaves Proton's other
+  input paths as Valve made them. `owneet-windows-run` exports it; checked again with the installed package (fresh prefix,
+  Steam open). Waits for the owner's test on FrankenPC: The Witcher 2 with Steam open.
+- **Broken umu-shim repaired by the console (owner's go-ahead, 2026-11-09; owneetd 0.25.10, code `77f35a7`):**
+  `owneet-windows-run` removes umu's shim when it would not start the game, and umu writes it again
+  ([[windows-games-quit-at-once-empty-umu-shim]]). Tested in the test VM (empty, cut short, intact).
+- **Owner's test on FrankenPC (2026-11-09, 19:56-20:05; owneetd 0.25.10):** The Witcher 2 with Steam open: the controller
+  works. **New report, open:** while the game starts, the game and the home screen take the screen in turn and the "launch"
+  sound plays several times (on closing it now plays on time). Logs (`out/test-logs/frankenpc-2026-11-09g`), three starts:
+  in the first seconds gamescope's focus went game → home → game up to four times (gaps of 30-370 ms, while the launcher's
+  and the game's windows come and go): with no window of the game to show, gamescope shows the home screen, owneetd
+  announces "home" and the interface plays the "back home" sound. Also: after Guide (19:57:48) the game came back by itself
+  1.4 s later with no "back to the app": its first window had not settled yet, and owneetd brings a just-started app to the
+  front when the home screen is what was chosen last, which Guide also sets. The same gaps were in the 15:35 test (0.25.8,
+  Steam closed); before 0.25.7 "on screen" was not logged. Waits for the owner's choice of the fix.
+- **Correction (2026-11-09):** the game coming back 1.4 s after Guide (19:57:49) was not owneetd: nothing in owneetd brought
+  it, so it was almost surely the home screen's Resume, which left no line in the log (it does now: "back to the app, asked
+  by the interface").
+- **Fix built (owner's terms, 2026-11-09: no flashes, no fixed times, the sound once; owneetd 0.25.11, code `ac772d9`):**
+  the owner turned down both a "Preparing {game}…" screen and a black screen in the gaps (both flash). gamescope 3.16.31's
+  source (`steamcompmgr.cpp`, `pick_primary_focus_and_override` and `determine_and_apply_focus`) shows that when
+  `GAMESCOPECTRL_BASELAYER_APPID` names only apps with no window, gamescope does not fall back to another window: it keeps
+  the window it showed while that window exists, and when it is gone it paints its last picture (`HELD_COMMIT_BASE`), with
+  `GAMESCOPE_FOCUSED_APP` empty. So a game started by the console now goes **alone** in that list (it was "game, home"):
+  before its first window the home screen ("Preparing {game}…") stays; between two of its windows the last picture of the
+  game stays, nothing is announced, no sound; Guide shows the home screen; at its end (its unit stopped) the home screen
+  comes back. Apps keep the home screen behind them (an app may go on without a window, e.g. Steam in the background);
+  Steam's games keep Steam behind them (its questions come in its window, as on SteamOS). Known effects: quitting from the
+  game's own menu, its last picture stays until its process has ended (280-400 ms with The Witcher 2), then the home
+  screen and the sound together; a game left running with no window at all keeps its last picture until Guide. Checked with
+  unit tests (the test double now keeps the shown window like gamescope); not seen on a screen yet: gamescope does not run
+  in the test VM without a 3D GPU. Waits for the owner's test on FrankenPC.
+- **Owner's test of 0.25.11 (FrankenPC, 2026-11-09, 20:48-20:52; logs `out/test-logs/frankenpc-2026-11-09h`):** no more
+  flicker while The Witcher 2 starts, Guide and Resume right. **Open:** (1) the "back home" sound is late again when the game
+  is quit from its menu: the home screen now waits for the game's unit to end; Wine's log puts the end of `witcher2.exe` at
+  131.04 s and of the last Wine process at 131.28 s, about 2 s before the unit ended (20:50:17.02; Wine's clock aligned on
+  Proton's start line, ±1 s), so the game's last picture stayed about 2 s or more. The launcher (`Launcher.exe`) lived on
+  until 17 s after the game started, so during the start gaps the process that had shown a window was still alive.
+  (2) After Guide the game's sound goes on (the decision "silent behind the home screen" is not built yet). (3) Reported as
+  the most serious: pressing "Play" ("Gioca"), the game takes the A press; which button and when is being asked to the owner.
+- **The A of "Resume" reaching the game, fixed (owner: the button is "Resume" on the home screen after Guide, 2026-11-09;
+  owneetd 0.25.12, code `ff9f792`):** the interface acts when A goes down, and the game came to the front with A still held,
+  so it read a new press (games read the controller's state whatever is on screen). owneetd now follows the buttons and
+  keys held on every controller and keyboard and brings an app back (Resume, Guide) only once none is held: an event, with
+  a 5 s safety limit for a release that never comes (a faulty controller). Guide's way back waits outside the controller's
+  reader. Also: Guide over a console game between two of its windows (gamescope names no app) showed nothing; it now shows
+  the home screen. Test VM: with A held, "back to Steam" was answered at A's release (2.0 s), with nothing held at once.
+  Not asked yet: whether the game also reacts to the buttons pressed in the console's menu while it runs behind.
+- **Owner's test of 0.25.12 (FrankenPC, 2026-11-09 21:07; logs `out/test-logs/frankenpc-2026-11-09i`):** the A of "Resume"
+  no longer reaches The Witcher 2; Guide to the home screen and back works.
+- **Silent behind the home screen, built (owner's choice 2026-11-09: games and video apps, music apps play on; owneetd
+  0.25.13 and owneet-base 0.0.59, code `d5edd64`):** owneetd follows the audio server's playback streams; the process that
+  plays a stream ("application.process.id") gives its app (its unit, Brave's main process for web apps, a Steam game's reaper
+  inside Steam). A game, or an app the catalogue marks `silentBehindHome` (Netflix, YouTube), that is not on screen has its
+  streams muted: at once when what is on screen changes and when a new stream starts; only the streams owneetd muted are
+  unmuted when it is back. The interface's own sounds and other programs are never touched. Test VM (`--audio`, cage
+  session): a looping sound started as a game was muted 1 ms after Steam came in front of it (new streams too), and heard
+  again when Steam closed (20:29:20.176 on screen, .177 sound back). Waits for the owner's test with The Witcher 2 and Guide.
+- **Owner's test of 0.25.13 (FrankenPC, 2026-11-09):** The Witcher 2 goes silent with Guide and its sound comes back with
+  Resume. Netflix / YouTube behind the home screen: not silent yet; the owner leaves the web apps to Danidepadawan
+  (phase 5, still in progress).
+- **Home screen at the end of the game's programs, built (owner's go-ahead, 2026-11-09; owneetd 0.25.14, code
+  `5c9e026`):** owneetd follows a console game's own programs, each with a pidfd (an event, no fixed time): the processes
+  that showed its windows and every Windows program of its unit outside `C:\windows` (Wine shows a Windows process's path as
+  its command line; test VM: `X:\Giochi\Exe Test\game.exe` next to `C:\windows\system32\services.exe`, `umu.exe`,
+  `explorer.exe` and the others). When none is left, no window of the game is on screen and the game is alone in front, the
+  home screen comes back at once ("the game's programs ended: home screen"), without waiting for Wine and the container
+  (about 2 s on FrankenPC; 61 ms in the test VM). A launcher ending after starting the game does not bring it (the game is
+  alive). The log names every followed program ("following a program of the game") and its end. Checked with unit tests (a
+  launcher that starts the game and ends; a real pidfd); not on a screen yet: the test VM has no gamescope. Waits for the
+  owner's test: quit The Witcher 2 from its menu.
+- **Owner's test of 0.25.14 (FrankenPC, 2026-11-09 21:48; logs `out/test-logs/frankenpc-2026-11-09l`):** "solved"; the log:
+  `witcher2.exe` ended at 21:50:03.469, the home screen at 03.474. Found there: Wine's `explorer.exe` was followed too (it
+  owns a window) and ended at 03.314, before the game; it could outlive the game elsewhere. Open item: count no program under
+  `C:\windows` as the game's, even with a window ([[open-items]]).
+- **Testers: Proton's log for Steam's games too (owner, 2026-11-18, [[open-items]] 13):** with `owneet.debug.windows_log=on`,
+  owneetd 0.25.34 starts Steam with `PROTON_LOG=1`, `PROTON_LOG_DIR=/tmp/owneet-proton-logs` (in memory); owneet-base 0.0.80's
+  test log copies each `steam-APPID.log` to the OWNEETLOG stick.
+- **The testers' Proton log for Steam games, lighter and one per start (2026-11-18):** owneetd 0.25.38 sets `WINEDEBUG=+timestamp,+pid,+tid,+threadname,+debugstr,+loaddll,+mscoree,warn+seh` (ELDEN RING made 155 MB in memory before); owneet-base 0.0.81's test log keeps a copy per start (`proton-steam-APPID-N.log`).

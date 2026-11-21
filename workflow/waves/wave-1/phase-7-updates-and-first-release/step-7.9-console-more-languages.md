@@ -3,12 +3,12 @@ type: step
 description: "The console's interface in German, French and Spanish too, for the first release: drafted, checked by people the authors know; after Danidepadawan's merge."
 phase: "[[phase-7-updates-and-first-release]]"
 step: "7.9"
-status: todo
+status: in-progress
 tags: [step, phase-7]
 ---
 # 7.9 Console in German, French and Spanish *(added 2026-10-26)*
 
-Up: [[phase-7-updates-and-first-release]] · Status: **todo**
+Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
 
 - **Deliverables (owner, 2026-10-26):** the console's message files (`frontend/i18n/`) in German,
   French and Spanish, besides English and Italian, for Wave 1 ([[languages]]): every screen,
@@ -18,3 +18,16 @@ Up: [[phase-7-updates-and-first-release]] · Status: **todo**
   work), as for the website ([[step-7.8k-website-more-languages]]).
 - **When:** after Danidepadawan's merge of phase 5 (the message files are his too, owner,
   2026-10-26); every screen added after that comes in the five languages.
+- **Moved earlier (owner, 2026-10-29):** the whole console is translated into German, French and
+  Spanish now, together with [[step-6.1-first-boot-flow]] on the branch `feature/phase6`, not after
+  it; the reviews by people the authors know stay for later.
+- **Drafted (2026-10-29):** `frontend/i18n/de.json`, `fr.json`, `es.json`, every message (German
+  with "du", French with "vous", Spanish with "tú"), and the three keyboard layouts. What is left:
+  the reviews.
+- **Reviews (owner, 2026-10-29):** the picker lists the five languages from step 6.1 on, so the
+  drafts may ship before the people the authors know have checked them; the checks may come after
+  the first release, and are a way to ask the community to help improve OwneetOS ([[languages]]).
+- **Review material (owner, 2026-11-05):** a sheet Console in the same spreadsheets as the website ([[step-7.8k-website-more-languages]]), for English, German, French and
+  Spanish, not Italian: 819 texts (those identical in every language are left out), the screen each belongs to, one row per plural form. On import, a correction much longer
+  than the current text is pointed out, to be checked on screen. Tried with a file saved by LibreOffice, on copies; not yet in Excel or Google Sheets. **Open:** the reviews, then their corrections.
+- **Waiting for Danidepadawan (owner, 2026-11-05):** the workbooks are **not sent yet**: the apps page, Spotify and the local media ([[step-5.7-apps-page]], phase 5) are still to come, and their texts must be in the review. After that merge, every text in the five languages, `tools/translation-review export` again: the files made on 2026-11-05 are not to be used.

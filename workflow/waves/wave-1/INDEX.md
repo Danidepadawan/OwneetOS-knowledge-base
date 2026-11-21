@@ -15,11 +15,13 @@ Plan and status legend: [[wave-1]]. Scope: [[wave-1-scope]].
 - [[workflow/waves/wave-1/phase-1-minimal-bootable-os/INDEX|Phase 1 — Minimal bootable OS (no UI yet)]] — 6 of 7 steps done.
 - [[workflow/waves/wave-1/phase-2-system-daemon/INDEX|Phase 2 — System daemon (`owneetd`)]] — 9 of 9 steps done.
 - [[workflow/waves/wave-1/phase-3-frontend/INDEX|Phase 3 — Frontend (`owneet-frontend`, a Pegasus Frontend fork)]] — 13 of 13 steps done.
-- [[workflow/waves/wave-1/phase-4-games/INDEX|Phase 4 — Games]] — 10 of 10 steps done.
+- [[workflow/waves/wave-1/phase-4-games/INDEX|Phase 4 — Games]] — 10 of 11 steps done.
 - [[workflow/waves/wave-1/phase-5-streaming-apps-and-media/INDEX|Phase 5 — Streaming apps and media]] — 4 of 7 steps done.
-- [[workflow/waves/wave-1/phase-6-first-boot-installer-disks/INDEX|Phase 6 — First boot, installer, disks]] — 1 of 6 steps done.
-- [[workflow/waves/wave-1/phase-7-updates-and-first-release/INDEX|Phase 7 — Updates and first release (Wave 1 complete)]] — 9 of 22 steps done.
+- [[workflow/waves/wave-1/phase-6-first-boot-installer-disks/INDEX|Phase 6 — First boot, installer, disks]] — 10 of 11 steps done.
+- [[workflow/waves/wave-1/phase-7-updates-and-first-release/INDEX|Phase 7 — Updates and first release (Wave 1 complete)]] — 18 of 26 steps done.
 
 ## Notes
 
+- [[closed-items]] — The Wave 1 open items that are closed: the owner's reports solved and confirmed, with their whole history. Read it when an old item number (e.g. 3u) is named; the open ones are in open-items.
+- [[open-items]] — Everything left before the first release (v0.1.0): the owner's open reports, agreed work not built, put-off tests and the roadmap steps not done, at a glance and then in detail. Read it at the start of a session; update it in the same change as any report or fix.
 - [[wave-1]] — The Wave 1 plan: scope, status legend, phases.

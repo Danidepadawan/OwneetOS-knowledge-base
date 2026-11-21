@@ -51,6 +51,10 @@ case "${1:-}" in
         for f in "$GUARDS"/*.md; do
             [ "${f##*/}" = INDEX.md ] || { echo; cat "$f"; }
         done
+        # a local guard kept out of git, when this copy has one
+        if [ -f "$SCRIPTS/../.claude/guards-local.md" ]; then
+            echo; cat "$SCRIPTS/../.claude/guards-local.md"
+        fi
         ;;
     indexes)
         if ! have_python; then

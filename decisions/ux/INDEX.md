@@ -14,7 +14,7 @@ tags: [index]
 - [[design-direction]] — Approved look: deep navy and coral, Bricolage Grotesque + Lexend, about twenty palettes, provisional wordmark.
 - [[first-boot-setup]] — First-boot flow: controller, language, network, time zone; cable or Bluetooth controller notice.
 - [[home-and-library]] — Overflow rule, library disks summary and Disks window, offline icon in the top bar.
-- [[interface-sounds]] — Eleven interface sounds from the owner, Kenney placeholders until then, outputs never sleep.
+- [[interface-sounds]] — Ten interface sounds, all the owner's (final since 2026-11-03), one per button press; outputs never sleep.
 - [[languages]] — JSON message files, English default and fallback; Wave 1 in English, Italian, German, French and Spanish; keyboard layout chosen separately.
 - [[notifications]] — Banners, bell and list on Y; attention vs info sounds; nothing drawn over a game.
 - [[quick-menu-and-startup]] — Start-up animation from the splash; quick menu on B where there is nothing to go back to; View reserved.

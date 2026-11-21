@@ -29,12 +29,20 @@ Scope agreed so far: [[wave-1-scope]] (later waves).
   (`copytoram=n`, [[boot-experience]]), the slow boot from a USB stick
   ([[step-1.5-hardware-support-set]]). The user's disks: [[disks]], guard [[user-data]].
 - **10b. Dual boot (optional, not required):** "Install alongside Windows", BitLocker detection and guidance, RTC handling, default OS, "Restart into Windows".
+- **10c. Xbox wireless dongle (owner, 2026-11-03):** [[step-1.7-xbox-wireless-dongle-xone]], moved
+  here from Wave 1: the xone driver and the download of Microsoft's firmware with consent, already
+  built and parked in `packages/wave-2/`; it comes back once it can be tested with a real dongle.
+- **10d. Steam's endless loading after B (owner, 2026-11-05):** closed for Wave 1, looked at again here:
+  B on Steam's home leaves it loading for ever, and the console could come back by itself if it knew
+  the page Steam is on ([[steam-loading-for-ever-after-b]], guard [[legal]]).
 - **11. More stores:** Epic (legendary), GOG (gogdl); their Windows games use Wave 1's Proton (4.5).
 - **12. Console features:** user profiles, parental controls, play-time statistics, quick suspend and resume.
 - **13. Custom accent colour** with automatic contrast checking.
 - **14. Other screens (optional choice):** Settings → Display "Other screens: show the OwneetOS
   logo / turn off" (decided 2026-10-10: Wave 1 turns them off).
-- **15. Picture dimming (proposal, not confirmed, owner 2026-10-10):** for screens without a real
+- **15. Brightness (owner, 2026-11-12):** the Wave 1 slider is removed (it did nothing on the FrankenPC);
+  brightness is looked at again here, with picture dimming below.
+- **15b. Picture dimming (proposal, not confirmed, owner 2026-10-10):** for screens without a real
   brightness control (no backlight, no DDC/CI), an optional "Dim the picture" setting done by
   gamescope's colour pipeline: darker pixels, same backlight (no energy saved, lower contrast);
   it would apply to games too. Needs a demo and the owner's approval.
@@ -64,3 +72,18 @@ Scope agreed so far: [[wave-1-scope]] (later waves).
 - **19. Changing the console's name (owner, 2026-10-25, only if needed):** Wave 1 makes the name
   editable ([[step-6.3-installer-backend]]); if that turns into a problem during development, the
   way to change it moves here.
+- **20. Local pictures (owner, 2026-11-04):** looking at one's own pictures from a disk or a USB stick,
+  next to the local videos and music of [[step-5.6-local-videos-and-music]]. Details and demo when it is
+  planned.
+- **21. The file manager grows (owner, 2026-11-13):** Wave 1 has a very simplified file manager in Settings →
+  Advanced (going through folders, deleting: [[open-items]] 3t); Wave 2 adds downloading from the browser, moving
+  the downloaded files, extracting zip archives and renaming folders.
+- **11b. Emulation with RetroArch (owner, 2026-11-19: very important for Wave 2, not in Wave 1):** RetroArch as an
+  optional app (after [[step-5.0.1-optional-gaming-apps]]); cores with free licences only (no NonCommercial
+  cores such as Snes9x or Genesis Plus GX, [[legal]]); the user's own ROMs from a folder on the disks, in the
+  library; BIOS files the user's own, never shipped; Guide stays owneetd's (RetroArch's menu reached by a binding
+  agreed in [[controller-input-map]]); covers local (libretro's thumbnails only if the owner agrees). Rough size:
+  4-6 steps (2026-11-19 estimate).
+- **22. Waking the console with the controller (owner, 2026-11-13):** [[step-6.10-waking-the-console-with-the-controller]],
+  moved from Wave 1: only Guide wakes it, a setting off by default; the Wave 1 tests found that it depends on the
+  Bluetooth adapter (the FrankenPC's woke the PC the instant it slept whenever allowed to).

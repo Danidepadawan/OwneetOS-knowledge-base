@@ -4,7 +4,7 @@ description: "The binding meaning of every button on every screen, keyboard fall
 area: ux
 status: active
 decided: 2026-10-03
-updated: 2026-10-22
+updated: 2026-11-19
 legacy: "PROJECT_RULES.md §9.1"
 tags: [decision, ux, input]
 ---
@@ -24,7 +24,7 @@ screen. New bindings are added here (with the owner) before they are implemented
 | LT / RT (L2 / R2) | Switch filter inside the current page (e.g. Library: All / Installed / Favorites — "Installed" was removed on 2026-10-11 and restored on 2026-10-14, [[game-library]]). There are no sub-tabs: tabs are only the sections on LB / RB |
 | Menu / Options | Options menu for the selected item |
 | View / Create | Reserved (screenshot in a later wave) |
-| Guide / PS | **Owned by the system daemon**: home / quick menu from anywhere, including in games. Apps and themes must never bind it. Prompt label: "Home". **Exception, Steam** (2026-10-12): while Steam or a Steam game is on screen, a short press is Steam's (its menu; its overlay in games) and **holding it for 1 second** comes back to the console (Steam and the game keep running). See [[guide-button]]. |
+| Guide / PS | **Owned by the system daemon**: home / quick menu from anywhere, including in games. Apps and themes must never bind it. Prompt label: "Home". **Exception, Steam** (2026-10-12): while Steam or a Steam game is on screen, a short press is Steam's (its menu; its overlay in games) and **holding it for 1 second** comes back to the console (Steam and the game keep running). See [[guide-button]]. On the home screen with nothing to go back to, owneetd tells the interface (`home.requested`): **the interface goes back to its Home section, the windows over its pages closed** (as B or Cancel would; the copy of games goes on behind its window, 6.6e; not during the first start or the installer) (owner, 2026-11-14: Guide did nothing while nothing ran). **The Home prompt shows only while nothing runs**: with a game, a media app or Steam running, Guide goes back to it, and the prompt is left out of the prompt bar (owner, 2026-11-14); **nor on the home screen itself** while no window is over it, where Guide does nothing (owner, 2026-11-17). |
 | Right stick | Scrolls the page: fast scroll in long lists and grids, and the content of windows (e.g. Credits and licences) |
 
 **On-screen keyboard** (demo 3.10, approved 2026-10-11; changed 2026-10-13): while it is open, A
@@ -32,6 +32,11 @@ types the selected key, X deletes, Y types a space, **LB / RB change the page of
 symbols, accented letters), **LT held = capital letters while it is held** (as on Steam's
 keyboard), RT does nothing, Menu = Done, B closes the keyboard; the selection wraps around at
 every edge. These meanings hold only inside the keyboard; Guide and the right stick keep theirs.
+
+**Display area** (Settings → Display, [[screens-and-display]]; approved demo 3.9c-display-area,
+owner 2026-11-12): while the adjustment is open, **D-pad / left stick left / right** make the area
+narrower / wider, **up / down** taller / shorter (held, they repeat with this map's timing), **X** goes
+back to the whole screen, **A** confirms, **B** cancels. Guide keeps its meaning.
 
 **Lists that go round:** the library's grid (left / right within a row, down / up between the
 last and the first row, [[game-library]]) and the list of Settings' sections (up on the first
@@ -92,13 +97,19 @@ repeat after 720 ms, then every 360 ms; analog triggers count as pressed above h
 
 **Controller pointer** ([[step-4.7-controller-pointer]], owner 2026-10-19): for apps and
 launchers made for a mouse (e.g. a Steam game's EA app or Ubisoft Connect, a game's start or
-options window), **never left on a game** itself. The user turns it on by hand from the console
+options window), **never left on a game** itself. **One case turns it on by itself (owner, 2026-11-19):** a window
+of a game's install script that Steam runs before the game's first start (a publisher's installer, made for a mouse,
+e.g. the Rockstar Games Launcher's), for every window of that script (its own file windows too) until the script
+ends (owneetd 0.25.42). While the pointer is on, Proton's Xalia (its own controller navigation for launchers) is paused, so the
+same buttons do not act twice (owner, 2026-11-19; owneetd 0.25.44). Otherwise the user turns it on by hand from the console
 (Guide, then "Resume with the pointer" on the running game or app: launchers belong to their
 game, so it is offered there too), and off the same way; it holds for **one window**: it turns off
 by itself when another window takes the screen (e.g. the game after its launcher) and when the
 app closes. While it is on:
-**left stick** moves the pointer, **D-pad** moves it in small steps, **A** = click, **X** = right
-click, **right stick** = wheel (scroll), **Y** = type: the console's on-screen keyboard, then the
+**left stick** moves the pointer, **D-pad** moves it in small steps, **A** = the mouse's left button, **X** = its
+right button, each held down as long as the controller's button is (owner, 2026-11-19: a click with no time between
+down and up was never seen by BioShock's menu; holding A drags, as with a real mouse; let go when the pointer goes off
+or its window leaves the screen; the keyboard for a text field once A is let go), **right stick** = wheel (scroll), **Y** = type: the console's on-screen keyboard, then the
 text goes to the window (a fallback: **A on a text field opens the keyboard by itself**, owner
 2026-10-19, when the pointer has the text "I" shape after the click); Guide keeps its meaning. It intercepts nothing: the app still receives
 every input (no grab), the pointer only adds a virtual mouse's movements and clicks (owner,
@@ -130,3 +141,9 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-19 | Pointer: A on a text field opens the console's keyboard by itself (the pointer's "I" shape after the click, read through XFixes); Y stays as the fallback. |
 | 2026-10-19 | Inside YouTube: LT / RT stay unused (no key of the TV interface seeks by exactly 10 s; seeking the video directly from the extension rejected); seeking is done with YouTube's own progress bar ([[controller-input-map]]). |
 | 2026-10-22 | Inside Netflix (step 5.4): Netflix's own navigation on its browsing pages (rows and tiles, rows sliding on, A into the title window), the title window (B back to the tile) and the player (any button shows the controls, D-pad between them, A presses or pauses, LT / RT ±10 s, B closes a menu or leaves); other pages keep the web-app bindings ([[controller-input-map]]). |
+| 2026-11-10 | Guide on the home screen with nothing to go back to (it did nothing): owneetd sends `home.requested` and only the copy of games' window closes, the copy going on behind it (demo 6.6e). Not Home from every window: with an app open Guide goes back to it (owner). |
+| 2026-11-12 | The display area's adjustment (Settings → Display): D-pad left / right narrower / wider, up / down taller / shorter, X whole screen, A confirm, B cancel (owner: demo 3.9c approved). |
+| 2026-11-14 | Guide while nothing runs (`home.requested`): back to the interface's Home section, its windows closed; the Home prompt shown only while nothing runs (with a game, a media app or Steam, Guide goes back to it). Owner, no demo needed. |
+| 2026-11-17 | No Home prompt on the home screen itself while no window is over it: there Guide does nothing (owner). |
+| 2026-11-19 | The controller pointer turns on by itself for a window of a game's install script (a publisher's installer made for a mouse), for that window only (owner, option B; owneetd 0.25.41). |
+| 2026-11-19 | Pointer: A and X are the mouse's left and right buttons, held down as long as A / X are (owner; owneetd 0.25.47): the click with no time between down and up was lost in BioShock's menu. |

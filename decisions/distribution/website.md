@@ -4,7 +4,7 @@ description: "The project's website: Angular, static on GitHub Pages, own reposi
 area: distribution
 status: active
 decided: 2026-10-20
-updated: 2026-10-20
+updated: 2026-11-04
 tags: [decision, distribution, website]
 ---
 # Website
@@ -31,6 +31,28 @@ Agreed with the owner on 2026-10-20, before the release; built in [[step-7.8-web
   it stops only while the pointer is on it (or it has focus from the keyboard) and while it is
   off screen. No pause button (owner, 2026-10-20: it was tried; WCAG 2.2.2 asks for one on moving
   content, the owner chose without).
+- **A much simpler home (owner, 2026-11-04, [[step-7.8n-website-simpler-home]]):** it replaces the
+  sections above with five, still snapping: Home (reached with the name: a carousel of one sentence
+  beside one real screen of the console, and a link to the credits), Plug it. (the guide and the FAQ),
+  Play it. (a short, appealing tour of the buttons), Own it! (it belongs to everyone), Download
+  (scrolling to the end or "Get OwneetOS"; no Download link in the header). The header's links are the
+  slogan's three, never translated. The requirements stay in the guide; no drawn console picture.
+- **Published ahead of plan (owner, 2026-11-04):** the whole branch `feature/step7_8k_languages` goes
+  online with the simpler home: the guide before [[step-5.7-apps-page]] and German, French and Spanish
+  before their check. Both are done afterwards ([[step-7.3-user-guide]],
+  [[step-7.8k-website-more-languages]]).
+- **The user guide is the site's guide page** (owner, 2026-11-01, [[step-7.3-user-guide]]): the
+  short guide of 7.8b grows into the whole illustrated guide, in the site's languages; the code
+  repository links to it. Pictures: real screens of OwneetOS (made with the preview) and simple
+  drawings of our own for the steps on the PC; never screenshots of other programs (their logos,
+  [[legal]]). Besides downloading, writing the stick, UEFI and Secure Boot per PC maker, the
+  anti-cheat warning and the first start, it covers trying OwneetOS from the stick, what to do
+  when the PC does not start from it, checking the download, and the first steps with the console.
+  Built on the branch `feature/step7_8k_languages`, so it comes in German, French and Spanish too
+  (drafts reviewed with the rest).
+- **The public signing key is on the site** (owner, 2026-11-03): `owneetos.org/owneetos.asc`, the
+  public half only (primary key and signing subkey), for checking the ISO's signature. The guide
+  names no e-mail address (the key's own identity still holds the project address).
 - **The slogan "Plug it. Play it. Own it!" is never translated** (owner, 2026-10-24: more
   iconic): the same in every language's file and in the start-up animation (it replaces the
   Italian "Collegalo. Giocaci. Fallo tuo!" of 2026-10-20).
@@ -91,7 +113,26 @@ project folder. No data collected keeps the site free of consent banners and GDP
   [[step-7.8e-website-favicon]], [[step-7.8f-website-search-and-sharing]],
   [[step-7.8g-website-lighter-fonts]]; after the merge [[step-7.8h-website-domain]],
   [[step-7.8i-website-final-logo]], [[step-7.8j-website-console-picture]],
-  [[step-7.8k-website-more-languages]]; at the release [[step-7.8l-website-download-link]].
+  [[step-7.8k-website-more-languages]], [[step-7.8n-website-simpler-home]]; at the release
+  [[step-7.8l-website-download-link]].
+
+- **The GitHub pages follow the site (owner, 2026-11-09):** every update of the website also updates what the repositories show
+  on GitHub: the README (written here and committed; the owner pushes) and the repository's description and topics (the text
+  prepared here, set by the owner on GitHub: acting on GitHub is the owner's, [[collaboration]]).
+  **Prepared (2026-11-18, item 9; waits for the owner):**
+  - `OwneetOS`: description "A free and open source system that turns your PC into a game console. You only need a
+    controller."; website `https://owneetos.org`; topics `linux`, `linux-distribution`, `archlinux`, `gaming`,
+    `game-console`, `gamepad`, `controller`, `steam`, `gamescope`, `htpc`, `couch-gaming`, `open-source`.
+  - `OwneetOS-website`: description "The website of OwneetOS, a free system that turns your PC into a game console: a
+    static Angular site that collects no data."; website `https://owneetos.org`; topics `angular`, `static-site`,
+    `github-pages`, `website`, `i18n`, `owneetos`.
+  **Set by the owner (2026-11-20), his own text (it wins over the prepared one):** `OwneetOS`: "A free and open source
+  OS that turns your PC into a game console. You can play Steam AND DRM-Free games, watch movies and TV shows via a
+  streaming app (…), Youtube and a very famous app to stream your music. You can also play your local videos and music.
+  All while using a controller, no keyvoard and mouse needed!"; `OwneetOS-website`: the prepared text plus "We ACTUALLY
+  care about your privacy!"; website `https://owneetos.org` on both. Topics: none shown by GitHub's public API
+  (2026-11-20). The code's README is on `main` too (commit `3e359e9`, from `feature/phase7`; its `compat/` link is empty
+  on `main` until phase 7 is merged).
 
 ## History
 
@@ -111,3 +152,11 @@ project folder. No data collected keeps the site free of consent banners and GDP
 | 2026-10-24 | Search engines and sharing (7.8f): `hreflang` and canonical addresses, `sitemap.xml` and `robots.txt`, Open Graph with the sharing picture A (the logo and the slogan, in Dusk, one for every language), all generated with the site from its address (`SITE_URL`, given by GitHub in the Pages workflow). No long dashes in the site's texts. |
 | 2026-10-24 | Lighter fonts (7.8g): Lexend as its project's official WOFF2 (1.008, checked by hash); Bricolage Grotesque stays the console's TTF instance (no official WOFF2 of width 80). Then `feature/step7_website` merged into `main` in the three repositories (owner and Danidepadawan). |
 | 2026-10-25 | The site lives at **owneetos.org** (7.8h done). Its languages grow to **German, French and Spanish** (7.8k), each checked by people the authors know before it is published. |
+| 2026-10-26 | Header (7.8m): the languages in a drop-down menu instead of five buttons; a light / dark switch (Daylight / Dusk), starting from the device's theme and kept in the visitor's browser only (localStorage, told on the Privacy page). |
+| 2026-11-01 | The user guide (7.3) is the site's guide page, grown into the illustrated guide: OwneetOS's screens and our own drawings (no other programs' screenshots); also trying from the stick, when the PC does not start from it, checking the download, the first steps; on the branch of the new languages. |
+| 2026-11-03 | The public signing key is published on the site as `owneetos.asc` (public half only), linked from the guide's check of the download; the guide shows no e-mail address. |
+| 2026-11-04 | The site takes the final logo (7.8i): the symbol on the left in the header and the footer, above in the start-up animation and the sharing picture. |
+| 2026-11-04 | A much simpler home (7.8n, demo first): five sections following the slogan, Home with a carousel of the console's screens and a link to the credits, Plug it., Play it., Own it!, Download; no Download link in the header. |
+| 2026-11-04 | The simpler home's demo approved and built, in the five languages; the drawn console picture (7.8j) is no longer needed. |
+| 2026-11-04 | The guide and German, French and Spanish go online with the simpler home, before their planned moments (the guide after 5.7, the languages after their check); the guide's screens are made again and the languages checked afterwards. The owner sees no problem in naming the apps in a product not yet released; the names stay on the lawyer's list. |
+| 2026-11-09 | The GitHub pages follow the site: README updated with every website update; description and topics prepared here, set by the owner. |

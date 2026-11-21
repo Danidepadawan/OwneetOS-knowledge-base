@@ -9,4 +9,7 @@ tags: [phase]
 
 Up: [[wave-1]]
 
+- **Step 4.8 added (owner, 2026-11-20):** games that cannot run, said honestly ([[step-4.8-games-that-cannot-run]],
+  point 6 of [[game-compatibility-method]]).
+
 Steps and their status: [[workflow/waves/wave-1/phase-4-games/INDEX|steps of this phase]].

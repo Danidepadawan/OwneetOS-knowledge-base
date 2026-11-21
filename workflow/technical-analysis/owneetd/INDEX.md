@@ -13,6 +13,7 @@ tags: [index]
 - [[owneetd-api-audio]] — API for PipeWire volume, mute and output selection.
 - [[owneetd-api-bluetooth]] — API for BlueZ devices and automatic gamepad pairing, the pairing agent.
 - [[owneetd-api-controllers]] — API listing controllers; how the Guide button is detected.
+- [[owneetd-api-disks]] — API to list every disk and prepare one for games from Settings → Disks (erased, ext4, named by the player), and the installer's request for the other disks (step 6.7).
 - [[owneetd-api-display]] — API for the screen in use, modes, Keep this?, other cards turned off, brightness, keyboard layout.
 - [[owneetd-api-events]] — The event stream (/v1/events) and every event type.
 - [[owneetd-api-input]] — API for the virtual keyboard and mouse used by the on-screen keyboard; keyboard layouts.
@@ -21,5 +22,7 @@ tags: [index]
 - [[owneetd-api-pointer]] — API and design of the controller pointer in owneetd (step 4.7): one window, the controllers read without a grab, the virtual mouse, gamescope's focused window and the text cursor.
 - [[owneetd-api-power]] — API for shut down, restart and suspend through logind.
 - [[owneetd-api-status]] — API for daemon and OwneetOS version and session mode.
+- [[owneetd-api-system-update]] — API for the updates of an installed OwneetOS (check, install, go back to the previous version or to any older one, the notice after going back by itself), used by Settings → System.
+- [[owneetd-api-time]] — API for the time zone and the time by hand (systemd-timedated) and the Xbox wireless adapter's firmware, used by the first start and Settings.
 - [[owneetd-api-windows]] — API and design of Windows games in owneetd (step 4.5): the one-time download of Proton and its runtime with umu-launcher, its progress, owneet-windows-run.
 - [[owneetd-design]] — owneetd design: Go vs Rust, privileges, Unix socket transport, API conventions, open points.

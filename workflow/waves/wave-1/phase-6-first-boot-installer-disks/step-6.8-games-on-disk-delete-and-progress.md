@@ -1,0 +1,68 @@
+---
+type: step
+description: "Deleting a game or an installer from a disk with the controller, and a Windows installer that says how much it has written and when it seems stuck."
+phase: "[[phase-6-first-boot-installer-disks]]"
+step: "6.8"
+status: done
+tags: [step, phase-6]
+---
+# 6.8 Games on disk: deleting them, and the progress of Windows installs *(added 2026-11-08)*
+
+Up: [[phase-6-first-boot-installer-disks]] · Status: **done**
+
+- **Why (owner's test on FrankenPC, 2026-11-08):** after moving his games to the 2 TB disk he could not remove their installers:
+  the console had no way to delete files from a disk (only Uninstall, which keeps the installer, [[step-4.6-installers]]). The
+  install of The Witcher 2 (GOG for Windows, 7 parts, about 20 GB) showed the download Windows games need the first time, then
+  nothing that said whether it was working, stuck or failed (no log of that session: OWNEETLOG was not plugged in at start-up).
+  Owner: "Non possiamo lanciare Owneet in questo stato penoso"; both now.
+- **Deliverables (owner, 2026-11-08):** Options → **"Delete from disk"** for a game on a disk and for an installer, and
+  **"Delete the installer"** for a game installed from it (the game stays); each asks first, Cancel selected; never Steam games
+  (Steam's storage, [[disks]]) nor a read-only disk. A Windows installer shows **what it has written** ("Installing · 7.4 GB
+  written", on the cover and in the home screen's notice) and, after **10 minutes without writing**, a banner and the cover say it
+  **seems stuck** (Options: Stop installing). No new dependency (the percentage would need innoextract, given up on 2026-10-19).
+  Also the owner's report: in a window whose buttons take two rows, left and right did not stay on the row.
+- **Recorded as one step** (both are about games on disks), asked by the owner together.
+- **Demo:** `design/demos/6.8-games-on-disk.html`. **Owner (2026-11-08):** one label, **"Uninstall"**, for every game on a disk that is not
+  Steam's, games on the console's own disk included (the text says what goes: its folder, or the copy installed); **"Delete the installer"**
+  apart. Demo updated so, **approved**.
+- **Found on the way:** Uninstall was refused for a game installed and then moved to another disk (owneetd accepted only the home
+  folder's games folder): now any games folder of the home folder or of a disk the console mounted.
+- **Built (2026-11-08, code commit 06fede4):** owneetd 0.25.1 (`POST /v1/installs/delete`, `/v1/installs/delete-installer`, error
+  `installs.read_only`; a Windows install's `done` measured every 5 s, `stalled` and the event `install.stalled` after 10 minutes
+  without writing); owneet-frontend 0.38.0 (Options, the two windows with Cancel selected, the state line and the home notice with the GB
+  written, the notice when stuck, texts in the five languages; `rowsHold` in Dialog: left / right stay on the row). Go tests for
+  every refusal (outside a games folder, links, a running game, read only), both kinds of installers, and the stalled install.
+  **Checked in the test VM:** Options on two rows, the installer deleted in a folder of its own (the game stays, the mark forgets it), a
+  game ready to start uninstalled from its disk. Not checkable there: a real Windows install (FrankenPC, The Witcher 2).
+  OWNEETLOG updated. **Waits for the owner's test.**
+- **Owner's test on FrankenPC (2026-11-08, OWNEETLOG log `owneet-20261108-183027`):** (1) the installers deleted: done; (2) Uninstall
+  works, but after an uninstall in the filter "Local" the list looked empty for a moment; (3) The Witcher 2: no GB written, a banner
+  said to try again, then "Not installed" again.
+  - **(2)** Every reading of the games rebuilt every cover of the library's grid, and a new cover shows nothing until it is drawn. The
+    grid now keeps one row per game (by its key) and changes only the rows that change: the covers that stay are kept. The selection
+    goes to the first place as before.
+  - **(3)** Two faults, see [[windows-installer-folder-with-a-colon]]: the game's folder "The Witcher 2: Assassins of Kings…" has a
+    ":", which Windows refuses (Inno Setup ended at once with code 3), and owneetd took that 3 for "Windows games are not ready".
+    Now an installer gets a folder through a link without such characters, and owneetd checks Proton itself.
+  - **Fixed (code commit 5c3125e):** owneetd 0.25.2, owneet-frontend 0.38.1; Go tests for both faults; the grid checked in the test VM
+    (uninstall in "Local", the covers stay). OWNEETLOG updated. **Waits for the owner's test** (The Witcher 2 again).
+- **Owner's second test on FrankenPC (2026-11-08):** the library no longer looks empty after an uninstall; The Witcher 2 shows the GB
+  written, installs and starts. Its settings warning, made for a mouse, is answered with "Resume with the pointer" from the home
+  screen ([[step-4.7-controller-pointer]]).
+- **Outcome: approved by the owner on 2026-11-08.** Every game on a disk that is not Steam's can be uninstalled from Options, and an
+  installer deleted apart (each asks first, Cancel selected); a Windows install shows the GB written and says when it seems stuck;
+  left / right stay on the row in two-row windows; Windows installers work into folders whose name has a ":" (through a link); the
+  library keeps its covers while the games are read again. owneetd 0.25.2, owneet-frontend 0.38.1, owneet-base 0.0.57.
+  Reported at the approval, for later (owner, 2026-11-08): "Resume with the pointer" only on the home screen, not in the library;
+  `game-launch` not always heard when going back into a running game.
+- **Reported items, updated (owner, 2026-11-09):** `game-launch` not heard going back into a running game: **not a fault**, the
+  sound is for starting and for coming back to the home screen ([[interface-sounds-spec]]); removed. Still open: "Resume with the
+  pointer" in the library (demo first). New: the sound back on the home screen sometimes late after closing a game (The Witcher 2,
+  2026-11-08 21:12): the interface mutes its sounds while a game counts as running, and a Windows game counts until Proton's
+  processes have ended, a moment after its window has gone; to be confirmed and fixed.
+- **The late sound, fixed (2026-11-09, code commit after 8d3e276; owneetd 0.25.7):** the sound comes with "focus.changed" to
+  the home screen, which owneetd sent after its once-a-second look at gamescope (and, while Proton keeps a window, later). Now
+  gamescope's own notices (the focused app and the apps with windows changing on its root window, a window unmapped or destroyed)
+  make owneetd look at once; the regular check stays as a repeat interval. Each change of what is on screen is logged ("on
+  screen"), so a late sound left can be timed. Go test: the home announced on gamescope's notice alone. Not testable in the VM
+  (cage). **Waits for the owner's test on FrankenPC** (close a Windows game, e.g. The Witcher 2).

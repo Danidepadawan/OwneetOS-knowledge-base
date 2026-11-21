@@ -13,4 +13,4 @@ Up: [[phase-7-updates-and-first-release]] · Status: **todo** · Part of the web
 - **Deliverables:** "Download — coming soon" becomes the link (redirect) to the ISO on SourceForge
   ([[website]], [[distribution-and-updates]]), only for a signed release with its GPL source
   archive ([[step-7.2-release-pipeline]], [[package-signing]], [[legal]]).
-- **When:** at the release ([[step-7.4-hardware-testing-and-v0.1.0]], owner, 2026-10-23).
+- **When (owner, 2026-11-05):** last, after the legal review ([[step-7.5-legal-review-before-the-public-launch]]), together with the ISO published on SourceForge.

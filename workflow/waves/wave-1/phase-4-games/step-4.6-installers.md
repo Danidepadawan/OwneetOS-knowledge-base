@@ -80,3 +80,9 @@ Up: [[phase-4-games]] · Status: **done**
   under Proton, Galaxy and unknown installers are explained; installs queue, can be stopped, and a
   game the console installed can be uninstalled (never while it runs). owneetd 0.16.1,
   owneet-frontend 0.23.1.
+- **Owner's report (2026-11-10 12:32):** opening "the installer's description" (the details window of The Witcher 2's
+  installer), the text came out of the window. Most likely the installer's long file name in the facts: their grid has no
+  width limit and the window does not widen for it. Open ([[open-items]] 3i); how it should look is the owner's choice.
+- **Owner (2026-11-10):** shorten it in the middle with "…". **Built** in owneet-frontend 0.38.10: a fact's value is never
+  wider than the window, the window keeps its width; checked in the interface preview with a long installer name
+  (`tools/preview-steps/details-long-name.txt`). Waits for the owner's test.
