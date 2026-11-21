@@ -103,6 +103,12 @@ as text (a `url` value drew nothing: local covers were never shown before).
 game's cover in the home screen's card), and draws at once an image another art has already
 loaded (Qt's Canvas gives no `imageLoaded` for it).
 
+**The Apps page (5.7):** `foundation/apps.js` orders the apps (the built-in ones, then the
+catalogue's web apps; the home's places, with the five most used from the seventh installed app;
+tested with Node, `tests/theme/apps.test.js`); `AppTile.qml` is the app tile of the home and the
+page; `AppsPage.qml` is a page of Home opened by "All apps"; the shell counts each app's openings
+in the theme's memory (`appUses`). [[step-5.7-apps-page]], owneet-frontend 0.28.0.
+
 Appearance choices are saved in the theme's memory (`api.memory`). Until Settings exists (3.9),
 they are opened from the temporary Settings section (`SettingsPage.qml` → `AppearanceSheet.qml`).
 

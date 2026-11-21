@@ -4,7 +4,7 @@ description: "Overflow rule, library disks summary and Disks window, offline ico
 area: ux
 status: active
 decided: 2026-10-09
-updated: 2026-11-13
+updated: 2026-11-20
 legacy: "PROJECT_RULES.md §9 (overflow), §13 (2026-10-09)"
 tags: [decision, ux]
 ---
@@ -13,6 +13,15 @@ tags: [decision, ux]
 - **Overflow rule:** when a list has more items than its place on screen, the last place opens the
   complete list instead ("All games" on the home screen, "All apps" with more than six apps, the
   disks summary in the library with more than two disks). Practice: [[ui-patterns]].
+- **The home's apps** (step 5.7, owner 2026-11-20): one fixed order, **the built-in apps first**
+  (Videos, Music, the store), then the web apps in the catalogue's order; the tiles do not move as
+  they are used. With six apps or fewer the home shows every app, a missing one dimmed in its
+  place. With more than six it shows five apps and "All apps": while six or fewer are installed, the
+  first five of that order, the **installed apps before the missing ones**; **from the seventh
+  installed app, the five most used**, the most used first (every opening from the console counts,
+  since the app was installed; removing it clears its count; equal counts follow the fixed order).
+  "All apps" opens the **Apps page**: every app in a grid of tiles, in the fixed order with the
+  installed apps before the missing ones ([[step-5.7-apps-page]]).
 - **Library disks:** up to two disks shown in the header; with three or more, one summary. The disks
   are reached with up from the first row and A opens a window listing every disk with its free
   space and notices (demo 3.7, review 2).
@@ -26,7 +35,7 @@ tags: [decision, ux]
   `design/demos/3.7b-cover-title-scroll.html`, approved 2026-11-13; built in owneet-frontend 0.38.29.
 - Library filters and "Add games": [[game-library]].
 
-Steps: [[step-3.6-home-screen]], [[step-3.7-library-screen]].
+Steps: [[step-3.6-home-screen]], [[step-3.7-library-screen]], [[step-5.7-apps-page]].
 
 ## History
 
@@ -43,3 +52,6 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-11-13 | Covers' titles on one line, "…" when they do not fit, scrolling while the cover is highlighted (owner, after the badge was seen over a three-line title); demo 3.7b to approve. |
 | 2026-11-13 | Demo 3.7b (covers' titles on one line, scrolling when highlighted) approved. |
 | 2026-11-13 | The library's Options on the running game: "Resume", "Resume with the pointer", "Close game", then the usual options (demo 3.7c approved; the cover's badge and A = "Resume" not wanted). |
+| 2026-11-20 | Step 5.7: the home's apps in one fixed order, installed first; with more than six apps the first five and "All apps", which opens the Apps page (a grid of tiles, the same order, the home grid's buttons). |
+| 2026-11-20 | Step 5.7, after the demo (owner): the built-in apps (Videos, Music, the store) first, then the web apps; with six apps or fewer a missing app keeps its place; with more than six the installed ones come before the missing ones. |
+| 2026-11-20 | Step 5.7 (owner): from the seventh installed app the home shows the five most used apps (each opening from the console counts, all time); with six installed or fewer its places stay fixed; the Apps page keeps the fixed order. |

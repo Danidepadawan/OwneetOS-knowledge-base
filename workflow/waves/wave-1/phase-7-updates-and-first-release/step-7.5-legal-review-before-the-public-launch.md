@@ -44,6 +44,12 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
   terms allow the modes the service makes available, the TV interface is one of them, and a user
   agent alters neither the app nor its content. The string, approved by the owner on 2026-10-18 (YouTube's line
   of `packages/owneet-base/apps.json`, brand-neutral, [[step-5.3-youtube]]): `Mozilla/5.0 (Linux; SMART-TV) AppleWebKit/537.36 (KHTML, like Gecko) Safari/537.36`.
+- ~~**To include (2026-10-26):** the same question for **Spotify**, opened with a TV user agent too~~
+  **Dropped (2026-10-28):** Spotify went back to its desktop web player without a user agent of
+  its own ([[step-5.5-spotify]]); nothing to review for Spotify's agent.
+- **To include (2026-10-31):** Spotify's "no modifying or altering the Services" (Terms of Use §3)
+  against the extension's ring element in the page and Brave's zoom for Spotify (drawn as on a
+  screen about 1280 px wide), with Netflix's §1.8(vi) above ([[step-5.5-spotify]]).
 - **To include (2026-10-18):** Brave's Shields block ads by default, and the managed policies
   (`packages/owneet-base/brave-policies.json`) do not turn them off, so YouTube's and Spotify's ads
   are blocked in the web apps. Kept as it is (owner, 2026-10-18); the review decides whether the
@@ -85,3 +91,8 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
 - **When (owner, 2026-11-05):** one document, one round of review, sent by the owner after [[step-7.11-sourceforge-project]] and before anything is published
   ([[phase-7-updates-and-first-release]]). The document also covers what is planned for the following steps, the choice on donations ([[step-7.10-donations-choice]]), and the Chromium and Widevine
   question. Any tests on Chromium are Danidepadawan's.
+- **To include (2026-11-17):** the patents on the audio and video formats FFmpeg decodes (H.264,
+  HEVC, AAC…) in a console that is distributed: Arch ships FFmpeg and mpv with these decoders, the
+  console plays the user's own files with them (the Videos and Music pages,
+  [[step-5.6-local-videos-and-music]]); whether that is enough for OwneetOS, and in which
+  countries ([[legal-compliance]]).

@@ -92,7 +92,11 @@ project is reviewed by someone experienced in open-source licensing ([[step-7.5-
     and shows nothing in the page (2026-10-19).
   - **Spotify** (Terms of Use §3, User Guidelines): no bot, script or automated process (about
     inflating plays), no modifying or altering the Services, no ad blocking. Nothing applies to
-    the extension.
+    the extension. On Spotify's desktop player (step 5.5, 2026-10-31) the extension moves its ring,
+    clicks Spotify's own buttons and links, sends Spotify's own keyboard shortcuts, opens its
+    context menu as a right click does and sets Brave's zoom for the page, each in answer to one
+    press of the user's button: nothing plays by itself. Its ring element and the zoom go to the
+    legal review with Netflix's §1.8(vi) ([[step-7.5-legal-review-before-the-public-launch]]).
 - **Brave's ad blocking (found 2026-10-18):** Brave's Shields block ads by default and the managed
   policies (`packages/owneet-base/brave-policies.json`) do not turn them off, so YouTube's and
   Spotify's ads are blocked in the web apps (Spotify's terms forbid ad blocking; YouTube's forbid

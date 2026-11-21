@@ -15,7 +15,9 @@ tags: [decision, ux]
 - A **quick menu** (side panel from the right, as on SteamOS) with "Power options" and a read-only
   "Controls and features" guide, opened by **B where there is nothing to go back to** (Home,
   Library, the list of Settings sections): an accidental press only opens the menu. The owner chose
-  B over View; **View stays reserved for screenshots** in a later wave.
+  B over View; **View stays reserved for screenshots** in a later wave on the console's own
+  screens (in a web app and in the player View opens the app's command legend since 2026-11-18,
+  [[step-5.6a-command-legend]]; screenshots will take another gesture).
 - Power options: Sleep, Restart, Shut down, **Cancel selected**; with a game running it says that
   Restart and Shut down close it.
 

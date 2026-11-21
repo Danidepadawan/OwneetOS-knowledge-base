@@ -3,7 +3,7 @@ type: known-solution
 description: "A window meant as a gamescope external overlay is treated as an ordinary window (not drawn over the app), or its picture stays on screen after it is hidden. Seen on real hardware only, not in the VM."
 status: solved
 seen: 2026-10-17
-updated: 2026-10-17
+updated: 2026-11-20
 tags: [known-solution, gamescope, frontend, x11]
 ---
 # gamescope overlay window not drawn, or left on screen
@@ -65,3 +65,8 @@ With a single USB stick and no shell on the test PC:
   properties on the real server (the probe), not the interface's own log.
 - Never set an X property from a second connection without checking it and reading it back.
 - Anything drawn as an overlay must be hidden through opacity 0 first, or its last frame can stay.
+- **gamescope draws one external overlay at a time** (`src/steamcompmgr.cpp` 3.16.14,
+  `DetermineAndApplyFocus`: the most opaque window marked `GAMESCOPE_EXTERNAL_OVERLAY`; on a tie
+  the first in its window list, or, after an opacity change, the last). Two overlays shown together
+  (the console's keyboard and the command legend, [[step-5.6a-command-legend]]) show only one:
+  close one before showing the other.

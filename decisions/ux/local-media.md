@@ -1,0 +1,100 @@
+---
+type: decision
+description: "Videos and Music: the media folders on every disk, Music's two views, Guide keeping it playing, videos resuming where they stopped."
+area: ux
+status: active
+decided: 2026-11-02
+updated: 2026-11-12
+tags: [decision, ux, media]
+---
+# Local videos and music
+
+- **Media folders:** a folder named `Videos` or `Music`, or its name in the console's language
+  (`Video`, `Musica`), at the top of any disk or USB stick and on the console's own disk, as the
+  `Games` folder ([[games-on-disk]]). Everything inside counts, sub-folders included. Nothing else
+  on the disks is searched.
+- **Music has two views:**
+  - **by folder:** the folders as they are on the disk;
+  - **by artist and album:** built from the songs' own tags. It is read **only when the user
+    enters that view**, with a spinner meanwhile. The tags are read by the frontend itself with
+    FFmpeg's library (libavformat), both the file's and the stream's tags (Ogg keeps them in the
+    stream), and kept in a list on the console's disk (owner, 2026-11-04).
+- **Guide keeps it playing:** the player is an open app, like a game. Guide shows the home screen
+  while the sound goes on, and Resume brings the player back. One app runs at a time.
+- **Videos remember where they stopped:** a started video shows its progress, A resumes, and Menu
+  has "Watch from the start". The positions are kept on the console's disk; the media disks are
+  never written for this. Only the position is kept (never a track choice such as "no sound").
+- **One preferred language for videos** (owner, 2026-11-12): the audio track last chosen with X
+  and the subtitles last chosen with Menu (a language, or off) become the console's preferred audio
+  and subtitle language, remembered on the console's disk, for every video in every folder: a video
+  starts with its track in that language, or with its own default when it has none (subtitles off
+  stay off, also for a `.srt` beside the video). Until a choice is made, each video starts with its
+  own tracks; a track chosen without a language (a subtitle file named only after the video) leaves
+  no preference. Never "no sound" (X goes only through the audio tracks).
+- **Music starts from the beginning** (owner, 2026-11-04): a song never resumes, and the rest of
+  its folder or album plays after it.
+- **Autoplay for videos** (owner, 2026-11-04): a switch, **on** on a new console and remembered on
+  the console's disk. On: when a video ends, the next video of the same folder starts (after the
+  last one, back to the list). Off: the video stops at its end and the player goes back to the
+  list. It is switched with **Y**, in the Videos page ("Autoplay: On / Off") and in the player
+  (owner, 2026-11-11: the same button in both; Menu cycles the player's subtitles,
+  [[controller-input-map]]). Music is not affected.
+- **Previous goes back to the start first** (owner, 2026-11-04): LT in the first 5 s of a video or
+  song goes to the previous one; from 0:05 on, to the start of the one playing.
+- **The pages and the player** (demo 5.6, approved 2026-11-04;
+  `design/demos/5.6-videos-and-music.html`):
+  - **Videos:** "Continue watching" (started videos, the latest first) above the folders; a folder
+    opens as a list beside its picture (its `cover.jpg` / `folder.jpg`, a season using its series'
+    picture, or one drawn from its name), with the selected video's languages and where it
+    stopped; the disk's name on the cards when two disks have media.
+  - **Music:** Artists → an artist's albums → the songs; untagged songs under "Unknown artist",
+    their file's name as the title and their folder as the album; the first reading counts the
+    songs read.
+  - **While the player is open:** another video or song moves the player to it (a game open:
+    close it first); Guide shows the console where it was, the playing item marked "Playing" (A
+    resumes it), the home screen's hero with Resume and Close.
+  - **Positions and tracks:** mpv's own behaviour (a saved position used up when the video opens,
+    saved again when it is left; watched to the end, shown as not started; previous / next resume
+    a started video). A `.srt` beside the video shows by itself; embedded subtitles start off
+    (both before a preferred language is chosen, above).
+  - **The display:** the folder and the title, the progress and the times, the Audio / Subtitles
+    / Autoplay states with their buttons, the prompts, short messages at the top; music's screen
+    shows the picture, title, artist, album, progress and the next song.
+  - **A USB disk removed while it plays:** the player stops, the position kept, and says so.
+- **The player is mpv** ([[architecture-stack]]). It reads the controller itself; Guide stays
+  owneetd's ([[guide-button]]). Its bindings ("Inside the player") are in [[controller-input-map]].
+
+## Why
+
+- **The folders:** searching whole disks is slow on big ones and lists clips, samples and games'
+  own files; the `Videos` / `Music` folders match the `Games` folder the user already knows.
+- **Two Music views:** folders are quick on any disk and match how music is often stored (Artist /
+  Album); the tags give the artist and album view when the folders are not tidy. Reading the tags
+  only on entering that view keeps the folder view instant.
+- **Guide:** pausing on Guide was the alternative; music that goes on while the user looks at the
+  home screen is what a console's player does.
+- **Resuming:** always starting from the beginning was the alternative. Songs are short and are
+  listened to again from the start, so only videos resume.
+- **Tags with FFmpeg's library:** running `ffprobe` for each song took 75 ms a song in the test VM
+  (about 75 s for 1,000 songs), mostly starting the program; the library is already in the image
+  with FFmpeg, so nothing is added.
+
+## Creates
+
+- Guards: none new ([[product-invariants]]: Guide owneetd's, nothing intercepted while the player
+  is open; [[user-data]]: the media disks are not written).
+- Steps: [[step-5.6-local-videos-and-music]]; moving media between disks is
+  [[step-6.6-moving-games-and-media-between-disks]].
+
+## History
+
+Entries of the [[decision-log]] that shaped this note.
+
+| Date | Decision |
+|---|---|
+| 2026-11-02 | Local videos and music (step 5.6): `Videos` / `Music` folders (or their translated names) at the top of every disk and on the console's disk; Music by folder and by artist and album, the second read only on entering it with a spinner; Guide keeps it playing, like an open app; videos resume where they stopped, Menu "Watch from the start". |
+| 2026-11-04 | Step 5.6 sub-step 2: the player's bindings ([[controller-input-map]], "Inside the player"); music starts from the beginning and the rest of its folder or album follows; only a video's position is kept; the songs' tags read with FFmpeg's library inside the frontend in place of `ffprobe` (plan change, sub-step 4). |
+| 2026-11-04 | Autoplay for videos: a switch, on by default and remembered (on: the next video of the folder starts; off: back to the list at the end), Y in the Videos page and Menu in the player; LT goes back to the start first (the previous one only in the first 5 s). |
+| 2026-11-04 | Demo 5.6 approved: Continue watching, a folder as a list beside its picture, Artists → albums → songs, untagged songs under "Unknown artist", another item moves the player to it, Guide shows the console where it was with the item marked "Playing", mpv's own saved positions and subtitles, the player's display and music's screen, a USB disk removed stops the player. |
+| 2026-11-11 | Autoplay on Y in the player too, as in the Videos page; the player's subtitles on Menu (owner, after testing sub-step 5). |
+| 2026-11-12 | One preferred audio and subtitle language for every video: the last chosen with X and Menu (subtitles also "off"), remembered on the console; a video without it keeps its own default (owner, closing step 5.6). |

@@ -4,7 +4,7 @@ description: "Approved look: deep navy and coral, Bricolage Grotesque + Lexend, 
 area: ux
 status: active
 decided: 2026-10-03
-updated: 2026-11-12
+updated: 2026-11-18
 legacy: "PROJECT_RULES.md §9"
 tags: [decision, ux, design]
 ---
@@ -27,7 +27,10 @@ tags: [decision, ux, design]
   in the accent; the boot splash's copy is all white on black (2026-10-15, [[boot-experience]]),
   generated as outlines by `tools/branding/make-wordmark` (`packages/owneet-branding/owneetos-wordmark.svg`).
 - Button prompts: Xbox, PlayStation and Nintendo-style glyph sets, drawn for OwneetOS (no
-  third-party logos), chosen automatically from the connected controller.
+  third-party logos), chosen automatically from the connected controller. **View** (demo 5.6a,
+  approved 2026-11-18): two overlapping squares (Xbox-style), a "CREATE" pill (PlayStation-style),
+  a minus (Nintendo-style); the right stick pressed as a pill ("RS", or "R3" PlayStation-style).
+  Texts never name a button's letter (they read wrong with another controller).
 
 Practices: [[design-tokens]], [[ui-patterns]]. Approval process: [[demo-before-code]].
 
@@ -57,3 +60,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-11-11 | Long texts: the highlighted one scrolls to be read whole instead of "…", everywhere; texts never highlighted keep "…"; demo first (owner). |
 | 2026-11-12 | Demo 3.3b (long texts that scroll) approved; a prompt bar that does not fit drops the words of the prompts on the right (Sections, Home) and keeps their buttons (owner: option 1). Demo first. |
 | 2026-11-12 | Demo 3.3c (a prompt bar that does not fit) approved (owner). |
+| 2026-11-18 | View's glyph in the three sets, R3 as a pill; texts without button letters (demo 5.6a). |

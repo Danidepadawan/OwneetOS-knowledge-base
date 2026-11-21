@@ -80,6 +80,14 @@ nearest box; the page's order with geometry as a check; the version below). Code
   "Close {name}?" dialog; Cancel brings the web app back.
 - **Right stick:** scrolls the focused element's scrolling container, else the page.
 - X, Y, Menu, LB / RB, LT / RT: nothing in 5.2 (per-site meanings may come in 5.3–5.5).
+- **View** (step 5.6a, [[step-5.6a-command-legend]], [[owneetd-api-legend]]): the console's command
+  legend for the screen on show. The extension sends `{"type": "legend", "action": "toggle",
+  "context"}` (each site's navigation names its legend with `legend()`, otherwise `web`) and,
+  while the legend floats over the page (gamescope), `screen` when the screen changes (checked
+  every 250 ms); under the console's page (cage) it stops reading the controller until the bridge
+  says the legend closed (`{"type": "legend", "open": false}`), then ignores the buttons still
+  held. The legends themselves are the theme's `legends.js`, checked against the navigations by
+  `test/legend.test.js`.
 
 ## Keyboard for web forms
 
@@ -178,6 +186,62 @@ Agreed with the owner on 2026-10-22 ([[step-5.4-netflix]]; bindings: [[controlle
   `control-fullscreen-enter`. Netflix renames its site from time to time: these names live in one
   place of `extension/content/netflix.js`, and anything not found falls back to the generic
   navigation.
+
+## Spotify (step 5.5)
+
+Agreed with the owner on 2026-10-24 and **2026-10-28** ([[step-5.5-spotify]]; bindings:
+[[controller-input-map]], "Inside Spotify"). Spotify's **desktop web player** (`open.spotify.com`,
+no user agent of its own): its player for phones and TVs (an Android TV agent, tried on
+2026-10-26) keeps Your Library, but for Liked Songs, in Spotify's app ("Continue in the Spotify
+app"), and has neither keys nor a seekable bar a script may move.
+
+- **The D-pad moves by position only** (owner, 2026-10-28; Spotify's own code, the generic
+  navigation untouched), in the page and also inside the player bar, a menu or a window (owner,
+  2026-10-29: the generic rules went round the bar's middle and never reached its right side): the
+  targets are the top bar's, the left sidebar's (Your Library) and the main view's (the player
+  bar's only after Y), never Spotify's sliders (progress, volume) nor "Install App", "Open in
+  Desktop app", "Open Miniplayer"; a card, a song and a Your Library row are one target each. From the selection, the
+  nearest target past its edge in the pressed direction: the gap along the direction plus twice
+  the offset across it, targets lined up across first; no rows, columns or parts. The page and a
+  shelf scroll to the selection (a shelf that does not scroll slides with Spotify's
+  `carousel-previous-button` / `carousel-next-button`); nothing in the direction: the page
+  scrolls a step and the move is tried once more.
+- **A plays** a card, a Your Library row or a song: their own play button (`play-button`; a
+  song's first button); elsewhere A clicks (a scripted Enter activates nothing on Spotify).
+- **Menu opens the selected item's page:** a card or a Your Library row is clicked (its own link),
+  a song through its title link (`internal-track-link`).
+- **B:** an open context menu or Spotify window closes first (Escape; the selection goes back to
+  where it was), then the player bar (back where Y found the selection), then the page before; with
+  nothing left, "Close {name}?" as in 5.2.
+- **X:** the selected item's context menu (as a right click), then its "Add to queue", found by
+  Spotify's label in the console's languages (English, Italian); in another language X only opens
+  the menu. Spotify confirms with "Added to queue".
+- **Y:** the selection to the player bar (play / pause) and back.
+- **LT / RT:** Shift+← / Shift+→ (Spotify seeks by 5 s; measured).
+- **LB / RB do nothing** (owner, 2026-10-29).
+- **Look on a TV** (owner, 2026-10-24): drawn as on a screen about 1280 px wide (the page sends its
+  width, the worker sets the tab's zoom with `chrome.tabs.setZoom`, 100–300 % in steps of 5 %);
+  **R3 folds or opens Spotify's right panel** ("Now playing view", its own Alt+Shift+R; owner,
+  2026-10-29): the desktop player opens it when a song starts, and the user closes it. (Folding it
+  automatically, tried on 2026-10-29, showed it for a moment at every song and was dropped.) The
+  panel is out of the D-pad's reach. Brave's own
+  Alt+Shift+R pressed on a keyboard still opens a full-page reading view (Chromium's Reading
+  mode): turning off `ReadAnything` in owneetd's command and Brave's Speedreader (policy
+  `BraveSpeedreaderEnabled` = false) did not stop it. **A known limit, keyboard only** (owner,
+  2026-10-30): the controller never opens it, since keys sent by a script never reach Brave.
+- **How the parts are found** (Spotify's desktop player as of 2026-10-24, read with probes in the
+  test VM): left sidebar `nav` (Your Library's rows: `role=row`); top bar `global-nav-bar`
+  (`search-input`); main view `main`; shelves `component-shelf` (`carousel-scroller`); cards
+  `[data-encore-id="card"]` (a `role=button` inside); songs `tracklist-row`; player bar
+  `now-playing-bar` (`control-button-playpause`, `pip-toggle-button`); context menu
+  `#context-menu` (`ul[role=menu]`, items `role=menuitem` with no names of their own). These names
+  live in one place of `extension/content/spotify.js`; anything not found falls back to the
+  generic navigation.
+- **Code:** `extension/content/spotify.js` (tests `extension/test/spotify.test.js`, its geometry
+  included); `extension/content/shared.js` holds what Netflix and Spotify share (keys).
+  `input.js` passes X, Menu, LB / RB and R3 to a site's driver that has them (`secondary`,
+  `options`, `section`, `stickPress`; LB / RB repeat with the map's timing) and the right stick's
+  amounts to its `scroll`.
 
 ## YouTube's TV interface (step 5.3)
 

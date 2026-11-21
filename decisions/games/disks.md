@@ -11,7 +11,8 @@ tags: [decision, games, disks]
 # Disks: automatic mounting and moving games
 
 - **Automatic mounting** of all internal disks and removable drives (ext4, btrfs, NTFS, exFAT), at
-  boot and on hot-plug, with automatic scanning for game libraries and media folders.
+  boot and on hot-plug, with automatic scanning for game libraries and media folders (the
+  `Videos` and `Music` folders: [[local-media]]).
   - NTFS left dirty by Windows Fast Startup / hibernation → mount read-only and explain why.
   - Windows games on NTFS with Proton are unreliable → readable, but suggest moving them.
 - **Moving games and media between disks** (Wave 1, roadmap 6.6): e.g. from a USB stick to the

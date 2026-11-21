@@ -21,6 +21,7 @@ owner's.
 |---|---|---|
 | 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Steps 1-3 done; point 4 rejected; point 5: the owner is downloading the free games proposed (2026-11-20); point 6 = step 4.8 (demo first) |
 | 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft: South Park: The Fractured But Whole, when the owner has it |
+| 16 | Dota 2 not in the console's library while it downloads | OWNEETLOG prepared for the log |
 | 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
 
 ### Waits for the owner's decision
@@ -43,10 +44,7 @@ owner's.
 
 | Step | What | Status |
 |---|---|---|
-| [[step-5.0.1-optional-gaming-apps\|5.0.1]] | Gaming programs as optional apps (Steam, later Epic, GOG, RetroArch) | todo |
-| [[step-5.5-spotify\|5.5]] | Spotify | todo |
-| [[step-5.6-local-videos-and-music\|5.6]] | Local videos and music | todo |
-| [[step-5.7-apps-page\|5.7]] | Apps page | todo |
+| [[step-5.0.1-optional-gaming-apps\|5.0.1]] | Gaming programs as optional apps (Steam, later Epic, GOG, RetroArch): left to the owner by Danidepadawan (2026-11-21) | todo |
 | [[step-7.3-user-guide\|7.3]] | User guide | in-progress |
 | [[step-7.4-hardware-testing-and-v0.1.0\|7.4]] | Hardware testing and v0.1.0 | todo |
 | [[step-7.5-legal-review-before-the-public-launch\|7.5]] | Legal review before the public launch | in-progress |
@@ -63,6 +61,9 @@ status is kept in their own notes; this table follows them.
 
 3. **Netflix / YouTube not silent behind the home screen**: left to Danidepadawan with the web apps
    (owner, 2026-11-09). [[step-4.5-windows-games-proton]]
+16. **Dota 2 not in the console's library while it downloads** (owner, 2026-11-21): Steam's library shows it, its download
+   has begun (not "preparing"), but the console's library does not list it. Test log on OWNEETLOG to read.
+
 ## Decided, not built yet
 
 9. **GitHub pages with every website update**: README, the repositories' description and topics; the

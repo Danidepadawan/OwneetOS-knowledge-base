@@ -4,7 +4,7 @@ description: "The binding meaning of every button on every screen, keyboard fall
 area: ux
 status: active
 decided: 2026-10-03
-updated: 2026-11-19
+updated: 2026-11-20
 legacy: "PROJECT_RULES.md §9.1"
 tags: [decision, ux, input]
 ---
@@ -23,7 +23,7 @@ screen. New bindings are added here (with the owner) before they are implemented
 | LB / RB (L1 / R1) | Switch top-level section (Home, Library, Settings, …) — **reserved, never used for anything else** (except inside the on-screen keyboard, where no section can be switched: its pages of keys) |
 | LT / RT (L2 / R2) | Switch filter inside the current page (e.g. Library: All / Installed / Favorites — "Installed" was removed on 2026-10-11 and restored on 2026-10-14, [[game-library]]). There are no sub-tabs: tabs are only the sections on LB / RB |
 | Menu / Options | Options menu for the selected item |
-| View / Create | Reserved (screenshot in a later wave) |
+| View / Create | **In a web app and in the player: the legend of the app's buttons** (step 5.6a, owner 2026-11-18; see "The command legend" below). On the console's own screens: reserved (screenshots in a later wave, which will then take another gesture) |
 | Guide / PS | **Owned by the system daemon**: home / quick menu from anywhere, including in games. Apps and themes must never bind it. Prompt label: "Home". **Exception, Steam** (2026-10-12): while Steam or a Steam game is on screen, a short press is Steam's (its menu; its overlay in games) and **holding it for 1 second** comes back to the console (Steam and the game keep running). See [[guide-button]]. On the home screen with nothing to go back to, owneetd tells the interface (`home.requested`): **the interface goes back to its Home section, the windows over its pages closed** (as B or Cancel would; the copy of games goes on behind its window, 6.6e; not during the first start or the installer) (owner, 2026-11-14: Guide did nothing while nothing ran). **The Home prompt shows only while nothing runs**: with a game, a media app or Steam running, Guide goes back to it, and the prompt is left out of the prompt bar (owner, 2026-11-14); **nor on the home screen itself** while no window is over it, where Guide does nothing (owner, 2026-11-17). |
 | Right stick | Scrolls the page: fast scroll in long lists and grids, and the content of windows (e.g. Credits and licences) |
 
@@ -38,9 +38,17 @@ owner 2026-11-12): while the adjustment is open, **D-pad / left stick left / rig
 narrower / wider, **up / down** taller / shorter (held, they repeat with this map's timing), **X** goes
 back to the whole screen, **A** confirms, **B** cancels. Guide keeps its meaning.
 
-**Lists that go round:** the library's grid (left / right within a row, down / up between the
-last and the first row, [[game-library]]) and the list of Settings' sections (up on the first
+**Lists that go round:** the library's grid and the Apps page's grid (left / right within a row,
+down / up between the last and the first row, [[game-library]], [[step-5.7-apps-page]]) and the
+list of Settings' sections (up on the first
 section goes to the last, down on the last to the first; owner, 2026-10-16).
+
+**The Apps page** (step 5.7, owner 2026-11-20, [[step-5.7-apps-page]]; "All apps" on the home with
+more than six apps): the same buttons as the home's Apps grid. **A** opens the selected app, or
+installs a missing one (its confirmation, then progress on the tile); **Menu** opens its options
+(Remove; on Steam's tile, close Steam while it runs); **B** goes back to the home, the selection on
+"All apps"; the right stick scrolls; LB / RB switch sections; X, Y and LT / RT do nothing (no
+filters).
 
 While a game or app is running, the system intercepts **only** the Guide button; every other input
 goes to the game.
@@ -54,16 +62,17 @@ a game or app runs; for testing and PCs without a controller).
 [[extension-design]]): D-pad / left stick move a ring between the page's targets (spatial
 navigation); A presses the target (on a text field: the console's on-screen keyboard); B leaves full
 screen, closes the page's open dialog, or goes back a page, and where there is nothing to go back to
-asks to close the web app ("Close {name}?"); the right stick scrolls. X, Y, Menu, LB / RB and LT / RT
-do nothing (sites may get their own meanings in steps 5.3–5.5). Guide stays owneetd's.
+asks to close the web app ("Close {name}?"); the right stick scrolls; **View opens or closes the
+legend** (below). X, Y, Menu, LB / RB and LT / RT do nothing (sites may get their own meanings in
+steps 5.3–5.5). Guide stays owneetd's.
 
 **Inside YouTube** (step 5.3, 2026-10-18; YouTube's TV interface `youtube.com/tv`,
 [[extension-design]]): the extension sends the TV interface its own keys and draws no ring
 (YouTube draws its selection). D-pad / left stick = arrows (YouTube's selection; held directions
 repeat with this map's timing); A = Enter (select; in the player YouTube's own pause / play);
 B = Escape (YouTube's back), and where YouTube's back has nothing left (its "Welcome back" account
-page, where Escape does nothing) asks to close the web app ("Close YouTube?"); LT / RT, X, Y, Menu,
-View and the right stick do nothing (no key of the TV interface seeks by 10 s: seeking is done
+page, where Escape does nothing) asks to close the web app ("Close YouTube?"); View the legend;
+LT / RT, X, Y, Menu and the right stick do nothing (no key of the TV interface seeks by 10 s: seeking is done
 with YouTube's own progress bar, 2026-10-19); LB / RB are never used. Guide stays owneetd's. Other pages (e.g. Google's) keep the web-app bindings above.
 
 **Inside Netflix** (step 5.4, 2026-10-22; Netflix's desktop site, its own navigation,
@@ -80,8 +89,66 @@ A presses the selected control, and pauses / plays while the controls are hidden
 otherwise leaves the player. B closes an open dropdown first (the Browse and profile menus, a
 title's seasons; owner's test, 2026-10-22). Pages outside Netflix's main screens (start page, sign-in, the email
 code, "Who's watching?") keep the web-app bindings above. **Y opens Netflix's search** on the
-browsing pages (owner, 2026-10-22); X, Menu and View do nothing; LB / RB are never used; Guide
+browsing pages (owner, 2026-10-22); View the legend; X and Menu do nothing; LB / RB are never used; Guide
 stays owneetd's.
+
+**Inside Spotify** (step 5.5; Spotify's desktop web player, drawn bigger on a TV, its own
+navigation, [[extension-design]]; owner, 2026-10-28 and 2026-10-29): **D-pad / left stick move by
+position only**, everywhere in Spotify (the page, the player bar, a menu, a window): the selection
+goes to the nearest target in the pressed direction, with no rule of rows or columns; a card, a song
+and a Your Library row are one target each; Spotify's sliders (the progress bar, the volume) are
+not stops; the page scrolls to the selection. **A plays** the selected card, Your Library row or
+song at once (its own play button); on anything else A presses it (a text field: the console's
+keyboard). **Menu opens the selected item's page** (the album, playlist, artist or song; owner,
+2026-10-29). **B** closes an open menu or window first (Spotify's windows keep the selection inside
+them), then the player bar, otherwise goes back a page, and where there is nothing to go back to asks
+to close the web app ("Close Spotify?"). **X adds the selected song, album or playlist to the queue**
+(Spotify's context menu, "Add to queue"; owner, 2026-10-23). **Y moves the selection to the player
+bar** (shuffle, previous, play / pause, next, repeat, lyrics, queue, devices, full screen…) **and Y
+or B brings it back** where it was (owner, 2026-10-24). **LT / RT = −5 / +5 s** (Spotify's own
+Shift+← / Shift+→, repeating with this map's LT / RT timing; owner, 2026-10-23). **LB / RB do
+nothing** (owner, 2026-10-29: everything is reachable by position). The right stick scrolls.
+"Install App", "Open in Desktop app" and "Open Miniplayer" are never reached: they open windows the
+console cannot show. **R3 (the right stick pressed) folds or opens Spotify's right panel** ("Now
+playing view", Spotify's own Alt+Shift+R; owner, 2026-10-29: Spotify opens it when a song starts,
+the user closes it; the panel is out of the D-pad's reach). View the legend; L3 does nothing; Guide stays
+owneetd's. Pages outside Spotify's
+player (sign-in, Facebook / Google / Apple sign-in) keep the web-app bindings above.
+
+**Inside the player** (step 5.6, local videos and music; mpv, which reads the controller itself,
+[[local-media]]; owner, 2026-11-04): the same buttons for a video and a song. **A** pauses / plays.
+**D-pad left / right = −10 / +10 s**, exact (not to the nearest keyframe), repeating with this
+map's direction timing. **LT / RT = the previous / next video or song** (the videos of the same
+folder; music: the folder or album that is playing), repeating with this map's LT / RT timing;
+**LT goes back to the start first:** in the first 5 s of a video or song (before 0:05) it goes to
+the previous one, from 0:05 on to the start of the one playing (owner, 2026-11-04); on the first
+one it goes to its start. **Y switches Autoplay** for videos, as Y in the Videos page (the display
+says whether it is on; [[local-media]]; owner, 2026-11-11, in place of Menu).
+**X = the next audio track** (videos with more than one; it never goes through "no sound").
+**Menu = subtitles:** off, then each track in turn (owner, 2026-11-11, in place of Y: Menu is the
+options of what is selected or playing, on the page and in the player). What X and Menu choose
+becomes the preferred audio and subtitle language of every video (owner, 2026-11-12,
+[[local-media]]). **B leaves the player** and
+goes back to the list it was opened from (a video's position is saved). Every press shows the
+on-screen display for a moment (the title, the progress, the time); D-pad up / down and L3 / R3
+only show it, and so do X, Y and Menu for a song. The sticks do nothing (a held stick sends bursts of presses); **View opens or closes the
+legend** (below); **LB / RB** are not bound at all. **Guide stays owneetd's:** mpv never binds it (its name in
+mpv is `GAMEPAD_MENU`, [[step-5.6-local-videos-and-music]]), and mpv's own default bindings are
+off. The keyboard fallback keys have the same meanings; Q / E and the Super key are not bound in
+the player. **The Videos and Music pages** keep this map as it stands: Music's two views (by folder,
+by artist and album) are the page's filters on LT / RT, and **Y in the Videos page switches
+Autoplay** (a page-level option, "Autoplay: On / Off").
+
+**The command legend** (step 5.6a, owner 2026-11-18, [[step-5.6a-command-legend]]): **View**, in a
+web app or the player, opens a legend of what each button does there, for the screen the user is on
+(e.g. Netflix's browsing pages, its title window or its player; a video or a song in the player). The
+app's own integration catches View (the console's extension, the player's script): the console still
+intercepts only Guide. **gamescope:** the legend floats over the app, which keeps working under it
+(every button but View goes on to the app); **only View closes it**, and Guide closes it on the way
+to the home screen (demo 5.6a, approved 2026-11-18). **cage** (one window at a
+time): a full-screen page of the console; **B or View closes it**, back to the app. Games get no
+legend (the console cannot know their buttons). The console's own buttons stay in the quick menu's
+"Controls and features".
 
 The input map is **fixed**: it is not saved in the frontend's settings, so a change reaches every
 system. **Held buttons:** a direction repeats after 360 ms, then every 140 ms; LB / RB and LT / RT
@@ -141,9 +208,20 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-19 | Pointer: A on a text field opens the console's keyboard by itself (the pointer's "I" shape after the click, read through XFixes); Y stays as the fallback. |
 | 2026-10-19 | Inside YouTube: LT / RT stay unused (no key of the TV interface seeks by exactly 10 s; seeking the video directly from the extension rejected); seeking is done with YouTube's own progress bar ([[controller-input-map]]). |
 | 2026-10-22 | Inside Netflix (step 5.4): Netflix's own navigation on its browsing pages (rows and tiles, rows sliding on, A into the title window), the title window (B back to the tile) and the player (any button shows the controls, D-pad between them, A presses or pauses, LT / RT ±10 s, B closes a menu or leaves); other pages keep the web-app bindings ([[controller-input-map]]). |
+| 2026-10-24 | Inside Spotify (step 5.5, its desktop web player): its own navigation (shelves and cards, song lists, the left sidebar, the top bar); A clicks; B closes a menu or window, goes back, then "Close Spotify?"; X adds to the queue; Y to the player bar and back; Menu = Spotify's context menu; LT / RT −5 / +5 s; LB / RB Home → Search → Your Library, going round ([[controller-input-map]]). |
+| 2026-10-26 | Inside Spotify redone for its player with an Android TV user agent: Y opens the full player (this view's player bar) and Y or B closes it; LT / RT press Spotify's progress bar ±5 s with the full player open, nothing elsewhere; LB / RB the bottom tabs; the footer, links leaving Spotify, "Get App" / "Open App" and the fixed bottom bars never reached by the D-pad. |
+| 2026-10-28 | Inside Spotify back on its desktop web player (the Android TV view keeps Your Library in Spotify's app): the bindings of 2026-10-24, and the **D-pad moves by position only** (the nearest target in the direction, no rows or columns; owner), in Spotify's own code. |
+| 2026-10-29 | Inside Spotify: **A plays** a card, Your Library row or song at once, **Menu opens its page**; LB / RB do nothing (everything is reachable by position); the D-pad moves by position in the player bar, menus and windows too, Spotify's sliders not stops. |
+| 2026-10-29 | Inside Spotify: **R3 folds or opens Spotify's right panel** (its own Alt+Shift+R), replacing the automatic folding (owner: Spotify opens it when a song starts, the user closes it). |
+| 2026-11-04 | Inside the player (step 5.6, mpv): A pause / play, D-pad left / right −10 / +10 s (exact), LT / RT the previous / next video or song (owner: in place of the proposed LT / RT seeking), X the next audio track (never "no sound"), Y subtitles, B leaves the player (a video's position saved); every press shows the on-screen display; View and LB / RB not bound, Guide never bound by mpv. Music's two views are the Music page's filters on LT / RT. |
+| 2026-11-04 | Inside the player: **LT goes back to the start first** (in the first 5 s to the previous video or song, from 0:05 on to the start of the one playing); **Menu switches Autoplay** for videos, and so does **Y in the Videos page** ([[local-media]]). |
 | 2026-11-10 | Guide on the home screen with nothing to go back to (it did nothing): owneetd sends `home.requested` and only the copy of games' window closes, the copy going on behind it (demo 6.6e). Not Home from every window: with an app open Guide goes back to it (owner). |
+| 2026-11-11 | Inside the player (owner, after testing it): **Y switches Autoplay**, as in the Videos page, and **Menu cycles the subtitles** (off, then each track); X stays the audio track. Keyboard: Y Autoplay, M subtitles. |
 | 2026-11-12 | The display area's adjustment (Settings → Display): D-pad left / right narrower / wider, up / down taller / shorter, X whole screen, A confirm, B cancel (owner: demo 3.9c approved). |
+| 2026-11-12 | Inside the player: the audio track chosen with X and the subtitles chosen with Menu (a language, or off) become the preferred language of every video ([[local-media]]). |
 | 2026-11-14 | Guide while nothing runs (`home.requested`): back to the interface's Home section, its windows closed; the Home prompt shown only while nothing runs (with a game, a media app or Steam, Guide goes back to it). Owner, no demo needed. |
 | 2026-11-17 | No Home prompt on the home screen itself while no window is over it: there Guide does nothing (owner). |
+| 2026-11-18 | **The command legend** (step 5.6a): **View** in a web app or the player opens a legend of that app's buttons for the screen on show; in gamescope it floats over the app, which keeps working, and only View closes it; in cage a full-screen page, B or View closes it; no legend for games. View stays reserved on the console's own screens (screenshots later take another gesture). |
 | 2026-11-19 | The controller pointer turns on by itself for a window of a game's install script (a publisher's installer made for a mouse), for that window only (owner, option B; owneetd 0.25.41). |
 | 2026-11-19 | Pointer: A and X are the mouse's left and right buttons, held down as long as A / X are (owner; owneetd 0.25.47): the click with no time between down and up was lost in BioShock's menu. |
+| 2026-11-20 | **The Apps page** (step 5.7): the home's Apps grid buttons (A opens or installs, Menu options, B back to the home on "All apps", the right stick scrolls); X, Y and LT / RT do nothing; its grid goes round like the library's. |
