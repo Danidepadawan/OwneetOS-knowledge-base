@@ -3,13 +3,13 @@ type: step
 description: "A page with every app (streaming services, Videos, Music, stores, and the ones added later), reached from the home screen: when there…"
 phase: "[[phase-5-streaming-apps-and-media]]"
 step: "5.7"
-status: in-progress
+status: done
 legacy: "ROADMAP.md 5.7"
 tags: [step, phase-5]
 ---
 # 5.7 Apps page
 
-Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 2026-11-20)
+Up: [[phase-5-streaming-apps-and-media]] · Status: **done** (owner, 2026-11-21; started 2026-11-20)
 
 - **Deliverables:** a page with every app (streaming services, Videos, Music, stores, and the
   ones added later), reached from the home screen: when there are more than six apps, the sixth
@@ -137,7 +137,7 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
      it, the five most used from the seventh installed app, Videos / Music back to the page.
   3. **Close:** known limits, the hardware checks (batched with FrankenPC's), outcome; the owner
      approves.
-     **Written (2026-11-21), waiting for the owner's approval:**
+     **Written (2026-11-21), approved by the owner (2026-11-21):**
      - **Checked for the close:** the home's "All apps" ("Tutte le app") and the Apps page in
        Italian at the largest text size (XL): the names whole, the grid in two rows for nine apps
        (frontend preview, `@manyapps`).
@@ -194,3 +194,6 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
        Bluetooth" (from the close of 5.6a); owneetd's flaky `update` test (`TestCheckThenApply`);
        the guard hook blocking actions that only name the package build script; the lasting fix
        proposed for the builder VM's chroot in `/var/tmp` ([[build-chroot-emptied-by-tmpfiles]]).
+- **Step closed by the owner on 2026-11-21**, with the known limits above accepted and the
+  hardware checks above as a follow-up. Phase 5 still has [[step-5.0.1-optional-gaming-apps]]
+  (waiting for the owner); the owner names the next step.
