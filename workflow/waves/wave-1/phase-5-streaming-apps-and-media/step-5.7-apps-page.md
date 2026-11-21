@@ -58,7 +58,7 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
      (title, the grid and its states, A opening or installing with its confirmation and progress,
      Menu → Remove, Videos and back, B back to the home on "All apps", the prompt bar); texts (en,
      it), glyph sets.
-     **Written (2026-11-20), waiting for the owner's approval:** `design/demos/5.7-apps-page.html`
+     **Written (2026-11-20), approved by the owner (2026-11-21):** `design/demos/5.7-apps-page.html`
      (code `212dca0`; its flows checked with scripted button presses: "All apps" selected on the
      home, the page's grid going round, Videos and back to the page, B back to the home on "All
      apps", Menu → options, Italian at XL). What it shows beyond the decisions:
@@ -95,7 +95,8 @@ Up: [[phase-5-streaming-apps-and-media]] · Status: **in-progress** (started 202
      console); opening an app counts and moves it, the selection following; removing one goes
      back to the fixed order; `#installed=` sets the web apps installed. Checked with scripted
      presses: six installed (fixed), eight installed (most used), the store opened up to Music's
-     count (after Music, the fixed order). Waiting for the owner's approval.
+     count (after Music, the fixed order).
+     **Demo approved by the owner (2026-11-21)**, with the changes above (code `0388d2e`).
   2. **Code:** the theme (one ordered list for the home and the page, `AppTile.qml` out of
      `HomePage.qml`, the "All apps" tile, `AppsPage.qml` as a page of Home, B from Videos / Music
      back to where they were opened, texts); the pretend owneetd with a larger catalogue and
