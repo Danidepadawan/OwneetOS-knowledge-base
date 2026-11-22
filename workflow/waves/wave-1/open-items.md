@@ -21,7 +21,7 @@ owner's.
 |---|---|---|
 | 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Steps 1-3 done; point 4 rejected; point 5: the owner is downloading the free games proposed (2026-11-20); point 6 = step 4.8 (demo first) |
 | 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft: South Park: The Fractured But Whole, when the owner has it |
-| 16 | Dota 2 not in the console's library while it downloads | Built (owneet-frontend 0.39.1); the update stick waits for archive.archlinux.org (unreachable 2026-11-21), needed for phase 5's new packages |
+| 16 | Dota 2 not in the console's library while it downloads | On OWNEETLOG (2026-11-22) with the merged packages (owneetd 0.26.0, owneet-frontend 0.39.2, owneet-base 0.0.83): to test |
 | 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
 
 ### Waits for the owner's decision
@@ -73,6 +73,8 @@ status is kept in their own notes; this table follows them.
    listed as soon as Steam downloads it or has it installed (never the others of package 0). No new log needed.
    **Owner (2026-11-21): approved** (also Guide on the Videos, Music and Apps pages: back to the home page). Built:
    owneet-frontend 0.39.1 (`SteamOwned.cpp`: a package-0 game with a manifest in one of Steam's libraries is listed).
+   **2026-11-22:** Arch's archive back; the merged interface previewed (Home, the Apps, Videos and Music pages: no
+   QML error); owneet-frontend 0.39.2 shows the Home prompt on those pages (Guide works there). On OWNEETLOG: to test.
 
 ## Decided, not built yet
 
