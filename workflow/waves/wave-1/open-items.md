@@ -21,7 +21,8 @@ owner's.
 |---|---|---|
 | 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Steps 1-3 done; point 4 rejected; point 5: the owner is downloading the free games proposed (2026-11-20); point 6 = step 4.8 (demo first) |
 | 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft: South Park: The Fractured But Whole, when the owner has it |
-| 18 | A Steam game that never started blocked the next game (Beneath a Steel Sky) | Built (owneet-frontend 0.39.3): to test |
+| 18 | A Steam game that never started blocked the next game (Beneath a Steel Sky) | Fix works; Beneath a Steel Sky ends at once in the runtime (its script replaces LD_LIBRARY_PATH): ways to choose |
+| 19 | The FrankenPC froze after Apex and Beneath a Steel Sky | The previous boot's journal at the next start with OWNEETLOG |
 | 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
 
 ### Waits for the owner's decision
@@ -72,6 +73,16 @@ status is kept in their own notes; this table follows them.
    owneetd" line). **Built:** owneet-frontend 0.39.3, a new game takes the place of a Steam game that has not started;
    started games and games on disks as before. On OWNEETLOG: Apex, then Beneath a Steel Sky (its first start in the
    Steam Runtime, step 3). Disk check: nothing new but Steam's sniper runtime (Dota 2) and the web apps' caches.
+   **Owner's test (2026-11-22 19:33, owneet-frontend 0.39.3):** Apex showed Steam's window saying SteamOS does not
+   support it; closed from the console (19:34:44). **The fix works:** Beneath a Steel Sky started at 19:34:51, in the Steam
+   Runtime (scout), but ended at once: GOG's `scummvm/start.sh` sets `LD_LIBRARY_PATH` to its own `libs/x86_64` only, so
+   the runtime's libraries are gone and ScummVM misses `libjpeg.so.8` (the scout runtime has it: read on the development
+   PC's Steam). With the system's libraries (the old way) Arch provides it. Any native game whose script replaces
+   `LD_LIBRARY_PATH` loses the runtime the same way. Ways proposed to the owner. Then **the FrankenPC froze** (item 19).
+
+19. **The FrankenPC froze, inputs ignored** (owner, 2026-11-22, right after Apex's window and Beneath a Steel Sky's
+   failed start): switched off by hand. The session's log on the stick stops at 19:35:18 (Steam's update check, nothing
+   wrong before it); the whole journal of that boot comes with the next start with OWNEETLOG (`.previous`).
 
 ## Decided, not built yet
 
