@@ -910,3 +910,29 @@ found here. Newest closings are added at the end.
    copies it. On OWNEETLOG: the first start installs 0.0.84, the second copies the bundle; then a web app.
    **Owner's test (2026-11-22): passed** (Netflix and Spotify installed and opened, log `owneet-20261122-183607`).
    **Closed** (2026-11-22): the owner's test passed (web apps installed from the bundle).
+18. **Beneath a Steel Sky never started after Apex Legends** (owner, 2026-11-22): Dota 2 runs; Apex Legends does not start
+   (Steam says SteamOS does not support it: EA blocked Linux and the Steam Deck in October 2024, [[game-test-matrix]],
+   expected, for step 4.8); Beneath a Steel Sky (GOG, Linux) stayed on "Starting…". **From the log
+   (`owneet-20261122-183607`) and the code:** Apex was asked for at 19:00:37 and Steam never launched it (its window
+   "Starting…" until 19:12, no `app.started`); the interface starts one game at a time (`ApiObject`) and waits for the
+   one it started to end, which never came: Beneath a Steel Sky's start was ignored without a word (no "Starting through
+   owneetd" line). **Built:** owneet-frontend 0.39.3, a new game takes the place of a Steam game that has not started;
+   started games and games on disks as before. On OWNEETLOG: Apex, then Beneath a Steel Sky (its first start in the
+   Steam Runtime, step 3). Disk check: nothing new but Steam's sniper runtime (Dota 2) and the web apps' caches.
+   **Owner's test (2026-11-22 19:33, owneet-frontend 0.39.3):** Apex showed Steam's window saying SteamOS does not
+   support it; closed from the console (19:34:44). **The fix works:** Beneath a Steel Sky started at 19:34:51, in the Steam
+   Runtime (scout), but ended at once: GOG's `scummvm/start.sh` sets `LD_LIBRARY_PATH` to its own `libs/x86_64` only, so
+   the runtime's libraries are gone and ScummVM misses `libjpeg.so.8` (the scout runtime has it: read on the development
+   PC's Steam). With the system's libraries (the old way) Arch provides it. Any native game whose script replaces
+   `LD_LIBRARY_PATH` loses the runtime the same way. Ways proposed to the owner. Then **the FrankenPC froze** (item 19).
+   **Owner (2026-11-22): way A.** Built: owneetd 0.26.1, inside the runtime the game's bash scripts get a `BASH_ENV`
+   (`owneet-runtime-bashenv`) whose `export` puts the runtime's folders back at the end of `LD_LIBRARY_PATH` when a
+   script removed them; the game's own libraries still first. Builder VM: a GOG-like script found `libjpeg.so.8` in the
+   runtime; without the runtime nothing changes. The Witcher 2 starts its programs directly (no bash script): not
+   affected. On OWNEETLOG: Beneath a Steel Sky, then The Witcher 2 (Linux) to check nothing changed. Apex's window
+   ("SteamOS does not support it") is the game's own: EA blocks Linux and SteamOS; the console does not make it.
+   **Owner's test (2026-11-22 19:53): passed.** Beneath a Steel Sky and The Witcher 2 (Linux) start (twice each); Apex
+   still does not, as expected. Seen: Apex's own program (EA's) went on after Beneath a Steel Sky took its place, until
+   the owner ended it (19:57:07): the console lets go of the launch but does not close what Steam had started; the
+   owner accepts it. Powering off from Steam's own menu works (owner: not a fault).
+   **Closed** (2026-11-22): the owner's test passed.

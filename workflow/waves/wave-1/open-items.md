@@ -21,8 +21,7 @@ owner's.
 |---|---|---|
 | 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Steps 1-3 done; point 4 rejected; point 5: the owner is downloading the free games proposed (2026-11-20); point 6 = step 4.8 (demo first) |
 | 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft: South Park: The Fractured But Whole, when the owner has it |
-| 18 | A Steam game that never started blocked the next game (Beneath a Steel Sky) | Fix works; the runtime's libraries kept under the game's script (owneetd 0.26.1, on OWNEETLOG): to test |
-| 19 | The FrankenPC froze after Apex and Beneath a Steel Sky | The previous boot's journal at the next start with OWNEETLOG |
+| 19 | The interface stopped answering for about 40 s after Beneath a Steel Sky's failed start | Not reproduced; to watch (leave the stick in until the console is off) |
 | 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
 
 ### Waits for the owner's decision
@@ -64,31 +63,15 @@ status is kept in their own notes; this table follows them.
 
 3. **Netflix / YouTube not silent behind the home screen**: left to Danidepadawan with the web apps
    (owner, 2026-11-09). [[step-4.5-windows-games-proton]]
-18. **Beneath a Steel Sky never started after Apex Legends** (owner, 2026-11-22): Dota 2 runs; Apex Legends does not start
-   (Steam says SteamOS does not support it: EA blocked Linux and the Steam Deck in October 2024, [[game-test-matrix]],
-   expected, for step 4.8); Beneath a Steel Sky (GOG, Linux) stayed on "Starting…". **From the log
-   (`owneet-20261122-183607`) and the code:** Apex was asked for at 19:00:37 and Steam never launched it (its window
-   "Starting…" until 19:12, no `app.started`); the interface starts one game at a time (`ApiObject`) and waits for the
-   one it started to end, which never came: Beneath a Steel Sky's start was ignored without a word (no "Starting through
-   owneetd" line). **Built:** owneet-frontend 0.39.3, a new game takes the place of a Steam game that has not started;
-   started games and games on disks as before. On OWNEETLOG: Apex, then Beneath a Steel Sky (its first start in the
-   Steam Runtime, step 3). Disk check: nothing new but Steam's sniper runtime (Dota 2) and the web apps' caches.
-   **Owner's test (2026-11-22 19:33, owneet-frontend 0.39.3):** Apex showed Steam's window saying SteamOS does not
-   support it; closed from the console (19:34:44). **The fix works:** Beneath a Steel Sky started at 19:34:51, in the Steam
-   Runtime (scout), but ended at once: GOG's `scummvm/start.sh` sets `LD_LIBRARY_PATH` to its own `libs/x86_64` only, so
-   the runtime's libraries are gone and ScummVM misses `libjpeg.so.8` (the scout runtime has it: read on the development
-   PC's Steam). With the system's libraries (the old way) Arch provides it. Any native game whose script replaces
-   `LD_LIBRARY_PATH` loses the runtime the same way. Ways proposed to the owner. Then **the FrankenPC froze** (item 19).
-   **Owner (2026-11-22): way A.** Built: owneetd 0.26.1, inside the runtime the game's bash scripts get a `BASH_ENV`
-   (`owneet-runtime-bashenv`) whose `export` puts the runtime's folders back at the end of `LD_LIBRARY_PATH` when a
-   script removed them; the game's own libraries still first. Builder VM: a GOG-like script found `libjpeg.so.8` in the
-   runtime; without the runtime nothing changes. The Witcher 2 starts its programs directly (no bash script): not
-   affected. On OWNEETLOG: Beneath a Steel Sky, then The Witcher 2 (Linux) to check nothing changed. Apex's window
-   ("SteamOS does not support it") is the game's own: EA blocks Linux and SteamOS; the console does not make it.
-
 19. **The FrankenPC froze, inputs ignored** (owner, 2026-11-22, right after Apex's window and Beneath a Steel Sky's
    failed start): switched off by hand. The session's log on the stick stops at 19:35:18 (Steam's update check, nothing
    wrong before it); the whole journal of that boot comes with the next start with OWNEETLOG (`.previous`).
+   **From that journal (`owneet-20261122-195300.previous`, boot -2):** the system was running: after Beneath a Steel Sky
+   ended (19:34:57) nothing was logged until the stick was pulled out at 19:35:37 (FAT write errors: that session's
+   screenshots and games folder were lost), and the power button shut it down cleanly at 19:37:00. So the interface,
+   not the PC, stopped answering for about 40 s; no error says why. Tried in the preview (a disk game that ends at once
+   without a window): the interface kept answering. Not seen again in the next session. **To watch:** if it happens
+   again, leave the stick in until the console is off (the screenshots show what was on screen).
 
 ## Decided, not built yet
 
