@@ -21,7 +21,7 @@ owner's.
 |---|---|---|
 | 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Steps 1-3 done; point 4 rejected; point 5: the owner is downloading the free games proposed (2026-11-20); point 6 = step 4.8 (demo first) |
 | 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft: South Park: The Fractured But Whole, when the owner has it |
-| 18 | A Steam game that never started blocked the next game (Beneath a Steel Sky) | Fix works; Beneath a Steel Sky ends at once in the runtime (its script replaces LD_LIBRARY_PATH): ways to choose |
+| 18 | A Steam game that never started blocked the next game (Beneath a Steel Sky) | Fix works; the runtime's libraries kept under the game's script (owneetd 0.26.1, on OWNEETLOG): to test |
 | 19 | The FrankenPC froze after Apex and Beneath a Steel Sky | The previous boot's journal at the next start with OWNEETLOG |
 | 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
 
@@ -79,6 +79,12 @@ status is kept in their own notes; this table follows them.
    the runtime's libraries are gone and ScummVM misses `libjpeg.so.8` (the scout runtime has it: read on the development
    PC's Steam). With the system's libraries (the old way) Arch provides it. Any native game whose script replaces
    `LD_LIBRARY_PATH` loses the runtime the same way. Ways proposed to the owner. Then **the FrankenPC froze** (item 19).
+   **Owner (2026-11-22): way A.** Built: owneetd 0.26.1, inside the runtime the game's bash scripts get a `BASH_ENV`
+   (`owneet-runtime-bashenv`) whose `export` puts the runtime's folders back at the end of `LD_LIBRARY_PATH` when a
+   script removed them; the game's own libraries still first. Builder VM: a GOG-like script found `libjpeg.so.8` in the
+   runtime; without the runtime nothing changes. The Witcher 2 starts its programs directly (no bash script): not
+   affected. On OWNEETLOG: Beneath a Steel Sky, then The Witcher 2 (Linux) to check nothing changed. Apex's window
+   ("SteamOS does not support it") is the game's own: EA blocks Linux and SteamOS; the console does not make it.
 
 19. **The FrankenPC froze, inputs ignored** (owner, 2026-11-22, right after Apex's window and Beneath a Steel Sky's
    failed start): switched off by hand. The session's log on the stick stops at 19:35:18 (Steam's update check, nothing
