@@ -24,4 +24,8 @@ Up: [[phase-4-games]] · Status: **todo**
 - **Proposed by the owner, to study:** the user's own CD and DVD discs (e.g. PlayStation, PlayStation 2) copied by the
   console from a disc drive to its disk and played from there. Technique and law (a private copy, no protection
   circumvented, [[legal]]) researched with sources, and a question for the legal review.
+- **Asked on GitHub (issue 2, 2026-11-22):** playing straight from the disc, not only from a copy. Found (to confirm when
+  the step starts): RetroArch's "Load Disc" plays physical CDs with some cores (Beetle PSX, Beetle Saturn; others with
+  NonCommercial licences) and "Dump Disc" copies them as bin/cue, working better on Linux (the `sg` module may be
+  needed); PCSX2 has a disc mode (`-disc`) but advises copying the game first. Both ways to weigh with the owner.
 - **First:** research with sources, a demo of what the user sees ([[demo-before-code]]), the controller bindings.
