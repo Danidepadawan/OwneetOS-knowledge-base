@@ -21,7 +21,7 @@ owner's.
 |---|---|---|
 | 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Steps 1-3 done; point 4 rejected; point 5: the owner is downloading the free games proposed (2026-11-20); point 6 = step 4.8 (demo first) |
 | 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft: South Park: The Fractured But Whole, when the owner has it |
-| 17 | Web apps cannot be installed on the FrankenPC (no bundled Brave: older ISO) | Waits for the owner: A (bundle on the stick) or B (new ISO) |
+| 17 | Web apps cannot be installed on the FrankenPC (no bundled Brave: older ISO) | A built (owneet-base 0.0.84, bundle on OWNEETLOG): to test |
 | 16 | Dota 2 not in the console's library while it downloads | On OWNEETLOG (2026-11-22) with the merged packages (owneetd 0.26.0, owneet-frontend 0.39.2, owneet-base 0.0.83): to test |
 | 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
 
@@ -85,6 +85,10 @@ status is kept in their own notes; this table follows them.
    update stick also carries the bundle (Brave from `out/repo`), copied by `owneet-update` into
    `/usr/share/owneet/bundled/` on a tester system that has none; (B) the FrankenPC installed again from a new ISO
    (the console's disk erased). Also seen: the interface's version is not shown in Settings (my wrong instruction).
+   **Owner (2026-11-22): A.** Built: owneet-base 0.0.84 (`owneet-update` copies the stick's bundle into
+   `/usr/share/owneet/bundled/` when missing or different, at start-up or from Settings, even with no package to
+   install), `tools/update-extras` makes the bundle as the ISO build does (brave-bin, 194 MB), `tools/make-update-stick`
+   copies it. On OWNEETLOG: the first start installs 0.0.84, the second copies the bundle; then a web app.
 
 ## Decided, not built yet
 
