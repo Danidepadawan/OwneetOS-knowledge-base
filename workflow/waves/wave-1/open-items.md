@@ -21,8 +21,7 @@ owner's.
 |---|---|---|
 | 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Steps 1-3 done; point 4 rejected; point 5: the owner is downloading the free games proposed (2026-11-20); point 6 = step 4.8 (demo first) |
 | 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft: South Park: The Fractured But Whole, when the owner has it |
-| 17 | Web apps cannot be installed on the FrankenPC (no bundled Brave: older ISO) | A built (owneet-base 0.0.84, bundle on OWNEETLOG): to test |
-| 16 | Dota 2 not in the console's library while it downloads | On OWNEETLOG (2026-11-22) with the merged packages (owneetd 0.26.0, owneet-frontend 0.39.2, owneet-base 0.0.83): to test |
+| 18 | A Steam game that never started blocked the next game (Beneath a Steel Sky) | Built (owneet-frontend 0.39.3): to test |
 | 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
 
 ### Waits for the owner's decision
@@ -64,31 +63,15 @@ status is kept in their own notes; this table follows them.
 
 3. **Netflix / YouTube not silent behind the home screen**: left to Danidepadawan with the web apps
    (owner, 2026-11-09). [[step-4.5-windows-games-proton]]
-16. **Dota 2 not in the console's library while it downloads** (owner, 2026-11-21): Steam's library shows it, its download
-   has begun (not "preparing"), but the console's library does not list it. Test log on OWNEETLOG to read.
-   **From the logs already on the stick (`owneet-20261120-195103`) and the code:** owneetd sees the download (app 570,
-   queued, 1.18 of 114 GB); the interface found "93 games owned (400 apps in the licences)" without it. Dota 2 is in
-   package 0, the package every account gets (with Spacewar and Team Fortress 2), which the library leaves out on
-   purpose (decided 2026-10-14, [[steam-integration]]: `SteamOwned.cpp`); an installed game comes from Steam's
-   manifests, so Dota 2 should show once its download is complete. **Proposal to the owner:** a game of package 0 is
-   listed as soon as Steam downloads it or has it installed (never the others of package 0). No new log needed.
-   **Owner (2026-11-21): approved** (also Guide on the Videos, Music and Apps pages: back to the home page). Built:
-   owneet-frontend 0.39.1 (`SteamOwned.cpp`: a package-0 game with a manifest in one of Steam's libraries is listed).
-   **2026-11-22:** Arch's archive back; the merged interface previewed (Home, the Apps, Videos and Music pages: no
-   QML error); owneet-frontend 0.39.2 shows the Home prompt on those pages (Guide works there). On OWNEETLOG: to test.
-
-17. **Danidepadawan's web apps cannot be installed on the FrankenPC** (owner, 2026-11-22, first test of the merged
-   packages): every install (Netflix, YouTube, Spotify) fails at once. **From the log (`owneet-20261122-094913`):**
-   `owneet-apps-install@brave` exits 1 within 35 ms; the console has no `/usr/share/owneet/bundled/` (the offline
-   repository with Brave that the ISO build adds, step 5.0.0): the FrankenPC was installed from an ISO older than
-   phase 5, and the update stick brings packages only. Not a fault of the merged code. **Ways, for the owner:** (A) the
-   update stick also carries the bundle (Brave from `out/repo`), copied by `owneet-update` into
-   `/usr/share/owneet/bundled/` on a tester system that has none; (B) the FrankenPC installed again from a new ISO
-   (the console's disk erased). Also seen: the interface's version is not shown in Settings (my wrong instruction).
-   **Owner (2026-11-22): A.** Built: owneet-base 0.0.84 (`owneet-update` copies the stick's bundle into
-   `/usr/share/owneet/bundled/` when missing or different, at start-up or from Settings, even with no package to
-   install), `tools/update-extras` makes the bundle as the ISO build does (brave-bin, 194 MB), `tools/make-update-stick`
-   copies it. On OWNEETLOG: the first start installs 0.0.84, the second copies the bundle; then a web app.
+18. **Beneath a Steel Sky never started after Apex Legends** (owner, 2026-11-22): Dota 2 runs; Apex Legends does not start
+   (Steam says SteamOS does not support it: EA blocked Linux and the Steam Deck in October 2024, [[game-test-matrix]],
+   expected, for step 4.8); Beneath a Steel Sky (GOG, Linux) stayed on "Starting…". **From the log
+   (`owneet-20261122-183607`) and the code:** Apex was asked for at 19:00:37 and Steam never launched it (its window
+   "Starting…" until 19:12, no `app.started`); the interface starts one game at a time (`ApiObject`) and waits for the
+   one it started to end, which never came: Beneath a Steel Sky's start was ignored without a word (no "Starting through
+   owneetd" line). **Built:** owneet-frontend 0.39.3, a new game takes the place of a Steam game that has not started;
+   started games and games on disks as before. On OWNEETLOG: Apex, then Beneath a Steel Sky (its first start in the
+   Steam Runtime, step 3). Disk check: nothing new but Steam's sniper runtime (Dota 2) and the web apps' caches.
 
 ## Decided, not built yet
 

@@ -883,3 +883,30 @@ found here. Newest closings are added at the end.
 12. "Playing for" over an hour on the home screen ("1 h 5 min", "2 h"). [[step-4.2c-steam-without-its-interface]]
     **Owner (2026-11-18):** tested in the batch with 10 and 13: a game left open over an hour, then Guide.
     **Closed** (2026-11-20): the owner's test passed (a game open over an hour).
+16. **Dota 2 not in the console's library while it downloads** (owner, 2026-11-21): Steam's library shows it, its download
+   has begun (not "preparing"), but the console's library does not list it. Test log on OWNEETLOG to read.
+   **From the logs already on the stick (`owneet-20261120-195103`) and the code:** owneetd sees the download (app 570,
+   queued, 1.18 of 114 GB); the interface found "93 games owned (400 apps in the licences)" without it. Dota 2 is in
+   package 0, the package every account gets (with Spacewar and Team Fortress 2), which the library leaves out on
+   purpose (decided 2026-10-14, [[steam-integration]]: `SteamOwned.cpp`); an installed game comes from Steam's
+   manifests, so Dota 2 should show once its download is complete. **Proposal to the owner:** a game of package 0 is
+   listed as soon as Steam downloads it or has it installed (never the others of package 0). No new log needed.
+   **Owner (2026-11-21): approved** (also Guide on the Videos, Music and Apps pages: back to the home page). Built:
+   owneet-frontend 0.39.1 (`SteamOwned.cpp`: a package-0 game with a manifest in one of Steam's libraries is listed).
+   **2026-11-22:** Arch's archive back; the merged interface previewed (Home, the Apps, Videos and Music pages: no
+   QML error); owneet-frontend 0.39.2 shows the Home prompt on those pages (Guide works there). On OWNEETLOG: to test.
+   **Closed** (2026-11-22): the owner's test passed (Dota 2 in the library and running).
+17. **Danidepadawan's web apps cannot be installed on the FrankenPC** (owner, 2026-11-22, first test of the merged
+   packages): every install (Netflix, YouTube, Spotify) fails at once. **From the log (`owneet-20261122-094913`):**
+   `owneet-apps-install@brave` exits 1 within 35 ms; the console has no `/usr/share/owneet/bundled/` (the offline
+   repository with Brave that the ISO build adds, step 5.0.0): the FrankenPC was installed from an ISO older than
+   phase 5, and the update stick brings packages only. Not a fault of the merged code. **Ways, for the owner:** (A) the
+   update stick also carries the bundle (Brave from `out/repo`), copied by `owneet-update` into
+   `/usr/share/owneet/bundled/` on a tester system that has none; (B) the FrankenPC installed again from a new ISO
+   (the console's disk erased). Also seen: the interface's version is not shown in Settings (my wrong instruction).
+   **Owner (2026-11-22): A.** Built: owneet-base 0.0.84 (`owneet-update` copies the stick's bundle into
+   `/usr/share/owneet/bundled/` when missing or different, at start-up or from Settings, even with no package to
+   install), `tools/update-extras` makes the bundle as the ISO build does (brave-bin, 194 MB), `tools/make-update-stick`
+   copies it. On OWNEETLOG: the first start installs 0.0.84, the second copies the bundle; then a web app.
+   **Owner's test (2026-11-22): passed** (Netflix and Spotify installed and opened, log `owneet-20261122-183607`).
+   **Closed** (2026-11-22): the owner's test passed (web apps installed from the bundle).
