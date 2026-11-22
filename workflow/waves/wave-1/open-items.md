@@ -22,6 +22,8 @@ owner's.
 | 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Steps 1-3 done; point 4 rejected; point 5: the owner is downloading the free games proposed (2026-11-20); point 6 = step 4.8 (demo first) |
 | 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft: South Park: The Fractured But Whole, when the owner has it |
 | 19 | The interface stopped answering for about 40 s after Beneath a Steel Sky's failed start | Not reproduced; to watch (leave the stick in until the console is off) |
+| 20 | Paladins: the first text field did not get the keyboard's text | Which field: asked to the owner |
+| 21 | The Fractured But Whole: Ubisoft Connect stays after the game (Resume still shown) | Ways to weigh with the owner |
 | 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
 
 ### Waits for the owner's decision
@@ -72,6 +74,19 @@ status is kept in their own notes; this table follows them.
    not the PC, stopped answering for about 40 s; no error says why. Tried in the preview (a disk game that ends at once
    without a window): the interface kept answering. Not seen again in the next session. **To watch:** if it happens
    again, leave the stick in until the console is off (the screenshots show what was on screen).
+
+20. **Paladins: stuck at the first text field, the keyboard's text not read** (owner, 2026-11-22). Tyrian 2000 and South
+   Park: The Stick of Truth start (passed). **From the log (`owneet-20261122-200648`):** while Steam ran Paladins'
+   install script (20:08-20:10) the pointer was on and the console's keyboard opened by itself three times (a text field
+   clicked: 20:08:39, 20:08:49, 20:09:09), each time back to the window within 1-4 s, with no typing logged; the game
+   then ran (20:10:05-20:11:46; its interface is CoherentUI, Proton started `tabtip.exe`, Windows' touch keyboard), the
+   pointer on for 6 s, no keyboard asked for. No screenshot before 20:13 (they started late). Which field, and what
+   was done there: asked to the owner.
+21. **The Fractured But Whole: Ubisoft Connect stays after the game** (owner, 2026-11-22): the game quit, yet the
+   console still offered Resume / Resume with the pointer / Close. **From the log:** the game (`SouthPark_TFBW.exe`)
+   was quit at about 20:20:37; Ubisoft Connect (`upc.exe`, `UplayService.exe`, `UplayWebCore.exe`) stayed, so Steam
+   kept the game running (`steam:488790`) until the power-off at 20:21:41: the console shows what Steam says. Known on
+   SteamOS too; closing Ubisoft Connect at once may cut its cloud-save sync (ProtonDB). Ways to weigh with the owner.
 
 ## Decided, not built yet
 
