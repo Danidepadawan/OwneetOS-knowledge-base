@@ -22,8 +22,8 @@ owner's.
 | 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Steps 1-3 done; point 4 rejected; point 5: the owner is downloading the free games proposed (2026-11-20); point 6 = step 4.8 (demo first) |
 | 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft: South Park: The Fractured But Whole, when the owner has it |
 | 19 | The interface stopped answering for about 40 s after Beneath a Steel Sky's failed start | Not reproduced; to watch (leave the stick in until the console is off) |
-| 20 | Paladins: the first text field did not get the keyboard's text | Which field: asked to the owner |
-| 21 | The Fractured But Whole: Ubisoft Connect stays after the game (Resume still shown) | Ways to weigh with the owner |
+| 20 | Paladins: the first text field did not get the keyboard's text | In the game, no keyboard: try Y with the pointer, or Guide + X |
+| 21 | The Fractured But Whole: Ubisoft Connect stays after the game (Resume still shown) | Built (owneetd 0.26.2): to test, with RDR2, Jedi, Cyberpunk |
 | 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
 
 ### Waits for the owner's decision
@@ -82,11 +82,20 @@ status is kept in their own notes; this table follows them.
    then ran (20:10:05-20:11:46; its interface is CoherentUI, Proton started `tabtip.exe`, Windows' touch keyboard), the
    pointer on for 6 s, no keyboard asked for. No screenshot before 20:13 (they started late). Which field, and what
    was done there: asked to the owner.
+   **Owner (2026-11-22): the field was inside the game, and no keyboard showed.** The console's pointer opens its
+   keyboard by itself only when the pointer turns into the text "I" (an X cursor); Paladins draws its own cursor, so
+   the field is not seen. Ways with no code, to try first: Y with the pointer on (the console's keyboard, then the text
+   is typed into the game, [[controller-input-map]]); Steam's own keyboard (Guide + X, as Steam + X on SteamOS).
 21. **The Fractured But Whole: Ubisoft Connect stays after the game** (owner, 2026-11-22): the game quit, yet the
    console still offered Resume / Resume with the pointer / Close. **From the log:** the game (`SouthPark_TFBW.exe`)
    was quit at about 20:20:37; Ubisoft Connect (`upc.exe`, `UplayService.exe`, `UplayWebCore.exe`) stayed, so Steam
    kept the game running (`steam:488790`) until the power-off at 20:21:41: the console shows what Steam says. Known on
    SteamOS too; closing Ubisoft Connect at once may cut its cloud-save sync (ProtonDB). Ways to weigh with the owner.
+   **Owner (2026-11-22): try it.** Built: owneetd 0.26.2 closes the game when only the launcher is left (`upc.exe`,
+   `UplayService.exe`, `UplayWebCore.exe`, `UplayCrashReporter.exe`), the game's own programs having run with a window,
+   and nothing of it on screen, as Proton's proposed fix does (ValveSoftware/Proton pull request 10356, not merged:
+   cloud saves sync while a window shows). Go tests. On OWNEETLOG: The Fractured But Whole, then (owner) Red Dead
+   Redemption 2, STAR WARS Jedi: Fallen Order and Cyberpunk 2077 (its working beta) to check their launchers.
 
 ## Decided, not built yet
 
