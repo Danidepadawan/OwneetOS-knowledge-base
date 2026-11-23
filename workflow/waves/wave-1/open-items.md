@@ -188,6 +188,8 @@ status is kept in their own notes; this table follows them.
    screen is not known: test asked with Paladins' own Steam launch options
    `ENABLE_GAMESCOPE_WSI=1 GAMESCOPE_WAYLAND_DISPLAY=gamescope-0 %command%` (testers only, removed after). Only if it
    works: how to give it to every game without giving it to Steam itself (ways to weigh with the owner).
+   **Owner (2026-11-23): does not like this approach at the moment**; the WSI test is not done; (a) paused, Dota 2
+   (item 23) next.
 22. **Steam has network problems, the console does not** (owner, 2026-11-23, starting The Fractured But Whole for item
    21's test): the console is online, Steam says it is not. Logs to read (Steam's `console_log.txt`, `bootstrap_log.txt`).
    **Owner:** no message, only an exclamation mark on Steam's Wi-Fi icon, and not every time. Not found online for
