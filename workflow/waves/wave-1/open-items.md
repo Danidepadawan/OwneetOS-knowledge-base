@@ -112,6 +112,10 @@ never here.
    **Owner (2026-11-23):** (A) the option does not exist in the Steam the console shows (my claim was not checked: it is
    in Steam's desktop interface, reported missing from the controller interface on Steam Deck too); A parked. (B) go:
    revised demo being made.
+   **Revised demo made (2026-11-23):** `design/demos/4.2c-steam-shaders.html` (code `87d192e`): real numbers with the
+   percentage, the time left, a long-wait line, X "Start now", B hides. Waits for the owner's approval; then X on this
+   screen goes into [[controller-input-map]] before any code, and how owneetd starts the game at once (as Steam's Skip)
+   is checked first.
 
 ## Decided, not built yet
 
