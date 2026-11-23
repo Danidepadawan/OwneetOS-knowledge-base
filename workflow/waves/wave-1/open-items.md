@@ -177,6 +177,8 @@ status is kept in their own notes; this table follows them.
    time; only two screenshots in the session.) Next idea, hypothesis to research before any build: on SteamOS the games
    draw through gamescope's own Vulkan layer (WSI, reached on gamescope's Wayland socket), here not, because Steam (and
    so its games) gets no `GAMESCOPE_WAYLAND_DISPLAY`: the same root suspected for Steam's keyboard (b).
+   **Owner (2026-11-23):** research it; **borderless window mode as the answer for the games that need it is not
+   approved**: the console must make exclusive full screen games come back.
 22. **Steam has network problems, the console does not** (owner, 2026-11-23, starting The Fractured But Whole for item
    21's test): the console is online, Steam says it is not. Logs to read (Steam's `console_log.txt`, `bootstrap_log.txt`).
    **Owner:** no message, only an exclamation mark on Steam's Wi-Fi icon, and not every time. Not found online for
