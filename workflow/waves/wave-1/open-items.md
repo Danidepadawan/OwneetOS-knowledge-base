@@ -20,7 +20,7 @@ owner's.
 | # | What | Where it stands |
 |---|---|---|
 | 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Steps 1-3 done; point 4 rejected; point 5: the owner is downloading the free games proposed (2026-11-20); point 6 = step 4.8 (demo first) |
-| 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft: South Park: The Fractured But Whole, when the owner has it |
+| 13 | Steam games with their publisher's launcher | Ubisoft (South Park) and Cyberpunk 2077 (beta 2_31_old) passed; RDR2 and Jedi to retest |
 
 ### Waits for the owner's decision
 
@@ -76,6 +76,10 @@ never here.
    the FrankenPC tells whether it still exists). Steps given to the owner: Steam → the game's properties → game
    versions and betas → `2_31_old`, then the game started from the console (REDlauncher, Play, quit). Saves made with a
    newer version may not open in the older one. (The Ubisoft test of this item passed: [[closed-items]] 21.)
+   **Owner's test (2026-11-23): Cyberpunk 2077 (beta `2_31_old`) works.** Log `owneet-20261123-161037`: install script
+   pointer off within 1 s (17:35:07-08), game 17:36:20-17:40:32, ended by itself (REDlauncher did not stay); disk check:
+   nothing new. Left before closing 13 (proposed): Red Dead Redemption 2 and STAR WARS Jedi: Fallen Order again, for
+   their launchers after the game and their install-script windows after owneetd 0.26.4-0.26.7.
    [[step-4.2c-steam-without-its-interface]]
 
 14. **Games: prevent, do not chase them one by one** (owner, 2026-11-18, serious): almost every game tested gives a
