@@ -1203,3 +1203,31 @@ found here. Newest closings are added at the end.
    **Owner (2026-11-23): way 1, a known limit of the game** (Dota 2 plays; its text fields with a controller close it,
    Valve's fault).
    **Closed** (2026-11-23): known limit, noted in [[game-test-matrix]].
+
+13. **Steam games with their publisher's launcher** (owner, 2026-11-18): EA (STAR WARS Jedi: Fallen Order) and Rockstar
+   (Red Dead Redemption 2) work (their tests in item 14); CD Projekt Red (Cyberpunk 2077): **dropped by the owner
+   (2026-11-20)**, a fault of NVIDIA's driver on that card, not of OwneetOS ([[closed-items]] 13a,
+   [[nvidia-turing-shader-compiler-crash-in-vkd3d-games]]); Ubisoft: South Park: The Fractured But Whole (in place of Assassin's Creed Unity, owner 2026-11-20), when the owner
+   has it.
+   Demo `4.2c-steam-shaders` dropped (owner, 2026-11-23): Steam's own shader page stays.
+   **Owner (2026-11-20):** South Park: The Stick of Truth instead of Assassin's Creed Unity? Checked: its Steam version
+   does not use Ubisoft Connect (Ubisoft's support and PCGamingWiki: only non-Steam copies need it), so it would not
+   test Ubisoft's launcher; South Park: The Fractured But Whole on Steam does use it. Answer given to the owner.
+   **Owner (2026-11-20):** The Fractured But Whole replaces Assassin's Creed Unity for the Ubisoft Connect test (a
+   Ubisoft account is needed).
+   **Owner (2026-11-23): close 13 and 14 as soon as possible; Cyberpunk 2077 through its beta.** Searched: the branch
+   reported to avoid NVIDIA's crash is named `2_31_old` (one user's report in vkd3d-proton issue 4450; Steam's list on
+   the FrankenPC tells whether it still exists). Steps given to the owner: Steam → the game's properties → game
+   versions and betas → `2_31_old`, then the game started from the console (REDlauncher, Play, quit). Saves made with a
+   newer version may not open in the older one. (The Ubisoft test of this item passed: [[closed-items]] 21.)
+   **Owner's test (2026-11-23): Cyberpunk 2077 (beta `2_31_old`) works.** Log `owneet-20261123-161037`: install script
+   pointer off within 1 s (17:35:07-08), game 17:36:20-17:40:32, ended by itself (REDlauncher did not stay); disk check:
+   nothing new. Left before closing 13 (proposed): Red Dead Redemption 2 and STAR WARS Jedi: Fallen Order again, for
+   their launchers after the game and their install-script windows after owneetd 0.26.4-0.26.7.
+   **Owner (2026-11-23):** both already installed: their installers' windows cannot be shown again; only the launchers
+   after the game are tested. (The install-script pointer rule ran at every Steam start since 0.26.4 without harm:
+   pointer off within 1 s each time; an installer's window that stays on screen keeps it on, as the unit test covers.)
+   [[step-4.2c-steam-without-its-interface]]
+   **Owner's test (2026-11-23): Red Dead Redemption 2 and STAR WARS Jedi: Fallen Order passed** (quit from the game's
+   menu, the console came home by itself; OWNEETLOG was not in, so no log: my instructions did not say to start with it).
+   **Closed** (2026-11-23): every publisher's launcher tested works (EA, Rockstar, CD Projekt Red with the beta, Ubisoft).
