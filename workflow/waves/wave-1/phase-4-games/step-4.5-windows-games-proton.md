@@ -235,6 +235,8 @@ Up: [[phase-4-games]] · Status: **done**
   Not asked yet: whether the game also reacts to the buttons pressed in the console's menu while it runs behind.
 - **Owner's test of 0.25.12 (FrankenPC, 2026-11-09 21:07; logs `out/test-logs/frankenpc-2026-11-09i`):** the A of "Resume"
   no longer reaches The Witcher 2; Guide to the home screen and back works.
+- **Video apps no longer silent (owner, 2026-11-23):** Netflix and YouTube play on behind the home screen (a feature:
+  music or a podcast while playing); only games go silent. owneet-base 0.0.86. The entry below is the earlier state.
 - **Silent behind the home screen, built (owner's choice 2026-11-09: games and video apps, music apps play on; owneetd
   0.25.13 and owneet-base 0.0.59, code `d5edd64`):** owneetd follows the audio server's playback streams; the process that
   plays a stream ("application.process.id") gives its app (its unit, Brave's main process for web apps, a Steam game's reaper

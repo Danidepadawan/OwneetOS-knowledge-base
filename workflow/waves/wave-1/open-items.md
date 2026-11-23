@@ -40,7 +40,6 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 3 | Netflix / YouTube not silent behind the home screen | Danidepadawan, with the web apps |
 
 ### Roadmap steps left before the first release
 
@@ -63,8 +62,6 @@ never here.
 
 ## The owner's reports, in detail
 
-3. **Netflix / YouTube not silent behind the home screen**: left to Danidepadawan with the web apps
-   (owner, 2026-11-09). [[step-4.5-windows-games-proton]]
 19. **The FrankenPC froze, inputs ignored** (owner, 2026-11-22, right after Apex's window and Beneath a Steel Sky's
    failed start): switched off by hand. The session's log on the stick stops at 19:35:18 (Steam's update check, nothing
    wrong before it); the whole journal of that boot comes with the next start with OWNEETLOG (`.previous`).

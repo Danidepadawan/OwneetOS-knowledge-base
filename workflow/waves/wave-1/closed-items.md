@@ -1105,3 +1105,10 @@ found here. Newest closings are added at the end.
    correct; Wine's focus switch changed nothing; gamescope's WSI not tried, owner); (b) Steam's keyboard typed nothing
    into a game (hypothesis: Steam without gamescope's Wayland); the console's keyboard (pointer + Y) works.
    **Closed** (2026-11-23): dropped by the owner.
+
+3. **Netflix / YouTube not silent behind the home screen**: left to Danidepadawan with the web apps
+   (owner, 2026-11-09). [[step-4.5-windows-games-proton]]
+   **Owner (2026-11-23): not a fault, a feature**: with the video apps playing on behind the home screen, a user can
+   listen to music or a podcast while playing. Built: owneet-base 0.0.86, the catalogue no longer marks Netflix and
+   YouTube `silentBehindHome` (games still go silent behind the home screen).
+   **Closed** (2026-11-23): decided by the owner.
