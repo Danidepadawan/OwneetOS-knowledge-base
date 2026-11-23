@@ -1186,3 +1186,20 @@ found here. Newest closings are added at the end.
    **Closed** (2026-11-23): the drops come from the FrankenPC's USB Realtek Wi-Fi adapter, not from the console; the
    later tests (The Fractured But Whole's cloud save too) went well (owner). Kept for other testers: turning Wi-Fi power
    saving off (`wifi.powersave = 2`) is the known remedy for Realtek beacon losses.
+
+24. **Dota 2 closes with "FATAL ERROR" as soon as a text field takes the focus** (owner, 2026-11-23; was in item 20, see
+   [[closed-items]] 20): "Unable to load layout file 'file://{resources}/layout/textinput/text_input_daisy.xml'" (Dota 2's
+   own controller text entry); with the console's pointer, a real mouse or Guide + X alike. Steam's check of its files
+   found nothing (the layout is missing from Dota 2 itself). Not seen on SteamOS, where Dota 2 is Verified (hypothesis:
+   there Steam gives its own keyboard; here Dota 2 falls back to its old one). **Owner (2026-11-23): go on with it.**
+   **Research (2026-11-23):** Dota 2's own fault, known to Valve since 2022: ValveSoftware/Dota2-Gameplay issue 3698
+   ("Unable to load layout file '…/textinput/text_input_daisy.xml'", with a controller connected, on Windows too, also
+   with the Create Lobby window or Steam Link), no reply from Valve, closed by a bot as "not planned" (2026-07-22). On
+   Steam Deck Dota 2 asks Steam for its keyboard instead (`steam://open/keyboard`, ValveSoftware/Dota-2 issue 2301),
+   so it does not reach the missing layout (hypothesis: it does so when Steam says it runs on a Steam Deck). The only
+   lever found is Steam's `-steamdeck`, tried on 2026-11-19 (Steam restarted itself twice and joined the
+   `steamdeck_stable` beta by itself) and set aside. Proposed to the owner: Dota 2's text fields as a known limit of the
+   game (it plays), or a new `-steamdeck` try.
+   **Owner (2026-11-23): way 1, a known limit of the game** (Dota 2 plays; its text fields with a controller close it,
+   Valve's fault).
+   **Closed** (2026-11-23): known limit, noted in [[game-test-matrix]].
