@@ -4,7 +4,7 @@ description: "Steam in the ISO, controller-only Steam, its screens shown automat
 area: games
 status: active
 decided: 2026-10-11
-updated: 2026-11-21
+updated: 2026-11-23
 legacy: "PROJECT_RULES.md §8 (Steam), §13 (2026-10-11, 2026-10-12)"
 tags: [decision, games, steam]
 ---
@@ -86,6 +86,10 @@ tags: [decision, games, steam]
   never moves it to a newer one by itself; if problems come after an update of the game, the
   console will then offer another Proton version (owner, 2026-10-18).
 - Steam stays in the ISO until [[optional-apps]] arrive (step 5.0): then it is downloaded when chosen.
+- **A publisher's launcher left after its game** (Ubisoft Connect; owner, 2026-11-22: try it; 2026-11-23: how): once
+  the game's own programs have ended and only the launcher is left, the console closes the game as "Close" does,
+  after the launcher's own window that follows the game (it may sync cloud saves) has come and gone; when no such
+  window comes, after a short limit (10 s). [[open-items]] 21.
 
 Technical design: [[owneetd-api-apps]], [[frontend-steam-local-files]]. Steps: [[step-4.1-steam-library]],
 [[step-4.2-steam-integration]].
@@ -114,3 +118,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-14 | Licence agreements at a game's first start: the console's window with a QR code of the official address and "press Left and then A to accept"; the console does not move Steam's selection. |
 | 2026-11-05 | The endless loading after B on Steam's home is left as it is for Wave 1, with "How to come back from Steam" as the way out; looked at again in Wave 2. |
 | 2026-11-21 | Package 0's games (given to every account: Dota 2, Team Fortress 2…) stay out of the library, except the ones Steam is downloading or has installed (a manifest in one of its libraries): Dota 2 was missing while it downloaded ([[open-items]] 16, owner). |
+| 2026-11-23 | A publisher's launcher left after its game is closed after its window following the game has come and gone, or after 10 s when none comes ([[open-items]] 21, owner). |

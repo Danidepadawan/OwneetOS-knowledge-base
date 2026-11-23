@@ -23,7 +23,7 @@ owner's.
 | 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft: South Park: The Fractured But Whole, when the owner has it |
 | 19 | The interface stopped answering for about 40 s after Beneath a Steel Sky's failed start | Not reproduced; to watch (leave the stick in until the console is off) |
 | 20 | Paladins: the first text field did not get the keyboard's text | Black screen with the pointer; Steam's keyboard ignored: to look into |
-| 21 | The Fractured But Whole: Ubisoft Connect stays after the game (Resume still shown) | Launches stuck at the install script: our fault (Xalia paused), fixed in owneetd 0.26.4, to test; closing the launcher after its after-game window: proposed |
+| 21 | The Fractured But Whole: Ubisoft Connect stays after the game (Resume still shown) | Launches stuck at the install script: our fault (Xalia paused), fixed; the launcher closed after its window following the game: owneetd 0.26.5 on OWNEETLOG, to test |
 | 22 | Steam has network problems, the console does not | The Wi-Fi (USB Realtek) drops often: a test with cable / Intel card, or power saving off: the owner's choice |
 | 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
 
@@ -136,7 +136,10 @@ status is kept in their own notes; this table follows them.
    Seen also: Ubisoft Connect's window comes 1 s **after** the game's end; owneetd 0.26.2's rule (close when nothing
    of it is on screen) would have closed it in that second, before the window: most likely why the cloud save failed
    at 09:41 (hypothesis). Proposed to the owner: close the launcher once its window after the game has come and gone,
-   or after a limit when none comes; then remove the switch.
+   or after a limit when none comes; then remove the switch. **Owner (2026-11-23): yes, fix first, then the test.**
+   Built: owneetd 0.26.5 ([[steam-integration]]); the switch line removed from OWNEETLOG's `owneet-debug.txt`. To test:
+   The Fractured But Whole played and quit (Ubisoft's window, then home by itself, the cloud save fine), then started
+   again at once (it must start).
 
 22. **Steam has network problems, the console does not** (owner, 2026-11-23, starting The Fractured But Whole for item
    21's test): the console is online, Steam says it is not. Logs to read (Steam's `console_log.txt`, `bootstrap_log.txt`).
