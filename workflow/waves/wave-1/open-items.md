@@ -114,7 +114,15 @@ status is kept in their own notes; this table follows them.
    **Owner's test (2026-11-23):** with Paladins in borderless window mode the return works (no black screen); back
    in full screen, black again, with or without the pointer. So the black screen is the game's exclusive full screen.
    **Owner's test (2026-11-23), Steam's keyboard in Dota 2's hero search:** writing showed a "FATAL ERROR" (Dota 2's
-   own window). OWNEETLOG in the FrankenPC: the owner stays a minute on the error for the screenshot; log to read.
+   own window). **From the log (`owneet-20261123-113756`):** the field was clicked with the console's pointer
+   (11:44:59), so the console's keyboard opened by itself, not Steam's; Dota 2's error window ("Error", 1428x82) was
+   already there when the console went back to the game (11:45:27, the pointer off because another window took the
+   screen): Dota 2 failed at the click, before any letter. Its text: "FATAL ERROR: Unable to load layout file
+   'file://{resources}/layout/textinput/text_input_daisy.xml'" (Dota 2's own controller text entry, the "daisy
+   wheel", missing from its files). Online: no report of this file. Hypothesis: Dota 2 asks Steam for its gamepad
+   keyboard (Steam in Big Picture), Steam cannot give it in this session, and Dota 2 falls back to its own layout,
+   which no longer exists: the same cause as Steam's keyboard in Paladins, to check. Test asked: Dota 2's field
+   clicked with a real mouse, then Steam's keyboard (Guide + X).
 22. **Steam has network problems, the console does not** (owner, 2026-11-23, starting The Fractured But Whole for item
    21's test): the console is online, Steam says it is not. Logs to read (Steam's `console_log.txt`, `bootstrap_log.txt`).
    **Owner:** no message, only an exclamation mark on Steam's Wi-Fi icon, and not every time. Not found online for
