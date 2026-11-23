@@ -114,15 +114,16 @@ status is kept in their own notes; this table follows them.
    **Owner's test (2026-11-23):** with Paladins in borderless window mode the return works (no black screen); back
    in full screen, black again, with or without the pointer. So the black screen is the game's exclusive full screen.
    **Owner's test (2026-11-23), Steam's keyboard in Dota 2's hero search:** writing showed a "FATAL ERROR" (Dota 2's
-   own window). **From the log (`owneet-20261123-113756`):** the field was clicked with the console's pointer
-   (11:44:59), so the console's keyboard opened by itself, not Steam's; Dota 2's error window ("Error", 1428x82) was
-   already there when the console went back to the game (11:45:27, the pointer off because another window took the
-   screen): Dota 2 failed at the click, before any letter. Its text: "FATAL ERROR: Unable to load layout file
+   own window), log `owneet-20261123-113756`: "FATAL ERROR: Unable to load layout file
    'file://{resources}/layout/textinput/text_input_daisy.xml'" (Dota 2's own controller text entry, the "daisy
-   wheel", missing from its files). Online: no report of this file. Hypothesis: Dota 2 asks Steam for its gamepad
-   keyboard (Steam in Big Picture), Steam cannot give it in this session, and Dota 2 falls back to its own layout,
-   which no longer exists: the same cause as Steam's keyboard in Paladins, to check. Test asked: Dota 2's field
-   clicked with a real mouse, then Steam's keyboard (Guide + X).
+   wheel"). My first reading (the error at the console pointer's click) was wrong: **owner:** it came after trying to
+   type with Steam's keyboard. **Repeated (`owneet-20261123-115817`):** Guide + X at 12:11:16 (Steam's chord layout
+   loaded), Dota 2's error at 12:11:18, and Steam marked Dota 2 "Files Corrupt" at the same second (content_log):
+   Dota 2 asked for its daisy-wheel layout, which it could not load from its files, and told Steam its files are
+   damaged. Online: no report of this file. Not known yet whether the file is really missing from this install (a
+   download problem) or from Dota 2 itself; Steam's check of the files tells. No screenshot from 12:08 to 12:11 (the
+   test log's screenshots paused while Dota 2 loaded: to watch). Test asked: Steam's "Verify integrity of game files"
+   for Dota 2, then Guide + X in the hero search again.
 22. **Steam has network problems, the console does not** (owner, 2026-11-23, starting The Fractured But Whole for item
    21's test): the console is online, Steam says it is not. Logs to read (Steam's `console_log.txt`, `bootstrap_log.txt`).
    **Owner:** no message, only an exclamation mark on Steam's Wi-Fi icon, and not every time. Not found online for
