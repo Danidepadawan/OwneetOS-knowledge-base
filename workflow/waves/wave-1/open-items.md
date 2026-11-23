@@ -24,6 +24,7 @@ owner's.
 | 19 | The interface stopped answering for about 40 s after Beneath a Steel Sky's failed start | Not reproduced; to watch (leave the stick in until the console is off) |
 | 20 | Paladins: the first text field did not get the keyboard's text | Black screen with the pointer; Steam's keyboard ignored: to look into |
 | 21 | The Fractured But Whole: Ubisoft Connect stays after the game (Resume still shown) | Closing works; cloud save failed (closed 1 s after the game); first launches stuck in the install script |
+| 22 | Steam has network problems, the console does not | Logs to read |
 | 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
 
 ### Waits for the owner's decision
@@ -115,6 +116,9 @@ status is kept in their own notes; this table follows them.
    (the launcher left alone after the game). On OWNEETLOG with the switch on (to remove after the test): The Fractured
    But Whole played and quit, Ubisoft Connect left to sync, then closed from the console: its log says when the sync
    ends, to close it on that event instead of at once.
+
+22. **Steam has network problems, the console does not** (owner, 2026-11-23, starting The Fractured But Whole for item
+   21's test): the console is online, Steam says it is not. Logs to read (Steam's `console_log.txt`, `bootstrap_log.txt`).
 
 ## Decided, not built yet
 
