@@ -23,7 +23,7 @@ owner's.
 | 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft: South Park: The Fractured But Whole, when the owner has it |
 | 19 | The interface stopped answering for about 40 s after Beneath a Steel Sky's failed start | Not reproduced; to watch (leave the stick in until the console is off) |
 | 20 | Paladins: the first text field did not get the keyboard's text | Black screen with the pointer; Steam's keyboard ignored: to look into |
-| 21 | The Fractured But Whole: Ubisoft Connect stays after the game (Resume still shown) | Closing works; cloud save failed (closed 1 s after the game); first launches stuck in the install script |
+| 21 | The Fractured But Whole: Ubisoft Connect stays after the game (Resume still shown) | Launches stuck at the install script: our fault (Xalia paused), fixed in owneetd 0.26.4, to test; closing the launcher after its after-game window: proposed |
 | 22 | Steam has network problems, the console does not | The Wi-Fi (USB Realtek) drops often: a test with cable / Intel card, or power saving off: the owner's choice |
 | 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
 
@@ -124,6 +124,19 @@ status is kept in their own notes; this table follows them.
    (the launcher left alone after the game). On OWNEETLOG with the switch on (to remove after the test): The Fractured
    But Whole played and quit, Ubisoft Connect left to sync, then closed from the console: its log says when the sync
    ends, to close it on that event instead of at once.
+   **Owner's test (2026-11-23, 10:45):** the first launch had to be closed from the console (the testers' switch left
+   Ubisoft Connect running, as meant); the second launch, right after, did not start ("NOT OK"). **From the log
+   (`owneet-20261123-104214`):** game played 10:47:12-10:48:47; Ubisoft Connect showed its window 10:48:48-10:49:05
+   (no cloud-save line in its log this time, no error), then no window: owneetd left it alone (switch), closed from
+   the console at 10:50:08. The second launch stuck at Steam's install script (10:50:22 until Steam closed at 10:52):
+   owneetd had paused Proton's Xalia for a script window gone within seconds, and the script does not end while Xalia
+   is paused; the same explains the stuck launches at 09:20 (16 minutes, ended 11 s after Xalia went on), 10:18 and
+   10:50: our fault ([[steam-install-script-stuck-with-xalia-paused]]). Built: owneetd 0.26.4 turns the
+   install script's pointer off (Xalia goes on) once none of its windows is on screen. On OWNEETLOG.
+   Seen also: Ubisoft Connect's window comes 1 s **after** the game's end; owneetd 0.26.2's rule (close when nothing
+   of it is on screen) would have closed it in that second, before the window: most likely why the cloud save failed
+   at 09:41 (hypothesis). Proposed to the owner: close the launcher once its window after the game has come and gone,
+   or after a limit when none comes; then remove the switch.
 
 22. **Steam has network problems, the console does not** (owner, 2026-11-23, starting The Fractured But Whole for item
    21's test): the console is online, Steam says it is not. Logs to read (Steam's `console_log.txt`, `bootstrap_log.txt`).
