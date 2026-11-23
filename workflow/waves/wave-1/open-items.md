@@ -23,7 +23,7 @@ owner's.
 | 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft: South Park: The Fractured But Whole, when the owner has it |
 | 19 | The interface stopped answering for about 40 s after Beneath a Steel Sky's failed start | Not reproduced; to watch (leave the stick in until the console is off) |
 | 22 | Steam has network problems, the console does not | The Wi-Fi (USB Realtek) drops often: a test with cable / Intel card, or power saving off: the owner's choice |
-| 23 | Dota 2: Steam's shader processing stays at 0% | Not stuck: 2.15 million pipelines, hours long; ideas proposed to the owner |
+| 23 | Dota 2: Steam's shader processing stays at 0% | Not stuck (2.15 million pipelines); owner: both ideas (background processing, shader demo built) |
 | 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
 
 ### Waits for the owner's decision
@@ -102,6 +102,8 @@ status is kept in their own notes; this table follows them.
    Steam's background processing while the console is idle; the approved shader demo (`4.2c-steam-shaders`, real
    numbers instead of 0%); Steam's undocumented `unShaderBackgroundProcessingThreads` not proposed (Valve's internal
    debug setting).
+   **Owner (2026-11-23): both** (Steam's background processing while idle, and the approved shader demo built), after
+   cleaning open-items of what moved to Wave 2.
 
 ## Decided, not built yet
 
