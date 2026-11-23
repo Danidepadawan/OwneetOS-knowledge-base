@@ -22,7 +22,6 @@ owner's.
 | 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Steps 1-3 done; point 4 rejected; point 5: the owner is downloading the free games proposed (2026-11-20); point 6 = step 4.8 (demo first) |
 | 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft: South Park: The Fractured But Whole, when the owner has it |
 | 19 | The interface stopped answering for about 40 s after Beneath a Steel Sky's failed start | Not reproduced; to watch (leave the stick in until the console is off) |
-| 20 | Paladins: the first text field did not get the keyboard's text | The name typed with the pointer + Y (works); left: black screen of exclusive full screen games (borderless avoids it), Steam's keyboard reaches no game: owner's choice which first |
 | 22 | Steam has network problems, the console does not | The Wi-Fi (USB Realtek) drops often: a test with cable / Intel card, or power saving off: the owner's choice |
 | 23 | Dota 2: Steam's shader processing stays at 0% | Not stuck: 2.15 million pipelines, hours long; ideas proposed to the owner |
 | 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
@@ -76,120 +75,6 @@ status is kept in their own notes; this table follows them.
    without a window): the interface kept answering. Not seen again in the next session. **To watch:** if it happens
    again, leave the stick in until the console is off (the screenshots show what was on screen).
 
-20. **Paladins: stuck at the first text field, the keyboard's text not read** (owner, 2026-11-22). Tyrian 2000 and South
-   Park: The Stick of Truth start (passed). **From the log (`owneet-20261122-200648`):** while Steam ran Paladins'
-   install script (20:08-20:10) the pointer was on and the console's keyboard opened by itself three times (a text field
-   clicked: 20:08:39, 20:08:49, 20:09:09), each time back to the window within 1-4 s, with no typing logged; the game
-   then ran (20:10:05-20:11:46; its interface is CoherentUI, Proton started `tabtip.exe`, Windows' touch keyboard), the
-   pointer on for 6 s, no keyboard asked for. No screenshot before 20:13 (they started late). Which field, and what
-   was done there: asked to the owner.
-   **Owner (2026-11-22): the field was inside the game, and no keyboard showed.** The console's pointer opens its
-   keyboard by itself only when the pointer turns into the text "I" (an X cursor); Paladins draws its own cursor, so
-   the field is not seen. Ways with no code, to try first: Y with the pointer on (the console's keyboard, then the text
-   is typed into the game, [[controller-input-map]]); Steam's own keyboard (Guide + X, as Steam + X on SteamOS).
-   **Owner's test (2026-11-23):** "Resume with the pointer" showed a black screen (09:38:41, the pointer on for
-   `steam:444090`); Steam's keyboard typed nothing into the field. Online: no report of this exact fault found
-   (ProtonDB, GamingOnLinux); other Proton games lose typed keys in text fields. Open: to look into (Paladins'
-   CoherentUI fields under Proton, the black screen with the pointer).
-   **From the screenshots (`owneet-20261123-091932`):** at 09:38:17 Steam's own keyboard was open over Paladins'
-   "Create your player name" field (the caret in it): Steam showed its keyboard, the game took no letter from it; at
-   09:38:51 (after Guide and "Resume with the pointer") the screen was black. Searched online: no report of this exact
-   fault; known causes elsewhere are keyboard layouts / input methods (`XMODIFIERS=`) and games that go black when they
-   lose the screen (fixed with borderless windowed mode). Nothing of the console touches the keys of a running game
-   (owneetd reads Guide only, no grab); not excluded: the session (gamescope's keyboard focus, the "it" layout,
-   Steam's XIM failing: "XOpenIM() failed, LANG = C.UTF-8"). Tests proposed to the owner: plain Resume with Steam's
-   keyboard, a physical USB keyboard (whether the game takes any key), the game in borderless windowed mode.
-   **Owner's test (2026-11-23, afternoon):** a physical USB keyboard types into the game; "Resume with the pointer"
-   shows a black screen, and the game stays black even after the pointer is turned off. **From the log
-   (`owneet-20261123-111322`):** Guide 11:20:45, back with the pointer 11:20:47, Guide 11:20:53, back without it
-   11:20:55, closed 11:21:06; no screenshot in that minute (one every ~40 s). Paladins runs in exclusive full screen:
-   at each leave and return DXVK logs "Restoring display mode" then "Setting display mode" (the game leaves and
-   retakes the screen); the pointer is not the cause (black without it too). Online: black screens after leaving a
-   full-screen game under Proton are reported for other games, worked around with borderless / windowed mode; none
-   for Paladins. **Steam's keyboard (hypothesis, to check):** in gamescope Steam types into games through
-   gamescope's private input-method protocol, reached on gamescope's Wayland socket; owneetd starts Steam without
-   `GAMESCOPE_WAYLAND_DISPLAY` on purpose ([[steam-integration]], 2026-10-11: with it Steam takes over what is on
-   screen), so Steam's keyboard may reach no game at all: a class problem, not Paladins'. Physical keys and the
-   console's own keyboard (virtual device) do reach games. Asked the owner: Paladins in borderless mode, and a black
-   screen left for a minute (screenshot and window list); Steam's keyboard in another game's text field.
-   **Owner's test (2026-11-23):** with Paladins in borderless window mode the return works (no black screen); back
-   in full screen, black again, with or without the pointer. So the black screen is the game's exclusive full screen.
-   **Owner's test (2026-11-23), Steam's keyboard in Dota 2's hero search:** writing showed a "FATAL ERROR" (Dota 2's
-   own window), log `owneet-20261123-113756`: "FATAL ERROR: Unable to load layout file
-   'file://{resources}/layout/textinput/text_input_daisy.xml'" (Dota 2's own controller text entry, the "daisy
-   wheel"). My first reading (the error at the console pointer's click) was wrong: **owner:** it came after trying to
-   type with Steam's keyboard. **Repeated (`owneet-20261123-115817`):** Guide + X at 12:11:16 (Steam's chord layout
-   loaded), Dota 2's error at 12:11:18, and Steam marked Dota 2 "Files Corrupt" at the same second (content_log):
-   Dota 2 asked for its daisy-wheel layout, which it could not load from its files, and told Steam its files are
-   damaged. Online: no report of this file. Not known yet whether the file is really missing from this install (a
-   download problem) or from Dota 2 itself; Steam's check of the files tells. No screenshot from 12:08 to 12:11 (the
-   test log's screenshots paused while Dota 2 loaded: to watch). Test asked: Steam's "Verify integrity of game files"
-   for Dota 2, then Guide + X in the hero search again.
-   **Owner's test (2026-11-23 13:06, `owneet-20261123-130602`): nothing changed.** Steam verified Dota 2 (13:07-13:14,
-   "No Error": its files are whole, the layout is missing from Dota 2 itself). The error came at 13:19:27, **in the same
-   instant as the console pointer's click on a text field** (owneetd: "pointer: the keyboard", reason field), before
-   any letter; the screenshot at 13:19:17 shows no Steam keyboard. Steam's "chord" layout loads at every Guide press,
-   so it does not tell Guide + X. So Dota 2 fails as soon as one of its text fields takes the focus while the
-   controller is in use: it opens its own controller text entry, whose layout it no longer has (Dota 2's own fault,
-   hypothesis on what makes it choose that entry: Steam in Big Picture). Online: nothing on this file. Dota 2 cannot
-   tell whether Steam's keyboard types. Asked the owner: what clicked the field at 12:11 (the pointer, a mouse, or
-   nothing: Guide + X alone); the console's keyboard in Paladins in borderless mode.
-   **Owner (2026-11-23):** all three give the same error (the console's pointer, a mouse, Guide + X alone): Steam's
-   keyboard asked for in Dota 2 also ends in Dota 2's own missing text entry. Next: the console's keyboard in Paladins
-   (borderless), first.
-   **Owner's test (2026-11-23):** no black screen (borderless), but the name cannot be entered with the console's
-   keyboard; only with a physical keyboard plugged in. The console's keyboard did not open by itself at the field's
-   click (Paladins draws its own cursor, the pointer never turns into the text "I"). **With Y after clicking the field,
-   the console's keyboard opens and the name is typed into Paladins (owner, 2026-11-23): it works.**
-   Left: (a) the black screen of games in exclusive full screen when the console comes back to them (borderless avoids
-   it; to study whether the console can prevent it for every game); (b) Steam's keyboard reaches no game in this session
-   (Paladins: shown, nothing typed; Dota 2: hands it to its own missing text entry): hypothesis, Steam without
-   gamescope's Wayland. Which first: the owner's choice. **Owner:** (a) first. (In the test before, "the field gone"
-   meant Paladins' name window had closed.)
-   **(a), research (2026-11-23):** Valve's Wine (`dlls/winex11.drv`, branch bleeding-edge) under gamescope (window
-   manager "steamcompmgr") deactivates the game when its window loses the focus (`focus_out`: foreground to the
-   desktop; a game in exclusive full screen then leaves it: DXVK "Restoring display mode"), and ignores FocusIn for
-   almost every game (`X11DRV_FocusIn` returns early with `use_take_focus`; "Gamescope doesn't support WM_TAKE_FOCUS");
-   it takes the window back to the front from the root's `_NET_ACTIVE_WINDOW`. Paladins did take the screen back
-   (DXVK "Setting display mode" at each return), yet showed black: why is not known. The test log's window list did not
-   show `_NET_ACTIVE_WINDOW`, `WM_STATE` or hidden windows. Built: owneetd 0.26.6 (owneet-xprobe shows them), on
-   OWNEETLOG. Test asked: Paladins back in full screen, Guide, Resume (no pointer), a minute on the black screen.
-   Also seen: owneetd tags Paladins' windows with its own app id, gamescope logs "appid clash was 444090 now ..."
-   (owneetd's choice, [[owneetd-design]]); whether that matters here is open.
-   **Owner's test (2026-11-23 14:49, owneetd 0.26.6, `owneet-20261123-144334`):** during the black screen (14:51:36
-   on) Paladins' window was mapped, on top, focused (`GAMESCOPE_FOCUSED_WINDOW`, `_NET_ACTIVE_WINDOW`) and composited
-   (`FOCUSED_APP_GFX`): the console and gamescope did their part; the game draws black after leaving and retaking its
-   full screen. Valve's Wine: `focus_out` makes the desktop the foreground under gamescope (`ignore_focus_hack`,
-   unless `WINE_IGNORE_FOCUS_HACK` is set; then only when gamescope does not list `_NET_ACTIVE_WINDOW` as supported);
-   its comment "Gamescope will restore window when attempting to iconify it", skipped for two games only. Hypothesis:
-   Paladins, iconified and restored at once, stays black. Proposed to the owner: (A) testers' switch for Steam games
-   with `WINE_IGNORE_FOCUS_HACK=0` (and the probe showing `_NET_SUPPORTED`); (B) if not enough, the home shown over
-   the game without taking its focus, as SteamOS's Steam menu (big change: the game's controller input while the home
-   is shown, [[controller-input-map]] guard to weigh; demo first).
-   **Owner (2026-11-23): A; B rejected** ("too drastic, it would break everything else"). Built: owneetd 0.26.7, testers'
-   switch `owneet.debug.wine_focus_hack=off` (Steam's games started with `WINE_IGNORE_FOCUS_HACK=0`; to remove after the
-   test) and the probe shows `_NET_SUPPORTED`; on OWNEETLOG with the switch on. Test: Paladins in full screen, Guide,
-   Resume, a minute if black.
-   **Owner's test (2026-11-23 15:23, `owneet-20261123-152245`): nothing changed** (switch on: "Wine's gamescope focus
-   handling off" in the journal). gamescope lists `_NET_ACTIVE_WINDOW` in `_NET_SUPPORTED`, so with the switch Wine
-   follows gamescope's active window, which becomes the console's when the home is in front: the game is deactivated
-   either way while the home takes the screen. Switch removed from OWNEETLOG. (Paladins' Proton log not copied this
-   time; only two screenshots in the session.) Next idea, hypothesis to research before any build: on SteamOS the games
-   draw through gamescope's own Vulkan layer (WSI, reached on gamescope's Wayland socket), here not, because Steam (and
-   so its games) gets no `GAMESCOPE_WAYLAND_DISPLAY`: the same root suspected for Steam's keyboard (b).
-   **Owner (2026-11-23):** research it; **borderless window mode as the answer for the games that need it is not
-   approved**: the console must make exclusive full screen games come back.
-   **Research (2026-11-23), gamescope's WSI layer** (`layer/VkLayer_FROG_gamescope_wsi.cpp` and its json, gamescope
-   master): the Vulkan loader turns it on with `ENABLE_GAMESCOPE_WSI=1`; the layer itself works only when
-   `GAMESCOPE_WAYLAND_DISPLAY` names gamescope's socket (no default; `isRunningUnderGamescope`), and then presents a
-   game's X11 window straight to gamescope ("XWayland Bypass", `gamescope_swapchain` protocol) instead of through
-   Xwayland. Steam's games here have no `GAMESCOPE_WAYLAND_DISPLAY` (owneetd removes it from Steam on purpose,
-   2026-10-11), so the layer is off for them. Our socket: `gamescope-0` (journal). Whether the bypass ends the black
-   screen is not known: test asked with Paladins' own Steam launch options
-   `ENABLE_GAMESCOPE_WSI=1 GAMESCOPE_WAYLAND_DISPLAY=gamescope-0 %command%` (testers only, removed after). Only if it
-   works: how to give it to every game without giving it to Steam itself (ways to weigh with the owner).
-   **Owner (2026-11-23): does not like this approach at the moment**; the WSI test is not done; (a) paused, Dota 2
-   (item 23) next.
 22. **Steam has network problems, the console does not** (owner, 2026-11-23, starting The Fractured But Whole for item
    21's test): the console is online, Steam says it is not. Logs to read (Steam's `console_log.txt`, `bootstrap_log.txt`).
    **Owner:** no message, only an exclamation mark on Steam's Wi-Fi icon, and not every time. Not found online for
