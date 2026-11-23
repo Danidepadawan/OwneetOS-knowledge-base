@@ -179,6 +179,15 @@ status is kept in their own notes; this table follows them.
    so its games) gets no `GAMESCOPE_WAYLAND_DISPLAY`: the same root suspected for Steam's keyboard (b).
    **Owner (2026-11-23):** research it; **borderless window mode as the answer for the games that need it is not
    approved**: the console must make exclusive full screen games come back.
+   **Research (2026-11-23), gamescope's WSI layer** (`layer/VkLayer_FROG_gamescope_wsi.cpp` and its json, gamescope
+   master): the Vulkan loader turns it on with `ENABLE_GAMESCOPE_WSI=1`; the layer itself works only when
+   `GAMESCOPE_WAYLAND_DISPLAY` names gamescope's socket (no default; `isRunningUnderGamescope`), and then presents a
+   game's X11 window straight to gamescope ("XWayland Bypass", `gamescope_swapchain` protocol) instead of through
+   Xwayland. Steam's games here have no `GAMESCOPE_WAYLAND_DISPLAY` (owneetd removes it from Steam on purpose,
+   2026-10-11), so the layer is off for them. Our socket: `gamescope-0` (journal). Whether the bypass ends the black
+   screen is not known: test asked with Paladins' own Steam launch options
+   `ENABLE_GAMESCOPE_WSI=1 GAMESCOPE_WAYLAND_DISPLAY=gamescope-0 %command%` (testers only, removed after). Only if it
+   works: how to give it to every game without giving it to Steam itself (ways to weigh with the owner).
 22. **Steam has network problems, the console does not** (owner, 2026-11-23, starting The Fractured But Whole for item
    21's test): the console is online, Steam says it is not. Logs to read (Steam's `console_log.txt`, `bootstrap_log.txt`).
    **Owner:** no message, only an exclamation mark on Steam's Wi-Fi icon, and not every time. Not found online for
