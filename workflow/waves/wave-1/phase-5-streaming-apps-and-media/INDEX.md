@@ -11,7 +11,7 @@ tags: [index]
 
 - [[phase-5-streaming-apps-and-media]] — Scope notes of Phase 5 — Streaming apps and media; the steps are in this folder's INDEX.
 - [[step-5.0.0-optional-web-apps]] — Netflix, YouTube and Spotify installed and removed from the home screen's Apps grid; Brave, behind them and never shown, is installed from package files inside the ISO.
-- [[step-5.0.1-optional-gaming-apps]] — The gaming programs as optional apps: Steam (with its 32-bit drivers), later Epic, GOG and RetroArch, installed and removed like the web apps of 5.0.0.
+- [[step-5.0.1-optional-gaming-apps]] — The gaming programs as optional apps: Steam (with its 32-bit drivers), later Epic and GOG (Wave 2), RetroArch with step 4.9, installed and removed like the web apps of 5.0.0.
 
 ## Steps
 
