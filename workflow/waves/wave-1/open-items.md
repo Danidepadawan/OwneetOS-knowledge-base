@@ -30,7 +30,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 25 | A Steam download's progress not updated in the console, again | Steam's shader pre-cache download shown as "Preparing…" by design (item 8): showing its progress proposed |
+| 25 | A Steam download's progress not updated in the console, again | Built: owneetd 0.26.8 (shader pre-cache download with its progress), owneet-base 0.0.87; on OWNEETLOG, to test |
 
 ### Others
 
@@ -71,6 +71,13 @@ never here.
    `steamapps/shadercache/N/downloads/`, so the console could show it as a download (bytes on disk against the size).
    Proposed to the owner. Also seen: the test log's copy of Steam's `content_log.txt` was cut at 900 KB by the power-off
    (`cp -u` terminated), so this session's download lines are lost: the test log to be fixed.
+   **Owner (2026-11-23): go.** Built: owneetd 0.26.8, a new game's shader pre-cache download is a "downloading" card
+   (the look of item 8's approved download; no other change): its size from "update started … stage D/T", its bytes
+   from `steamapps/shadercache/APPID/downloads` on the library disks, measured every 3 s; without that size, or for an
+   installed game, as before ("Preparing…" / not listed); after it, "Preparing…" until the game's own download. Test
+   `TestSteamShaderPreCacheDownload`. owneet-base 0.0.87: the test log copies whole files only (written as `.part`,
+   then renamed). On OWNEETLOG. The owner stopped THE FINALS' download on purpose: at the next start it resumes,
+   to see the progress.
 
 ## Decided, not built yet
 
