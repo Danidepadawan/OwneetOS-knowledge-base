@@ -48,7 +48,7 @@ owner's.
 |---|---|---|
 | [[step-4.8-games-that-cannot-run\|4.8]] | Games that cannot run, said honestly (demo first) | todo |
 | [[step-4.9-retro-games-with-retroarch\|4.9]] | Retro games with RetroArch (owner, 2026-11-21: after the games' tests, before the legal review) | todo |
-| [[step-5.0.1-optional-gaming-apps\|5.0.1]] | Gaming programs as optional apps (Steam, later Epic, GOG, RetroArch): left to the owner by Danidepadawan (2026-11-21) | todo |
+| [[step-5.0.1-optional-gaming-apps\|5.0.1]] | Gaming programs as optional apps (Steam): left to the owner by Danidepadawan (2026-11-21) | todo |
 | [[step-7.3-user-guide\|7.3]] | User guide | in-progress |
 | [[step-7.4-hardware-testing-and-v0.1.0\|7.4]] | Hardware testing and v0.1.0 | todo |
 | [[step-7.5-legal-review-before-the-public-launch\|7.5]] | Legal review before the public launch | in-progress |
@@ -58,8 +58,8 @@ owner's.
 | [[step-7.10-donations-choice\|7.10]] | The choice on donations | needs-decision |
 | [[step-7.11-sourceforge-project\|7.11]] | SourceForge project | todo |
 
-Not before the release: [[step-1.7-xbox-wireless-dongle-xone|1.7]] and [[step-6.10-waking-the-console-with-the-controller|6.10]] (moved to Wave 2). The steps'
-status is kept in their own notes; this table follows them.
+The steps' status is kept in their own notes; this table follows them. What moved to the next wave is in [[wave-2]],
+never here.
 
 ## The owner's reports, in detail
 
@@ -220,7 +220,7 @@ status is kept in their own notes; this table follows them.
    08:59:39; the recently played follow at once; Batman: Arkham Knight too, 09:20-09:22). Proton's logs now 5 MB for
    ELDEN RING (was 155 MB), one per start. Seen: at power-off Steam took over 20 s to close and was ended by the
    console ("result=timeout", 09:22:25): Steam killed then checks its files at the next start; to watch. Disk check:
-   nothing new. **Next: umu (step 2).** RetroArch: moved to Wave 2 (owner).
+   nothing new. **Next: umu (step 2).** RetroArch: its own step, [[step-4.9-retro-games-with-retroarch|4.9]] (owner, 2026-11-21).
    **Step 2 built (2026-11-19):** protonfixes (in GE-Proton) carries the umu database (`protonfixes/umu-database.csv`,
    seen on the FrankenPC's disk listing in GE-Proton11-9) and needs no internet, but umu passes `GAMEID` on as the id, so
    the console looks the game up itself: owneet-frontend 0.38.41 reads a GOG game's product id (`goggame-<id>.info`,
