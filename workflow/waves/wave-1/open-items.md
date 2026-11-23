@@ -119,6 +119,9 @@ status is kept in their own notes; this table follows them.
 
 22. **Steam has network problems, the console does not** (owner, 2026-11-23, starting The Fractured But Whole for item
    21's test): the console is online, Steam says it is not. Logs to read (Steam's `console_log.txt`, `bootstrap_log.txt`).
+   **Owner:** no message, only an exclamation mark on Steam's Wi-Fi icon, and not every time. Not found online for
+   this exact sign (Steam's network indicator outside SteamOS). To read in the next log: NetworkManager's connectivity
+   and Wi-Fi in the journal at those moments, Steam's own logs.
 
 ## Decided, not built yet
 
