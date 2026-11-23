@@ -22,8 +22,8 @@ owner's.
 | 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Steps 1-3 done; point 4 rejected; point 5: the owner is downloading the free games proposed (2026-11-20); point 6 = step 4.8 (demo first) |
 | 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft: South Park: The Fractured But Whole, when the owner has it |
 | 19 | The interface stopped answering for about 40 s after Beneath a Steel Sky's failed start | Not reproduced; to watch (leave the stick in until the console is off) |
-| 20 | Paladins: the first text field did not get the keyboard's text | In the game, no keyboard: try Y with the pointer, or Guide + X |
-| 21 | The Fractured But Whole: Ubisoft Connect stays after the game (Resume still shown) | Built (owneetd 0.26.2): to test, with RDR2, Jedi, Cyberpunk |
+| 20 | Paladins: the first text field did not get the keyboard's text | Black screen with the pointer; Steam's keyboard ignored: to look into |
+| 21 | The Fractured But Whole: Ubisoft Connect stays after the game (Resume still shown) | Closing works; cloud save failed (closed 1 s after the game); first launches stuck in the install script |
 | 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
 
 ### Waits for the owner's decision
@@ -86,6 +86,10 @@ status is kept in their own notes; this table follows them.
    keyboard by itself only when the pointer turns into the text "I" (an X cursor); Paladins draws its own cursor, so
    the field is not seen. Ways with no code, to try first: Y with the pointer on (the console's keyboard, then the text
    is typed into the game, [[controller-input-map]]); Steam's own keyboard (Guide + X, as Steam + X on SteamOS).
+   **Owner's test (2026-11-23):** "Resume with the pointer" showed a black screen (09:38:41, the pointer on for
+   `steam:444090`); Steam's keyboard typed nothing into the field. Online: no report of this exact fault found
+   (ProtonDB, GamingOnLinux); other Proton games lose typed keys in text fields. Open: to look into (Paladins'
+   CoherentUI fields under Proton, the black screen with the pointer).
 21. **The Fractured But Whole: Ubisoft Connect stays after the game** (owner, 2026-11-22): the game quit, yet the
    console still offered Resume / Resume with the pointer / Close. **From the log:** the game (`SouthPark_TFBW.exe`)
    was quit at about 20:20:37; Ubisoft Connect (`upc.exe`, `UplayService.exe`, `UplayWebCore.exe`) stayed, so Steam
@@ -96,6 +100,15 @@ status is kept in their own notes; this table follows them.
    and nothing of it on screen, as Proton's proposed fix does (ValveSoftware/Proton pull request 10356, not merged:
    cloud saves sync while a window shows). Go tests. On OWNEETLOG: The Fractured But Whole, then (owner) Red Dead
    Redemption 2, STAR WARS Jedi: Fallen Order and Cyberpunk 2077 (its working beta) to check their launchers.
+   **Owner's test (2026-11-23):** the first two launches did not start; the third did; quitting closed everything
+   and the console came home, **but Ubisoft's cloud save failed**. **From the log (`owneet-20261123-091932`):** first
+   launch 09:19:59: Steam ran the game's install script (4 steps) from 09:20:15; its window appeared at 09:20:27 (the
+   pointer on) and was gone by 09:23 (only Steam's home mapped); the second launch, from Steam's page at 09:29, waited
+   on the same script ("Starting…"); it ended at 09:37:09, after Paladins was started; the third launch's script took
+   1 s and the game ran from 09:39:28. Why the script waited 16 minutes is not in the logs (Steam's install-script log
+   is not copied: [[open-items]] 13 (b), not approved). The game was quit at about 09:41:49 and owneetd closed Ubisoft
+   Connect at 09:41:50, one second later: most likely before its cloud sync (hypothesis; when the failure message
+   appeared: asked to the owner).
 
 ## Decided, not built yet
 
