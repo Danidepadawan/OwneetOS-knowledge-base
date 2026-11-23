@@ -24,7 +24,7 @@ owner's.
 | 19 | The interface stopped answering for about 40 s after Beneath a Steel Sky's failed start | Not reproduced; to watch (leave the stick in until the console is off) |
 | 20 | Paladins: the first text field did not get the keyboard's text | The name typed with the pointer + Y (works); left: black screen of exclusive full screen games (borderless avoids it), Steam's keyboard reaches no game: owner's choice which first |
 | 22 | Steam has network problems, the console does not | The Wi-Fi (USB Realtek) drops often: a test with cable / Intel card, or power saving off: the owner's choice |
-| 23 | Dota 2: Steam's shader processing stays at 0% | New (owner, 2026-11-23): logs to read |
+| 23 | Dota 2: Steam's shader processing stays at 0% | Not stuck: 2.15 million pipelines, hours long; ideas proposed to the owner |
 | 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
 
 ### Waits for the owner's decision
@@ -208,6 +208,15 @@ status is kept in their own notes; this table follows them.
 
 23. **Dota 2: Steam's shader processing stays at 0%** (owner, 2026-11-23): at every start the owner skips it, because
    even after 10 minutes the percentage stays at 0%. To read in the logs (Steam's `shader_log.txt`).
+   **From Steam's `shader_log.txt` (2026-11-23):** not stuck. Steam replays Dota 2's Vulkan pipeline cache
+   (`fossilize_replay`, `shadercache/570/fozpipelinesv6`): about **2.15 million** pipelines; 11:39-11:44 it reached
+   4 255, 12:06-12:09 12 538, 13:15-13:17 again (about 15-100 a second): a few hours in all, so the percentage rounds to
+   0%. Each skip ends the replay ("exit code -10 … Considering it killed"); whether the work done is kept is not clear.
+   The replay ran only at launches, not while the console was idle. Steam's own process, not the console's; reported
+   elsewhere as hours long. Skipping is harmless (the game prepares its shaders while playing). Ideas for the owner:
+   Steam's background processing while the console is idle; the approved shader demo (`4.2c-steam-shaders`, real
+   numbers instead of 0%); Steam's undocumented `unShaderBackgroundProcessingThreads` not proposed (Valve's internal
+   debug setting).
 
 ## Decided, not built yet
 
