@@ -1,7 +1,7 @@
 ---
 type: known-solution
 description: "A Steam game stays at \"Starting…\" for minutes (Steam's install script never ends) while owneetd keeps Proton's Xalia paused for an install-script window already gone."
-status: open
+status: solved
 seen: 2026-11-23
 updated: 2026-11-23
 tags: [known-solution, steam, proton, xalia, pointer]
@@ -37,8 +37,8 @@ not start or stop Xalia; read 2026-11-23): hypothesis.
 owneetd 0.26.4: the pointer turned on for an install script also goes off as soon as no window of
 the script is on screen (Xalia's own windows not counted), even while its programs run; Xalia then
 goes on. A new window of the script turns it on again. Windows on screen come from gamescope's X
-server (mapped top-level windows, `_NET_WM_PID` and X-Resource), as owneetd tags them. To confirm on
-the FrankenPC (status open until then).
+server (mapped top-level windows, `_NET_WM_PID` and X-Resource), as owneetd tags them. Confirmed on
+the FrankenPC on 2026-11-23 (owneetd 0.26.5): two launches in a row, the pointer off within 1 s each time.
 
 ## How we found it
 

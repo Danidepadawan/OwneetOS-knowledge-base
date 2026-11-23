@@ -22,8 +22,8 @@ owner's.
 | 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Steps 1-3 done; point 4 rejected; point 5: the owner is downloading the free games proposed (2026-11-20); point 6 = step 4.8 (demo first) |
 | 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft: South Park: The Fractured But Whole, when the owner has it |
 | 19 | The interface stopped answering for about 40 s after Beneath a Steel Sky's failed start | Not reproduced; to watch (leave the stick in until the console is off) |
-| 20 | Paladins: the first text field did not get the keyboard's text | Black screen with the pointer; Steam's keyboard ignored: to look into |
-| 21 | The Fractured But Whole: Ubisoft Connect stays after the game (Resume still shown) | Launches stuck at the install script: our fault (Xalia paused), fixed; the launcher closed after its window following the game: owneetd 0.26.5 on OWNEETLOG, to test |
+| 20 | Paladins: the first text field did not get the keyboard's text | Black screen on every return (exclusive full screen; not the pointer); Steam's keyboard reaches no game (hypothesis: Steam without gamescope's Wayland): tests asked |
+| 21 | The Fractured But Whole: Ubisoft Connect stays after the game (Resume still shown) | Both fixed in owneetd 0.26.5 and passed (2026-11-23): two launches in a row, launcher closed after its window; to close: owner |
 | 22 | Steam has network problems, the console does not | The Wi-Fi (USB Realtek) drops often: a test with cable / Intel card, or power saving off: the owner's choice |
 | 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
 
@@ -99,6 +99,19 @@ status is kept in their own notes; this table follows them.
    (owneetd reads Guide only, no grab); not excluded: the session (gamescope's keyboard focus, the "it" layout,
    Steam's XIM failing: "XOpenIM() failed, LANG = C.UTF-8"). Tests proposed to the owner: plain Resume with Steam's
    keyboard, a physical USB keyboard (whether the game takes any key), the game in borderless windowed mode.
+   **Owner's test (2026-11-23, afternoon):** a physical USB keyboard types into the game; "Resume with the pointer"
+   shows a black screen, and the game stays black even after the pointer is turned off. **From the log
+   (`owneet-20261123-111322`):** Guide 11:20:45, back with the pointer 11:20:47, Guide 11:20:53, back without it
+   11:20:55, closed 11:21:06; no screenshot in that minute (one every ~40 s). Paladins runs in exclusive full screen:
+   at each leave and return DXVK logs "Restoring display mode" then "Setting display mode" (the game leaves and
+   retakes the screen); the pointer is not the cause (black without it too). Online: black screens after leaving a
+   full-screen game under Proton are reported for other games, worked around with borderless / windowed mode; none
+   for Paladins. **Steam's keyboard (hypothesis, to check):** in gamescope Steam types into games through
+   gamescope's private input-method protocol, reached on gamescope's Wayland socket; owneetd starts Steam without
+   `GAMESCOPE_WAYLAND_DISPLAY` on purpose ([[steam-integration]], 2026-10-11: with it Steam takes over what is on
+   screen), so Steam's keyboard may reach no game at all: a class problem, not Paladins'. Physical keys and the
+   console's own keyboard (virtual device) do reach games. Asked the owner: Paladins in borderless mode, and a black
+   screen left for a minute (screenshot and window list); Steam's keyboard in another game's text field.
 21. **The Fractured But Whole: Ubisoft Connect stays after the game** (owner, 2026-11-22): the game quit, yet the
    console still offered Resume / Resume with the pointer / Close. **From the log:** the game (`SouthPark_TFBW.exe`)
    was quit at about 20:20:37; Ubisoft Connect (`upc.exe`, `UplayService.exe`, `UplayWebCore.exe`) stayed, so Steam
@@ -140,6 +153,11 @@ status is kept in their own notes; this table follows them.
    Built: owneetd 0.26.5 ([[steam-integration]]); the switch line removed from OWNEETLOG's `owneet-debug.txt`. To test:
    The Fractured But Whole played and quit (Ubisoft's window, then home by itself, the cloud save fine), then started
    again at once (it must start).
+   **Owner's test (2026-11-23, owneetd 0.26.5): first and second launch both fine.** From the log
+   (`owneet-20261123-111322`): the install script's pointer went off within 1 s each time (its window gone), the
+   game started; after each quit Ubisoft Connect's window came (11:15:58, 11:17:36) and went (11:16:00, 11:17:37),
+   then owneetd closed it (11:16:01, 11:17:38) and the console came home; no error in Ubisoft's log. To close: the
+   owner's call.
 
 22. **Steam has network problems, the console does not** (owner, 2026-11-23, starting The Fractured But Whole for item
    21's test): the console is online, Steam says it is not. Logs to read (Steam's `console_log.txt`, `bootstrap_log.txt`).
