@@ -24,7 +24,7 @@ owner's.
 | 19 | The interface stopped answering for about 40 s after Beneath a Steel Sky's failed start | Not reproduced; to watch (leave the stick in until the console is off) |
 | 20 | Paladins: the first text field did not get the keyboard's text | Black screen with the pointer; Steam's keyboard ignored: to look into |
 | 21 | The Fractured But Whole: Ubisoft Connect stays after the game (Resume still shown) | Closing works; cloud save failed (closed 1 s after the game); first launches stuck in the install script |
-| 22 | Steam has network problems, the console does not | Logs to read |
+| 22 | Steam has network problems, the console does not | The Wi-Fi (USB Realtek) drops often: a test with cable / Intel card, or power saving off: the owner's choice |
 | 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
 
 ### Waits for the owner's decision
@@ -122,6 +122,16 @@ status is kept in their own notes; this table follows them.
    **Owner:** no message, only an exclamation mark on Steam's Wi-Fi icon, and not every time. Not found online for
    this exact sign (Steam's network indicator outside SteamOS). To read in the next log: NetworkManager's connectivity
    and Wi-Fi in the journal at those moments, Steam's own logs.
+   **From the logs (`owneet-20261123-091932`, `owneet-20261123-100208`):** the Wi-Fi drops. The FrankenPC uses its USB
+   Realtek RTL8822BU adapter (`rtw88_8822bu`, `wlp0s20f0u2`; the board's Intel 7265 is not used): 64 "beacon loss"
+   events and 6 reconnections in 25 minutes (10:02-10:27), and many on 2026-11-23 at 09:21-09:41. Downloads resume after
+   a drop, a launch does not: at 10:17:47 the Wi-Fi dropped while the game started; Ubisoft's game starter could not
+   get the account from Steam (10:17:53, "Failed receive local steam response for account"), the game closed (10:18:17),
+   Ubisoft Connect started again and waited until the power-off. On 2026-11-23 at 09:41 Ubisoft's request to its servers
+   failed during a drop (09:41:44, "Http status code is none"), before owneetd closed it: the cloud save's failure is at
+   least partly the Wi-Fi's. No driver error (no "failed to leave lps state"). Ways, for the owner: (a) a test with the
+   Intel card or a cable, to confirm; (b) Wi-Fi power saving off in NetworkManager (`wifi.powersave = 2`), reported to
+   stop beacon losses with Realtek adapters: a change for every console (no battery to save).
 
 ## Decided, not built yet
 
