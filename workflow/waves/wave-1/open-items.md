@@ -21,9 +21,6 @@ owner's.
 |---|---|---|
 | 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Steps 1-3 done; point 4 rejected; point 5: the owner is downloading the free games proposed (2026-11-20); point 6 = step 4.8 (demo first) |
 | 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft: South Park: The Fractured But Whole, when the owner has it |
-| 19 | The interface stopped answering for about 40 s after Beneath a Steel Sky's failed start | Not reproduced; to watch (leave the stick in until the console is off) |
-| 22 | Steam has network problems, the console does not | The Wi-Fi (USB Realtek) drops often: a test with cable / Intel card, or power saving off: the owner's choice |
-| 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
 
 ### Waits for the owner's decision
 
@@ -61,42 +58,7 @@ never here.
 
 ## The owner's reports, in detail
 
-19. **The FrankenPC froze, inputs ignored** (owner, 2026-11-22, right after Apex's window and Beneath a Steel Sky's
-   failed start): switched off by hand. The session's log on the stick stops at 19:35:18 (Steam's update check, nothing
-   wrong before it); the whole journal of that boot comes with the next start with OWNEETLOG (`.previous`).
-   **From that journal (`owneet-20261122-195300.previous`, boot -2):** the system was running: after Beneath a Steel Sky
-   ended (19:34:57) nothing was logged until the stick was pulled out at 19:35:37 (FAT write errors: that session's
-   screenshots and games folder were lost), and the power button shut it down cleanly at 19:37:00. So the interface,
-   not the PC, stopped answering for about 40 s; no error says why. Tried in the preview (a disk game that ends at once
-   without a window): the interface kept answering. Not seen again in the next session. **To watch:** if it happens
-   again, leave the stick in until the console is off (the screenshots show what was on screen).
-
-22. **Steam has network problems, the console does not** (owner, 2026-11-23, starting The Fractured But Whole for item
-   21's test): the console is online, Steam says it is not. Logs to read (Steam's `console_log.txt`, `bootstrap_log.txt`).
-   **Owner:** no message, only an exclamation mark on Steam's Wi-Fi icon, and not every time. Not found online for
-   this exact sign (Steam's network indicator outside SteamOS). To read in the next log: NetworkManager's connectivity
-   and Wi-Fi in the journal at those moments, Steam's own logs.
-   **From the logs (`owneet-20261123-091932`, `owneet-20261123-100208`):** the Wi-Fi drops. The FrankenPC uses its USB
-   Realtek RTL8822BU adapter (`rtw88_8822bu`, `wlp0s20f0u2`; the board's Intel 7265 is not used): 64 "beacon loss"
-   events and 6 reconnections in 25 minutes (10:02-10:27), and many on 2026-11-23 at 09:21-09:41. Downloads resume after
-   a drop, a launch does not: at 10:17:47 the Wi-Fi dropped while the game started; Ubisoft's game starter could not
-   get the account from Steam (10:17:53, "Failed receive local steam response for account"), the game closed (10:18:17),
-   Ubisoft Connect started again and waited until the power-off. On 2026-11-23 at 09:41 Ubisoft's request to its servers
-   failed during a drop (09:41:44, "Http status code is none"), before owneetd closed it: the cloud save's failure is at
-   least partly the Wi-Fi's. No driver error (no "failed to leave lps state"). Ways, for the owner: (a) a test with the
-   Intel card or a cable, to confirm; (b) Wi-Fi power saving off in NetworkManager (`wifi.powersave = 2`), reported to
-   stop beacon losses with Realtek adapters: a change for every console (no battery to save).
-
 ## Decided, not built yet
-
-9. **GitHub pages with every website update**: README, the repositories' description and topics; the
-   text is prepared here, the owner publishes it. [[website]]
-   **Prepared (2026-11-18):** the code's README follows the website (its description, slogan, features and
-   requirements; status "almost here"; the website's address; no vault link, which does not work on GitHub; the folders
-   as they are; the trademark note), committed on `feature/phase7`. The website's README: its Structure section names
-   today's components (play-tour, guide-drawing, rich-text; no console-screen), not committed yet (which branch: the
-   owner's). Both repositories' description and topics: in [[website]]. Waits for the owner.
-
 
 13. **Steam games with their publisher's launcher** (owner, 2026-11-18): EA (STAR WARS Jedi: Fallen Order) and Rockstar
    (Red Dead Redemption 2) work (their tests in item 14); CD Projekt Red (Cyberpunk 2077): **dropped by the owner

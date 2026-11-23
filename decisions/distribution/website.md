@@ -4,7 +4,7 @@ description: "The project's website: Angular, static on GitHub Pages, own reposi
 area: distribution
 status: active
 decided: 2026-10-20
-updated: 2026-11-04
+updated: 2026-11-23
 tags: [decision, distribution, website]
 ---
 # Website
@@ -118,8 +118,10 @@ project folder. No data collected keeps the site free of consent banners and GDP
 
 - **The GitHub pages follow the site (owner, 2026-11-09):** every update of the website also updates what the repositories show
   on GitHub: the README (written here and committed; the owner pushes) and the repository's description and topics (the text
-  prepared here, set by the owner on GitHub: acting on GitHub is the owner's, [[collaboration]]).
-  **Prepared (2026-11-18, item 9; waits for the owner):**
+  prepared here, set by the owner on GitHub: acting on GitHub is the owner's, [[collaboration]]). **A standing routine, not
+  an open item** (owner, 2026-11-23): at every website update the assistant prepares the README and the texts and reminds
+  the owner; whether GitHub shows the topics is the owner's to check.
+  **Prepared (2026-11-18, item 9):**
   - `OwneetOS`: description "A free and open source system that turns your PC into a game console. You only need a
     controller."; website `https://owneetos.org`; topics `linux`, `linux-distribution`, `archlinux`, `gaming`,
     `game-console`, `gamepad`, `controller`, `steam`, `gamescope`, `htpc`, `couch-gaming`, `open-source`.
@@ -160,3 +162,4 @@ project folder. No data collected keeps the site free of consent banners and GDP
 | 2026-11-04 | The simpler home's demo approved and built, in the five languages; the drawn console picture (7.8j) is no longer needed. |
 | 2026-11-04 | The guide and German, French and Spanish go online with the simpler home, before their planned moments (the guide after 5.7, the languages after their check); the guide's screens are made again and the languages checked afterwards. The owner sees no problem in naming the apps in a product not yet released; the names stay on the lawyer's list. |
 | 2026-11-09 | The GitHub pages follow the site: README updated with every website update; description and topics prepared here, set by the owner. |
+| 2026-11-23 | The GitHub pages' update is a standing routine of every website update, no longer an open item (item 9 closed, owner). |
