@@ -1112,3 +1112,35 @@ found here. Newest closings are added at the end.
    listen to music or a podcast while playing. Built: owneet-base 0.0.86, the catalogue no longer marks Netflix and
    YouTube `silentBehindHome` (games still go silent behind the home screen).
    **Closed** (2026-11-23): decided by the owner.
+
+23. **Dota 2: Steam's shader processing stays at 0%** (owner, 2026-11-23): at every start the owner skips it, because
+   even after 10 minutes the percentage stays at 0%. To read in the logs (Steam's `shader_log.txt`).
+   **From Steam's `shader_log.txt` (2026-11-23):** not stuck. Steam replays Dota 2's Vulkan pipeline cache
+   (`fossilize_replay`, `shadercache/570/fozpipelinesv6`): about **2.15 million** pipelines; 11:39-11:44 it reached
+   4 255, 12:06-12:09 12 538, 13:15-13:17 again (about 15-100 a second): a few hours in all, so the percentage rounds to
+   0%. Each skip ends the replay ("exit code -10 … Considering it killed"); whether the work done is kept is not clear.
+   The replay ran only at launches, not while the console was idle. Steam's own process, not the console's; reported
+   elsewhere as hours long. Skipping is harmless (the game prepares its shaders while playing). Ideas for the owner:
+   Steam's background processing while the console is idle; the approved shader demo (`4.2c-steam-shaders`, real
+   numbers instead of 0%); Steam's undocumented `unShaderBackgroundProcessingThreads` not proposed (Valve's internal
+   debug setting).
+   **Owner (2026-11-23): both** (Steam's background processing while idle, and the approved shader demo built), after
+   cleaning open-items of what moved to Wave 2.
+   **Before building (2026-11-23):** (A) Steam's "Allow background processing of Vulkan shaders" (Settings →
+   Downloads) is not documented and its key in Steam's files was not found online; owneetd already writes Steam's
+   `config.vdf` for the compatibility tool, so it can, once the key is known; the processing needs Steam open while the
+   console is idle. Asked the owner to look at the setting on the FrankenPC; to find the key, the test log could copy
+   only the lines naming shaders from Steam's config files (no account data). (B) The approved demo (2026-11-18) shows
+   a percentage (Dota 2: 0% for hours), says "a few minutes" and has no way to skip (today Steam's own page has Skip):
+   it does not fit Dota 2; a revised demo (real numbers, the time left, a way to start at once) proposed to the owner
+   before any code ([[demo-before-code]], no change to an approved look without the owner).
+   **Owner (2026-11-23):** (A) the option does not exist in the Steam the console shows (my claim was not checked: it is
+   in Steam's desktop interface, reported missing from the controller interface on Steam Deck too); A parked. (B) go:
+   revised demo being made.
+   **Revised demo made (2026-11-23):** `design/demos/4.2c-steam-shaders.html` (code `87d192e`): real numbers with the
+   percentage, the time left, a long-wait line, X "Start now", B hides. Waits for the owner's approval; then X on this
+   screen goes into [[controller-input-map]] before any code, and how owneetd starts the game at once (as Steam's Skip)
+   is checked first.
+   **Owner (2026-11-23): demo deleted, item dropped**: the player sees Steam's own page with its real controls; the
+   console's own screen would only make things harder.
+   **Closed** (2026-11-23): dropped by the owner.

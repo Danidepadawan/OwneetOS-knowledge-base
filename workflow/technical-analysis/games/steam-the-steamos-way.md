@@ -50,7 +50,7 @@ the base of several distributions:
 ## Open questions
 
 - Whether Steam's own shader page is enough (then demo `4.2c-steam-shaders` is not built) or the console's
-  percentage is still wanted: the owner, after the try.
+  percentage is still wanted: **answered 2026-11-23, Steam's own page is enough** (owner; the demo deleted).
 - Steam's own power handling with `-steamos3` against owneetd's: to check before keeping it.
 
 ## Try 2 result (2026-11-19, FrankenPC)

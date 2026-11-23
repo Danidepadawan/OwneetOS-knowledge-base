@@ -4,15 +4,15 @@ description: "How OwneetOS makes games work as a whole instead of one game at a 
 area: games
 status: active
 decided: 2026-11-18
-updated: 2026-11-20
+updated: 2026-11-23
 tags: [decision, games]
 ---
 # Making games work: a method, not one game at a time
 
 > [!note] **Direction approved by the owner on 2026-11-18** ([[open-items]] 14): research first, point by point.
 > Point 2 (Steam's own windows shown): to be tried ("Steam's interface has not flickered for a while"); if Steam's own
-> shader page is shown, the console's percentage (demo `4.2c-steam-shaders`, approved) may not be needed: not built
-> until then.
+> shader page is shown, the console's percentage (demo `4.2c-steam-shaders`) is not needed: **dropped by the owner on
+> 2026-11-23** (Steam's own page stays; the demo deleted).
 
 ## Why
 
@@ -80,3 +80,4 @@ run with the console's kernel) to tell the driver from the card.
 | 2026-11-18 | Order approved for the first three points; 4 and 5 along the way; the runtime with the Windows-games download. |
 | 2026-11-20 | Point 3's way approved: native games outside Steam in Valve's Steam Linux Runtime 1.0 (scout) through umu (`umu-scout`), as Heroic does ([[umu-fixes-and-runtime]]); as today when it is missing. Cyberpunk 2077 dropped: NVIDIA's driver, not OwneetOS (owner). |
 | 2026-11-20 | Point 4 (a tried NVIDIA driver channel) **rejected** by the owner: more upkeep than he can give. Point 5: games from GOG may be named and used (legal; the local guard on game names is the owner's to edit). Point 6 put in Wave 1 as [[step-4.8-games-that-cannot-run]] (demo first). |
+| 2026-11-23 | The console's percentage of Steam's shader preparation dropped: Steam's own page stays (owner). |
