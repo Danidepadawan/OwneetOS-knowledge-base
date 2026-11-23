@@ -30,6 +30,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
+| 25 | A Steam download's progress not updated in the console, again | Log to read |
 
 ### Others
 
@@ -56,6 +57,9 @@ The steps' status is kept in their own notes; this table follows them. What move
 never here.
 
 ## The owner's reports, in detail
+
+25. **A Steam download's progress not updated in the console, again** (owner, 2026-11-23, serious): THE FINALS'
+   download went on in Steam, the console's progress did not move. Log to read (OWNEETLOG in).
 
 ## Decided, not built yet
 
