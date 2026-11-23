@@ -71,6 +71,11 @@ never here.
    test Ubisoft's launcher; South Park: The Fractured But Whole on Steam does use it. Answer given to the owner.
    **Owner (2026-11-20):** The Fractured But Whole replaces Assassin's Creed Unity for the Ubisoft Connect test (a
    Ubisoft account is needed).
+   **Owner (2026-11-23): close 13 and 14 as soon as possible; Cyberpunk 2077 through its beta.** Searched: the branch
+   reported to avoid NVIDIA's crash is named `2_31_old` (one user's report in vkd3d-proton issue 4450; Steam's list on
+   the FrankenPC tells whether it still exists). Steps given to the owner: Steam → the game's properties → game
+   versions and betas → `2_31_old`, then the game started from the console (REDlauncher, Play, quit). Saves made with a
+   newer version may not open in the older one. (The Ubisoft test of this item passed: [[closed-items]] 21.)
    [[step-4.2c-steam-without-its-interface]]
 
 14. **Games: prevent, do not chase them one by one** (owner, 2026-11-18, serious): almost every game tested gives a
