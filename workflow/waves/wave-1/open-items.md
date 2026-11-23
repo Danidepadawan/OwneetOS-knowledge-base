@@ -170,6 +170,13 @@ status is kept in their own notes; this table follows them.
    switch `owneet.debug.wine_focus_hack=off` (Steam's games started with `WINE_IGNORE_FOCUS_HACK=0`; to remove after the
    test) and the probe shows `_NET_SUPPORTED`; on OWNEETLOG with the switch on. Test: Paladins in full screen, Guide,
    Resume, a minute if black.
+   **Owner's test (2026-11-23 15:23, `owneet-20261123-152245`): nothing changed** (switch on: "Wine's gamescope focus
+   handling off" in the journal). gamescope lists `_NET_ACTIVE_WINDOW` in `_NET_SUPPORTED`, so with the switch Wine
+   follows gamescope's active window, which becomes the console's when the home is in front: the game is deactivated
+   either way while the home takes the screen. Switch removed from OWNEETLOG. (Paladins' Proton log not copied this
+   time; only two screenshots in the session.) Next idea, hypothesis to research before any build: on SteamOS the games
+   draw through gamescope's own Vulkan layer (WSI, reached on gamescope's Wayland socket), here not, because Steam (and
+   so its games) gets no `GAMESCOPE_WAYLAND_DISPLAY`: the same root suspected for Steam's keyboard (b).
 22. **Steam has network problems, the console does not** (owner, 2026-11-23, starting The Fractured But Whole for item
    21's test): the console is online, Steam says it is not. Logs to read (Steam's `console_log.txt`, `bootstrap_log.txt`).
    **Owner:** no message, only an exclamation mark on Steam's Wi-Fi icon, and not every time. Not found online for
