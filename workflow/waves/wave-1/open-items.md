@@ -114,7 +114,7 @@ status is kept in their own notes; this table follows them.
    **Owner's test (2026-11-23):** with Paladins in borderless window mode the return works (no black screen); back
    in full screen, black again, with or without the pointer. So the black screen is the game's exclusive full screen.
    **Owner's test (2026-11-23), Steam's keyboard in Dota 2's hero search:** writing showed a "FATAL ERROR" (Dota 2's
-   own window). OWNEETLOG was not in the FrankenPC at boot (the test log starts only then): to repeat with it.
+   own window). OWNEETLOG in the FrankenPC: the owner stays a minute on the error for the screenshot; log to read.
 22. **Steam has network problems, the console does not** (owner, 2026-11-23, starting The Fractured But Whole for item
    21's test): the console is online, Steam says it is not. Logs to read (Steam's `console_log.txt`, `bootstrap_log.txt`).
    **Owner:** no message, only an exclamation mark on Steam's Wi-Fi icon, and not every time. Not found online for
