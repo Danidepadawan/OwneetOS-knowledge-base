@@ -156,6 +156,16 @@ status is kept in their own notes; this table follows them.
    OWNEETLOG. Test asked: Paladins back in full screen, Guide, Resume (no pointer), a minute on the black screen.
    Also seen: owneetd tags Paladins' windows with its own app id, gamescope logs "appid clash was 444090 now ..."
    (owneetd's choice, [[owneetd-design]]); whether that matters here is open.
+   **Owner's test (2026-11-23 14:49, owneetd 0.26.6, `owneet-20261123-144334`):** during the black screen (14:51:36
+   on) Paladins' window was mapped, on top, focused (`GAMESCOPE_FOCUSED_WINDOW`, `_NET_ACTIVE_WINDOW`) and composited
+   (`FOCUSED_APP_GFX`): the console and gamescope did their part; the game draws black after leaving and retaking its
+   full screen. Valve's Wine: `focus_out` makes the desktop the foreground under gamescope (`ignore_focus_hack`,
+   unless `WINE_IGNORE_FOCUS_HACK` is set; then only when gamescope does not list `_NET_ACTIVE_WINDOW` as supported);
+   its comment "Gamescope will restore window when attempting to iconify it", skipped for two games only. Hypothesis:
+   Paladins, iconified and restored at once, stays black. Proposed to the owner: (A) testers' switch for Steam games
+   with `WINE_IGNORE_FOCUS_HACK=0` (and the probe showing `_NET_SUPPORTED`); (B) if not enough, the home shown over
+   the game without taking its focus, as SteamOS's Steam menu (big change: the game's controller input while the home
+   is shown, [[controller-input-map]] guard to weigh; demo first).
 22. **Steam has network problems, the console does not** (owner, 2026-11-23, starting The Fractured But Whole for item
    21's test): the console is online, Steam says it is not. Logs to read (Steam's `console_log.txt`, `bootstrap_log.txt`).
    **Owner:** no message, only an exclamation mark on Steam's Wi-Fi icon, and not every time. Not found online for
