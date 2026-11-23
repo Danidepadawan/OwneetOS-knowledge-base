@@ -91,6 +91,14 @@ status is kept in their own notes; this table follows them.
    `steam:444090`); Steam's keyboard typed nothing into the field. Online: no report of this exact fault found
    (ProtonDB, GamingOnLinux); other Proton games lose typed keys in text fields. Open: to look into (Paladins'
    CoherentUI fields under Proton, the black screen with the pointer).
+   **From the screenshots (`owneet-20261123-091932`):** at 09:38:17 Steam's own keyboard was open over Paladins'
+   "Create your player name" field (the caret in it): Steam showed its keyboard, the game took no letter from it; at
+   09:38:51 (after Guide and "Resume with the pointer") the screen was black. Searched online: no report of this exact
+   fault; known causes elsewhere are keyboard layouts / input methods (`XMODIFIERS=`) and games that go black when they
+   lose the screen (fixed with borderless windowed mode). Nothing of the console touches the keys of a running game
+   (owneetd reads Guide only, no grab); not excluded: the session (gamescope's keyboard focus, the "it" layout,
+   Steam's XIM failing: "XOpenIM() failed, LANG = C.UTF-8"). Tests proposed to the owner: plain Resume with Steam's
+   keyboard, a physical USB keyboard (whether the game takes any key), the game in borderless windowed mode.
 21. **The Fractured But Whole: Ubisoft Connect stays after the game** (owner, 2026-11-22): the game quit, yet the
    console still offered Resume / Resume with the pointer / Close. **From the log:** the game (`SouthPark_TFBW.exe`)
    was quit at about 20:20:37; Ubisoft Connect (`upc.exe`, `UplayService.exe`, `UplayWebCore.exe`) stayed, so Steam
