@@ -136,6 +136,8 @@ status is kept in their own notes; this table follows them.
    **Owner (2026-11-23):** all three give the same error (the console's pointer, a mouse, Guide + X alone): Steam's
    keyboard asked for in Dota 2 also ends in Dota 2's own missing text entry. Next: the console's keyboard in Paladins
    (borderless), first.
+   **Owner's test (2026-11-23):** no black screen (borderless), but the name cannot be entered with the console's
+   keyboard; only with a physical keyboard plugged in. Log to read.
 22. **Steam has network problems, the console does not** (owner, 2026-11-23, starting The Fractured But Whole for item
    21's test): the console is online, Steam says it is not. Logs to read (Steam's `console_log.txt`, `bootstrap_log.txt`).
    **Owner:** no message, only an exclamation mark on Steam's Wi-Fi icon, and not every time. Not found online for
