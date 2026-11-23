@@ -22,8 +22,7 @@ owner's.
 | 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Steps 1-3 done; point 4 rejected; point 5: the owner is downloading the free games proposed (2026-11-20); point 6 = step 4.8 (demo first) |
 | 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft: South Park: The Fractured But Whole, when the owner has it |
 | 19 | The interface stopped answering for about 40 s after Beneath a Steel Sky's failed start | Not reproduced; to watch (leave the stick in until the console is off) |
-| 20 | Paladins: the first text field did not get the keyboard's text | Black screen on every return (exclusive full screen; not the pointer); Steam's keyboard reaches no game (hypothesis: Steam without gamescope's Wayland): tests asked |
-| 21 | The Fractured But Whole: Ubisoft Connect stays after the game (Resume still shown) | Both fixed in owneetd 0.26.5 and passed (2026-11-23): two launches in a row, launcher closed after its window; to close: owner |
+| 20 | Paladins: the first text field did not get the keyboard's text | Black screen: the game's exclusive full screen (borderless works, owner 2026-11-23); Steam's keyboard reaches no game (hypothesis: Steam without gamescope's Wayland): test in another game asked |
 | 22 | Steam has network problems, the console does not | The Wi-Fi (USB Realtek) drops often: a test with cable / Intel card, or power saving off: the owner's choice |
 | 9 | GitHub pages with every website update | READMEs on `main` (code: `3e359e9`, local, the owner pushes); description and website set by the owner (2026-11-20); topics not shown by GitHub yet: the owner checks |
 
@@ -112,53 +111,8 @@ status is kept in their own notes; this table follows them.
    screen), so Steam's keyboard may reach no game at all: a class problem, not Paladins'. Physical keys and the
    console's own keyboard (virtual device) do reach games. Asked the owner: Paladins in borderless mode, and a black
    screen left for a minute (screenshot and window list); Steam's keyboard in another game's text field.
-21. **The Fractured But Whole: Ubisoft Connect stays after the game** (owner, 2026-11-22): the game quit, yet the
-   console still offered Resume / Resume with the pointer / Close. **From the log:** the game (`SouthPark_TFBW.exe`)
-   was quit at about 20:20:37; Ubisoft Connect (`upc.exe`, `UplayService.exe`, `UplayWebCore.exe`) stayed, so Steam
-   kept the game running (`steam:488790`) until the power-off at 20:21:41: the console shows what Steam says. Known on
-   SteamOS too; closing Ubisoft Connect at once may cut its cloud-save sync (ProtonDB). Ways to weigh with the owner.
-   **Owner (2026-11-22): try it.** Built: owneetd 0.26.2 closes the game when only the launcher is left (`upc.exe`,
-   `UplayService.exe`, `UplayWebCore.exe`, `UplayCrashReporter.exe`), the game's own programs having run with a window,
-   and nothing of it on screen, as Proton's proposed fix does (ValveSoftware/Proton pull request 10356, not merged:
-   cloud saves sync while a window shows). Go tests. On OWNEETLOG: The Fractured But Whole, then (owner) Red Dead
-   Redemption 2, STAR WARS Jedi: Fallen Order and Cyberpunk 2077 (its working beta) to check their launchers.
-   **Owner's test (2026-11-23):** the first two launches did not start; the third did; quitting closed everything
-   and the console came home, **but Ubisoft's cloud save failed**. **From the log (`owneet-20261123-091932`):** first
-   launch 09:19:59: Steam ran the game's install script (4 steps) from 09:20:15; its window appeared at 09:20:27 (the
-   pointer on) and was gone by 09:23 (only Steam's home mapped); the second launch, from Steam's page at 09:29, waited
-   on the same script ("Starting…"); it ended at 09:37:09, after Paladins was started; the third launch's script took
-   1 s and the game ran from 09:39:28. Why the script waited 16 minutes is not in the logs (Steam's install-script log
-   is not copied: [[open-items]] 13 (b), not approved). The game was quit at about 09:41:49 and owneetd closed Ubisoft
-   Connect at 09:41:50, one second later: most likely before its cloud sync (hypothesis; when the failure message
-   appeared: asked to the owner).
-   **Owner (2026-11-23):** the failure showed in a Ubisoft window after the game closed; copying the logs approved.
-   Built: owneet-base 0.0.85 copies Ubisoft Connect's own logs (`<log>.games/ubisoft/APPID/`) and Steam's install
-   script logs (`installscript*_log*.txt`); owneetd 0.26.3 has the testers' switch `owneet.debug.launcher_close=off`
-   (the launcher left alone after the game). On OWNEETLOG with the switch on (to remove after the test): The Fractured
-   But Whole played and quit, Ubisoft Connect left to sync, then closed from the console: its log says when the sync
-   ends, to close it on that event instead of at once.
-   **Owner's test (2026-11-23, 10:45):** the first launch had to be closed from the console (the testers' switch left
-   Ubisoft Connect running, as meant); the second launch, right after, did not start ("NOT OK"). **From the log
-   (`owneet-20261123-104214`):** game played 10:47:12-10:48:47; Ubisoft Connect showed its window 10:48:48-10:49:05
-   (no cloud-save line in its log this time, no error), then no window: owneetd left it alone (switch), closed from
-   the console at 10:50:08. The second launch stuck at Steam's install script (10:50:22 until Steam closed at 10:52):
-   owneetd had paused Proton's Xalia for a script window gone within seconds, and the script does not end while Xalia
-   is paused; the same explains the stuck launches at 09:20 (16 minutes, ended 11 s after Xalia went on), 10:18 and
-   10:50: our fault ([[steam-install-script-stuck-with-xalia-paused]]). Built: owneetd 0.26.4 turns the
-   install script's pointer off (Xalia goes on) once none of its windows is on screen. On OWNEETLOG.
-   Seen also: Ubisoft Connect's window comes 1 s **after** the game's end; owneetd 0.26.2's rule (close when nothing
-   of it is on screen) would have closed it in that second, before the window: most likely why the cloud save failed
-   at 09:41 (hypothesis). Proposed to the owner: close the launcher once its window after the game has come and gone,
-   or after a limit when none comes; then remove the switch. **Owner (2026-11-23): yes, fix first, then the test.**
-   Built: owneetd 0.26.5 ([[steam-integration]]); the switch line removed from OWNEETLOG's `owneet-debug.txt`. To test:
-   The Fractured But Whole played and quit (Ubisoft's window, then home by itself, the cloud save fine), then started
-   again at once (it must start).
-   **Owner's test (2026-11-23, owneetd 0.26.5): first and second launch both fine.** From the log
-   (`owneet-20261123-111322`): the install script's pointer went off within 1 s each time (its window gone), the
-   game started; after each quit Ubisoft Connect's window came (11:15:58, 11:17:36) and went (11:16:00, 11:17:37),
-   then owneetd closed it (11:16:01, 11:17:38) and the console came home; no error in Ubisoft's log. To close: the
-   owner's call.
-
+   **Owner's test (2026-11-23):** with Paladins in borderless window mode the return works (no black screen); back
+   in full screen, black again, with or without the pointer. So the black screen is the game's exclusive full screen.
 22. **Steam has network problems, the console does not** (owner, 2026-11-23, starting The Fractured But Whole for item
    21's test): the console is online, Steam says it is not. Logs to read (Steam's `console_log.txt`, `bootstrap_log.txt`).
    **Owner:** no message, only an exclamation mark on Steam's Wi-Fi icon, and not every time. Not found online for
