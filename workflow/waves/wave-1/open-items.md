@@ -146,6 +146,16 @@ status is kept in their own notes; this table follows them.
    (Paladins: shown, nothing typed; Dota 2: hands it to its own missing text entry): hypothesis, Steam without
    gamescope's Wayland. Which first: the owner's choice. **Owner:** (a) first. (In the test before, "the field gone"
    meant Paladins' name window had closed.)
+   **(a), research (2026-11-23):** Valve's Wine (`dlls/winex11.drv`, branch bleeding-edge) under gamescope (window
+   manager "steamcompmgr") deactivates the game when its window loses the focus (`focus_out`: foreground to the
+   desktop; a game in exclusive full screen then leaves it: DXVK "Restoring display mode"), and ignores FocusIn for
+   almost every game (`X11DRV_FocusIn` returns early with `use_take_focus`; "Gamescope doesn't support WM_TAKE_FOCUS");
+   it takes the window back to the front from the root's `_NET_ACTIVE_WINDOW`. Paladins did take the screen back
+   (DXVK "Setting display mode" at each return), yet showed black: why is not known. The test log's window list did not
+   show `_NET_ACTIVE_WINDOW`, `WM_STATE` or hidden windows. Built: owneetd 0.26.6 (owneet-xprobe shows them), on
+   OWNEETLOG. Test asked: Paladins back in full screen, Guide, Resume (no pointer), a minute on the black screen.
+   Also seen: owneetd tags Paladins' windows with its own app id, gamescope logs "appid clash was 444090 now ..."
+   (owneetd's choice, [[owneetd-design]]); whether that matters here is open.
 22. **Steam has network problems, the console does not** (owner, 2026-11-23, starting The Fractured But Whole for item
    21's test): the console is online, Steam says it is not. Logs to read (Steam's `console_log.txt`, `bootstrap_log.txt`).
    **Owner:** no message, only an exclamation mark on Steam's Wi-Fi icon, and not every time. Not found online for
