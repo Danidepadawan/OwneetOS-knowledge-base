@@ -104,6 +104,14 @@ never here.
    debug setting).
    **Owner (2026-11-23): both** (Steam's background processing while idle, and the approved shader demo built), after
    cleaning open-items of what moved to Wave 2.
+   **Before building (2026-11-23):** (A) Steam's "Allow background processing of Vulkan shaders" (Settings →
+   Downloads) is not documented and its key in Steam's files was not found online; owneetd already writes Steam's
+   `config.vdf` for the compatibility tool, so it can, once the key is known; the processing needs Steam open while the
+   console is idle. Asked the owner to look at the setting on the FrankenPC; to find the key, the test log could copy
+   only the lines naming shaders from Steam's config files (no account data). (B) The approved demo (2026-11-18) shows
+   a percentage (Dota 2: 0% for hours), says "a few minutes" and has no way to skip (today Steam's own page has Skip):
+   it does not fit Dota 2; a revised demo (real numbers, the time left, a way to start at once) proposed to the owner
+   before any code ([[demo-before-code]], no change to an approved look without the owner).
 
 ## Decided, not built yet
 
