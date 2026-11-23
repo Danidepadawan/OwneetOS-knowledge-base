@@ -109,6 +109,9 @@ never here.
    a percentage (Dota 2: 0% for hours), says "a few minutes" and has no way to skip (today Steam's own page has Skip):
    it does not fit Dota 2; a revised demo (real numbers, the time left, a way to start at once) proposed to the owner
    before any code ([[demo-before-code]], no change to an approved look without the owner).
+   **Owner (2026-11-23):** (A) the option does not exist in the Steam the console shows (my claim was not checked: it is
+   in Steam's desktop interface, reported missing from the controller interface on Steam Deck too); A parked. (B) go:
+   revised demo being made.
 
 ## Decided, not built yet
 
