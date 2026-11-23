@@ -166,6 +166,10 @@ status is kept in their own notes; this table follows them.
    with `WINE_IGNORE_FOCUS_HACK=0` (and the probe showing `_NET_SUPPORTED`); (B) if not enough, the home shown over
    the game without taking its focus, as SteamOS's Steam menu (big change: the game's controller input while the home
    is shown, [[controller-input-map]] guard to weigh; demo first).
+   **Owner (2026-11-23): A; B rejected** ("too drastic, it would break everything else"). Built: owneetd 0.26.7, testers'
+   switch `owneet.debug.wine_focus_hack=off` (Steam's games started with `WINE_IGNORE_FOCUS_HACK=0`; to remove after the
+   test) and the probe shows `_NET_SUPPORTED`; on OWNEETLOG with the switch on. Test: Paladins in full screen, Guide,
+   Resume, a minute if black.
 22. **Steam has network problems, the console does not** (owner, 2026-11-23, starting The Fractured But Whole for item
    21's test): the console is online, Steam says it is not. Logs to read (Steam's `console_log.txt`, `bootstrap_log.txt`).
    **Owner:** no message, only an exclamation mark on Steam's Wi-Fi icon, and not every time. Not found online for

@@ -119,3 +119,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-11-05 | The endless loading after B on Steam's home is left as it is for Wave 1, with "How to come back from Steam" as the way out; looked at again in Wave 2. |
 | 2026-11-21 | Package 0's games (given to every account: Dota 2, Team Fortress 2…) stay out of the library, except the ones Steam is downloading or has installed (a manifest in one of its libraries): Dota 2 was missing while it downloaded ([[open-items]] 16, owner). |
 | 2026-11-23 | A publisher's launcher left after its game is closed after its window following the game has come and gone, or after 10 s when none comes ([[open-items]] 21, owner). |
+| 2026-11-23 | The home keeps taking the focus from the running game: showing it over the game without the focus (as SteamOS's Steam menu) rejected for the black screens of exclusive full screen games; Wine's own focus handling is tried first ([[open-items]] 20, owner). |
