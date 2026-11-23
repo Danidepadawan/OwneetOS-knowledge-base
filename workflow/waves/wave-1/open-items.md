@@ -109,6 +109,12 @@ status is kept in their own notes; this table follows them.
    is not copied: [[open-items]] 13 (b), not approved). The game was quit at about 09:41:49 and owneetd closed Ubisoft
    Connect at 09:41:50, one second later: most likely before its cloud sync (hypothesis; when the failure message
    appeared: asked to the owner).
+   **Owner (2026-11-23):** the failure showed in a Ubisoft window after the game closed; copying the logs approved.
+   Built: owneet-base 0.0.85 copies Ubisoft Connect's own logs (`<log>.games/ubisoft/APPID/`) and Steam's install
+   script logs (`installscript*_log*.txt`); owneetd 0.26.3 has the testers' switch `owneet.debug.launcher_close=off`
+   (the launcher left alone after the game). On OWNEETLOG with the switch on (to remove after the test): The Fractured
+   But Whole played and quit, Ubisoft Connect left to sync, then closed from the console: its log says when the sync
+   ends, to close it on that event instead of at once.
 
 ## Decided, not built yet
 
