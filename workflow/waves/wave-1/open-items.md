@@ -21,6 +21,7 @@ owner's.
 |---|---|---|
 | 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Steps 1-3 done; point 4 rejected; point 5: the owner is downloading the free games proposed (2026-11-20); point 6 = step 4.8 (demo first) |
 | 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft: South Park: The Fractured But Whole, when the owner has it |
+| 24 | Dota 2 closes when a text field takes the focus | Research (assistant) |
 
 ### Waits for the owner's decision
 
@@ -57,6 +58,12 @@ The steps' status is kept in their own notes; this table follows them. What move
 never here.
 
 ## The owner's reports, in detail
+
+24. **Dota 2 closes with "FATAL ERROR" as soon as a text field takes the focus** (owner, 2026-11-23; was in item 20, see
+   [[closed-items]] 20): "Unable to load layout file 'file://{resources}/layout/textinput/text_input_daisy.xml'" (Dota 2's
+   own controller text entry); with the console's pointer, a real mouse or Guide + X alike. Steam's check of its files
+   found nothing (the layout is missing from Dota 2 itself). Not seen on SteamOS, where Dota 2 is Verified (hypothesis:
+   there Steam gives its own keyboard; here Dota 2 falls back to its old one). **Owner (2026-11-23): go on with it.**
 
 ## Decided, not built yet
 
