@@ -30,7 +30,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 25 | A Steam download's progress not updated in the console, again | Log to read |
+| 25 | A Steam download's progress not updated in the console, again | Steam's shader pre-cache download shown as "Preparing…" by design (item 8): showing its progress proposed |
 
 ### Others
 
@@ -60,6 +60,17 @@ never here.
 
 25. **A Steam download's progress not updated in the console, again** (owner, 2026-11-23, serious): THE FINALS'
    download went on in Steam, the console's progress did not move. Log to read (OWNEETLOG in).
+   **From the log (`owneet-20261123-204230`):** THE FINALS was added from Steam (`steam://run/2073850`, 20:44:08). At
+   20:48:41 the console showed it in the library as "Preparing…" (moving bar, no numbers); at 20:50:32 Steam's
+   downloads page showed "Shader pre-caching update" with "Downloading 906.2 MB / 1.1 GB" and "Installing 71%": Steam was
+   downloading the game's **shader pre-cache** (1.1 GB) before the game itself. The console shows any "Shader update"
+   phase as "Preparing…" with no numbers, as built for item 8 (demo `4.2c-steam-preparing`, approved 2026-11-17:
+   the shader cache among the phases without a percentage). Not a regression: the console never showed the shader
+   download's progress; Dota 2's shader update (28%) was the same. Steam's content log gives the shader download's size
+   when it starts ("AppID N update started : download 0/452843952, … stage 0/466678415") and writes it into
+   `steamapps/shadercache/N/downloads/`, so the console could show it as a download (bytes on disk against the size).
+   Proposed to the owner. Also seen: the test log's copy of Steam's `content_log.txt` was cut at 900 KB by the power-off
+   (`cp -u` terminated), so this session's download lines are lost: the test log to be fixed.
 
 ## Decided, not built yet
 
