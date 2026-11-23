@@ -124,6 +124,15 @@ status is kept in their own notes; this table follows them.
    download problem) or from Dota 2 itself; Steam's check of the files tells. No screenshot from 12:08 to 12:11 (the
    test log's screenshots paused while Dota 2 loaded: to watch). Test asked: Steam's "Verify integrity of game files"
    for Dota 2, then Guide + X in the hero search again.
+   **Owner's test (2026-11-23 13:06, `owneet-20261123-130602`): nothing changed.** Steam verified Dota 2 (13:07-13:14,
+   "No Error": its files are whole, the layout is missing from Dota 2 itself). The error came at 13:19:27, **in the same
+   instant as the console pointer's click on a text field** (owneetd: "pointer: the keyboard", reason field), before
+   any letter; the screenshot at 13:19:17 shows no Steam keyboard. Steam's "chord" layout loads at every Guide press,
+   so it does not tell Guide + X. So Dota 2 fails as soon as one of its text fields takes the focus while the
+   controller is in use: it opens its own controller text entry, whose layout it no longer has (Dota 2's own fault,
+   hypothesis on what makes it choose that entry: Steam in Big Picture). Online: nothing on this file. Dota 2 cannot
+   tell whether Steam's keyboard types. Asked the owner: what clicked the field at 12:11 (the pointer, a mouse, or
+   nothing: Guide + X alone); the console's keyboard in Paladins in borderless mode.
 22. **Steam has network problems, the console does not** (owner, 2026-11-23, starting The Fractured But Whole for item
    21's test): the console is online, Steam says it is not. Logs to read (Steam's `console_log.txt`, `bootstrap_log.txt`).
    **Owner:** no message, only an exclamation mark on Steam's Wi-Fi icon, and not every time. Not found online for
