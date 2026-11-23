@@ -80,6 +80,9 @@ never here.
    pointer off within 1 s (17:35:07-08), game 17:36:20-17:40:32, ended by itself (REDlauncher did not stay); disk check:
    nothing new. Left before closing 13 (proposed): Red Dead Redemption 2 and STAR WARS Jedi: Fallen Order again, for
    their launchers after the game and their install-script windows after owneetd 0.26.4-0.26.7.
+   **Owner (2026-11-23):** both already installed: their installers' windows cannot be shown again; only the launchers
+   after the game are tested. (The install-script pointer rule ran at every Steam start since 0.26.4 without harm:
+   pointer off within 1 s each time; an installer's window that stays on screen keeps it on, as the unit test covers.)
    [[step-4.2c-steam-without-its-interface]]
 
 14. **Games: prevent, do not chase them one by one** (owner, 2026-11-18, serious): almost every game tested gives a
