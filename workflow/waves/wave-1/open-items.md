@@ -21,12 +21,12 @@ owner's.
 |---|---|---|
 | 14 | Games: prevent whole classes of problems ([[game-compatibility-method]]) | BioShock and the pointer's click closed (14a); umu ids, recently played from Steam's pages and Steam reopened while closing confirmed. Steps 1-3 done; point 4 rejected; point 5: the owner is downloading the free games proposed (2026-11-20); point 6 = step 4.8 (demo first) |
 | 13 | Steam games with their publisher's launcher | Cyberpunk dropped (NVIDIA's driver, owner 2026-11-20); Ubisoft: South Park: The Fractured But Whole, when the owner has it |
-| 24 | Dota 2 closes when a text field takes the focus | Research (assistant) |
 
 ### Waits for the owner's decision
 
 | # | What | Where it stands |
 |---|---|---|
+| 24 | Dota 2 closes when a text field takes the focus | Dota 2's own fault (Valve, 2022, not fixed); known limit or a new `-steamdeck` try |
 
 ### To build or prepare (assistant)
 
@@ -64,6 +64,14 @@ never here.
    own controller text entry); with the console's pointer, a real mouse or Guide + X alike. Steam's check of its files
    found nothing (the layout is missing from Dota 2 itself). Not seen on SteamOS, where Dota 2 is Verified (hypothesis:
    there Steam gives its own keyboard; here Dota 2 falls back to its old one). **Owner (2026-11-23): go on with it.**
+   **Research (2026-11-23):** Dota 2's own fault, known to Valve since 2022: ValveSoftware/Dota2-Gameplay issue 3698
+   ("Unable to load layout file '…/textinput/text_input_daisy.xml'", with a controller connected, on Windows too, also
+   with the Create Lobby window or Steam Link), no reply from Valve, closed by a bot as "not planned" (2026-07-22). On
+   Steam Deck Dota 2 asks Steam for its keyboard instead (`steam://open/keyboard`, ValveSoftware/Dota-2 issue 2301),
+   so it does not reach the missing layout (hypothesis: it does so when Steam says it runs on a Steam Deck). The only
+   lever found is Steam's `-steamdeck`, tried on 2026-11-19 (Steam restarted itself twice and joined the
+   `steamdeck_stable` beta by itself) and set aside. Proposed to the owner: Dota 2's text fields as a known limit of the
+   game (it plays), or a new `-steamdeck` try.
 
 ## Decided, not built yet
 
