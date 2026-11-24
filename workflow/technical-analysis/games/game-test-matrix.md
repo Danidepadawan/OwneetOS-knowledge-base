@@ -41,6 +41,9 @@ cell, result, log). A cell that fails is a class to fix, not a single game.
 - The console could say "This game does not run on OwneetOS" instead of a launch that fails (games whose anti-cheat
   refuses Linux, e.g. Battlefield 6). Look and words: a demo first.
 
+- **Researched on 2026-11-24** in [[step-4.8-games-that-cannot-run]]: the SteamOS rating is the one to read, it comes with a
+  reason and a date, and it is a warning only.
+
 ## Proposed list (2026-11-20, for the owner to choose)
 
 Cells already covered by the owner's games: Unreal 4 + DirectX 11 + EA app (STAR WARS Jedi: Fallen Order), Vulkan / DirectX
