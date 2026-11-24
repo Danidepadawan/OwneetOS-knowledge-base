@@ -46,7 +46,44 @@ The emulators' licences are not the obstacle (all free: OwneetOS could even ship
 Ship or download firmware, keys or games; decrypt; link to or explain jailbreaks, keys or dumps; run RPCS3's `--decrypt`
 ([[legal]]: no DRM circumvention).
 
-## Opinion
+## The owner's way (2026-11-24): any emulator, put there by the user
+
+The three above were examples: the user should be able to add **any** emulator, without much work and without OwneetOS
+giving anything that could put its authors in legal trouble. The owner's two ideas: a top folder `Emulators` (or its
+translation, case does not matter) with a folder per emulator; or a folder per console with two in it, the emulators and the
+games, so that the user, not the console, says which game goes with which emulator.
+
+**Feasible, with the second** (the first alone does not say which games belong to it):
+
+```
+FunContainer/            the user's name for the console
+  Emulators/             (Emulatori, ...) one folder or file per emulator
+  Games/                 (Giochi, ...) one file or folder per game
+```
+
+- **Found by its two sub-folders**, at the top of a disk or inside the Games folder (there, today, it would be read as one PC
+  game: to exclude).
+- **Emulators:** the kinds a game on a disk may already be (AppImage, program, script; Windows through Proton as a hypothesis),
+  and RetroArch cores if RetroArch is there. More than one: asked once, changed from Options, as the file to start today.
+- **Games:** one file, or a folder (the file to start asked once, as today). Title: the name as written.
+- **Starting:** the emulator with the game's path. Read in the sources: enough for Dolphin, RPCS3 and shadPS4; Cemu wants `-g`, xemu
+  `-dvd_path`, Vita3K starts an installed title by its id. PCSX2 reads its own options and is to be tried. So an optional text
+  file next to the emulator (as `game.txt`) says how it starts; with none, the path alone.
+- **Its own settings** (controller, firmware): "Open the emulator" without a game, driven with the controller pointer
+  ([[step-4.7-controller-pointer]], made for apps): no mouse needed, nothing new on the controller. Asked of the user once
+  per emulator; the console does not write the emulators' settings.
+- **Guide, close, "Starting …":** as any game on a disk.
+
+**For the law:** OwneetOS names no emulator or console, ships, downloads and links none, configures none: it starts a program of the
+user's with a file of the user's. The per-console help above (official sites, recognising, controllers) is **not needed
+any more**. Opinion, to [[step-7.5-legal-review-before-the-public-launch]]. A short notice once: other people's program, the user's
+responsibility.
+
+**To try:** an AppImage's start time (unpacked at every start; could be unpacked once); a program without the exec bit on
+a Linux disk (FAT, exFAT and NTFS give it: `umask=022`); libraries an AppImage expects from the system; whether the emulator's
+bars stay on screen with the path alone; saves on a read-only disk.
+
+## Opinion (before the owner's way)
 
 - **Xbox 360:** yes to points 1-4, after trying it.
 - **PlayStation 3:** points 1-4 without installing the firmware for the user; to the legal review first.

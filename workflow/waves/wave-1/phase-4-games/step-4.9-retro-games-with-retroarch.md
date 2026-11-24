@@ -58,3 +58,6 @@ retro emulators' one-time download to the guard [[product-invariants]].)
   does not say whether a download by the user's console counts, so it applies until the owner writes it.
   Looked into at the owner's request, pros and cons: [[retro-non-commercial-cores]].
 - The user's own PlayStation 3, Xbox 360 and PlayStation 4 emulators (the owner's question, 2026-11-24): [[retro-users-own-emulators]].
+- **The owner's wish (2026-11-24):** any emulator the user wants, put in a folder by the user, little work, nothing from OwneetOS
+  that may bring its authors legal trouble: a folder per console with its emulators and its games. Found feasible, same note;
+  waits for the owner's go.
