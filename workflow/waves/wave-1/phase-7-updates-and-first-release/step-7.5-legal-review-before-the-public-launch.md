@@ -33,6 +33,9 @@ Up: [[phase-7-updates-and-first-release]] · Status: **in-progress**
 - **Outcome of the search:** the name can be used legally and the domain was bought (owneetos.org,
   [[step-7.8h-website-domain]]). Registering the trademark was weighed (a professional's opinion on
   dedicom's OwnIT first, then a filing) and **dropped by the authors on 2026-10-25**.
+- **To include (2026-11-24, [[step-4.9-retro-games-with-retroarch]]):** the retro cores that are unclear (Nintendo 64: one file of
+  GLideN64 without a licence; Flycast's BIOS replacement, [[retro-cores-and-licences]]); the user's own game discs,
+  played from the drive or copied ([[retro-discs]]).
 - **To include (2026-10-18):** whether the console's Brave extension fits Netflix's Terms of Use
   §1.8(vi), "insert any code or product or manipulate the content of the Netflix service in any
   way": it adds one ring element (closed shadow root) to the page and clicks, scrolls and types

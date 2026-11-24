@@ -4,7 +4,7 @@ description: "Users install only the apps they want (step 5.0); the ISO becomes 
 area: product
 status: active
 decided: 2026-10-13
-updated: 2026-10-23
+updated: 2026-11-24
 legacy: "PROJECT_RULES.md §13 (2026-10-13)"
 tags: [decision, product, apps]
 ---
@@ -33,6 +33,8 @@ tags: [decision, product, apps]
 - **Discord** waits for the chat modules ([[wave-2]], [[online-and-chat]]).
 - In the live system, apps follow the same RAM rule as Steam, at least 12 GB
   ([[steam-integration]]).
+- **RetroArch before the other gaming programs** (owner, 2026-11-24): it joins today's catalogue by itself with
+  [[step-4.9-retro-games-with-retroarch]]; Steam and the others stay in [[step-5.0.1-optional-gaming-apps]].
 
 ## History
 
@@ -45,3 +47,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-14 | Step 5.1: removing a web app deletes its Brave profile (the confirmation says the user signs in again); a running web app is treated like a game (hero with Resume / Close, one game or web app at a time); background playback in Wave 2. |
 | 2026-10-18 | Step 5.3: YouTube opens its TV interface with a TV user agent taken by owneetd from the catalogue (brand-neutral first). |
 | 2026-10-23 | Background playback stays in Wave 2, confirmed when step 5.5 (Spotify) started: that step's deliverable "playback continues in the background" is dropped. |
+| 2026-11-24 | Step 4.9 before 5.0.1: RetroArch joins today's catalogue by itself (owner). |

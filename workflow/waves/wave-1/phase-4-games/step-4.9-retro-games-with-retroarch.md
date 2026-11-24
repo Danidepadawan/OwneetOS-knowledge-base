@@ -3,12 +3,12 @@ type: step
 description: "Retro games with RetroArch, as Batocera does: the user's own ROMs from a folder on the disks, in the console's library; cores with free licences; BIOS files the user's own. After the games' tests, before the legal review."
 phase: "[[phase-4-games]]"
 step: "4.9"
-status: todo
+status: in-progress
 tags: [step, phase-4]
 ---
 # 4.9 Retro games with RetroArch *(added 2026-11-21)*
 
-Up: [[phase-4-games]] · Status: **todo**
+Up: [[phase-4-games]] · Status: **in-progress**
 
 - **Origin:** moved from Wave 2 (item 11b of [[wave-2]]) by the owner on 2026-11-21: the idea of "ownership" has to come
   across in the first release; "exactly what Batocera does".
@@ -29,3 +29,9 @@ Up: [[phase-4-games]] · Status: **todo**
   NonCommercial licences) and "Dump Disc" copies them as bin/cue, working better on Linux (the `sg` module may be
   needed); PCSX2 has a disc mode (`-disc`) but advises copying the game first. Both ways to weigh with the owner.
 - **First:** research with sources, a demo of what the user sees ([[demo-before-code]]), the controller bindings.
+- **Order (owner, 2026-11-24):** 4.9 before [[step-5.0.1-optional-gaming-apps]]; RetroArch goes into today's catalogue by itself.
+
+## Research (2026-11-24)
+
+[[retro-cores-and-licences]] (what may be shipped, which consoles, BIOS), [[retroarch-in-the-console]] (how it fits, what is
+proposed), [[retro-discs]] (discs and the law). **Waits for the owner's choices**; then the demo.
