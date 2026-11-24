@@ -19,7 +19,8 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 25 | A Steam download's progress not updated in the console, again | Corrected in owneetd 0.26.9, on OWNEETLOG: the owner's test of a minute with Paladins' install |
+| 25 | A Steam download's progress not updated in the console, again | Owner's test passed (2026-11-24, owneetd 0.26.9): the log still to read, then closed |
+| 26 | Batman: Arkham Origins, first start: the licence's code shown, no warning that it may not work | Cause not proved: the log to read (OWNEETLOG) |
 
 ### Waits for the owner's decision
 
@@ -40,7 +41,7 @@ owner's.
 
 | Step | What | Status |
 |---|---|---|
-| [[step-4.8-games-that-cannot-run\|4.8]] | Games that cannot run, said honestly (built 2026-11-24, owneet-frontend 0.40.0: waits for the test on the FrankenPC) | in-progress |
+| [[step-4.8-games-that-cannot-run\|4.8]] | Games that cannot run, said honestly (owneet-frontend 0.40.0 tested on the FrankenPC 2026-11-24: all passed but item 26) | in-progress |
 | [[step-4.9-retro-games-with-retroarch\|4.9]] | Retro games with RetroArch (owner, 2026-11-21: after the games' tests, before the legal review) | todo |
 | [[step-5.0.1-optional-gaming-apps\|5.0.1]] | Gaming programs as optional apps (Steam): left to the owner by Danidepadawan (2026-11-21) | todo |
 | [[step-7.3-user-guide\|7.3]] | User guide | in-progress |
@@ -92,6 +93,17 @@ never here.
    **A test of a minute (2026-11-24, from Steam's log):** Steam starts the shader pre-cache 3-5 s after a game's install
    begins ("update canceled : Shader Priority"), so the install is started and cancelled once the card has been seen:
    Paladins (444090, not installed, no shader files left on the disks) has 262 MB of it (2026-11-20).
+   **Owner's test (2026-11-24): passed.** The log still to read (the percentage against Steam's own, the disks).
+
+26. **Batman: Arkham Origins, first start: no warning** (owner, 2026-11-24, step 4.8, owneet-frontend 0.40.0; every other
+   test of the step passed): the console showed the licence's code (the window of 4.2c), not the warning that the game may
+   not work. Steam's data on the development PC call it unsupported (209000: SteamOS 1, no reason, has a licence); in
+   `launch()` the warning comes before the licence. Three possible causes, none proved, the log to read:
+   (1) installed from the console with "Install anyway" after the update: it counts as asked, as in the approved demo;
+   (2) the FrankenPC's own Steam data do not call it unsupported (older than the development PC's): Details would then
+   have no such rows; (3) a web app or the player was open: the warning is skipped then, the licence is not (a real
+   difference in the code, to correct in any case: the licence is shown before "close … first"). Not seen in the
+   preview: its invented games have no licence.
 
 ## Decided, not built yet
 
