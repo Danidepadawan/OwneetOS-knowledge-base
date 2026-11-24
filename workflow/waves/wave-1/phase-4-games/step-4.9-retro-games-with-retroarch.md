@@ -35,3 +35,24 @@ Up: [[phase-4-games]] · Status: **in-progress**
 
 [[retro-cores-and-licences]] (what may be shipped, which consoles, BIOS), [[retroarch-in-the-console]] (how it fits, what is
 proposed), [[retro-discs]] (discs and the law). **Waits for the owner's choices**; then the demo.
+
+**Owner (2026-11-24):** a first installation that needs internet is acceptable; why can Batocera emulate up to the PlayStation 4
+and OwneetOS cannot, and may the user add emulators of their own? (Internet: the guard [[product-invariants]] names Proton as the only
+exception, so it waits for the owner's edit of the guard.)
+
+**Found (2026-11-24):**
+- Batocera's own code is LGPL-3; the whole is "a mix of GPL, LGPL, BSD, MIT and non-commercial licenses", so selling it
+  preinstalled "is forbidden" ([licence page](https://wiki.batocera.org/license)). It ships no BIOS and no commercial game. The non-commercial licences read allow free
+  redistribution: **not shipping them is OwneetOS's own rule ([[legal]]; its text says "assets"), not the law.**
+- What would stop OwneetOS from shipping them: code put on SourceForge must be under an OSI-approved or compliant licence
+  ([terms, section 10](https://slashdotmedia.com/terms-of-use/)); nobody could sell a console with OwneetOS; donations ([[step-7.10-donations-choice]]) to weigh.
+- PlayStation 4 in Batocera is shadPS4, a program of its own (GPL-2, not a RetroArch core): "very experimental", AVX2 and Vulkan 1.3,
+  "may need" system modules from a jailbroken console ([page](https://wiki.batocera.org/systems:ps4)). Its repository has packages also for
+  PCSX2, RPCS3, Dolphin, Cemu, xemu, Xenia, Vita3K. The limit of the first proposal was the step's scope (RetroArch),
+  not a licence: each one is an integration of its own (controller, Guide, saves, settings without a mouse).
+- The user's own emulators: RetroArch loads any core file it is given, so a folder of the user's cores is possible (native
+  code: a warning, as for the Proton tools of [[wave-2]]). An emulator as an AppImage in the Games folder already fits
+  [[frontend-disk-games]] (not tried). Pages of Batocera read: custom systems yes, a way to add a core not found.
+- A third way: the user's own console downloads a non-commercial core from libretro, with consent (as Widevine): nothing
+  redistributed by OwneetOS. Not checked yet: libretro's signing ([[supply-chain-security]]), the legal review; the guard [[legal]]
+  does not say whether a download by the user's console counts, so it applies until the owner writes it.
