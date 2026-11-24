@@ -19,8 +19,6 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 25 | A Steam download's progress not updated in the console, again | Owner's test passed (2026-11-24, owneetd 0.26.9): the log still to read, then closed |
-| 26 | Batman: Arkham Origins, first start: the licence's code shown, no warning that it may not work | Cause not proved: the log to read (OWNEETLOG) |
 
 ### Waits for the owner's decision
 
@@ -41,7 +39,6 @@ owner's.
 
 | Step | What | Status |
 |---|---|---|
-| [[step-4.8-games-that-cannot-run\|4.8]] | Games that cannot run, said honestly (owneet-frontend 0.40.0 tested on the FrankenPC 2026-11-24: all passed but item 26) | in-progress |
 | [[step-4.9-retro-games-with-retroarch\|4.9]] | Retro games with RetroArch (owner, 2026-11-21: after the games' tests, before the legal review) | todo |
 | [[step-5.0.1-optional-gaming-apps\|5.0.1]] | Gaming programs as optional apps (Steam): left to the owner by Danidepadawan (2026-11-21) | todo |
 | [[step-7.3-user-guide\|7.3]] | User guide | in-progress |
@@ -58,52 +55,7 @@ never here.
 
 ## The owner's reports, in detail
 
-25. **A Steam download's progress not updated in the console, again** (owner, 2026-11-23, serious): THE FINALS'
-   download went on in Steam, the console's progress did not move. Log to read (OWNEETLOG in).
-   **From the log (`owneet-20261123-204230`):** THE FINALS was added from Steam (`steam://run/2073850`, 20:44:08). At
-   20:48:41 the console showed it in the library as "Preparing…" (moving bar, no numbers); at 20:50:32 Steam's
-   downloads page showed "Shader pre-caching update" with "Downloading 906.2 MB / 1.1 GB" and "Installing 71%": Steam was
-   downloading the game's **shader pre-cache** (1.1 GB) before the game itself. The console shows any "Shader update"
-   phase as "Preparing…" with no numbers, as built for item 8 (demo `4.2c-steam-preparing`, approved 2026-11-17:
-   the shader cache among the phases without a percentage). Not a regression: the console never showed the shader
-   download's progress; Dota 2's shader update (28%) was the same. Steam's content log gives the shader download's size
-   when it starts ("AppID N update started : download 0/452843952, … stage 0/466678415") and writes it into
-   `steamapps/shadercache/N/downloads/`, so the console could show it as a download (bytes on disk against the size).
-   Proposed to the owner. Also seen: the test log's copy of Steam's `content_log.txt` was cut at 900 KB by the power-off
-   (`cp -u` terminated), so this session's download lines are lost: the test log to be fixed.
-   **Owner (2026-11-23): go.** Built: owneetd 0.26.8, a new game's shader pre-cache download is a "downloading" card
-   (the look of item 8's approved download; no other change): its size from "update started … stage D/T", its bytes
-   from `steamapps/shadercache/APPID/downloads` on the library disks, measured every 3 s; without that size, or for an
-   installed game, as before ("Preparing…" / not listed); after it, "Preparing…" until the game's own download. Test
-   `TestSteamShaderPreCacheDownload`. owneet-base 0.0.87: the test log copies whole files only (written as `.part`,
-   then renamed). On OWNEETLOG. The owner stopped THE FINALS' download on purpose: at the next start it resumes,
-   to see the progress.
-   **Owner's test (2026-11-23/24): the download's progress moves ("solved"); THE FINALS installed and started, its setup
-   read the gamepad, one timeout put down to the connection.** **From the logs (`owneet-20261123-211647`,
-   `owneet-20261124-091849`):** the cause found on 2026-11-23 is confirmed (Steam's shader download ran 20:44:31-20:50:42,
-   in three passes: 1.6 GB, 4 KB, 1.3 GB), **but 0.26.8's new code never ran**: at 21:17:30 Steam resumed the game's own
-   download, shown well before too; its only later shader update came with the game installed (11:55). And 0.26.8 is
-   wrong, from Steam's own numbers: (1) a pass after another kept the first one's bytes (the pass on screen at 20:50 would
-   have shown 100% from its first second); (2) a resumed download counted twice what was already written (Dota 2 at 80%:
-   100%); (3) the files' length runs ahead of what is written (Dota 2: 53% against Steam's 28%). The item stays open.
-   **Corrected: owneetd 0.26.9**, each update Steam starts counted on its own, a resumed one once, the room the files
-   take on the disk instead of their length; tests for the three; the real log read again with the same rules gives the
-   three passes of THE FINALS, each with its size. Not seen on the FrankenPC yet: it needs a Steam game **not installed**
-   that has a shader pre-cache. On OWNEETLOG. Disk check: nothing new but Steam's own folders.
-   **A test of a minute (2026-11-24, from Steam's log):** Steam starts the shader pre-cache 3-5 s after a game's install
-   begins ("update canceled : Shader Priority"), so the install is started and cancelled once the card has been seen:
-   Paladins (444090, not installed, no shader files left on the disks) has 262 MB of it (2026-11-20).
-   **Owner's test (2026-11-24): passed.** The log still to read (the percentage against Steam's own, the disks).
-
-26. **Batman: Arkham Origins, first start: no warning** (owner, 2026-11-24, step 4.8, owneet-frontend 0.40.0; every other
-   test of the step passed): the console showed the licence's code (the window of 4.2c), not the warning that the game may
-   not work. Steam's data on the development PC call it unsupported (209000: SteamOS 1, no reason, has a licence); in
-   `launch()` the warning comes before the licence. Three possible causes, none proved, the log to read:
-   (1) installed from the console with "Install anyway" after the update: it counts as asked, as in the approved demo;
-   (2) the FrankenPC's own Steam data do not call it unsupported (older than the development PC's): Details would then
-   have no such rows; (3) a web app or the player was open: the warning is skipped then, the licence is not (a real
-   difference in the code, to correct in any case: the licence is shown before "close … first"). Not seen in the
-   preview: its invented games have no licence.
+None at the moment.
 
 ## Decided, not built yet
 

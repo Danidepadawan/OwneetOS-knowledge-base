@@ -3,12 +3,12 @@ type: step
 description: "The console says honestly when a game cannot run on OwneetOS (e.g. an anti-cheat that refuses Linux), from Steam's own data, instead of a launch that fails; demo first."
 phase: "[[phase-4-games]]"
 step: "4.8"
-status: in-progress
+status: done
 tags: [step, phase-4]
 ---
 # 4.8 Games that cannot run, said honestly *(added 2026-11-20)*
 
-Up: [[phase-4-games]] · Status: **in-progress**
+Up: [[phase-4-games]] · Status: **done**
 
 - **Origin:** point 6 of [[game-compatibility-method]], put in Wave 1 by the owner on 2026-11-20.
 - **Deliverables:** for a game that cannot run on Linux (its anti-cheat refuses it, e.g. Battlefield 6),
@@ -60,4 +60,7 @@ chosen: left out, as in the demo's first state.
 - **Built (2026-11-24): owneet-frontend 0.40.0.** Unit test `unsupported_games`; the package's 24 tests pass; looked at in the
   preview (`tools/preview-steps/library-steam-compat.txt`, `…-compat-xl.txt`: invented games): the three warnings, today's
   question for a game unsupported on the Deck only, asked once (a restart included), the details, German at text size XL.
-  **To do:** the FrankenPC (Steam's data there, the warning on a real game), then the owner's approval of the step.
+- **Owner's test (FrankenPC, 2026-11-24):** the warning before an install (Paladins, Batman: Arkham Origins) and the rows in
+  Details are right; Steam's data there give 11 such games. The warning before a first start was not seen: the one game tried
+  had been installed from the console, so already asked ([[closed-items]] 26); it is checked in the preview only.
+- **Approved and closed by the owner (2026-11-24).**
