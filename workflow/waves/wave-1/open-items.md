@@ -40,7 +40,7 @@ owner's.
 
 | Step | What | Status |
 |---|---|---|
-| [[step-4.8-games-that-cannot-run\|4.8]] | Games that cannot run, said honestly (demo waits for approval, 2026-11-24) | in-progress |
+| [[step-4.8-games-that-cannot-run\|4.8]] | Games that cannot run, said honestly (built 2026-11-24, owneet-frontend 0.40.0: waits for the test on the FrankenPC) | in-progress |
 | [[step-4.9-retro-games-with-retroarch\|4.9]] | Retro games with RetroArch (owner, 2026-11-21: after the games' tests, before the legal review) | todo |
 | [[step-5.0.1-optional-gaming-apps\|5.0.1]] | Gaming programs as optional apps (Steam): left to the owner by Danidepadawan (2026-11-21) | todo |
 | [[step-7.3-user-guide\|7.3]] | User guide | in-progress |

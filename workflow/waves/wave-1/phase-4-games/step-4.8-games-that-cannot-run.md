@@ -39,9 +39,25 @@ development PC, to confirm on the FrankenPC when it is built.
 - **Battlefield 6** is not in the file read: what Steam says of it is not known yet.
 - Games on a disk: no data, nothing is said.
 
-## Demo (2026-11-24, waits for the owner's approval)
+## Demo (approved by the owner, 2026-11-24)
 
 `design/demos/4.8-games-that-cannot-run.html` (code `7fa8991`): for a Steam game with SteamOS 1, the install's question becomes
 "{title} may not work" with Steam's reason and the month of its check, Cancel selected, "Install anyway"; the same before the
 first start of one installed from Steam's pages ("Start anyway"); asked once per game; Details always says it (three rows). To
 choose: a small sign on the cover. No new button; every other game as today.
+
+**Approved (owner, 2026-11-24):** the demo, with the warning sign in the window. The sign **on the cover** was not
+chosen: left out, as in the demo's first state.
+
+## Building
+
+- **The data** (`SteamOwned`, `SteamProvider`): the app info's SteamOS rating, its reason ("anticheat" when a reason's token has
+  `UnsupportedAntiCheat`, otherwise "other") and the month of Steam's check, as extras of the game (`steam.unsupported`,
+  `steam.unsupported.month`), installed or not; games outside the account's licences and on a disk have none.
+- **The window** (`theme.qml` `showWarning`): install's question replaced (asked at every install, as the question is);
+  before a first start once per game (`compatWarned.APPID` in the interface's memory, set by "Install anyway" or "Start
+  anyway"); without a date (none in Steam's data) the line and the row are left out.
+- **Built (2026-11-24): owneet-frontend 0.40.0.** Unit test `unsupported_games`; the package's 24 tests pass; looked at in the
+  preview (`tools/preview-steps/library-steam-compat.txt`, `…-compat-xl.txt`: invented games): the three warnings, today's
+  question for a game unsupported on the Deck only, asked once (a restart included), the details, German at text size XL.
+  **To do:** the FrankenPC (Steam's data there, the warning on a real game), then the owner's approval of the step.

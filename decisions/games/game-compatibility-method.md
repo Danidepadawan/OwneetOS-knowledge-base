@@ -4,7 +4,7 @@ description: "How OwneetOS makes games work as a whole instead of one game at a 
 area: games
 status: active
 decided: 2026-11-18
-updated: 2026-11-23
+updated: 2026-11-24
 tags: [decision, games]
 ---
 # Making games work: a method, not one game at a time
@@ -51,7 +51,8 @@ classes; for each, a mature open source project already solved it and OwneetOS d
    Windows and Linux installers, DOS), one free game per cell (free-to-play, demos, GOG's free games), run on every
    release and every driver change. No game bought.
 6. **What cannot work, said honestly.** Games whose anti-cheat refuses Linux (e.g. Battlefield 6) never
-   run on any Linux system: the console says so instead of failing (ProtonDB and Steam Deck data).
+   run on any Linux system: the console says so instead of failing (ProtonDB and Steam Deck data). **As approved
+   (2026-11-24): a warning, never a block, from Steam's own SteamOS rating only ([[step-4.8-games-that-cannot-run]]).**
 
 ## Research (2026-11-18)
 
@@ -81,3 +82,4 @@ run with the console's kernel) to tell the driver from the card.
 | 2026-11-20 | Point 3's way approved: native games outside Steam in Valve's Steam Linux Runtime 1.0 (scout) through umu (`umu-scout`), as Heroic does ([[umu-fixes-and-runtime]]); as today when it is missing. Cyberpunk 2077 dropped: NVIDIA's driver, not OwneetOS (owner). |
 | 2026-11-20 | Point 4 (a tried NVIDIA driver channel) **rejected** by the owner: more upkeep than he can give. Point 5: games from GOG may be named and used (legal; the local guard on game names is the owner's to edit). Point 6 put in Wave 1 as [[step-4.8-games-that-cannot-run]] (demo first). |
 | 2026-11-23 | The console's percentage of Steam's shader preparation dropped: Steam's own page stays (owner). |
+| 2026-11-24 | Point 6: demo 4.8 approved: a warning before the install or the first start, from Steam's SteamOS rating, never a block; no sign on the cover (owner). |
