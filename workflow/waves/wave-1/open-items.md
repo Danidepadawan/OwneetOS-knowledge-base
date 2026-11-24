@@ -90,6 +90,9 @@ never here.
    take on the disk instead of their length; tests for the three; the real log read again with the same rules gives the
    three passes of THE FINALS, each with its size. Not seen on the FrankenPC yet: it needs a Steam game **not installed**
    that has a shader pre-cache. On OWNEETLOG. Disk check: nothing new but Steam's own folders.
+   **A test of a minute (2026-11-24, from Steam's log):** Steam starts the shader pre-cache 3-5 s after a game's install
+   begins ("update canceled : Shader Priority"), so the install is started and cancelled once the card has been seen:
+   Paladins (444090, not installed, no shader files left on the disks) has 262 MB of it (2026-11-20).
 
 ## Decided, not built yet
 
