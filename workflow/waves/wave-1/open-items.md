@@ -30,7 +30,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 25 | A Steam download's progress not updated in the console, again | Built: owneetd 0.26.8 (shader pre-cache download with its progress), owneet-base 0.0.87; on OWNEETLOG, to test |
+| 25 | A Steam download's progress not updated in the console, again | 0.26.8's code never ran in the owner's test and is wrong (three faults found): being corrected |
 
 ### Others
 
@@ -78,6 +78,14 @@ never here.
    `TestSteamShaderPreCacheDownload`. owneet-base 0.0.87: the test log copies whole files only (written as `.part`,
    then renamed). On OWNEETLOG. The owner stopped THE FINALS' download on purpose: at the next start it resumes,
    to see the progress.
+   **Owner's test (2026-11-23/24): the download's progress moves ("solved"); THE FINALS installed and started, its setup
+   read the gamepad, one timeout put down to the connection.** **From the logs (`owneet-20261123-211647`,
+   `owneet-20261124-091849`):** the cause found on 2026-11-23 is confirmed (Steam's shader download ran 20:44:31-20:50:42,
+   in three passes: 1.6 GB, 4 KB, 1.3 GB), **but 0.26.8's new code never ran**: at 21:17:30 Steam resumed the game's own
+   download, shown well before too; its only later shader update came with the game installed (11:55). And 0.26.8 is
+   wrong, from Steam's own numbers: (1) a pass after another kept the first one's bytes (the pass on screen at 20:50 would
+   have shown 100% from its first second); (2) a resumed download counted twice what was already written (Dota 2 at 80%:
+   100%); (3) the files' length runs ahead of what is written (Dota 2: 53% against Steam's 28%). The item stays open.
 
 ## Decided, not built yet
 

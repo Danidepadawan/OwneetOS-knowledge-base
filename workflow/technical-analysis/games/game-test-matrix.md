@@ -56,7 +56,7 @@ Free games for the cells left (checked online 2026-11-20; status can change with
 | Source 2, native Linux, Vulkan | Dota 2 (Steam) | native Linux, free; runs (2026-11-22); known limit: its text fields with a controller close it ("text_input_daisy.xml", Valve's own fault since 2022, [[closed-items]] 24) |
 | Easy Anti-Cheat allowed on Linux | Paladins (Steam) | anti-cheat "works" on GamingOnLinux (last updated 2025-11-26); Valve's Steam Deck rating "Unsupported"; dropped by the owner 2026-11-23 (black screen in exclusive full screen, [[closed-items]] 20) |
 | Anti-cheat that refuses Linux (step 4.8) | Apex Legends (Steam) | EA blocked Linux and Steam Deck in October 2024; no reversal found |
-| Unreal 5 + Easy Anti-Cheat | THE FINALS (Steam) | runs through Proton, but broke on Linux after several updates; Denuvo Anti-Cheat added in 2026: unreliable |
+| Unreal 5 + Easy Anti-Cheat | THE FINALS (Steam) | runs through Proton, but broke on Linux after several updates; Denuvo Anti-Cheat added in 2026: unreliable. **Owner's test (2026-11-24): installed, starts, its setup reads the gamepad; one timeout (connection); no match played yet** |
 | DOS (DOSBox), GOG | Tyrian 2000 (GOG) | GOG's page shows it free |
 | ScummVM, GOG Linux | Beneath a Steel Sky (GOG) | free on GOG with a Linux version (ScummVM) |
 | BattlEye allowed on Linux | none found yet | |
