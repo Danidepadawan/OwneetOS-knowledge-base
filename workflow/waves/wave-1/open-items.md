@@ -30,7 +30,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 25 | A Steam download's progress not updated in the console, again | 0.26.8's code never ran in the owner's test and is wrong (three faults found): being corrected |
+| 25 | A Steam download's progress not updated in the console, again | Corrected in owneetd 0.26.9, on OWNEETLOG; to see at the next new Steam game's download |
 
 ### Others
 
@@ -86,6 +86,10 @@ never here.
    wrong, from Steam's own numbers: (1) a pass after another kept the first one's bytes (the pass on screen at 20:50 would
    have shown 100% from its first second); (2) a resumed download counted twice what was already written (Dota 2 at 80%:
    100%); (3) the files' length runs ahead of what is written (Dota 2: 53% against Steam's 28%). The item stays open.
+   **Corrected: owneetd 0.26.9**, each update Steam starts counted on its own, a resumed one once, the room the files
+   take on the disk instead of their length; tests for the three; the real log read again with the same rules gives the
+   three passes of THE FINALS, each with its size. Not seen on the FrankenPC yet: it needs a Steam game **not installed**
+   that has a shader pre-cache. On OWNEETLOG. Disk check: nothing new but Steam's own folders.
 
 ## Decided, not built yet
 
