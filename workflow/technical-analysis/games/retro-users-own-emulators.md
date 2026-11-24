@@ -66,11 +66,12 @@ FunContainer/            the user's name for the console
 - **Emulators:** the kinds a game on a disk may already be (AppImage, program, script; Windows through Proton as a hypothesis),
   and RetroArch cores if RetroArch is there. More than one: asked once, changed from Options, as the file to start today.
 - **Games:** one file, or a folder (the file to start asked once, as today). Title: the name as written.
-- **Starting:** the emulator with the game's path. Read in the sources: enough for Dolphin, RPCS3 and shadPS4; Cemu wants `-g`, xemu
-  `-dvd_path`, Vita3K starts an installed title by its id. PCSX2 reads its own options and is to be tried. So an optional text
+- **Starting:** the emulator with the game's path. Read in the sources: enough for Dolphin, PCSX2, RPCS3 and shadPS4; Cemu wants `-g`, xemu
+  `-dvd_path`, Vita3K starts an installed title by its id. So an optional text
   file next to the emulator (as `game.txt`) says how it starts; with none, the path alone.
 - **Its own settings** (controller, firmware): "Open the emulator" without a game, driven with the controller pointer
-  ([[step-4.7-controller-pointer]], made for apps): no mouse needed, nothing new on the controller. Asked of the user once
+  ([[step-4.7-controller-pointer]], made for apps): no mouse needed, no new button. **One rule to change with the owner** ([[controller-input-map]]): the
+  pointer holds for one window, and an emulator's settings open others; as for install scripts, every window until it ends. Once
   per emulator; the console does not write the emulators' settings.
 - **Guide, close, "Starting …":** as any game on a disk.
 
