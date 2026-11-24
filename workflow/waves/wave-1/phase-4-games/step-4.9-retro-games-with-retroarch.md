@@ -57,3 +57,4 @@ retro emulators' one-time download to the guard [[product-invariants]].)
   redistributed by OwneetOS. Not checked yet: libretro's signing ([[supply-chain-security]]), the legal review; the guard [[legal]]
   does not say whether a download by the user's console counts, so it applies until the owner writes it.
   Looked into at the owner's request, pros and cons: [[retro-non-commercial-cores]].
+- The user's own PlayStation 3, Xbox 360 and PlayStation 4 emulators (the owner's question, 2026-11-24): [[retro-users-own-emulators]].
