@@ -3,6 +3,7 @@ type: guard
 description: "What OwneetOS must never become: mouse required, Guide bound by apps, bloat, own server, hard-coded text or colours."
 tags: [guard, product]
 ---
+
 # Guard: product invariants
 
 > [!danger] Binding guard — never broken, whatever the request. Rules: [[guards/INDEX|guards]].
@@ -21,8 +22,9 @@ tags: [guard, product]
   ([[hard-constraints]] C1, C4)
 - **Never add an own server** or anything that needs one; never collect telemetry. Crash reports
   only with explicit opt-in consent. ([[online-and-chat]], [[legal-compliance]])
-- **Never require internet** for local or DRM-free content. The only exception is Proton's one-time
-  download for Windows games. ([[hard-constraints]] C9, [[games-on-disk]])
+- **Never require internet** for local or DRM-free content. The only exceptions are the one-time
+  downloads of Proton for Windows games and of the emulators for retro games. ([[hard-constraints]]
+  C9, [[games-on-disk]])
 - **Never hard-code UI text or colours**: text through the i18n message files, colours through the
   palette tokens. ([[ui-text-and-i18n]], [[design-tokens]])
 - **Never support ARM or legacy BIOS boot**: x86_64 and UEFI only. ([[hard-constraints]] C3,

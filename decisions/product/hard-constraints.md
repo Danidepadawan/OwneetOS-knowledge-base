@@ -4,7 +4,7 @@ description: "C1-C9: lightweight, gamepad only, x86_64, minimal Arch, GPLv3, Eng
 area: product
 status: active
 decided: 2026-10-03
-updated: 2026-10-16
+updated: 2026-11-24
 legacy: "PROJECT_RULES.md §2"
 tags: [decision, product]
 ---
@@ -27,6 +27,8 @@ The constraints every part of OwneetOS must respect. Code and documents refer to
 **Exception to C9** (2026-10-11): Proton and its runtime are downloaded once, in the background,
 the first time the console is online **with a Windows game in the library** (refined 2026-10-16;
 without Windows games nothing is downloaded) ("a necessary evil") — see [[games-on-disk]].
+**Second exception** (owner, 2026-11-24, in the guard [[product-invariants]]): the emulators for retro games may be
+downloaded once ([[step-4.9-retro-games-with-retroarch]]).
 **C1 is measured with Steam closed**: Steam is started only when needed ([[steam-integration]]).
 
 ## Creates
@@ -45,3 +47,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-03 | Public repo; English mandatory for all project text. |
 | 2026-10-11 | Proton and its runtime are downloaded once, in the background, the first time the console is online ("a necessary evil": the only exception to C9, for Windows games before the first connection). Installing a game from an installer first shows "By installing you accept the game's licence" [Read] [Install] (the user is informed, the project is covered). Step 4.1 approved. |
 | 2026-10-16 | The C9 exception is refined: Proton and its runtime are downloaded only once a Windows game is in the library (the first time the console is online with one); without Windows games nothing is downloaded. |
+| 2026-11-24 | Second exception to C9: the emulators for retro games may be downloaded once (the owner edited the guard). |

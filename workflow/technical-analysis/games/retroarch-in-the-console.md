@@ -25,8 +25,8 @@ For [[step-4.9-retro-games-with-retroarch]]. Cores: [[retro-cores-and-licences]]
   MD5.
 - **Covers:** libretro's thumbnails (thumbnails.libretro.com, matched by name) carry **no licence**; their README says the art belongs to the
   games' developers and publishers.
-- **Must work offline** ([[product-invariants]]: never internet for local content): RetroArch and its cores ship inside the ISO, as
-  Brave does, never downloaded.
+- **Internet:** the emulators may be downloaded once (owner, 2026-11-24, [[product-invariants]]); after that, offline. In the ISO or
+  downloaded: to choose ([[retro-non-commercial-cores]] for the ones that may not be shipped).
 - **The catalogue of 5.0.0** ([[optional-apps]]) knows two kinds, `webapp` (opened by the user) and `engine` (hidden, packages). Installing
   and removing an engine's packages from the ISO's bundled repository already works; a tile for something that is not a web
   app is **new**: a third kind, to build.

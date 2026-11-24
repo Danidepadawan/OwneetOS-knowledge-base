@@ -37,8 +37,8 @@ Up: [[phase-4-games]] · Status: **in-progress**
 proposed), [[retro-discs]] (discs and the law). **Waits for the owner's choices**; then the demo.
 
 **Owner (2026-11-24):** a first installation that needs internet is acceptable; why can Batocera emulate up to the PlayStation 4
-and OwneetOS cannot, and may the user add emulators of their own? (Internet: the guard [[product-invariants]] names Proton as the only
-exception, so it waits for the owner's edit of the guard.)
+and OwneetOS cannot, and may the user add emulators of their own? (Internet: the owner added the
+retro emulators' one-time download to the guard [[product-invariants]].)
 
 **Found (2026-11-24):**
 - Batocera's own code is LGPL-3; the whole is "a mix of GPL, LGPL, BSD, MIT and non-commercial licenses", so selling it
@@ -56,3 +56,4 @@ exception, so it waits for the owner's edit of the guard.)
 - A third way: the user's own console downloads a non-commercial core from libretro, with consent (as Widevine): nothing
   redistributed by OwneetOS. Not checked yet: libretro's signing ([[supply-chain-security]]), the legal review; the guard [[legal]]
   does not say whether a download by the user's console counts, so it applies until the owner writes it.
+  Looked into at the owner's request, pros and cons: [[retro-non-commercial-cores]].
