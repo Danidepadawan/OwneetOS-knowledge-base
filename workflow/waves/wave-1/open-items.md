@@ -19,6 +19,7 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
+| 25 | A Steam download's progress not updated in the console, again | Corrected in owneetd 0.26.9, on OWNEETLOG: the owner's test of a minute with Paladins' install |
 
 ### Waits for the owner's decision
 
@@ -29,7 +30,6 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 25 | A Steam download's progress not updated in the console, again | Corrected in owneetd 0.26.9, on OWNEETLOG; to see at the next new Steam game's download |
 
 ### Others
 
