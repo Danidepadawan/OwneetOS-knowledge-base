@@ -9,14 +9,14 @@ tags: [technical-analysis, games, emulators]
 For [[step-4.9-the-users-own-emulators]]. Decision: [[users-own-emulators]]. **No emulator and no console is ever named here** (owner, 2026-11-25).
 
 ```
-FunContainer/            the user's name for the console (invented here)
+Emulation/               (Emulazione, ...) at the top of a disk, beside the games folder
+ FunContainer/            the user's name for the console (invented here)
   Emulators/             (Emulatori, ...) one folder or file per emulator
   Games/                 (Giochi, ...) one file or folder per game
 ```
 
-- **Found by its two sub-folders**, at the top of a disk or inside the Games folder (there, before 4.9, it was read as one PC
-  game). The console's own "Add games" makes it inside the Games folder: the file manager, the moving between disks and the covers
-  go on working.
+- **Found by its two sub-folders**, only inside "Emulation" (an accent may be written in either way). "Add games" makes it there; the
+  file manager has "Emulation" as a place.
 - **Emulators:** AppImage, program, script, archive (a Windows program is not listed). In a folder: the best kind, at the shallowest place.
   More than one: asked once per console, changed from Options.
 - **Games:** one file, or a folder (the file to start asked once, as for games on a disk). Title: the name as written. A small text

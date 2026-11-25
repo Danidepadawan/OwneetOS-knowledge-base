@@ -40,8 +40,12 @@ Up: [[phase-4-games]] · Status: **in-progress**
 - **Checked:** unit test `test_Emulators` (the package's 25 tests pass), `tools/lint`, `owneet-emulator-run` in the builder VM with invented
   emulators (options with spaces and signs, no exec bit, archives, changed ones, errors, what is removed and what is kept), the
   previews `emulators.txt`, `emulators-add.txt`, `emulators-xl.txt` (German, XL). On OWNEETLOG.
-- **Not in it:** Windows programs, moving a console's folder between disks from the interface (a game on a disk moves; these games are
-  no such games), uninstalling such a game from its options (the file manager deletes).
-- **The pointer's explanation** is today's card ("It turns off by itself when another window takes the screen"): not true for an
-  emulator opened by itself; the text waits for the owner.
+- **Not in it:** Windows programs, uninstalling such a game from its options (the file manager deletes).
+- **The owner (2026-11-25):** the pushed history with names stays as it is; a text for the pointer's card; moving a console between
+  disks, absolutely; a folder "Emulation" beside the games folder, if better: **it is** (no game's folder looked into, no game of
+  the PC's taken for a console, clear to the user).
+- **Built (2026-11-25): owneet-frontend 0.41.1, owneetd 0.27.1:** `Emulation` / `Emulazione` / `Émulation` / `Emulación` at the top of a
+  disk, the consoles only in it; the file manager shows it; the pointer's card says "It stays on until you close the emulator".
+- **Moving a console (demo 4.9b, waits for approval):** `design/demos/4.9b-move-a-console.html`: the windows of moving games, the whole console
+  (never one game alone); a disk with a console of that name already is off; a USB disk's consoles in "Which ones to copy?".
 - **To do:** the FrankenPC with real emulators (named in the conversation only), then the owner's approval of the step.

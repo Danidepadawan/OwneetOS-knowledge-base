@@ -4,7 +4,7 @@ description: "The Games folder convention, Windows games through hidden Proton, 
 area: games
 status: active
 decided: 2026-10-11
-updated: 2026-11-12
+updated: 2026-11-25
 legacy: "PROJECT_RULES.md §6 (Games on a disk), §10, §13 (2026-10-11)"
 tags: [decision, games]
 ---
@@ -134,6 +134,7 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-16 | Demo 4.5 proposal: Proton is downloaded only once a Windows game is in the library; its progress in the home notices and Settings → System; GOG's `goggame-*.info` says which file starts a Windows game; games on a USB disk do not save in their own folder until step 6.5 (option B). |
 | 2026-10-11 | Proton and its runtime are downloaded once, in the background, the first time the console is online ("a necessary evil": the only exception to C9, for Windows games before the first connection). Installing a game from an installer first shows "By installing you accept the game's licence" [Read] [Install] (the user is informed, the project is covered). Step 4.1 approved. |
 | 2026-11-11 | No ":" in an install folder (": " → " - "); a game folder on the console's disk is renamed before installing in place; the title keeps the ":". A list of known games names the file to start (The Witcher 2: `game/witcher2`, not its launchers); a Linux program started directly gets its folder in `LD_LIBRARY_PATH` (owner). |
+| 2026-11-25 | The games folder's names are the console's five languages' (Games, Giochi, Spiele, Jeux, Juegos) everywhere (a fault corrected, owner). |
 | 2026-11-12 | Games must be installable straight on the SATA disk (the console's other disks), not only on its own disk: a fault, priority, built right after the current test (owner). |
 | 2026-11-12 | A game is installed on the disk where its installer is: the user chooses where the installer goes (moving it between disks); no choice at install time (owner). |
 | 2026-11-12 | A known game's own crash reporter is not started (a second OwneetOS library, only in the games the list names): The Witcher 2's 2015 reporter cannot start and showed a desktop window after its crash on quitting (owner). |
