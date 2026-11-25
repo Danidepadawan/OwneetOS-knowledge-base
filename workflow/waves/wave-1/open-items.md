@@ -92,6 +92,11 @@ never here.
    source). The change is proposed to the owner;
    (b) an emulator built for another kind of processor is listed as any other, and cannot start: demo 4.9c, to approve;
    (c) an emulator asked for a higher limit of locked memory than the system gives.
+   **The owner (2026-11-25): stop, nothing that damages what is built so far.** Asked: on what the console decides whether to ask the
+   user; how many of these problems one program for many consoles would solve. Nothing more is built until the owner chooses. Of
+   owneet-frontend 0.42.1 (not on OWNEETLOG) two points change what starts today, found by the assistant: a folder with one folder of
+   another name is asked about (it was given as it is); tiny files beside big folders give the folder (the file was given),
+   and some emulators want that very file. To correct or take back, the owner's choice.
 
 ## Decided, not built yet
 
