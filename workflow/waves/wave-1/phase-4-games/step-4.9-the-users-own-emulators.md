@@ -33,4 +33,15 @@ Up: [[phase-4-games]] · Status: **in-progress**
 
 ## Building
 
-To do.
+- **Built (2026-11-25): owneet-frontend 0.41.0, owneetd 0.27.0.** `owneet::Emulators` (the folders, what is an emulator, what is a game, the
+  choices in `emulators.json`), the disk-games provider (extras `emu.*`), the windows in `theme.qml` (`emu*`), `owneet-emulator-run`
+  (unpacks an AppImage or opens an archive once, in `~/.local/share/owneet/emulators/`), `POST /v1/pointer` with `"windows": "all"`.
+  How: [[users-own-emulators-design]].
+- **Checked:** unit test `test_Emulators` (the package's 25 tests pass), `tools/lint`, `owneet-emulator-run` in the builder VM with invented
+  emulators (options with spaces and signs, no exec bit, archives, changed ones, errors, what is removed and what is kept), the
+  previews `emulators.txt`, `emulators-add.txt`, `emulators-xl.txt` (German, XL). On OWNEETLOG.
+- **Not in it:** Windows programs, moving a console's folder between disks from the interface (a game on a disk moves; these games are
+  no such games), uninstalling such a game from its options (the file manager deletes).
+- **The pointer's explanation** is today's card ("It turns off by itself when another window takes the screen"): not true for an
+  emulator opened by itself; the text waits for the owner.
+- **To do:** the FrankenPC with real emulators (named in the conversation only), then the owner's approval of the step.

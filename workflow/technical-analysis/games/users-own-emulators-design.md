@@ -17,10 +17,12 @@ FunContainer/            the user's name for the console (invented here)
 - **Found by its two sub-folders**, at the top of a disk or inside the Games folder (there, before 4.9, it was read as one PC
   game). The console's own "Add games" makes it inside the Games folder: the file manager, the moving between disks and the covers
   go on working.
-- **Emulators:** the kinds a game on a disk may be (AppImage, program, script; a Windows program through Proton is a hypothesis).
+- **Emulators:** AppImage, program, script, archive (a Windows program is not listed). In a folder: the best kind, at the shallowest place.
   More than one: asked once per console, changed from Options.
-- **Games:** one file, or a folder (the file to start asked once, as for games on a disk). Title: the name as written. Discs written
-  as a text list and their tracks (`.cue`, `.m3u`) are one game.
+- **Games:** one file, or a folder (the file to start asked once, as for games on a disk). Title: the name as written. A small text
+  file that names files beside it stands for them (a disc and its tracks, a list of discs); files of one name with several
+  extensions are one game, asked once. Texts, pictures and saves beside games are not games. A folder with nothing at its top, or
+  more than 40 files, is given as it is.
 - **Starting:** the emulator, its options, the game's path. Among the programs looked at, most need the path alone, some one
   option before it. Options: typed once ("How it starts"), split by spaces, double quotes keep a name together, anywhere in a word.
   No shell: `;`, `&`, `$` are plain signs (owneetd, `execCommand`). The interface's `CommandTokenizer` takes quotes only at a word's
