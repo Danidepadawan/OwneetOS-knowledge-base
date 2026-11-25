@@ -11,10 +11,6 @@ tags: [index]
 
 - [[game-test-matrix]] — Research for points 5 and 6 of the games method: testing games by the technology that makes them break, with free games only, and telling the user honestly when a game cannot run on Linux (Steam's own Steam Deck data).
 - [[nvidia-driver-channel]] — Research for point 4 of the games method: how the console's NVIDIA driver is chosen, tried against games before it ships, and gone back from; what Arch and Bazzite offer; the Cyberpunk 2077 test with driver 595.
-- [[retro-cores-and-licences]] — Research for step 4.9: which RetroArch cores OwneetOS may ship (licences read at the source, not from Arch's field), which consoles they cover, the BIOS files each one needs, sizes.
-- [[retro-discs]] — Research for step 4.9: the user's own game discs, played straight from the drive or copied (which consoles' discs a PC drive reads, what RetroArch does, the law in Italy and the EU).
-- [[retro-non-commercial-cores]] — Research for step 4.9: emulators that OwneetOS may not ship (non-commercial licences), downloaded by the user's own console instead: what it takes, from where (libretro or Arch), pros, cons, what it would add.
-- [[retro-users-own-emulators]] — Research for step 4.9: emulators the user adds (PlayStation 3, Xbox 360, PlayStation 4): licences, what the player must supply, what the console may make easier, what it must not, the law.
-- [[retroarch-in-the-console]] — Research for step 4.9: how RetroArch fits the console (its own build, commands over stdin, Guide, the user's folders, BIOS, covers, the catalogue) and what is left to choose.
 - [[steam-the-steamos-way]] — Research for point 2 of the games method: what SteamOS-like sessions do with Steam (its launch flags and environment), what owneetd does instead, and what to try on the FrankenPC.
 - [[umu-fixes-and-runtime]] — Research for point 3 of the games method: running the console's own games through umu as Heroic does: Windows games with their store and id so umu-protonfixes applies the community's fixes, native Linux games in the Steam Linux Runtime (UMU_NO_PROTON=1).
+- [[users-own-emulators-design]] — Step 4.9: how the console finds and starts the user's own emulators (folders, kinds of programs, options, archives, pointer), what was checked and what is still to try. No emulator or console is named.

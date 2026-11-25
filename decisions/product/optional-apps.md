@@ -41,9 +41,9 @@ Entries of the [[decision-log]] that shaped this note.
 | Date | Decision |
 |---|---|
 | 2026-10-13 | **Optional apps** (new step 5.0): the user installs only the apps they want (at installation and later, from the apps page, installed and missing ones shown differently); the ISO becomes slim when 5.0 arrives (apps downloaded when chosen; option b). |
-| 2026-10-14 | Step 5.0 split into 5.0.0 (web apps: Netflix, YouTube, Spotify) and 5.0.1 (gaming programs: Steam, Epic, GOG, RetroArch). Brave ships inside the ISO as package files and is installed only when the user picks a web app; the user never sees Brave; installed and removed from the home screen's Apps grid; Discord waits for the chat modules; free web browsing in Wave 2; live system: the 12 GB rule as Steam. |
+| 2026-10-14 | Step 5.0 split into 5.0.0 (web apps: Netflix, YouTube, Spotify) and 5.0.1 (gaming programs: Steam, Epic, GOG and emulation). Brave ships inside the ISO as package files and is installed only when the user picks a web app; the user never sees Brave; installed and removed from the home screen's Apps grid; Discord waits for the chat modules; free web browsing in Wave 2; live system: the 12 GB rule as Steam. |
 | 2026-10-14 | Step 5.1: removing a web app deletes its Brave profile (the confirmation says the user signs in again); a running web app is treated like a game (hero with Resume / Close, one game or web app at a time); background playback in Wave 2. |
 | 2026-10-18 | Step 5.3: YouTube opens its TV interface with a TV user agent taken by owneetd from the catalogue (brand-neutral first). |
 | 2026-10-23 | Background playback stays in Wave 2, confirmed when step 5.5 (Spotify) started: that step's deliverable "playback continues in the background" is dropped. |
-| 2026-11-24 | Step 4.9 before 5.0.1: RetroArch joins today's catalogue by itself (owner). |
-| 2026-11-25 | RetroArch is not an optional app any more: no emulator is shipped ([[users-own-emulators]], owner). |
+| 2026-11-24 | Step 4.9 before 5.0.1 (owner). |
+| 2026-11-25 | Emulation is not an optional app any more: no emulator is shipped ([[users-own-emulators]], owner). |

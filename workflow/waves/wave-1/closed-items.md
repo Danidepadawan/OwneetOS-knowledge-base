@@ -1323,7 +1323,7 @@ found here. Newest closings are added at the end.
    08:59:39; the recently played follow at once; Batman: Arkham Knight too, 09:20-09:22). Proton's logs now 5 MB for
    ELDEN RING (was 155 MB), one per start. Seen: at power-off Steam took over 20 s to close and was ended by the
    console ("result=timeout", 09:22:25): Steam killed then checks its files at the next start; to watch. Disk check:
-   nothing new. **Next: umu (step 2).** RetroArch: its own step, [[step-4.9-the-users-own-emulators|4.9]] (owner, 2026-11-21).
+   nothing new. **Next: umu (step 2).** Emulation: its own step, [[step-4.9-the-users-own-emulators|4.9]] (owner, 2026-11-21).
    **Step 2 built (2026-11-19):** protonfixes (in GE-Proton) carries the umu database (`protonfixes/umu-database.csv`,
    seen on the FrankenPC's disk listing in GE-Proton11-9) and needs no internet, but umu passes `GAMEID` on as the id, so
    the console looks the game up itself: owneet-frontend 0.38.41 reads a GOG game's product id (`goggame-<id>.info`,

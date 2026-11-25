@@ -12,7 +12,7 @@ tags: [step, phase-5]
 Up: [[phase-5-streaming-apps-and-media]] · Status: **done**
 
 Step 5.0 (Optional apps, 2026-10-13) is split in two: this step (the web apps) and
-[[step-5.0.1-optional-gaming-apps]] (Steam, Epic, GOG, RetroArch). Decision: [[optional-apps]].
+[[step-5.0.1-optional-gaming-apps]] (Steam, Epic, GOG). Decision: [[optional-apps]].
 
 - **Deliverables:**
   - A catalogue of the apps (`/usr/share/owneet/apps.json`, owned by root, the only allow-list):
