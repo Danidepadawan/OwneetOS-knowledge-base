@@ -4,7 +4,7 @@ description: "What Wave 1 contains, what later waves and nice-to-haves are."
 area: product
 status: active
 decided: 2026-10-03
-updated: 2026-11-21
+updated: 2026-11-25
 legacy: "PROJECT_RULES.md §10"
 tags: [decision, product, scope]
 ---
@@ -54,4 +54,5 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-13 | **Optional apps** (new step 5.0): the user installs only the apps they want (at installation and later, from the apps page, installed and missing ones shown differently); the ISO becomes slim when 5.0 arrives (apps downloaded when chosen; option b). |
 | 2026-10-19 | **New Wave 2 step 10a, Stable live boot**, before dual boot (now step 10b): OwneetOS fully usable from the USB stick (the user chooses the disks where games are saved, the game library is cached, faster boot, RAM saved wherever possible). |
 | 2026-11-19 | Emulation (RetroArch) is no longer a nice-to-have: a Wave 2 item, very important there; not brought forward to Wave 1 (owner). |
-| 2026-11-21 | Emulation (RetroArch) moved into Wave 1, at the end of the games' tests and before the legal review: the idea of "ownership" has to come across in the first release, as Batocera does (owner). [[step-4.9-retro-games-with-retroarch]] |
+| 2026-11-21 | Emulation (RetroArch) moved into Wave 1, at the end of the games' tests and before the legal review: the idea of "ownership" has to come across in the first release, as Batocera does (owner). [[step-4.9-the-users-own-emulators]] |
+| 2026-11-25 | Step 4.9 without RetroArch: the user brings emulators and games, OwneetOS only simplifies (owner). [[users-own-emulators]] |

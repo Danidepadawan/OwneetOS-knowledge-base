@@ -6,7 +6,7 @@ tags: [technical-analysis, games, retro, legal]
 ---
 # The user's own emulators: PlayStation 3, Xbox 360, PlayStation 4 (research, 2026-11-24)
 
-Asked by the owner for [[step-4.9-retro-games-with-retroarch]]: may the user add them, and can the console make it easier without
+Asked by the owner for [[step-4.9-the-users-own-emulators]]: may the user add them, and can the console make it easier without
 shipping them and within the law? **Not decided.** Not legal advice.
 
 ## They are programs, not RetroArch cores
@@ -80,9 +80,21 @@ user's with a file of the user's. The per-console help above (official sites, re
 any more**. Opinion, to [[step-7.5-legal-review-before-the-public-launch]]. A short notice once: other people's program, the user's
 responsibility.
 
-**To try:** an AppImage's start time (unpacked at every start; could be unpacked once); a program without the exec bit on
-a Linux disk (FAT, exFAT and NTFS give it: `umask=022`); libraries an AppImage expects from the system; whether the emulator's
-bars stay on screen with the path alone; saves on a read-only disk.
+**Checked (2026-11-25, builder VM, unpacked and never run, deleted after):** PCSX2, Cemu and RetroArch's AppImages unpack in 0.1 s or less (180 MB;
+a slow disk takes longer) and ask the system only for libraries whose packages the console has. `bsdtar` (libarchive, already there)
+opens RetroArch's `.7z` and keeps the exec bit. Formats offered for Linux: AppImage for most, inside a `.zip` (melonDS) or
+`.7z` (RetroArch) for some; Dolphin has Flatpak and, on its page's newer copy, AppImage (the page refused to be read). Flatpak
+and Snap cannot be used here.
+
+**What the console can take off the user** (proposed, in the demo): makes the folders; opens a `.zip` / `.7z` / `.tar` emulator
+by itself, "as you downloaded it"; gives the exec bit (on a Linux disk, by unpacking on the console's disk); unpacks an AppImage once;
+shows one game for a `.cue` / `.m3u` and its tracks; asks once which emulator, which file; says why nothing starts and
+offers what to change; covers as today. The console's folder made inside the Games folder keeps the file manager, the moving between disks
+and the covers working; made by hand at the top of a disk it is found too.
+
+**Still to try on the console:** running one; whether bars stay on screen; the pointer in an emulator's settings; saves on a
+read-only disk; an emulator of the user's that answers to Guide by itself (programs see the controller today; not OwneetOS's
+binding).
 
 ## Opinion (before the owner's way)
 

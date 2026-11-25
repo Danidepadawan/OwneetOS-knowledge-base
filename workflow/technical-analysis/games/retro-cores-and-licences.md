@@ -6,7 +6,7 @@ tags: [technical-analysis, games, retro]
 ---
 # Retro games: cores, licences, BIOS (research, 2026-11-24)
 
-For [[step-4.9-retro-games-with-retroarch]]. The rule is [[legal]]: no NonCommercial terms. How RetroArch fits the console:
+For [[step-4.9-the-users-own-emulators]]. The rule is [[legal]]: no NonCommercial terms. How RetroArch fits the console:
 [[retroarch-in-the-console]]. Discs: [[retro-discs]].
 
 ## Arch's licence field cannot be trusted here

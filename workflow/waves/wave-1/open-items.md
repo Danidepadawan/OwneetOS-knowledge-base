@@ -39,7 +39,7 @@ owner's.
 
 | Step | What | Status |
 |---|---|---|
-| [[step-4.9-retro-games-with-retroarch\|4.9]] | Retro games with RetroArch (research done 2026-11-24: waits for the owner's choices, then the demo) | in-progress |
+| [[step-4.9-the-users-own-emulators\|4.9]] | The user's own emulators (owner, 2026-11-25: the user brings everything; demo of 2026-11-25 waits for approval) | in-progress |
 | [[step-5.0.1-optional-gaming-apps\|5.0.1]] | Gaming programs as optional apps (Steam): left to the owner by Danidepadawan (2026-11-21) | todo |
 | [[step-7.3-user-guide\|7.3]] | User guide | in-progress |
 | [[step-7.4-hardware-testing-and-v0.1.0\|7.4]] | Hardware testing and v0.1.0 | todo |

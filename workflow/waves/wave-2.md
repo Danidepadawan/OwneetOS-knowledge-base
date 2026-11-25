@@ -78,7 +78,7 @@ Scope agreed so far: [[wave-1-scope]] (later waves).
 - **21. The file manager grows (owner, 2026-11-13):** Wave 1 has a very simplified file manager in Settings →
   Advanced (going through folders, deleting: [[open-items]] 3t); Wave 2 adds downloading from the browser, moving
   the downloaded files, extracting zip archives and renaming folders.
-- ~~**11b. Emulation with RetroArch**~~ **Moved to Wave 1 (owner, 2026-11-21): [[step-4.9-retro-games-with-retroarch]].** (owner, 2026-11-19: very important for Wave 2, not in Wave 1): RetroArch as an
+- ~~**11b. Emulation with RetroArch**~~ **Moved to Wave 1 (owner, 2026-11-21): [[step-4.9-the-users-own-emulators]].** (owner, 2026-11-19: very important for Wave 2, not in Wave 1): RetroArch as an
   optional app (after [[step-5.0.1-optional-gaming-apps]]); cores with free licences only (no NonCommercial
   cores such as Snes9x or Genesis Plus GX, [[legal]]); the user's own ROMs from a folder on the disks, in the
   library; BIOS files the user's own, never shipped; Guide stays owneetd's (RetroArch's menu reached by a binding

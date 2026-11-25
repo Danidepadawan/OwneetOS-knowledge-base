@@ -6,7 +6,7 @@ tags: [technical-analysis, games, retro, legal]
 ---
 # Retro games from the user's own discs (research, 2026-11-24)
 
-For [[step-4.9-retro-games-with-retroarch]] (the owner's proposal to copy, GitHub's issue 2 to play from the disc). Not legal advice.
+For [[step-4.9-the-users-own-emulators]] (the owner's proposal to copy, GitHub's issue 2 to play from the disc). Not legal advice.
 
 ## What a PC drive reads
 

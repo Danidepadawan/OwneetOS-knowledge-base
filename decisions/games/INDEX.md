@@ -14,3 +14,4 @@ tags: [index]
 - [[game-library]] — One library for Steam and local games; every owned Steam game, installed or not; filters and the Add games tile.
 - [[games-on-disk]] — The Games folder convention, Windows games through hidden Proton, background installers, licence prompt.
 - [[steam-integration]] — Steam in the ISO, controller-only Steam, its screens shown automatically, 12 GB RAM in the live session.
+- [[users-own-emulators]] — The user brings emulators and games; OwneetOS ships, downloads, links and names none, and makes the user's work small: a folder per console with an Emulators and a Games folder in it.

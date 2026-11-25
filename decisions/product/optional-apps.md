@@ -4,7 +4,7 @@ description: "Users install only the apps they want (step 5.0); the ISO becomes 
 area: product
 status: active
 decided: 2026-10-13
-updated: 2026-11-24
+updated: 2026-11-25
 legacy: "PROJECT_RULES.md §13 (2026-10-13)"
 tags: [decision, product, apps]
 ---
@@ -14,7 +14,7 @@ tags: [decision, product, apps]
   missing apps are shown differently (the home screen's Apps grid from
   [[step-5.0.0-optional-web-apps]], the apps page from [[step-5.7-apps-page]]).
 - Step 5.0 is split: **web apps** (Netflix, YouTube, Spotify) in [[step-5.0.0-optional-web-apps]],
-  **gaming programs** (Steam, Epic, GOG, RetroArch) in [[step-5.0.1-optional-gaming-apps]].
+  **gaming programs** (Steam, Epic, GOG) in [[step-5.0.1-optional-gaming-apps]].
 - **Brave ships inside the ISO as package files** (a small offline pacman repository) and is
   installed from them only when the user picks a web app: no internet, no USB stick. This replaces
   "apps downloaded when chosen" for Brave; for the gaming programs it is decided at 5.0.1
@@ -33,8 +33,6 @@ tags: [decision, product, apps]
 - **Discord** waits for the chat modules ([[wave-2]], [[online-and-chat]]).
 - In the live system, apps follow the same RAM rule as Steam, at least 12 GB
   ([[steam-integration]]).
-- **RetroArch before the other gaming programs** (owner, 2026-11-24): it joins today's catalogue by itself with
-  [[step-4.9-retro-games-with-retroarch]]; Steam and the others stay in [[step-5.0.1-optional-gaming-apps]].
 
 ## History
 
@@ -48,3 +46,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-18 | Step 5.3: YouTube opens its TV interface with a TV user agent taken by owneetd from the catalogue (brand-neutral first). |
 | 2026-10-23 | Background playback stays in Wave 2, confirmed when step 5.5 (Spotify) started: that step's deliverable "playback continues in the background" is dropped. |
 | 2026-11-24 | Step 4.9 before 5.0.1: RetroArch joins today's catalogue by itself (owner). |
+| 2026-11-25 | RetroArch is not an optional app any more: no emulator is shipped ([[users-own-emulators]], owner). |

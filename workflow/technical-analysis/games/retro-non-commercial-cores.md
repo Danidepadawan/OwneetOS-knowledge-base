@@ -6,7 +6,7 @@ tags: [technical-analysis, games, retro, legal]
 ---
 # Non-commercial cores downloaded by the user's console (research, 2026-11-24)
 
-Asked by the owner for [[step-4.9-retro-games-with-retroarch]] ("the third way"). **Not decided.** The guard [[legal]] applies until
+Asked by the owner for [[step-4.9-the-users-own-emulators]] ("the third way"). **Not decided.** The guard [[legal]] applies until
 the owner writes that such a download is allowed.
 
 ## What it would add to the free cores ([[retro-cores-and-licences]])

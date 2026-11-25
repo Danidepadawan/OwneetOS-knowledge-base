@@ -28,7 +28,7 @@ The constraints every part of OwneetOS must respect. Code and documents refer to
 the first time the console is online **with a Windows game in the library** (refined 2026-10-16;
 without Windows games nothing is downloaded) ("a necessary evil") — see [[games-on-disk]].
 **Second exception** (owner, 2026-11-24, in the guard [[product-invariants]]): the emulators for retro games may be
-downloaded once ([[step-4.9-retro-games-with-retroarch]]).
+downloaded once ([[step-4.9-the-users-own-emulators]]).
 **C1 is measured with Steam closed**: Steam is started only when needed ([[steam-integration]]).
 
 ## Creates

@@ -1,14 +1,18 @@
 ---
 type: step
-description: "Retro games with RetroArch, as Batocera does: the user's own ROMs from a folder on the disks, in the console's library; cores with free licences; BIOS files the user's own. After the games' tests, before the legal review."
+description: "The user's own emulators: a folder per console with the user's emulators and games in it, the games in the library; OwneetOS ships, downloads and names no emulator and makes the user's work small. Was: retro games with RetroArch. Before the legal review."
 phase: "[[phase-4-games]]"
 step: "4.9"
 status: in-progress
 tags: [step, phase-4]
 ---
-# 4.9 Retro games with RetroArch *(added 2026-11-21)*
+# 4.9 The user's own emulators *(added 2026-11-21 as "Retro games with RetroArch")*
 
 Up: [[phase-4-games]] · Status: **in-progress**
+
+> [!note] **Changed by the owner (2026-11-25): "the user brings everything, we only make their work as simple as possible".** OwneetOS
+> ships no RetroArch, no core, no emulator, downloads none, links none. What follows about RetroArch, cores and the
+> catalogue of apps is kept as history.
 
 - **Origin:** moved from Wave 2 (item 11b of [[wave-2]]) by the owner on 2026-11-21: the idea of "ownership" has to come
   across in the first release; "exactly what Batocera does".
@@ -59,5 +63,10 @@ retro emulators' one-time download to the guard [[product-invariants]].)
   Looked into at the owner's request, pros and cons: [[retro-non-commercial-cores]].
 - The user's own PlayStation 3, Xbox 360 and PlayStation 4 emulators (the owner's question, 2026-11-24): [[retro-users-own-emulators]].
 - **The owner's wish (2026-11-24):** any emulator the user wants, put in a folder by the user, little work, nothing from OwneetOS
-  that may bring its authors legal trouble: a folder per console with its emulators and its games. Found feasible, same note;
-  waits for the owner's go.
+  that may bring its authors legal trouble: a folder per console with its emulators and its games. Found feasible, same note.
+- **Decided (owner, 2026-11-25):** the user brings everything; the console only simplifies. Decision: [[users-own-emulators]].
+
+## Demo (2026-11-25, waits for the owner's approval)
+
+`design/demos/4.9-users-own-emulators.html`. To decide with it: the pointer's rule for an emulator opened for its settings
+([[controller-input-map]]: on by itself, for every window of it until it ends, as for install scripts).

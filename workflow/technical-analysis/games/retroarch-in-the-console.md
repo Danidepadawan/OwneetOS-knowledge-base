@@ -6,7 +6,7 @@ tags: [technical-analysis, games, retro]
 ---
 # RetroArch in the console (research, 2026-11-24)
 
-For [[step-4.9-retro-games-with-retroarch]]. Cores: [[retro-cores-and-licences]]. RetroArch 1.22.2 (GPL-3) read at the source.
+For [[step-4.9-the-users-own-emulators]]. Cores: [[retro-cores-and-licences]]. RetroArch 1.22.2 (GPL-3) read at the source.
 
 ## What was found
 
