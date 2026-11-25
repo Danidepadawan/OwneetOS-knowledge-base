@@ -35,3 +35,4 @@ review: [[step-7.5-legal-review-before-the-public-launch]].
 | 2026-11-25 | The consoles are in a folder "Emulation" beside the games folder (the owner's idea). |
 | 2026-11-25 | No emulator and no console named in anything that goes online (owner): the research of 2026-11-24 taken out of the vault. |
 | 2026-11-25 | From now on no game and no emulator is named in the vault (owner). |
+| 2026-11-25 | Demo 4.9c approved; corrections never change what starts today; the pointer's rule and the closing stay (owner). |

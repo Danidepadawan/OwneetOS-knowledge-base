@@ -32,8 +32,8 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 30 | Step 4.9: an emulator starts its game but does not read the controller | Cause found: its own first settings are for a keyboard. Demo 4.9c to approve: the notice before the first start says where to set the controller |
-| 31 | Step 4.9: an emulator does not start its game, perhaps a wrong setting | Our rule gave it the wrong folder: built, owneet-frontend 0.42.1, to test. Demo 4.9c (wrong processor) to approve; the closing's change is with the owner |
+| 30 | Step 4.9: an emulator starts its game but does not read the controller | Cause found: its own first settings are for a keyboard. Demo 4.9c approved, built: owneet-frontend 0.43.0, to test |
+| 31 | Step 4.9: an emulator does not start its game, perhaps a wrong setting | Our rule gave it the wrong folder: built, owneet-frontend 0.43.0, to test; the closing stays as it is |
 
 ### Others
 
@@ -80,7 +80,7 @@ never here.
    31 maps none). The working one recognises the controller by itself. The assistant had taken the pointer's going off at a second
    window for a hindrance: **it was not, the pointer did its work (owner, 2026-11-25)**: its rule stays as it is. Agreed
    (owner, 2026-11-25): the notice before an emulator's first start says where the controller is set, and can open the emulator.
-   Demo `4.9c-first-start-of-an-emulator`, to approve.
+   Demo `4.9c-first-start-of-an-emulator` approved (owner, 2026-11-25), built: owneet-frontend 0.43.0.
 31. **An emulator of the user's does not start the game**, "perhaps a wrong setting" (owner, 2026-11-25, same test). Log and the emulator's source read (2026-11-25): the game's folder holds a text file
    and one folder, the game is in the latter; our rule gave the outer folder, where the emulator looks for the game's program in
    fixed places only and does not find it. **Built (owner's OK, 2026-11-25): owneet-frontend 0.42.1:** a single folder with
@@ -90,13 +90,16 @@ never here.
    source, answers the request to close with a question on the screen (by default), which nobody could see; the other's
    library takes the request, and the emulator does not read what it makes of it; asked as a window is closed, it ends by itself (its
    source). The change is proposed to the owner;
-   (b) an emulator built for another kind of processor is listed as any other, and cannot start: demo 4.9c, to approve;
+   (b) an emulator built for another kind of processor is listed as any other, and cannot start: demo 4.9c approved, built: owneet-frontend 0.43.0;
    (c) an emulator asked for a higher limit of locked memory than the system gives.
    **The owner (2026-11-25): stop, nothing that damages what is built so far.** Asked: on what the console decides whether to ask the
    user; how many of these problems one program for many consoles would solve. Nothing more is built until the owner chooses. Of
    owneet-frontend 0.42.1 (not on OWNEETLOG) two points change what starts today, found by the assistant: a folder with one folder of
    another name is asked about (it was given as it is); tiny files beside big folders give the folder (the file was given),
    and some emulators want that very file. To correct or take back, the owner's choice.
+   **Chosen (owner, 2026-11-25):** corrected, so that what starts today stays identical: only a single folder with the game's own name is
+   looked into, and what to start is asked once when that has files and folders side by side; the rest as before 0.42.1
+   (owneet-frontend 0.43.0). The closing stays as it is, until a test shows that a save is lost.
 
 ## Decided, not built yet
 

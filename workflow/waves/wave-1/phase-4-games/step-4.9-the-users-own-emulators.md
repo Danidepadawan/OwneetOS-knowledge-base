@@ -57,4 +57,6 @@ Up: [[phase-4-games]] · Status: **in-progress**
   start its game (items 30 and 31 of [[open-items]]). Copying a console to another disk and unplugging the disk worked.
 - **Agreed (owner, 2026-11-25):** a game's folder inside its folder (built: owneet-frontend 0.42.1, the 25 tests pass); the notice before the first start, and
   an emulator for another kind of processor (demo `design/demos/4.9c-first-start-of-an-emulator.html`, to approve); the closing (proposed).
-- **To do:** demo 4.9c approved and built, the closing's choice, a second test, then the owner's approval of the step.
+- **Demo 4.9c approved (owner, 2026-11-25)** and built: owneet-frontend 0.43.0 (25 tests pass, previews `emulators-first.txt`, `emulators-xl.txt`), with the folder's rule made narrower so that nothing that starts
+  today changes (owner: "nothing that damages what is built"). The closing stays as it is.
+- **To do:** a second test, then the owner's approval of the step.
