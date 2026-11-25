@@ -46,3 +46,6 @@ the console's keyboard, then `POST /v1/input/text` once the window is back (Resu
 - `apps.Manager.AppIDOf` and `ShowHome` (screen.go) are what the pointer needs from the apps; the
   pointer lives in its own package so the merge with `feature/step5_media` (which changed
   `gamepad/manager.go`) stays simple.
+
+**0.27.0 (step 4.9):** `POST /v1/pointer` `{"on": true, "app": id, "windows": "all"}`: for every window of the app until it ends
+(the user's own emulator opened by itself, [[step-4.9-the-users-own-emulators]]).
