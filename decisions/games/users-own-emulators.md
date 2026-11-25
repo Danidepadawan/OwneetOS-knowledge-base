@@ -20,6 +20,7 @@ tags: [decision, games, legal]
   console does not guess.
 - **Never named in anything that goes online** (owner, 2026-11-25): vault, code, comments, commit messages, website, guide: no
   emulator, and not even the consoles they are made for; invented names in examples and demos. In the conversation they may be named.
+- **From 2026-11-25 no game and no emulator is named in the vault** (owner): tests and faults are described without them.
 - It replaces step 4.9's first plan, an emulation program shipped with the console ([[architecture-stack]], [[optional-apps]]).
 
 Step: [[step-4.9-the-users-own-emulators]]. Research: [[users-own-emulators-design]]. Guards: [[legal]], [[product-invariants]]. To the legal
@@ -33,3 +34,4 @@ review: [[step-7.5-legal-review-before-the-public-launch]].
 | 2026-11-25 | The user brings everything: OwneetOS only simplifies the work (owner). |
 | 2026-11-25 | The consoles are in a folder "Emulation" beside the games folder (the owner's idea). |
 | 2026-11-25 | No emulator and no console named in anything that goes online (owner): the research of 2026-11-24 taken out of the vault. |
+| 2026-11-25 | From now on no game and no emulator is named in the vault (owner). |

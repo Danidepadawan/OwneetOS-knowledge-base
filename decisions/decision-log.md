@@ -426,3 +426,4 @@ Decisions by area: [[decisions/INDEX|decisions index]].
 | 2026-11-25 | Demo 4.9 approved. **No emulator and no console they are made for is named in anything that goes online** (vault, code, commit messages, website, guide): generic words, invented names (owner). | [[users-own-emulators]] |
 | 2026-11-25 | The user's own emulators are in a folder "Emulation" at the top of a disk, beside the games folder (the owner's idea); moving a console between disks in Wave 1, demo first. The games folder has the names of the console's five languages. Prompts that do not fit scroll (owner). | [[users-own-emulators]], [[games-on-disk]] |
 | 2026-11-25 | Demo 4.9b approved: a console of the user's moves or is copied whole between disks, with the windows of moving games (owner). | [[users-own-emulators]] |
+| 2026-11-25 | **From now on no game and no emulator is named in the vault** (owner): tests and faults are described without them. | [[users-own-emulators]] |
