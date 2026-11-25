@@ -23,7 +23,7 @@ tags: [guard, product]
 - **Never add an own server** or anything that needs one; never collect telemetry. Crash reports
   only with explicit opt-in consent. ([[online-and-chat]], [[legal-compliance]])
 - **Never require internet** for local or DRM-free content. The only exceptions are the one-time
-  downloads of Proton for Windows games and of the emulators for retro games. ([[hard-constraints]]
+  downloads of Proton for Windows games. ([[hard-constraints]]
   C9, [[games-on-disk]])
 - **Never hard-code UI text or colours**: text through the i18n message files, colours through the
   palette tokens. ([[ui-text-and-i18n]], [[design-tokens]])

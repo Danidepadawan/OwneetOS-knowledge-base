@@ -68,5 +68,13 @@ retro emulators' one-time download to the guard [[product-invariants]].)
 
 ## Demo (2026-11-25, waits for the owner's approval)
 
-`design/demos/4.9-users-own-emulators.html`. To decide with it: the pointer's rule for an emulator opened for its settings
-([[controller-input-map]]: on by itself, for every window of it until it ends, as for install scripts).
+`design/demos/4.9-users-own-emulators.html`.
+
+- **The pointer's rule approved (owner, 2026-11-25):** on by itself with "Open the emulator", for every window of it until it ends
+  ([[controller-input-map]]).
+- **The owner (2026-11-25): the demo is fine, apart from a question:** do the options need other characters (space, semicolon)?
+  **Yes:** the demo's small keyboard lacked them. The console's own has every ASCII sign and a space (Y): the demo has it now, and
+  the texts say "one or more options", a space between them, double quotes for a name with spaces. Waits for the owner's word.
+- **For the code:** programs start without a shell (owneetd, `execCommand`), so `;`, `&`, `$` are plain signs, never a second
+  command. The interface's splitter (`CommandTokenizer`) takes quotes only at a word's start and replaces `{…}`: the options need a
+  splitting of their own (quotes anywhere, nothing replaced).

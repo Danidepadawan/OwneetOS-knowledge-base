@@ -4,7 +4,7 @@ description: "The binding meaning of every button on every screen, keyboard fall
 area: ux
 status: active
 decided: 2026-10-03
-updated: 2026-11-21
+updated: 2026-11-25
 legacy: "PROJECT_RULES.md §9.1"
 tags: [decision, ux, input]
 ---
@@ -167,7 +167,9 @@ launchers made for a mouse (e.g. a Steam game's EA app or Ubisoft Connect, a gam
 options window), **never left on a game** itself. **One case turns it on by itself (owner, 2026-11-19):** a window
 of a game's install script that Steam runs before the game's first start (a publisher's installer, made for a mouse,
 e.g. the Rockstar Games Launcher's), for every window of that script (its own file windows too) until the script
-ends (owneetd 0.25.42). While the pointer is on, Proton's Xalia (its own controller navigation for launchers) is paused, so the
+ends (owneetd 0.25.42). **A second case (owner, 2026-11-25, step 4.9, not built yet):** "Open the emulator" of the user's own
+emulators ([[users-own-emulators]]) turns it on by itself, for every window of the emulator until it ends; never when it is
+started with a game. While the pointer is on, Proton's Xalia (its own controller navigation for launchers) is paused, so the
 same buttons do not act twice (owner, 2026-11-19; owneetd 0.25.44). Otherwise the user turns it on by hand from the console
 (Guide, then "Resume with the pointer" on the running game or app: launchers belong to their
 game, so it is offered there too), and off the same way; it holds for **one window**: it turns off
@@ -226,3 +228,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-11-19 | Pointer: A and X are the mouse's left and right buttons, held down as long as A / X are (owner; owneetd 0.25.47): the click with no time between down and up was lost in BioShock's menu. |
 | 2026-11-20 | **The Apps page** (step 5.7): the home's Apps grid buttons (A opens or installs, Menu options, B back to the home on "All apps", the right stick scrolls); X, Y and LT / RT do nothing; its grid goes round like the library's. |
 | 2026-11-21 | Guide while nothing runs, on the Videos, Music or Apps page: back to the home page of the Home section, as from its windows (owner, after the merge of phase 5). |
+| 2026-11-25 | Pointer: on by itself when the user opens an emulator of theirs without a game, for all its windows until it ends (owner, step 4.9). |
