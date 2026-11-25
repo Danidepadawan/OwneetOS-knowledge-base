@@ -34,6 +34,7 @@ owner's.
 |---|---|---|
 | 30 | Step 4.9: an emulator starts its game but does not read the controller | Cause found: its own first settings are for a keyboard. Demo 4.9c approved, built: owneet-frontend 0.43.0, to test |
 | 31 | Step 4.9: an emulator does not start its game, perhaps a wrong setting | Our rule gave it the wrong folder: built, owneet-frontend 0.43.0, to test; the closing stays as it is |
+| 32 | Step 4.9: the user's own emulators are too little intuitive, not plug and play | The solutions to research and propose |
 
 ### Others
 
@@ -100,6 +101,11 @@ never here.
    **Chosen (owner, 2026-11-25):** corrected, so that what starts today stays identical: only a single folder with the game's own name is
    looked into, and what to start is asked once when that has files and folders side by side; the rest as before 0.42.1
    (owneet-frontend 0.43.0). The closing stays as it is, until a test shows that a save is lost.
+
+32. **The user's own emulators are too little intuitive** (owner, 2026-11-25, second test of step 4.9): "Owneet was made to be plug and play".
+   One asks for its system files, one for its controller (not clear how, nor whether it works), one starts but asks to create a
+   profile and it is not clear how. Solutions asked: to be researched and proposed. Not tested yet: the wrong processor
+   (next test), moving a console with its original removed (the owner makes a backup first).
 
 ## Decided, not built yet
 
