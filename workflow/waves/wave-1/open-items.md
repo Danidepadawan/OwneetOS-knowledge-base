@@ -21,7 +21,7 @@ owner's.
 |---|---|---|
 | 27 | The games folder in German, French and Spanish is not recognised | Corrected 2026-11-25, on OWNEETLOG: to confirm |
 | 28 | The keyboard's prompts overlap (German, XL) | Corrected 2026-11-25 (they scroll), on OWNEETLOG: to confirm |
-| 29 | Step 4.9: moving a console between disks | Demo 4.9b of 2026-11-25 waits for approval (the card and the folder "Emulation" built) |
+| 29 | Step 4.9: moving a console between disks | Built 2026-11-25 (demo 4.9b approved), on OWNEETLOG: to test with 4.9 |
 
 ### Waits for the owner's decision
 
@@ -42,7 +42,7 @@ owner's.
 
 | Step | What | Status |
 |---|---|---|
-| [[step-4.9-the-users-own-emulators\|4.9]] | The user's own emulators (owner, 2026-11-25: the user brings everything; built 2026-11-25, owneet-frontend 0.41.1 and owneetd 0.27.1: waits for the test on the FrankenPC) | in-progress |
+| [[step-4.9-the-users-own-emulators\|4.9]] | The user's own emulators (owner, 2026-11-25: the user brings everything; built 2026-11-25, owneet-frontend 0.42.0 and owneetd 0.28.0: waits for the test on the FrankenPC) | in-progress |
 | [[step-5.0.1-optional-gaming-apps\|5.0.1]] | Gaming programs as optional apps (Steam): left to the owner by Danidepadawan (2026-11-21) | todo |
 | [[step-7.3-user-guide\|7.3]] | User guide | in-progress |
 | [[step-7.4-hardware-testing-and-v0.1.0\|7.4]] | Hardware testing and v0.1.0 | todo |
@@ -70,7 +70,7 @@ never here.
    moving a console's folder between disks ("absolutely yes": demo first); the owner's idea of a top folder "Emulation" next
    to the games folder, instead of looking into every game's folder: the assistant's judgment asked (**agreed: better**). **Built:** the
    card's text, the folder "Emulation" (also a place of the file manager), owneet-frontend 0.41.1. The moving: demo
-   `4.9b-move-a-console` waits for approval.
+   `4.9b-move-a-console` approved (owner, 2026-11-25) and built: owneet-frontend 0.42.0, owneetd 0.28.0, on OWNEETLOG.
 
 ## Decided, not built yet
 

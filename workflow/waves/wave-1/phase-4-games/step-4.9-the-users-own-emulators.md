@@ -46,6 +46,11 @@ Up: [[phase-4-games]] · Status: **in-progress**
   the PC's taken for a console, clear to the user).
 - **Built (2026-11-25): owneet-frontend 0.41.1, owneetd 0.27.1:** `Emulation` / `Emulazione` / `Émulation` / `Emulación` at the top of a
   disk, the consoles only in it; the file manager shows it; the pointer's card says "It stays on until you close the emulator".
-- **Moving a console (demo 4.9b, waits for approval):** `design/demos/4.9b-move-a-console.html`: the windows of moving games, the whole console
+- **Moving a console (demo 4.9b, approved by the owner 2026-11-25):** `design/demos/4.9b-move-a-console.html`: the windows of moving games, the whole console
   (never one game alone); a disk with a console of that name already is off; a USB disk's consoles in "Which ones to copy?".
+- **Built (2026-11-25): owneet-frontend 0.42.0, owneetd 0.28.0:** owneetd's moves take a console's folder (`internal/moves/consoles.go`): to the
+  other disk's "Emulation" (made with the name it had), never over one of the same name in any case (409 `moves.name_taken`); what
+  was chosen (`emulators.json`, its paths too) and what was unpacked for its emulators follow a move; a copy gets a copy of what
+  its archives left. A disk unplugged takes its consoles' games out of the library (it did not). Checked: four Go tests, the
+  previews `emulators-move.txt`, `emulators-move-xl.txt`. Not tried on real disks.
 - **To do:** the FrankenPC with real emulators (named in the conversation only), then the owner's approval of the step.
