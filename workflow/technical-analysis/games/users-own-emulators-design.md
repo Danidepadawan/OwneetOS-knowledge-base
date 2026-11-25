@@ -23,6 +23,12 @@ Emulation/               (Emulazione, ...) at the top of a disk, beside the game
   file that names files beside it stands for them (a disc and its tracks, a list of discs); files of one name with several
   extensions are one game, asked once. Texts, pictures and saves beside games are not games. A folder with nothing at its top, or
   more than 40 files, is given as it is.
+- **A game's folder inside its folder** (2026-11-25, first hardware test): nothing at the top but one folder → looked into, up to three
+  deep: with the game's name (brackets and signs apart: what an archive leaves) without asking, with another one the file is
+  asked once. The outer folder stays among the choices. **Never always looked into:** a folder may be the
+  part of the game an emulator looks for in the folder above.
+- **Tiny files beside the game's folders:** when every file at the top is under 64 KB, none names the folders beside it, and these hold
+  a file over 1 MB, the folder is given, without asking; "Choose the file" offers the files too.
 - **Starting:** the emulator, its options, the game's path. Among the programs looked at, most need the path alone, some one
   option before it. Options: typed once ("How it starts"), split by spaces, double quotes keep a name together, anywhere in a word.
   No shell: `;`, `&`, `$` are plain signs (owneetd, `execCommand`). The interface's `CommandTokenizer` takes quotes only at a word's

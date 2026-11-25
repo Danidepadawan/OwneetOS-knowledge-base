@@ -32,8 +32,8 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 30 | Step 4.9: an emulator starts its game but does not read the controller | Cause found: its own first settings are for a keyboard; the options are with the owner |
-| 31 | Step 4.9: an emulator does not start its game, perhaps a wrong setting | Our rule gave it the wrong folder; the fix and three related remarks are with the owner |
+| 30 | Step 4.9: an emulator starts its game but does not read the controller | Cause found: its own first settings are for a keyboard. Demo 4.9c to approve: the notice before the first start says where to set the controller |
+| 31 | Step 4.9: an emulator does not start its game, perhaps a wrong setting | Our rule gave it the wrong folder: built, owneet-frontend 0.42.1, to test. Demo 4.9c (wrong processor) to approve; the closing's change is with the owner |
 
 ### Others
 
@@ -77,16 +77,20 @@ never here.
 30. **An emulator of the user's starts its game but does not read the controller** (owner, 2026-11-25, first test of step 4.9 with
    three emulators; one works perfectly). "The matter of the inputs to remap is not a small one." Log read (2026-11-25): the emulator was started well and its game
    was on the screen; with no settings of the user's, its own source maps the first controller to the keyboard (the emulator of item
-   31 maps none). "Open the emulator" was not used; the pointer turned on with Guide went off after 2 s, when a second window
-   of the emulator opened (one window only, the rule of "Resume with the pointer"), so its settings could not be used. The
-   working one recognises the controller by itself. Waits for the owner's choice.
+   31 maps none). The working one recognises the controller by itself. The assistant had taken the pointer's going off at a second
+   window for a hindrance: **it was not, the pointer did its work (owner, 2026-11-25)**: its rule stays as it is. Agreed
+   (owner, 2026-11-25): the notice before an emulator's first start says where the controller is set, and can open the emulator.
+   Demo `4.9c-first-start-of-an-emulator`, to approve.
 31. **An emulator of the user's does not start the game**, "perhaps a wrong setting" (owner, 2026-11-25, same test). Log and the emulator's source read (2026-11-25): the game's folder holds a text file
    and one folder, the game is in the latter; our rule gave the outer folder, where the emulator looks for the game's program in
-   fixed places only and does not find it. Fix to agree: a folder with a single folder and nothing game-like beside it
-   is looked into. Whether other settings are missing too is not known until it is given the right folder. Remarks of the same log:
+   fixed places only and does not find it. **Built (owner's OK, 2026-11-25): owneet-frontend 0.42.1:** a single folder with
+   the game's name is looked into, one with another name is asked about once; tiny files beside folders that hold a big one
+   do not stand for the game ([[users-own-emulators-design]]). To test. Whether other settings are missing too is not known until it is given the right folder. Remarks of the same log:
    (a) two emulators closed from the console did not end in 10 s and were killed, a save could be lost: one, in its own
-   source, answers the request to close with a question on the screen (by default), which nobody could see; the other's cause is not known;
-   (b) an emulator built for another kind of processor is listed as any other, and cannot start;
+   source, answers the request to close with a question on the screen (by default), which nobody could see; the other's
+   library takes the request, and the emulator does not read what it makes of it; asked as a window is closed, it ends by itself (its
+   source). The change is proposed to the owner;
+   (b) an emulator built for another kind of processor is listed as any other, and cannot start: demo 4.9c, to approve;
    (c) an emulator asked for a higher limit of locked memory than the system gives.
 
 ## Decided, not built yet

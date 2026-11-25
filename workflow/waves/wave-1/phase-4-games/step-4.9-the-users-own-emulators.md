@@ -53,4 +53,8 @@ Up: [[phase-4-games]] · Status: **in-progress**
   was chosen (`emulators.json`, its paths too) and what was unpacked for its emulators follow a move; a copy gets a copy of what
   its archives left. A disk unplugged takes its consoles' games out of the library (it did not). Checked: four Go tests, the
   previews `emulators-move.txt`, `emulators-move-xl.txt`. Not tried on real disks.
-- **To do:** the FrankenPC with real emulators (named in the conversation only), then the owner's approval of the step.
+- **First test on the FrankenPC (owner, 2026-11-25):** three emulators: one works perfectly, one does not read the controller, one does not
+  start its game (items 30 and 31 of [[open-items]]). Copying a console to another disk and unplugging the disk worked.
+- **Agreed (owner, 2026-11-25):** a game's folder inside its folder (built: owneet-frontend 0.42.1, the 25 tests pass); the notice before the first start, and
+  an emulator for another kind of processor (demo `design/demos/4.9c-first-start-of-an-emulator.html`, to approve); the closing (proposed).
+- **To do:** demo 4.9c approved and built, the closing's choice, a second test, then the owner's approval of the step.
