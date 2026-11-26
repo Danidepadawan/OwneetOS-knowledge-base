@@ -62,4 +62,6 @@ Up: [[phase-4-games]] · Status: **in-progress**
 - **Second test (owner, 2026-11-25):** one asks for its system file, one for its controller, one for a profile: "too little intuitive,
   Owneet was made to be plug and play" ([[open-items]] 32). **Way B chosen (owner, 2026-11-26):** the console recognises some
   emulators and prepares them ([[users-own-emulators]]); four to start with; names kept out of git until the legal review.
-- **To do:** demo 4.9d (what the user sees of it), the build, a test, then the owner's approval of the step.
+- **Demo 4.9d approved (owner, 2026-11-26)** (`design/demos/4.9d-emulators-the-console-prepares.html`), built: owneet-frontend 0.44.0,
+  owneetd 0.28.1 (the helper passes a card's options), four cards kept out of git.
+- **To do:** a test, then the owner's approval of the step.

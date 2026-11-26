@@ -31,6 +31,13 @@ Emulation/               (Emulazione, ...) at the top of a disk, beside the game
   emulators want that very file, others the folder.
 - **Another kind of processor** (demo 4.9c): read in the program's own head (AppImages; plain programs only when a console has nothing
   else). Shown as such, never chosen by the console, said instead of started. Not seen in an archive, opened only at the start.
+- **Emulators the console recognises** (way B, owner 2026-11-26; demo 4.9d): a card per emulator (`frontend/emulator-cards/README.md`):
+  how it is recognised (its program's or folder's name), how it starts, which of a game's files it wants, its system file
+  (where the user copies it, how it is known installed, the emulator's own options that install it, run by themselves before the
+  first game: "Preparing … for its first start"), and settings written only where there are none or as the console wrote
+  them (sha1 in `emulator-settings.json`), with the first controller's name. The cards themselves are kept out of git until the
+  legal review. Common to the first four: SDL's gamepad API, so one controller layout serves all; ready start commands exist
+  in a MIT-licensed launcher's data (credit it when used). **Never Guide** in a card's layout ([[guide-button]]).
 - **Starting:** the emulator, its options, the game's path. Among the programs looked at, most need the path alone, some one
   option before it. Options: typed once ("How it starts"), split by spaces, double quotes keep a name together, anywhere in a word.
   No shell: `;`, `&`, `$` are plain signs (owneetd, `execCommand`). The interface's `CommandTokenizer` takes quotes only at a word's

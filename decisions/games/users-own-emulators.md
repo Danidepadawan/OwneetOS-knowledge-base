@@ -20,7 +20,7 @@ tags: [decision, games, legal]
   (common patterns, solutions already used elsewhere).
 - **Which ones, only after the legal review** (owner, 2026-11-26): names may go into the public code after
   [[step-7.5-legal-review-before-the-public-launch]], when development is finished. Until then the code is general and what it
-  knows of each emulator is kept out of git (`private/`, ignored); never in the vault, the website, the guide.
+  knows of each emulator is kept out of git (`frontend/emulator-cards/*.json`, ignored); never in the vault, the website, the guide.
 - **At the top of a disk, beside the games folder, a folder "Emulation"** (in the console's languages; owner, 2026-11-25): the
   consoles are only there, so no game's folder is looked into.
 - **In it a folder per console**, named by the user, with two in it: the emulators and the games (`Emulators` / `Emulatori`, `Games` /
