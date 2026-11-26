@@ -34,7 +34,7 @@ owner's.
 |---|---|---|
 | 30 | Step 4.9: an emulator starts its game but does not read the controller | Cause found: its own first settings are for a keyboard. Demo 4.9c approved, built: owneet-frontend 0.43.0, to test |
 | 31 | Step 4.9: an emulator does not start its game, perhaps a wrong setting | Our rule gave it the wrong folder: built, owneet-frontend 0.43.0, to test; the closing stays as it is |
-| 32 | Step 4.9: the user's own emulators are too little intuitive, not plug and play | Way B chosen (owner, 2026-11-26): the console recognises some emulators and prepares them. Demo 4.9d |
+| 32 | Step 4.9: the user's own emulators are too little intuitive, not plug and play | Way B: demo 4.9d approved and built (owneet-frontend 0.44.0, owneetd 0.28.1, four cards out of git), on OWNEETLOG: to test |
 
 ### Others
 
