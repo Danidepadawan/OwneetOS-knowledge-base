@@ -36,7 +36,7 @@ owner's.
 | 31 | Step 4.9: an emulator does not start its game, perhaps a wrong setting | Our rule gave it the wrong folder: built, owneet-frontend 0.43.0, to test; the closing stays as it is |
 | 32 | Step 4.9: the user's own emulators are too little intuitive, not plug and play | Way B: demo 4.9d approved and built (owneet-frontend 0.44.0, owneetd 0.28.1, four cards out of git), on OWNEETLOG: to test |
 | 33 | Step 4.9: no sound in three emulators; one not full screen, its textures flicker | Full screen asked (0.44.2); the sound: the test log now records the streams (owneet-base 0.0.89), next test |
-| 34 | Step 4.9: fourth test, twelve emulators: sound, controller, bars, starts | The log to read (OWNEETLOG) |
+| 34 | Step 4.9: fourth test, twelve emulators: sound, controller, bars, starts | Log read: causes found for most; the sound to look into |
 
 ### Others
 
@@ -126,12 +126,16 @@ never here.
    The owner (2026-11-26): the controller works in the two that did not read it before; the system file is now copied;
    more emulators added by the owner for the next test.
 
-34. **Fourth test of the user's own emulators** (owner, 2026-11-27; twelve emulators, numbered E1-E12 in the private research note,
+34. **Fourth test of the user's own emulators** (owner, 2026-11-26, evening; twelve emulators, numbered E1-E12 in the private research note,
    four of them recognised by a card). A Steam game: sound works. The recognised ones: three full screen with the controller but
    **no sound** (E1, E2, E3); one starts, full screen, with sound, but **does not read the controller** (E4, its system file now
    installed). The others, without a card: one works fully by itself (E8); two start with sound but show a bar or two and read
    **only the pointer, as touch** (E6, E9); two **do not start** (E7, E10); one says **a file is missing** (E5); two **need setting
-   up** (E11, E12). Log to read (OWNEETLOG).
+   up** (E11, E12). Log read (2026-11-26): the three silent ones never played a stream the console could see (the ones with
+   sound did); the cause is in how they are built, to be looked into. The one without controller: its emulator had made an
+   **empty** controller file at its first start, which the console took for the user's own. Two that do not start say a system
+   file is missing; one stops on a setting that asks for a Bluetooth adapter of its own. Two show their menu bars and bind no
+   controller (no card yet).
 
 ## Decided, not built yet
 
