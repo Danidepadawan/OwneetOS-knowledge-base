@@ -35,6 +35,7 @@ owner's.
 | 30 | Step 4.9: an emulator starts its game but does not read the controller | Cause found: its own first settings are for a keyboard. Demo 4.9c approved, built: owneet-frontend 0.43.0, to test |
 | 31 | Step 4.9: an emulator does not start its game, perhaps a wrong setting | Our rule gave it the wrong folder: built, owneet-frontend 0.43.0, to test; the closing stays as it is |
 | 32 | Step 4.9: the user's own emulators are too little intuitive, not plug and play | Way B: demo 4.9d approved and built (owneet-frontend 0.44.0, owneetd 0.28.1, four cards out of git), on OWNEETLOG: to test |
+| 33 | Step 4.9: no sound in three emulators; one not full screen, its textures flicker | The log to read (OWNEETLOG) |
 
 ### Others
 
@@ -111,6 +112,11 @@ never here.
    would never act on a console where it ran once. **Built:** owneet-frontend 0.44.1, the controller's own button numbers in the
    cards, the emulator's untouched first settings replaced (never the user's). Not tested yet: the wrong processor
    (next test), moving a console with its original removed (the owner makes a backup first).
+
+33. **Third test of the user's own emulators** (owner, 2026-11-26, owneet-frontend 0.44.1): one starts with its profile made and reads the
+   controller, but its window is not full screen (a toolbar at the top), its textures flicker (loaded at times, at times not) and
+   there is no sound; two more start with **no sound**; the one for another kind of processor is said as it should. One system
+   file not copied yet (the owner gets it). Log to read (OWNEETLOG).
 
 ## Decided, not built yet
 
