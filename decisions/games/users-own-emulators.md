@@ -4,7 +4,7 @@ description: "The user brings emulators and games; OwneetOS ships, downloads, li
 area: games
 status: active
 decided: 2026-11-25
-updated: 2026-11-25
+updated: 2026-11-26
 tags: [decision, games, legal]
 ---
 # The user's own emulators
@@ -13,6 +13,14 @@ tags: [decision, games, legal]
   downloads none, links none, names none, and has no list of known ones. It gives nothing that may put its authors in
   legal trouble; it starts a program of the user's with a file of the user's.
 - **OwneetOS only makes it simple**, as far as possible.
+- **The console recognises some emulators and prepares them** (owner, 2026-11-26, "way B", after the first tests: "Owneet was made
+  to be plug and play"): their controller, how they start, the install of a system file the user put there. Only where the user has
+  no settings of their own; the others work as before. The user still brings emulators, system files and games; nothing is
+  shipped or downloaded. Four to start with (chosen by the owner), more after their tests; the console's way stays as general as it can
+  (common patterns, solutions already used elsewhere).
+- **Which ones, only after the legal review** (owner, 2026-11-26): names may go into the public code after
+  [[step-7.5-legal-review-before-the-public-launch]], when development is finished. Until then the code is general and what it
+  knows of each emulator is kept out of git (`private/`, ignored); never in the vault, the website, the guide.
 - **At the top of a disk, beside the games folder, a folder "Emulation"** (in the console's languages; owner, 2026-11-25): the
   consoles are only there, so no game's folder is looked into.
 - **In it a folder per console**, named by the user, with two in it: the emulators and the games (`Emulators` / `Emulatori`, `Games` /
@@ -36,3 +44,4 @@ review: [[step-7.5-legal-review-before-the-public-launch]].
 | 2026-11-25 | No emulator and no console named in anything that goes online (owner): the research of 2026-11-24 taken out of the vault. |
 | 2026-11-25 | From now on no game and no emulator is named in the vault (owner). |
 | 2026-11-25 | Demo 4.9c approved; corrections never change what starts today; the pointer's rule and the closing stay (owner). |
+| 2026-11-26 | Way B: the console recognises some emulators and prepares them; their names in the code only after the legal review (owner). |

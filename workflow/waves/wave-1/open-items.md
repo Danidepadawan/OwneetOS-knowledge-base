@@ -34,7 +34,7 @@ owner's.
 |---|---|---|
 | 30 | Step 4.9: an emulator starts its game but does not read the controller | Cause found: its own first settings are for a keyboard. Demo 4.9c approved, built: owneet-frontend 0.43.0, to test |
 | 31 | Step 4.9: an emulator does not start its game, perhaps a wrong setting | Our rule gave it the wrong folder: built, owneet-frontend 0.43.0, to test; the closing stays as it is |
-| 32 | Step 4.9: the user's own emulators are too little intuitive, not plug and play | The solutions to research and propose |
+| 32 | Step 4.9: the user's own emulators are too little intuitive, not plug and play | Way B chosen (owner, 2026-11-26): the console recognises some emulators and prepares them. Demo 4.9d |
 
 ### Others
 
@@ -104,7 +104,9 @@ never here.
 
 32. **The user's own emulators are too little intuitive** (owner, 2026-11-25, second test of step 4.9): "Owneet was made to be plug and play".
    One asks for its system files, one for its controller (not clear how, nor whether it works), one starts but asks to create a
-   profile and it is not clear how. Solutions asked: to be researched and proposed. Not tested yet: the wrong processor
+   profile and it is not clear how. Solutions asked: researched and proposed (2026-11-25): A as today, B the console recognises some emulators and
+   prepares them, C one program for many consoles. **B chosen (owner, 2026-11-26)**, names in the code only after the legal review,
+   a fourth emulator added by the owner. Not tested yet: the wrong processor
    (next test), moving a console with its original removed (the owner makes a backup first).
 
 ## Decided, not built yet

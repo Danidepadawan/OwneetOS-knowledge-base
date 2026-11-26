@@ -59,4 +59,7 @@ Up: [[phase-4-games]] · Status: **in-progress**
   an emulator for another kind of processor (demo `design/demos/4.9c-first-start-of-an-emulator.html`, to approve); the closing (proposed).
 - **Demo 4.9c approved (owner, 2026-11-25)** and built: owneet-frontend 0.43.0 (25 tests pass, previews `emulators-first.txt`, `emulators-xl.txt`), with the folder's rule made narrower so that nothing that starts
   today changes (owner: "nothing that damages what is built"). The closing stays as it is.
-- **To do:** a second test, then the owner's approval of the step.
+- **Second test (owner, 2026-11-25):** one asks for its system file, one for its controller, one for a profile: "too little intuitive,
+  Owneet was made to be plug and play" ([[open-items]] 32). **Way B chosen (owner, 2026-11-26):** the console recognises some
+  emulators and prepares them ([[users-own-emulators]]); four to start with; names kept out of git until the legal review.
+- **To do:** demo 4.9d (what the user sees of it), the build, a test, then the owner's approval of the step.
