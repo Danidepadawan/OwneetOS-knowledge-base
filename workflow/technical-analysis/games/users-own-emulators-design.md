@@ -35,7 +35,11 @@ Emulation/               (Emulazione, ...) at the top of a disk, beside the game
   how it is recognised (its program's or folder's name), how it starts, which of a game's files it wants, its system file
   (where the user copies it, how it is known installed, the emulator's own options that install it, run by themselves before the
   first game: "Preparing … for its first start"), and settings written only where there are none or as the console wrote
-  them (sha1 in `emulator-settings.json`), with the first controller's name. The cards themselves are kept out of git until the
+  them (sha1 in `emulator-settings.json`), or still the emulator's own first settings (a pattern of the card: e.g. its keyboard,
+  since an emulator makes its settings by itself at its first start); one section of an ini file only, when the card says so.
+  The first controller as SDL sees it on the console: its name, and the numbers of its own buttons, axes and hat in the
+  standard layout, for an emulator that reads raw buttons; such an emulator is started with the console's kind of controller
+  driver (2026-11-26: one of the four bound only the stick and the directions by itself, no button, in its source). The cards themselves are kept out of git until the
   legal review. Common to the first four: SDL's gamepad API, so one controller layout serves all; ready start commands exist
   in a MIT-licensed launcher's data (credit it when used). **Never Guide** in a card's layout ([[guide-button]]).
 - **Starting:** the emulator, its options, the game's path. Among the programs looked at, most need the path alone, some one

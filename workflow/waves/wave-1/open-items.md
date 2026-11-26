@@ -106,7 +106,10 @@ never here.
    One asks for its system files, one for its controller (not clear how, nor whether it works), one starts but asks to create a
    profile and it is not clear how. Solutions asked: researched and proposed (2026-11-25): A as today, B the console recognises some emulators and
    prepares them, C one program for many consoles. **B chosen (owner, 2026-11-26)**, names in the code only after the legal review,
-   a fourth emulator added by the owner. Not tested yet: the wrong processor
+   a fourth emulator added by the owner. The fourth one did not read the controller either (owner, 2026-11-26): its source binds only the
+   stick and the directions by itself; and an emulator makes its own settings at its first start, so "only where it has none"
+   would never act on a console where it ran once. **Built:** owneet-frontend 0.44.1, the controller's own button numbers in the
+   cards, the emulator's untouched first settings replaced (never the user's). Not tested yet: the wrong processor
    (next test), moving a console with its original removed (the owner makes a backup first).
 
 ## Decided, not built yet
