@@ -35,7 +35,7 @@ owner's.
 | 30 | Step 4.9: an emulator starts its game but does not read the controller | Cause found: its own first settings are for a keyboard. Demo 4.9c approved, built: owneet-frontend 0.43.0, to test |
 | 31 | Step 4.9: an emulator does not start its game, perhaps a wrong setting | Our rule gave it the wrong folder: built, owneet-frontend 0.43.0, to test; the closing stays as it is |
 | 32 | Step 4.9: the user's own emulators are too little intuitive, not plug and play | Way B: demo 4.9d approved and built (owneet-frontend 0.44.0, owneetd 0.28.1, four cards out of git), on OWNEETLOG: to test |
-| 33 | Step 4.9: no sound in three emulators; one not full screen, its textures flicker | The log to read (OWNEETLOG) |
+| 33 | Step 4.9: no sound in three emulators; one not full screen, its textures flicker | Full screen asked (0.44.2); the sound: the test log now records the streams (owneet-base 0.0.89), next test |
 
 ### Others
 
@@ -116,7 +116,12 @@ never here.
 33. **Third test of the user's own emulators** (owner, 2026-11-26, owneet-frontend 0.44.1): one starts with its profile made and reads the
    controller, but its window is not full screen (a toolbar at the top), its textures flicker (loaded at times, at times not) and
    there is no sound; two more start with **no sound**; the one for another kind of processor is said as it should. One system
-   file not copied yet (the owner gets it). Log to read (OWNEETLOG).
+   file not copied yet (the owner gets it). Log read (2026-11-26): the screenshots show the emulator's own menu bar at the top
+   (it was not asked for full screen: its card now asks, owneet-frontend 0.44.2). The sound: one emulator says its sound
+   driver started; none of the three was ever silenced behind the home screen, as a stream of theirs would have been (on
+   2026-11-25 one was): which streams they play, and where to, is not in the log. **The test log now records the outputs and
+   the playing streams with their programs** (owneet-base 0.0.89), to see it at the next test. The flickering: nothing in the log,
+   to research. The disk listing (taken before the emulators ran): nothing unusual.
 
 ## Decided, not built yet
 
