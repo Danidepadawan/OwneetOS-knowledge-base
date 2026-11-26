@@ -122,6 +122,8 @@ never here.
    2026-11-25 one was): which streams they play, and where to, is not in the log. **The test log now records the outputs and
    the playing streams with their programs** (owneet-base 0.0.89), to see it at the next test. The flickering: nothing in the log,
    to research. The disk listing (taken before the emulators ran): nothing unusual.
+   The owner (2026-11-26): the controller works in the two that did not read it before; the system file is now copied;
+   more emulators added by the owner for the next test.
 
 ## Decided, not built yet
 
