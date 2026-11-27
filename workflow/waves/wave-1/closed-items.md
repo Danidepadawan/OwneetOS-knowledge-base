@@ -1574,3 +1574,20 @@ found here. Newest closings are added at the end.
    or the player open, a game with a licence not accepted shows the licence, then "close … first", and its warning at
    the next start. [[step-4.8-games-that-cannot-run]]
    **Closed** (2026-11-24, with step 4.8).
+
+27. **The games folder's name in German, French and Spanish** (found by the assistant on 2026-11-25; owner: "solve it now"): the texts
+   say "Spiele", "Jeux", "Juegos", the console knows only `Games` and `Giochi` (interface, owneetd's moves and installs, the
+   disks' preparation). **Corrected:** owneet-frontend 0.41.1, owneetd 0.27.1, owneet-base 0.0.88, owneet-installer 0.0.6: the five names
+   everywhere; a new one in the console's language. Seen in the preview (a game in "Spiele"); preparing a disk with one of the
+   new names not tried.
+   **Closed** (2026-11-27): the owner's test (2026-11-27, German) works: a game in "Spiele" is in the Library.
+28. **The on-screen keyboard's prompts overlap** (found on 2026-11-25 in German, text XL; owner: solve it now, "if the XL text is too
+   big in the prompts, make them scroll"). **Corrected:** owneet-frontend 0.41.1 (`PromptBar`): only when, with the right-hand words
+   already left out (demo 3.3c), they still meet; every screen. Seen in the preview (German, XL).
+   **Closed** (2026-11-27): the owner's test (2026-11-27, German, XL) works.
+29. **Step 4.9, after the build** (owner, 2026-11-25): a text for the pointer's card when an emulator is opened by itself (approved);
+   moving a console's folder between disks ("absolutely yes": demo first); the owner's idea of a top folder "Emulation" next
+   to the games folder, instead of looking into every game's folder: the assistant's judgment asked (**agreed: better**). **Built:** the
+   card's text, the folder "Emulation" (also a place of the file manager), owneet-frontend 0.41.1. The moving: demo
+   `4.9b-move-a-console` approved (owner, 2026-11-25) and built: owneet-frontend 0.42.0, owneetd 0.28.0, on OWNEETLOG.
+   **Closed** (2026-11-27): the owner's test (2026-11-27) works: moving a console loses nothing, the card's text is right.

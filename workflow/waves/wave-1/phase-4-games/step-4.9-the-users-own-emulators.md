@@ -73,4 +73,8 @@ Up: [[phase-4-games]] · Status: **in-progress**
   when it cannot read its file); two more cards (six, kept out of git). The test log lists every program PipeWire knows with its
   streams, and the sound libraries and sound cards of every other program. The 25 tests pass. The silent emulators were
   unpacked in the builder VM, not run (owner, 2026-11-27): their sound libraries are complete; the cause is still unknown.
-- **To do:** a test, the sound, a demo for system files with several names; then the owner's approval of the step.
+- **Fifth test (owner, 2026-11-27):** the controller, the bars and the starts fixed; moving a console and the pointer's card work. Still silent
+  emulators: cause found and fixed, owneet-hardware 0.0.7 ([[program-silent-after-closing-from-the-home-screen]]); one stops on a
+  Bluetooth setting that is its own (not the owner's); one's textures still flicker ([[open-items]] 34).
+- **To do:** a test of the sound, the Bluetooth setting and the flickering researched, a demo for system files with several names;
+  then the owner's approval of the step.

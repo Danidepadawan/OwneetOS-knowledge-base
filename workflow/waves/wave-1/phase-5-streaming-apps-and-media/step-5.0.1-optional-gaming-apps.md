@@ -34,4 +34,7 @@ The second half of step 5.0 (split on 2026-10-14; the first half is
   input; held, the console. Go tests for both; the 25 interface tests pass. Tried in the builder VM, without a screen: it
   starts from the console's script and keeps the console's settings (Guide unbound); there it stops at once with or without the
   command pipe, so the menu on Guide is still to be seen on the test PC. `CREDITS.md` credits it.
-- **To do:** the test with 4.9; Steam's part.
+- **Tested (owner, 2026-11-27):** the app is shown, installed, opened full screen with the controller; games load from the disks
+  and are heard; Guide short opens its menu, held goes to the console with its sound silenced and back; quitting it goes back to
+  the console; removed and installed again. The removal's text approved. Steam and YouTube work as before.
+- **To do:** Steam's part.

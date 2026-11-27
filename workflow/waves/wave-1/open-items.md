@@ -19,9 +19,6 @@ owner's.
 
 | # | What | Where it stands |
 |---|---|---|
-| 27 | The games folder in German, French and Spanish is not recognised | Corrected 2026-11-25, on OWNEETLOG: to confirm |
-| 28 | The keyboard's prompts overlap (German, XL) | Corrected 2026-11-25 (they scroll), on OWNEETLOG: to confirm |
-| 29 | Step 4.9: moving a console between disks | Built 2026-11-25 (demo 4.9b approved), on OWNEETLOG: to test with 4.9 |
 
 ### Waits for the owner's decision
 
@@ -36,7 +33,7 @@ owner's.
 | 31 | Step 4.9: an emulator does not start its game, perhaps a wrong setting | Our rule gave it the wrong folder: built, owneet-frontend 0.43.0, to test; the closing stays as it is |
 | 32 | Step 4.9: the user's own emulators are too little intuitive, not plug and play | Way B: demo 4.9d approved and built (owneet-frontend 0.44.0, owneetd 0.28.1, four cards out of git), on OWNEETLOG: to test |
 | 33 | Step 4.9: no sound in three emulators; one not full screen, its textures flicker | Full screen asked (0.44.2); the sound: the test log now records the streams (owneet-base 0.0.89), next test |
-| 34 | Step 4.9: fourth test, twelve emulators: sound, controller, bars, starts | Fixes and the emulation app built, update stick ready: to test with the numbered list (2026-11-27) |
+| 34 | Step 4.9: fourth test, twelve emulators: sound, controller, bars, starts | Fifth test (2026-11-27): controller, bars and starts fixed. The sound: cause found, built (owneet-hardware 0.0.7), to test. E10's setting not the owner's, E3 flickers: to research |
 
 ### Others
 
@@ -48,7 +45,7 @@ owner's.
 | Step | What | Status |
 |---|---|---|
 | [[step-4.9-the-users-own-emulators\|4.9]] | The user's own emulators (owner, 2026-11-25: the user brings everything; built 2026-11-25, owneet-frontend 0.42.0 and owneetd 0.28.0: waits for the test on the FrankenPC) | in-progress |
-| [[step-5.0.1-optional-gaming-apps\|5.0.1]] | Gaming programs as optional apps: the emulation program built (2026-11-27), to test with 4.9; Steam's part later | in-progress |
+| [[step-5.0.1-optional-gaming-apps\|5.0.1]] | Gaming programs as optional apps: the emulation program built and tested (2026-11-27); Steam's part later | in-progress |
 | [[step-7.3-user-guide\|7.3]] | User guide | in-progress |
 | [[step-7.4-hardware-testing-and-v0.1.0\|7.4]] | Hardware testing and v0.1.0 | todo |
 | [[step-7.5-legal-review-before-the-public-launch\|7.5]] | Legal review before the public launch | in-progress |
@@ -63,19 +60,6 @@ never here.
 
 ## The owner's reports, in detail
 
-27. **The games folder's name in German, French and Spanish** (found by the assistant on 2026-11-25; owner: "solve it now"): the texts
-   say "Spiele", "Jeux", "Juegos", the console knows only `Games` and `Giochi` (interface, owneetd's moves and installs, the
-   disks' preparation). **Corrected:** owneet-frontend 0.41.1, owneetd 0.27.1, owneet-base 0.0.88, owneet-installer 0.0.6: the five names
-   everywhere; a new one in the console's language. Seen in the preview (a game in "Spiele"); preparing a disk with one of the
-   new names not tried.
-28. **The on-screen keyboard's prompts overlap** (found on 2026-11-25 in German, text XL; owner: solve it now, "if the XL text is too
-   big in the prompts, make them scroll"). **Corrected:** owneet-frontend 0.41.1 (`PromptBar`): only when, with the right-hand words
-   already left out (demo 3.3c), they still meet; every screen. Seen in the preview (German, XL).
-29. **Step 4.9, after the build** (owner, 2026-11-25): a text for the pointer's card when an emulator is opened by itself (approved);
-   moving a console's folder between disks ("absolutely yes": demo first); the owner's idea of a top folder "Emulation" next
-   to the games folder, instead of looking into every game's folder: the assistant's judgment asked (**agreed: better**). **Built:** the
-   card's text, the folder "Emulation" (also a place of the file manager), owneet-frontend 0.41.1. The moving: demo
-   `4.9b-move-a-console` approved (owner, 2026-11-25) and built: owneet-frontend 0.42.0, owneetd 0.28.0, on OWNEETLOG.
 
 30. **An emulator of the user's starts its game but does not read the controller** (owner, 2026-11-25, first test of step 4.9 with
    three emulators; one works perfectly). "The matter of the inputs to remap is not a small one." Log read (2026-11-25): the emulator was started well and its game
@@ -142,6 +126,18 @@ never here.
    Built (2026-11-27): owneet-frontend 0.45.0 (the empty file, two more cards), owneet-base 0.0.90 (the sound in the test
    log). The silent ones unpacked in the builder VM, not run: what they need for sound is all there; the next log says more.
    The update stick could not be made at first (the Arch archive timed out); made at the second retry (34 packages).
+   **Fifth test** (owner, 2026-11-27, owneet-frontend 0.46.0, owneetd 0.29.0, owneet-base 0.0.91): E4 now reads the controller and
+   works; E6 works fully (full screen, controller, the pointer as touch); E9 too, but **without sound now** (it had sound in the
+   fourth test); E1, E2, E3 still **no sound**, E1 opened by itself and its game started from its own menu too; **E8 has no
+   sound now** (it had it); E10: the owner did not find the setting, so he did not change it: it is the emulator's own (to
+   research); E3's textures still flicker. Moving a console works, nothing lost; the pointer's card says the right text. The
+   emulation app works fully ([[step-5.0.1-optional-gaming-apps]]).
+   Log read (2026-11-27): every silent emulator played a running stream to the HDMI output; owneetd silenced only the ones
+   heard, never the silent ones, already muted at start. **Cause:** WirePlumber remembers a program's mute and gives it back at
+   its next start; the console mutes a game behind the home screen and it is mostly closed from there
+   ([[program-silent-after-closing-from-the-home-screen]]). Reproduced and fixed in the builder VM. **Built:** owneet-hardware
+   0.0.7 (WirePlumber no longer gives back a program's volume and mute), owneet-base 0.0.92 (each stream's mute in the test log).
+   The two heard in this test (E4, E6) were closed muted: without the fix they would be silent next time.
 
 ## Decided, not built yet
 
