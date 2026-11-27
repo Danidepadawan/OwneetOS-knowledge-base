@@ -36,7 +36,7 @@ owner's.
 | 31 | Step 4.9: an emulator does not start its game, perhaps a wrong setting | Our rule gave it the wrong folder: built, owneet-frontend 0.43.0, to test; the closing stays as it is |
 | 32 | Step 4.9: the user's own emulators are too little intuitive, not plug and play | Way B: demo 4.9d approved and built (owneet-frontend 0.44.0, owneetd 0.28.1, four cards out of git), on OWNEETLOG: to test |
 | 33 | Step 4.9: no sound in three emulators; one not full screen, its textures flicker | Full screen asked (0.44.2); the sound: the test log now records the streams (owneet-base 0.0.89), next test |
-| 34 | Step 4.9: fourth test, twelve emulators: sound, controller, bars, starts | First fixes built, update stick ready: to test (2026-11-27) |
+| 34 | Step 4.9: fourth test, twelve emulators: sound, controller, bars, starts | Fixes and the emulation app built, update stick ready: to test with the numbered list (2026-11-27) |
 
 ### Others
 
