@@ -31,7 +31,9 @@ tags: [decision, product, apps]
   user agent that owneetd takes from the catalogue (2026-10-18, [[step-5.3-youtube]]; terms:
   [[legal-compliance]]).
 - **One emulation program is an optional app again** (owner, 2026-11-27, [[users-own-emulators]]): already installed, or at most
-  unpacked from the ISO as the browser is; it joins the apps. The user's own emulators stay beside it.
+  unpacked from the ISO as the browser is; it joins the apps. The user's own emulators stay beside it. Built as the app
+  "Emulation" (2026-11-27, [[step-5.0.1-optional-gaming-apps]]): installed and removed as a web app, without Google's terms;
+  its games and saves stay when it is removed.
 - **Discord** waits for the chat modules ([[wave-2]], [[online-and-chat]]).
 - In the live system, apps follow the same RAM rule as Steam, at least 12 GB
   ([[steam-integration]]).

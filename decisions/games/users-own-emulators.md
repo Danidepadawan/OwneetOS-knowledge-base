@@ -18,13 +18,20 @@ tags: [decision, games, legal]
   of the vault. The way of this note stays as it is, as one more choice for the user. The user still brings the games and the
   system files.
 - **Its details (owner, 2026-11-27):**
-  - **When:** after the fixes of step 4.9's fourth test; which step builds it is still to be decided.
-  - **Its name in the code:** what names it (the list of its packages) is kept out of git until the legal review, as the
-    emulator cards are.
+  - **When:** after the fixes of step 4.9's fourth test, before the next test, which covers both (owner); in
+    [[step-5.0.1-optional-gaming-apps]], opened for it alone (Steam's part later), while 4.9 stays in progress (the
+    assistant's choice, left to it by the owner: the least risk).
+  - **Its name in the code:** named in the code, `CREDITS.md` and the list of the packages the ISO carries (owner, 2026-11-27:
+    the guard [[legal]] wants every shipped component credited in `CREDITS.md`, which is public). Never in the vault, the
+    website or the guide; the user's own emulators' cards stay out of git.
+  - **Its games:** through its own interface, as Steam's (the way with the least work and risk for the interface: owner,
+    2026-11-27); none in the console's library.
+  - **On the console:** the app "Emulation" (in the five languages), a letter as its icon, as the web apps.
   - **Its logo and its menu's images:** included as they are; the console's own interface never shows them (guard [[legal]],
     edited by the owner on 2026-11-27).
-  - **Its parts (one licence each):** a list for the owner to approve; only licences that allow commercial use and
-    redistribution (guard [[legal]]). Later the user may add the missing parts, and that too must be plug and play.
+  - **Its parts (one licence each):** fourteen, one per console, approved by the owner (2026-11-27; the list:
+    `iso/bundled.txt`); only licences that allow commercial use and redistribution (guard [[legal]]): three left out for that.
+    Later the user may add the missing parts, and that too must be plug and play.
   - **Its menu:** it opens as an app with its own interface, as Steam does; in a game, Guide as over Steam: a short press
     opens its menu (owneetd asks the program; the program never sees Guide), holding 1 s comes back to the console
     ([[guide-button]], [[controller-input-map]]; owner, 2026-11-27).
@@ -62,4 +69,5 @@ review: [[step-7.5-legal-review-before-the-public-launch]].
 | 2026-11-26 | Way B: the console recognises some emulators and prepares them; their names in the code only after the legal review (owner). |
 | 2026-11-27 | One emulation program comes with OwneetOS as an optional app, installed or unpacked from the ISO; the user's own emulators stay as one more choice (owner). |
 | 2026-11-27 | Its images included (guard [[legal]] edited by the owner); its in-game menu on a short Guide press, as over Steam (owner). |
+| 2026-11-27 | Built before the next test, in 5.0.1 opened for it alone; named in the code and the credits; its games through its own interface; the app "Emulation"; fourteen parts approved (owner). |
 | 2026-11-27 | The emulation program after the fourth test's fixes; the list of its packages out of git until the legal review; a list of its parts to approve, the missing ones added later by the user, plug and play (owner). |

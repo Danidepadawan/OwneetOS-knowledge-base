@@ -48,7 +48,7 @@ owner's.
 | Step | What | Status |
 |---|---|---|
 | [[step-4.9-the-users-own-emulators\|4.9]] | The user's own emulators (owner, 2026-11-25: the user brings everything; built 2026-11-25, owneet-frontend 0.42.0 and owneetd 0.28.0: waits for the test on the FrankenPC) | in-progress |
-| [[step-5.0.1-optional-gaming-apps\|5.0.1]] | Gaming programs as optional apps (Steam): left to the owner by Danidepadawan (2026-11-21) | todo |
+| [[step-5.0.1-optional-gaming-apps\|5.0.1]] | Gaming programs as optional apps: the emulation program built (2026-11-27), to test with 4.9; Steam's part later | in-progress |
 | [[step-7.3-user-guide\|7.3]] | User guide | in-progress |
 | [[step-7.4-hardware-testing-and-v0.1.0\|7.4]] | Hardware testing and v0.1.0 | todo |
 | [[step-7.5-legal-review-before-the-public-launch\|7.5]] | Legal review before the public launch | in-progress |
