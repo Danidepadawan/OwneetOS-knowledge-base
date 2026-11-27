@@ -4,7 +4,7 @@ description: "The chosen component for each layer: boot, session, frontend, daem
 area: architecture
 status: active
 decided: 2026-10-03
-updated: 2026-11-25
+updated: 2026-11-27
 legacy: "PROJECT_RULES.md §4"
 tags: [decision, architecture]
 ---
@@ -24,7 +24,7 @@ tags: [decision, architecture]
 | Steam | System package (multilib, in the image with 32-bit drivers), launched with `-gamepadui` for login/store | [[steam-integration]] |
 | Other stores (later) | **legendary** (Epic), **gogdl** / lgogdownloader (GOG) | Heroic rejected (Electron, heavy). |
 | Windows games (Wave 1: DRM-free games on disk; stores later) | **umu-launcher** + GE-Proton | [[games-on-disk]] |
-| Emulation (Wave 1, step 4.9) | **The user's own emulators**: none shipped (owner, 2026-11-25) | [[users-own-emulators]] |
+| Emulation (Wave 1, step 4.9) | **The user's own emulators** (owner, 2026-11-25) and **one emulation program as an optional app** (owner, 2026-11-27; its name out of the vault) | [[users-own-emulators]], [[optional-apps]] |
 
 ## History
 
@@ -44,3 +44,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-11-19 | Emulation moves from nice-to-have to Wave 2, very important there (owner). |
 | 2026-11-21 | Emulation moves into Wave 1 (step 4.9, before the legal review) (owner). |
 | 2026-11-25 | No emulator shipped: the user brings everything (owner). [[users-own-emulators]] |
+| 2026-11-27 | One emulation program comes as an optional app; the user's own emulators stay (owner). [[optional-apps]] |

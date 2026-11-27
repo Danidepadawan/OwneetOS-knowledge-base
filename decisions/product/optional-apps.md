@@ -4,7 +4,7 @@ description: "Users install only the apps they want (step 5.0); the ISO becomes 
 area: product
 status: active
 decided: 2026-10-13
-updated: 2026-11-25
+updated: 2026-11-27
 legacy: "PROJECT_RULES.md §13 (2026-10-13)"
 tags: [decision, product, apps]
 ---
@@ -30,6 +30,8 @@ tags: [decision, product, apps]
 - **YouTube opens its TV interface** (`youtube.com/tv`, made for a remote's D-pad), with a TV
   user agent that owneetd takes from the catalogue (2026-10-18, [[step-5.3-youtube]]; terms:
   [[legal-compliance]]).
+- **One emulation program is an optional app again** (owner, 2026-11-27, [[users-own-emulators]]): already installed, or at most
+  unpacked from the ISO as the browser is; it joins the apps. The user's own emulators stay beside it.
 - **Discord** waits for the chat modules ([[wave-2]], [[online-and-chat]]).
 - In the live system, apps follow the same RAM rule as Steam, at least 12 GB
   ([[steam-integration]]).
@@ -47,3 +49,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-23 | Background playback stays in Wave 2, confirmed when step 5.5 (Spotify) started: that step's deliverable "playback continues in the background" is dropped. |
 | 2026-11-24 | Step 4.9 before 5.0.1 (owner). |
 | 2026-11-25 | Emulation is not an optional app any more: no emulator is shipped ([[users-own-emulators]], owner). |
+| 2026-11-27 | One emulation program is an optional app again, installed or unpacked from the ISO; the user's own emulators stay beside it (owner). |

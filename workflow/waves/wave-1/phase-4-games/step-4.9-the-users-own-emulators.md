@@ -1,6 +1,6 @@
 ---
 type: step
-description: "The user's own emulators: a folder per console with the user's emulators and games in it, the games in the library; OwneetOS ships, downloads, links and names no emulator and makes the user's work small. Before the legal review."
+description: "The user's own emulators: a folder per console with the user's emulators and games in it, the games in the library; OwneetOS makes the user's work small; one emulation program comes beside it as an optional app (2026-11-27). Before the legal review."
 phase: "[[phase-4-games]]"
 step: "4.9"
 status: in-progress
@@ -16,6 +16,8 @@ Up: [[phase-4-games]] · Status: **in-progress**
   so that the review covers it. Before [[step-5.0.1-optional-gaming-apps]] (owner, 2026-11-24).
 - **Changed by the owner (2026-11-25): "the user brings everything, we only make their work as simple as possible".** Nothing shipped,
   downloaded, linked or named. Decision: [[users-own-emulators]]; how: [[users-own-emulators-design]].
+- **One emulation program as an optional app (owner, 2026-11-27):** installed or unpacked from the ISO, beside this step's way, which
+  stays as one more choice for the user ([[optional-apps]]).
 - **Never named (owner, 2026-11-25):** no emulator and no console in anything that goes online (vault, code, comments, commits,
   website, guide); only in the conversation.
 - **The user's own discs** (the owner's idea; GitHub's issue 2, 2026-11-22): what an emulator of the user's does with a disc is its own;

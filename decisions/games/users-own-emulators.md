@@ -4,7 +4,7 @@ description: "The user brings emulators and games; OwneetOS ships, downloads, li
 area: games
 status: active
 decided: 2026-11-25
-updated: 2026-11-26
+updated: 2026-11-27
 tags: [decision, games, legal]
 ---
 # The user's own emulators
@@ -13,6 +13,14 @@ tags: [decision, games, legal]
   downloads none, links none, names none, and has no list of known ones. It gives nothing that may put its authors in
   legal trouble; it starts a program of the user's with a file of the user's.
 - **OwneetOS only makes it simple**, as far as possible.
+- **Beside the user's own emulators, one emulation program comes with OwneetOS as an optional app** (owner, 2026-11-27,
+  [[optional-apps]]): already installed, or at most unpacked from the ISO as the browser is; it joins the apps. Its name stays out
+  of the vault. The way of this note stays as it is, as one more choice for the user. The user still brings the games and the
+  system files.
+- **Still to decide with the owner (2026-11-27):** which step builds it; whether its name may go into the public code before the
+  legal review (a package must be named in the code); its program logo and its menu's images (guard [[legal]]: no third-party
+  logos in the ISO or the UI); which parts of it (one licence each; only those that allow commercial use and redistribution:
+  guard [[legal]]); the button that opens its menu ([[controller-input-map]]; never Guide: guard [[product-invariants]]).
 - **The console recognises some emulators and prepares them** (owner, 2026-11-26, "way B", after the first tests: "Owneet was made
   to be plug and play"): their controller, how they start, the install of a system file the user put there. Only where the user has
   no settings of their own; the others work as before. The user still brings emulators, system files and games; nothing is
@@ -45,3 +53,4 @@ review: [[step-7.5-legal-review-before-the-public-launch]].
 | 2026-11-25 | From now on no game and no emulator is named in the vault (owner). |
 | 2026-11-25 | Demo 4.9c approved; corrections never change what starts today; the pointer's rule and the closing stay (owner). |
 | 2026-11-26 | Way B: the console recognises some emulators and prepares them; their names in the code only after the legal review (owner). |
+| 2026-11-27 | One emulation program comes with OwneetOS as an optional app, installed or unpacked from the ISO; the user's own emulators stay as one more choice (owner). |
