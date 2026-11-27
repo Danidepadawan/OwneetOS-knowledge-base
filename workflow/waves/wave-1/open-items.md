@@ -36,7 +36,7 @@ owner's.
 | 31 | Step 4.9: an emulator does not start its game, perhaps a wrong setting | Our rule gave it the wrong folder: built, owneet-frontend 0.43.0, to test; the closing stays as it is |
 | 32 | Step 4.9: the user's own emulators are too little intuitive, not plug and play | Way B: demo 4.9d approved and built (owneet-frontend 0.44.0, owneetd 0.28.1, four cards out of git), on OWNEETLOG: to test |
 | 33 | Step 4.9: no sound in three emulators; one not full screen, its textures flicker | Full screen asked (0.44.2); the sound: the test log now records the streams (owneet-base 0.0.89), next test |
-| 34 | Step 4.9: fourth test, twelve emulators: sound, controller, bars, starts | Log read: causes found for most; the sound to look into |
+| 34 | Step 4.9: fourth test, twelve emulators: sound, controller, bars, starts | Fixes in the agreed order (2026-11-27) |
 
 ### Others
 
@@ -136,6 +136,9 @@ never here.
    **empty** controller file at its first start, which the console took for the user's own. Two that do not start say a system
    file is missing; one stops on a setting that asks for a Bluetooth adapter of its own. Two show their menu bars and bind no
    controller (no card yet).
+   The owner (2026-11-27): the fixes in the proposed order (first the empty controller file, the two cards and a longer sound
+   section in the test log; then the sound; then a demo for system files with several names and the card of E12); the silent
+   ones may be inspected in the builder VM; the Bluetooth setting of E10 was probably turned on by the owner.
 
 ## Decided, not built yet
 
