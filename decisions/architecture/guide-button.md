@@ -1,10 +1,10 @@
 ---
 type: decision
-description: "Guide is owned by owneetd: home toggle in gamescope, hold 2 s in cage, hold 1 s over Steam."
+description: "Guide is owned by owneetd: home toggle in gamescope, hold 2 s in cage, hold 1 s over Steam and the emulation program."
 area: architecture
 status: active
 decided: 2026-10-07
-updated: 2026-10-15
+updated: 2026-11-27
 legacy: "PROJECT_RULES.md §9.1 (Guide row), §13 (2026-10-07, 2026-10-12)"
 tags: [decision, architecture, input]
 ---
@@ -21,6 +21,7 @@ tags: [decision, architecture, input]
 - **Exception, Steam** (2026-10-12, option A): while Steam or a Steam game is on screen, a **short
   press is Steam's** (its menu; its overlay in games) and **holding it for 1 second** comes back to
   the console (Steam and the game keep running). "Exit Steam" in Steam's menu also comes back.
+- **Exception, the emulation program** (owner, 2026-11-27; an optional app, [[optional-apps]]): while one of its games is on screen, **a short press opens its own menu** over the game (saves, options, quit; B closes it), **holding it for 1 second** comes back to the console (the game keeps running). The program never sees Guide: owneetd reads it and asks the program to open its menu (not built yet; that the program takes such a request is to be checked).
 
 - **On a keyboard,** the Super (Windows) key does what Guide does (2026-10-15), handled by
   owneetd in the same way.
@@ -36,3 +37,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-07 | Guide button (step 2.9): in the gamescope session it toggles between the home screen and the running game, which keeps running behind the home screen; in the reduced (cage) session, where the home screen cannot be shown over a game, holding Guide for 2 seconds closes the game and a short press does nothing. |
 | 2026-10-12 | After the owner's first Steam test (Guide fought over by owneetd and Steam): **while Steam or a Steam game is on screen, a short Guide press is Steam's; holding Guide for 1 second comes back to the console** (option A; [[controller-input-map]]). "Exit Steam" in Steam's menu also comes back. Steam's own screens that matter (login, a game's launch progress) are shown automatically ([[game-library]]). |
 | 2026-10-15 | The Super (Windows) key on a keyboard does what Guide does, handled by owneetd ([[controller-input-map]]). |
+| 2026-11-27 | Guide over the emulation program, as over Steam: a short press opens its menu (asked by owneetd; the program never sees Guide), holding 1 s comes back to the console (owner). |

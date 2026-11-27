@@ -4,7 +4,7 @@ description: "GPL source archives, licence notices, never-redistributed componen
 area: legal
 status: active
 decided: 2026-10-07
-updated: 2026-10-28
+updated: 2026-11-27
 legacy: "PROJECT_RULES.md §12"
 tags: [decision, legal]
 ---
@@ -52,7 +52,9 @@ project is reviewed by someone experienced in open-source licensing ([[step-7.5-
 - **Never redistributed:** Widevine, the Xbox wireless dongle firmware, Steam's runtime, games and
   store content. They are downloaded by the user's own system, with consent where required.
 - **Trademarks:** third-party names (Xbox, PlayStation, Netflix, Steam…) only to say what works
-  with OwneetOS; no third-party logos; never imply endorsement. "Based on Arch Linux" is allowed;
+  with OwneetOS; no third-party logos; never imply endorsement. The only exception (owner, guard edited
+  2026-11-27): the images inside a third-party program shipped as an optional app, unchanged and under a licence that
+  allows it, never shown by the console's own interface. "Based on Arch Linux" is allowed;
   the Arch logo is not used. The name **OwneetOS** is **not registered as a trademark** (the
   authors, 2026-10-25: it costs too much for what it gives); a preliminary search (step 7.5,
   2026-10-24) found no conflicting mark, so the name is used legally. What carries the project's
@@ -126,3 +128,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-10-28 | Source archive (step 7.2, option a): our packages' PKGBUILDs and sources per release; every Arch package's exact `.src.tar.gz` copied from `sources.archlinux.org` to a shared `sources/` folder on SourceForge; a release missing any source publishes nothing. |
 | 2026-10-28 | Arch's source archives: `sources.archlinux.org` keeps only a subset (33 of 518), so the missing ones are made like Arch makes them (PKGBUILD at the version's tag in Arch's packaging repository, upstream sources checked, `makepkg --allsource`); every package, whatever its licence. |
 | 2026-10-28 | A generated patch (GitHub or GitLab, from a commit or a pull request) whose checksum drifted is accepted and noted next to its archive; any other failed checksum stops the release. |
+| 2026-11-27 | Guard [[legal]] edited by the owner: the images inside a third-party program shipped as an optional app (its own menus and icons) may be bundled, unchanged and under a licence that allows it; the console's own interface never shows them (for the emulation program). |

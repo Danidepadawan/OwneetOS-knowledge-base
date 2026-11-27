@@ -21,12 +21,13 @@ tags: [decision, games, legal]
   - **When:** after the fixes of step 4.9's fourth test; which step builds it is still to be decided.
   - **Its name in the code:** what names it (the list of its packages) is kept out of git until the legal review, as the
     emulator cards are.
-  - **Its logo and its menu's images:** the owner sees no problem in including what other legal consoles and systems include;
-    the guard [[legal]] (no third-party logos in the ISO or the UI) still applies until the owner edits it.
+  - **Its logo and its menu's images:** included as they are; the console's own interface never shows them (guard [[legal]],
+    edited by the owner on 2026-11-27).
   - **Its parts (one licence each):** a list for the owner to approve; only licences that allow commercial use and
     redistribution (guard [[legal]]). Later the user may add the missing parts, and that too must be plug and play.
-  - **Its menu:** the owner asks whether it can open as an interface of its own, as Steam does; how its in-game menu is opened
-    is still to be decided ([[controller-input-map]]; never Guide: guard [[product-invariants]]).
+  - **Its menu:** it opens as an app with its own interface, as Steam does; in a game, Guide as over Steam: a short press
+    opens its menu (owneetd asks the program; the program never sees Guide), holding 1 s comes back to the console
+    ([[guide-button]], [[controller-input-map]]; owner, 2026-11-27).
 - **The console recognises some emulators and prepares them** (owner, 2026-11-26, "way B", after the first tests: "Owneet was made
   to be plug and play"): their controller, how they start, the install of a system file the user put there. Only where the user has
   no settings of their own; the others work as before. The user still brings emulators, system files and games; nothing is
@@ -60,4 +61,5 @@ review: [[step-7.5-legal-review-before-the-public-launch]].
 | 2026-11-25 | Demo 4.9c approved; corrections never change what starts today; the pointer's rule and the closing stay (owner). |
 | 2026-11-26 | Way B: the console recognises some emulators and prepares them; their names in the code only after the legal review (owner). |
 | 2026-11-27 | One emulation program comes with OwneetOS as an optional app, installed or unpacked from the ISO; the user's own emulators stay as one more choice (owner). |
+| 2026-11-27 | Its images included (guard [[legal]] edited by the owner); its in-game menu on a short Guide press, as over Steam (owner). |
 | 2026-11-27 | The emulation program after the fourth test's fixes; the list of its packages out of git until the legal review; a list of its parts to approve, the missing ones added later by the user, plug and play (owner). |

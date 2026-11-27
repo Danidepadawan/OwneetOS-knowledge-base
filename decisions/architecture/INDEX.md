@@ -13,6 +13,6 @@ tags: [index]
 - [[boot-experience]] — UEFI only, silent boot, hidden menu, Plymouth wordmark splash, copytoram=n.
 - [[console-session]] — Fixed user owneet with autologin; gamescope or cage fallback; gamescope --steam; one systemd service per app.
 - [[frontend-fork]] — owneet-frontend is a Pegasus fork inside the repository; trademark terms, what is not used, Qt 5 now.
-- [[guide-button]] — Guide is owned by owneetd: home toggle in gamescope, hold 2 s in cage, hold 1 s over Steam.
+- [[guide-button]] — Guide is owned by owneetd: home toggle in gamescope, hold 2 s in cage, hold 1 s over Steam and the emulation program.
 - [[owneetd]] — owneetd in Go, HTTP + JSON over a Unix socket, user service not root, vendored modules.
 - [[wifi-networks]] — Wi-Fi networks saved system-wide through a narrow polkit rule; owneet is not an administrator.

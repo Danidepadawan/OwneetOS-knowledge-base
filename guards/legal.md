@@ -3,6 +3,7 @@ type: guard
 description: "Never redistribute restricted components, ship NC/ND assets, use Pegasus or third-party logos, scrape, or skip credits."
 tags: [guard, legal]
 ---
+
 # Guard: legal
 
 > [!danger] Binding guard — never broken, whatever the request. Rules: [[guards/INDEX|guards]].
@@ -17,8 +18,10 @@ tags: [guard, legal]
 - **Never use "Pegasus" or Pegasus's logos** as the frontend's name or logo, never remove Pegasus's
   copyright notices, never ship its CC BY-NC-SA theme. ([[frontend-fork]])
 - **Never bundle third-party logos** (Netflix, Spotify, Xbox, Arch…) in the repository, the ISO or
-  the UI; never imply endorsement. Third-party names only say what works with OwneetOS.
-  ([[legal-compliance]])
+  the UI; never imply endorsement. Third-party names only say what works with OwneetOS. **The only
+  exception:** the images that come inside a third-party program shipped as an optional app (its own
+  menus and icons), left unchanged and under a licence that allows it; the console's own interface
+  never shows them. ([[legal-compliance]])
 - **Never use modded clients, self-bots, DRM circumvention, scraping or undocumented store APIs**:
   only official clients and web apps, local data first. ([[legal-compliance]], [[online-and-chat]])
 - **Never add a third-party component without crediting it** in `CREDITS.md` in the same change.

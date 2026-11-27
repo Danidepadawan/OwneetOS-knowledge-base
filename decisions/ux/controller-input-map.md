@@ -4,7 +4,7 @@ description: "The binding meaning of every button on every screen, keyboard fall
 area: ux
 status: active
 decided: 2026-10-03
-updated: 2026-11-25
+updated: 2026-11-27
 legacy: "PROJECT_RULES.md §9.1"
 tags: [decision, ux, input]
 ---
@@ -24,7 +24,7 @@ screen. New bindings are added here (with the owner) before they are implemented
 | LT / RT (L2 / R2) | Switch filter inside the current page (e.g. Library: All / Installed / Favorites — "Installed" was removed on 2026-10-11 and restored on 2026-10-14, [[game-library]]). There are no sub-tabs: tabs are only the sections on LB / RB |
 | Menu / Options | Options menu for the selected item |
 | View / Create | **In a web app and in the player: the legend of the app's buttons** (step 5.6a, owner 2026-11-18; see "The command legend" below). On the console's own screens: reserved (screenshots in a later wave, which will then take another gesture) |
-| Guide / PS | **Owned by the system daemon**: home / quick menu from anywhere, including in games. Apps and themes must never bind it. Prompt label: "Home". **Exception, Steam** (2026-10-12): while Steam or a Steam game is on screen, a short press is Steam's (its menu; its overlay in games) and **holding it for 1 second** comes back to the console (Steam and the game keep running). See [[guide-button]]. On the home screen with nothing to go back to, owneetd tells the interface (`home.requested`): **the interface goes back to its Home section, the windows over its pages closed** (as B or Cancel would; the copy of games goes on behind its window, 6.6e; not during the first start or the installer) (owner, 2026-11-14: Guide did nothing while nothing ran). **The Home prompt shows only while nothing runs**: with a game, a media app or Steam running, Guide goes back to it, and the prompt is left out of the prompt bar (owner, 2026-11-14); **nor on the home screen itself** while no window is over it, where Guide does nothing (owner, 2026-11-17). |
+| Guide / PS | **Owned by the system daemon**: home / quick menu from anywhere, including in games. Apps and themes must never bind it. Prompt label: "Home". **Exception, Steam** (2026-10-12): while Steam or a Steam game is on screen, a short press is Steam's (its menu; its overlay in games) and **holding it for 1 second** comes back to the console (Steam and the game keep running). **Exception, the emulation program** (owner, 2026-11-27; an optional app, [[optional-apps]]): while one of its games is on screen, **a short press opens its own menu** over the game (saves, options, quit; B closes it), **holding it for 1 second** comes back to the console (the game keeps running). The program never sees Guide: owneetd reads it and asks the program to open its menu (not built yet; that the program takes such a request is to be checked). See [[guide-button]]. On the home screen with nothing to go back to, owneetd tells the interface (`home.requested`): **the interface goes back to its Home section, the windows over its pages closed** (as B or Cancel would; the copy of games goes on behind its window, 6.6e; not during the first start or the installer) (owner, 2026-11-14: Guide did nothing while nothing ran). **The Home prompt shows only while nothing runs**: with a game, a media app or Steam running, Guide goes back to it, and the prompt is left out of the prompt bar (owner, 2026-11-14); **nor on the home screen itself** while no window is over it, where Guide does nothing (owner, 2026-11-17). |
 | Right stick | Scrolls the page: fast scroll in long lists and grids, and the content of windows (e.g. Credits and licences) |
 
 **On-screen keyboard** (demo 3.10, approved 2026-10-11; changed 2026-10-13): while it is open, A
@@ -229,3 +229,4 @@ Entries of the [[decision-log]] that shaped this note.
 | 2026-11-20 | **The Apps page** (step 5.7): the home's Apps grid buttons (A opens or installs, Menu options, B back to the home on "All apps", the right stick scrolls); X, Y and LT / RT do nothing; its grid goes round like the library's. |
 | 2026-11-21 | Guide while nothing runs, on the Videos, Music or Apps page: back to the home page of the Home section, as from its windows (owner, after the merge of phase 5). |
 | 2026-11-25 | Pointer: on by itself when the user opens an emulator of theirs without a game, for all its windows until it ends (owner, step 4.9). |
+| 2026-11-27 | Guide over the emulation program, as over Steam: a short press opens its menu (asked by owneetd; the program never sees Guide), holding 1 s comes back to the console (owner). |
