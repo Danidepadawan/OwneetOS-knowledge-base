@@ -36,7 +36,7 @@ owner's.
 | 31 | Step 4.9: an emulator does not start its game, perhaps a wrong setting | Our rule gave it the wrong folder: built, owneet-frontend 0.43.0, to test; the closing stays as it is |
 | 32 | Step 4.9: the user's own emulators are too little intuitive, not plug and play | Way B: demo 4.9d approved and built (owneet-frontend 0.44.0, owneetd 0.28.1, four cards out of git), on OWNEETLOG: to test |
 | 33 | Step 4.9: no sound in three emulators; one not full screen, its textures flicker | Full screen asked (0.44.2); the sound: the test log now records the streams (owneet-base 0.0.89), next test |
-| 34 | Step 4.9: fourth test, twelve emulators: sound, controller, bars, starts | First fixes built; the update stick waits for the Arch archive (2026-11-27) |
+| 34 | Step 4.9: fourth test, twelve emulators: sound, controller, bars, starts | First fixes built, update stick ready: to test (2026-11-27) |
 
 ### Others
 
@@ -141,7 +141,7 @@ never here.
    ones may be inspected in the builder VM; the Bluetooth setting of E10 was probably turned on by the owner.
    Built (2026-11-27): owneet-frontend 0.45.0 (the empty file, two more cards), owneet-base 0.0.90 (the sound in the test
    log). The silent ones unpacked in the builder VM, not run: what they need for sound is all there; the next log says more.
-   The update stick could not be made: the Arch archive timed out three times.
+   The update stick could not be made at first (the Arch archive timed out); made at the second retry (34 packages).
 
 ## Decided, not built yet
 
