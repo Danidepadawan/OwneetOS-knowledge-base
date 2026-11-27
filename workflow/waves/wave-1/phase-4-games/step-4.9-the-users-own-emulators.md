@@ -66,4 +66,11 @@ Up: [[phase-4-games]] · Status: **in-progress**
   emulators and prepares them ([[users-own-emulators]]); four to start with; names kept out of git until the legal review.
 - **Demo 4.9d approved (owner, 2026-11-26)** (`design/demos/4.9d-emulators-the-console-prepares.html`), built: owneet-frontend 0.44.0,
   owneetd 0.28.1 (the helper passes a card's options), four cards kept out of git.
-- **To do:** a test, then the owner's approval of the step.
+- **Third and fourth tests (owner, 2026-11-26):** twelve emulators ([[open-items]] 33, 34).
+- **Built (2026-11-27): owneet-frontend 0.45.0, owneet-base 0.0.90:** an empty settings file or section, which an emulator may make at its
+  first start, is filled as if there were none; a card's setting may be only for one kind of controller (`when`: its directions on a
+  hat or on buttons) and may never be added to a file without its section (`"add": false`: an emulator that drops all its settings
+  when it cannot read its file); two more cards (six, kept out of git). The test log lists every program PipeWire knows with its
+  streams, and the sound libraries and sound cards of every other program. The 25 tests pass. The silent emulators were
+  unpacked in the builder VM, not run (owner, 2026-11-27): their sound libraries are complete; the cause is still unknown.
+- **To do:** a test, the sound, a demo for system files with several names; then the owner's approval of the step.
